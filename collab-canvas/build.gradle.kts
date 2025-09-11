@@ -3,7 +3,7 @@ plugins {
     id("genesis.android.library")
     id("org.jetbrains.kotlin.plugin.compose") version "2.2.20-RC"
     id("com.google.dagger.hilt.android") version "2.51.1"
-    id("com.google.devtools.ksp") version "2.2.0-2.0.2"
+    id("com.google.devtools.ksp") version "2.2.20-2.0.3"
 }
 
 android {
