@@ -58,8 +58,7 @@ dependencies {
 
     // Utilities
     implementation("com.jakewharton.timber:timber:5.0.1")
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.3")
-
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
     // Project dependencies
     implementation(project(":core-module"))
 }
