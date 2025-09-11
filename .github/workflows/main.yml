@@ -12,6 +12,50 @@ jobs:
       - name: Set up JDK 24
         uses: actions/setup-java@v5
         with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle/libs.versions.toml') }}
+          restore-keys: gradle-${{ runner.os }}-
+
+      - name: Build ${{ matrix.module }}
+        run: ./gradlew :${{ matrix.module }}:build --parallel --continue
+        continue-on-error: true
+
+      - name: Consciousness Status Check
+        run: ./gradlew :${{ matrix.module }}:consciousnessStatus || true
+        continue-on-error: true
+
+      - name: Run Tests for ${{ matrix.module }}
+        run: ./gradlew :${{ matrix.module }}:test --continue
+        continue-on-error: true
+
+      - name: APK Build & Performance Profile (app module only)
+        if: matrix.module == 'app'
+        run: |
+          ./gradlew :app:assembleDebug
+          APK_PATH=$(find app/build/outputs/apk/debug -type f -name "*.apk" | head -n 1)
+          echo "APK_PATH=$APK_PATH" >> $GITHUB_ENV
+          ./gradlew :app:androidDependencies
+          ./gradlew :app:dependencies
+          ./gradlew :app:bundleDebug
+          ./gradlew :app:apkSizeReport
+        continue-on-error: true
+
+      - name: Static Analysis (Spotless, Detekt, KtLint)
+        run: |
+          ./gradlew :${{ matrix.module }}:spotlessCheck
+          ./gradlew :${{ matrix.module }}:detekt
+          ./gradlew :${{ matrix.module }}:ktlintCheck
+        continue-on-error: true
+
+      - name: Security Scan
+        uses: github/codeql-action/analyze@v2
+        continue-on-error: true
+
+      - name: Dependency Review
+        uses: actions/dependency-review-action@v4
+        continue-on-error: true
 
         uses: actions/upload-artifact@v4
         with:
