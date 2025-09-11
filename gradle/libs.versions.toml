@@ -19,6 +19,8 @@ securityCrypto = "1.1.0"
 benchmark = "1.4.1"
 uiAutomator = "2.3.0"
 
+# ===== NETWORKING =====
+retrofit = "2.11.0"
 okhttp = "5.1.0"
 
 coilCompose = "2.7.0"
