@@ -15,6 +15,30 @@ jobs:
 
         uses: actions/upload-artifact@v4
         with:
+          name: Test-Reports-${{ matrix.module }}
+          path: ${{ matrix.module }}/build/reports/tests
+
+      - name: Upload Performance Reports (app module only)
+        if: matrix.module == 'app'
+        uses: actions/upload-artifact@v4
+        with:
+          name: APK-Performance
+          path: app/build/outputs/apk/debug/*.apk
+
+  summarize:
+    name: Summarize Build/Test Issues
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download All Test Reports
+        uses: actions/download-artifact@v4
+        with:
+          path: ./artifacts
+
+      - name: Generate Issue Summary (Parse Results)
+        run: |
+          echo "## Build/Test Issues Summary" > issue-report.md
+          echo "" >> issue-report.md
 
           # Parse JUnit XMLs for test failures
           find ./artifacts -name "*.xml" | while read report; do
