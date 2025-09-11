@@ -35,7 +35,7 @@ benchmark = "1.2.4"
 uiAutomator = "2.3.0"
 
 # ===== NETWORKING =====
-retrofit = "2.11.0"
+retrofit = "3.0.0"
 okhttp = "5.1.0"
 converterScalars = "2.11.0"
 retrofitKotlinxSerializationConverter = "1.0.0"
