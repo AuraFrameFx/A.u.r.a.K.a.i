@@ -2,6 +2,10 @@
 // This build script now uses the custom convention plugins for a cleaner setup.
 
 plugins {
+    id("genesis.android.application")
+    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20-RC"
+    id("com.google.dagger.hilt.android") version "2.51.1"
+    id("com.google.devtools.ksp") version "2.2.0-2.0.2"
 }
 
 android {
@@ -42,7 +46,7 @@ dependencies {
 
     implementation(libs.timber)
     implementation(libs.coil.compose)
-    
+
     // ===== XPOSED/LSPosed Integration =====
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))

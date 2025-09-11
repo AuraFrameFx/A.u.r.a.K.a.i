@@ -1,5 +1,9 @@
 [versions]
 # ===== GRADLE & KOTLIN =====
+agp = "9.0.0-alpha02"
+kotlin = "2.2.20-RC"
+ksp = "2.2.0-2.0.2"
+googleServices = "4.4.3"
 desugar_jdk_libs = "2.1.5"
 appcompat = "1.7.1"
 

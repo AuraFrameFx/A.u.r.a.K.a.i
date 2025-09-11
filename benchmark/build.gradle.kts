@@ -2,6 +2,16 @@
 // Performance testing for AI consciousness operations
 
 plugins {
+    id("genesis.android.library")
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20-RC"
+    id("com.google.dagger.hilt.android") version "2.51.1"
+    id("com.google.devtools.ksp") version "2.2.0-2.0.2"
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24)) // Stay on 24 until 25 stable (non-RC)
+    }
 }
 
 android {
