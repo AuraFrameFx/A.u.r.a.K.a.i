@@ -1,37 +1,29 @@
-# Gradle
 .gradle/
 build/
 !app/srv/
 
-# Local properties
 local.properties
 
-# IDE files
-.idea/
-*.iml
-*.ipr
-*.iws
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Log files
 *.log
 
-# Android Studio
 captures/
 .externalNativeBuild/
 .cxx/
+*.aab
+*.apk
+output-metadata.json
+
+# IntelliJ
+*.iml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
 
 # Keystore files
 *.jks
+*.keystore
 
-# Misc
-*.swp
-*.swo
 
-# Do NOT ignore openapi or srv folders
-!**/openapi/
-!app/srv/
-
+# Android Profiling
+*.hprof
