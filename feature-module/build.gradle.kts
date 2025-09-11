@@ -2,6 +2,13 @@
 // Primary feature module using convention plugins
 
 plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20-RC"
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.dokka)
+    alias(libs.plugins.ksp)  // Required for Hilt annotation processing
 }
 
 android {
