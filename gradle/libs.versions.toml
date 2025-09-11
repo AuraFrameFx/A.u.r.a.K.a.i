@@ -27,7 +27,7 @@ coilCompose = "2.7.0"
 
 # Utilities & Logging
 timber = "5.0.1"
-guavaAndroid = "33.2.1-android"
+guavaAndroid = "33.4.8-android"
 kotlinxCoroutines = "1.8.1"
 kotlinxSerializationJson = "1.7.0"
 kotlinxDatetime = "0.6.1"
