@@ -43,6 +43,11 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.coil.compose)
     
+    // ===== XPOSED/LSPosed Integration =====
+    compileOnly(files("../Libs/api-82.jar"))
+    compileOnly(files("../Libs/api-82-sources.jar"))
+
+    // --- TESTING ---
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)
     debugImplementation(libs.leakcanary.android)
