@@ -76,6 +76,9 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.coil.compose)
     
+    // ===== CORE LIBRARY DESUGARING =====
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
+    
     // ===== XPOSED/LSPosed Integration =====
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))
