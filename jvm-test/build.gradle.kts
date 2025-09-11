@@ -23,3 +23,4 @@ tasks.register("jvmTestStatus") {
     group = "aegenesis"
     doLast { println("\uD83D\uDCE6 JVM TEST MODULE - Ready (Java 25, JVM 25)") } // Updated
 }
+

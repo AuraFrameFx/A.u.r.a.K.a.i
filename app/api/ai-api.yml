@@ -170,18 +170,6 @@ components:
       required: [ description ]
     AgentType:
       type: string
-      enum: [ GENESIS, AURA, KAI, CASCADE, NEURAL_WHISPER, AURA_SHIELD, GEN_KIT_MASTER, DATAVEIN_CONSTRUCTOR, USER ]
-      description: |
-        Type of AI agent to interact with. Possible values:
-        - GENESIS: Core orchestrator and foundational AI
-        - AURA: General purpose assistant with creative capabilities
-        - KAI: Security and technical operations
-        - CASCADE: Multi-step processing and workflow management
-        - NEURAL_WHISPER: Neural operations and model interactions
-        - AURA_SHIELD: Security monitoring and protection
-        - GEN_KIT_MASTER: Code generation and development
-        - DATAVEIN_CONSTRUCTOR: Data processing and system construction
-        - USER: Human user interaction
     AgentProcessRequest:
       type: object
       properties:

@@ -14,7 +14,6 @@
   post:
     operationId: agentsInvoke
     summary: Invoke specific AI agent
-    description: Direct interaction with a specific agent, such as Aura, Kai, or Genesis.
     tags: [ AI Agents ]
     security:
       - OAuth2: [ write ]
@@ -33,5 +32,39 @@
       '400': { description: Invalid request, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
       '401': { description: Unauthorized, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
       '404': { description: Agent not found, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
+      '500': { description: Server error, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
+/aura/empathy:
+  post:
+    operationId: agentsAuraEmpathy
+    summary: Process empathetic AI analysis (Aura)
+    tags: [ AI Agents ]
+    security:
+      - OAuth2: [ write ]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema: { type: object, properties: { input: { type: string }, context: { type: string }, sensitivity: { type: string, enum: [ LOW, MEDIUM, HIGH ], default: MEDIUM } }, required: [ input ] }
+    responses:
+      '200': { description: Empathetic analysis, content: { application/json: { schema: { type: object, properties: { empathyScore: { type: number, format: float }, recommendations: { type: array, items: { type: string } }, emotionalAnalysis: { type: object } } } } } }
+      '400': { description: Invalid request, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
+      '401': { description: Unauthorized, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
+      '500': { description: Server error, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
+/kai/security:
+  post:
+    operationId: agentsKaiSecurity
+    summary: Perform Kai security analysis
+    tags: [ AI Agents ]
+    security:
+      - OAuth2: [ write ]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema: { type: object, properties: { target: { type: string }, scanType: { type: string, enum: [ VULNERABILITY, MALWARE, PRIVACY, INTEGRITY ] }, depth: { type: string, enum: [ SURFACE, DEEP, COMPREHENSIVE ], default: DEEP } }, required: [ target, scanType ] }
+    responses:
+      '200': { description: Security analysis, content: { application/json: { schema: { type: object, properties: { riskLevel: { type: string, enum: [ LOW, MEDIUM, HIGH, CRITICAL ] }, vulnerabilities: { type: array, items: { $ref: '#/components/schemas/Vulnerability' } }, recommendations: { type: array, items: { type: string } } } } } } }
+      '400': { description: Invalid request, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
+      '401': { description: Unauthorized, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
       '500': { description: Server error, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
 

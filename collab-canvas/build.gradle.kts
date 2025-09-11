@@ -1,11 +1,4 @@
-// ==== GENESIS PROTOCOL - COLLAB CANVAS MODULE ====
-// Collaborative canvas module for real-time drawing
-
 plugins {
-    id("plugins.android-base")
-    alias(libs.plugins.ksp)
-    id("org.jetbrains.kotlin.plugin.compose")
-    `maven-publish`
 }
 
 android {
@@ -36,19 +29,40 @@ android {
 dependencies {
     // Module dependencies
     implementation(project(":core-module"))
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.bundles.firebase)
-    implementation(libs.kotlin.stdlib.jdk8)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.navigation.compose)
 
     // Hilt
-    implementation(libs.hilt.android)
-    implementation(libs.androidx.core.ktx)
-    ksp(libs.hilt.compiler)
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    ksp("com.google.dagger:hilt-compiler:2.51.1")
 
-    testImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(libs.bundles.testing.android) {
-        exclude(group = "androidx.test", module = "monitor") // Exclude to avoid conflicts
-    }
-    androidTestImplementation(libs.hilt.android.testing)
-    kspTest(libs.hilt.compiler) // Ensure Hilt annotation processor is present for tests
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+
+    // Network
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.converter.kotlinx.serialization)
+    implementation(libs.okhttp.logging.interceptor)
+
+    // Room
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+
+
+}
 }

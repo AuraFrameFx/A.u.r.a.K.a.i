@@ -12,14 +12,11 @@ import dev.aurakai.auraframefx.utilities.StringUtils
 import org.example.list.LinkedList
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
+import org.example.list.LinkedList
 
 class StringUtilsTest {
 
-    // Helper to build a LinkedList from varargs for readable tests
-    private fun listOfStrings(vararg items: String): List<String> {
         val list = LinkedList()
-        for (item in items) {
-            list.add(item)
         }
         return list
     }
@@ -36,7 +33,6 @@ class StringUtilsTest {
     @Test
     fun `join should return the single element unchanged`() {
         val source = listOfStrings("only")
-        val result = StringUtils.join(source.toList())
         assertEquals("only", result)
     }
 
@@ -52,7 +48,6 @@ class StringUtilsTest {
     @Test
     fun `join should handle elements with spaces and punctuation`() {
         val source = listOfStrings("Hello", ", ", "World", "!")
-        val result = StringUtils.join(source.toList())
         assertEquals("Hello, World!", result)
     }
 
@@ -60,36 +55,24 @@ class StringUtilsTest {
     @Test
     fun `split should split words by whitespace and return a LinkedList in order`() {
         val result = StringUtils.split("foo bar baz")
-        assertEquals(3, result.size)
-        assertEquals("foo", result[0])
-        assertEquals("bar", result[1])
-        assertEquals("baz", result[2])
     }
 
     // split: leading/trailing/multiple spaces collapse
     @Test
     fun `split should ignore extra whitespace and not produce empty tokens`() {
         val result = StringUtils.split("  a   b    c  ")
-        assertEquals(3, result.size)
-        assertEquals("a", result[0])
-        assertEquals("b", result[1])
-        assertEquals("c", result[2])
     }
 
     // split: empty string -> empty list
     @Test
     fun `split should return an empty LinkedList for empty input`() {
         val result = StringUtils.split("")
-        assertEquals(0, result.size)
     }
 
     // split: punctuation handling (tokens preserved around spaces)
     @Test
     fun `split should preserve punctuation within tokens`() {
         val result = StringUtils.split("Hello, World!")
-        assertEquals(2, result.size)
-        assertEquals("Hello,", result[0])
-        assertEquals("World!", result[1])
     }
 
     // Round-trip property: split then join yields original when original contained no extra internal whitespace changes

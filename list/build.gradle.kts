@@ -1,26 +1,30 @@
-plugins {
-    id("plugins.android-base")
-    alias(libs.plugins.ksp)
-    id("org.jetbrains.kotlin.plugin.compose")
-}
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
-android {
-    namespace = "dev.aurakai.auraframefx.list"
-    defaultConfig {
-        minSdk = 33
-    }
+plugins {
 }
 
 group = "dev.aurakai.auraframefx.list"
 version = "1.0.0"
 
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(24) }
+}
+
+kotlin {
+    jvmToolchain(24)
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_24
+        languageVersion = KotlinVersion.KOTLIN_2_2
+        apiVersion = KotlinVersion.KOTLIN_2_2
+    }
+}
+
 dependencies {
-    implementation(libs.kotlin.stdlib.jdk8)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.bundles.coroutines)
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    implementation(libs.androidx.core.ktx)
-    testImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(libs.bundles.testing.android)
+}
+
+tasks.test {
+    useJUnitPlatform()
 }

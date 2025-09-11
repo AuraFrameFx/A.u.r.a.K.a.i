@@ -27,19 +27,10 @@ data class CanvasElement(
     val createdAt: Long = System.currentTimeMillis(),
     val updatedAt: Long = System.currentTimeMillis(),
 ) {
-    fun withPath(newPath: PathData): CanvasElement =
-        copy(path = newPath, updatedAt = System.currentTimeMillis())
 
-    fun withSelected(selected: Boolean): CanvasElement = copy(isSelected = selected)
 
-    fun withZIndex(index: Int): CanvasElement =
-        copy(zIndex = index, updatedAt = System.currentTimeMillis())
 
-    fun withColor(newColor: Color): CanvasElement =
-        copy(color = newColor, updatedAt = System.currentTimeMillis())
 
-    fun withStrokeWidth(width: Float): CanvasElement =
-        copy(strokeWidth = width, updatedAt = System.currentTimeMillis())
 
     companion object {
         fun createDefault(
@@ -48,37 +39,25 @@ data class CanvasElement(
             path: PathData = PathData(),
             color: Color = Color.Black,
             strokeWidth: Float = 5f,
-        ): CanvasElement =
-            CanvasElement(
                 id = id,
                 type = ElementType.PATH,
                 path = path,
                 color = color,
                 strokeWidth = strokeWidth,
-                createdBy = createdBy,
             )
     }
 }
+}
 
 enum class ElementType {
-    PATH,
-    LINE,
-    RECTANGLE,
-    OVAL,
-    TEXT,
-    IMAGE,
 }
 
 data class PathData(
     val points: List<Offset> = emptyList(),
     val isComplete: Boolean = false,
 ) {
-    fun addPoint(point: Offset): PathData = copy(points = points + point)
 
-    fun complete(): PathData = copy(isComplete = true)
 
-    fun toPath(): Path =
-        Path().apply {
             if (points.isNotEmpty()) {
                 val first = points.first()
                 moveTo(first.x, first.y)
@@ -88,10 +67,8 @@ data class PathData(
             }
         }
 }
+}
 
-class PathTypeAdapter :
-    JsonSerializer<Path>,
-    JsonDeserializer<Path> {
     override fun serialize(
         src: Path,
         typeOfSrc: Type,
@@ -116,18 +93,13 @@ class PathTypeAdapter :
     }
 }
 
-class ColorTypeAdapter :
-    JsonSerializer<Color>,
-    JsonDeserializer<Color> {
     override fun serialize(
         src: Color,
         typeOfSrc: Type,
         context: JsonSerializationContext,
-    ): JsonElement = JsonPrimitive(src.value.toInt())
 
     override fun deserialize(
         json: JsonElement,
         typeOfT: Type,
         context: JsonDeserializationContext,
-    ): Color = Color(json.asLong.toULong())
 }

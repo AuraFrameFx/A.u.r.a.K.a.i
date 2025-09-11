@@ -43,13 +43,8 @@ class GenesisAPI:
         self.start_time = None
 
     async def startup(self):
-        """Asynchronously starts the Genesis Layer backend.
-
-        This method initializes the Genesis Layer, updates the API's running state,
-        and records the start time.
-
+        
         Returns:
-            bool: True if the backend started successfully, False otherwise.
         """
         try:
             logger.info("🚀 Genesis API starting up...")
@@ -67,10 +62,7 @@ class GenesisAPI:
             return False
 
     async def shutdown(self):
-        """Asynchronously shuts down the Genesis Layer backend.
-
-        This method gracefully shuts down the Genesis Layer and updates the API's
-        running state to False. Any errors during shutdown are logged.
+        
         """
         try:
             logger.info("🌙 Genesis API shutting down...")
@@ -332,16 +324,8 @@ def reset_session():
 
 @app.errorhandler(404)
 def not_found(error):
-    """Handles 404 Not Found errors.
-
-    This function is registered as the error handler for 404 errors. It returns
-    a JSON response indicating that the requested endpoint does not exist.
-
-    Args:
-        error: The error object passed by Flask.
-
+    
     Returns:
-        A tuple containing a JSON response and the HTTP status code 404.
     """
     return jsonify({
         "error": "Endpoint not found",
@@ -351,16 +335,8 @@ def not_found(error):
 
 @app.errorhandler(500)
 def internal_error(error):
-    """Handles 500 Internal Server errors.
-
-    This function is registered as the error handler for 500 errors. It returns
-    a JSON response indicating that an internal server error occurred.
-
-    Args:
-        error: The error object passed by Flask.
-
+    
     Returns:
-        A tuple containing a JSON response and the HTTP status code 500.
     """
     return jsonify({
         "error": "Internal server error",

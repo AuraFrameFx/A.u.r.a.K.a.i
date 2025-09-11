@@ -18,14 +18,12 @@ tasks.register<Delete>("cleanAllGeneratedFiles") {
         buildDirProvider.dir("tmp/kotlin-classes"),
         buildDirProvider.dir("kotlin"),
         buildDirProvider.dir("generated/hilt"),
-        buildDirProvider.dir("generated/source/navigation-args"),
     )
 
     // Clean potential problematic cached files
     delete(
         projectDirProvider.dir(".gradle/8.10.2/kotlin"),
         projectDirProvider.dir(".gradle/kotlin"),
-        projectDirProvider.file(".gradle/kotlin.lock"),
     )
 
     doLast {

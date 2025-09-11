@@ -16,9 +16,6 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class CanvasWebSocketService
-@Inject
-constructor(
     private val okHttpClient: OkHttpClient,
     private val gson: Gson,
 ) {
@@ -27,85 +24,55 @@ constructor(
     private val _events = MutableSharedFlow<CanvasWebSocketEvent>()
     val events: SharedFlow<CanvasWebSocketEvent> = _events.asSharedFlow()
 
-    private val webSocketListener =
-        object : WebSocketListener() {
-            /**
-             * Called when the WebSocket connection is successfully established.
-             *
-             * Emits a CanvasWebSocketEvent.Connected to the service's event stream.
-             *
-             * @param webSocket The newly opened WebSocket.
-             * @param response The HTTP handshake response from the server.
-             */
-            override fun onOpen(
-                webSocket: WebSocket,
-                response: Response,
-            ) {
-                Timber.d("WebSocket connection opened")
-                _events.tryEmit(CanvasWebSocketEvent.Connected)
-            }
+        /**
+         * Called when the WebSocket connection is successfully established.
+         *
+         * Emits a CanvasWebSocketEvent.Connected to the service's event stream.
+         *
+         * @param webSocket The newly opened WebSocket.
+         * @param response The HTTP handshake response from the server.
+         */
+            Timber.d("WebSocket connection opened")
+            _events.tryEmit(CanvasWebSocketEvent.Connected)
+        }
 
-            /**
-             * Parse an incoming text payload and emit the corresponding CanvasWebSocketEvent.
-             *
-             * Attempts to deserialize the JSON `text` into a CanvasWebSocketMessage and emits
-             * CanvasWebSocketEvent.MessageReceived on success. If deserialization fails, emits
-             * CanvasWebSocketEvent.Error with the parse error message.
-             *
-             * @param text The received text payload (expected JSON representing a CanvasWebSocketMessage).
-             */
-            override fun onMessage(
-                webSocket: WebSocket,
-                text: String,
-            ) {
-                Timber.d("Message received: $text") // Changed to Timber
-                try {
-                    val message = gson.fromJson(text, CanvasWebSocketMessage::class.java)
-                    _events.tryEmit(CanvasWebSocketEvent.MessageReceived(message))
-                } catch (e: Exception) {
-                    Timber.e(
-                        e,
-                        "Error parsing WebSocket message",
-                    ) // Changed to Timber, added exception first for stack trace
-                    _events.tryEmit(CanvasWebSocketEvent.Error("Error parsing message: ${e.message}"))
-                }
-            }
-
-            override fun onMessage(
-                webSocket: WebSocket,
-                bytes: ByteString,
-            ) {
-                Timber.d("Binary message received") // Changed to Timber
-                _events.tryEmit(CanvasWebSocketEvent.BinaryMessageReceived(bytes))
-            }
-
-            override fun onClosing(
-                webSocket: WebSocket,
-                code: Int,
-                reason: String,
-            ) {
-                Timber.d("WebSocket closing: $code / $reason") // Changed to Timber
-                _events.tryEmit(CanvasWebSocketEvent.Closing(code, reason))
-            }
-
-            override fun onClosed(
-                webSocket: WebSocket,
-                code: Int,
-                reason: String,
-            ) {
-                Timber.d("WebSocket closed: $code / $reason") // Changed to Timber
-                _events.tryEmit(CanvasWebSocketEvent.Disconnected)
-            }
-
-            override fun onFailure(
-                webSocket: WebSocket,
-                t: Throwable,
-                response: Response?,
-            ) {
-                Timber.e(t, "WebSocket error") // Changed to Timber
-                _events.tryEmit(CanvasWebSocketEvent.Error(t.message ?: "Unknown error"))
+        /**
+         * Parse an incoming text payload and emit the corresponding CanvasWebSocketEvent.
+         *
+         * Attempts to deserialize the JSON `text` into a CanvasWebSocketMessage and emits
+         * CanvasWebSocketEvent.MessageReceived on success. If deserialization fails, emits
+         * CanvasWebSocketEvent.Error with the parse error message.
+         *
+         * @param text The received text payload (expected JSON representing a CanvasWebSocketMessage).
+         */
+            Timber.d("Message received: $text") // Changed to Timber
+            try {
+                val message = gson.fromJson(text, CanvasWebSocketMessage::class.java)
+                _events.tryEmit(CanvasWebSocketEvent.MessageReceived(message))
+            } catch (e: Exception) {
+                Timber.e(
+                    e,
+                ) // Changed to Timber, added exception first for stack trace
+                _events.tryEmit(CanvasWebSocketEvent.Error("Error parsing message: ${e.message}"))
             }
         }
+
+            Timber.d("Binary message received") // Changed to Timber
+            _events.tryEmit(CanvasWebSocketEvent.BinaryMessageReceived(bytes))
+        }
+
+            Timber.d("WebSocket closing: $code / $reason") // Changed to Timber
+            _events.tryEmit(CanvasWebSocketEvent.Closing(code, reason))
+        }
+
+            Timber.d("WebSocket closed: $code / $reason") // Changed to Timber
+            _events.tryEmit(CanvasWebSocketEvent.Disconnected)
+        }
+
+            Timber.e(t, "WebSocket error") // Changed to Timber
+            _events.tryEmit(CanvasWebSocketEvent.Error(t.message ?: "Unknown error"))
+        }
+    }
 
     fun connect(url: String) {
         if (webSocket != null) {
@@ -113,11 +80,9 @@ constructor(
             return
         }
 
-        val request =
-            Request
-                .Builder()
-                .url(url)
-                .build()
+        val request = Request.Builder()
+            .url(url)
+            .build()
 
         webSocket = okHttpClient.newWebSocket(request, webSocketListener)
     }
@@ -144,8 +109,6 @@ constructor(
      * @return true if the message was successfully queued for sending by the WebSocket, false if no
      * connection exists or an error occurred during serialization or send.
      */
-    fun sendMessage(message: CanvasWebSocketMessage): Boolean =
-        try {
             val json = gson.toJson(message)
             webSocket?.send(json) ?: run {
                 Timber.e("WebSocket is not connected") // Changed to Timber
@@ -154,35 +117,17 @@ constructor(
         } catch (e: Exception) {
             Timber.e(
                 e,
-                "Error sending WebSocket message",
             ) // Changed to Timber, added exception first for stack trace
             false
         }
+    }
 
-    fun isConnected(): Boolean = webSocket != null
 }
 
 sealed class CanvasWebSocketEvent {
     object Connected : CanvasWebSocketEvent()
 
     object Disconnected : CanvasWebSocketEvent()
-
-    data class MessageReceived(
-        val message: CanvasWebSocketMessage,
-    ) : CanvasWebSocketEvent()
-
-    data class BinaryMessageReceived(
-        val bytes: ByteString,
-    ) : CanvasWebSocketEvent()
-
-    data class Error(
-        val message: String,
-    ) : CanvasWebSocketEvent()
-
-    data class Closing(
-        val code: Int,
-        val reason: String,
-    ) : CanvasWebSocketEvent()
 }
 
 sealed class CanvasWebSocketMessage {

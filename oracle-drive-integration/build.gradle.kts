@@ -1,8 +1,7 @@
+// ==== GENESIS PROTOCOL - ORACLE DRIVE INTEGRATION ====
+// AI storage module using convention plugins
+
 plugins {
-    id("com.android.library")
-    id("com.google.devtools.ksp")
-    id("org.jetbrains.kotlin.plugin.compose")
-    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
@@ -46,7 +45,6 @@ dependencies {
     implementation(project(":core-module"))
     implementation(project(":secure-comm"))
     implementation(libs.androidx.core.ktx)
-    implementation(libs.bundles.lifecycle)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose.ui)
     implementation(libs.androidx.activity.compose)
@@ -55,12 +53,4 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.work)
     implementation(libs.bundles.coroutines)
-    implementation(libs.kotlin.stdlib.jdk8)
-    testImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(libs.bundles.testing.android)
-}
-
-tasks.register("oracleDriveIntegrationStatus") {
-    group = "aegenesis"
-    doLast { println("☁️ ORACLE DRIVE INTEGRATION - Ready (Java 25, JVM 25)") } // Updated
 }

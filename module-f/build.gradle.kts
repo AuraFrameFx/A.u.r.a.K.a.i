@@ -1,8 +1,5 @@
+// GENESIS PROTOCOL - MODULE F
 plugins {
-    id("com.android.library")
-    id("com.google.devtools.ksp")
-    id("org.jetbrains.kotlin.plugin.compose")
-    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
@@ -48,30 +45,7 @@ dependencies {
 
     // Core Android
     implementation(libs.androidx.core.ktx)
-    implementation(libs.bundles.lifecycle)
-
-    // Compose
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.bundles.compose.ui)
-    debugImplementation(libs.bundles.compose.debug)
-
-    // Hilt
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-
-    // Utilities
-    implementation(libs.kotlin.stdlib.jdk8)
-
-
-    // Testing
-    testImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(libs.bundles.testing.android)
-    androidTestImplementation(libs.hilt.android.testing)
 }
 
 tasks.register("moduleFStatus") {
-    group = "aegenesis" // Updated for consistency
-    doLast {
-        println("📦 MODULE F - ${android.namespace} - Ready (Java 25, JVM 25)") // Updated
-    }
 }

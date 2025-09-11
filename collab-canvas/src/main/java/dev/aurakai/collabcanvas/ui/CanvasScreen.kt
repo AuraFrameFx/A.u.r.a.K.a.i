@@ -1,33 +1,41 @@
 package dev.aurakai.collabcanvas.ui
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 
 /**
- * Simplified Canvas Screen for collaborative drawing.
- * TODO: Full implementation with multi-tool support, gestures, and animations.
- */
+*/
 @Composable
 fun CanvasScreen() {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
-            .padding(16.dp),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            text = "Canvas Screen - Coming Soon",
-            style = MaterialTheme.typography.headlineMedium,
-            color = MaterialTheme.colorScheme.onBackground
-        )
-    }
+Box(
+modifier = Modifier
+.fillMaxSize()
+.background(MaterialTheme.colorScheme.background)
+) {
+)
 }
+}
+}
+
+// Extension to draw grid
+private fun DrawScope.drawGrid() {
+val gridSpacing = 50f
+val strokeWidth = 1f
+val color = Color.Gray.copy(alpha = 0.3f)
+
+// Draw vertical lines
+for (x in 0..size.width.toInt() step gridSpacing.toInt()) {
+drawLine(
+color = color,
+start = Offset(x.toFloat(), 0f),
+end = Offset(x.toFloat(), size.height),
+strokeWidth = strokeWidth
+)
+}
+
+// Draw horizontal lines
+for (y in 0..size.height.toInt() step gridSpacing.toInt()) {
+drawLine(
+color = color,
+start = Offset(0f, y.toFloat()),
+end = Offset(size.width, y.toFloat()),
+strokeWidth = strokeWidth
+)

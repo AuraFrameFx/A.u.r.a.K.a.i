@@ -159,20 +159,10 @@ class GenesisCore:
 
     async def _generate_ethical_alternative(self, original_request: Dict[str, Any],
                                             assessment: Dict[str, Any]) -> str:
-        """Generates an ethically compliant alternative response.
-
-        When a user request is blocked, this method constructs a prompt based on the
-        original request and the ethical assessment. It then uses the Genesis
-        Connector to produce a response that addresses the user's needs while
-        adhering to ethical guidelines.
-
-        Args:
-            original_request: The original user request.
-            assessment: The ethical assessment that blocked the request.
-
-        Returns:
-            An alternative response that meets ethical standards.
-        """
+                                          
+                                          
+                                          Returns:
+                                          """
         alternative_prompt = f"""
         The original response was blocked due to ethical concerns: {assessment.get('reason', 'Unknown')}
         
@@ -312,6 +302,8 @@ if __name__ == "__main__":
         This function runs a full test cycle of the Genesis Layer, including
         initialization, processing a sample request, retrieving system status,
         and performing shutdown.
+        """
+        Asynchronously runs a full test cycle of the Genesis Layer, including initialization, processing a sample request, retrieving system status, and performing shutdown, with progress and results output to the console.
         """
         print("🌟 Testing Genesis Layer...")
 

@@ -17,18 +17,11 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
-# Keep only essential AI Agent classes (avoid wildcard)
--keep class dev.aurakai.auraframefx.ai.Agent { *; }
--keep class dev.aurakai.auraframefx.ai.AuraAgent { *; }
--keep class dev.aurakai.auraframefx.ai.KaiAgent { *; }
 
-# Keep AIDL interfaces (these are required)
 -keep class dev.aurakai.oracledrive.IAuraDriveService { *; }
 -keep class dev.aurakai.oracledrive.IAuraDriveService$Stub { *; }
 -keep class dev.aurakai.oracledrive.IAuraDriveServiceCallback { *; }
 
-# Keep Xposed hooks and YukiHook API (limit to entry points)
--keep class dev.aurakai.auraframefx.xposed.HookEntry { *; }
 -keep class com.highcapable.yukihookapi.hook.xposed.parasitic.ParasiticMember { *; }
 -keepclassmembers class * {
     @com.highcapable.yukihookapi.hook.param.Param *;
@@ -47,8 +40,4 @@
 -keep class * extends com.highcapable.yukihookapi.hook.factory.MethodFactory { *; }
 -keep class * extends com.highcapable.yukihookapi.hook.factory.FieldFactory { *; }
 
-# Keep only essential data classes
--keep class dev.aurakai.auraframefx.data.AuraData { *; }
--keep class dev.aurakai.auraframefx.data.KaiData { *; }
 
-# Remove overly broad wildcards and keep only what is necessary for runtime/reflection/AIDL/hook functionality.

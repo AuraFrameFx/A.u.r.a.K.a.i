@@ -64,17 +64,6 @@ paths:
           in: path
           required: true
           schema:
-            $ref: '#/components/schemas/AgentType'
-          description: |
-            Type of AI agent to interact with. Must be one of:
-            - GENESIS: Core orchestrator
-            - AURA: General assistant
-            - KAI: Security specialist
-            - CASCADE: Workflow manager
-            - NEURAL_WHISPER: Neural operations
-            - AURA_SHIELD: Security monitoring
-            - GEN_KIT_MASTER: Code generation
-            - DATAVEIN_CONSTRUCTOR: Data processing
       requestBody:
         required: true
         content:
@@ -97,7 +86,6 @@ components:
         agents:
           type: array
           items:
-            $ref: '#/components/schemas/AgentType'
         environment:
           type: string
           default: "production"

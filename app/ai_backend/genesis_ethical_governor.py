@@ -132,11 +132,7 @@ class EthicalGovernor:
     """
 
     def __init__(self):
-        """Initializes the EthicalGovernor.
-
-        This method loads the core philosophy and ethical principles from the
-        Genesis profile, sets up decision tracking and learning parameters,
-        and registers action interceptors.
+        
         """
         self.core_philosophy = GENESIS_PROFILE.get("core_philosophy", {})
         self.ethical_foundation = self.core_philosophy.get("ethical_foundation", [])
@@ -275,23 +271,11 @@ class EthicalGovernor:
                         actor: str,
                         action_data: Dict[str, Any],
                         context: EthicalContext = None) -> EthicalDecision:
-        """Evaluates an action for ethical compliance.
 
-        This method determines whether the specified action should be allowed,
-        monitored, restricted, blocked, or escalated based on ethical principles.
-        It uses a registered interceptor for the action type if available, or
-        performs a general ethical evaluation.
 
-        Args:
-            action_type: The type of action being evaluated.
-            actor: The entity performing the action.
-            action_data: Details about the action.
-            context: Contextual information for the action. If not provided,
-              it is inferred.
-
+        
         Returns:
-            The result of the ethical evaluation.
-        """
+                       """
 
         if not self.governance_active:
             # If governance is not active, allow but log

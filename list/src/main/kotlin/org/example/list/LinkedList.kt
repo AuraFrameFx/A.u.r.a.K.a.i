@@ -3,7 +3,6 @@
  */
 package org.example.list
 
-class LinkedList : List<String> {
     private var head: Node? = null
 
     /**
@@ -54,7 +53,6 @@ class LinkedList : List<String> {
         var result = false
         var previousIt: Node? = null
         var it: Node? = head
-        while (it != null) {
             if (0 == element.compareTo(it.data)) {
                 result = true
                 unlink(previousIt, it)
@@ -76,10 +74,6 @@ class LinkedList : List<String> {
      * @param previousIt The node immediately before `currentIt`, or null when `currentIt` is the head.
      * @param currentIt The node to unlink from the list.
      */
-    private fun unlink(
-        previousIt: Node?,
-        currentIt: Node,
-    ) {
         if (currentIt == head) {
             head = currentIt.next
         } else {
@@ -88,20 +82,16 @@ class LinkedList : List<String> {
     }
 
     /**
-     * Returns the number of elements in this linked list.
      *
-     * @return The number of elements currently stored in the list.
      */
-    override val size: Int
-        get() {
-            var size = 0
-            var it = head
-            while (it != null) {
-                ++size
-                it = it.next
-            }
-            return size
+        var size = 0
+        var it = head
+        while (it != null) {
+            ++size
+            it = it.next
         }
+        return size
+    }
 
     override fun isEmpty(): Boolean = head == null
 
@@ -135,68 +125,19 @@ class LinkedList : List<String> {
     }
 
     /**
-     * Returns the node at the specified 0-based index, or null if the index is negative or out of range.
      *
-     * Traverses from the list head advancing `idx` steps. If `idx` is negative, or the list is shorter than
-     * `idx + 1` elements, this function returns null.
      *
-     * @param index 0-based position of the element to retrieve.
      * @return the string stored at the specified index.
      * @throws IndexOutOfBoundsException if no element exists at the requested index.
      */
-    override fun get(index: Int): String {
-        if (index < 0) throw IndexOutOfBoundsException("Index: $index")
-        var index = index
         var it = head
         while (index > 0 && it != null) {
             it = it.next
             index--
         }
-        if (it == null) throw IndexOutOfBoundsException("Index: $idx")
         return it.data
     }
 
-    override fun indexOf(element: String): Int {
-        var idx = 0
-        var it = head
-        while (it != null) {
-            if (it.data == element) return idx
-            it = it.next
-            idx++
-        }
-        return -1
-    }
-
-    override fun lastIndexOf(element: String): Int {
-        var idx = 0
-        var lastIdx = -1
-        var it = head
-        while (it != null) {
-            if (it.data == element) lastIdx = idx
-            it = it.next
-            idx++
-        }
-        return lastIdx
-    }
-
-    override fun listIterator(): ListIterator<String> {
-        TODO("Not yet implemented")
-    }
-
-    override fun listIterator(index: Int): ListIterator<String> {
-        TODO("Not yet implemented")
-    }
-
-    override fun subList(
-        fromIndex: Int,
-        toIndex: Int,
-    ): List<String> {
-        TODO("Not yet implemented")
-    }
-
-    private data class Node(
-        val data: String,
-    ) {
         var next: Node? = null
     }
 

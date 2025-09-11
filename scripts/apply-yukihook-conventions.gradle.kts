@@ -14,6 +14,7 @@ subprojects { subproject ->
         with(subproject) {
             // Apply common plugins if not already applied
             pluginManager.apply("com.android.library")
+            pluginManager.apply("org.jetbrains.kotlin.android")
             pluginManager.apply("com.google.devtools.ksp")
             pluginManager.apply("org.lsposed.lsparanoid")
 
@@ -40,10 +41,15 @@ subprojects { subproject ->
                 }
 
                 compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_24
-                    targetCompatibility = JavaVersion.VERSION_24
                 }
 
+                kotlinOptions {
+                    jvmTarget = "24"
+                    freeCompilerArgs = freeCompilerArgs + listOf(
+                        "-Xjvm-default=all",
+                        "-opt-in=kotlin.RequiresOptIn"
+                    )
+                }
             }
 
             // Add YukiHook dependencies

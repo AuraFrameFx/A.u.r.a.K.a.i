@@ -10,7 +10,6 @@ import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
-import org.junit.Test
 import org.junit.runner.RunWith
 import javax.inject.Inject
 
@@ -34,14 +33,12 @@ class NeuralSyncIntegrationTest {
     private lateinit var secureChannel2: SecureChannel
     private val testMessage = "NeuralSync integration test message".toByteArray()
 
-    @Before
     fun setUp() {
         hiltRule.inject()
         secureChannel1 = SecureChannel(cryptoManager)
         secureChannel2 = SecureChannel(cryptoManager)
     }
 
-    @After
     fun tearDown() {
         // Clean up test data
         secureKeyStore.clearAllData()

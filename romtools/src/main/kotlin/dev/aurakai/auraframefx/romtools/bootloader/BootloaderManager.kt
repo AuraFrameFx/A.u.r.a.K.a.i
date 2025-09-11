@@ -5,7 +5,6 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
- * Manages bootloader operations such as checking access, unlock status, and unlocking.
  */
 interface BootloaderManager {
     /**

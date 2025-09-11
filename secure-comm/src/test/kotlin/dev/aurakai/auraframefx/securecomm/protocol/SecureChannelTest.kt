@@ -9,7 +9,6 @@ import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
-import org.junit.Test
 import org.junit.runner.RunWith
 import javax.inject.Inject
 
@@ -30,7 +29,6 @@ class SecureChannelTest {
     private lateinit var secureChannel2: SecureChannel
     private val testMessage = "NeuralSync secure channel test message".toByteArray()
 
-    @Before
     fun setUp() {
         hiltRule.inject()
         cryptoManager = CryptoManager(context)
@@ -38,7 +36,6 @@ class SecureChannelTest {
         secureChannel2 = SecureChannel(cryptoManager)
     }
 
-    @After
     fun tearDown() {
         // Clean up any test keys
         try {

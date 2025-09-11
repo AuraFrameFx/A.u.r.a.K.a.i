@@ -15,14 +15,8 @@ import javax.inject.Inject
 
 /**
  * Main manager for ROM tools operations in Genesis AuraFrameFX.
+ * Provides comprehensive ROM manipulation, flashing, and system modification capabilities.
  *
- * This class provides comprehensive ROM manipulation, flashing, and system
- * modification capabilities. It orchestrates various managers to perform
- * complex operations like flashing ROMs, creating backups, and applying
- * optimizations.
- *
- * @property romToolsState A [StateFlow] that emits the current state of the ROM tools.
- * @property operationProgress A [StateFlow] that emits the progress of the current operation.
  */
 @HiltViewModel // Changed from @Singleton
 class RomToolsManager @Inject constructor(
@@ -71,13 +65,6 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Flashes a custom ROM to the device.
-     *
-     * This function performs a series of steps to flash a ROM, including
-     * verification, backup, bootloader unlocking, and recovery installation.
-     *
-     * @param romFile The ROM file to flash.
-     * @return A [Result] indicating the success or failure of the operation.
      */
     suspend fun flashRom(romFile: RomFile): Result<Unit> {
         return try {
@@ -130,10 +117,6 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Creates a NANDroid backup of the current ROM.
-     *
-     * @param backupName The name for the backup.
-     * @return A [Result] containing the [BackupInfo] on success, or an exception on failure.
      */
     suspend fun createNandroidBackup(backupName: String): Result<BackupInfo> {
         return try {
@@ -158,10 +141,6 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Restores from a NANDroid backup.
-     *
-     * @param backupInfo The backup to restore.
-     * @return A [Result] indicating the success or failure of the operation.
      */
     suspend fun restoreNandroidBackup(backupInfo: BackupInfo): Result<Unit> {
         return try {
@@ -186,9 +165,6 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Installs Genesis AI optimization patches to the system.
-     *
-     * @return A [Result] indicating the success or failure of the operation.
      */
     suspend fun installGenesisOptimizations(): Result<Unit> {
         return try {
@@ -213,9 +189,6 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Gets a list of available custom ROMs for the device.
-     *
-     * @return A [Result] containing a list of [AvailableRom] on success, or an exception on failure.
      */
     suspend fun getAvailableRoms(): Result<List<AvailableRom>> {
         return try {
@@ -230,10 +203,6 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Downloads a ROM file with progress tracking.
-     *
-     * @param rom The ROM to download.
-     * @return A [Flow] that emits [DownloadProgress] updates.
      */
     suspend fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> {
         return flashManager.downloadRom(rom)
@@ -267,15 +236,6 @@ class RomToolsManager @Inject constructor(
     }
 }
 
-/**
- * Represents the state of the ROM tools.
- *
- * @param capabilities The capabilities of the device.
- * @param isInitialized Whether the ROM tools have been initialized.
- * @param settings The current settings for the ROM tools.
- * @param availableRoms The list of available ROMs.
- * @param backups The list of available backups.
- */
 data class RomToolsState(
     val capabilities: RomCapabilities? = null,
     val isInitialized: Boolean = false,
@@ -373,15 +333,6 @@ enum class RomOperation {
     FAILED
 }
 
-/**
- * Represents a ROM file.
- *
- * @param name The name of the ROM file.
- * @param path The path to the ROM file.
- * @param size The size of the ROM file in bytes.
- * @param checksum The checksum of the ROM file.
- * @param type The type of the ROM.
- */
 data class RomFile(
     val name: String,
     val path: String,
@@ -394,20 +345,6 @@ data class RomFile(
  * Represents the type of a ROM.
  */
 enum class RomType {
-    /** A stock ROM from the device manufacturer. */
-    STOCK,
-
-    /** A custom ROM from a third-party developer. */
-    CUSTOM,
-
-    /** A custom recovery image. */
-    RECOVERY,
-
-    /** A custom kernel image. */
-    KERNEL,
-
-    /** A modification package. */
-    MODIFICATION
 }
 
 /**

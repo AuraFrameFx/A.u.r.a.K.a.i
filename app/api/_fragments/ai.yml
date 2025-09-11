@@ -1,11 +1,5 @@
 # AI / Consciousness / Generation paths
-/ai/consciousness:
   post:
-    operationId: aiConsciousnessOperation
-    summary: Perform AI consciousness operation
-    description: |
-      Perform an operation on the AI consciousness matrix (e.g., initialize, process, evolve).
-      Requires admin scope for the 'initialize' operation.
     tags: [ AI Consciousness ]
     security:
       - OAuth2: [ write ]
@@ -17,7 +11,6 @@
             $ref: '#/components/schemas/ConsciousnessRequest'
     responses:
       '200':
-        description: Consciousness operation completed successfully
         content:
           application/json:
             schema:

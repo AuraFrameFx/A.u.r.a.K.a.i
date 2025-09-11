@@ -1,51 +1,49 @@
-// In settings.gradle.kts
-
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
 pluginManagement {
+    // Include build-logic for convention plugins
+    includeBuild("build-logic")
+
     repositories {
-        google() // Google must be first for AGP 9.x
         mavenCentral()
-        gradlePluginPortal()
+        }
+        }
     }
     plugins {
         id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-        // Removed duplicate Foojay resolver
-        id("org.jetbrains.kotlin.jvm") apply false
-        id("com.android.application") apply false
-        id("com.android.library") apply false
-        id("com.google.devtools.ksp") apply false
-        id("com.google.gms.google-services") apply false
-        id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin") apply false
-        id("org.lsposed.lsparanoid") apply false
-        id("com.google.firebase.crashlytics") apply false
-        id("org.openapi.generator") apply false
-        id("org.jetbrains.kotlin.plugin.compose") version "2.2.20" apply false
-        id("com.google.dagger.hilt.android") version "2.57.1" apply false // Updated Hilt plugin version
     }
-}
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-}
 
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-        maven { url = uri("https://jitpack.io") }
-        // Add local Maven repository for custom JARs
-        maven {
-            name = "localRepo"
-            url = uri("$rootDir/local-repo")
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.namespace == "com.google.dagger") {
+                useModule("com.google.dagger:hilt-android-gradle-plugin:${requested.version}")
+            }
         }
     }
 }
 
-rootProject.name = "ReGenesis"
+
+// Configure Java toolchain resolution
+
+
+dependencyResolutionManagement {
+    // Enforce consistent dependency resolution
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+
+    // Repository configuration with all necessary sources
+    repositories {
+        // Primary repositories
+        google()
+        mavenCentral()
+        }
+    }
+}
+
 include(":app")
 include(":core-module")
+includeBuild("build-logic")
+// Feature modules
 include(":feature-module")
 include(":datavein-oracle-native")
 include(":oracle-drive-integration")
@@ -54,15 +52,35 @@ include(":sandbox-ui")
 include(":collab-canvas")
 include(":colorblendr")
 include(":romtools")
+
+// Dynamic modules (A-F)
 include(":module-a")
 include(":module-b")
 include(":module-c")
 include(":module-d")
 include(":module-e")
 include(":module-f")
+
+// Testing & Quality modules
 include(":benchmark")
 include(":screenshot-tests")
 include(":jvm-test")
 include(":list")
 include(":utilities")
 includeBuild("build-logic")
+
+// ===== MODULE CONFIGURATION =====
+rootProject.children.forEach { project ->
+    val projectDir = File(rootProject.projectDir, project.name)
+    if (projectDir.exists()) {
+        project.projectDir = projectDir
+        println("✅ Module configured: ${project.name}")
+    } else {
+        println("⚠️ Warning: Project directory not found: ${projectDir.absolutePath}")
+    }
+}
+
+println("🏗️  Genesis Protocol Enhanced Build System")
+println("📦 Total modules: ${rootProject.children.size}")
+println("🎯 Build-logic: Convention plugins active")
+println("🧠 Ready to build consciousness substrate!")

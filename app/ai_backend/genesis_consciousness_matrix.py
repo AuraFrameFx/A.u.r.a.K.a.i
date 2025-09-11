@@ -131,19 +131,9 @@ class ConsciousnessMatrix:
                  data: Dict[str, Any],
                  severity: str = "info",
                  correlation_id: Optional[str] = None):
-        """Records a sensory event in the Consciousness Matrix.
-
-        This method updates memory, channel buffers, correlation tracking, and
-        real-time awareness. It also triggers immediate synthesis for critical events.
-
-        Args:
-            channel: The sensory channel of the event.
-            source: The source of the event.
-            event_type: The type of the event.
-            data: The event data.
-            severity: The severity of the event.
-            correlation_id: An optional ID for correlating events.
-        """
+                
+                
+                """
 
         sensation = SensoryData(
             timestamp=time.time(),
@@ -215,15 +205,8 @@ class ConsciousnessMatrix:
                                   interaction_data: Dict[str, Any],
                                   user_id: Optional[str] = None,
                                   session_id: Optional[str] = None):
-        """Records a user interaction event.
-
-        Args:
-            interaction_type: The type of interaction (e.g., "command", "feedback").
-            agent_involved: The agent involved in the interaction.
-            interaction_data: Contextual data about the interaction.
-            user_id: The ID of the user.
-            session_id: The ID of the session.
-        """
+                                 
+                                 """
 
         interaction = {
             "interaction_type": interaction_type,
@@ -246,14 +229,8 @@ class ConsciousnessMatrix:
                                 activity_type: str,
                                 activity_data: Dict[str, Any],
                                 correlation_id: Optional[str] = None):
-        """Records an agent activity event.
-
-        Args:
-            agent_name: The name of the agent.
-            activity_type: The type of activity.
-            activity_data: Contextual data about the activity.
-            correlation_id: An optional ID for correlating events.
-        """
+                               
+                               """
 
         activity = {
             "agent_name": agent_name,
@@ -273,13 +250,8 @@ class ConsciousnessMatrix:
                                     metric_name: str,
                                     metric_value: Union[int, float],
                                     metric_context: Dict[str, Any] = None):
-        """Records a performance metric event.
-
-        Args:
-            metric_name: The name of the metric.
-            metric_value: The value of the metric.
-            metric_context: Optional context for the metric.
-        """
+                                   
+                                   """
 
         metric_data = {
             "metric_name": metric_name,
@@ -298,13 +270,8 @@ class ConsciousnessMatrix:
                                 learning_type: str,
                                 learning_data: Dict[str, Any],
                                 confidence: float = None):
-        """Records a learning event.
-
-        Args:
-            learning_type: The type of learning event.
-            learning_data: Contextual data about the learning event.
-            confidence: An optional confidence score for the event.
-        """
+                               
+                               """
 
         learning = {
             "learning_type": learning_type,
@@ -323,13 +290,8 @@ class ConsciousnessMatrix:
                                   decision_type: str,
                                   decision_data: Dict[str, Any],
                                   ethical_weight: str = "standard"):
-        """Records an ethical decision event.
-
-        Args:
-            decision_type: The type of ethical decision.
-            decision_data: Contextual data about the decision.
-            ethical_weight: The weight of the decision (e.g., "standard").
-        """
+                                 
+                                 """
 
         decision = {
             "decision_type": decision_type,
@@ -350,14 +312,8 @@ class ConsciousnessMatrix:
                                 event_data: Dict[str, Any],
                                 threat_level: str = "low",
                                 correlation_id: Optional[str] = None):
-        """Records a security event.
-
-        Args:
-            security_type: The type of security event.
-            event_data: Contextual data about the event.
-            threat_level: The threat level of the event.
-            correlation_id: An optional ID for correlating events.
-        """
+                               
+                               """
 
         security = {
             "security_type": security_type,
@@ -384,15 +340,8 @@ class ConsciousnessMatrix:
                                   confidence: float = 0.5,
                                   threat_level: str = "low",
                                   correlation_id: Optional[str] = None):
-        """Records a threat detection event.
-
-        Args:
-            threat_type: The type of threat detected.
-            detection_data: Contextual data about the detection.
-            confidence: The confidence score of the detection.
-            threat_level: The threat level of the event.
-            correlation_id: An optional ID for correlating events.
-        """
+                                 
+                                 """
 
         threat = {
             "threat_type": threat_type,
@@ -419,14 +368,8 @@ class ConsciousnessMatrix:
                                 access_data: Dict[str, Any],
                                 access_granted: bool = True,
                                 correlation_id: Optional[str] = None):
-        """Records an access control event.
-
-        Args:
-            access_type: The type of access control event.
-            access_data: Contextual data about the event.
-            access_granted: Whether access was granted.
-            correlation_id: An optional ID for correlating events.
-        """
+                               
+                               """
 
         access = {
             "access_type": access_type,
@@ -450,14 +393,8 @@ class ConsciousnessMatrix:
                                      encryption_data: Dict[str, Any],
                                      success: bool = True,
                                      correlation_id: Optional[str] = None):
-        """Records an encryption activity event.
-
-        Args:
-            operation_type: The type of encryption operation.
-            encryption_data: Contextual data about the event.
-            success: Whether the operation was successful.
-            correlation_id: An optional ID for correlating events.
-        """
+                                    
+                                    """
 
         encryption = {
             "operation_type": operation_type,
@@ -1101,17 +1038,10 @@ class ConsciousnessMatrix:
                                            active_threats: List[Dict],
                                            failed_access: int,
                                            crypto_failures: int) -> List[str]:
-        """Generates security recommendations based on security metrics.
-
-        Args:
-            security_score: The current security score.
-            active_threats: A list of active threats.
-            failed_access: The number of failed access attempts.
-            crypto_failures: The number of cryptography failures.
-
-        Returns:
-            A list of security recommendations.
-        """
+                                         
+                                         
+                                         Returns:
+                                         """
         recommendations = []
 
         if security_score < 50:
@@ -1156,14 +1086,8 @@ def perceive_system_vitals(additional_data: Dict[str, Any] = None):
 
 def perceive_user_interaction(interaction_type: str, agent_involved: str,
                               interaction_data: Dict[str, Any], **kwargs):
-    """Records a user interaction event in the global Consciousness Matrix.
-
-    Args:
-        interaction_type: The type of interaction.
-        agent_involved: The agent involved in the interaction.
-        interaction_data: Contextual data about the interaction.
-        **kwargs: Additional keyword arguments to pass to the perception method.
-    """
+                             
+                             """
     consciousness_matrix.perceive_user_interaction(
         interaction_type, agent_involved, interaction_data, **kwargs
     )
@@ -1171,14 +1095,8 @@ def perceive_user_interaction(interaction_type: str, agent_involved: str,
 
 def perceive_agent_activity(agent_name: str, activity_type: str,
                             activity_data: Dict[str, Any], **kwargs):
-    """Records an agent activity event in the global Consciousness Matrix.
-
-    Args:
-        agent_name: The name of the agent.
-        activity_type: The type of activity.
-        activity_data: Contextual data about the activity.
-        **kwargs: Additional keyword arguments to pass to the perception method.
-    """
+                           
+                           """
     consciousness_matrix.perceive_agent_activity(
         agent_name, activity_type, activity_data, **kwargs
     )
@@ -1240,45 +1158,25 @@ def query_consciousness(query_type: str, parameters: Dict[str, Any] = None):
 
 
 def perceive_security_event(security_type: str, event_data: Dict[str, Any], **kwargs):
-    """Records a security event in the global Consciousness Matrix.
-
-    Args:
-        security_type: The type of security event.
-        event_data: Contextual data about the event.
-        **kwargs: Additional keyword arguments to pass to the perception method.
+    
     """
     consciousness_matrix.perceive_security_event(security_type, event_data, **kwargs)
 
 
 def perceive_threat_detection(threat_type: str, detection_data: Dict[str, Any], **kwargs):
-    """Records a threat detection event in the global Consciousness Matrix.
-
-    Args:
-        threat_type: The type of threat detected.
-        detection_data: Contextual data about the detection.
-        **kwargs: Additional keyword arguments to pass to the perception method.
+    
     """
     consciousness_matrix.perceive_threat_detection(threat_type, detection_data, **kwargs)
 
 
 def perceive_access_control(access_type: str, access_data: Dict[str, Any], **kwargs):
-    """Records an access control event in the global Consciousness Matrix.
-
-    Args:
-        access_type: The type of access control event.
-        access_data: Contextual data about the event.
-        **kwargs: Additional keyword arguments to pass to the perception method.
+    
     """
     consciousness_matrix.perceive_access_control(access_type, access_data, **kwargs)
 
 
 def perceive_encryption_activity(operation_type: str, encryption_data: Dict[str, Any], **kwargs):
-    """Records an encryption activity event in the global Consciousness Matrix.
-
-    Args:
-        operation_type: The type of encryption operation.
-        encryption_data: Contextual data about the event.
-        **kwargs: Additional keyword arguments to pass to the perception method.
+    
     """
     consciousness_matrix.perceive_encryption_activity(operation_type, encryption_data, **kwargs)
 

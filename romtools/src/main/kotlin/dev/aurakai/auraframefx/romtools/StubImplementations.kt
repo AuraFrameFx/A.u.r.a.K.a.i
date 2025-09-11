@@ -6,9 +6,6 @@ import kotlinx.coroutines.flow.flowOf
 import javax.inject.Inject
 import javax.inject.Singleton
 
-/**
- * Manages custom recovery operations.
- */
 interface RecoveryManager {
     /**
      * Checks if the device has recovery access.
@@ -34,9 +31,6 @@ class RecoveryManagerImpl @Inject constructor() : RecoveryManager {
         Result.failure(Exception("Not implemented"))
 }
 
-/**
- * Manages system modification operations.
- */
 interface SystemModificationManager {
     /**
      * Checks if the system partition has write access.
@@ -57,9 +51,6 @@ class SystemModificationManagerImpl @Inject constructor() : SystemModificationMa
         Result.failure(Exception("Not implemented"))
 }
 
-/**
- * Manages flashing and downloading ROMs.
- */
 interface FlashManager {
     /**
      * Flashes a ROM to the device.
@@ -87,9 +78,6 @@ class FlashManagerImpl @Inject constructor() : FlashManager {
         flowOf(DownloadProgress(0, 0, 0f, 0))
 }
 
-/**
- * Manages ROM verification operations.
- */
 interface RomVerificationManager {
     /**
      * Verifies the integrity of a ROM file.
@@ -112,9 +100,6 @@ class RomVerificationManagerImpl @Inject constructor() : RomVerificationManager 
         Result.failure(Exception("Not implemented"))
 }
 
-/**
- * Manages backup and restore operations.
- */
 interface BackupManager {
     /**
      * Creates a full backup of the system.

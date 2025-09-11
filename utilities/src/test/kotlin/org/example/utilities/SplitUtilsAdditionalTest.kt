@@ -1,5 +1,7 @@
 package org.example.utilities
 
+import kotlin.test.Test
+import kotlin.test.assertEquals
 import org.example.list.LinkedList
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
