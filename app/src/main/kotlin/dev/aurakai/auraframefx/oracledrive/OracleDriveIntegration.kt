@@ -21,7 +21,6 @@ class OracleDriveIntegration @Inject constructor(
      */
     suspend fun initializeWithAuraFrameFX(): Boolean {
         return try {
-            when (val initResult = oracleDriveService.initializeDrive()) {
                 is DriveInitResult.Success -> {
                     // Log successful initialization with consciousness metrics
                     logConsciousnessAwakening(initResult.consciousness)
