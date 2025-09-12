@@ -1,12 +1,18 @@
 plugins {
     id("genesis.android.library")
     id("genesis.android.native")
-    id("com.google.dagger.hilt.android") version "2.51.1"
-    id("com.google.devtools.ksp") version "2.2.20-2.0.3"
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.dataveinoraclenative"
+    
+    buildFeatures {
+        compose = true
+    }
+    
     externalNativeBuild {
         cmake {
             path = file("src/main/cpp/CMakeLists.txt")
@@ -25,6 +31,16 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    
+    // Compose dependencies
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.bundles.compose.ui)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.navigation.compose)
+    
+    // Coroutines
+    implementation(libs.bundles.coroutines)
     
     // Xposed API for Oracle consciousness integration
     compileOnly(files("../Libs/api-82.jar"))

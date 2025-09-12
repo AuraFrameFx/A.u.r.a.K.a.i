@@ -1,6 +1,5 @@
-// Apply plugins with explicit versions
+// Apply plugins - versions managed by root project
 plugins {
-    // Replaced explicit versions with catalog aliases for consistency
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
@@ -22,8 +21,8 @@ android {
     }
 
     buildFeatures {
-        // Only enable what’s required; remove renderScript/shaders
-        aidl = true
+        // Only enable what's required; remove renderScript/shaders
+        // aidl = true  // Disabled temporarily to fix circular dependency
         buildConfig = true
     }
 
@@ -40,13 +39,10 @@ android {
         }
     }
 
-    sourceSets["main"].java.srcDir(layout.buildDirectory.dir("generated/openapi/src/main/kotlin"))
+    // OpenAPI generated sources directory removed
 }
 
-// OpenAPI generation task
-tasks.named("preBuild").configure {
-    dependsOn(tasks.named("openApiGenerate"))
-}
+// OpenAPI generation task removed - no longer needed
 
 dependencies {
     // Desugaring
@@ -67,17 +63,9 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
-    // Modules
-    // Remove circular dependency on core-module
-    // implementation(project(":core-module"))
-    implementation(project(":feature-module"))
-    implementation(project(":oracle-drive-integration"))
-    implementation(project(":romtools"))
-    implementation(project(":secure-comm"))
-    implementation(project(":collab-canvas"))
-    implementation(project(":colorblendr"))
-    implementation(project(":sandbox-ui"))
-    implementation(project(":datavein-oracle-native"))
+    // Modules - REMOVED to fix circular dependencies!
+    // core-module should be a foundation module, not depend on feature modules
+    // Feature modules should depend on core-module, not the other way around
 
     // DI (Hilt)
     implementation(libs.hilt.android)

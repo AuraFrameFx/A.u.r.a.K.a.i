@@ -1,13 +1,18 @@
 // Apply plugins (versions via version catalog)
 plugins {
     id("genesis.android.library")
-    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
-    id("com.google.dagger.hilt.android") version "2.51.1"
-    id("com.google.devtools.ksp") version "2.2.20-2.0.3"
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.collabcanvas"
+    
+    buildFeatures {
+        buildConfig = true
+        compose = true
+    }
 }
 
 dependencies {
@@ -66,6 +71,10 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.tooling.preview)
 
+    // YukiHook API
+    implementation(libs.yukihook.api)
+    ksp(libs.yukihook.ksp)
+    
     // Xposed API (using correct path)
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))

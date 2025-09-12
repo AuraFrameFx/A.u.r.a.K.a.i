@@ -2,6 +2,7 @@ package com.auraos.collab_canvas
 
 import com.highcapable.yukihookapi.YukiHookAPI
 import com.highcapable.yukihookapi.annotation.xposed.InjectYukiHookWithXposed
+import com.highcapable.yukihookapi.hook.xposed.proxy.IYukiHookXposedInit
 
 /**
  * Xposed Module Entry Class
@@ -13,29 +14,24 @@ import com.highcapable.yukihookapi.annotation.xposed.InjectYukiHookWithXposed
     isUsingResourcesHook = false, // Set to true if you need to hook resources
     isUsingXposedModuleLoader = true
 )
-object HookEntry : YukiHookAPI.HookEntry() {
+object HookEntry : IYukiHookXposedInit {
 
     /**
      * Initialize module-wide configuration when the Xposed module is loaded.
-     *
-     * Configures YukiHookAPI for this module: sets debuggable mode according to BuildConfig.DEBUG
-     * and enables module preferences caching.
      */
     override fun onInit() {
-        // Configure your module's behavior here
-        YukiHookAPI.config()
-            .debuggable(BuildConfig.DEBUG) // Enable debugging in debug mode
-            .isEnableModulePrefsCache = true // Enable module prefs cache
-    }
-
-    /**
-     * Called when the module is loaded by Xposed
-     */
-    override fun onHook() {
-        // Your hook logic will go here
-        // Example:
-        // loadApp("com.example.app") {
-        //     // Hook methods here
-        // }
+        YukiHookAPI.encase(this) {
+            // Configure your module's behavior here
+            configs {
+                debuggable(BuildConfig.DEBUG) // Enable debugging in debug mode
+                isEnableModulePrefsCache = true // Enable module prefs cache
+            }
+            
+            // Your hook logic will go here
+            // Example:
+            // loadApp("com.example.app") {
+            //     // Hook methods here
+            // }
+        }
     }
 }

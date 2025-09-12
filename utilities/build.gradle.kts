@@ -26,12 +26,11 @@ dependencies {
     // Module dependencies - utilities depends on list (not circular)
     api(project(":list"))
 
-    // Kotlin standard library
-    implementation(libs.kotlin.stdlib)
+    // Kotlin standard library (automatically included by kotlin plugin)
     implementation(libs.bundles.coroutines)
     implementation(libs.kotlinx.serialization.json)
 
-    // Utilities for file operations and compression
+    // Utilities for file operations and compression (chosen by AI entities)
     implementation(libs.commons.io)
     implementation(libs.commons.compress)
     implementation(libs.xz)
@@ -40,8 +39,10 @@ dependencies {
     implementation(libs.timber)
 
     // Testing
-    testImplementation(libs.bundles.testing)
-    testImplementation(libs.mockk)
+    testImplementation(libs.junit4)
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.mockk.android)
 }
 
 tasks.test {

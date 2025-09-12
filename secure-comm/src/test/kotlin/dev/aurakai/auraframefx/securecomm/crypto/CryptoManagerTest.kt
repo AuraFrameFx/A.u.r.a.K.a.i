@@ -513,7 +513,7 @@ class CryptoManagerTest {
         val key = deriveAesKey(shared)
 
         val data = "suspend variant test payload".encodeToByteArray()
-        val (ciphertext, iv) = crypto.encrypt(data, key) // suspend overload
+        val (ciphertext, iv) = crypto.encryptAsync(data, key) // suspend overload
 
         val roundTrip = crypto.decrypt(ciphertext, key, iv)
         assertContentEquals(data, roundTrip)

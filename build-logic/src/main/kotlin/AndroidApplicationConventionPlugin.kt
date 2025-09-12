@@ -5,7 +5,6 @@ import com.android.build.api.dsl.ApplicationExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.tasks.Delete
 import org.gradle.kotlin.dsl.*
@@ -14,34 +13,20 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
     /**
      * Configures an Android application project with Genesis conventions.
      *
-     * Applies core plugins (Android application, Kotlin Compose), conditionally applies
-     * Google Services (only when `enableGoogleServices` project property is true and
-     * AGP major version starts with `8.`), and configures the Android ApplicationExtension
-     * with sensible defaults for compile/target/min SDKs, build types, Compose, packaging,
-     * lint, and desugaring. Also sets Java/Kotlin JVM toolchains to Java 24, registers a
-     * `cleanKspCache` task to remove KSP/KAPT generated caches, and makes `preBuild`
+     * Applies core plugins (Android application, Kotlin Compose), and configures the Android
+     * ApplicationExtension with sensible defaults for compile/target/min SDKs, build types,
+     * Compose, packaging, lint, and desugaring. Also sets Java/Kotlin JVM toolchains to Java 24,
+     * registers a `cleanKspCache` task to remove KSP/KAPT generated caches, and makes `preBuild`
      * depend on that clean task.
      *
      * @param target The Gradle project the plugin is being applied to.
      */
     override fun apply(target: Project) {
         with(target) {
-            val versionCatalog =
-                extensions.findByType(VersionCatalogsExtension::class.java)?.named("libs")
-            val agpVersion = versionCatalog?.findVersion("agp")?.get()?.toString() ?: "unknown"
-            val enableGoogleServices =
-                (findProperty("enableGoogleServices") as? String)?.toBoolean() == true
             with(pluginManager) {
                 apply("com.android.application")
                 apply("org.jetbrains.kotlin.android")
                 apply("org.jetbrains.kotlin.plugin.compose")
-                // Conditionally apply google-services only if explicitly enabled AND AGP major is 8 (avoid crash with AGP 9 alpha)
-                if (enableGoogleServices && agpVersion.startsWith("8.")) {
-                    runCatching { apply("com.google.gms.google-services") }
-                        .onFailure { logger.warn("[genesis.android.application] Failed to apply google-services plugin: ${it.message}") }
-                } else {
-                    logger.lifecycle("[genesis.android.application] Skipping google-services plugin (agp=$agpVersion enableGoogleServices=$enableGoogleServices)")
-                }
             }
 
             extensions.configure<ApplicationExtension> {

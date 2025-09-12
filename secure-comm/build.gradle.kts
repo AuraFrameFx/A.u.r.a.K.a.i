@@ -30,5 +30,9 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.coil.compose)
     implementation(libs.mockk.agent)
+    
+    // Security - BouncyCastle for cryptography
+    implementation(libs.bcprov.jdk18on)
+    
     // Add other module-specific dependencies here
 }

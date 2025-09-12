@@ -32,9 +32,10 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.bundles.coroutines)
 
-    testImplementation(libs.bundles.testing)
-    testRuntimeOnly(libs.junit.engine)
-    testImplementation(libs.mockk)
+    testImplementation(libs.junit4)
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.mockk.android)
 }
 
 tasks.test {

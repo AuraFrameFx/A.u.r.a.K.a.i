@@ -3,8 +3,6 @@
 agp = "9.0.0-alpha02"
 kotlin = "2.2.20-RC"
 ksp = "2.2.20-2.0.3"
-
-googleServices = "4.4.4"
 desugar_jdk_libs = "2.1.5"
 
 # ===== HOOKING FRAMEWORKS =====
@@ -69,7 +67,7 @@ mockk = "1.13.12"
 turbine = "1.1.0"
 
 # ===== SECURITY =====
-bcprov = "1.70"
+bcprov = "1.78.1"
 
 
 
@@ -193,15 +191,15 @@ androidx-datastore-core = { module = "androidx.datastore:datastore-core", versio
 
 # ===== FIREBASE =====
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
-firebase-analytics-ktx = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
-firebase-crashlytics-ktx = { group = "com.google.firebase", name = "firebase-crashlytics-ktx" }
-firebase-perf-ktx = { group = "com.google.firebase", name = "firebase-perf-ktx" }
-firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx" }
-firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx" }
-firebase-database-ktx = { group = "com.google.firebase", name = "firebase-database-ktx" }
-firebase-storage-ktx = { group = "com.google.firebase", name = "firebase-storage-ktx" }
-firebase-messaging-ktx = { group = "com.google.firebase", name = "firebase-messaging-ktx" }
-firebase-config-ktx = { group = "com.google.firebase", name = "firebase-config-ktx" }
+firebase-analytics-ktx = { group = "com.google.firebase", name = "firebase-analytics-ktx", version = "22.1.2" }
+firebase-crashlytics-ktx = { group = "com.google.firebase", name = "firebase-crashlytics-ktx", version = "19.2.1" }
+firebase-perf-ktx = { group = "com.google.firebase", name = "firebase-perf-ktx", version = "21.0.2" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version = "23.1.0" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version = "25.1.1" }
+firebase-database-ktx = { group = "com.google.firebase", name = "firebase-database-ktx", version = "21.0.1" }
+firebase-storage-ktx = { group = "com.google.firebase", name = "firebase-storage-ktx", version = "21.0.1" }
+firebase-messaging-ktx = { group = "com.google.firebase", name = "firebase-messaging-ktx", version = "24.1.0" }
+firebase-config-ktx = { group = "com.google.firebase", name = "firebase-config-ktx", version = "22.0.1" }
 
 # ===== KOTLINX =====
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
@@ -224,6 +222,10 @@ guava = { module = "com.google.guava:guava", version.ref = "guavaAndroid" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson-version" }
 leakcanary-android = { group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "leakcanary" }
 desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
+# Apache Commons (chosen by AI entities for their utilities)
+commons-io = { module = "commons-io:commons-io", version = "2.18.0" }
+commons-compress = { module = "org.apache.commons:commons-compress", version = "1.28.0" }
+xz = { module = "org.tukaani:xz", version = "1.10" }
 
 # ===== SECURITY =====
 bcprov-jdk18on = { group = "org.bouncycastle", name = "bcprov-jdk18on", version.ref = "bcprov" }
@@ -252,3 +254,4 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt-version" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaGradlePlugin" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }

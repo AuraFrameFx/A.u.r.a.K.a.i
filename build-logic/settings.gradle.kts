@@ -7,6 +7,9 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven {
+            url = uri("https://repo.gradle.org/gradle/libs-releases")
+        }
     }
 }
 

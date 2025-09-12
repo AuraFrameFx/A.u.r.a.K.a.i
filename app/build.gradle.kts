@@ -19,6 +19,8 @@ android {
     buildFeatures {
         // Enable features not covered in the library convention plugin
         aidl = true
+        buildConfig = true
+        compose = true
     }
 
     testOptions {
@@ -33,11 +35,11 @@ dependencies {
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
     implementation(project(":oracle-drive-integration"))
-    implementation(project(":romtools"))
+    // implementation(project(":romtools"))  // Temporarily disabled - KSP issues
     implementation(project(":secure-comm"))
-    implementation(project(":collab-canvas"))
+    // implementation(project(":collab-canvas"))  // Temporarily disabled - YukiHookAPI issues
     implementation(project(":colorblendr"))
-    implementation(project(":sandbox-ui"))
+    // implementation(project(":sandbox-ui"))  // Temporarily disabled - Compose compilation issues
     implementation(project(":datavein-oracle-native"))
 
     // ===== ANDROIDX & COMPOSE =====
@@ -55,8 +57,13 @@ dependencies {
     implementation(libs.bundles.room)
     ksp(libs.bundles.room.compiler)
 
+    // ===== DATASTORE =====
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.datastore.core)
+
     // ===== KOTLIN & COROUTINES =====
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.datetime)
     implementation(libs.bundles.coroutines)
 
     // ===== NETWORKING =====
@@ -81,6 +88,9 @@ dependencies {
     // ===== UTILITIES =====
     implementation(libs.timber)
     implementation(libs.coil.compose)
+    
+    // ===== SECURITY =====
+    implementation(libs.androidx.security.crypto)
     
     // ===== CORE LIBRARY DESUGARING =====
     coreLibraryDesugaring(libs.desugar.jdk.libs)
