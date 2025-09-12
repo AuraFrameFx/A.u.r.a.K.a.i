@@ -147,7 +147,7 @@ jobs:
           fi
 
       - name: Create/Update Issue with Build Results
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@v5
         with:
           title: "Automated Build/Test Issue Report"
           content-filepath: issue-report.md
