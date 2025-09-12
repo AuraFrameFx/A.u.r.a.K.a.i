@@ -70,7 +70,7 @@ openApiGenerate {
     invokerPackage.set("dev.aurakai.auraframefx.openapi.invoker")
     configOptions.set(
         mapOf(
-            "dateLibrary" to "java8", "library" to "jvm-ktor-client"
+            "dateLibrary" to "java8", "library" to "jvm-ktor"
         )
     )
 }
