@@ -61,6 +61,25 @@ dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
     // Project dependencies
     implementation(project(":core-module"))
+    implementation(project(":datavein-oracle-native"))
+    implementation(project(":secure-comm"))
+    implementation(project(":oracle-drive-integration"))
+    
+    // Benchmark testing
+    androidTestImplementation("androidx.benchmark:benchmark-junit4:1.3.3")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.4.0")
+    
+    // Unit testing
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("io.mockk:mockk:1.13.10")
+    androidTestImplementation("io.mockk:mockk-android:1.13.10")
+    
+    // Hilt testing
+    testImplementation("com.google.dagger:hilt-android-testing:2.51.1")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.51.1")
+    kspAndroidTest("com.google.dagger:hilt-compiler:2.51.1")
 }
 
 }
