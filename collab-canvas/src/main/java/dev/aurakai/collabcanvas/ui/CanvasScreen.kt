@@ -54,149 +54,21 @@ package dev.aurakai.collabcanvas.ui
  * and their animated copies.
  */
 /**
- * Renders the interactive collaborative drawing surface for creating and animating simple canvas elements.
- *
- * This full-screen composable provides:
- * - Multiple drawing tools: freehand PATH, RECTANGLE, and OVAL.
- * - Pinch-to-zoom and pan support via a transformable state.
- * - Tap and drag input for creating in-progress strokes (freehand PATH); completed strokes are committed when the gesture ends and the path has non-empty bounds.
- * - A top app bar with Clear and Save actions and floating tool buttons to switch tools.
- * - A toolbar for selecting color and stroke width and clearing committed/animated paths.
- * - Animated playback support: committed paths are stored in `paths` and mirrored into `animatedPaths` for progressive rendering.
- *
- * Visual content (grid, elements, current in-progress path, and animated paths) is drawn under the current scale and offset transforms so zoom and pan affect all canvas content consistently.
-
-
-/**
- * Full-screen interactive collaborative drawing canvas.
- *
- * Supports three tools (freehand PATH, RECTANGLE, OVAL), pinch-to-zoom and pan, tap/drag gestures to create strokes,
- * and animated playback of committed paths. The UI includes a top app bar with clear and save actions (save is a placeholder),
- * floating tool buttons to switch tools, and an on-screen toolbar for color, stroke width, and clearing animated paths.
- *
- * State managed internally includes committed paths (with separate animated copies), transient drawing state (current path,
- * color, stroke width, selected tool), zoom/offset animations, and a list of other canvas elements. Committed paths are mirrored
- * into an animatedPaths map for progressive rendering; clearing actions remove entries from these collections.
-=======
- * Composable screen that provides an interactive collaborative drawing canvas.
- *
- * Features: freehand drawing, rectangle and oval tools, pan & pinch-zoom gestures, animated replay of
- * completed paths, a grid background, tool FABs, a top app bar with clear/save actions, and an overlaid
- * toolbar for color/stroke selection and clearing. The composable maintains internal mutable state for:
- * - completed pluckable paths and a map of animated copies,
- * - drawable elements (paths, rectangles, ovals),
- * - the in-progress Path, current color, stroke width, selected tool, and drawing flag,
- * - scale and pan offsets as Animatable values.
- *
- * Side effects:
- * - Adds completed paths to the internal `paths` list when a drag ends (if non-empty).
- * - Creates animated copies for new paths via a LaunchedEffect watching `paths`.
- * - Clearing actions (top-bar delete and toolbar clear) clear `paths`, `elements` (top-bar), and `animatedPaths`.
- *
- * This is a UI entry point and does not take parameters or return a value.
-
- * A composable full-screen collaborative drawing canvas with multi-tool support, pan/zoom gestures, and animated replay of completed strokes.
- *
- * This function hosts the UI and state for an interactive drawing surface:
- * - Maintains in-progress drawing state (current path, color, stroke width, selected tool).
- * - Stores completed drawable items in `paths` and `elements`, and keeps per-path animated copies in `animatedPaths` for progressive rendering.
- * - Supports three tools (path, rectangle, oval) selectable via floating action buttons; freehand drawing is performed when the PATH tool is active.
- * - Handles pinch-to-zoom and pan via a transformable state (`scale` and `offset`) and adjusts pointer interactions so strokes and toolbar behave consistently under zoom.
- * - Detects tap/drag gestures to begin, update, and finish drawings; completed paths are added to `paths`.
- * - Renders a background grid, persisted elements, the current in-progress path (with stroke scaled to remain visually consistent while zoomed), and animated playback of previous paths.
- * - Exposes UI actions to clear the canvas (removes `paths`, `elements`, and `animatedPaths`) and a placeholder save action.
- *
- * This composable does not return a value; it manages its own internal Compose state and side effects and composes child UI such as `CanvasToolbar`.
-*/
-/**
- * Full-screen, interactive collaborative drawing canvas composable.
- *
- * Provides a pinch-to-zoom and pan-enabled drawing surface with multiple tools (freehand/path,
- * rectangle, oval), color and stroke-width selection, animated replay of completed strokes,
- * and controls to clear or save the canvas. Maintains local UI state for:
- * - completed drawable items (paths and persisted elements),
- * - the in-progress Path, selected tool, color, stroke width, and drawing flag,
- * - animated copies used for progressive replay,
- * - zoom scale and pan offset as Animatable states.
- *
- * User interactions:
- * - Tap/drag gestures draw a freehand path when the PATH tool is selected.
- * - Drag gestures start, extend, and finish the current path; finished non-empty paths are
- *   appended to the internal `paths` list and also copied into `animatedPaths` for replay.
- * - Floating action buttons switch tools; the toolbar controls color, stroke width, and clearing.
- *
- * Rendering:
- * - Draws a background grid, persisted canvas elements (paths, rectangles, ovals), the current
- *   in-progress path (scaled to remain visually consistent under zoom), and animated paths
- *   (each with its own scale, offset, and alpha).
- *
- * Side effects:
- * - Mutates local remembered state lists/maps: `paths`, `elements`, and `animatedPaths`.
- * - Updates `scale` and `offset` Animatable states in response to transform gestures.
- *
- * Note: This composable is UI/stateful and intended to be used directly within a Compose hierarchy;
- * it does not persist canvas contents outside its in-memory state.
-*/
-/**
- * Full-screen collaborative drawing surface with pan/zoom, multiple tools, and animated stroke replay.
- *
- * Provides an in-memory canvas UI that supports freehand drawing (path), rectangles, and ovals;
- * pan/zoom gestures; a translucent grid background; tool selection FABs; and a toolbar for color,
- * stroke width, and clearing the canvas. In-progress strokes are rendered while drawing and completed
- * strokes are stored in `paths` (with per-stroke animation metadata kept in `animatedPaths`) for
- * replay/animation. Global transforms (scale and offset) are applied to all drawing operations so
- * content remains consistent under zoom and pan.
- *
- * Side effects:
- * - Mutates internal Compose state (in-memory lists `paths`, `elements`, and `animatedPaths`,
- *   plus transient state like `currentPath`, `currentColor`, `strokeWidth`, `selectedTool`,
- *   `isDrawing`, `scale`, and `offset`).
- * - Clearing the canvas or the Delete action removes only in-memory state; there is no persistence.
- * - The Save action is present in the UI but is a placeholder (no save implementation).
-*/
-/**
- * Full-screen interactive drawing canvas composable with multi-tool support, pan/zoom, and animated playback.
+ * Full-screen interactive collaborative drawing canvas composable with multi-tool support, pan/zoom, and animated playback.
  *
  * Provides an in-memory drawing surface where the user can draw freeform paths, create rectangles and ovals,
- * pan and zoom the view, and see an animated replay of completed paths. Maintains internal state for:
- * - persisted drawable paths and elements,
- * - the in-progress path, color, stroke width, selected tool, and drawing flag,
- * - per-path animation state (scale, offset, alpha),
- * - global scale and pan offset for the canvas.
- *
- * Interaction details:
- * - PATH tool: freehand drawing via drag gestures (start -> lineTo -> commit on drag end). Taps begin a path.
- * - RECTANGLE / OVAL tools: reserved in the UI; element creation derives bounds from a Path (no explicit shape-drag behaviour implemented here).
- * - Pinch-to-zoom and pan gestures update the canvas transform; panning is adjusted by the current scale to remain intuitive.
+ * pan and zoom the view, and see an animated replay of completed paths. Features include:
+ * - Multiple drawing tools: freehand PATH, RECTANGLE, and OVAL
+ * - Pinch-to-zoom and pan support via transformable state
+ * - Animated playback of completed paths
+ * - Color and stroke width selection
+ * - Clear and save actions (save is placeholder)
  *
  * Side effects:
- * - Clearing actions (toolbar Clear or top-bar Clear) remove in-memory paths, elements, and animated state only.
- * - The top-bar "Save" action is a placeholder and does not persist data.
- *
- * Visual notes:
- * - The in-progress path stroke is scaled to remain visually consistent under zoom.
- * - A grid background is drawn under all content.
-*/
+ * - Maintains internal Compose state for paths, elements, and animations
+ * - Clearing actions remove in-memory paths, elements, and animated state only
+ */
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalMaterial3Api::class)
-
-/**
- * Full-screen composable providing an interactive collaborative drawing canvas.
- *
- * Renders a pan- and zoom-able canvas with a background grid, selectable drawing tools
- * (freehand PATH, RECTANGLE, OVAL), a live in-progress stroke, and playback-ready committed paths.
- * Users can draw freehand with drag/tap gestures (PATH), pan/zoom via transform gestures, select
- * tool, color, and stroke width via the toolbar, and clear or save the canvas from the top app bar.
- *
- * Visual content (grid, elements, current stroke, and animated/committed paths) is uniformly
- * transformed by the current scale and offset so zooming and panning affect all layers together.
- * Committed paths are stored in `paths` and mirrored into `animatedPaths` for animated playback.
- *
- * Side effects:
- * - Maintains and mutates internal remembered state: committed `paths`, `elements`, `animatedPaths`,
- *   current in-progress `currentPath`, `currentColor`, `strokeWidth`, selected tool, and transform
- *   state (`scale`, `offset`).
- * - Clearing actions remove entries from `paths`, `elements`, and `animatedPaths`.
-*/
 @Composable
 fun CanvasScreen() {
 // Canvas state
