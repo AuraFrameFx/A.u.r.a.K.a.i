@@ -69,34 +69,38 @@ class RomToolsModule {
 
     companion object {
 
-        @Provides
-        @RomToolsDataDir
+        // @Provides
+        // @RomToolsDataDir
         fun provideRomToolsDataDirectory(
-            @ApplicationContext context: Context
+            // @ApplicationContext 
+            context: Context
         ): String {
             return "${context.filesDir}/romtools"
         }
 
-        @Provides
-        @RomToolsBackupDir
+        // @Provides
+        // @RomToolsBackupDir
         fun provideRomToolsBackupDirectory(
-            @ApplicationContext context: Context
+            // @ApplicationContext 
+            context: Context
         ): String {
             return "${context.getExternalFilesDir(null)}/backups"
         }
 
-        @Provides
-        @RomToolsDownloadDir
+        // @Provides
+        // @RomToolsDownloadDir
         fun provideRomToolsDownloadDirectory(
-            @ApplicationContext context: Context
+            // @ApplicationContext 
+            context: Context
         ): String {
             return "${context.getExternalFilesDir(null)}/downloads"
         }
 
-        @Provides
-        @RomToolsTempDir
+        // @Provides
+        // @RomToolsTempDir
         fun provideRomToolsTempDirectory(
-            @ApplicationContext context: Context
+            // @ApplicationContext 
+            context: Context
         ): String {
             return "${context.cacheDir}/romtools_temp"
         }
