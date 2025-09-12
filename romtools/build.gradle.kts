@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -12,6 +13,14 @@ android {
     defaultConfig {
         minSdk = 34
     }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 val romToolsOutputDirectory: DirectoryProperty =

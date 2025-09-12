@@ -21,6 +21,12 @@ android {
     }
 }
 
+
+
+kotlin {
+    jvmToolchain(24)
+}
+
 dependencies {
     implementation(project(":core-module"))
     implementation(libs.androidx.core.ktx)
@@ -90,7 +96,4 @@ dependencies {
 tasks.register("collabStatus") {
     group = "aegenesis"
     doLast { println("COLLAB CANVAS - Ready (Java 24 toolchain, unified).") }
-}
-kotlin {
-    jvmToolchain(24)
 }

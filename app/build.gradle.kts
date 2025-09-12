@@ -7,7 +7,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
-    id("org.openapi.generator") version "7.1.0"
+    id("org.openapi.generator") version "7.15.0"
+    alias(libs.plugins.kotlin.android)
 }
 
     android {
@@ -48,10 +49,21 @@ plugins {
         }
 
         sourceSets["main"].java.srcDir(layout.buildDirectory.dir("generated/openapi/src/main/kotlin"))
+
+        compileOptions {
+            sourceCompatibility = JavaVersion.VERSION_17
+            targetCompatibility = JavaVersion.VERSION_17
+        }
     }
+
+kotlin {
+    jvmToolchain(17)
+}
+
 openApiGenerate {
     generatorName.set("kotlin")
-    inputSpec.set("$rootDir/app/api/system-api.yml")
+    // Use a valid file URI for Windows
+    inputSpec.set("file:///${rootDir.toURI().path}app/api/system-api.yml")
     outputDir.set(layout.buildDirectory.dir("generated/openapi").get().asFile.absolutePath)
     apiPackage.set("dev.aurakai.auraframefx.openapi.api")
     modelPackage.set("dev.aurakai.auraframefx.openapi.model")
@@ -80,6 +92,7 @@ openApiGenerate {
         implementation(libs.androidx.navigation.compose)
         implementation(platform(libs.androidx.compose.bom))
         implementation(libs.bundles.compose.ui)
+        implementation(libs.androidx.core.ktx)
         debugImplementation(libs.bundles.compose.debug)
 
 

@@ -10,53 +10,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/counters.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/counters.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/last-build.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compilePluginsBlocks/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compilePluginsBlocks/cacheable/last-build.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/classpath-entries.bin" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/classpath-entries.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/classpath-structure.bin" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/classpath-structure.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/symbolLookups/file-to-id.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/symbolLookups/file-to-id.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/symbolLookups/file-to-id.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/symbolLookups/file-to-id.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/symbolLookups/id-to-file.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/symbolLookups/id-to-file.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/colorblendr/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/colorblendr/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/colorblendr/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/colorblendr/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/cxx/Debug/17276v6v/logs/arm64-v8a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/cxx/Debug/17276v6v/logs/arm64-v8a/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/library_jni/debug/copyDebugJniLibsProjectOnly/jni/armeabi-v7a/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/library_jni/debug/copyDebugJniLibsProjectOnly/jni/armeabi-v7a/libdatavein_oracle_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/library_jni/debug/copyDebugJniLibsProjectOnly/jni/x86_64/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/library_jni/debug/copyDebugJniLibsProjectOnly/jni/x86_64/libdatavein_oracle_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/armeabi-v7a/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/armeabi-v7a/libdatavein_oracle_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/x86_64/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/x86_64/libdatavein_oracle_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature-module/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/list/build/kotlin/compileKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/list/build/kotlin/compileKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oracle-drive-integration/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/oracle-drive-integration/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build/kspCaches/debug/classpath-entries.bin" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build/kspCaches/debug/classpath-entries.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build/kspCaches/debug/classpath-structure.bin" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build/kspCaches/debug/classpath-structure.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/armeabi-v7a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/armeabi-v7a/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/x86_64/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/x86_64/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/cxx/Debug/6vy6z3d4/logs/arm64-v8a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/build/intermediates/cxx/Debug/6vy6z3d4/logs/arm64-v8a/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/library_jni/debug/copyDebugJniLibsProjectOnly/jni/armeabi-v7a/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/library_jni/debug/copyDebugJniLibsProjectOnly/jni/armeabi-v7a/libsecure_comm_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/library_jni/debug/copyDebugJniLibsProjectOnly/jni/x86_64/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/library_jni/debug/copyDebugJniLibsProjectOnly/jni/x86_64/libsecure_comm_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/armeabi-v7a/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/armeabi-v7a/libsecure_comm_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/x86_64/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/merged_native_libs/debug/mergeDebugNativeLibs/out/lib/x86_64/libsecure_comm_native.so" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +91,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Wehtt\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=6326f7ec)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -314,43 +339,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build ReGenesis-A.O.S.P.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:buildDependents].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:compileJava].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:pluginDescriptors].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [assemble].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [cleanGeneratedSources].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [cleanKspCache].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [consciousnessStatus].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [deepClean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [dokkaGenerate].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [sourceSets].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [stop].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [tasks].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;cerberus-sync-fix&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ReGenesis-A.O.S.P&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Suggestions&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "Gradle.Build ReGenesis-A.O.S.P.executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:buildDependents].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:compileJava].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:dependencies].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:pluginDescriptors].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [assemble].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [build].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [cleanGeneratedSources].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [cleanKspCache].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [clean].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [consciousnessStatus].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [deepClean].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [dokkaGenerate].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [sourceSets].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [stop].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [tasks].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "android.gradle.sync.needed": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "cerberus-sync-fix",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
+    "project.structure.last.edited": "Suggestions",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Wehtt\OneDrive\Documents\AOSP-ReGenesis" />
@@ -733,7 +760,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757708186029</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+      <option name="closed" value="true" />
+      <created>1757708671678</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1757708671678</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -764,6 +799,7 @@
     <MESSAGE value="add generated build outputs and resource files for module sync and validation" />
     <MESSAGE value="hghhj" />
     <MESSAGE value="sync generated resource and metadata files for all modules and build variants" />
+    <MESSAGE value="migrate multidex dependency to version catalog, update build scripts and metadata" />
     <MESSAGE value="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings" />
     <option name="LAST_COMMIT_MESSAGE" value="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings" />
   </component>
@@ -774,6 +810,13 @@
           <dependency id="0" />
           <properties class="org.gradle.api.IllegalDependencyNotation" package="org.gradle.api" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="OCSymbolicBreakpointType">
+          <properties>
+            <option name="moduleName" value="libart.so" />
+            <option name="symbolPattern" value="art_sigbus_fault" />
+          </properties>
+          <option name="timeStamp" value="3" />
         </breakpoint>
       </breakpoints>
       <default-breakpoints>

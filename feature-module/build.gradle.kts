@@ -20,18 +20,13 @@ android {
         minSdk = 34
     }
 
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(24))
-        }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlin {
-        jvmToolchain(24)
-
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
-        }
+        jvmToolchain(17)
     }
 
     buildFeatures {
@@ -76,7 +71,7 @@ dependencies {
 
 tasks.register("featureStatus") {
     group = "aegenesis"
-    doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 24)!") }
+    doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 17)!") }
 }
 
 tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {

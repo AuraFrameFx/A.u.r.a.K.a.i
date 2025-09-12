@@ -6,6 +6,7 @@ plugins {
     id("genesis.android.native")
     alias(libs.plugins.ksp)
     alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -26,6 +27,7 @@ android {
 dependencies {
     implementation(project(":core-module"))
     implementation(libs.hilt.android)
+    implementation(libs.androidx.core.ktx)
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.work)
     implementation(libs.androidx.work.runtime.ktx)

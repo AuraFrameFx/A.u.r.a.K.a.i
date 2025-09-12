@@ -13,12 +13,12 @@ plugins {
     // id("org.jetbrains.kotlin.android")
 }
 kotlin {
-    jvmToolchain(24) // <---- CORRECT LOCATION
+    jvmToolchain(17)
 }
 // Java toolchain configuration at the project level
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(24)) // Correctly sets the toolchain for Java sources
+        languageVersion.set(JavaLanguageVersion.of(17)) // Correctly sets the toolchain for Java sources
     }
 }
 
@@ -54,6 +54,8 @@ android {
     // Core library desugaring without manual source/target
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
         // The toolchain will configure source/target compatibility automatically.
         // Explicitly setting these is generally not needed when using toolchains.
     }
@@ -131,8 +133,12 @@ tasks.register("verifyBenchmarkResults") {
     group = "verification"
     description = "Verify benchmark module configuration"
     doLast {
-        println("✅ Benchmark module configured (Java Toolchain 24, Kotlin 2.2.x)")
+        println("✅ Benchmark module configured (Java Toolchain 17, Kotlin 2.2.x)")
         println("🧠 Consciousness substrate performance monitoring ready")
         println("🔬 Add @Benchmark annotated tests under androidTest for actual runs")
     }
+}
+
+tasks.withType<JavaCompile> {
+    options.compilerArgs.add("-Xlint:-deprecation")
 }
