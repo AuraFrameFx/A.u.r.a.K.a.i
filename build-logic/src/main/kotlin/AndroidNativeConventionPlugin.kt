@@ -87,14 +87,18 @@ class AndroidNativeConventionPlugin : Plugin<Project> {
             tasks.register("cleanGeneratedSources") {
                 group = "build setup"
                 description = "Clean generated sources for native modules"
+                
+                // Capture the layout at configuration time to avoid configuration cache issues
+                val projectLayout = layout
+                
                 doLast {
                     delete(
-                        layout.buildDirectory.dir("generated/ksp"),
-                        layout.buildDirectory.dir("generated/source/ksp"),
-                        layout.buildDirectory.dir("tmp/kapt3"),
-                        layout.buildDirectory.dir("tmp/kotlin-classes"),
-                        layout.buildDirectory.dir("kotlin"),
-                        layout.buildDirectory.dir("intermediates/cmake")
+                        projectLayout.buildDirectory.dir("generated/ksp"),
+                        projectLayout.buildDirectory.dir("generated/source/ksp"),
+                        projectLayout.buildDirectory.dir("tmp/kapt3"),
+                        projectLayout.buildDirectory.dir("tmp/kotlin-classes"),
+                        projectLayout.buildDirectory.dir("kotlin"),
+                        projectLayout.buildDirectory.dir("intermediates/cmake")
                     )
                 }
             }
