@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Build tooling and licensing" tests="3" skipped="0" failures="1" errors="0" timestamp="2025-09-12T13:18:16.235Z" hostname="AURAKAI" time="0.032">
+<testsuite name="Build tooling and licensing" tests="3" skipped="0" failures="1" errors="0" timestamp="2025-09-12T14:35:33.356Z" hostname="AURAKAI" time="0.026">
   <properties/>
   <testcase name="license badge matches LICENSE content()" classname="docs.MarkdownFileValidationAdvancedTest$BuildAndLicense" time="0.001"/>
   <testcase name="has Overview and Getting Started sections()" classname="docs.MarkdownFileValidationAdvancedTest$BuildAndLicense" time="0.021">
@@ -99,7 +99,7 @@ Cause 2: org.opentest4j.AssertionFailedError: Expected a '## Getting Started' or
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 </failure>
   </testcase>
-  <testcase name="gradle wrapper files exist when referenced by README()" classname="docs.MarkdownFileValidationAdvancedTest$BuildAndLicense" time="0.008"/>
+  <testcase name="gradle wrapper files exist when referenced by README()" classname="docs.MarkdownFileValidationAdvancedTest$BuildAndLicense" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

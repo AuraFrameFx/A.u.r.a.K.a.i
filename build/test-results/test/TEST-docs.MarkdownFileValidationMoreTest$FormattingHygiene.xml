@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Formatting hygiene" tests="3" skipped="0" failures="1" errors="0" timestamp="2025-09-12T13:18:16.617Z" hostname="AURAKAI" time="0.005">
+<testsuite name="Formatting hygiene" tests="3" skipped="0" failures="1" errors="0" timestamp="2025-09-12T14:35:33.541Z" hostname="AURAKAI" time="0.002">
   <properties/>
-  <testcase name="no more than two consecutive blank lines()" classname="docs.MarkdownFileValidationMoreTest$FormattingHygiene" time="0.002"/>
-  <testcase name="file ends with a newline()" classname="docs.MarkdownFileValidationMoreTest$FormattingHygiene" time="0.0"/>
-  <testcase name="no trailing whitespace on any line()" classname="docs.MarkdownFileValidationMoreTest$FormattingHygiene" time="0.002">
+  <testcase name="no more than two consecutive blank lines()" classname="docs.MarkdownFileValidationMoreTest$FormattingHygiene" time="0.0"/>
+  <testcase name="file ends with a newline()" classname="docs.MarkdownFileValidationMoreTest$FormattingHygiene" time="0.001"/>
+  <testcase name="no trailing whitespace on any line()" classname="docs.MarkdownFileValidationMoreTest$FormattingHygiene" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: Trailing whitespace found at lines: [22, 40, 47, 73, 80, 101, 124, 141, 181, 190, 193, 194, 202, 205, 244, 261, 279, 294, 321, 340, 356, 374, 380, 421, 434, 439, 462, 486, 510, 541, 560] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Trailing whitespace found at lines: [22, 40, 47, 73, 80, 101, 124, 141, 181, 190, 193, 194, 202, 205, 244, 261, 279, 294, 321, 340, 356, 374, 380, 421, 434, 439, 462, 486, 510, 541, 560] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

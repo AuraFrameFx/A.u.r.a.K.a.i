@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Table of Contents - extra checks" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T13:18:16.657Z" hostname="AURAKAI" time="0.004">
+<testsuite name="Table of Contents - extra checks" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T14:35:33.565Z" hostname="AURAKAI" time="0.012">
   <properties/>
-  <testcase name="table of contents has at least 4 entries and uses bullet list()" classname="docs.MarkdownFileValidationMoreTest$TocExtra" time="0.004">
+  <testcase name="table of contents has at least 4 entries and uses bullet list()" classname="docs.MarkdownFileValidationMoreTest$TocExtra" time="0.012">
     <failure message="org.opentest4j.AssertionFailedError: Table of Contents section not found ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Table of Contents section not found ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

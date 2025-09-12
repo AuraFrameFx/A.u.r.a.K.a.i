@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Architecture and versions table" tests="2" skipped="0" failures="2" errors="0" timestamp="2025-09-12T13:18:16.667Z" hostname="AURAKAI" time="0.004">
+<testsuite name="Architecture and versions table" tests="2" skipped="0" failures="2" errors="0" timestamp="2025-09-12T14:35:33.581Z" hostname="AURAKAI" time="0.006">
   <properties/>
-  <testcase name="versions appear in semver-like or rc alpha formats()" classname="docs.MarkdownFileValidationTest$ArchitectureAndVersions" time="0.002">
+  <testcase name="versions appear in semver-like or rc alpha formats()" classname="docs.MarkdownFileValidationTest$ArchitectureAndVersions" time="0.004">
     <failure message="org.opentest4j.AssertionFailedError: Expected multiple version-like strings; found 5 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected multiple version-like strings; found 5 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -15,7 +15,7 @@
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 </failure>
   </testcase>
-  <testcase name="contains technology stack table with expected key components()" classname="docs.MarkdownFileValidationTest$ArchitectureAndVersions" time="0.001">
+  <testcase name="contains technology stack table with expected key components()" classname="docs.MarkdownFileValidationTest$ArchitectureAndVersions" time="0.002">
     <failure message="org.opentest4j.AssertionFailedError: Missing expected components in technology stack table: [Android Gradle Plugin, Kotlin, KSP, Java Toolchain, Compose BOM, Hilt] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Missing expected components in technology stack table: [Android Gradle Plugin, Kotlin, KSP, Java Toolchain, Compose BOM, Hilt] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Build tooling and licensing – extended" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-09-12T13:18:16.268Z" hostname="AURAKAI" time="0.008">
+<testsuite name="Build tooling and licensing – extended" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-09-12T14:35:33.383Z" hostname="AURAKAI" time="0.003">
   <properties/>
-  <testcase name="apache 2 license badge matches LICENSE content()" classname="docs.MarkdownFileValidationAdvancedTest$BuildAndLicenseExtended" time="0.004"/>
-  <testcase name="maven wrapper files exist when referenced by README()" classname="docs.MarkdownFileValidationAdvancedTest$BuildAndLicenseExtended" time="0.002"/>
+  <testcase name="apache 2 license badge matches LICENSE content()" classname="docs.MarkdownFileValidationAdvancedTest$BuildAndLicenseExtended" time="0.001"/>
+  <testcase name="maven wrapper files exist when referenced by README()" classname="docs.MarkdownFileValidationAdvancedTest$BuildAndLicenseExtended" time="0.0"/>
   <testcase name="contributing section present when CONTRIBUTING file exists()" classname="docs.MarkdownFileValidationAdvancedTest$BuildAndLicenseExtended" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

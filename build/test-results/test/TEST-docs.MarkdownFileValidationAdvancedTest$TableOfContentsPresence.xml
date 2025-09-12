@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Table of Contents – presence check" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T13:18:16.534Z" hostname="AURAKAI" time="0.002">
+<testsuite name="Table of Contents – presence check" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T14:35:33.479Z" hostname="AURAKAI" time="0.002">
   <properties/>
   <testcase name="README contains exactly one ToC section()" classname="docs.MarkdownFileValidationAdvancedTest$TableOfContentsPresence" time="0.002">
     <failure message="org.opentest4j.AssertionFailedError: Expected exactly one '## &#x1f4cb; Table of Contents' section ==&gt; expected: &lt;1&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected exactly one '## &#x1f4cb; Table of Contents' section ==&gt; expected: &lt;1&gt; but was: &lt;0&gt;

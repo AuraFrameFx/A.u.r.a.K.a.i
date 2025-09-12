@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Build system and performance settings" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T13:18:16.777Z" hostname="AURAKAI" time="0.005">
+<testsuite name="Build system and performance settings" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T14:35:33.609Z" hostname="AURAKAI" time="0.012">
   <properties/>
-  <testcase name="gradle properties tuning keys are present()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$BuildSystem" time="0.005">
+  <testcase name="gradle properties tuning keys are present()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$BuildSystem" time="0.012">
     <failure message="org.gradle.internal.exceptions.DefaultMultiCauseException: Multiple Failures (3 failures)&#13;&#10;&#9;org.opentest4j.AssertionFailedError: Expected org.gradle.jvmargs in README properties ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;&#13;&#10;&#9;org.opentest4j.AssertionFailedError: Expected org.gradle.parallel=true ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;&#13;&#10;&#9;org.opentest4j.AssertionFailedError: Expected org.gradle.caching=true ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.gradle.internal.exceptions.DefaultMultiCauseException">org.gradle.internal.exceptions.DefaultMultiCauseException: Multiple Failures (3 failures)
 	org.opentest4j.AssertionFailedError: Expected org.gradle.jvmargs in README properties ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	org.opentest4j.AssertionFailedError: Expected org.gradle.parallel=true ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;

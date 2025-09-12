@@ -3,10 +3,10 @@ package dev.aurakai.collabcanvas.network;
 import com.google.gson.Gson;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
+import dagger.internal.Provider;
 import dagger.internal.QualifierMetadata;
 import dagger.internal.ScopeMetadata;
 import javax.annotation.processing.Generated;
-import javax.inject.Provider;
 import okhttp3.OkHttpClient;
 
 @ScopeMetadata("javax.inject.Singleton")
@@ -21,14 +21,16 @@ import okhttp3.OkHttpClient;
     "rawtypes",
     "KotlinInternal",
     "KotlinInternalInJava",
-    "cast"
+    "cast",
+    "deprecation",
+    "nullness:initialization.field.uninitialized"
 })
 public final class CanvasWebSocketService_Factory implements Factory<CanvasWebSocketService> {
   private final Provider<OkHttpClient> okHttpClientProvider;
 
   private final Provider<Gson> gsonProvider;
 
-  public CanvasWebSocketService_Factory(Provider<OkHttpClient> okHttpClientProvider,
+  private CanvasWebSocketService_Factory(Provider<OkHttpClient> okHttpClientProvider,
       Provider<Gson> gsonProvider) {
     this.okHttpClientProvider = okHttpClientProvider;
     this.gsonProvider = gsonProvider;

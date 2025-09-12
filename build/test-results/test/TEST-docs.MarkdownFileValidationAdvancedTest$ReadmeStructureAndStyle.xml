@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="README structure and style" tests="4" skipped="0" failures="3" errors="0" timestamp="2025-09-12T13:18:16.435Z" hostname="AURAKAI" time="0.022">
+<testsuite name="README structure and style" tests="4" skipped="0" failures="3" errors="0" timestamp="2025-09-12T14:35:33.441Z" hostname="AURAKAI" time="0.023">
   <properties/>
   <testcase name="README has a License section when LICENSE file exists()" classname="docs.MarkdownFileValidationAdvancedTest$ReadmeStructureAndStyle" time="0.008">
     <failure message="org.opentest4j.AssertionFailedError: Expected a '## License' section in README when LICENSE file exists ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected a '## License' section in README when LICENSE file exists ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
@@ -15,7 +15,7 @@
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 </failure>
   </testcase>
-  <testcase name="no trailing whitespace on any line()" classname="docs.MarkdownFileValidationAdvancedTest$ReadmeStructureAndStyle" time="0.007">
+  <testcase name="no trailing whitespace on any line()" classname="docs.MarkdownFileValidationAdvancedTest$ReadmeStructureAndStyle" time="0.006">
     <failure message="org.opentest4j.AssertionFailedError: Trailing whitespace at lines: [22, 40, 47, 73, 80, 101, 124, 141, 181, 190, 193, 194, 202, 205, 244, 261, 279, 294, 321, 340, 356, 374, 380, 421, 434, 439, 462, 486, 510, 541, 560] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Trailing whitespace at lines: [22, 40, 47, 73, 80, 101, 124, 141, 181, 190, 193, 194, 202, 205, 244, 261, 279, 294, 321, 340, 356, 374, 380, 421, 434, 439, 462, 486, 510, 541, 560] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -29,7 +29,7 @@
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 </failure>
   </testcase>
-  <testcase name="prefer HTTPS for external links()" classname="docs.MarkdownFileValidationAdvancedTest$ReadmeStructureAndStyle" time="0.002"/>
+  <testcase name="prefer HTTPS for external links()" classname="docs.MarkdownFileValidationAdvancedTest$ReadmeStructureAndStyle" time="0.007"/>
   <testcase name="has a single H1 title()" classname="docs.MarkdownFileValidationAdvancedTest$ReadmeStructureAndStyle" time="0.002">
     <failure message="org.opentest4j.AssertionFailedError: README should contain exactly one top-level '# ' title ==&gt; expected: &lt;1&gt; but was: &lt;44&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: README should contain exactly one top-level '# ' title ==&gt; expected: &lt;1&gt; but was: &lt;44&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Slug normalization – edge cases" tests="4" skipped="0" failures="1" errors="0" timestamp="2025-09-12T13:18:16.159Z" hostname="AURAKAI" time="0.041">
+<testsuite name="Slug normalization – edge cases" tests="4" skipped="0" failures="1" errors="0" timestamp="2025-09-12T14:35:33.308Z" hostname="AURAKAI" time="0.034">
   <properties/>
-  <testcase name="accents stripped and em dash removed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.035"/>
-  <testcase name="en dash normalized via spaces()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.0"/>
+  <testcase name="accents stripped and em dash removed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.029"/>
+  <testcase name="en dash normalized via spaces()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.001"/>
   <testcase name="underscores removed and spaces collapsed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.002">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;a-b-c&gt; but was: &lt;ab-c&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;a-b-c&gt; but was: &lt;ab-c&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
@@ -18,7 +18,7 @@
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 </failure>
   </testcase>
-  <testcase name="emoji and punctuation removed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.001"/>
+  <testcase name="emoji and punctuation removed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
