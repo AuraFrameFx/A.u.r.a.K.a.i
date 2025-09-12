@@ -2,9 +2,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!-- Genesis Protocol Essential Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    
+    <!-- Optional AI/ML permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    
+    <!-- Hardware features -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
 
     <!-- Custom permission for integrity monitoring -->
     <permission
@@ -56,13 +74,13 @@
         </activity>
 
         <service
-                android:name=".VertexSyncService"
+                android:name="com.auraframefx.regenesis.services.VertexSyncService"
                 android:exported="false"/>
         <service
-                android:name=".security.IntegrityMonitorService"
+                android:name="com.auraframefx.regenesis.security.IntegrityMonitorService"
                 android:exported="false"/>
         <receiver
-                android:name=".receivers.BootCompletedReceiver"
+                android:name="com.auraframefx.regenesis.receivers.BootCompletedReceiver"
                 android:enabled="true"
                 android:exported="true">
             <intent-filter>
@@ -70,11 +88,11 @@
             </intent-filter>
         </receiver>
         <receiver
-                android:name=".security.IntegrityViolationReceiver"
-                android:exported="true"
+                android:name="com.auraframefx.regenesis.security.IntegrityViolationReceiver"
+                android:exported="false"
                 android:permission="dev.aurakai.auraframefx.permission.RECEIVE_INTEGRITY_VIOLATION">
             <intent-filter>
-                <action android:name="dev.aurakai.auraframefx.ACTION_INTEGRITY_VIOLATION"/>
+                <action android:name="com.auraframefx.regenesis.INTEGRITY_VIOLATION"/>
             </intent-filter>
         </receiver>
     </application>
