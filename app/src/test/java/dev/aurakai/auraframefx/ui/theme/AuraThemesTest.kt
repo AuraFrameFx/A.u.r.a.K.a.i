@@ -1,6 +1,7 @@
 package dev.aurakai.auraframefx.ui.theme
 
 import androidx.compose.material3.ColorScheme
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.test.junit4.createComposeRule
 import org.junit.Rule
 import org.junit.jupiter.api.Assertions.*
@@ -29,7 +30,6 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("AnimationStyle Enum Tests")
-    class AnimationStyleTests {
 
         @Test
         @DisplayName("Should contain all expected animation style values")
@@ -78,7 +78,6 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("CyberpunkTheme Tests")
-    class CyberpunkThemeTests {
 
         @Test
         @DisplayName("Should have correct basic properties")
@@ -182,7 +181,6 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("SolarFlareTheme Tests")
-    class SolarFlareThemeTests {
 
         @Test
         @DisplayName("Should have correct basic properties")
@@ -249,7 +247,6 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("ForestTheme Tests")
-    class ForestThemeTests {
 
         @Test
         @DisplayName("Should have correct basic properties")
@@ -313,7 +310,6 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("Cross-Theme Comparison Tests")
-    class CrossThemeTests {
 
         @Test
         @DisplayName("All themes should have unique names")
@@ -370,7 +366,6 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("Color Scheme Validation Tests")
-    class ColorSchemeValidationTests {
 
         @Test
         @DisplayName("All theme light color schemes should be valid ColorScheme objects")
@@ -533,7 +528,6 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("Edge Case and Robustness Tests")
-    class EdgeCaseTests {
 
         @Test
         @DisplayName("Theme names should not be empty or blank")

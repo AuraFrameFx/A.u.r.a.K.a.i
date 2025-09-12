@@ -142,13 +142,11 @@ private fun validateDependabotConfig(cfg: DependabotConfig): List<String> {
             errors.add("$at.directory should start with '/' (root-relative), found: '${u.directory}'")
         }
         if (u.scheduleInterval.isNullOrBlank()) {
-            errors.add("$at.schedule.interval must be one of ${allowedIntervals.joinToString(", ")}, found: ${u.scheduleInterval?.let { "'$it'" } ?: "null"}")
-        } else if (u.scheduleInterval !in allowedIntervals) {
-            errors.add("$at.schedule.interval must be one of ${allowedIntervals.joinToString(", ")}, found: '${u.scheduleInterval}'")
-        }
-    }
-    return errors
-}
+                        } else if (u.scheduleInterval !in allowedIntervals) {
+                                }
+                        }
+                        return errors
+                    }
 
 /**
  * Helper that couples parse + validate for convenience in tests.

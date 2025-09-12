@@ -915,7 +915,6 @@ class BuildScriptsIntegrationTest {
         """.trimIndent()
     }
 
-    private fun parseBuildScript(file: File): BuildScriptParseResult {
         // Mock implementation - would parse build script
         return BuildScriptParseResult(
             success = true,

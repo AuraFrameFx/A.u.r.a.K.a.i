@@ -560,7 +560,6 @@ class UnifiedLoggingSystemTest {
 
     @Nested
     @DisplayName("Session Management Tests")
-    class SessionManagementTests {
 
         @Test
         fun `LogEntry should include session ID`() {
@@ -721,7 +720,6 @@ class UnifiedLoggingSystemTest {
 
     @Nested
     @DisplayName("Log Analytics Tests")
-    class LogAnalyticsTests {
 
         @Test
         fun `LogAnalytics data class should have correct properties`() {
@@ -832,7 +830,6 @@ class UnifiedLoggingSystemTest {
 
     @Nested
     @DisplayName("Enum Validation Tests")
-    class EnumValidationTests {
 
         @Test
         fun `SystemHealth enum should have all expected values`() {
@@ -981,7 +978,6 @@ class UnifiedLoggingSystemTest {
 
     @Nested
     @DisplayName("LogEntry Data Class Tests")
-    class LogEntryTests {
 
         @Test
         fun `LogEntry should have correct default values`() {
