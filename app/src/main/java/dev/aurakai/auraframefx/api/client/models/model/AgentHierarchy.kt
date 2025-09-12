@@ -45,8 +45,6 @@ data class AgentHierarchy(
 data class HierarchyAgentConfig(
     val name: String,
     val capabilities: Set<String>,
-    val priority: Int,
-    val role: Any
 )
 
 @Serializable

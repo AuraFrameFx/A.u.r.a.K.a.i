@@ -16,6 +16,24 @@ import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
+ll package dev.aurakai.auraframefx.logging
+
+import android.content.Context
+import android.util.Log
+import dev.aurakai.auraframefx.utils.AuraFxLogger
+import kotlinx.coroutines.*
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.receiveAsFlow
+import timber.log.Timber
+import java.io.File
+import java.text.SimpleDateFormat
+import java.util.*
+import javax.inject.Inject
+import javax.inject.Singleton
+
 /**
  * Unified Logging System for AuraOS
  *
@@ -107,8 +125,6 @@ class UnifiedLoggingSystem @Inject constructor(
             )
 
         } catch (e: Exception) {
-            // Use Timber for logging initialization errors as well
-            Timber.e(e, "Failed to initialize logging system")
         }
     }
 
@@ -340,20 +356,14 @@ class UnifiedLoggingSystem @Inject constructor(
      */
     private fun startLogProcessing() {
         loggingScope.launch {
-            logChannel.receiveAsFlow().collect {
                 try {
                     // Write to file
-                    writeLogToFile(it)
 
                     // Analyze for system health
-                    analyzeLogForHealth(it)
 
                     // Check for critical patterns
-                    checkCriticalPatterns(it)
 
                 } catch (e: Exception) {
-                    // Use Timber for errors during log processing
-                    Timber.e(e, "Error processing log entry")
                 }
             }
         }
@@ -372,8 +382,6 @@ class UnifiedLoggingSystem @Inject constructor(
                     updateSystemHealth(analytics)
                     delay(30000) // Check every 30 seconds
                 } catch (e: Exception) {
-                    // Use Timber for errors during health monitoring
-                    Timber.e(e, "Error in health monitoring")
                     delay(60000) // Wait longer on error
                 }
             }
@@ -396,8 +404,6 @@ class UnifiedLoggingSystem @Inject constructor(
             logFile.appendText(formattedEntry + "\n")
 
         } catch (e: Exception) {
-            // Use Timber for file writing errors
-            Timber.e(e, "Failed to write log to file")
         }
     }
 
@@ -544,20 +550,17 @@ class UnifiedLoggingSystem @Inject constructor(
         }
     }
 
-    /**
-     * Custom Timber tree for AuraOS logging.
-     */
-    private class AuraLoggingTree : Timber.Tree() {
         /**
-         * Receives log messages from Timber but performs no action, as logging is handled by the unified logging system.
-         *
-         * This method is intentionally left empty to prevent duplicate or redundant log processing.
+         * Custom Timber tree for AuraOS logging.
          */
-        override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
-            // The main logging is handled by our unified system, so we do nothing here.
-            // If needed, additional processing can be added.
+            /**
+             * Receives log messages from Timber but performs no action, as logging is handled by the unified logging system.
+             *
+             * This method is intentionally left empty to prevent duplicate or redundant log processing.
+             */
+            override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
+            }
         }
-    }
 
     /**
      * Returns a temporary session ID string based on the current hour.
@@ -583,6 +586,7 @@ class UnifiedLoggingSystem @Inject constructor(
         )
         loggingScope.cancel()
         logChannel.close()
+    }
     }
 
     /**
