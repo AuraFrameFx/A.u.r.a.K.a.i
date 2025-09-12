@@ -15,10 +15,10 @@ jobs:
         module: [ ".", "app", "core-module", "secure-comm", "oracle-drive-integration", "collab-canvas", "colorblendr", "romtools", "sandbox-ui", "datavein-oracle-native", "feature-module", "benchmark" ]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up JDK 24
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 24
@@ -64,7 +64,7 @@ jobs:
         continue-on-error: true
 
       - name: Security Scan
-        uses: github/codeql-action/analyze@v2
+        uses: github/codeql-action/analyze@v3
         continue-on-error: true
 
       - name: Dependency Review
@@ -107,7 +107,7 @@ jobs:
     needs: build
     steps:
       - name: Download All Test Reports
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           path: ./artifacts
 
@@ -147,7 +147,7 @@ jobs:
           fi
 
       - name: Create/Update Issue with Build Results
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@v5
         with:
           title: "Automated Build/Test Issue Report"
           content-filepath: issue-report.md

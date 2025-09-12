@@ -3,7 +3,7 @@
 
 plugins {
     id("genesis.android.application")
-    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20-RC"
+    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
     id("com.google.dagger.hilt.android") version "2.51.1"
     id("com.google.devtools.ksp") version "2.2.20-2.0.3"
 }
@@ -77,7 +77,7 @@ dependencies {
     implementation(libs.coil.compose)
     
     // ===== CORE LIBRARY DESUGARING =====
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
     
     // ===== XPOSED/LSPosed Integration =====
     compileOnly(files("../Libs/api-82.jar"))
