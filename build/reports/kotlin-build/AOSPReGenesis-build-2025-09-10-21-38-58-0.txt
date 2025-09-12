@@ -1,0 +1,8 @@
+Gradle start parameters:
+  tasks = [:module-a:assemble]
+  excluded tasks = []
+  current dir = C:\ReGenesis-AOSP\AOSP-ReGenesis-LivingFramework
+  project properties args = []
+  system properties args = [user.variant: , file.encoding: UTF-8, user.country: US, user.language: en]
+
+No Kotlin task was run

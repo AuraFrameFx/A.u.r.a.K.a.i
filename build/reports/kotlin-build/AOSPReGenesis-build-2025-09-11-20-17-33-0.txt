@@ -1,0 +1,111 @@
+Gradle start parameters:
+  tasks = [:collab-canvas:compileDebugKotlin]
+  excluded tasks = []
+  current dir = C:\ReGenesis-A.O.S.P
+  project properties args = []
+  system properties args = [user.variant: , file.encoding: UTF-8, user.country: US, user.language: en]
+
+Build failed: [Execution failed for task ':collab-canvas:kspDebugKotlin'.]
+
+Time metrics:
+  Total Gradle task time: 5.04 s
+
+
+
+No Kotlin task was run
+Task ':collab-canvas:kspDebugKotlin' finished in 4.60 s
+Time metrics:
+  Total Gradle task time: 4.60 s
+
+Task ':core-module:compileDebugJavaWithJavac' finished in 0.20 s
+Time metrics:
+  Total Gradle task time: 0.20 s
+
+Task ':core-module:transformDebugClassesWithAsm' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':core-module:parseDebugLocalResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':core-module:javaPreCompileDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':core-module:kspDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':core-module:compileDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:parseDebugLocalResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:packageDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:generateDebugResValues' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:packageDebugResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:generateDebugResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:generateDebugRFile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:generateDebugRFile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:generateDebugBuildConfig' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:bundleLibCompileToJarDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:processDebugNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:generateDebugResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:preBuild' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:generateDebugResValues' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:processDebugNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:preBuild' finished in 0.00 s
+
+Task ':collab-canvas:preDebugBuild' finished in 0.00 s
+
+Task ':core-module:preDebugBuild' finished in 0.00 s
+
+Task ':core-module:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+

@@ -1,0 +1,583 @@
+Gradle start parameters:
+  tasks = [build]
+  excluded tasks = []
+  current dir = C:\ReGenesis-A.O.S.P
+  project properties args = []
+  system properties args = [idea.active: true, user.variant: , file.encoding: UTF-8, idea.version: 2025.2, user.language: en, user.country: US, idea.vendor.name: JetBrains]
+
+Build failed: [Execution failed for task ':secure-comm:compileDebugKotlin'., Execution failed for task ':datavein-oracle-native:compileDebugKotlin'.]
+
+Time metrics:
+  Total Gradle task time: 72.60 s
+  Spent time before task action: 0.48 s
+  Task action before worker execution: 0.16 s
+  Run compilation in Gradle worker: 8.06 s
+    Clear jar cache: 0.02 s
+    Clear output: 0.00 s
+    Connect to Kotlin daemon: 0.08 s
+    Calculate output size: 0.00 s
+    Run compilation: 7.95 s
+      Incremental compilation in daemon: 7.90 s
+        Clear outputs on rebuild: 0.00 s
+        Sources compilation round: 7.83 s
+          Compiler initialization time: 2.19 s
+          Compiler code analysis: 4.93 s
+  Start gradle worker: 0.02 s
+
+Size metrics:
+  Increase memory usage: 83.2 MB
+  Total memory usage at the end of build: 144.1 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 608
+    Analysis lines per second: 123
+  Start time of task action: 2025-09-12T01:57:27
+
+Build attributes:
+  REBUILD_REASON: Unknown Gradle changes
+
+Total time for Kotlin tasks: 8.72 s (12.0 % of all tasks time)
+Time  |% of Kotlin time|Task                           
+8.72 s|100.0 %         |:secure-comm:compileDebugKotlin
+
+Task ':sandbox-ui:kspDebugKotlin' finished in 14.47 s
+Time metrics:
+  Total Gradle task time: 14.47 s
+
+Task ':collab-canvas:kspDebugKotlin' finished in 14.22 s
+Time metrics:
+  Total Gradle task time: 14.22 s
+
+Task ':colorblendr:compileDebugKotlin' finished in 12.88 s
+Time metrics:
+  Total Gradle task time: 12.88 s
+
+Task ':datavein-oracle-native:compileDebugKotlin' finished in 11.45 s
+Time metrics:
+  Total Gradle task time: 11.45 s
+
+Task ':secure-comm:compileDebugKotlin' finished in 8.72 s
+Task info:
+  Kotlin language version: 2.2
+Compilation log for task ':secure-comm:compileDebugKotlin':
+  Source changes: Unknown
+  Non-incremental compilation will be performed: UNKNOWN_CHANGES_IN_GRADLE_INPUTS
+  Cleaning 3 output directories
+Time metrics:
+  Total Gradle task time: 8.72 s
+  Spent time before task action: 0.48 s
+  Task action before worker execution: 0.16 s
+  Run compilation in Gradle worker: 8.06 s
+    Clear jar cache: 0.02 s
+    Clear output: 0.00 s
+    Connect to Kotlin daemon: 0.08 s
+    Calculate output size: 0.00 s
+    Run compilation: 7.95 s
+      Incremental compilation in daemon: 7.90 s
+        Clear outputs on rebuild: 0.00 s
+        Sources compilation round: 7.83 s
+          Compiler initialization time: 2.19 s
+          Compiler code analysis: 4.93 s
+  Start gradle worker: 0.02 s
+Size metrics:
+  Increase memory usage: 83.2 MB
+  Total memory usage at the end of build: 144.1 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 608
+    Analysis lines per second: 123
+  Start time of task action: 2025-09-12T01:57:27
+Build attributes:
+  REBUILD_REASON: Unknown Gradle changes
+GC metrics:
+  PS MarkSweep:
+    GC count: 3
+    GC time: 0.15 s
+  PS Scavenge:
+    GC count: 6
+    GC time: 0.08 s
+
+Task ':core-module:compileDebugJavaWithJavac' finished in 1.92 s
+Time metrics:
+  Total Gradle task time: 1.92 s
+
+Task ':feature-module:transformDebugClassesWithAsm' finished in 1.34 s
+Time metrics:
+  Total Gradle task time: 1.34 s
+
+Task ':app:compileDebugAidl' finished in 0.95 s
+Time metrics:
+  Total Gradle task time: 0.95 s
+
+Task ':core-module:transformDebugClassesWithAsm' finished in 0.72 s
+Time metrics:
+  Total Gradle task time: 0.72 s
+
+Task ':oracle-drive-integration:parseDebugLocalResources' finished in 0.36 s
+Time metrics:
+  Total Gradle task time: 0.36 s
+
+Task ':app:processDebugNavigationResources' finished in 0.34 s
+Time metrics:
+  Total Gradle task time: 0.34 s
+
+Task ':romtools:packageDebugResources' finished in 0.26 s
+Time metrics:
+  Total Gradle task time: 0.26 s
+
+Task ':colorblendr:kspDebugKotlin' finished in 0.25 s
+Time metrics:
+  Total Gradle task time: 0.25 s
+
+Task ':app:packageDebugResources' finished in 0.23 s
+Time metrics:
+  Total Gradle task time: 0.23 s
+
+Task ':sandbox-ui:parseDebugLocalResources' finished in 0.21 s
+Time metrics:
+  Total Gradle task time: 0.21 s
+
+Task ':datavein-oracle-native:packageDebugResources' finished in 0.20 s
+Time metrics:
+  Total Gradle task time: 0.20 s
+
+Task ':sandbox-ui:packageDebugResources' finished in 0.18 s
+Time metrics:
+  Total Gradle task time: 0.18 s
+
+Task ':colorblendr:packageDebugResources' finished in 0.17 s
+Time metrics:
+  Total Gradle task time: 0.17 s
+
+Task ':romtools:parseDebugLocalResources' finished in 0.16 s
+Time metrics:
+  Total Gradle task time: 0.16 s
+
+Task ':collab-canvas:packageDebugResources' finished in 0.16 s
+Time metrics:
+  Total Gradle task time: 0.16 s
+
+Task ':feature-module:packageDebugResources' finished in 0.15 s
+Time metrics:
+  Total Gradle task time: 0.15 s
+
+Task ':core-module:packageDebugResources' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':app:parseDebugLocalResources' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':datavein-oracle-native:parseDebugLocalResources' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':oracle-drive-integration:generateDebugRFile' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':oracle-drive-integration:packageDebugResources' finished in 0.13 s
+Time metrics:
+  Total Gradle task time: 0.13 s
+
+Task ':feature-module:parseDebugLocalResources' finished in 0.13 s
+Time metrics:
+  Total Gradle task time: 0.13 s
+
+Task ':collab-canvas:parseDebugLocalResources' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':colorblendr:parseDebugLocalResources' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':core-module:parseDebugLocalResources' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':romtools:generateDebugRFile' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':datavein-oracle-native:kspDebugKotlin' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':app:generateDebugRFile' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':colorblendr:generateDebugRFile' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':sandbox-ui:generateDebugRFile' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':feature-module:generateDebugRFile' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':datavein-oracle-native:generateDebugRFile' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':core-module:bundleLibCompileToJarDebug' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':core-module:javaPreCompileDebug' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':secure-comm:generateDebugRFile' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':feature-module:bundleLibCompileToJarDebug' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':collab-canvas:generateDebugRFile' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':core-module:generateDebugRFile' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':secure-comm:javaPreCompileDebug' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':app:generateDebugBuildConfig' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':sandbox-ui:javaPreCompileDebug' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':core-module:bundleLibRuntimeToJarDebug' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':collab-canvas:javaPreCompileDebug' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':app:javaPreCompileDebug' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':secure-comm:packageDebugResources' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':colorblendr:javaPreCompileDebug' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':feature-module:javaPreCompileDebug' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':secure-comm:parseDebugLocalResources' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':romtools:javaPreCompileDebug' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':collab-canvas:mergeDebugAssets' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':datavein-oracle-native:javaPreCompileDebug' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':feature-module:mergeDebugAssets' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':romtools:mergeDebugAssets' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':oracle-drive-integration:mergeDebugAssets' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':oracle-drive-integration:javaPreCompileDebug' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':colorblendr:mergeDebugAssets' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':core-module:mergeDebugAssets' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:mergeDebugAssets' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':core-module:generateDebugBuildConfig' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':colorblendr:generateDebugBuildConfig' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':core-module:compileDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':sandbox-ui:generateDebugResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:generateDebugResValues' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':romtools:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:processDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':core-module:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:processDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':core-module:processDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:processDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:processDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:processDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':romtools:processDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:processDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:generateDebugResValues' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':romtools:generateDebugResValues' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:generateDebugResValues' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:processDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':core-module:generateDebugResValues' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:generateDebugResValues' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:generateDebugResValues' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:generateDebugResValues' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:generateDebugResValues' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:generateDebugResValues' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:kspDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:compileDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':core-module:kspDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:cleanKspCache' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:mergeDebugNativeDebugMetadata' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:compileDebugJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:preDebugBuild' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':romtools:preDebugBuild' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:preDebugBuild' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:preBuild' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':romtools:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:generateDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:preBuild' finished in 0.00 s
+
+Task ':app:preDebugBuild' finished in 0.00 s
+
+Task ':collab-canvas:preBuild' finished in 0.00 s
+
+Task ':collab-canvas:preDebugBuild' finished in 0.00 s
+
+Task ':colorblendr:preBuild' finished in 0.00 s
+
+Task ':colorblendr:preDebugBuild' finished in 0.00 s
+
+Task ':core-module:preBuild' finished in 0.00 s
+
+Task ':datavein-oracle-native:preBuild' finished in 0.00 s
+
+Task ':datavein-oracle-native:preDebugBuild' finished in 0.00 s
+
+Task ':feature-module:preBuild' finished in 0.00 s
+
+Task ':feature-module:preDebugBuild' finished in 0.00 s
+
+Task ':oracle-drive-integration:preBuild' finished in 0.00 s
+
+Task ':oracle-drive-integration:preDebugBuild' finished in 0.00 s
+
+Task ':romtools:preBuild' finished in 0.00 s
+
+Task ':sandbox-ui:preBuild' finished in 0.00 s
+
+Task ':secure-comm:preDebugBuild' finished in 0.00 s
+
+Task ':datavein-oracle-native:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+
+Task ':feature-module:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+
+Task ':app:generateDebugAssets' finished in 0.00 s
+
+Task ':collab-canvas:generateDebugAssets' finished in 0.00 s
+
+Task ':colorblendr:generateDebugAssets' finished in 0.00 s
+
+Task ':datavein-oracle-native:generateDebugAssets' finished in 0.00 s
+
+Task ':feature-module:generateDebugAssets' finished in 0.00 s
+
+Task ':oracle-drive-integration:generateDebugAssets' finished in 0.00 s
+
+Task ':romtools:generateDebugAssets' finished in 0.00 s
+

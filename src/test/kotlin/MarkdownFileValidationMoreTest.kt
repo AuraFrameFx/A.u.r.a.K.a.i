@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Assertions.*
 import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Path
+import java.nio.file.Paths
 import java.util.Locale
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -24,14 +25,14 @@ class MarkdownFileValidationMoreTest {
     @BeforeAll
     fun loadReadme() {
         val candidates = listOf(
-            Path.of("README.md"),
-            Path.of("Readme.md"),
-            Path.of("readme.md"),
-            Path.of("docs/README.md")
+            Paths.get("README.md"),
+            Paths.get("Readme.md"),
+            Paths.get("readme.md"),
+            Paths.get("docs/README.md")
         )
         readmePath = candidates.firstOrNull { Files.exists(it) }
             ?: error("README not found. Checked: ${candidates.joinToString()}")
-        readme = Files.readString(readmePath, StandardCharsets.UTF_8)
+        readme = readmePath.toFile().readText(StandardCharsets.UTF_8)
         lines = readme.lines()
         assertTrue(readme.isNotBlank(), "README should not be empty")
     }
@@ -42,15 +43,15 @@ class MarkdownFileValidationMoreTest {
 
         @Test
         fun `no trailing whitespace on any line`() {
-            val trailing = lines.withIndex()
+            val trailingBasic = lines.withIndex()
                 .filter { it.value != it.value.trimEnd() }
                 .map { it.index + 1 }
-            assertTrue(trailing.isEmpty(), "Trailing whitespace found at lines: $trailing")
+            assertTrue(trailingBasic.isEmpty(), "Trailing whitespace found at lines: $trailingBasic")
 
-            val trailing = lines.mapIndexedNotNull { idx, line ->
+            val trailingRegex = lines.mapIndexedNotNull { idx, line ->
                 if (Regex("[\\t ]+$").containsMatchIn(line)) idx + 1 else null
             }
-            assertTrue(trailing.isEmpty(), "Trailing whitespace found at lines: $trailing")
+            assertTrue(trailingRegex.isEmpty(), "Trailing whitespace found at lines: $trailingRegex")
         }
 
 
@@ -201,7 +202,7 @@ class MarkdownFileValidationMoreTest {
             val mentionsWrapper = readme.contains("./gradlew")
             if (!mentionsWrapper) return
             assertTrue(
-                Files.exists(Path.of("gradlew")),
+                Files.exists(Paths.get("gradlew")),
                 "README uses ./gradlew but gradle wrapper not found at project root"
             )
         }

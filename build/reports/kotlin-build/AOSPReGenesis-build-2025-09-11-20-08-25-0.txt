@@ -1,0 +1,206 @@
+Gradle start parameters:
+  tasks = [:secure-comm:compileDebugKotlin]
+  excluded tasks = []
+  current dir = C:\ReGenesis-A.O.S.P
+  project properties args = []
+  system properties args = [user.variant: , file.encoding: UTF-8, user.country: US, user.language: en]
+
+Time metrics:
+  Total Gradle task time: 16.55 s
+  Spent time before task action: 4.07 s
+  Task action before worker execution: 0.58 s
+  Run compilation in Gradle worker: 2.42 s
+    Clear output: 0.00 s
+    Connect to Kotlin daemon: 0.12 s
+    Calculate output size: 0.01 s
+    Run compilation: 2.28 s
+      Incremental compilation in daemon: 2.26 s
+        Store build info: 0.00 s
+        Update caches: 0.01 s
+        Sources compilation round: 1.81 s
+          Compiler initialization time: 0.22 s
+          Compiler code analysis: 0.78 s
+          Compiler translation to IR: 0.44 s
+          Compiler code generation: 0.30 s
+            Compiler IR lowering: 0.14 s
+            Compiler backend: 0.16 s
+        Shrink and save current classpath snapshot after compilation: 0.22 s
+          Shrink current classpath snapshot non-incrementally: 0.10 s
+            Load current classpath snapshot: 0.12 s
+              Remove duplicate classes: 0.02 s
+          Save shrunk current classpath snapshot: 0.00 s
+  Start gradle worker: 0.03 s
+
+Size metrics:
+  Total size of the cache directory: 429.5 KB
+    ABI snapshot size: 18 B
+  Increase memory usage: -93127928 B
+  Total memory usage at the end of build: 207.7 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 608
+    Analysis lines per second: 779
+    Code generation lines per second: 2015
+  Number of times classpath snapshot is shrunk and saved after compilation: 1
+    Number of classpath entries: 140
+    Size of classpath snapshot: 9.9 MB
+    Size of shrunk classpath snapshot: 26.5 KB
+  Number of times classpath snapshot is loaded: 1
+    Number of cache misses when loading classpath entry snapshots: 140
+  Start time of task action: 2025-09-12T02:08:22
+
+Build attributes:
+  REBUILD_REASON: Unknown Gradle changes
+
+Total time for Kotlin tasks: 7.10 s (42.9 % of all tasks time)
+Time  |% of Kotlin time|Task                           
+7.10 s|100.0 %         |:secure-comm:compileDebugKotlin
+
+Task ':secure-comm:compileDebugKotlin' finished in 7.10 s
+Task info:
+  Kotlin language version: 2.2
+Compilation log for task ':secure-comm:compileDebugKotlin':
+  Source changes: Unknown
+  Non-incremental compilation will be performed: UNKNOWN_CHANGES_IN_GRADLE_INPUTS
+  Cleaning 3 output directories
+  [ClasspathSnapshot] Shrunk current classpath snapshot after compilation (shrink mode = NonIncremental), retained 112 / 28675 classes
+Time metrics:
+  Total Gradle task time: 7.10 s
+  Spent time before task action: 4.07 s
+  Task action before worker execution: 0.58 s
+  Run compilation in Gradle worker: 2.42 s
+    Clear output: 0.00 s
+    Connect to Kotlin daemon: 0.12 s
+    Calculate output size: 0.01 s
+    Run compilation: 2.28 s
+      Incremental compilation in daemon: 2.26 s
+        Store build info: 0.00 s
+        Update caches: 0.01 s
+        Sources compilation round: 1.81 s
+          Compiler initialization time: 0.22 s
+          Compiler code analysis: 0.78 s
+          Compiler translation to IR: 0.44 s
+          Compiler code generation: 0.30 s
+            Compiler IR lowering: 0.14 s
+            Compiler backend: 0.16 s
+        Shrink and save current classpath snapshot after compilation: 0.22 s
+          Shrink current classpath snapshot non-incrementally: 0.10 s
+            Load current classpath snapshot: 0.12 s
+              Remove duplicate classes: 0.02 s
+          Save shrunk current classpath snapshot: 0.00 s
+  Start gradle worker: 0.03 s
+Size metrics:
+  Total size of the cache directory: 429.5 KB
+    ABI snapshot size: 18 B
+  Increase memory usage: -93127928 B
+  Total memory usage at the end of build: 207.7 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 608
+    Analysis lines per second: 779
+    Code generation lines per second: 2015
+  Number of times classpath snapshot is shrunk and saved after compilation: 1
+    Number of classpath entries: 140
+    Size of classpath snapshot: 9.9 MB
+    Size of shrunk classpath snapshot: 26.5 KB
+  Number of times classpath snapshot is loaded: 1
+    Number of cache misses when loading classpath entry snapshots: 140
+  Start time of task action: 2025-09-12T02:08:22
+Build attributes:
+  REBUILD_REASON: Unknown Gradle changes
+GC metrics:
+  PS MarkSweep:
+    GC count: 1
+    GC time: 0.31 s
+  PS Scavenge:
+    GC count: 1
+    GC time: 0.04 s
+
+Task ':core-module:compileDebugJavaWithJavac' finished in 7.09 s
+Time metrics:
+  Total Gradle task time: 7.09 s
+
+Task ':core-module:transformDebugClassesWithAsm' finished in 1.54 s
+Time metrics:
+  Total Gradle task time: 1.54 s
+
+Task ':core-module:packageDebugResources' finished in 0.22 s
+Time metrics:
+  Total Gradle task time: 0.22 s
+
+Task ':core-module:parseDebugLocalResources' finished in 0.18 s
+Time metrics:
+  Total Gradle task time: 0.18 s
+
+Task ':core-module:javaPreCompileDebug' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':core-module:generateDebugRFile' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':core-module:bundleLibCompileToJarDebug' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':secure-comm:generateDebugRFile' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':secure-comm:packageDebugResources' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':core-module:generateDebugBuildConfig' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':core-module:generateDebugResValues' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':secure-comm:parseDebugLocalResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':core-module:compileDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':core-module:generateDebugResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':secure-comm:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':core-module:kspDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':core-module:processDebugNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:processDebugNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:generateDebugResValues' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:preBuild' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:preDebugBuild' finished in 0.00 s
+
+Task ':core-module:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+
+Task ':secure-comm:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+
+Task ':secure-comm:preBuild' finished in 0.00 s
+
+Task ':secure-comm:preDebugBuild' finished in 0.00 s
+

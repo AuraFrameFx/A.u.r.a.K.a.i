@@ -119,8 +119,8 @@ class JoinUtilsTest {
 class JoinUtilsExtendedTest {
 
     // Local helper mirrors the helper in JoinUtilsTest
-    private fun linkedListOf(vararg items: String): org.example.list.LinkedList {
-        val list = org.example.list.LinkedList()
+    private fun linkedListOf(vararg items: String): LinkedList {
+        val list = LinkedList()
         for (item in items) {
             list.add(item)
         }

@@ -1,0 +1,33 @@
+Gradle start parameters:
+  tasks = [:build-logic:buildDependents]
+  excluded tasks = []
+  current dir = C:\ReGenesis-A.O.S.P
+  project properties args = []
+  system properties args = [idea.active: true, user.variant: , file.encoding: UTF-8, idea.version: 2025.2, user.language: en, user.country: US, idea.vendor.name: JetBrains]
+
+Build failed: [Execution failed for task ':build-logic:compileTestKotlin'.]
+
+Time metrics:
+  Total Gradle task time: 8.33 s
+
+
+
+No Kotlin task was run
+Task ':build-logic:compileTestKotlin' finished in 6.49 s
+Time metrics:
+  Total Gradle task time: 6.49 s
+
+Task ':build-logic:validatePlugins' finished in 1.76 s
+Time metrics:
+  Total Gradle task time: 1.76 s
+
+Task ':build-logic:pluginUnderTestMetadata' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':build-logic:processTestResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':build-logic:assemble' finished in 0.00 s
+

@@ -1,0 +1,8 @@
+Gradle start parameters:
+  tasks = [:app:assemble, :benchmark:assemble, :collab-canvas:assemble, :colorblendr:assemble, :core-module:assemble, :datavein-oracle-native:assemble, :feature-module:assemble, :module-a:assemble, :module-b:assemble, :module-c:assemble, :module-d:assemble, :module-e:assemble, :module-f:assemble, :oracle-drive-integration:assemble, :romtools:assemble, :sandbox-ui:assemble, :screenshot-tests:assemble, :secure-comm:assemble, :build-logic:classes, :build-logic:testClasses]
+  excluded tasks = []
+  current dir = C:\ReGenesis-A.O.S.P
+  project properties args = []
+  system properties args = [idea.active: true, user.variant: , file.encoding: UTF-8, idea.version: 2025.2, user.language: en, user.country: US, idea.vendor.name: JetBrains]
+
+No Kotlin task was run

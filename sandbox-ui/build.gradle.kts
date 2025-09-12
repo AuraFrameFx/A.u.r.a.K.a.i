@@ -13,9 +13,15 @@ android {
     namespace = "dev.aurakai.auraframefx.sandboxui"
     compileSdk = 36
     defaultConfig { minSdk = 34 }
-    java { toolchain { languageVersion.set(JavaLanguageVersion.of(24)) } }
-    kotlin { jvmToolchain(24); compilerOptions { jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24) } }
     buildFeatures { compose = true }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+kotlin {
+    jvmToolchain(8)
 }
 
 dependencies {
@@ -41,6 +47,7 @@ dependencies {
     androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.register("sandboxStatus") {

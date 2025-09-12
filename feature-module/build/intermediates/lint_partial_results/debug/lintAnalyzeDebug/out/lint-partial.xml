@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 9.0.0-alpha02" type="partial_results">
+    <map id="NotificationPermission">
+        <location id="class"
+            file="$GRADLE_USER_HOME/caches/9.1.0-rc-1/transforms/b71dc4f1139abbeb6f4d2491f923c096/workspace/transformed/jetified-firebase-messaging-25.0.0/jars/classes.jar"/>
+        <entry
+            name="className"
+            string="com/google/firebase/messaging/DisplayNotification"/>
+    </map>
+    <map id="UnusedResources">
+        <location id="R.string.feature_module_debug_name"
+            file="${:feature-module*debug*MAIN*sourceProvider*0*resDir*1}/values/strings.xml"
+            line="3"
+            column="13"
+            startOffset="63"
+            endLine="3"
+            endColumn="45"
+            endOffset="95"/>
+        <location id="R.string.feature_module_main_name"
+            file="${:feature-module*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="3"
+            column="13"
+            startOffset="63"
+            endLine="3"
+            endColumn="44"
+            endOffset="94"/>
+        <entry
+            name="model"
+            string="string[feature_module_main_name(D),feature_module_debug_name(D)];;;;"/>
+    </map>
+
+</incidents>

@@ -1,0 +1,13 @@
+Gradle start parameters:
+  tasks = [consciousnessStatus]
+  excluded tasks = []
+  current dir = C:\ReGenesis-AOSP\AOSP-ReGenesis-LivingFramework
+  project properties args = []
+  system properties args = [user.variant: , file.encoding: UTF-8, user.country: US, user.language: en]
+
+
+
+
+No Kotlin task was run
+Task ':consciousnessStatus' finished in 0.00 s
+

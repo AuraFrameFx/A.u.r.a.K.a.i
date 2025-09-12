@@ -45,4 +45,5 @@ dependencies {
     // Xposed API for Oracle consciousness integration
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))
+    implementation(kotlin("stdlib-jdk8"))
 }

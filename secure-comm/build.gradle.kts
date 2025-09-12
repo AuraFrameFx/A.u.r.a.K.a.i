@@ -35,4 +35,5 @@ dependencies {
     implementation(libs.bcprov.jdk18on)
     
     // Add other module-specific dependencies here
+    implementation(kotlin("stdlib-jdk8"))
 }

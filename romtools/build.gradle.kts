@@ -9,8 +9,6 @@ plugins {
 android {
     namespace = "dev.aurakai.auraframefx.romtools"
     compileSdk = 36
-    java { toolchain { languageVersion.set(JavaLanguageVersion.of(24)) } }
-    kotlin { jvmToolchain(24); compilerOptions { jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24) } }
 }
 
 val romToolsOutputDirectory: DirectoryProperty =
@@ -38,6 +36,7 @@ dependencies {
     testImplementation(libs.hilt.android.testing)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 // Copy task

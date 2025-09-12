@@ -1,0 +1,17 @@
+Gradle start parameters:
+  tasks = []
+  excluded tasks = []
+  current dir = C:\ReGenesis-A.O.S.P
+  project properties args = [org.gradle.kotlin.dsl.provider.cid: 113142970424900, kotlin.mpp.enableIntransitiveMetadataConfiguration: true]
+  system properties args = [idea.active: true, user.variant: , idea.resolveSourceSetDependencies: true, file.encoding: UTF-8, idea.version: 2025.2, user.language: en, idea.sync.active: true, user.country: US, idea.vendor.name: JetBrains, idea.gradle.download.sources: true]
+
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+
+
+No Kotlin task was run
+Task ':prepareKotlinBuildScriptModel' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+

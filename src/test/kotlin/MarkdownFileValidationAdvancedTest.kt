@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Path
+import java.nio.file.Paths
 import java.util.Locale
 
 /**
@@ -152,7 +153,7 @@ class MarkdownFileValidationAdvancedTest {
 
         @Test
         fun `README has a License section when LICENSE file exists`() {
-            val lic = Path.of("LICENSE")
+            val lic = Paths.get("LICENSE")
             if (Files.exists(lic)) {
                 val hasLicenseSection = lines.any {
                     it.trim().matches(
@@ -177,14 +178,14 @@ class MarkdownFileValidationAdvancedTest {
     @BeforeAll
     fun loadReadme() {
         val candidates = listOf(
-            Path.of("README.md"),
-            Path.of("Readme.md"),
-            Path.of("readme.md"),
-            Path.of("docs/README.md")
+            Paths.get("README.md"),
+            Paths.get("Readme.md"),
+            Paths.get("readme.md"),
+            Paths.get("docs/README.md")
         )
         readmePath = candidates.firstOrNull { Files.exists(it) }
             ?: error("README not found. Checked: ${candidates.joinToString()}")
-        readme = Files.readString(readmePath, StandardCharsets.UTF_8)
+        readme = readmePath.toFile().readText(StandardCharsets.UTF_8)
         lines = readme.lines()
         assertTrue(readme.isNotBlank(), "README should not be empty")
     }
@@ -339,16 +340,16 @@ class MarkdownFileValidationAdvancedTest {
         fun `gradle wrapper files exist when referenced by README`() {
             if (readme.contains("gradlew")) {
                 assertAll(
-                    { assertTrue(Files.exists(Path.of("gradlew")), "Missing gradlew script") },
+                    { assertTrue(Files.exists(Paths.get("gradlew")), "Missing gradlew script") },
                     {
                         assertTrue(
-                            Files.exists(Path.of("gradlew.bat")),
+                            Files.exists(Paths.get("gradlew.bat")),
                             "Missing gradlew.bat script"
                         )
                     },
                     {
                         assertTrue(
-                            Files.exists(Path.of("gradle/wrapper/gradle-wrapper.properties")),
+                            Files.exists(Paths.get("gradle/wrapper/gradle-wrapper.properties")),
                             "Missing gradle/wrapper/gradle-wrapper.properties"
                         )
                     }
@@ -359,9 +360,9 @@ class MarkdownFileValidationAdvancedTest {
         @Test
         fun `license badge matches LICENSE content`() {
             if (readme.contains("img.shields.io/badge/License-MIT")) {
-                val licensePath = Path.of("LICENSE")
+                val licensePath = Paths.get("LICENSE")
                 assertTrue(Files.exists(licensePath), "LICENSE file missing despite MIT badge")
-                val license = Files.readString(licensePath, StandardCharsets.UTF_8)
+                val license = licensePath.toFile().readText(StandardCharsets.UTF_8)
                 assertTrue(
                     license.contains("MIT", ignoreCase = true),
                     "LICENSE should mention MIT to align with badge"
@@ -507,8 +508,8 @@ class MarkdownFileValidationAdvancedTest {
         fun `maven wrapper files exist when referenced by README`() {
             if (readme.contains("mvnw")) {
                 assertAll(
-                    { assertTrue(Files.exists(Path.of("mvnw")), "Missing mvnw script") },
-                    { assertTrue(Files.exists(Path.of("mvnw.cmd")), "Missing mvnw.cmd script") }
+                    { assertTrue(Files.exists(Paths.get("mvnw")), "Missing mvnw script") },
+                    { assertTrue(Files.exists(Paths.get("mvnw.cmd")), "Missing mvnw.cmd script") }
                 )
             }
         }
@@ -516,12 +517,12 @@ class MarkdownFileValidationAdvancedTest {
         @Test
         fun `apache 2 license badge matches LICENSE content`() {
             if (readme.contains("img.shields.io/badge/License-Apache-2.0")) {
-                val licensePath = Path.of("LICENSE")
+                val licensePath = Paths.get("LICENSE")
                 assertTrue(
                     Files.exists(licensePath),
                     "LICENSE file missing despite Apache-2.0 badge"
                 )
-                val license = Files.readString(licensePath, StandardCharsets.UTF_8)
+                val license = licensePath.toFile().readText(StandardCharsets.UTF_8)
                 val ok = license.contains("Apache License", ignoreCase = true) ||
                         license.contains("Apache 2", ignoreCase = true) ||
                         license.contains("Apache License, Version 2.0", ignoreCase = true)
@@ -532,7 +533,7 @@ class MarkdownFileValidationAdvancedTest {
         @Test
         fun `contributing section present when CONTRIBUTING file exists`() {
             val candidates = listOf("CONTRIBUTING.md", "Contributing.md", "docs/CONTRIBUTING.md")
-            val path = candidates.map { Path.of(it) }.firstOrNull { Files.exists(it) }
+            val path = candidates.map { Paths.get(it) }.firstOrNull { Files.exists(it) }
             if (path != null) {
                 val hasSection = lines.any {
                     it.trim().matches(
@@ -640,7 +641,7 @@ class MarkdownFileValidationAdvancedTest {
                     "RELEASE_NOTES.md",
                     "docs/RELEASE_NOTES.md"
                 )
-                val exists = candidates.any { Files.exists(Path.of(it)) }
+                val exists = candidates.any { Files.exists(Paths.get(it)) }
                 assertTrue(
                     exists,
                     "Changelog/Release Notes section present but no changelog file found in $candidates"
@@ -651,7 +652,7 @@ class MarkdownFileValidationAdvancedTest {
         @Test
         fun `security section present when SECURITY policy file exists`() {
             val candidates = listOf("SECURITY.md", "Security.md", "docs/SECURITY.md")
-            val path = candidates.map { Path.of(it) }.firstOrNull { Files.exists(it) }
+            val path = candidates.map { Paths.get(it) }.firstOrNull { Files.exists(it) }
             if (path != null) {
                 val hasSection = lines.any {
                     it.trim().matches(
@@ -674,11 +675,8 @@ class MarkdownFileValidationAdvancedTest {
     inner class LicensingBadgesExtended {
 
         private fun licenseText(): String? {
-            val licensePath = Path.of("LICENSE")
-            return if (Files.exists(licensePath)) Files.readString(
-                licensePath,
-                StandardCharsets.UTF_8
-            ) else null
+            val licensePath = Paths.get("LICENSE")
+            return if (Files.exists(licensePath)) licensePath.toFile().readText(StandardCharsets.UTF_8) else null
         }
 
         @Test

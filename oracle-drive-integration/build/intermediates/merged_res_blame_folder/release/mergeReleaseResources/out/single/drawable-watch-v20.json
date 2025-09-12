@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-release-3:/drawable-watch-v20/abc_dialog_material_background.xml",
+        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-appcompat-1.7.1-28:/drawable-watch-v20/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-release-3:/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml",
+        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-jetified-play-services-auth-20.7.0-19:/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-release-3:/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml",
+        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-jetified-play-services-auth-20.7.0-19:/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-release-3:/drawable-watch-v20/common_google_signin_btn_text_disabled.xml",
+        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-jetified-play-services-auth-20.7.0-19:/drawable-watch-v20/common_google_signin_btn_text_disabled.xml"
+    }
+]

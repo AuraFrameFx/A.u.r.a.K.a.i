@@ -16,6 +16,7 @@ import org.junit.jupiter.api.Assertions.assertAll
 import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Path
+import java.nio.file.Paths
 import java.text.Normalizer
 import java.util.Locale
 import java.util.regex.Pattern
@@ -37,14 +38,14 @@ class MarkdownFileValidationTest {
     fun loadReadme() {
         // Prefer root README.md; if not present, fallback to docs/README.md
         val candidates = listOf(
-            Path.of("README.md"),
-            Path.of("Readme.md"),
-            Path.of("readme.md"),
-            Path.of("docs/README.md")
+            Paths.get("README.md"),
+            Paths.get("Readme.md"),
+            Paths.get("readme.md"),
+            Paths.get("docs/README.md")
         )
         readmePath = candidates.firstOrNull { Files.exists(it) }
             ?: error("README not found. Checked: ${candidates.joinToString()}")
-        readme = Files.readString(readmePath, StandardCharsets.UTF_8)
+        readme = readmePath.toFile().readText(StandardCharsets.UTF_8)
         lines = readme.lines()
         assertTrue(readme.isNotBlank(), "README should not be empty")
     }
@@ -225,7 +226,7 @@ class MarkdownFileValidationTest {
                 "romtools/README.md",
                 "core-module/Module.md"
             )
-            val missing = requiredPaths.filterNot { Files.exists(Path.of(it)) }
+            val missing = requiredPaths.filterNot { Files.exists(Paths.get(it)) }
             assertTrue(
                 missing.isEmpty(),
                 "Missing required local documentation targets referenced in README: $missing"
@@ -236,7 +237,7 @@ class MarkdownFileValidationTest {
             optionalPaths.forEach { path ->
                 if (readme.contains(path)) {
                     assertTrue(
-                        Files.exists(Path.of(path)),
+                        Files.exists(Paths.get(path)),
                         "Optional path referenced but missing: $path"
                     )
                 }
@@ -344,7 +345,7 @@ class MarkdownFileValidationTest {
                 val ignoredPrefixes = listOf("build/", "out/", "target/", ".gradle/", ".github/")
                 val missing = links.filter { rel ->
                     if (ignoredPrefixes.any { rel.startsWith(it) }) return@filter false
-                    val p = (readmePath.parent ?: Path.of(".")).resolve(rel).normalize()
+                    val p = (readmePath.parent ?: Paths.get(".")).resolve(rel).normalize()
                     !Files.exists(p)
                 }
                 assertTrue(missing.isEmpty(), "Missing relative link targets: $missing")
@@ -378,7 +379,7 @@ class MarkdownFileValidationTest {
 
                 val localMissing = matches.map { it.groupValues[2] }
                     .filter { !it.startsWith("http://") && !it.startsWith("https://") }
-                    .map { (readmePath.parent ?: Path.of(".")).resolve(it).normalize() }
+                    .map { (readmePath.parent ?: Paths.get(".")).resolve(it).normalize() }
                     .filterNot { Files.exists(it) }
                 assertTrue(localMissing.isEmpty(), "Local image targets not found: $localMissing")
             }
@@ -470,11 +471,11 @@ class MarkdownFileValidationTest {
         inner class LicenseAndScripts {
             @Test
             fun `license file exists and mentions MIT`() {
-                val candidates = listOf("LICENSE", "LICENSE.md", "LICENSE.txt").map { Path.of(it) }
+                val candidates = listOf("LICENSE", "LICENSE.md", "LICENSE.txt").map { Paths.get(it) }
                 val path = candidates.firstOrNull { Files.exists(it) }
                 assertNotNull(path, "LICENSE file not found in project root (checked $candidates)")
                 if (path != null) {
-                    val content = Files.readString(path, StandardCharsets.UTF_8)
+                    val content = path.toFile().readText(StandardCharsets.UTF_8)
                     assertTrue(
                         content.contains("MIT", ignoreCase = true),
                         "LICENSE file should mention MIT"
@@ -494,7 +495,7 @@ class MarkdownFileValidationTest {
                     "scripts/nuclear-clean.bat"
                 )
                 val exists =
-                    candidates.any { Files.exists((readmePath.parent ?: Path.of(".")).resolve(it)) }
+                    candidates.any { Files.exists((readmePath.parent ?: Paths.get(".")).resolve(it)) }
                 assertTrue(
                     exists,
                     "README mentions nuclear clean script, but none found among: $candidates"
@@ -567,7 +568,7 @@ class MarkdownFileValidationTest {
                     ".github/workflows/ci.yml",
                     ".github/workflows/ci.yaml"
                 )
-                val exists = candidates.any { Files.exists(Path.of(it)) }
+                val exists = candidates.any { Files.exists(Paths.get(it)) }
                 assertTrue(
                     exists,
                     "README references GitHub Actions workflows but no standard workflow YAML found: $candidates"
@@ -648,7 +649,7 @@ class MarkdownFileValidationTest {
                 if (!readme.contains("./gradlew")) return
                 val candidates =
                     listOf("gradlew", "gradlew.bat", "gradle/wrapper/gradle-wrapper.jar")
-                val exists = candidates.any { Files.exists(Path.of(it)) }
+                val exists = candidates.any { Files.exists(Paths.get(it)) }
                 assertTrue(
                     exists,
                     "README uses ./gradlew but Gradle wrapper not found among: $candidates"
@@ -670,7 +671,7 @@ class MarkdownFileValidationTest {
                     "compose.yml",
                     "compose.yaml"
                 )
-                val exists = candidates.any { Files.exists(Path.of(it)) }
+                val exists = candidates.any { Files.exists(Paths.get(it)) }
                 assertTrue(
                     exists,
                     "README mentions Docker/Compose but no Docker artifacts found: $candidates"
@@ -685,7 +686,7 @@ class MarkdownFileValidationTest {
                 if (!mentions) return
 
                 val candidates = listOf("CHANGELOG.md", "CHANGELOG", "docs/CHANGELOG.md")
-                val exists = candidates.any { Files.exists(Path.of(it)) }
+                val exists = candidates.any { Files.exists(Paths.get(it)) }
                 assertTrue(exists, "README references a changelog but none found: $candidates")
             }
 
@@ -696,7 +697,7 @@ class MarkdownFileValidationTest {
                 if (!mentions) return
 
                 val candidates = listOf("CONTRIBUTING.md", "docs/CONTRIBUTING.md")
-                val exists = candidates.any { Files.exists(Path.of(it)) }
+                val exists = candidates.any { Files.exists(Paths.get(it)) }
                 assertTrue(
                     exists,
                     "README references contributing but no CONTRIBUTING.md found in: $candidates"
@@ -710,7 +711,7 @@ class MarkdownFileValidationTest {
                 if (!mentions) return
 
                 val candidates = listOf("CODE_OF_CONDUCT.md", "docs/CODE_OF_CONDUCT.md")
-                val exists = candidates.any { Files.exists(Path.of(it)) }
+                val exists = candidates.any { Files.exists(Paths.get(it)) }
                 assertTrue(
                     exists,
                     "README references a Code of Conduct but none found: $candidates"
@@ -725,7 +726,7 @@ class MarkdownFileValidationTest {
                 if (!mentions) return
 
                 val candidates = listOf("SECURITY.md", "docs/SECURITY.md")
-                val exists = candidates.any { Files.exists(Path.of(it)) }
+                val exists = candidates.any { Files.exists(Paths.get(it)) }
                 assertTrue(exists, "README references security policy but none found: $candidates")
             }
 
@@ -738,7 +739,7 @@ class MarkdownFileValidationTest {
                 if (!mentions) return
 
                 val candidates = listOf(".env.example", ".env.sample", "env.example", "example.env")
-                val exists = candidates.any { Files.exists(Path.of(it)) }
+                val exists = candidates.any { Files.exists(Paths.get(it)) }
                 assertTrue(
                     exists,
                     "README references environment variables but no example env file found: $candidates"
@@ -752,7 +753,7 @@ class MarkdownFileValidationTest {
                 if (!mentions) return
 
                 val candidates = listOf("ROADMAP.md", "docs/ROADMAP.md")
-                val exists = candidates.any { Files.exists(Path.of(it)) }
+                val exists = candidates.any { Files.exists(Paths.get(it)) }
                 assertTrue(exists, "README references a roadmap but none found: $candidates")
             }
         }
@@ -894,5 +895,5 @@ class MarkdownFileValidationTest {
                 assertTrue(insecure.isEmpty(), "git clone commands should not use http: $insecure")
             }
         }
-
     }
+}

@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="C:\ReGenesis-A.O.S.P\benchmark"
+    name=":benchmark"
+    type="LIBRARY"
+    maven="AOSPReGenesis:benchmark:unspecified"
+    agpVersion="9.0.0-alpha02"
+    buildFolder="build"
+    bootClassPath="C:\Users\Wehtt\Studio\platforms\android-36\android.jar;C:\Users\Wehtt\Studio\build-tools\35.0.0\core-lambda-stubs.jar"
+    javaSourceLevel="24"
+    compileTarget="android-36">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="debug"/>
+</lint-module>

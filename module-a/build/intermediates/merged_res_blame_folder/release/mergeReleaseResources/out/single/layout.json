@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "dev.aurakai.auraframefx.module.a.module-a-release-3:/layout/ime_base_split_test_activity.xml",
+        "source": "dev.aurakai.auraframefx.module.a.module-a-core-1.13.1-15:/layout/ime_base_split_test_activity.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.module.a.module-a-release-3:/layout/notification_template_part_time.xml",
+        "source": "dev.aurakai.auraframefx.module.a.module-a-core-1.13.1-15:/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.module.a.module-a-release-3:/layout/notification_template_part_chronometer.xml",
+        "source": "dev.aurakai.auraframefx.module.a.module-a-core-1.13.1-15:/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.module.a.module-a-release-3:/layout/ime_secondary_split_test_activity.xml",
+        "source": "dev.aurakai.auraframefx.module.a.module-a-core-1.13.1-15:/layout/ime_secondary_split_test_activity.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.module.a.module-a-release-3:/layout/custom_dialog.xml",
+        "source": "dev.aurakai.auraframefx.module.a.module-a-core-1.13.1-15:/layout/custom_dialog.xml"
+    }
+]

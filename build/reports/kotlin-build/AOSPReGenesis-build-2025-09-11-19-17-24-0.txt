@@ -1,0 +1,17 @@
+Gradle start parameters:
+  tasks = [tasks, --group=genesis]
+  excluded tasks = []
+  current dir = C:\ReGenesis-A.O.S.P
+  project properties args = []
+  system properties args = [user.variant: , file.encoding: UTF-8, user.country: US, user.language: en]
+
+Time metrics:
+  Total Gradle task time: 3.30 s
+
+
+
+No Kotlin task was run
+Task ':tasks' finished in 3.30 s
+Time metrics:
+  Total Gradle task time: 3.30 s
+

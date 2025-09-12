@@ -20,6 +20,7 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Path
+import java.nio.file.Paths
 import java.util.Locale
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -32,14 +33,14 @@ class MarkdownFileValidationExtraTest {
     @BeforeAll
     fun loadReadme() {
         val candidates = listOf(
-            Path.of("README.md"),
-            Path.of("Readme.md"),
-            Path.of("readme.md"),
-            Path.of("docs/README.md")
+            Paths.get("README.md"),
+            Paths.get("Readme.md"),
+            Paths.get("readme.md"),
+            Paths.get("docs/README.md")
         )
         readmePath = candidates.firstOrNull { Files.exists(it) }
             ?: error("README not found. Checked: ${candidates.joinToString()}")
-        readme = Files.readString(readmePath, StandardCharsets.UTF_8)
+        readme = readmePath.toFile().readText(StandardCharsets.UTF_8)
         lines = readme.lines()
         assertTrue(readme.isNotBlank(), "README should not be empty")
     }
@@ -207,7 +208,7 @@ class MarkdownFileValidationExtraTest {
             val mentionsBat = readme.contains("gradlew.bat", ignoreCase = true)
             if (!mentionsBat) return
             assertTrue(
-                Files.exists(Path.of("gradlew.bat")),
+                Files.exists(Paths.get("gradlew.bat")),
                 "README references gradlew.bat, but it is missing in repo root"
             )
         }
@@ -225,7 +226,7 @@ class MarkdownFileValidationExtraTest {
             requiredIfLinked.forEach { name ->
                 if (relLinks.any { it.equals(name, ignoreCase = true) }) {
                     assertTrue(
-                        Files.exists(Path.of(name)),
+                        Files.exists(Paths.get(name)),
                         "README links $name but file not found in repo root"
                     )
                 }

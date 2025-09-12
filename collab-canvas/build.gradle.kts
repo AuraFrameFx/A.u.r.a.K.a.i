@@ -75,14 +75,16 @@ dependencies {
     implementation(libs.yukihook.api)
     ksp(libs.yukihook.ksp)
     
-    // Xposed API (using correct path)
+    // Xposed API (using the correct path)
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))
+    implementation(kotlin("stdlib-jdk8"))
 }
-
-
 
 tasks.register("collabStatus") {
     group = "aegenesis"
     doLast { println("COLLAB CANVAS - Ready (Java 24 toolchain, unified).") }
+}
+kotlin {
+    jvmToolchain(24)
 }

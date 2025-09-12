@@ -1,0 +1,23 @@
+Gradle start parameters:
+  tasks = [cleanGeneratedSources]
+  excluded tasks = []
+  current dir = C:\ReGenesis-A.O.S.P
+  project properties args = []
+  system properties args = [user.variant: , file.encoding: UTF-8, user.country: US, user.language: en]
+
+Build failed: [Execution failed for task ':datavein-oracle-native:cleanGeneratedSources'., Execution failed for task ':secure-comm:cleanGeneratedSources'.]
+
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+
+
+No Kotlin task was run
+Task ':datavein-oracle-native:cleanGeneratedSources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:cleanGeneratedSources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+

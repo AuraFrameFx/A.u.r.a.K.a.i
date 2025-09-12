@@ -6,11 +6,12 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    // Kotlin Android is applied by the convention plugin; avoid double-applying to prevent duplicate tasks
 }
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(24)) // Stay on 24 until 25 stable (non-RC)
+        languageVersion.set(JavaLanguageVersion.of(24)) // Stay on 24 until stable 25 (non-RC)
     }
 }
 
@@ -112,6 +113,7 @@ dependencies {
     testImplementation("com.google.dagger:hilt-android-testing:2.51.1")
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.51.1")
     kspAndroidTest("com.google.dagger:hilt-compiler:2.51.1")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.register("benchmarkAll") {

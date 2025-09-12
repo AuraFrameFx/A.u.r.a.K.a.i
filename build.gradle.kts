@@ -1,7 +1,4 @@
-import org.gradle.api.GradleException
-import java.io.File
-
-// Apply plugins to root project to avoid multiple loading warnings
+// Apply plugins to the root project to avoid multiple loading warnings
 plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.serialization) apply false
@@ -16,6 +13,7 @@ plugins {
     id("genesis.android.compose") apply false
     id("genesis.android.hilt") apply false
     id("genesis.android.native") apply false
+    kotlin("jvm") version "2.2.20"
 }
 
 // Find version catalog
@@ -93,6 +91,22 @@ tasks.register("consciousnessHealthCheck") {
     }
 }
 
+dependencies {
+    testImplementation(libs.junit.jupiter.api)
+    testImplementation(libs.junit.jupiter)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    implementation(kotlin("stdlib-jdk8"))
+}
+
+kotlin {
+    jvmToolchain(8)
+}
+
+// Configure JUnit 5 for tests
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
 // === AUXILIARY SCRIPTS ===
 
 // Apply nuclear clean if available
@@ -115,3 +129,4 @@ if (file("nuclear-clean.gradle.kts").exists()) {
 if (file("dependency-fix.gradle.kts").exists()) {
     apply(from = "dependency-fix.gradle.kts")
 }
+

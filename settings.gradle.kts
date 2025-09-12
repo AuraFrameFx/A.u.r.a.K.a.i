@@ -1,4 +1,6 @@
-@file:Suppress("UnstableApiUsage", "JCenterRepositoryObsolete")// ===== AOSP-Re:Genesis - SETTINGS =====
+@file:Suppress("UnstableApiUsage", "JCenterRepositoryObsolete")
+
+// ===== AOSP-Re:Genesis - SETTINGS =====
 // AOSP-Re:Genesis - Advanced Android OS Project
 // Version: 2025.09.02-03 - Full Enhancement Suite
 
@@ -61,9 +63,8 @@ pluginManagement {
             }
         }
     }
+    
     plugins {
-
-        // Removed explicit YukiHook plugin version; managed via version catalog aliases in module build scripts
         id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
     }
 
@@ -76,10 +77,6 @@ pluginManagement {
     }
 }
 
-
-// Configure Java toolchain resolution
-
-
 dependencyResolutionManagement {
     // Enforce consistent dependency resolution
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -89,6 +86,7 @@ dependencyResolutionManagement {
         // Primary repositories
         google()
         mavenCentral()
+        
         // Gradle releases for tooling API
         maven("https://repo.gradle.org/gradle/libs-releases") {
             name = "Gradle Releases"
@@ -133,7 +131,7 @@ rootProject.name = "AOSPReGenesis"
 // Core modules
 include(":app")
 include(":core-module")
-includeBuild("build-logic")
+
 // Feature modules
 include(":feature-module")
 include(":datavein-oracle-native")
@@ -154,9 +152,9 @@ include(":module-f")
 
 // Testing & Quality modules
 include(":benchmark")
-// include(":screenshot-tests")  // Temporarily disabled - build configuration issues
-include(":jvm-test")  // JVM only module
-include(":list")  // JVM only module  
+include(":screenshot-tests")  // Placeholder module to satisfy CI/task references
+include(":jvm-test")  // JVM-only module
+include(":list")  // JVM-only module
 include(":utilities")  // AI entities' chosen utilities
 
 // ===== MODULE CONFIGURATION =====

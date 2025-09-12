@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Path
+import java.nio.file.Paths
 import java.util.Locale
 
 /**
@@ -31,14 +32,14 @@ class MarkdownFileValidationAdvancedSupplementalEdgeCasesTest {
     @BeforeAll
     fun loadReadme() {
         val candidates = listOf(
-            Path.of("README.md"),
-            Path.of("Readme.md"),
-            Path.of("readme.md"),
-            Path.of("docs/README.md")
+            Paths.get("README.md"),
+            Paths.get("Readme.md"),
+            Paths.get("readme.md"),
+            Paths.get("docs/README.md")
         )
         readmePath = candidates.firstOrNull { Files.exists(it) }
             ?: error("README not found. Checked: ${candidates.joinToString()}")
-        readme = Files.readString(readmePath, StandardCharsets.UTF_8)
+        readme = readmePath.toFile().readText(StandardCharsets.UTF_8)
         lines = readme.lines()
         assertTrue(readme.isNotBlank(), "README should not be empty")
     }
@@ -92,7 +93,7 @@ class MarkdownFileValidationAdvancedSupplementalEdgeCasesTest {
             if (links.isEmpty()) return
             val missing = links.map { it.substringBefore('#').trim() }
                 .filter { it.isNotBlank() }
-                .map { Path.of(it) }
+                .map { Paths.get(it) }
                 .filterNot { Files.exists(it) }
                 .map { it.toString() }
             assertTrue(missing.isEmpty(), "Broken relative links to files: $missing")
@@ -102,15 +103,11 @@ class MarkdownFileValidationAdvancedSupplementalEdgeCasesTest {
         fun `footnote references and definitions are consistent`() {
             val refRegex = Regex("\\[\\^([^\\]]+)](?!:)") // don't treat definitions as references
             val defRegex = Regex("^\\[\\^(.+?)]:\\s+.+$")
-            -
+            
             val refs = refRegex.findAll(readme).map { it.groupValues[1] }.toSet()
             val defs = lines
                 .map { it.trim() }
                 .mapNotNull { defRegex.find(it)?.groupValues?.get(1) }
-                .toSet()
-            val refs = refRegex
-                .findAll(readme)
-                .map { it.groupValues[1] }
                 .toSet()
             if (refs.isEmpty() && defs.isEmpty()) return
             val missingDefs = refs - defs
@@ -131,68 +128,67 @@ class MarkdownFileValidationAdvancedSupplementalEdgeCasesTest {
             )
         }
     }
-}
 
-@Nested
-@DisplayName("Images – transport and alt text quality")
-inner class ImagesTransport {
+    @Nested
+    @DisplayName("Images – transport and alt text quality")
+    inner class ImagesTransport {
 
-    @Test
-    fun `no images use insecure http transport`() {
-        val httpImages =
-            Regex("!\\[[^\\]]*]\\((http://[^)]+)\\)", RegexOption.IGNORE_CASE).findAll(readme)
-                .map { it.groupValues[1] }.toList()
-        assertTrue(httpImages.isEmpty(), "Images should use HTTPS: $httpImages")
+        @Test
+        fun `no images use insecure http transport`() {
+            val httpImages =
+                Regex("!\\[[^\\]]*]\\((http://[^)]+)\\)", RegexOption.IGNORE_CASE).findAll(readme)
+                    .map { it.groupValues[1] }.toList()
+            assertTrue(httpImages.isEmpty(), "Images should use HTTPS: $httpImages")
+        }
+
+        @Test
+        fun `image alt text is descriptive – not just file names`() {
+            val images = Regex("!\\[(.*?)\\]\\(([^)]+)\\)").findAll(readme).toList()
+            if (images.isEmpty()) return
+            val lazyAlts = images.withIndex().filter { (_, m) ->
+                val alt = m.groupValues[1].trim().lowercase(Locale.ROOT)
+                val url = m.groupValues[2].substringBeforeLast('#').substringBefore('?')
+                    .substringAfterLast('/').lowercase(Locale.ROOT)
+                alt.isNotEmpty() && (alt == url || alt == url.substringBeforeLast('.'))
+            }.map { it.index }
+            assertTrue(lazyAlts.isEmpty(), "Images with non-descriptive alt text at indices: $lazyAlts")
+        }
     }
 
-    @Test
-    fun `image alt text is descriptive – not just file names`() {
-        val images = Regex("!\\[(.*?)\\]\\(([^)]+)\\)").findAll(readme).toList()
-        if (images.isEmpty()) return
-        val lazyAlts = images.withIndex().filter { (_, m) ->
-            val alt = m.groupValues[1].trim().lowercase(Locale.ROOT)
-            val url = m.groupValues[2].substringBeforeLast('#').substringBefore('?')
-                .substringAfterLast('/').lowercase(Locale.ROOT)
-            alt.isNotEmpty() && (alt == url || alt == url.substringBeforeLast('.'))
-        }.map { it.index }
-        assertTrue(lazyAlts.isEmpty(), "Images with non-descriptive alt text at indices: $lazyAlts")
+    @Nested
+    @DisplayName("Badges and licensing – additional families")
+    inner class BadgesAndLicensingExtra {
+
+        @Test
+        fun `bsd-3-clause license badge matches LICENSE content`() {
+            val badgeRegex = Regex(
+                "img\\.shields\\.io/.+License-(BSD-3--Clause|BSD%203--Clause)",
+                RegexOption.IGNORE_CASE
+            )
+            if (!badgeRegex.containsMatchIn(readme)) return
+        val licensePath = Paths.get("LICENSE")
+            assertTrue(Files.exists(licensePath), "LICENSE file missing despite BSD-3-Clause badge")
+            val license = licensePath.toFile().readText(StandardCharsets.UTF_8)
+            val hasBsd3 = license.contains("BSD 3-Clause", ignoreCase = true) ||
+                    license.contains(
+                        "Redistribution and use in source and binary forms",
+                        ignoreCase = true
+                    )
+            assertTrue(hasBsd3, "LICENSE should include BSD 3-Clause keywords")
+        }
     }
-}
 
-@Nested
-@DisplayName("Badges and licensing – additional families")
-inner class BadgesAndLicensingExtra {
+    @Nested
+    @DisplayName("Code spans and blocks – quality gates")
+    inner class CodeQualityGates {
 
-    @Test
-    fun `bsd-3-clause license badge matches LICENSE content`() {
-        val badgeRegex = Regex(
-            "img\\.shields\\.io/.+License-(BSD-3--Clause|BSD%203--Clause)",
-            RegexOption.IGNORE_CASE
-        )
-        if (!badgeRegex.containsMatchIn(readme)) return
-        val licensePath = Path.of("LICENSE")
-        assertTrue(Files.exists(licensePath), "LICENSE file missing despite BSD-3-Clause badge")
-        val license = Files.readString(licensePath, StandardCharsets.UTF_8)
-        val hasBsd3 = license.contains("BSD 3-Clause", ignoreCase = true) ||
-                license.contains(
-                    "Redistribution and use in source and binary forms",
-                    ignoreCase = true
-                )
-        assertTrue(hasBsd3, "LICENSE should include BSD 3-Clause keywords")
+        @Test
+        fun `inline code spans are not empty`() {
+            val spans = Regex("`([^`]*)`").findAll(readme).toList()
+            if (spans.isEmpty()) return
+            val empties =
+                spans.withIndex().filter { it.value.groupValues[1].trim().isEmpty() }.map { it.index }
+            assertTrue(empties.isEmpty(), "Empty inline code span(s) at indices: $empties")
+        }
     }
-}
-
-@Nested
-@DisplayName("Code spans and blocks – quality gates")
-inner class CodeQualityGates {
-
-    @Test
-    fun `inline code spans are not empty`() {
-        val spans = Regex("`([^`]*)`").findAll(readme).toList()
-        if (spans.isEmpty()) return
-        val empties =
-            spans.withIndex().filter { it.value.groupValues[1].trim().isEmpty() }.map { it.index }
-        assertTrue(empties.isEmpty(), "Empty inline code span(s) at indices: $empties")
-    }
-}
 }

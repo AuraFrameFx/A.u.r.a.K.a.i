@@ -2,10 +2,11 @@
 // This build script now uses the custom convention plugins for a cleaner setup.
 
 plugins {
+    id("com.android.application")
     id("genesis.android.application")
-    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20-RC"
-    id("com.google.dagger.hilt.android") version "2.51.1"
-    id("com.google.devtools.ksp") version "2.2.20-2.0.3"
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -35,11 +36,11 @@ dependencies {
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
     implementation(project(":oracle-drive-integration"))
-    // implementation(project(":romtools"))  // Temporarily disabled - KSP issues
+    implementation(project(":romtools"))  // Temporarily disabled - KSP issues
     implementation(project(":secure-comm"))
-    // implementation(project(":collab-canvas"))  // Temporarily disabled - YukiHookAPI issues
+    implementation(project(":collab-canvas"))  // Temporarily disabled - YukiHookAPI issues
     implementation(project(":colorblendr"))
-    // implementation(project(":sandbox-ui"))  // Temporarily disabled - Compose compilation issues
+    implementation(project(":sandbox-ui"))  // Temporarily disabled - Compose compilation issues
     implementation(project(":datavein-oracle-native"))
 
     // ===== ANDROIDX & COMPOSE =====
@@ -55,7 +56,6 @@ dependencies {
 
     // ===== DATABASE - ROOM =====
     implementation(libs.bundles.room)
-    ksp(libs.bundles.room.compiler)
 
     // ===== DATASTORE =====
     implementation(libs.androidx.datastore.preferences)
@@ -107,4 +107,5 @@ dependencies {
 
     // --- DEBUGGING ---
     debugImplementation(libs.leakcanary.android)
+    implementation(kotlin("stdlib-jdk8"))
 }

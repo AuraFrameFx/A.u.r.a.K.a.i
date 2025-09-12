@@ -13,6 +13,8 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Path
+import java.nio.file.Paths
+import java.text.Normalizer
 import java.util.Locale
 
 /**
@@ -31,14 +33,14 @@ class MarkdownFileValidationAdvancedSupplementalTest {
     @BeforeAll
     fun loadReadme() {
         val candidates = listOf(
-            Path.of("README.md"),
-            Path.of("Readme.md"),
-            Path.of("readme.md"),
-            Path.of("docs/README.md")
+            Paths.get("README.md"),
+            Paths.get("Readme.md"),
+            Paths.get("readme.md"),
+            Paths.get("docs/README.md")
         )
         readmePath = candidates.firstOrNull { Files.exists(it) }
             ?: error("README not found. Checked: ${candidates.joinToString()}")
-        readme = Files.readString(readmePath, StandardCharsets.UTF_8)
+        readme = readmePath.toFile().readText(StandardCharsets.UTF_8)
         lines = readme.lines()
         assertTrue(readme.isNotBlank(), "README should not be empty")
     }
@@ -180,7 +182,7 @@ class MarkdownFileValidationAdvancedSupplementalTest {
             }
             if (hasLicenseSection) {
                 assertTrue(
-                    Files.exists(Path.of("LICENSE")),
+                    Files.exists(Paths.get("LICENSE")),
                     "LICENSE file missing but README has a License section"
                 )
             }
@@ -193,12 +195,12 @@ class MarkdownFileValidationAdvancedSupplementalTest {
                 RegexOption.IGNORE_CASE
             )
             if (badgeRegex.containsMatchIn(readme)) {
-                val licensePath = Path.of("LICENSE")
+                val licensePath = Paths.get("LICENSE")
                 assertTrue(
                     Files.exists(licensePath),
                     "LICENSE file missing despite Apache 2.0 badge"
                 )
-                val license = Files.readString(licensePath, StandardCharsets.UTF_8)
+                val license = licensePath.toFile().readText(StandardCharsets.UTF_8)
                 assertAll(
                     {
                         assertTrue(
@@ -354,9 +356,9 @@ class MarkdownFileValidationAdvancedSupplementalTest {
         fun `mit license badge matches LICENSE content`() {
             val badgeRegex = Regex("img\\.shields\\.io/.+License-.*MIT", RegexOption.IGNORE_CASE)
             if (!badgeRegex.containsMatchIn(readme)) return
-            val licensePath = Path.of("LICENSE")
+            val licensePath = Paths.get("LICENSE")
             assertTrue(Files.exists(licensePath), "LICENSE file missing despite MIT badge")
-            val license = Files.readString(licensePath, StandardCharsets.UTF_8)
+            val license = licensePath.toFile().readText(StandardCharsets.UTF_8)
             val hasMit = license.contains("MIT License", ignoreCase = true) ||
                     license.contains("Permission is hereby granted", ignoreCase = true)
             assertTrue(hasMit, "LICENSE should include MIT license keywords")
@@ -367,9 +369,9 @@ class MarkdownFileValidationAdvancedSupplementalTest {
             val badgeRegex =
                 Regex("img\\.shields\\.io/.+License-(GPL-3\\.0|GPLv3)", RegexOption.IGNORE_CASE)
             if (!badgeRegex.containsMatchIn(readme)) return
-            val licensePath = Path.of("LICENSE")
+            val licensePath = Paths.get("LICENSE")
             assertTrue(Files.exists(licensePath), "LICENSE file missing despite GPL badge")
-            val license = Files.readString(licensePath, StandardCharsets.UTF_8)
+            val license = licensePath.toFile().readText(StandardCharsets.UTF_8)
             assertTrue(
                 license.contains("GNU GENERAL PUBLIC LICENSE", ignoreCase = true),
                 "LICENSE should include GPL preamble"
@@ -473,7 +475,7 @@ class MarkdownFileValidationAdvancedSupplementalTest {
                 }
                 .map { it.substringBefore('#').substringBefore('?') }
             if (relative.isEmpty()) return
-            val baseDir = readmePath.parent ?: Path.of(".")
+            val baseDir = readmePath.parent ?: Paths.get(".")
             val missing = relative.filterNot { Files.exists(baseDir.resolve(it).normalize()) }
             assertTrue(missing.isEmpty(), "Relative links missing targets: $missing")
         }
@@ -491,7 +493,7 @@ class MarkdownFileValidationAdvancedSupplementalTest {
                 }
                 .map { it.substringBefore('#').substringBefore('?') }
             if (relative.isEmpty()) return
-            val baseDir = readmePath.parent ?: Path.of(".")
+            val baseDir = readmePath.parent ?: Paths.get(".")
             val missing = relative.filterNot { Files.exists(baseDir.resolve(it).normalize()) }
             assertTrue(missing.isEmpty(), "Relative image paths missing targets: $missing")
         }
@@ -535,7 +537,7 @@ class MarkdownFileValidationAdvancedSupplementalTest {
             }
             if (!hasSection) return
             val exists =
-                Files.exists(Path.of("CODE_OF_CONDUCT.md")) || Files.exists(Path.of("docs/CODE_OF_CONDUCT.md"))
+                Files.exists(Paths.get("CODE_OF_CONDUCT.md")) || Files.exists(Paths.get("docs/CODE_OF_CONDUCT.md"))
             assertTrue(
                 exists,
                 "CODE_OF_CONDUCT.md missing but README has a Code of Conduct section"
@@ -549,7 +551,7 @@ class MarkdownFileValidationAdvancedSupplementalTest {
             }
             if (!hasSection) return
             val exists =
-                Files.exists(Path.of("CONTRIBUTING.md")) || Files.exists(Path.of("docs/CONTRIBUTING.md"))
+                Files.exists(Paths.get("CONTRIBUTING.md")) || Files.exists(Paths.get("docs/CONTRIBUTING.md"))
             assertTrue(exists, "CONTRIBUTING.md missing but README has a Contributing section")
         }
 
@@ -560,7 +562,7 @@ class MarkdownFileValidationAdvancedSupplementalTest {
             }
             if (!hasSection) return
             val exists =
-                Files.exists(Path.of("SECURITY.md")) || Files.exists(Path.of("docs/SECURITY.md"))
+                Files.exists(Paths.get("SECURITY.md")) || Files.exists(Paths.get("docs/SECURITY.md"))
             assertTrue(exists, "SECURITY.md missing but README has a Security section")
         }
 
@@ -576,7 +578,7 @@ class MarkdownFileValidationAdvancedSupplementalTest {
             }
             if (!hasSection) return
             val exists =
-                Files.exists(Path.of("CHANGELOG.md")) || Files.exists(Path.of("docs/CHANGELOG.md"))
+                Files.exists(Paths.get("CHANGELOG.md")) || Files.exists(Paths.get("docs/CHANGELOG.md"))
             assertTrue(
                 exists,
                 "CHANGELOG.md missing but README has a Changelog/Release Notes section"
@@ -588,7 +590,7 @@ class MarkdownFileValidationAdvancedSupplementalTest {
             val hasBadge = readme.contains("github/actions/workflow/status", ignoreCase = true)
             if (!hasBadge) return
             assertTrue(
-                Files.exists(Path.of(".github/workflows")),
+                Files.exists(Paths.get(".github/workflows")),
                 "GitHub Actions badge present but .github/workflows directory missing"
             )
         }

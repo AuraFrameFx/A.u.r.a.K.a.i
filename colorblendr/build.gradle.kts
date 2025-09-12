@@ -1,48 +1,46 @@
-// ==== GENESIS PROTOCOL - COLOR BLENDR ====
+// ==== GENESIS PROTOCOL - COLORBLENDR MODULE ====
+// Color utility and theming module
+
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    id("genesis.android.library")
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
-    alias(libs.plugins.dokka)
+    alias(libs.plugins.ksp)
 }
+
 android {
     namespace = "dev.aurakai.auraframefx.colorblendr"
-    compileSdk = 36
-    defaultConfig { minSdk = 34 }
-    buildFeatures { compose = true; buildConfig = true }
-    java { toolchain { languageVersion.set(JavaLanguageVersion.of(24)) } }
-    kotlin { jvmToolchain(24); compilerOptions { jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24) } }
+    
+    buildFeatures {
+        buildConfig = true
+        compose = true
+    }
 }
 
 dependencies {
-    api(project(":core-module"))
+    // Core
+    implementation(project(":core-module"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    
+    // Compose
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.compose.material.icons.extended)
-    implementation(libs.hilt.android); ksp(libs.hilt.compiler)
-    implementation(libs.kotlinx.coroutines.core); implementation(libs.kotlinx.coroutines.android)
-    implementation(libs.androidx.datastore.preferences)
-    implementation(libs.timber); implementation(libs.coil.compose)
-    testImplementation(libs.junit4); testImplementation(libs.mockk.android)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.androidx.test.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.compose.ui)
-    androidTestImplementation(libs.mockk.android)
-    debugImplementation(libs.androidx.compose.ui.tooling)
-}
-
-tasks.register("colorStatus") {
-    group = "aegenesis"; doLast { println("🎨 COLOR BLENDR - Ready (Java 24)") }
+    implementation(libs.bundles.compose.ui)
+    debugImplementation(libs.bundles.compose.debug)
+    
+    // Lifecycle
+    implementation(libs.bundles.lifecycle)
+    
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    
+    // Utilities
+    implementation(libs.timber)
+    
+    // Testing
+    testImplementation(libs.junit4)
+    testImplementation(libs.mockk)
+    androidTestImplementation(libs.bundles.testing.android)
+    implementation(kotlin("stdlib-jdk8"))
 }

@@ -1,0 +1,19 @@
+Gradle start parameters:
+  tasks = [deepClean]
+  excluded tasks = []
+  current dir = C:\ReGenesis-A.O.S.P
+  project properties args = []
+  system properties args = [idea.active: true, user.variant: , file.encoding: UTF-8, idea.version: 2025.2, user.language: en, user.country: US, idea.vendor.name: JetBrains]
+
+Build failed: [Execution failed for task ':nuclearClean'.]
+
+Time metrics:
+  Total Gradle task time: 14.71 s
+
+
+
+No Kotlin task was run
+Task ':nuclearClean' finished in 14.71 s
+Time metrics:
+  Total Gradle task time: 14.71 s
+

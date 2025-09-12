@@ -1,0 +1,8 @@
+Gradle start parameters:
+  tasks = [clean, :secure-comm:build]
+  excluded tasks = []
+  current dir = C:\ReGenesis-A.O.S.P
+  project properties args = []
+  system properties args = [user.variant: , file.encoding: UTF-8, user.country: US, user.language: en]
+
+No Kotlin task was run

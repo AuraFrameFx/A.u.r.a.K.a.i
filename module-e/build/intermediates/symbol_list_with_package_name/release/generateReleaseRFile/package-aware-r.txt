@@ -1,0 +1,3 @@
+dev.aurakai.auraframefx.module.e
+string module_e_main_name
+string module_e_release_name

@@ -1,49 +1,51 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 plugins {
-    kotlin("jvm")  // Changed from alias(libs.plugins.kotlin.jvm)
+    // JVM library setup
+    id("java-library")
+    kotlin("jvm")
+
+    // Additional tooling
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
 }
+
 group = "dev.aurakai.auraframefx.utilities"
 version = "1.0.0"
 
+// Centralized toolchain version
+val jdkVersion = 24
+
 java {
-    toolchain { languageVersion.set(JavaLanguageVersion.of(24)) }
+    toolchain { languageVersion.set(JavaLanguageVersion.of(jdkVersion)) }
 }
 
 kotlin {
-    jvmToolchain(24)
-    compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
-        languageVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_2)
-        apiVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_2)
-    }
+    jvmToolchain(jdkVersion)
 }
 
 dependencies {
-    // Module dependencies - utilities depends on list (not circular)
+    // Module dependency (utilities depends on list)
     api(project(":list"))
 
-    // Kotlin standard library (automatically included by kotlin plugin)
+    // Concurrency and serialization
     implementation(libs.bundles.coroutines)
     implementation(libs.kotlinx.serialization.json)
 
-    // Utilities for file operations and compression (chosen by AI entities)
+    // File operations and compression
     implementation(libs.commons.io)
     implementation(libs.commons.compress)
     implementation(libs.xz)
 
-    // Logging (JVM-compatible)
+    // Logging API only (no binding at library runtime)
     implementation(libs.slf4j.api)
-    implementation(libs.slf4j.simple)
 
-    // Testing
-    testImplementation(libs.junit4)
+    // Testing (JUnit 5)
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
     testImplementation(libs.mockk)
+    // Bind a simple logger only during tests
+    testRuntimeOnly(libs.slf4j.simple)
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.test {

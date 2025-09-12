@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 9.0.0-alpha02" type="partial_results">
+    <map id="UnusedResources">
+        <location id="R.string.module_f_debug_name"
+            file="${:module-f*debug*MAIN*sourceProvider*0*resDir*1}/values/strings.xml"
+            line="3"
+            column="13"
+            startOffset="63"
+            endLine="3"
+            endColumn="39"
+            endOffset="89"/>
+        <location id="R.string.module_f_main_name"
+            file="${:module-f*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="3"
+            column="13"
+            startOffset="63"
+            endLine="3"
+            endColumn="38"
+            endOffset="88"/>
+        <entry
+            name="model"
+            string="string[module_f_main_name(D),module_f_debug_name(D)];;;;"/>
+    </map>
+
+</incidents>

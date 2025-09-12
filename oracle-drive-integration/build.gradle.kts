@@ -23,4 +23,9 @@ dependencies {
     implementation(libs.hilt.work)
     implementation(libs.bundles.coroutines)
     // Add other module-specific dependencies here
+    implementation(kotlin("stdlib-jdk8"))
+}
+
+kotlin {
+    jvmToolchain(24)
 }

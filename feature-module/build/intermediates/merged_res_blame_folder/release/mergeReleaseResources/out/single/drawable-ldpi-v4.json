@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-3:/drawable-ldpi-v4/ic_password.png",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-jetified-credentials-1.2.0-rc01-45:/drawable-ldpi-v4/ic_password.png"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-3:/drawable-ldpi-v4/ic_passkey.png",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-jetified-credentials-1.2.0-rc01-45:/drawable-ldpi-v4/ic_passkey.png"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-3:/drawable-ldpi-v4/ic_other_sign_in.png",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-jetified-credentials-1.2.0-rc01-45:/drawable-ldpi-v4/ic_other_sign_in.png"
+    }
+]
