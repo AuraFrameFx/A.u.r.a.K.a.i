@@ -44,6 +44,24 @@ dependencies {
     implementation(libs.androidx.test.ext.junit)
     implementation(libs.androidx.test.espresso.core)
 
+    // ===== KOTLIN & COROUTINES =====
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.bundles.coroutines)
+
+    // ===== NETWORKING =====
+    implementation(libs.bundles.network)
+
+    // ===== FIREBASE =====
+    // By implementing the BOM, we can specify Firebase SDKs without versions
+    implementation(platform(libs.firebase.bom))
+    // This bundle includes over 100+ APIs from Analytics, Crashlytics, Performance, etc.
+    implementation(libs.bundles.firebase)
+
+    // ===== HILT DEPENDENCY INJECTION =====
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    ksp("com.google.dagger:hilt-compiler:2.51.1")
+
+    // ===== UTILITIES =====
     implementation(libs.timber)
     implementation(libs.coil.compose)
     
