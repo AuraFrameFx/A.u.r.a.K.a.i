@@ -2,25 +2,68 @@
 // This build script now uses the custom convention plugins for a cleaner setup.
 
 plugins {
-    id("genesis.android.application")
+    id("com.android.application")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
+    // alias(libs.plugins.hilt) // Temporarily disabled for testing
 }
 
 android {
-    namespace = "dev.aurakai.auraframefx" // Using the namespace from your convention plugin
+    namespace = "dev.aurakai.auraframefx"
+    compileSdk = 36
 
     defaultConfig {
-        // App-specific configurations that aren't in the convention plugin
-        vectorDrawables.useSupportLibrary = true
+        applicationId = "dev.aurakai.auraframefx"
+        minSdk = 26
+        targetSdk = 36
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        debug {
+            isDebuggable = true
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-DEBUG"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+        isCoreLibraryDesugaringEnabled = true
     }
 
     buildFeatures {
-        // Enable features not covered in the library convention plugin
-        aidl = true
-        buildConfig = true
         compose = true
+        buildConfig = true
+        aidl = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.15"
+    }
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "META-INF/*.md"
+            excludes += "META-INF/CHANGES"
+            excludes += "META-INF/README.md"
+        }
     }
 
     testOptions {
@@ -108,3 +151,5 @@ dependencies {
     debugImplementation(libs.leakcanary.android)
     implementation(kotlin("stdlib-jdk8"))
 }
+
+// Note: Applied standard Android plugin directly instead of genesis convention
