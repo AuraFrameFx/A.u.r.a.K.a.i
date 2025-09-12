@@ -28,6 +28,8 @@ dependencies {
     implementation(libs.commons.compress)
     implementation(libs.xz)
 
+    // Logging
+    implementation(libs.timber)
 
     // Testing
     testImplementation(libs.bundles.testing)
