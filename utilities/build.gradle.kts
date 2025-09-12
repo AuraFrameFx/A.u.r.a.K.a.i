@@ -35,14 +35,15 @@ dependencies {
     implementation(libs.commons.compress)
     implementation(libs.xz)
 
-    // Logging
-    implementation(libs.timber)
+    // Logging (JVM-compatible)
+    implementation(libs.slf4j.api)
+    implementation(libs.slf4j.simple)
 
     // Testing
     testImplementation(libs.junit4)
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
-    testImplementation(libs.mockk.android)
+    testImplementation(libs.mockk)
 }
 
 tasks.test {

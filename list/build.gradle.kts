@@ -35,7 +35,7 @@ dependencies {
     testImplementation(libs.junit4)
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
-    testImplementation(libs.mockk.android)
+    testImplementation(libs.mockk)
 }
 
 tasks.test {
