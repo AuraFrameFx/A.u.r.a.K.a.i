@@ -9,6 +9,10 @@ plugins {
 android {
     namespace = "dev.aurakai.auraframefx.collabcanvas"
     
+    defaultConfig {
+        minSdk = 26
+    }
+    
     buildFeatures {
         buildConfig = true
         compose = true

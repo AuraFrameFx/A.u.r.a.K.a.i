@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Images and links – supplemental" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T14:35:33.270Z" hostname="AURAKAI" time="0.003">
-  <properties/>
-  <testcase name="internal markdown anchor links resolve to headers()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$ImagesAndLinksSupplemental" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

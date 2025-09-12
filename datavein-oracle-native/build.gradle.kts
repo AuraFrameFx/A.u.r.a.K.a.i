@@ -9,6 +9,10 @@ plugins {
 android {
     namespace = "dev.aurakai.auraframefx.dataveinoraclenative"
     
+    defaultConfig {
+        minSdk = 26
+    }
+    
     buildFeatures {
         compose = true
     }

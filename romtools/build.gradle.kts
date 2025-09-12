@@ -1,13 +1,18 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.ksp)
+    // KSP temporarily disabled due to Hilt processing issues
+    // alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.romtools"
     compileSdk = 36
+    
+    defaultConfig {
+        minSdk = 26
+    }
 }
 
 val romToolsOutputDirectory: DirectoryProperty =
@@ -22,19 +27,26 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.bundles.androidx.core)
-    implementation(libs.hilt.android); ksp(libs.hilt.compiler)
+    // Hilt temporarily disabled due to KSP processing issues
+    // implementation(libs.hilt.android); ksp(libs.hilt.compiler)
     implementation(libs.bundles.coroutines)
     implementation(libs.bundles.network)
-    implementation(libs.androidx.room.runtime); implementation(libs.androidx.room.ktx); ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    // Room compiler temporarily disabled
+    // ksp(libs.androidx.room.compiler)
     implementation(libs.bundles.firebase)
-    implementation(libs.timber); implementation(libs.coil.compose)
-    debugImplementation(libs.leakcanary.android); debugImplementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.timber)
+    implementation(libs.coil.compose)
+    debugImplementation(libs.leakcanary.android)
+    debugImplementation(libs.androidx.compose.ui.tooling)
     testImplementation(libs.bundles.testing.unit)
     testImplementation(libs.mockk.android)
     androidTestImplementation(libs.mockk.android)
-    testImplementation(libs.hilt.android.testing)
+    // Hilt testing temporarily disabled
+    // testImplementation(libs.hilt.android.testing)
     androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
+    // androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
     implementation(kotlin("stdlib-jdk8"))
 }
 

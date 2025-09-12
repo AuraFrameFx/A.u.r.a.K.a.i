@@ -9,6 +9,11 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.securecomm"
+    
+    defaultConfig {
+        minSdk = 26
+    }
+    
     externalNativeBuild {
         cmake {
             path = file("src/main/cpp/CMakeLists.txt")

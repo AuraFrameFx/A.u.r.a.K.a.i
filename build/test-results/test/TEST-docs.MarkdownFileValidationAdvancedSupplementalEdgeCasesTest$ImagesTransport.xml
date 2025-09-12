@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Images – transport and alt text quality" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T14:35:33.201Z" hostname="AURAKAI" time="0.005">
-  <properties/>
-  <testcase name="no images use insecure http transport()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$ImagesTransport" time="0.003"/>
-  <testcase name="image alt text is descriptive – not just file names()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$ImagesTransport" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

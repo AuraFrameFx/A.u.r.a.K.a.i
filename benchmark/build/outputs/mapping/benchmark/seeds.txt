@@ -1,5 +1,0 @@
-dev.aurakai.auraframefx.benchmark.BuildConfig
-dev.aurakai.auraframefx.benchmark.BuildConfig: boolean DEBUG
-dev.aurakai.auraframefx.benchmark.BuildConfig: java.lang.String BUILD_TYPE
-dev.aurakai.auraframefx.benchmark.BuildConfig: java.lang.String LIBRARY_PACKAGE_NAME
-dev.aurakai.auraframefx.benchmark.BuildConfig: BuildConfig()

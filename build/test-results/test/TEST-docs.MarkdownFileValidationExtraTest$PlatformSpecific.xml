@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Platform-specific references" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T14:35:33.509Z" hostname="AURAKAI" time="0.007">
-  <properties/>
-  <testcase name="gradlewbat exists when referenced()" classname="docs.MarkdownFileValidationExtraTest$PlatformSpecific" time="0.003"/>
-  <testcase name="contributing and code of conduct files exist when linked()" classname="docs.MarkdownFileValidationExtraTest$PlatformSpecific" time="0.004"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

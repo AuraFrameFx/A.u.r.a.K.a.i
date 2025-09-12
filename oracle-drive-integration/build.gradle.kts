@@ -8,6 +8,10 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.oracledriveintegration"
+    
+    defaultConfig {
+        minSdk = 26
+    }
 }
 
 dependencies {

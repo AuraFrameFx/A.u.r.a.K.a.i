@@ -1,2 +1,0 @@
-ninja: Entering directory `C:\ReGenesis-A.O.S.P\secure-comm\.cxx\Release\5k6g5v3l\x86_64'
-ninja: no work to do.

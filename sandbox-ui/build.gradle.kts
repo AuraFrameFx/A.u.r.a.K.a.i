@@ -11,7 +11,7 @@ plugins {
 android {
     namespace = "dev.aurakai.auraframefx.sandboxui"
     compileSdk = 36
-    defaultConfig { minSdk = 34 }
+    defaultConfig { minSdk = 26 }
     buildFeatures { compose = true }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

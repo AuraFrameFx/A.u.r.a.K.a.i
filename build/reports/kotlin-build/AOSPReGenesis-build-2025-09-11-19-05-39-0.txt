@@ -1,8 +1,0 @@
-Gradle start parameters:
-  tasks = [:build-logic:pluginDescriptors]
-  excluded tasks = []
-  current dir = C:\ReGenesis-A.O.S.P
-  project properties args = []
-  system properties args = [idea.active: true, user.variant: , file.encoding: UTF-8, idea.version: 2025.2, user.language: en, user.country: US, idea.vendor.name: JetBrains]
-
-No Kotlin task was run

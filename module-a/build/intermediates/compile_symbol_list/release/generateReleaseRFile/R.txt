@@ -1,2 +1,0 @@
-int string module_a_main_name 0x0
-int string module_a_release_name 0x0
