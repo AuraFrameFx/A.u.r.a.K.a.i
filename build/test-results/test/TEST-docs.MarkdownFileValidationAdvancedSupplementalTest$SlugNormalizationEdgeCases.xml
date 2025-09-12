@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Slug normalization – edge cases" tests="4" skipped="0" failures="1" errors="0" timestamp="2025-09-12T18:50:08.503Z" hostname="AURAKAI" time="0.023">
+  <properties/>
+  <testcase name="accents stripped and em dash removed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.016"/>
+  <testcase name="en dash normalized via spaces()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.001"/>
+  <testcase name="underscores removed and spaces collapsed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.004">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;a-b-c&gt; but was: &lt;ab-c&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;a-b-c&gt; but was: &lt;ab-c&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases.underscores removed and spaces collapsed(MarkdownFileValidationAdvancedSupplementalTest.kt:416)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+</failure>
+  </testcase>
+  <testcase name="emoji and punctuation removed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

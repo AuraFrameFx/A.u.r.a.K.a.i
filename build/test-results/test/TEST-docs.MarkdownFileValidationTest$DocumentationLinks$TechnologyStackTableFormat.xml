@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Technology stack table format" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T18:50:09.018Z" hostname="AURAKAI" time="0.002">
+  <properties/>
+  <testcase name="technology table rows have at least three columns()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$TechnologyStackTableFormat" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

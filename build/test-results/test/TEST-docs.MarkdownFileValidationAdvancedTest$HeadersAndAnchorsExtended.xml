@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Headers and anchors – extended" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T18:50:08.593Z" hostname="AURAKAI" time="0.015">
+  <properties/>
+  <testcase name="h2 section slugs are unique()" classname="docs.MarkdownFileValidationAdvancedTest$HeadersAndAnchorsExtended" time="0.007"/>
+  <testcase name="reference-style link definitions have unique keys()" classname="docs.MarkdownFileValidationAdvancedTest$HeadersAndAnchorsExtended" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
