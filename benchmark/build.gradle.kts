@@ -72,7 +72,7 @@ dependencies {
     implementation("androidx.core:core-ktx:1.15.0")
     implementation(platform("androidx.compose:compose-bom:2024.12.01"))
     implementation("androidx.activity:activity-compose:1.9.3")
-    implementation("androidx.navigation:navigation-compose:2.8.5")
+    implementation("androidx.navigation:navigation-compose:2.9.4")
     
     // Hilt
     implementation("com.google.dagger:hilt-android:2.51.1")
@@ -99,14 +99,14 @@ dependencies {
     
     // Benchmark testing
     androidTestImplementation("androidx.benchmark:benchmark-junit4:1.4.1")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.ext:junit:1.3.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
     androidTestImplementation(libs.androidx.test.uiautomator)
     
     // Unit testing
     testImplementation("junit:junit:4.13.2")
-    testImplementation("io.mockk:mockk:1.13.10")
-    androidTestImplementation("io.mockk:mockk-android:1.13.10")
+    testImplementation("io.mockk:mockk:1.14.5")
+    androidTestImplementation("io.mockk:mockk-android:1.14.5")
     
     // Hilt testing
     testImplementation("com.google.dagger:hilt-android-testing:2.51.1")
