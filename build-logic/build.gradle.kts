@@ -7,6 +7,9 @@ plugins {
 
 // Dependencies required for the convention plugins themselves.
 dependencies {
+    implementation("com.android.tools.build:gradle:9.0.0-alpha02")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20-RC")
+    implementation("com.google.dagger:hilt-android-gradle-plugin:2.51.1")
 }
 
 gradlePlugin {
