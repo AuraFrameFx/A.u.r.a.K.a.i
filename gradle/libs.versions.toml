@@ -1,10 +1,10 @@
 [versions]
 # ===== GRADLE & KOTLIN =====
-agp = "9.0.0-alpha05"
+agp = "9.0.0-alpha02"
 kotlin = "2.2.20-RC"
 ksp = "2.2.20-2.0.3"
 
-googleServices = "4.4.3"
+googleServices = "4.4.4"
 desugar_jdk_libs = "2.1.5"
 
 # ===== HOOKING FRAMEWORKS =====
@@ -92,10 +92,31 @@ coroutines = [
     "kotlinx-coroutines-core",
     "kotlinx-coroutines-android",
 ]
-firebase = [
+firebase-core = [
     "firebase-analytics-ktx",
     "firebase-crashlytics-ktx",
     "firebase-perf-ktx"
+]
+firebase-auth = [
+    "firebase-auth-ktx"
+]
+firebase-database = [
+    "firebase-firestore-ktx",
+    "firebase-database-ktx",
+    "firebase-storage-ktx"
+]
+firebase-messaging = [
+    "firebase-messaging-ktx",
+    "firebase-config-ktx"
+]
+firebase = [
+    "firebase-analytics-ktx",
+    "firebase-crashlytics-ktx",
+    "firebase-perf-ktx",
+    "firebase-auth-ktx",
+    "firebase-firestore-ktx",
+    "firebase-messaging-ktx",
+    "firebase-config-ktx"
 ]
 lifecycle = [
     "androidx-lifecycle-runtime-ktx",
@@ -175,6 +196,12 @@ firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.r
 firebase-analytics-ktx = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
 firebase-crashlytics-ktx = { group = "com.google.firebase", name = "firebase-crashlytics-ktx" }
 firebase-perf-ktx = { group = "com.google.firebase", name = "firebase-perf-ktx" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx" }
+firebase-database-ktx = { group = "com.google.firebase", name = "firebase-database-ktx" }
+firebase-storage-ktx = { group = "com.google.firebase", name = "firebase-storage-ktx" }
+firebase-messaging-ktx = { group = "com.google.firebase", name = "firebase-messaging-ktx" }
+firebase-config-ktx = { group = "com.google.firebase", name = "firebase-config-ktx" }
 
 # ===== KOTLINX =====
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }

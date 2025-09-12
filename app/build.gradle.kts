@@ -65,8 +65,14 @@ dependencies {
     // ===== FIREBASE =====
     // By implementing the BOM, we can specify Firebase SDKs without versions
     implementation(platform(libs.firebase.bom))
-    // This bundle includes over 100+ APIs from Analytics, Crashlytics, Performance, etc.
+    // This bundle includes Analytics, Crashlytics, Performance, Auth, Firestore, Messaging, and Config
     implementation(libs.bundles.firebase)
+    
+    // Alternative: Use specific Firebase bundles for modular approach
+    // implementation(libs.bundles.firebase.core)     // Analytics, Crashlytics, Performance only
+    // implementation(libs.bundles.firebase.auth)     // Authentication
+    // implementation(libs.bundles.firebase.database) // Firestore, Realtime Database, Storage
+    // implementation(libs.bundles.firebase.messaging) // FCM, Remote Config
 
     // ===== HILT DEPENDENCY INJECTION =====
     implementation("com.google.dagger:hilt-android:2.51.1")
