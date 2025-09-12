@@ -1,4 +1,4 @@
-package com.auraos.collab_canvas
+package dev.aurakai.auraframefx.collabcanvas
 
 import com.highcapable.yukihookapi.YukiHookAPI
 import com.highcapable.yukihookapi.annotation.xposed.InjectYukiHookWithXposed
@@ -11,9 +11,8 @@ import com.highcapable.yukihookapi.hook.xposed.proxy.IYukiHookXposedInit
  * Do not modify this class unless you know what you are doing.
  */
 @InjectYukiHookWithXposed(
-    isUsingResourcesHook = false, // Set to true if you need to hook resources
-    isUsingXposedModuleLoader = true,
-    modulePackageName = "dev.aurakai.auraframefx.collabcanvas"
+    isUsingResourcesHook = false,
+    isUsingXposedModuleLoader = true
 )
 object HookEntry : IYukiHookXposedInit {
 
