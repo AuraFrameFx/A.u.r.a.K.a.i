@@ -62,8 +62,8 @@ kotlin {
 
 openApiGenerate {
     generatorName.set("kotlin")
-    // Use a valid file URI for Windows
-    inputSpec.set("file:///${rootDir.toURI().path}app/api/system-api.yml")
+    // Use a valid file URI for Windows (three slashes)
+    inputSpec.set("file:///C:/ReGenesis-A.O.S.P/app/api/system-api.yml")
     outputDir.set(layout.buildDirectory.dir("generated/openapi").get().asFile.absolutePath)
     apiPackage.set("dev.aurakai.auraframefx.openapi.api")
     modelPackage.set("dev.aurakai.auraframefx.openapi.model")

@@ -24,7 +24,7 @@ android {
 
 
 kotlin {
-    jvmToolchain(24)
+    jvmToolchain(17)
 }
 
 dependencies {
