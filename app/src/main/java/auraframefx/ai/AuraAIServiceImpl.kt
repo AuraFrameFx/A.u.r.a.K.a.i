@@ -2,7 +2,6 @@ package AeGenesis.ai
 
 import AeGenesis.ai.AuraAIServiceInterface
 import AeGenesis.ai.config.AIConfig
-import dev.aurakai.auraframefx.network.AuraApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import timber.log.Timber
@@ -376,7 +375,6 @@ class AuraAIServiceImpl @Inject constructor(
         )
     }
 
-    private fun processWithTrinityAI(request: Map<String, Any>): String {
         // Implement Trinity AI processing (Aura + Kai + Genesis)
         return "Trinity AI Response: ${request["prompt"]}"
     }

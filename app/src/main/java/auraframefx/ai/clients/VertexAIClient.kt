@@ -19,7 +19,6 @@ class DefaultVertexAIClient : VertexAIClient {
         specification: String,
         language: String,
         style: String
-    ): String {
         return """
         // Generated $language code in $style style
         // Specification: $specification
@@ -31,11 +30,9 @@ class DefaultVertexAIClient : VertexAIClient {
         """.trimIndent()
     }
 
-    override suspend fun generateText(prompt: String): String {
         return "AI generated response for: $prompt"
     }
 
-    override suspend fun generateText(prompt: String, temperature: Float, maxTokens: Int): String {
         return "AI response (temp: $temperature, tokens: $maxTokens) for: $prompt"
     }
 

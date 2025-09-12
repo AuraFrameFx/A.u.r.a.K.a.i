@@ -64,7 +64,6 @@ class AuraAIServiceImpl @Inject constructor(
      *
      * @return The string "AI response placeholder".
      */
-    override fun getAIResponse(prompt: String, options: Map<String, Any>?): String {
         return "AI response placeholder"
     }
 

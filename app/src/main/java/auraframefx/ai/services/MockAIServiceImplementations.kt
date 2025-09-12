@@ -18,7 +18,6 @@ class MockAuraAIService : Agent {
      *
      * @return The string "MockAura".
      */
-    override fun getName(): String = "MockAura"
 
     /**
      * Returns the agent type for this mock AI service.
@@ -69,7 +68,6 @@ class MockKaiAIService : Agent {
      *
      * @return The string "MockKai".
      */
-    override fun getName(): String = "MockKai"
 
     /**
      * Returns the agent type associated with the mock Kai AI service.
@@ -118,7 +116,6 @@ class MockCascadeAIService : Agent {
      *
      * @return The string "MockCascade".
      */
-    override fun getName(): String = "MockCascade"
 
     /**
      * Returns the agent type associated with this mock Cascade AI service.

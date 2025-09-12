@@ -88,7 +88,6 @@ class AuraShieldAgent @Inject constructor(
         LOW, MEDIUM, HIGH, CRITICAL, EXISTENTIAL
     }
 
-    class BehaviorAnalyzer {
         private val behaviorPatterns = mutableMapOf<String, BehaviorPattern>()
         private val anomalyThreshold = 0.8f
 
@@ -157,7 +156,6 @@ class AuraShieldAgent @Inject constructor(
         }
     }
 
-    class AdaptiveFirewall {
         private val blockedIPs = mutableSetOf<String>()
         private val suspiciousActivities = mutableMapOf<String, Int>()
         private val allowList = mutableSetOf<String>()

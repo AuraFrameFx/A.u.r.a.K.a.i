@@ -5,6 +5,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dev.aurakai.auraframefx.model.AgentInvokeRequest
 import dev.aurakai.auraframefx.model.AgentType
 import kotlinx.coroutines.delay
+import kotlinx.serialization.Serializable
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.serialization.Serializable
@@ -25,7 +26,6 @@ data class CascadeResponse(
     val confidence: Float? = null,
     val timestamp: String,
     val metadata: Map<String, String> = emptyMap()
-)
 
 /**
  * CascadeAIService - Advanced AI orchestration service that coordinates multiple AI agents
@@ -88,12 +88,9 @@ class CascadeAIService @Inject constructor(
                 val cascadeContext = buildCascadeContext(request, cascadeResults)
 
                 // Process with current agent
-                val cascadeResponse = processWithAgent(agentType, request, cascadeContext)
-                cascadeResults.add(cascadeResponse)
 
                 // Emit intermediate result
                 emit(
-                    cascadeResponse.copy(
                         response = "Agent ${agentType.name} processing... (${index + 1}/${selectedAgents.size})"
                     )
                 )
@@ -126,7 +123,6 @@ class CascadeAIService @Inject constructor(
      */
     private fun selectAgentsForRequest(request: AgentInvokeRequest): List<AgentType> {
         val message = request.message.lowercase()
-        request.context
         val priority = request.priority
 
         val selectedAgents = mutableSetOf<AgentType>()
@@ -175,10 +171,12 @@ class CascadeAIService @Inject constructor(
         request: AgentInvokeRequest,
         cascadeContext: Map<String, Any>
     ): CascadeResponse {
+
         return when (agentType) {
             AgentType.Genesis -> processWithGenesis(request, cascadeContext)
             AgentType.Kai -> processWithKai(request, cascadeContext)
             AgentType.Aura -> processWithAura(request, cascadeContext)
+            AgentType.Kai -> processWithKai(request, cascadeContext)
             AgentType.Cascade -> processWithCascade(request, cascadeContext)
             AgentType.NeuralWhisper -> processWithNeuralWhisper(request, cascadeContext)
             AgentType.AuraShield -> processWithAuraShield(request, cascadeContext)
@@ -943,8 +941,6 @@ class CascadeAIService @Inject constructor(
      * @return A Float in the range 0.7..0.95 representing generation potential.
      */
     private fun calculateGenerationPotential(message: String): Float {
-        // Generate a float between 0.7 and 0.95
-        return 0.7f + (Random.nextFloat() * (0.95f - 0.7f))
     }
 
     /**
