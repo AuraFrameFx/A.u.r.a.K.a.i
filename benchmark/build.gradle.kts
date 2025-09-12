@@ -105,8 +105,8 @@ dependencies {
     
     // Unit testing
     testImplementation("junit:junit:4.13.2")
-    testImplementation("io.mockk:mockk:1.13.10")
-    androidTestImplementation("io.mockk:mockk-android:1.13.10")
+    testImplementation("io.mockk:mockk:1.14.5")
+    androidTestImplementation("io.mockk:mockk-android:1.14.5")
     
     // Hilt testing
     testImplementation("com.google.dagger:hilt-android-testing:2.51.1")
