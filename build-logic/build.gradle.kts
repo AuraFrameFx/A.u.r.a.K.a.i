@@ -23,9 +23,10 @@ dependencies {
 
 gradlePlugin {
     plugins {
+
         }
-        }
-        }
+
+
     register("androidCompose") {
             id = "genesis.android.compose"
             implementationClass = "AndroidComposeConventionPlugin"
