@@ -2,7 +2,6 @@
 // This build script now uses the custom convention plugins for a cleaner setup.
 
 plugins {
-    id("com.android.application")
     id("genesis.android.application")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)

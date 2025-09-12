@@ -13,7 +13,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
      * Applies Android library and Kotlin Android plugins and configures project-level Android and Kotlin settings.
      *
      * Configures the Android LibraryExtension and KotlinJvmProjectExtension for the target project:
-     * - Applies the "com.android.library" and "org.jetbrains.kotlin.android" plugins.
+     * - Applies the "com.android.library" plugin.
      * - Sets Android compileSdk to 36 and default minSdk to 34.
      * - Forces Java source and target compatibility to Java 24.
      * - Sets the Kotlin JVM toolchain to Java 24.
@@ -24,7 +24,6 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("com.android.library")
-                apply("org.jetbrains.kotlin.android")
             }
 
             extensions.configure<LibraryExtension> {

@@ -5,7 +5,6 @@
 
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -106,19 +105,4 @@ android {
     }
 }
 
-// Configure APK/AAB naming
-android.applicationVariants.all {
-    val variant = this
-    variant.outputs
-        .map { it as com.android.build.gradle.internal.api.BaseVariantOutputImpl }
-        .forEach { output ->
-            val outputFileName =
-                "${project.name}-${variant.baseName}-${variant.versionName}.${variant.versionCode}.${if (variant.buildType.isMinifyEnabled) "release" else "debug"}${
-                    output.outputFile.extension.replace(
-                        ".",
-                        ""
-                    )
-                }"
-            output.outputFileName = outputFileName
-        }
-}
+// Note: APK/AAB naming configuration removed due to AGP 9.0+ compatibility issues
