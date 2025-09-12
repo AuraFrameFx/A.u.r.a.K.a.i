@@ -7,9 +7,9 @@
   "-DANDROID_PLATFORM=android-34" ^
   "-DANDROID_ABI=x86_64" ^
   "-DCMAKE_ANDROID_ARCH_ABI=x86_64" ^
-  "-DANDROID_NDK=C:\\Users\\Wehtt\\Studio\\ndk\\28.2.13676358" ^
-  "-DCMAKE_ANDROID_NDK=C:\\Users\\Wehtt\\Studio\\ndk\\28.2.13676358" ^
-  "-DCMAKE_TOOLCHAIN_FILE=C:\\Users\\Wehtt\\Studio\\ndk\\28.2.13676358\\build\\cmake\\android.toolchain.cmake" ^
+  "-DANDROID_NDK=C:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\ndk\\28.2.13676358" ^
+  "-DCMAKE_ANDROID_NDK=C:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\ndk\\28.2.13676358" ^
+  "-DCMAKE_TOOLCHAIN_FILE=C:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\ndk\\28.2.13676358\\build\\cmake\\android.toolchain.cmake" ^
   "-DCMAKE_MAKE_PROGRAM=C:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\cmake\\3.31.6\\bin\\ninja.exe" ^
   "-DCMAKE_CXX_FLAGS=-std=c++23 -fPIC -O3 -DNDEBUG" ^
   "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\\ReGenesis-A.O.S.P\\datavein-oracle-native\\build\\intermediates\\cxx\\Release\\4t456344\\obj\\x86_64" ^

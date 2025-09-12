@@ -4,7 +4,7 @@
             "outputFile": "dev.aurakai.auraframefx.featuremodule.feature-module-mergeReleaseResources-1:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\59e3a302b630a73640a0b665fcec4c8f\\workspace\\transformed\\appcompat-1.7.1\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\dfe4f29c3ce72f34963a5b49364fdbc8\\workspace\\transformed\\appcompat-1.7.1\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\7c21cff03780eb94e3af1cb85c6cedfc\\workspace\\transformed\\material-1.12.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\e796f956ca42723712a441c15d94f54b\\workspace\\transformed\\material-1.12.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
             "outputFile": "dev.aurakai.auraframefx.featuremodule.feature-module-release-3:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\59e3a302b630a73640a0b665fcec4c8f\\workspace\\transformed\\appcompat-1.7.1\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\dfe4f29c3ce72f34963a5b49364fdbc8\\workspace\\transformed\\appcompat-1.7.1\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -48,7 +48,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\7c21cff03780eb94e3af1cb85c6cedfc\\workspace\\transformed\\material-1.12.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\e796f956ca42723712a441c15d94f54b\\workspace\\transformed\\material-1.12.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

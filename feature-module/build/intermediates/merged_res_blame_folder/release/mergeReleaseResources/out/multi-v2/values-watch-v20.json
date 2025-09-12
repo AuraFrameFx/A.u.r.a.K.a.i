@@ -4,7 +4,7 @@
             "outputFile": "dev.aurakai.auraframefx.featuremodule.feature-module-mergeReleaseResources-1:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\59e3a302b630a73640a0b665fcec4c8f\\workspace\\transformed\\appcompat-1.7.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\dfe4f29c3ce72f34963a5b49364fdbc8\\workspace\\transformed\\appcompat-1.7.1\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\2dcd51aacd2baf4c0ee7dcc500422ade\\workspace\\transformed\\jetified-play-services-auth-20.7.0\\res\\values-watch-v20\\values.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\74b4b375bcb5b61349940ceac4beb0da\\workspace\\transformed\\jetified-play-services-auth-20.7.0\\res\\values-watch-v20\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",
@@ -45,7 +45,7 @@
             "outputFile": "dev.aurakai.auraframefx.featuremodule.feature-module-release-3:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\59e3a302b630a73640a0b665fcec4c8f\\workspace\\transformed\\appcompat-1.7.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\dfe4f29c3ce72f34963a5b49364fdbc8\\workspace\\transformed\\appcompat-1.7.1\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
@@ -64,7 +64,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\2dcd51aacd2baf4c0ee7dcc500422ade\\workspace\\transformed\\jetified-play-services-auth-20.7.0\\res\\values-watch-v20\\values.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\74b4b375bcb5b61349940ceac4beb0da\\workspace\\transformed\\jetified-play-services-auth-20.7.0\\res\\values-watch-v20\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",

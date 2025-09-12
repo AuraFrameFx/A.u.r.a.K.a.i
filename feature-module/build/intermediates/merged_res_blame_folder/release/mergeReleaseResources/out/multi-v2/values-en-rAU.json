@@ -4,58 +4,7 @@
             "outputFile": "dev.aurakai.auraframefx.featuremodule.feature-module-release-3:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\8469bb6da414f3faacece22a43c0cdf0\\workspace\\transformed\\jetified-credentials-1.2.0-rc01\\res\\values-en-rAU\\values-en-rAU.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,167",
-                        "endColumns": "111,113",
-                        "endOffsets": "162,276"
-                    },
-                    "to": {
-                        "startLines": "29,30",
-                        "startColumns": "4,4",
-                        "startOffsets": "2762,2874",
-                        "endColumns": "111,113",
-                        "endOffsets": "2869,2983"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\89cb723a6c139907f14eb7342143aa96\\workspace\\transformed\\core-1.15.0\\res\\values-en-rAU\\values-en-rAU.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,151,253,352,451,555,658,774",
-                        "endColumns": "95,101,98,98,103,102,115,100",
-                        "endOffsets": "146,248,347,446,550,653,769,870"
-                    },
-                    "to": {
-                        "startLines": "32,33,34,35,36,37,38,117",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3064,3160,3262,3361,3460,3564,3667,11716",
-                        "endColumns": "95,101,98,98,103,102,115,100",
-                        "endOffsets": "3155,3257,3356,3455,3559,3662,3778,11812"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\9fe3ed58ea9461f46be21490649da6a0\\workspace\\transformed\\browser-1.4.0\\res\\values-en-rAU\\values-en-rAU.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,153,250,359",
-                        "endColumns": "97,96,108,98",
-                        "endOffsets": "148,245,354,453"
-                    },
-                    "to": {
-                        "startLines": "41,45,46,47",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "3957,4335,4432,4541",
-                        "endColumns": "97,96,108,98",
-                        "endOffsets": "4050,4427,4536,4635"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\59e3a302b630a73640a0b665fcec4c8f\\workspace\\transformed\\appcompat-1.7.1\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\dfe4f29c3ce72f34963a5b49364fdbc8\\workspace\\transformed\\appcompat-1.7.1\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -72,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\ba05811a232a2a6bd14fbf02b0a816b9\\workspace\\transformed\\jetified-foundation-release\\res\\values-en-rAU\\values-en-rAU.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,141",
-                        "endColumns": "85,84",
-                        "endOffsets": "136,221"
-                    },
-                    "to": {
-                        "startLines": "121,122",
-                        "startColumns": "4,4",
-                        "startOffsets": "12081,12167",
-                        "endColumns": "85,84",
-                        "endOffsets": "12162,12247"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\70464a6bf3eed30f4a97c3bd94ee28e1\\workspace\\transformed\\jetified-material3-release\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\6d0cf7eb25051259b9ce2f5569129713\\workspace\\transformed\\jetified-material3-release\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -106,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\ab8890f438713c5867e68c3095c90038\\workspace\\transformed\\jetified-ui-release\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\6d04078e18871f3c516685b3c177fd39\\workspace\\transformed\\jetified-ui-release\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -120,6 +52,74 @@
                         "startOffsets": "2988,3783,3875,4055,4149,4248,4640,4722,10925,11014,11098,11176,11341,11414,11498,11574,11646,11817,11894,11960",
                         "endColumns": "75,91,81,93,98,86,81,88,88,83,77,81,72,83,75,71,69,76,65,120",
                         "endOffsets": "3059,3870,3952,4144,4243,4330,4717,4806,11009,11093,11171,11253,11409,11493,11569,11641,11711,11889,11955,12076"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\bf436df8b2e17d9b7ce7585c779c510f\\workspace\\transformed\\browser-1.4.0\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,153,250,359",
+                        "endColumns": "97,96,108,98",
+                        "endOffsets": "148,245,354,453"
+                    },
+                    "to": {
+                        "startLines": "41,45,46,47",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3957,4335,4432,4541",
+                        "endColumns": "97,96,108,98",
+                        "endOffsets": "4050,4427,4536,4635"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\1d82dab295d17ad3b246752aab1edd78\\workspace\\transformed\\jetified-foundation-release\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,141",
+                        "endColumns": "85,84",
+                        "endOffsets": "136,221"
+                    },
+                    "to": {
+                        "startLines": "121,122",
+                        "startColumns": "4,4",
+                        "startOffsets": "12081,12167",
+                        "endColumns": "85,84",
+                        "endOffsets": "12162,12247"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\2578b36532e2ce88749f7590e492a76d\\workspace\\transformed\\core-1.15.0\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,151,253,352,451,555,658,774",
+                        "endColumns": "95,101,98,98,103,102,115,100",
+                        "endOffsets": "146,248,347,446,550,653,769,870"
+                    },
+                    "to": {
+                        "startLines": "32,33,34,35,36,37,38,117",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3064,3160,3262,3361,3460,3564,3667,11716",
+                        "endColumns": "95,101,98,98,103,102,115,100",
+                        "endOffsets": "3155,3257,3356,3455,3559,3662,3778,11812"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\f593f8ac2f82d7d23fac8e12f9d146f5\\workspace\\transformed\\jetified-credentials-1.2.0-rc01\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,167",
+                        "endColumns": "111,113",
+                        "endOffsets": "162,276"
+                    },
+                    "to": {
+                        "startLines": "29,30",
+                        "startColumns": "4,4",
+                        "startOffsets": "2762,2874",
+                        "endColumns": "111,113",
+                        "endOffsets": "2869,2983"
                     }
                 }
             ]
@@ -128,58 +128,7 @@
             "outputFile": "dev.aurakai.auraframefx.featuremodule.feature-module-mergeReleaseResources-1:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\8469bb6da414f3faacece22a43c0cdf0\\workspace\\transformed\\jetified-credentials-1.2.0-rc01\\res\\values-en-rAU\\values-en-rAU.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,167",
-                        "endColumns": "111,113",
-                        "endOffsets": "162,276"
-                    },
-                    "to": {
-                        "startLines": "29,30",
-                        "startColumns": "4,4",
-                        "startOffsets": "2762,2874",
-                        "endColumns": "111,113",
-                        "endOffsets": "2869,2983"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\89cb723a6c139907f14eb7342143aa96\\workspace\\transformed\\core-1.15.0\\res\\values-en-rAU\\values-en-rAU.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,151,253,352,451,555,658,774",
-                        "endColumns": "95,101,98,98,103,102,115,100",
-                        "endOffsets": "146,248,347,446,550,653,769,870"
-                    },
-                    "to": {
-                        "startLines": "32,33,34,35,36,37,38,117",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3064,3160,3262,3361,3460,3564,3667,11716",
-                        "endColumns": "95,101,98,98,103,102,115,100",
-                        "endOffsets": "3155,3257,3356,3455,3559,3662,3778,11812"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\9fe3ed58ea9461f46be21490649da6a0\\workspace\\transformed\\browser-1.4.0\\res\\values-en-rAU\\values-en-rAU.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,153,250,359",
-                        "endColumns": "97,96,108,98",
-                        "endOffsets": "148,245,354,453"
-                    },
-                    "to": {
-                        "startLines": "41,45,46,47",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "3957,4335,4432,4541",
-                        "endColumns": "97,96,108,98",
-                        "endOffsets": "4050,4427,4536,4635"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\59e3a302b630a73640a0b665fcec4c8f\\workspace\\transformed\\appcompat-1.7.1\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\dfe4f29c3ce72f34963a5b49364fdbc8\\workspace\\transformed\\appcompat-1.7.1\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -196,24 +145,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\ba05811a232a2a6bd14fbf02b0a816b9\\workspace\\transformed\\jetified-foundation-release\\res\\values-en-rAU\\values-en-rAU.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,141",
-                        "endColumns": "85,84",
-                        "endOffsets": "136,221"
-                    },
-                    "to": {
-                        "startLines": "121,122",
-                        "startColumns": "4,4",
-                        "startOffsets": "12081,12167",
-                        "endColumns": "85,84",
-                        "endOffsets": "12162,12247"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\70464a6bf3eed30f4a97c3bd94ee28e1\\workspace\\transformed\\jetified-material3-release\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\6d0cf7eb25051259b9ce2f5569129713\\workspace\\transformed\\jetified-material3-release\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -230,7 +162,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\ab8890f438713c5867e68c3095c90038\\workspace\\transformed\\jetified-ui-release\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\6d04078e18871f3c516685b3c177fd39\\workspace\\transformed\\jetified-ui-release\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -244,6 +176,74 @@
                         "startOffsets": "2988,3783,3875,4055,4149,4248,4640,4722,10925,11014,11098,11176,11341,11414,11498,11574,11646,11817,11894,11960",
                         "endColumns": "75,91,81,93,98,86,81,88,88,83,77,81,72,83,75,71,69,76,65,120",
                         "endOffsets": "3059,3870,3952,4144,4243,4330,4717,4806,11009,11093,11171,11253,11409,11493,11569,11641,11711,11889,11955,12076"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\bf436df8b2e17d9b7ce7585c779c510f\\workspace\\transformed\\browser-1.4.0\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,153,250,359",
+                        "endColumns": "97,96,108,98",
+                        "endOffsets": "148,245,354,453"
+                    },
+                    "to": {
+                        "startLines": "41,45,46,47",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3957,4335,4432,4541",
+                        "endColumns": "97,96,108,98",
+                        "endOffsets": "4050,4427,4536,4635"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\1d82dab295d17ad3b246752aab1edd78\\workspace\\transformed\\jetified-foundation-release\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,141",
+                        "endColumns": "85,84",
+                        "endOffsets": "136,221"
+                    },
+                    "to": {
+                        "startLines": "121,122",
+                        "startColumns": "4,4",
+                        "startOffsets": "12081,12167",
+                        "endColumns": "85,84",
+                        "endOffsets": "12162,12247"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\2578b36532e2ce88749f7590e492a76d\\workspace\\transformed\\core-1.15.0\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,151,253,352,451,555,658,774",
+                        "endColumns": "95,101,98,98,103,102,115,100",
+                        "endOffsets": "146,248,347,446,550,653,769,870"
+                    },
+                    "to": {
+                        "startLines": "32,33,34,35,36,37,38,117",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3064,3160,3262,3361,3460,3564,3667,11716",
+                        "endColumns": "95,101,98,98,103,102,115,100",
+                        "endOffsets": "3155,3257,3356,3455,3559,3662,3778,11812"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\f593f8ac2f82d7d23fac8e12f9d146f5\\workspace\\transformed\\jetified-credentials-1.2.0-rc01\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,167",
+                        "endColumns": "111,113",
+                        "endOffsets": "162,276"
+                    },
+                    "to": {
+                        "startLines": "29,30",
+                        "startColumns": "4,4",
+                        "startOffsets": "2762,2874",
+                        "endColumns": "111,113",
+                        "endOffsets": "2869,2983"
                     }
                 }
             ]

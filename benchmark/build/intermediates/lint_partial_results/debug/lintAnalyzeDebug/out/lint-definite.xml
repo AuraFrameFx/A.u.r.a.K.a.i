@@ -267,15 +267,15 @@
         message="Use version catalog instead (androidx.core:core-ktx is already available as `androidx-core-ktx`, but using version 1.13.1 instead)">
         <fix-alternatives>
             <fix-composite
-                description="Replace with new library catalog declaration for core-ktx-v1150"
+                description="Replace with new library catalog declaration for androidx-core-ktx-v1150"
                 robot="true"
                 independent="true">
                 <fix-replace
-                    description="Replace with androidxCoreKtx = &quot;1.15.0&quot;..."
+                    description="Replace with coreKtxVersion = &quot;1.15.0&quot;..."
                     robot="true"
                     independent="true"
                     oldString="_lint_insert_begin_"
-                    replacement="androidxCoreKtx = &quot;1.15.0&quot;&#xA;"
+                    replacement="coreKtxVersion = &quot;1.15.0&quot;&#xA;"
                     priority="0">
                     <range
                         file="../gradle/libs.versions.toml"
@@ -283,22 +283,22 @@
                         endOffset="66"/>
                 </fix-replace>
                 <fix-replace
-                    description="Replace with core-ktx-v1150 = { module = &quot;androidx.core:core-ktx&quot;, version.ref = &quot;androidxCoreKtx&quot; }..."
+                    description="Replace with androidx-core-ktx-v1150 = { module = &quot;androidx.core:core-ktx&quot;, version.ref = &quot;coreKtxVersion&quot; }..."
                     robot="true"
                     independent="true"
                     oldString="_lint_insert_begin_"
-                    replacement="core-ktx-v1150 = { module = &quot;androidx.core:core-ktx&quot;, version.ref = &quot;androidxCoreKtx&quot; }&#xA;"
+                    replacement="androidx-core-ktx-v1150 = { module = &quot;androidx.core:core-ktx&quot;, version.ref = &quot;coreKtxVersion&quot; }&#xA;"
                     priority="0">
                     <range
                         file="../gradle/libs.versions.toml"
-                        startOffset="3329"
-                        endOffset="3329"/>
+                        startOffset="3331"
+                        endOffset="3331"/>
                 </fix-replace>
                 <fix-replace
-                    description="Replace with libs.core.ktx.v1150"
+                    description="Replace with libs.androidx.core.ktx.v1150"
                     robot="true"
                     independent="true"
-                    replacement="libs.core.ktx.v1150"
+                    replacement="libs.androidx.core.ktx.v1150"
                     priority="0">
                     <range
                         file="${:benchmark*projectDir}/build.gradle.kts"
@@ -332,15 +332,15 @@
         message="Use version catalog instead (androidx.compose:compose-bom is already available as `androidx-compose-bom`, but using version 2024.10.00 instead)">
         <fix-alternatives>
             <fix-composite
-                description="Replace with new library catalog declaration for compose-bom-v20241201"
+                description="Replace with new library catalog declaration for androidx-compose-bom-v20241201"
                 robot="true"
                 independent="true">
                 <fix-replace
-                    description="Replace with androidxComposeBom = &quot;2024.12.01&quot;..."
+                    description="Replace with composeBomVersion = &quot;2024.12.01&quot;..."
                     robot="true"
                     independent="true"
                     oldString="_lint_insert_begin_"
-                    replacement="androidxComposeBom = &quot;2024.12.01&quot;&#xA;"
+                    replacement="composeBomVersion = &quot;2024.12.01&quot;&#xA;"
                     priority="0">
                     <range
                         file="../gradle/libs.versions.toml"
@@ -348,22 +348,22 @@
                         endOffset="66"/>
                 </fix-replace>
                 <fix-replace
-                    description="Replace with compose-bom-v20241201 = { module = &quot;androidx.compose:compose-bom&quot;, version.ref = &quot;androidxComposeBom&quot; }..."
+                    description="Replace with androidx-compose-bom-v20241201 = { module = &quot;androidx.compose:compose-bom&quot;, version.ref = &quot;composeBomVersion&quot; }..."
                     robot="true"
                     independent="true"
                     oldString="_lint_insert_begin_"
-                    replacement="compose-bom-v20241201 = { module = &quot;androidx.compose:compose-bom&quot;, version.ref = &quot;androidxComposeBom&quot; }&#xA;"
+                    replacement="androidx-compose-bom-v20241201 = { module = &quot;androidx.compose:compose-bom&quot;, version.ref = &quot;composeBomVersion&quot; }&#xA;"
                     priority="0">
                     <range
                         file="../gradle/libs.versions.toml"
-                        startOffset="3329"
-                        endOffset="3329"/>
+                        startOffset="3331"
+                        endOffset="3331"/>
                 </fix-replace>
                 <fix-replace
-                    description="Replace with libs.compose.bom.v20241201"
+                    description="Replace with libs.androidx.compose.bom.v20241201"
                     robot="true"
                     independent="true"
-                    replacement="libs.compose.bom.v20241201"
+                    replacement="libs.androidx.compose.bom.v20241201"
                     priority="0">
                     <range
                         file="${:benchmark*projectDir}/build.gradle.kts"
@@ -397,38 +397,38 @@
         message="Use version catalog instead (androidx.activity:activity-compose is already available as `androidx-activity-compose`, but using version 1.9.2 instead)">
         <fix-alternatives>
             <fix-composite
-                description="Replace with new library catalog declaration for activity-compose-v193"
+                description="Replace with new library catalog declaration for androidx-activity-compose-v193"
                 robot="true"
                 independent="true">
                 <fix-replace
-                    description="Replace with androidxActivityCompose = &quot;1.9.3&quot;..."
+                    description="Replace with activityComposeVersion = &quot;1.9.3&quot;..."
                     robot="true"
                     independent="true"
                     oldString="_lint_insert_begin_"
-                    replacement="androidxActivityCompose = &quot;1.9.3&quot;&#xA;"
+                    replacement="activityComposeVersion = &quot;1.9.3&quot;&#xA;"
                     priority="0">
                     <range
                         file="../gradle/libs.versions.toml"
-                        startOffset="66"
-                        endOffset="66"/>
+                        startOffset="43"
+                        endOffset="43"/>
                 </fix-replace>
                 <fix-replace
-                    description="Replace with activity-compose-v193 = { module = &quot;androidx.activity:activity-compose&quot;, version.ref = &quot;androidxActivityCompose&quot; }..."
+                    description="Replace with androidx-activity-compose-v193 = { module = &quot;androidx.activity:activity-compose&quot;, version.ref = &quot;activityComposeVersion&quot; }..."
                     robot="true"
                     independent="true"
                     oldString="_lint_insert_begin_"
-                    replacement="activity-compose-v193 = { module = &quot;androidx.activity:activity-compose&quot;, version.ref = &quot;androidxActivityCompose&quot; }&#xA;"
+                    replacement="androidx-activity-compose-v193 = { module = &quot;androidx.activity:activity-compose&quot;, version.ref = &quot;activityComposeVersion&quot; }&#xA;"
                     priority="0">
                     <range
                         file="../gradle/libs.versions.toml"
-                        startOffset="3329"
-                        endOffset="3329"/>
+                        startOffset="3331"
+                        endOffset="3331"/>
                 </fix-replace>
                 <fix-replace
-                    description="Replace with libs.activity.compose.v193"
+                    description="Replace with libs.androidx.activity.compose.v193"
                     robot="true"
                     independent="true"
-                    replacement="libs.activity.compose.v193"
+                    replacement="libs.androidx.activity.compose.v193"
                     priority="0">
                     <range
                         file="${:benchmark*projectDir}/build.gradle.kts"
@@ -537,38 +537,38 @@
         message="Use version catalog instead (org.jetbrains.kotlinx:kotlinx-coroutines-core is already available as `kotlinx-coroutines-core`, but using version 1.8.1 instead)">
         <fix-alternatives>
             <fix-composite
-                description="Replace with new library catalog declaration for jetbrains-kotlinx-coroutines-core-v190"
+                description="Replace with new library catalog declaration for kotlinx-coroutines-core-v190"
                 robot="true"
                 independent="true">
                 <fix-replace
-                    description="Replace with kotlinxCoroutinesCoreVersion = &quot;1.9.0&quot;..."
+                    description="Replace with kotlinxCoroutinesCore = &quot;1.9.0&quot;..."
                     robot="true"
                     independent="true"
                     oldString="_lint_insert_begin_"
-                    replacement="kotlinxCoroutinesCoreVersion = &quot;1.9.0&quot;&#xA;"
+                    replacement="kotlinxCoroutinesCore = &quot;1.9.0&quot;&#xA;"
                     priority="0">
                     <range
                         file="../gradle/libs.versions.toml"
-                        startOffset="84"
-                        endOffset="84"/>
+                        startOffset="85"
+                        endOffset="85"/>
                 </fix-replace>
                 <fix-replace
-                    description="Replace with jetbrains-kotlinx-coroutines-core-v190 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-core&quot;, version.ref = &quot;kotlinxCoroutinesCoreVersion&quot; }..."
+                    description="Replace with kotlinx-coroutines-core-v190 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-core&quot;, version.ref = &quot;kotlinxCoroutinesCore&quot; }..."
                     robot="true"
                     independent="true"
                     oldString="_lint_insert_begin_"
-                    replacement="jetbrains-kotlinx-coroutines-core-v190 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-core&quot;, version.ref = &quot;kotlinxCoroutinesCoreVersion&quot; }&#xA;"
+                    replacement="kotlinx-coroutines-core-v190 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-core&quot;, version.ref = &quot;kotlinxCoroutinesCore&quot; }&#xA;"
                     priority="0">
                     <range
                         file="../gradle/libs.versions.toml"
-                        startOffset="3479"
-                        endOffset="3479"/>
+                        startOffset="3481"
+                        endOffset="3481"/>
                 </fix-replace>
                 <fix-replace
-                    description="Replace with libs.jetbrains.kotlinx.coroutines.core.v190"
+                    description="Replace with libs.kotlinx.coroutines.core.v190"
                     robot="true"
                     independent="true"
-                    replacement="libs.jetbrains.kotlinx.coroutines.core.v190"
+                    replacement="libs.kotlinx.coroutines.core.v190"
                     priority="0">
                     <range
                         file="${:benchmark*projectDir}/build.gradle.kts"
@@ -602,38 +602,38 @@
         message="Use version catalog instead (org.jetbrains.kotlinx:kotlinx-coroutines-android is already available as `kotlinx-coroutines-android`, but using version 1.8.1 instead)">
         <fix-alternatives>
             <fix-composite
-                description="Replace with new library catalog declaration for jetbrains-kotlinx-coroutines-android-v190"
+                description="Replace with new library catalog declaration for kotlinx-coroutines-android-v190"
                 robot="true"
                 independent="true">
                 <fix-replace
-                    description="Replace with kotlinxCoroutinesAndroidVersion = &quot;1.9.0&quot;..."
+                    description="Replace with kotlinxCoroutinesAndroid = &quot;1.9.0&quot;..."
                     robot="true"
                     independent="true"
                     oldString="_lint_insert_begin_"
-                    replacement="kotlinxCoroutinesAndroidVersion = &quot;1.9.0&quot;&#xA;"
+                    replacement="kotlinxCoroutinesAndroid = &quot;1.9.0&quot;&#xA;"
                     priority="0">
                     <range
                         file="../gradle/libs.versions.toml"
-                        startOffset="84"
-                        endOffset="84"/>
+                        startOffset="85"
+                        endOffset="85"/>
                 </fix-replace>
                 <fix-replace
-                    description="Replace with jetbrains-kotlinx-coroutines-android-v190 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android&quot;, version.ref = &quot;kotlinxCoroutinesAndroidVersion&quot; }..."
+                    description="Replace with kotlinx-coroutines-android-v190 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android&quot;, version.ref = &quot;kotlinxCoroutinesAndroid&quot; }..."
                     robot="true"
                     independent="true"
                     oldString="_lint_insert_begin_"
-                    replacement="jetbrains-kotlinx-coroutines-android-v190 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android&quot;, version.ref = &quot;kotlinxCoroutinesAndroidVersion&quot; }&#xA;"
+                    replacement="kotlinx-coroutines-android-v190 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android&quot;, version.ref = &quot;kotlinxCoroutinesAndroid&quot; }&#xA;"
                     priority="0">
                     <range
                         file="../gradle/libs.versions.toml"
-                        startOffset="3479"
-                        endOffset="3479"/>
+                        startOffset="3481"
+                        endOffset="3481"/>
                 </fix-replace>
                 <fix-replace
-                    description="Replace with libs.jetbrains.kotlinx.coroutines.android.v190"
+                    description="Replace with libs.kotlinx.coroutines.android.v190"
                     robot="true"
                     independent="true"
-                    replacement="libs.jetbrains.kotlinx.coroutines.android.v190"
+                    replacement="libs.kotlinx.coroutines.android.v190"
                     priority="0">
                     <range
                         file="${:benchmark*projectDir}/build.gradle.kts"

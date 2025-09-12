@@ -17,7 +17,6 @@
         </compositeConfiguration>
         <option name="testRunner" value="CHOOSE_PER_TEST" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -29,6 +28,8 @@
             <option value="$PROJECT_DIR$/core-module" />
             <option value="$PROJECT_DIR$/datavein-oracle-native" />
             <option value="$PROJECT_DIR$/feature-module" />
+            <option value="$PROJECT_DIR$/jvm-test" />
+            <option value="$PROJECT_DIR$/list" />
             <option value="$PROJECT_DIR$/module-a" />
             <option value="$PROJECT_DIR$/module-b" />
             <option value="$PROJECT_DIR$/module-c" />
@@ -40,6 +41,7 @@
             <option value="$PROJECT_DIR$/sandbox-ui" />
             <option value="$PROJECT_DIR$/screenshot-tests" />
             <option value="$PROJECT_DIR$/secure-comm" />
+            <option value="$PROJECT_DIR$/utilities" />
           </set>
         </option>
       </GradleProjectSettings>

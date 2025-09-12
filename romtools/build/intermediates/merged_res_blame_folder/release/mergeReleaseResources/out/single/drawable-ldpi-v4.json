@@ -1,38 +1,38 @@
 [
     {
         "merged": "dev.aurakai.auraframefx.romtools-release-3:/drawable-ldpi-v4/ic_call_answer_video_low.png",
-        "source": "dev.aurakai.auraframefx.romtools-core-1.13.1-72:/drawable-ldpi-v4/ic_call_answer_video_low.png"
+        "source": "dev.aurakai.auraframefx.romtools-core-1.13.1-56:/drawable-ldpi-v4/ic_call_answer_video_low.png"
     },
     {
         "merged": "dev.aurakai.auraframefx.romtools-release-3:/drawable-ldpi-v4/ic_password.png",
-        "source": "dev.aurakai.auraframefx.romtools-jetified-credentials-1.2.0-rc01-51:/drawable-ldpi-v4/ic_password.png"
+        "source": "dev.aurakai.auraframefx.romtools-jetified-credentials-1.2.0-rc01-89:/drawable-ldpi-v4/ic_password.png"
     },
     {
         "merged": "dev.aurakai.auraframefx.romtools-release-3:/drawable-ldpi-v4/ic_call_decline.png",
-        "source": "dev.aurakai.auraframefx.romtools-core-1.13.1-72:/drawable-ldpi-v4/ic_call_decline.png"
+        "source": "dev.aurakai.auraframefx.romtools-core-1.13.1-56:/drawable-ldpi-v4/ic_call_decline.png"
     },
     {
         "merged": "dev.aurakai.auraframefx.romtools-release-3:/drawable-ldpi-v4/ic_call_decline_low.png",
-        "source": "dev.aurakai.auraframefx.romtools-core-1.13.1-72:/drawable-ldpi-v4/ic_call_decline_low.png"
+        "source": "dev.aurakai.auraframefx.romtools-core-1.13.1-56:/drawable-ldpi-v4/ic_call_decline_low.png"
     },
     {
         "merged": "dev.aurakai.auraframefx.romtools-release-3:/drawable-ldpi-v4/ic_passkey.png",
-        "source": "dev.aurakai.auraframefx.romtools-jetified-credentials-1.2.0-rc01-51:/drawable-ldpi-v4/ic_passkey.png"
+        "source": "dev.aurakai.auraframefx.romtools-jetified-credentials-1.2.0-rc01-89:/drawable-ldpi-v4/ic_passkey.png"
     },
     {
         "merged": "dev.aurakai.auraframefx.romtools-release-3:/drawable-ldpi-v4/ic_call_answer_low.png",
-        "source": "dev.aurakai.auraframefx.romtools-core-1.13.1-72:/drawable-ldpi-v4/ic_call_answer_low.png"
+        "source": "dev.aurakai.auraframefx.romtools-core-1.13.1-56:/drawable-ldpi-v4/ic_call_answer_low.png"
     },
     {
         "merged": "dev.aurakai.auraframefx.romtools-release-3:/drawable-ldpi-v4/ic_other_sign_in.png",
-        "source": "dev.aurakai.auraframefx.romtools-jetified-credentials-1.2.0-rc01-51:/drawable-ldpi-v4/ic_other_sign_in.png"
+        "source": "dev.aurakai.auraframefx.romtools-jetified-credentials-1.2.0-rc01-89:/drawable-ldpi-v4/ic_other_sign_in.png"
     },
     {
         "merged": "dev.aurakai.auraframefx.romtools-release-3:/drawable-ldpi-v4/ic_call_answer_video.png",
-        "source": "dev.aurakai.auraframefx.romtools-core-1.13.1-72:/drawable-ldpi-v4/ic_call_answer_video.png"
+        "source": "dev.aurakai.auraframefx.romtools-core-1.13.1-56:/drawable-ldpi-v4/ic_call_answer_video.png"
     },
     {
         "merged": "dev.aurakai.auraframefx.romtools-release-3:/drawable-ldpi-v4/ic_call_answer.png",
-        "source": "dev.aurakai.auraframefx.romtools-core-1.13.1-72:/drawable-ldpi-v4/ic_call_answer.png"
+        "source": "dev.aurakai.auraframefx.romtools-core-1.13.1-56:/drawable-ldpi-v4/ic_call_answer.png"
     }
 ]

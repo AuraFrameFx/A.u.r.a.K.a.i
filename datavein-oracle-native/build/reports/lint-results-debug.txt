@@ -1,1 +1,2 @@
-No issues found.
+C:\ReGenesis-A.O.S.P\datavein-oracle-native\src\test\kotlin\dev\aurakai\auraframefx\oracledrive\OracleDriveServiceImplTest.kt: Error: Source file too large for lint to process (26176KB); the current max size is 20480KB. You can increase the limit by setting this system property: idea.max.intellisense.filesize=32768 (or even higher) [LintError]
+1 error

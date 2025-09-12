@@ -1,26 +1,26 @@
 [
     {
         "merged": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-release-3:/animator/fragment_open_exit.xml",
-        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-fragment-1.5.1-45:/animator/fragment_open_exit.xml"
+        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-fragment-1.5.1-15:/animator/fragment_open_exit.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-release-3:/animator/fragment_close_exit.xml",
-        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-fragment-1.5.1-45:/animator/fragment_close_exit.xml"
+        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-fragment-1.5.1-15:/animator/fragment_close_exit.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-release-3:/animator/fragment_fade_enter.xml",
-        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-fragment-1.5.1-45:/animator/fragment_fade_enter.xml"
+        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-fragment-1.5.1-15:/animator/fragment_fade_enter.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-release-3:/animator/fragment_close_enter.xml",
-        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-fragment-1.5.1-45:/animator/fragment_close_enter.xml"
+        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-fragment-1.5.1-15:/animator/fragment_close_enter.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-release-3:/animator/fragment_open_enter.xml",
-        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-fragment-1.5.1-45:/animator/fragment_open_enter.xml"
+        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-fragment-1.5.1-15:/animator/fragment_open_enter.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-release-3:/animator/fragment_fade_exit.xml",
-        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-fragment-1.5.1-45:/animator/fragment_fade_exit.xml"
+        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-fragment-1.5.1-15:/animator/fragment_fade_exit.xml"
     }
 ]

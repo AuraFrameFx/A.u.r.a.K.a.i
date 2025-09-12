@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Gradle Test Executor 1" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T06:25:05.611Z" hostname="AURAKAI" time="0.016">
+<testsuite name="Gradle Test Executor 1" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:00:49.072Z" hostname="AURAKAI" time="0.015">
   <properties/>
-  <testcase name="failed to execute tests" classname="Gradle Test Executor 1" time="0.016">
+  <testcase name="failed to execute tests" classname="Gradle Test Executor 1" time="0.015">
     <failure message="org.gradle.api.internal.tasks.testing.TestSuiteExecutionException: Could not start Gradle Test Executor 1: Failed to load JUnit Platform.  Please ensure that all JUnit Platform dependencies are available on the test's runtime classpath, including the JUnit Platform launcher." type="org.gradle.api.internal.tasks.testing.TestSuiteExecutionException">org.gradle.api.internal.tasks.testing.TestSuiteExecutionException: Could not start Gradle Test Executor 1: Failed to load JUnit Platform.  Please ensure that all JUnit Platform dependencies are available on the test's runtime classpath, including the JUnit Platform launcher.
 	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.startProcessing(SuiteTestClassProcessor.java:46)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

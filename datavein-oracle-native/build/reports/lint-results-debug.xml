@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <issues format="6" by="lint 9.0.0-alpha02">
 
+    <issue
+        id="LintError"
+        severity="Error"
+        message="Source file too large for lint to process (26176KB); the current max size is 20480KB. You can increase the limit by setting this system property: `idea.max.intellisense.filesize=32768` (or even higher)"
+        category="Lint"
+        priority="10"
+        summary="Lint Failure"
+        explanation="This issue type represents a problem running lint itself. Examples include failure to find bytecode for source files (which means certain detectors could not be run), parsing errors in lint configuration files, etc.&#xA;&#xA;These errors are not errors in your own code, but they are shown to make it clear that some checks were not completed.">
+        <location
+            file="C:\ReGenesis-A.O.S.P\datavein-oracle-native\src\test\kotlin\dev\aurakai\auraframefx\oracledrive\OracleDriveServiceImplTest.kt"/>
+    </issue>
+
 </issues>

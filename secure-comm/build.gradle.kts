@@ -36,4 +36,12 @@ dependencies {
     
     // Add other module-specific dependencies here
     implementation(kotlin("stdlib-jdk8"))
+    
+    // Test dependencies
+    testImplementation(libs.junit4)
+
+    testImplementation(libs.kotlinx.coroutines.test)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.espresso.core)
+    androidTestImplementation(libs.hilt.android.testing)
 }

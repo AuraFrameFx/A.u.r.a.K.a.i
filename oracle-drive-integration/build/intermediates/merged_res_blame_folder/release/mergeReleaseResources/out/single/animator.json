@@ -1,26 +1,26 @@
 [
     {
         "merged": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-release-3:/animator/fragment_close_enter.xml",
-        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-fragment-1.5.4-62:/animator/fragment_close_enter.xml"
+        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-fragment-1.5.4-58:/animator/fragment_close_enter.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-release-3:/animator/fragment_open_exit.xml",
-        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-fragment-1.5.4-62:/animator/fragment_open_exit.xml"
+        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-fragment-1.5.4-58:/animator/fragment_open_exit.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-release-3:/animator/fragment_close_exit.xml",
-        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-fragment-1.5.4-62:/animator/fragment_close_exit.xml"
+        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-fragment-1.5.4-58:/animator/fragment_close_exit.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-release-3:/animator/fragment_fade_enter.xml",
-        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-fragment-1.5.4-62:/animator/fragment_fade_enter.xml"
+        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-fragment-1.5.4-58:/animator/fragment_fade_enter.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-release-3:/animator/fragment_fade_exit.xml",
-        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-fragment-1.5.4-62:/animator/fragment_fade_exit.xml"
+        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-fragment-1.5.4-58:/animator/fragment_fade_exit.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-release-3:/animator/fragment_open_enter.xml",
-        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-fragment-1.5.4-62:/animator/fragment_open_enter.xml"
+        "source": "dev.aurakai.auraframefx.oracledriveintegration.oracle-drive-integration-fragment-1.5.4-58:/animator/fragment_open_enter.xml"
     }
 ]

@@ -4,24 +4,24 @@
             "outputFile": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-mergeReleaseResources-1:/values-ml/values-ml.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\ba05811a232a2a6bd14fbf02b0a816b9\\workspace\\transformed\\jetified-foundation-release\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\2578b36532e2ce88749f7590e492a76d\\workspace\\transformed\\core-1.15.0\\res\\values-ml\\values-ml.xml",
                     "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,143",
-                        "endColumns": "87,91",
-                        "endOffsets": "138,230"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,157,260,362,466,569,670,792",
+                        "endColumns": "101,102,101,103,102,100,121,100",
+                        "endOffsets": "152,255,357,461,564,665,787,888"
                     },
                     "to": {
-                        "startLines": "87,88",
-                        "startColumns": "4,4",
-                        "startOffsets": "9187,9275",
-                        "endColumns": "87,91",
-                        "endOffsets": "9270,9362"
+                        "startLines": "3,4,5,6,7,8,9,83",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "193,295,398,500,604,707,808,8824",
+                        "endColumns": "101,102,101,103,102,100,121,100",
+                        "endOffsets": "290,393,495,599,702,803,925,8920"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\70464a6bf3eed30f4a97c3bd94ee28e1\\workspace\\transformed\\jetified-material3-release\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\6d0cf7eb25051259b9ce2f5569129713\\workspace\\transformed\\jetified-material3-release\\res\\values-ml\\values-ml.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\ab8890f438713c5867e68c3095c90038\\workspace\\transformed\\jetified-ui-release\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\1d82dab295d17ad3b246752aab1edd78\\workspace\\transformed\\jetified-foundation-release\\res\\values-ml\\values-ml.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,143",
+                        "endColumns": "87,91",
+                        "endOffsets": "138,230"
+                    },
+                    "to": {
+                        "startLines": "87,88",
+                        "startColumns": "4,4",
+                        "startOffsets": "9187,9275",
+                        "endColumns": "87,91",
+                        "endOffsets": "9270,9362"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\6d04078e18871f3c516685b3c177fd39\\workspace\\transformed\\jetified-ui-release\\res\\values-ml\\values-ml.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,23 +69,6 @@
                         "startOffsets": "105,930,1025,1112,1211,1315,1405,1491,8082,8169,8257,8343,8430,8508,8600,8677,8751,8925,9001,9068",
                         "endColumns": "87,94,86,98,103,89,85,100,86,87,85,86,77,91,76,73,72,75,66,118",
                         "endOffsets": "188,1020,1107,1206,1310,1400,1486,1587,8164,8252,8338,8425,8503,8595,8672,8746,8819,8996,9063,9182"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\89cb723a6c139907f14eb7342143aa96\\workspace\\transformed\\core-1.15.0\\res\\values-ml\\values-ml.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,157,260,362,466,569,670,792",
-                        "endColumns": "101,102,101,103,102,100,121,100",
-                        "endOffsets": "152,255,357,461,564,665,787,888"
-                    },
-                    "to": {
-                        "startLines": "3,4,5,6,7,8,9,83",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "193,295,398,500,604,707,808,8824",
-                        "endColumns": "101,102,101,103,102,100,121,100",
-                        "endOffsets": "290,393,495,599,702,803,925,8920"
                     }
                 }
             ]
@@ -77,24 +77,24 @@
             "outputFile": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-release-3:/values-ml/values-ml.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\ba05811a232a2a6bd14fbf02b0a816b9\\workspace\\transformed\\jetified-foundation-release\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\2578b36532e2ce88749f7590e492a76d\\workspace\\transformed\\core-1.15.0\\res\\values-ml\\values-ml.xml",
                     "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,143",
-                        "endColumns": "87,91",
-                        "endOffsets": "138,230"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,157,260,362,466,569,670,792",
+                        "endColumns": "101,102,101,103,102,100,121,100",
+                        "endOffsets": "152,255,357,461,564,665,787,888"
                     },
                     "to": {
-                        "startLines": "87,88",
-                        "startColumns": "4,4",
-                        "startOffsets": "9187,9275",
-                        "endColumns": "87,91",
-                        "endOffsets": "9270,9362"
+                        "startLines": "3,4,5,6,7,8,9,83",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "193,295,398,500,604,707,808,8824",
+                        "endColumns": "101,102,101,103,102,100,121,100",
+                        "endOffsets": "290,393,495,599,702,803,925,8920"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\70464a6bf3eed30f4a97c3bd94ee28e1\\workspace\\transformed\\jetified-material3-release\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\6d0cf7eb25051259b9ce2f5569129713\\workspace\\transformed\\jetified-material3-release\\res\\values-ml\\values-ml.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -111,7 +111,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\ab8890f438713c5867e68c3095c90038\\workspace\\transformed\\jetified-ui-release\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\1d82dab295d17ad3b246752aab1edd78\\workspace\\transformed\\jetified-foundation-release\\res\\values-ml\\values-ml.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,143",
+                        "endColumns": "87,91",
+                        "endOffsets": "138,230"
+                    },
+                    "to": {
+                        "startLines": "87,88",
+                        "startColumns": "4,4",
+                        "startOffsets": "9187,9275",
+                        "endColumns": "87,91",
+                        "endOffsets": "9270,9362"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\6d04078e18871f3c516685b3c177fd39\\workspace\\transformed\\jetified-ui-release\\res\\values-ml\\values-ml.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -125,23 +142,6 @@
                         "startOffsets": "105,930,1025,1112,1211,1315,1405,1491,8082,8169,8257,8343,8430,8508,8600,8677,8751,8925,9001,9068",
                         "endColumns": "87,94,86,98,103,89,85,100,86,87,85,86,77,91,76,73,72,75,66,118",
                         "endOffsets": "188,1020,1107,1206,1310,1400,1486,1587,8164,8252,8338,8425,8503,8595,8672,8746,8819,8996,9063,9182"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.1.0-rc-1\\transforms\\89cb723a6c139907f14eb7342143aa96\\workspace\\transformed\\core-1.15.0\\res\\values-ml\\values-ml.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,157,260,362,466,569,670,792",
-                        "endColumns": "101,102,101,103,102,100,121,100",
-                        "endOffsets": "152,255,357,461,564,665,787,888"
-                    },
-                    "to": {
-                        "startLines": "3,4,5,6,7,8,9,83",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "193,295,398,500,604,707,808,8824",
-                        "endColumns": "101,102,101,103,102,100,121,100",
-                        "endOffsets": "290,393,495,599,702,803,925,8920"
                     }
                 }
             ]

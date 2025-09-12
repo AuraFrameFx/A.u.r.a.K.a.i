@@ -26,6 +26,6 @@
       applicationId="dev.aurakai.auraframefx.securecomm"
       generatedSourceFolders="build\generated\ap_generated_sources\release\out"
       generatedResourceFolders="build\generated\res\resValues\release"
-      desugaredMethodsFiles="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b871c197a701a1af40a1c473fa6d3cbf\workspace\transformed\D8BackportedDesugaredMethods.txt">
+      desugaredMethodsFiles="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c95d294eefb62301debc714d44161db8\workspace\transformed\D8BackportedDesugaredMethods.txt">
   </artifact>
 </variant>

@@ -21,11 +21,11 @@
   <testFixturesSourceProviders>
   </testFixturesSourceProviders>
   <artifact
-      classOutputs="build\intermediates\javac\release\compileReleaseJavaWithJavac\classes;build\tmp\kotlin-classes\release;build\generated\ksp\release\resources;build\intermediates\compile_r_class_jar\release\generateReleaseRFile\R.jar"
+      classOutputs="build\intermediates\javac\release\compileReleaseJavaWithJavac\classes;build\tmp\kotlin-classes\release;build\intermediates\compile_r_class_jar\release\generateReleaseRFile\R.jar"
       type="MAIN"
       applicationId="dev.aurakai.auraframefx.colorblendr"
       generatedSourceFolders="build\generated\ksp\release\java;build\generated\ksp\release\kotlin;build\generated\ap_generated_sources\release\out;build\generated\source\buildConfig\release"
       generatedResourceFolders="build\generated\res\resValues\release"
-      desugaredMethodsFiles="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b871c197a701a1af40a1c473fa6d3cbf\workspace\transformed\D8BackportedDesugaredMethods.txt">
+      desugaredMethodsFiles="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c95d294eefb62301debc714d44161db8\workspace\transformed\D8BackportedDesugaredMethods.txt">
   </artifact>
 </variant>
