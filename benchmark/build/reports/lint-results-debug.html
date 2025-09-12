@@ -177,17 +177,15 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 35 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 22 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Sep 12 01:00:16 MDT 2025 by AGP (9.0.0-alpha02)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Sep 12 01:30:18 MDT 2025 by AGP (9.0.0-alpha02)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Issue Types</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (6)</a>
-      <a class="mdl-navigation__link" href="#NewerVersionAvailable"><i class="material-icons warning-icon">warning</i>Newer Library Versions Available (7)</a>
       <a class="mdl-navigation__link" href="#UseTomlInstead"><i class="material-icons warning-icon">warning</i>Use TOML Version Catalog Instead (22)</a>
     </nav>
   </div>
@@ -201,20 +199,12 @@ document.getElementById(id).style.display = 'none';
   </div>
               <div class="mdl-card__supporting-text">
 <table class="overview">
-<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
-</td></tr>
-<tr>
-<td class="countColumn">6</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
-<tr>
-<td class="countColumn">7</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#NewerVersionAvailable">NewerVersionAvailable</a>: Newer Library Versions Available</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Productivity">Productivity</a>
 </td></tr>
 <tr>
 <td class="countColumn">22</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UseTomlInstead">UseTomlInstead</a>: Use TOML Version Catalog Instead</td></tr>
-<tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (107)</a>
+<tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (113)</a>
 </td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (43)</a>
 </td></tr>
@@ -222,209 +212,6 @@ document.getElementById(id).style.display = 'none';
 <br/>              </div>
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="OverviewCardLink" onclick="hideid('OverviewCard');">
-Dismiss</button>            </div>
-            </div>
-          </section>
-<a name="Correctness"></a>
-<a name="GradleDependency"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="GradleDependencyCard" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Obsolete Gradle Dependency</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:73</span>: <span class="message">A newer version of androidx.core:core-ktx than 1.15.0 is available: 1.17.0</span><br /><pre class="errorlines">
-<span class="lineno">  70 </span>
-<span class="lineno">  71 </span>dependencies {
-<span class="lineno">  72 </span>    // Core AndroidX
-<span class="caretline"><span class="lineno">  73 </span>    implementation(<span class="warning">"androidx.core:core-ktx:1.15.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  74 </span>    implementation(platform("androidx.compose:compose-bom:2024.12.01"))
-<span class="lineno">  75 </span>    implementation("androidx.activity:activity-compose:1.9.3")
-<span class="lineno">  76 </span>    implementation("androidx.navigation:navigation-compose:2.9.4")
-</pre>
-
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:74</span>: <span class="message">A newer version of androidx.compose:compose-bom than 2024.12.01 is available: 2025.09.00</span><br /><pre class="errorlines">
-<span class="lineno">  71 </span>dependencies {
-<span class="lineno">  72 </span>    // Core AndroidX
-<span class="lineno">  73 </span>    implementation("androidx.core:core-ktx:1.15.0")
-<span class="caretline"><span class="lineno">  74 </span>    implementation(<span class="warning">platform("androidx.compose:compose-bom:2024.12.01")</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  75 </span>    implementation("androidx.activity:activity-compose:1.9.3")
-<span class="lineno">  76 </span>    implementation("androidx.navigation:navigation-compose:2.9.4")
-<span class="lineno">  77 </span>    
-</pre>
-
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:75</span>: <span class="message">A newer version of androidx.activity:activity-compose than 1.9.3 is available: 1.11.0</span><br /><pre class="errorlines">
-<span class="lineno">  72 </span>    // Core AndroidX
-<span class="lineno">  73 </span>    implementation("androidx.core:core-ktx:1.15.0")
-<span class="lineno">  74 </span>    implementation(platform("androidx.compose:compose-bom:2024.12.01"))
-<span class="caretline"><span class="lineno">  75 </span>    implementation(<span class="warning">"androidx.activity:activity-compose:1.9.3"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  76 </span>    implementation("androidx.navigation:navigation-compose:2.9.4")
-<span class="lineno">  77 </span>    
-<span class="lineno">  78 </span>    // Hilt
-</pre>
-
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:87</span>: <span class="message">A newer version of androidx.room:room-runtime than 2.6.1 is available: 2.8.0</span><br /><pre class="errorlines">
-<span class="lineno">  84 </span>    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
-<span class="lineno">  85 </span>    
-<span class="lineno">  86 </span>    // Room
-<span class="caretline"><span class="lineno">  87 </span>    implementation(<span class="warning">"androidx.room:room-runtime:2.6.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  88 </span>    implementation("androidx.room:room-ktx:2.6.1")
-<span class="lineno">  89 </span>    ksp("androidx.room:room-compiler:2.6.1")
-<span class="lineno">  90 </span>    
-</pre>
-
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:88</span>: <span class="message">A newer version of androidx.room:room-ktx than 2.6.1 is available: 2.8.0</span><br /><pre class="errorlines">
-<span class="lineno">  85 </span>    
-<span class="lineno">  86 </span>    // Room
-<span class="lineno">  87 </span>    implementation("androidx.room:room-runtime:2.6.1")
-<span class="caretline"><span class="lineno">  88 </span>    implementation(<span class="warning">"androidx.room:room-ktx:2.6.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  89 </span>    ksp("androidx.room:room-compiler:2.6.1")
-<span class="lineno">  90 </span>    
-<span class="lineno">  91 </span>    // Utilities
-</pre>
-
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:89</span>: <span class="message">A newer version of androidx.room:room-compiler than 2.6.1 is available: 2.8.0</span><br /><pre class="errorlines">
-<span class="lineno">  86 </span>    // Room
-<span class="lineno">  87 </span>    implementation("androidx.room:room-runtime:2.6.1")
-<span class="lineno">  88 </span>    implementation("androidx.room:room-ktx:2.6.1")
-<span class="caretline"><span class="lineno">  89 </span>    ksp(<span class="warning">"androidx.room:room-compiler:2.6.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  90 </span>    
-<span class="lineno">  91 </span>    // Utilities
-<span class="lineno">  92 </span>    implementation("com.jakewharton.timber:timber:5.0.1")
-</pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationGradleDependency" style="display: none;">
-This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
-To suppress this error, use the issue id "GradleDependency" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">GradleDependency</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Correctness</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Warning</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 4/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationGradleDependencyLink" onclick="reveal('explanationGradleDependency');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="GradleDependencyCardLink" onclick="hideid('GradleDependencyCard');">
-Dismiss</button>            </div>
-            </div>
-          </section><a name="NewerVersionAvailable"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="NewerVersionAvailableCard" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Newer Library Versions Available</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:79</span>: <span class="message">A newer version of com.google.dagger:hilt-android than 2.51.1 is available: 2.57.1</span><br /><pre class="errorlines">
-<span class="lineno">  76 </span>    implementation("androidx.navigation:navigation-compose:2.9.4")
-<span class="lineno">  77 </span>    
-<span class="lineno">  78 </span>    // Hilt
-<span class="caretline"><span class="lineno">  79 </span>    implementation(<span class="warning">"com.google.dagger:hilt-android:2.51.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  80 </span>    ksp("com.google.dagger:hilt-compiler:2.51.1")
-<span class="lineno">  81 </span>    
-<span class="lineno">  82 </span>    // Coroutines
-</pre>
-
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:80</span>: <span class="message">A newer version of com.google.dagger:hilt-compiler than 2.51.1 is available: 2.57.1</span><br /><pre class="errorlines">
-<span class="lineno">  77 </span>    
-<span class="lineno">  78 </span>    // Hilt
-<span class="lineno">  79 </span>    implementation("com.google.dagger:hilt-android:2.51.1")
-<span class="caretline"><span class="lineno">  80 </span>    ksp(<span class="warning">"com.google.dagger:hilt-compiler:2.51.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  81 </span>    
-<span class="lineno">  82 </span>    // Coroutines
-<span class="lineno">  83 </span>    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-</pre>
-
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:83</span>: <span class="message">A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.9.0 is available: 1.10.2</span><br /><pre class="errorlines">
-<span class="lineno">  80 </span>    ksp("com.google.dagger:hilt-compiler:2.51.1")
-<span class="lineno">  81 </span>    
-<span class="lineno">  82 </span>    // Coroutines
-<span class="caretline"><span class="lineno">  83 </span>    implementation(<span class="warning">"org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  84 </span>    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
-<span class="lineno">  85 </span>    
-<span class="lineno">  86 </span>    // Room
-</pre>
-
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:84</span>: <span class="message">A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.9.0 is available: 1.10.2</span><br /><pre class="errorlines">
-<span class="lineno">  81 </span>    
-<span class="lineno">  82 </span>    // Coroutines
-<span class="lineno">  83 </span>    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-<span class="caretline"><span class="lineno">  84 </span>    implementation(<span class="warning">"org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  85 </span>    
-<span class="lineno">  86 </span>    // Room
-<span class="lineno">  87 </span>    implementation("androidx.room:room-runtime:2.6.1")
-</pre>
-
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:113</span>: <span class="message">A newer version of com.google.dagger:hilt-android-testing than 2.51.1 is available: 2.57.1</span><br /><pre class="errorlines">
-<span class="lineno"> 110 </span>    androidTestImplementation("io.mockk:mockk-android:1.14.5")
-<span class="lineno"> 111 </span>    
-<span class="lineno"> 112 </span>    // Hilt testing
-<span class="caretline"><span class="lineno"> 113 </span>    testImplementation(<span class="warning">"com.google.dagger:hilt-android-testing:2.51.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 114 </span>    androidTestImplementation("com.google.dagger:hilt-android-testing:2.51.1")
-<span class="lineno"> 115 </span>    kspAndroidTest("com.google.dagger:hilt-compiler:2.51.1")
-<span class="lineno"> 116 </span>    implementation(kotlin("stdlib-jdk8"))
-</pre>
-
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:114</span>: <span class="message">A newer version of com.google.dagger:hilt-android-testing than 2.51.1 is available: 2.57.1</span><br /><pre class="errorlines">
-<span class="lineno"> 111 </span>    
-<span class="lineno"> 112 </span>    // Hilt testing
-<span class="lineno"> 113 </span>    testImplementation("com.google.dagger:hilt-android-testing:2.51.1")
-<span class="caretline"><span class="lineno"> 114 </span>    androidTestImplementation(<span class="warning">"com.google.dagger:hilt-android-testing:2.51.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 115 </span>    kspAndroidTest("com.google.dagger:hilt-compiler:2.51.1")
-<span class="lineno"> 116 </span>    implementation(kotlin("stdlib-jdk8"))
-<span class="lineno"> 117 </span>}
-</pre>
-
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:115</span>: <span class="message">A newer version of com.google.dagger:hilt-compiler than 2.51.1 is available: 2.57.1</span><br /><pre class="errorlines">
-<span class="lineno"> 112 </span>    // Hilt testing
-<span class="lineno"> 113 </span>    testImplementation("com.google.dagger:hilt-android-testing:2.51.1")
-<span class="lineno"> 114 </span>    androidTestImplementation("com.google.dagger:hilt-android-testing:2.51.1")
-<span class="caretline"><span class="lineno"> 115 </span>    kspAndroidTest(<span class="warning">"com.google.dagger:hilt-compiler:2.51.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 116 </span>    implementation(kotlin("stdlib-jdk8"))
-<span class="lineno"> 117 </span>}
-</pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationNewerVersionAvailable" style="display: none;">
-This detector checks with a central repository to see if there are newer versions available for the dependencies used by this project. This is similar to the <code>GradleDependency</code> check, which checks for newer versions available in the Android SDK tools and libraries, but this works with any MavenCentral dependency, and connects to the library every time, which makes it more flexible but also <b>much</b> slower.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
-To suppress this error, use the issue id "NewerVersionAvailable" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">NewerVersionAvailable</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Correctness</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Warning</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 4/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationNewerVersionAvailableLink" onclick="reveal('explanationNewerVersionAvailable');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="NewerVersionAvailableCardLink" onclick="hideid('NewerVersionAvailableCard');">
 Dismiss</button>            </div>
             </div>
           </section>
@@ -438,52 +225,52 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:73</span>: <span class="message">Use version catalog instead (androidx.core:core-ktx is already available as <code>androidx-core-ktx</code>, but using version 1.13.1 instead)</span><br /><pre class="errorlines">
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:73</span>: <span class="message">Use the existing version catalog reference (<code>libs.androidx.core.ktx</code>) instead</span><br /><pre class="errorlines">
 <span class="lineno">  70 </span>
 <span class="lineno">  71 </span>dependencies {
 <span class="lineno">  72 </span>    // Core AndroidX
-<span class="caretline"><span class="lineno">  73 </span>    implementation(<span class="warning">"androidx.core:core-ktx:1.15.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  74 </span>    implementation(platform("androidx.compose:compose-bom:2024.12.01"))
-<span class="lineno">  75 </span>    implementation("androidx.activity:activity-compose:1.9.3")
+<span class="caretline"><span class="lineno">  73 </span>    implementation(<span class="warning">"androidx.core:core-ktx:1.17.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  74 </span>    implementation(platform("androidx.compose:compose-bom:2025.09.00"))
+<span class="lineno">  75 </span>    implementation("androidx.activity:activity-compose:1.11.0")
 <span class="lineno">  76 </span>    implementation("androidx.navigation:navigation-compose:2.9.4")
 </pre>
 
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:74</span>: <span class="message">Use version catalog instead (androidx.compose:compose-bom is already available as <code>androidx-compose-bom</code>, but using version 2024.10.00 instead)</span><br /><pre class="errorlines">
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:74</span>: <span class="message">Use the existing version catalog reference (<code>libs.androidx.compose.bom</code>) instead</span><br /><pre class="errorlines">
 <span class="lineno">  71 </span>dependencies {
 <span class="lineno">  72 </span>    // Core AndroidX
-<span class="lineno">  73 </span>    implementation("androidx.core:core-ktx:1.15.0")
-<span class="caretline"><span class="lineno">  74 </span>    implementation(<span class="warning">platform("androidx.compose:compose-bom:2024.12.01")</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  75 </span>    implementation("androidx.activity:activity-compose:1.9.3")
+<span class="lineno">  73 </span>    implementation("androidx.core:core-ktx:1.17.0")
+<span class="caretline"><span class="lineno">  74 </span>    implementation(<span class="warning">platform("androidx.compose:compose-bom:2025.09.00")</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  75 </span>    implementation("androidx.activity:activity-compose:1.11.0")
 <span class="lineno">  76 </span>    implementation("androidx.navigation:navigation-compose:2.9.4")
 <span class="lineno">  77 </span>    
 </pre>
 
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:75</span>: <span class="message">Use version catalog instead (androidx.activity:activity-compose is already available as <code>androidx-activity-compose</code>, but using version 1.9.2 instead)</span><br /><pre class="errorlines">
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:75</span>: <span class="message">Use the existing version catalog reference (<code>libs.androidx.activity.compose</code>) instead</span><br /><pre class="errorlines">
 <span class="lineno">  72 </span>    // Core AndroidX
-<span class="lineno">  73 </span>    implementation("androidx.core:core-ktx:1.15.0")
-<span class="lineno">  74 </span>    implementation(platform("androidx.compose:compose-bom:2024.12.01"))
-<span class="caretline"><span class="lineno">  75 </span>    implementation(<span class="warning">"androidx.activity:activity-compose:1.9.3"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  73 </span>    implementation("androidx.core:core-ktx:1.17.0")
+<span class="lineno">  74 </span>    implementation(platform("androidx.compose:compose-bom:2025.09.00"))
+<span class="caretline"><span class="lineno">  75 </span>    implementation(<span class="warning">"androidx.activity:activity-compose:1.11.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  76 </span>    implementation("androidx.navigation:navigation-compose:2.9.4")
 <span class="lineno">  77 </span>    
 <span class="lineno">  78 </span>    // Hilt
 </pre>
 
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:76</span>: <span class="message">Use the existing version catalog reference (<code>libs.androidx.navigation.compose</code>) instead</span><br /><pre class="errorlines">
-<span class="lineno">  73 </span>    implementation("androidx.core:core-ktx:1.15.0")
-<span class="lineno">  74 </span>    implementation(platform("androidx.compose:compose-bom:2024.12.01"))
-<span class="lineno">  75 </span>    implementation("androidx.activity:activity-compose:1.9.3")
+<span class="lineno">  73 </span>    implementation("androidx.core:core-ktx:1.17.0")
+<span class="lineno">  74 </span>    implementation(platform("androidx.compose:compose-bom:2025.09.00"))
+<span class="lineno">  75 </span>    implementation("androidx.activity:activity-compose:1.11.0")
 <span class="caretline"><span class="lineno">  76 </span>    implementation(<span class="warning">"androidx.navigation:navigation-compose:2.9.4"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  77 </span>    
 <span class="lineno">  78 </span>    // Hilt
-<span class="lineno">  79 </span>    implementation("com.google.dagger:hilt-android:2.51.1")
+<span class="lineno">  79 </span>    implementation("com.google.dagger:hilt-android:2.57.1")
 </pre>
 
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:79</span>: <span class="message">Use the existing version catalog reference (<code>libs.hilt.android</code>) instead</span><br /><pre class="errorlines">
 <span class="lineno">  76 </span>    implementation("androidx.navigation:navigation-compose:2.9.4")
 <span class="lineno">  77 </span>    
 <span class="lineno">  78 </span>    // Hilt
-<span class="caretline"><span class="lineno">  79 </span>    implementation(<span class="warning">"com.google.dagger:hilt-android:2.51.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  80 </span>    ksp("com.google.dagger:hilt-compiler:2.51.1")
+<span class="caretline"><span class="lineno">  79 </span>    implementation(<span class="warning">"com.google.dagger:hilt-android:2.57.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  80 </span>    ksp("com.google.dagger:hilt-compiler:2.57.1")
 <span class="lineno">  81 </span>    
 <span class="lineno">  82 </span>    // Coroutines
 </pre>
@@ -493,65 +280,65 @@ Dismiss</button>            </div>
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:80</span>: <span class="message">Use the existing version catalog reference (<code>libs.hilt.compiler</code>) instead</span><br /><pre class="errorlines">
 <span class="lineno">  77 </span>    
 <span class="lineno">  78 </span>    // Hilt
-<span class="lineno">  79 </span>    implementation("com.google.dagger:hilt-android:2.51.1")
-<span class="caretline"><span class="lineno">  80 </span>    ksp(<span class="warning">"com.google.dagger:hilt-compiler:2.51.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  79 </span>    implementation("com.google.dagger:hilt-android:2.57.1")
+<span class="caretline"><span class="lineno">  80 </span>    ksp(<span class="warning">"com.google.dagger:hilt-compiler:2.57.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  81 </span>    
 <span class="lineno">  82 </span>    // Coroutines
-<span class="lineno">  83 </span>    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+<span class="lineno">  83 </span>    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
 </pre>
 
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:83</span>: <span class="message">Use version catalog instead (org.jetbrains.kotlinx:kotlinx-coroutines-core is already available as <code>kotlinx-coroutines-core</code>, but using version 1.8.1 instead)</span><br /><pre class="errorlines">
-<span class="lineno">  80 </span>    ksp("com.google.dagger:hilt-compiler:2.51.1")
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:83</span>: <span class="message">Use the existing version catalog reference (<code>libs.kotlinx.coroutines.core</code>) instead</span><br /><pre class="errorlines">
+<span class="lineno">  80 </span>    ksp("com.google.dagger:hilt-compiler:2.57.1")
 <span class="lineno">  81 </span>    
 <span class="lineno">  82 </span>    // Coroutines
-<span class="caretline"><span class="lineno">  83 </span>    implementation(<span class="warning">"org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  84 </span>    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+<span class="caretline"><span class="lineno">  83 </span>    implementation(<span class="warning">"org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  84 </span>    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
 <span class="lineno">  85 </span>    
 <span class="lineno">  86 </span>    // Room
 </pre>
 
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:84</span>: <span class="message">Use version catalog instead (org.jetbrains.kotlinx:kotlinx-coroutines-android is already available as <code>kotlinx-coroutines-android</code>, but using version 1.8.1 instead)</span><br /><pre class="errorlines">
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:84</span>: <span class="message">Use the existing version catalog reference (<code>libs.kotlinx.coroutines.android</code>) instead</span><br /><pre class="errorlines">
 <span class="lineno">  81 </span>    
 <span class="lineno">  82 </span>    // Coroutines
-<span class="lineno">  83 </span>    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-<span class="caretline"><span class="lineno">  84 </span>    implementation(<span class="warning">"org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  83 </span>    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+<span class="caretline"><span class="lineno">  84 </span>    implementation(<span class="warning">"org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  85 </span>    
 <span class="lineno">  86 </span>    // Room
-<span class="lineno">  87 </span>    implementation("androidx.room:room-runtime:2.6.1")
+<span class="lineno">  87 </span>    implementation("androidx.room:room-runtime:2.8.0")
 </pre>
 
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:87</span>: <span class="message">Use the existing version catalog reference (<code>libs.androidx.room.runtime</code>) instead</span><br /><pre class="errorlines">
-<span class="lineno">  84 </span>    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+<span class="lineno">  84 </span>    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
 <span class="lineno">  85 </span>    
 <span class="lineno">  86 </span>    // Room
-<span class="caretline"><span class="lineno">  87 </span>    implementation(<span class="warning">"androidx.room:room-runtime:2.6.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  88 </span>    implementation("androidx.room:room-ktx:2.6.1")
-<span class="lineno">  89 </span>    ksp("androidx.room:room-compiler:2.6.1")
+<span class="caretline"><span class="lineno">  87 </span>    implementation(<span class="warning">"androidx.room:room-runtime:2.8.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  88 </span>    implementation("androidx.room:room-ktx:2.8.0")
+<span class="lineno">  89 </span>    ksp("androidx.room:room-compiler:2.8.0")
 <span class="lineno">  90 </span>    
 </pre>
 
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:88</span>: <span class="message">Use the existing version catalog reference (<code>libs.androidx.room.ktx</code>) instead</span><br /><pre class="errorlines">
 <span class="lineno">  85 </span>    
 <span class="lineno">  86 </span>    // Room
-<span class="lineno">  87 </span>    implementation("androidx.room:room-runtime:2.6.1")
-<span class="caretline"><span class="lineno">  88 </span>    implementation(<span class="warning">"androidx.room:room-ktx:2.6.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  89 </span>    ksp("androidx.room:room-compiler:2.6.1")
+<span class="lineno">  87 </span>    implementation("androidx.room:room-runtime:2.8.0")
+<span class="caretline"><span class="lineno">  88 </span>    implementation(<span class="warning">"androidx.room:room-ktx:2.8.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  89 </span>    ksp("androidx.room:room-compiler:2.8.0")
 <span class="lineno">  90 </span>    
 <span class="lineno">  91 </span>    // Utilities
 </pre>
 
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:89</span>: <span class="message">Use the existing version catalog reference (<code>libs.androidx.room.compiler</code>) instead</span><br /><pre class="errorlines">
 <span class="lineno">  86 </span>    // Room
-<span class="lineno">  87 </span>    implementation("androidx.room:room-runtime:2.6.1")
-<span class="lineno">  88 </span>    implementation("androidx.room:room-ktx:2.6.1")
-<span class="caretline"><span class="lineno">  89 </span>    ksp(<span class="warning">"androidx.room:room-compiler:2.6.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  87 </span>    implementation("androidx.room:room-runtime:2.8.0")
+<span class="lineno">  88 </span>    implementation("androidx.room:room-ktx:2.8.0")
+<span class="caretline"><span class="lineno">  89 </span>    ksp(<span class="warning">"androidx.room:room-compiler:2.8.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  90 </span>    
 <span class="lineno">  91 </span>    // Utilities
 <span class="lineno">  92 </span>    implementation("com.jakewharton.timber:timber:5.0.1")
 </pre>
 
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:92</span>: <span class="message">Use the existing version catalog reference (<code>libs.timber</code>) instead</span><br /><pre class="errorlines">
-<span class="lineno">  89 </span>    ksp("androidx.room:room-compiler:2.6.1")
+<span class="lineno">  89 </span>    ksp("androidx.room:room-compiler:2.8.0")
 <span class="lineno">  90 </span>    
 <span class="lineno">  91 </span>    // Utilities
 <span class="caretline"><span class="lineno">  92 </span>    implementation(<span class="warning">"com.jakewharton.timber:timber:5.0.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -627,34 +414,34 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno"> 110 </span>    androidTestImplementation(<span class="warning">"io.mockk:mockk-android:1.14.5"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 111 </span>    
 <span class="lineno"> 112 </span>    // Hilt testing
-<span class="lineno"> 113 </span>    testImplementation("com.google.dagger:hilt-android-testing:2.51.1")
+<span class="lineno"> 113 </span>    testImplementation("com.google.dagger:hilt-android-testing:2.57.1")
 </pre>
 
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:113</span>: <span class="message">Use the existing version catalog reference (<code>libs.hilt.android.testing</code>) instead</span><br /><pre class="errorlines">
 <span class="lineno"> 110 </span>    androidTestImplementation("io.mockk:mockk-android:1.14.5")
 <span class="lineno"> 111 </span>    
 <span class="lineno"> 112 </span>    // Hilt testing
-<span class="caretline"><span class="lineno"> 113 </span>    testImplementation(<span class="warning">"com.google.dagger:hilt-android-testing:2.51.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 114 </span>    androidTestImplementation("com.google.dagger:hilt-android-testing:2.51.1")
-<span class="lineno"> 115 </span>    kspAndroidTest("com.google.dagger:hilt-compiler:2.51.1")
+<span class="caretline"><span class="lineno"> 113 </span>    testImplementation(<span class="warning">"com.google.dagger:hilt-android-testing:2.57.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 114 </span>    androidTestImplementation("com.google.dagger:hilt-android-testing:2.57.1")
+<span class="lineno"> 115 </span>    kspAndroidTest("com.google.dagger:hilt-compiler:2.57.1")
 <span class="lineno"> 116 </span>    implementation(kotlin("stdlib-jdk8"))
 </pre>
 
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:114</span>: <span class="message">Use the existing version catalog reference (<code>libs.hilt.android.testing</code>) instead</span><br /><pre class="errorlines">
 <span class="lineno"> 111 </span>    
 <span class="lineno"> 112 </span>    // Hilt testing
-<span class="lineno"> 113 </span>    testImplementation("com.google.dagger:hilt-android-testing:2.51.1")
-<span class="caretline"><span class="lineno"> 114 </span>    androidTestImplementation(<span class="warning">"com.google.dagger:hilt-android-testing:2.51.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 115 </span>    kspAndroidTest("com.google.dagger:hilt-compiler:2.51.1")
+<span class="lineno"> 113 </span>    testImplementation("com.google.dagger:hilt-android-testing:2.57.1")
+<span class="caretline"><span class="lineno"> 114 </span>    androidTestImplementation(<span class="warning">"com.google.dagger:hilt-android-testing:2.57.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 115 </span>    kspAndroidTest("com.google.dagger:hilt-compiler:2.57.1")
 <span class="lineno"> 116 </span>    implementation(kotlin("stdlib-jdk8"))
 <span class="lineno"> 117 </span>}
 </pre>
 
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:115</span>: <span class="message">Use the existing version catalog reference (<code>libs.hilt.compiler</code>) instead</span><br /><pre class="errorlines">
 <span class="lineno"> 112 </span>    // Hilt testing
-<span class="lineno"> 113 </span>    testImplementation("com.google.dagger:hilt-android-testing:2.51.1")
-<span class="lineno"> 114 </span>    androidTestImplementation("com.google.dagger:hilt-android-testing:2.51.1")
-<span class="caretline"><span class="lineno"> 115 </span>    kspAndroidTest(<span class="warning">"com.google.dagger:hilt-compiler:2.51.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 113 </span>    testImplementation("com.google.dagger:hilt-android-testing:2.57.1")
+<span class="lineno"> 114 </span>    androidTestImplementation("com.google.dagger:hilt-android-testing:2.57.1")
+<span class="caretline"><span class="lineno"> 115 </span>    kspAndroidTest(<span class="warning">"com.google.dagger:hilt-compiler:2.57.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 116 </span>    implementation(kotlin("stdlib-jdk8"))
 <span class="lineno"> 117 </span>}
 </pre>
@@ -825,6 +612,45 @@ Identifier: androidx.navigation.compose<br/>
 CompositionLocal properties should be prefixed with <code>Local</code>. This helps make it clear at their use site that these values are local to the current composition. Typically the full name will be <code>Local</code> + the type of the CompositionLocal, for example val LocalFoo = compositionLocalOf { Foo() }.<br/><div class="vendor">
 Vendor: Jetpack Compose<br/>
 Identifier: androidx.compose.runtime<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ConfigurationScreenWidthHeight<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Configuration.screenWidthDp and Configuration.screenHeightDp have different insets behaviour depending on target SDK version, and are rounded to the nearest Dp. This means that using these values in composition to size a layout can result in issues, as these values do not accurately represent the actual available window size. Instead it is recommended to use WindowInfo.containerSize which accurately represents the window size.<br/><div class="vendor">
+Vendor: Jetpack Compose<br/>
+Identifier: androidx.compose.ui<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ConstantContentStateKeyInItemsCall<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+When using shared elements (<code>Modifier.sharedElement</code> or <code>Modifier.sharedBounds</code>) in a LazyList, each Composable within an <code>items</code> block should have its own unique key. Otherwise, only one item of the visible layout will be rendered, regardless if there's an ongoing shared element transition.<br/><div class="vendor">
+Vendor: Jetpack Compose<br/>
+Identifier: androidx.compose.animation<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ContextCastToActivity<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Casting Context to Activity is an error as Contexts are not always Activities. Use LocalActivity instead<br/><div class="vendor">
+Vendor: Jetpack Activity Compose<br/>
+Identifier: androidx.activity.compose<br/>
 Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
 </div>
 <br/>
@@ -1016,12 +842,16 @@ Feedback: <a href="https://issuetracker.google.com/issues/new?component=460964">
 </div>
 </div>
 <div class="issue">
-<div class="id">FrequentlyChangedStateReadInComposition<div class="issueSeparator"></div>
+<div class="id">FrequentlyChangingValue<div class="issueSeparator"></div>
 </div>
 <div class="metadata"><div class="explanation">
-This property is observable and is updated after every scroll or remeasure. If you use it in the composable function directly, it will be recomposed on every change, causing potential performance issues including infinity recomposition loops. Prefer wrapping it with derivedStateOf to use calculation based on this property in composition or collect changes inside LaunchedEffect instead.<br/><div class="vendor">
+Reading a value annotated with @FrequentlyChangingValue inside composition can cause performance issues due to frequent recompositions. To avoid frequent recompositions, instead consider:<br/>
+<br/>
+- Using derivedStateOf to filter state changes based on a provided calculation. For example, rather than recomposing on every scroll position change, only recomposing if the scroll position changes from 0 (at the top of the list) to greater than 0 (not at the top of the list), and vice versa.<br/>
+- Using snapshotFlow to create a flow of changes from a provided state. This can then be collected inside a LaunchedEffect, and used to make changes without needing to recompose.<br/>
+- If using Compose UI, read this value inside measure / layout / draw, depending on where it is needed. This will cause invalidation of the corresponding phase, instead of a recomposition. See developer.android.com for more information on Jetpack Compose phases.<br/><div class="vendor">
 Vendor: Jetpack Compose<br/>
-Identifier: androidx.compose.foundation<br/>
+Identifier: androidx.compose.runtime<br/>
 Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
 </div>
 <br/>
@@ -1145,6 +975,32 @@ Calling Lifecycle.currentState within composition will not observe changes to th
 Vendor: Android Open Source Project<br/>
 Identifier: androidx.lifecycle<br/>
 Feedback: <a href="https://issuetracker.google.com/issues/new?component=413132">https://issuetracker.google.com/issues/new?component=413132</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">LocalContextConfigurationRead<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Changes to the Configuration object will not cause LocalContext reads to be invalidated, so you may end up with stale values when the Configuration changes. Instead, use LocalConfiguration.current to retrieve the Configuration - this will recompose callers when the Configuration object changes.<br/><div class="vendor">
+Vendor: Jetpack Compose<br/>
+Identifier: androidx.compose.ui<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">LocalContextResourcesRead<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Changes to the Configuration object will not cause LocalContext.current.resources reads to be invalidated, so calls to APIs suchas Resources.getString() will not be updated when the Configuration changes. Instead, use LocalResources.current to retrieve the Resources - this will invalidate callers when the Configuration changes, to ensure that these calls reflect the latest values.<br/><div class="vendor">
+Vendor: Jetpack Compose<br/>
+Identifier: androidx.compose.ui<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
 </div>
 <br/>
 <br/></div>
@@ -1433,6 +1289,19 @@ Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">
 </div>
 </div>
 <div class="issue">
+<div class="id">RememberInComposition<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+APIs annotated with @RememberInComposition must not be called inside composition. This can lead to correctness issues and / or performance issues. Instead, use <code>remember</code> to cache the value across compositions, or hoist this call outside of composition.<br/><div class="vendor">
+Vendor: Jetpack Compose<br/>
+Identifier: androidx.compose.runtime<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
 <div class="id">RememberReturnType<div class="issueSeparator"></div>
 </div>
 <div class="metadata"><div class="explanation">
@@ -1657,38 +1526,12 @@ Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">
 </div>
 </div>
 <div class="issue">
-<div class="id">UnrememberedAnimatable<div class="issueSeparator"></div>
-</div>
-<div class="metadata"><div class="explanation">
-Animatable instances created during composition need to be `remember`ed, otherwise they will be recreated during recomposition, and lose their state. Either hoist the Animatable to an object that is not created during composition, or wrap the Animatable in a call to <code>remember</code>.<br/><div class="vendor">
-Vendor: Jetpack Compose<br/>
-Identifier: androidx.compose.animation.core<br/>
-Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
-</div>
-<br/>
-<br/></div>
-</div>
-</div>
-<div class="issue">
 <div class="id">UnrememberedGetBackStackEntry<div class="issueSeparator"></div>
 </div>
 <div class="metadata"><div class="explanation">
 Backstack entries retrieved during composition need to be `remember`ed, otherwise they will be retrieved from the navController again, and be changed. You also need to pass in a key of a NavBackStackEntry to the remember call or they will not be updated properly. If this is in a <code>NavGraphBuilder.composable</code> scope, you should pass in the lambda's given entry as the key. Either hoist the state to an object that is not created during composition, or wrap the state in a call to <code>remember</code> with a <code>NavBackStackEntry</code> as a key.<br/><div class="vendor">
 Vendor: Jetpack Navigation Compose<br/>
 Identifier: androidx.navigation.compose<br/>
-</div>
-<br/>
-<br/></div>
-</div>
-</div>
-<div class="issue">
-<div class="id">UnrememberedMutableInteractionSource<div class="issueSeparator"></div>
-</div>
-<div class="metadata"><div class="explanation">
-MutableInteractionSource instances created during composition need to be `remember`ed, otherwise they will be recreated during recomposition, and lose their state. Either hoist the MutableInteractionSource to an object that is not created during composition, or wrap the MutableInteractionSource in a call to <code>remember</code>.<br/><div class="vendor">
-Vendor: Jetpack Compose<br/>
-Identifier: androidx.compose.foundation<br/>
-Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
 </div>
 <br/>
 <br/></div>
@@ -1841,6 +1684,32 @@ Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">
 The <code>content</code> lambda in Scaffold has a padding parameter which will include any inner padding for the content due to app bars. If this parameter is ignored, then content may be obscured by the app bars resulting in visual issues or elements that can't be interacted with.<br/><div class="vendor">
 Vendor: Jetpack Compose<br/>
 Identifier: androidx.compose.material3<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnusedSharedTransitionModifierParameter<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+When using <code>SharedTransitionScope</code> the provided <code>Modifier</code> should always be used on the top-most child, as the <code>Modifier</code> both obtains the root coordinates and creates an overlay. Otherwise, consider using <code>SharedTransitionLayout</code>.<br/><div class="vendor">
+Vendor: Jetpack Compose<br/>
+Identifier: androidx.compose.animation<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnusedTargetStateInContentKeyLambda<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+In <code>AnimatedContent</code>, the <code>contentKey</code> lambda may be used when the <code>targetState</code> is expected to mutate frequently but not all mutations are desired to be considered a target state change. So <code>contentKey</code> is expected to always use the given <code>targetState</code> parameter to calculate its result.<br/><div class="vendor">
+Vendor: Jetpack Compose<br/>
+Identifier: androidx.compose.animation<br/>
 Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
 </div>
 <br/>

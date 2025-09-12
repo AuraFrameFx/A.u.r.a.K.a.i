@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Gradle Test Executor 2" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:01:15.658Z" hostname="AURAKAI" time="0.022">
+<testsuite name="Gradle Test Executor 2" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:30:06.362Z" hostname="AURAKAI" time="0.045">
   <properties/>
-  <testcase name="failed to execute tests" classname="Gradle Test Executor 2" time="0.022">
+  <testcase name="failed to execute tests" classname="Gradle Test Executor 2" time="0.045">
     <failure message="org.gradle.api.internal.tasks.testing.TestSuiteExecutionException: Could not start Gradle Test Executor 2: Failed to load JUnit Platform.  Please ensure that all JUnit Platform dependencies are available on the test's runtime classpath, including the JUnit Platform launcher." type="org.gradle.api.internal.tasks.testing.TestSuiteExecutionException">org.gradle.api.internal.tasks.testing.TestSuiteExecutionException: Could not start Gradle Test Executor 2: Failed to load JUnit Platform.  Please ensure that all JUnit Platform dependencies are available on the test's runtime classpath, including the JUnit Platform launcher.
 	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.startProcessing(SuiteTestClassProcessor.java:46)
 	at java.base@24.0.2/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
