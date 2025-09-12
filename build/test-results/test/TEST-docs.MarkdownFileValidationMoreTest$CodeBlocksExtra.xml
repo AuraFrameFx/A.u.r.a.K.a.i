@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Code blocks - extra" tests="2" skipped="0" failures="2" errors="0" timestamp="2025-09-12T07:27:49.187Z" hostname="AURAKAI" time="0.009">
+<testsuite name="Code blocks - extra" tests="2" skipped="0" failures="2" errors="0" timestamp="2025-09-12T13:18:16.602Z" hostname="AURAKAI" time="0.014">
   <properties/>
-  <testcase name="contains at least one Kotlin or Groovy build script snippet()" classname="docs.MarkdownFileValidationMoreTest$CodeBlocksExtra" time="0.005">
+  <testcase name="contains at least one Kotlin or Groovy build script snippet()" classname="docs.MarkdownFileValidationMoreTest$CodeBlocksExtra" time="0.008">
     <failure message="org.opentest4j.AssertionFailedError: Expected build script examples (kotlin/groovy/gradle) ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected build script examples (kotlin/groovy/gradle) ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -15,7 +15,7 @@
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 </failure>
   </testcase>
-  <testcase name="unlabeled fenced code blocks are not used()" classname="docs.MarkdownFileValidationMoreTest$CodeBlocksExtra" time="0.003">
+  <testcase name="unlabeled fenced code blocks are not used()" classname="docs.MarkdownFileValidationMoreTest$CodeBlocksExtra" time="0.004">
     <failure message="org.opentest4j.AssertionFailedError: Avoid unlabeled triple backtick fences; specify a language ==&gt; expected: &lt;0&gt; but was: &lt;22&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Avoid unlabeled triple backtick fences; specify a language ==&gt; expected: &lt;0&gt; but was: &lt;22&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

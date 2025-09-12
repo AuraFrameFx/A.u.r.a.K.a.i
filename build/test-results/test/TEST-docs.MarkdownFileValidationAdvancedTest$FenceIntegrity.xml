@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Code fences integrity" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:27:49.054Z" hostname="AURAKAI" time="0.001">
+<testsuite name="Code fences integrity" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T13:18:16.368Z" hostname="AURAKAI" time="0.003">
   <properties/>
-  <testcase name="all code fences are properly closed()" classname="docs.MarkdownFileValidationAdvancedTest$FenceIntegrity" time="0.001"/>
+  <testcase name="all code fences are properly closed()" classname="docs.MarkdownFileValidationAdvancedTest$FenceIntegrity" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

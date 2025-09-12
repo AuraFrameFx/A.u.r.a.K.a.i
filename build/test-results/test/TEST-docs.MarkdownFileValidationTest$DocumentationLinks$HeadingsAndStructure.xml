@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Headings and structure" tests="3" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:27:49.298Z" hostname="AURAKAI" time="0.008">
+<testsuite name="Headings and structure" tests="3" skipped="0" failures="1" errors="0" timestamp="2025-09-12T13:18:16.810Z" hostname="AURAKAI" time="0.036">
   <properties/>
   <testcase name="has a top-level H1 header()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$HeadingsAndStructure" time="0.001"/>
-  <testcase name="no duplicate header slugs()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$HeadingsAndStructure" time="0.003"/>
-  <testcase name="contains Overview and Architecture sections()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$HeadingsAndStructure" time="0.002">
+  <testcase name="no duplicate header slugs()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$HeadingsAndStructure" time="0.03"/>
+  <testcase name="contains Overview and Architecture sections()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$HeadingsAndStructure" time="0.004">
     <failure message="org.opentest4j.MultipleFailuresError: Multiple Failures (1 failure)&#13;&#10;&#9;org.opentest4j.AssertionFailedError: Missing 'Overview' section ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.MultipleFailuresError">org.opentest4j.MultipleFailuresError: Multiple Failures (1 failure)
 	org.opentest4j.AssertionFailedError: Missing 'Overview' section ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:80)

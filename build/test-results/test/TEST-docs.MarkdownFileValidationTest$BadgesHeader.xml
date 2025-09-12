@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Badges and header" tests="2" skipped="0" failures="2" errors="0" timestamp="2025-09-12T07:27:49.230Z" hostname="AURAKAI" time="0.005">
+<testsuite name="Badges and header" tests="2" skipped="0" failures="2" errors="0" timestamp="2025-09-12T13:18:16.672Z" hostname="AURAKAI" time="0.008">
   <properties/>
-  <testcase name="contains build status, license, API and Kotlin badges()" classname="docs.MarkdownFileValidationTest$BadgesHeader" time="0.003">
+  <testcase name="contains build status, license, API and Kotlin badges()" classname="docs.MarkdownFileValidationTest$BadgesHeader" time="0.007">
     <failure message="org.gradle.internal.exceptions.DefaultMultiCauseException: Multiple Failures (3 failures)&#13;&#10;&#9;org.opentest4j.AssertionFailedError: Build status badge missing ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;&#13;&#10;&#9;org.opentest4j.AssertionFailedError: API level badge missing ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;&#13;&#10;&#9;org.opentest4j.AssertionFailedError: Kotlin badge missing ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.gradle.internal.exceptions.DefaultMultiCauseException">org.gradle.internal.exceptions.DefaultMultiCauseException: Multiple Failures (3 failures)
 	org.opentest4j.AssertionFailedError: Build status badge missing ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	org.opentest4j.AssertionFailedError: API level badge missing ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
