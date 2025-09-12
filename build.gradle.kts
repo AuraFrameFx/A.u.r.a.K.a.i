@@ -95,9 +95,9 @@ dependencies {
     testImplementation(libs.junit.jupiter.api)
     testImplementation(libs.junit.jupiter)
     testRuntimeOnly(libs.junit.jupiter.engine)
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.13.4")
     implementation(kotlin("stdlib-jdk8"))
 }
-
 kotlin {
     jvmToolchain(8)
 }

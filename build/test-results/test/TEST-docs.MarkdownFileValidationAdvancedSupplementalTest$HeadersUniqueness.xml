@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Headers – uniqueness with ToC present" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:17:41.399Z" hostname="AURAKAI" time="0.004">
+  <properties/>
+  <testcase name="h2 slugs are unique when ToC exists()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$HeadersUniqueness" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Images and links – filesystem validation" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:17:41.409Z" hostname="AURAKAI" time="0.003">
+  <properties/>
+  <testcase name="relative images point to existing files()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$ImagesAndLinksFilesystem" time="0.002"/>
+  <testcase name="relative links point to existing files()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$ImagesAndLinksFilesystem" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -12,7 +12,8 @@ import com.highcapable.yukihookapi.hook.xposed.proxy.IYukiHookXposedInit
  */
 @InjectYukiHookWithXposed(
     isUsingResourcesHook = false, // Set to true if you need to hook resources
-    isUsingXposedModuleLoader = true
+    isUsingXposedModuleLoader = true,
+    modulePackageName = "dev.aurakai.auraframefx.collabcanvas"
 )
 object HookEntry : IYukiHookXposedInit {
 
