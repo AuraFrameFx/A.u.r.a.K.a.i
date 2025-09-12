@@ -6,7 +6,6 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
     /**
@@ -37,11 +36,6 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                     sourceCompatibility = JavaVersion.VERSION_24
                     targetCompatibility = JavaVersion.VERSION_24
                 }
-            }
-
-            // Kotlin JVM toolchain
-            extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension> {
-                jvmToolchain(24)
             }
         }
     }

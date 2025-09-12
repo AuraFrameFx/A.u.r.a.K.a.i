@@ -2,18 +2,28 @@
 // Performance testing for AI consciousness operations
 
 plugins {
-    id("genesis.android.library")
+    id("com.android.library")
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
-    // Kotlin Android is applied by the convention plugin; avoid double-applying to prevent duplicate tasks
-    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
-}
+    alias(libs.plugins.dokka)
+    id("org.jetbrains.kotlin.android") // Add this line to explicitly apply the Kotlin Android plugin
 
+    // The Kotlin Android plugin is typically applied by a convention plugin.
+    // If you apply it manually, it would be here:
+    // id("org.jetbrains.kotlin.android")
+}
+kotlin {
+    jvmToolchain(24) // <---- CORRECT LOCATION
+}
+// Java toolchain configuration at the project level
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(24)) // Stay on 24 until stable 25 (non-RC)
+        languageVersion.set(JavaLanguageVersion.of(24)) // Correctly sets the toolchain for Java sources
     }
 }
+
+// JVM toolchain configuration for Kotlin sources
+
 
 android {
     namespace = "dev.aurakai.auraframefx.benchmark"
@@ -37,25 +47,15 @@ android {
         testInstrumentationRunnerArguments["androidx.benchmark.suppressErrors"] =
             "EMULATOR,LOW_BATTERY,DEBUGGABLE"
         testInstrumentationRunnerArguments["android.experimental.self-instrumenting"] = "true"
+        multiDexEnabled = true // Enable multidex for core library desugaring
         // MultiDex is configured at the app/test APK level only; not needed here.
-
     }
 
-    // Core library desugaring without manual source/target (toolchain supplies Java 24)
+    // Core library desugaring without manual source/target
     compileOptions {
-        // Removed explicit source/target compatibility; managed by toolchain
         isCoreLibraryDesugaringEnabled = true
-    }
-
-    // Modern Kotlin compilerOptions DSL (replaces deprecated kotlinOptions)
-    kotlin {
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
-            freeCompilerArgs.addAll(
-                "-opt-in=kotlin.RequiresOptIn",
-                "-Xjvm-default=all"
-            )
-        }
+        // The toolchain will configure source/target compatibility automatically.
+        // Explicitly setting these is generally not needed when using toolchains.
     }
 
     buildFeatures {
@@ -74,41 +74,42 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
-    
+
     // Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-    
+
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
-    
+
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
-    
+
     // Utilities
     implementation(libs.timber)
     coreLibraryDesugaring(libs.desugar.jdk.libs)
-    
+    implementation("androidx.multidex:multidex:2.0.1") // Add multidex dependency
+
     // Project dependencies
     implementation(project(":core-module"))
     implementation(project(":datavein-oracle-native"))
     implementation(project(":secure-comm"))
     implementation(project(":oracle-drive-integration"))
-    
+
     // Benchmark testing
     androidTestImplementation(libs.androidx.benchmark.junit4)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(libs.androidx.test.uiautomator)
-    
+
     // Unit testing
     testImplementation(libs.junit4)
     testImplementation(libs.mockk)
     androidTestImplementation(libs.mockk.android)
-    
+
     // Hilt testing
     testImplementation(libs.hilt.android.testing)
     androidTestImplementation(libs.hilt.android.testing)
