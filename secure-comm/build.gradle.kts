@@ -39,10 +39,13 @@ dependencies {
     
     // Test dependencies
     testImplementation(libs.junit4)
-
+    testImplementation(libs.junit.jupiter.api)
+    testImplementation(libs.junit.jupiter.engine)
+    testImplementation(libs.mockk.android)
     testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.androidx.test.core)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(libs.hilt.android.testing)
-}
+    androidTestImplementation(libs.androidx.test.runner)
 }

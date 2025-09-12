@@ -1,6 +1,0 @@
-C:\ReGenesis-A.O.S.P\romtools\src\main\kotlin\dev\aurakai\auraframefx\romtools\RomToolsConfig.kt
-C:\ReGenesis-A.O.S.P\romtools\src\main\kotlin\dev\aurakai\auraframefx\romtools\RomToolsManager.kt
-C:\ReGenesis-A.O.S.P\romtools\src\main\kotlin\dev\aurakai\auraframefx\romtools\di\RomToolsModule.kt
-C:\ReGenesis-A.O.S.P\romtools\src\main\kotlin\dev\aurakai\auraframefx\romtools\StubImplementations.kt
-C:\ReGenesis-A.O.S.P\romtools\src\main\kotlin\dev\aurakai\auraframefx\romtools\bootloader\BootloaderManager.kt
-C:\ReGenesis-A.O.S.P\romtools\src\main\kotlin\dev\aurakai\auraframefx\romtools\ui\RomToolsScreen.kt
