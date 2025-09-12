@@ -77,7 +77,7 @@ dependencies {
     implementation(libs.coil.compose)
     
     // ===== CORE LIBRARY DESUGARING =====
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
     
     // ===== XPOSED/LSPosed Integration =====
     compileOnly(files("../Libs/api-82.jar"))
