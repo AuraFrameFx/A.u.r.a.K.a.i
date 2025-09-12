@@ -1,6 +1,6 @@
 // ==== GENESIS PROTOCOL - SANDBOX UI ====
 plugins {
-    alias(libs.plugins.android.library)
+    id("com.android.library")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
@@ -11,7 +11,7 @@ plugins {
 android {
     namespace = "dev.aurakai.auraframefx.sandboxui"
     compileSdk = 36
-    defaultConfig { minSdk = 26 }
+    defaultConfig { minSdk = 34 }
     buildFeatures { compose = true }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -51,4 +51,14 @@ dependencies {
 
 tasks.register("sandboxStatus") {
     group = "aegenesis"; doLast { println("🧪 SANDBOX UI - Ready (Java 24)") }
+}
+
+tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
+    dokkaSourceSets {
+        named("main") {
+            sourceRoots.from(file("src/main/java"))
+            sourceRoots.from(file("src/main/kotlin"))
+            sourceRoots.from(file("src/main/res"))
+        }
+    }
 }

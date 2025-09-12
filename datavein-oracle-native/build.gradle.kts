@@ -10,7 +10,7 @@ android {
     namespace = "dev.aurakai.auraframefx.dataveinoraclenative"
     
     defaultConfig {
-        minSdk = 26
+        minSdk = 34
     }
     
     buildFeatures {

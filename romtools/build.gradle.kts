@@ -1,8 +1,7 @@
 plugins {
-    alias(libs.plugins.android.library)
+    id("com.android.library")
     alias(libs.plugins.kotlin.serialization)
-    // KSP temporarily disabled due to Hilt processing issues
-    // alias(libs.plugins.ksp)
+    alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
 }
 
@@ -11,7 +10,7 @@ android {
     compileSdk = 36
     
     defaultConfig {
-        minSdk = 26
+        minSdk = 34
     }
 }
 
@@ -27,8 +26,8 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.bundles.androidx.core)
-    // Hilt temporarily disabled due to KSP processing issues
-    // implementation(libs.hilt.android); ksp(libs.hilt.compiler)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
     implementation(libs.bundles.coroutines)
     implementation(libs.bundles.network)
     implementation(libs.androidx.room.runtime)
@@ -43,8 +42,8 @@ dependencies {
     testImplementation(libs.bundles.testing.unit)
     testImplementation(libs.mockk.android)
     androidTestImplementation(libs.mockk.android)
-    // Hilt testing temporarily disabled
-    // testImplementation(libs.hilt.android.testing)
+    testImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.hilt.android.testing)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     // androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
     implementation(kotlin("stdlib-jdk8"))
@@ -69,4 +68,14 @@ tasks.named("build") { dependsOn("verifyRomTools") }
 
 tasks.register("romStatus") {
     group = "aegenesis"; doLast { println("🛠️ ROM TOOLS - Ready (Java 24)") }
+}
+
+tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
+    dokkaSourceSets {
+        named("main") {
+            sourceRoots.from(file("src/main/java"))
+            sourceRoots.from(file("src/main/kotlin"))
+            sourceRoots.from(file("src/main/res"))
+        }
+    }
 }

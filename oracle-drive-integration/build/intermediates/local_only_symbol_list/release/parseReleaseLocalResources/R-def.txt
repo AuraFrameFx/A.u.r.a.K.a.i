@@ -1,4 +1,0 @@
-R_DEF: Internal format may change without notice
-local
-string oracle_drive_integration_main_name
-string oracle_drive_integration_release_name

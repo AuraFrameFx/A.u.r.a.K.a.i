@@ -44,6 +44,7 @@ dependencies {
     testRuntimeOnly(libs.junit.jupiter.engine)
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation(libs.mockk)
+    testImplementation(kotlin("stdlib"))
     // Bind a simple logger only during tests
     testRuntimeOnly(libs.slf4j.simple)
     implementation(kotlin("stdlib-jdk8"))

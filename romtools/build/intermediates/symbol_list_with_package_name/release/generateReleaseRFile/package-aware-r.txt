@@ -1,3 +1,0 @@
-dev.aurakai.auraframefx.romtools
-string romtools_main_name
-string romtools_release_name

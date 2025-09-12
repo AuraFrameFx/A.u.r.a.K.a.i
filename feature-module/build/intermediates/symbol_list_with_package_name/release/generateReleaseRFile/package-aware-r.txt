@@ -1,3 +1,0 @@
-dev.aurakai.auraframefx.featuremodule
-string feature_module_main_name
-string feature_module_release_name

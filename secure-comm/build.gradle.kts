@@ -5,13 +5,14 @@ plugins {
     id("genesis.android.library")
     id("genesis.android.native")
     alias(libs.plugins.ksp)
+    alias(libs.plugins.android.library)
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.securecomm"
     
     defaultConfig {
-        minSdk = 26
+        minSdk = 34
     }
     
     externalNativeBuild {
@@ -50,7 +51,5 @@ dependencies {
     testImplementation(libs.mockk.android)
     testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(libs.hilt.android.testing)
-    androidTestImplementation("androidx.test:runner:1.7.0")
 }

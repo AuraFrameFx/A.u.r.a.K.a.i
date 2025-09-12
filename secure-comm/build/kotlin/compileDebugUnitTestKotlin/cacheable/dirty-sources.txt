@@ -1,5 +1,0 @@
-C:\ReGenesis-A.O.S.P\secure-comm\src\test\kotlin\dev\aurakai\auraframefx\securecomm\crypto\CryptoManagerTest.kt
-C:\ReGenesis-A.O.S.P\secure-comm\src\test\kotlin\BuildScriptTest.kt
-C:\ReGenesis-A.O.S.P\secure-comm\src\test\kotlin\dev\aurakai\auraframefx\securecomm\keystore\SecureKeyStoreTest.kt
-C:\ReGenesis-A.O.S.P\secure-comm\src\test\kotlin\dev\aurakai\auraframefx\securecomm\NeuralSyncIntegrationTest.kt
-C:\ReGenesis-A.O.S.P\secure-comm\src\test\kotlin\dev\aurakai\auraframefx\securecomm\protocol\SecureChannelTest.kt

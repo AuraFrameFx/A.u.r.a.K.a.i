@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Header level progression" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T14:43:10.001Z" hostname="AURAKAI" time="0.002">
-  <properties/>
-  <testcase name="no header level jumps greater than one()" classname="docs.MarkdownFileValidationExtraTest$HeaderProgression" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

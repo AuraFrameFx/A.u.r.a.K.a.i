@@ -12,7 +12,7 @@ android {
     namespace = "dev.aurakai.auraframefx.colorblendr"
     
     defaultConfig {
-        minSdk = 26
+        minSdk = 34
     }
     
     buildFeatures {

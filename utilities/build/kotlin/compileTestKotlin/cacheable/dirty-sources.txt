@@ -1,5 +1,0 @@
-C:\ReGenesis-A.O.S.P\utilities\src\test\kotlin\org\example\utilities\SplitUtilsTest.kt
-C:\ReGenesis-A.O.S.P\utilities\src\test\kotlin\org\example\utilities\JoinUtilsTest.kt
-C:\ReGenesis-A.O.S.P\utilities\src\test\kotlin\org\example\utilities\StringUtilsTest.kt
-C:\ReGenesis-A.O.S.P\utilities\src\test\kotlin\org\example\list\LinkedList.kt
-C:\ReGenesis-A.O.S.P\utilities\src\test\kotlin\org\example\utilities\SplitUtilsAdditionalTest.kt

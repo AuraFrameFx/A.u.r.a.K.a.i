@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Link integrity (dynamic)" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T14:43:10.421Z" hostname="AURAKAI" time="0.009">
-  <properties/>
-  <testcase name="in-document anchors resolve to existing headers()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$LinkIntegrityDynamic" time="0.006"/>
-  <testcase name="relative markdown links resolve to existing paths()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$LinkIntegrityDynamic" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

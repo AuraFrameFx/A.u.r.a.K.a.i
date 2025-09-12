@@ -1,2 +1,0 @@
-ninja: Entering directory `C:\ReGenesis-A.O.S.P\secure-comm\.cxx\Debug\4p405g58\armeabi-v7a'
-ninja: no work to do.

@@ -86,7 +86,7 @@ class JoinUtilsTest {
             val list = linkedListOf(*items)
             val result = assertDoesNotThrow { JoinUtils.join(list) }
             // Validate start/middle/end to avoid building expected full string manually
-            val parts = result.split(" ")
+            val parts = (result as String).split(" ")
             assertEquals(1000, parts.size)
             assertEquals("v1", parts.first())
             assertEquals("v500", parts[499])
@@ -190,7 +190,7 @@ class JoinUtilsExtendedTest {
                 org.junit.jupiter.api.Assertions.assertTimeout(java.time.Duration.ofSeconds(2)) {
                     JoinUtils.join(list)
                 }
-            val parts = out.split(" ")
+            val parts = (out as String).split(" ")
             org.junit.jupiter.api.Assertions.assertEquals(5000, parts.size)
             org.junit.jupiter.api.Assertions.assertEquals("x1", parts.first())
             org.junit.jupiter.api.Assertions.assertEquals("x5000", parts.last())

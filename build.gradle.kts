@@ -11,7 +11,6 @@ plugins {
     id("genesis.android.application") apply false
     id("genesis.android.library") apply false
     id("genesis.android.compose") apply false
-    id("genesis.android.hilt") apply false
     id("genesis.android.native") apply false
     kotlin("jvm") version "2.2.20"
 }
@@ -129,4 +128,3 @@ if (file("nuclear-clean.gradle.kts").exists()) {
 if (file("dependency-fix.gradle.kts").exists()) {
     apply(from = "dependency-fix.gradle.kts")
 }
-

@@ -2,7 +2,7 @@
 // Primary feature module using convention plugins
 
 plugins {
-    alias(libs.plugins.android.library)
+    id("com.android.library")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.dokka)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
@@ -14,7 +14,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        minSdk = 26
+        minSdk = 34
     }
 
     java {
@@ -74,4 +74,14 @@ dependencies {
 tasks.register("featureStatus") {
     group = "aegenesis"
     doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 24)!") }
+}
+
+tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
+    dokkaSourceSets {
+        named("main") {
+            sourceRoots.from(file("src/main/java"))
+            sourceRoots.from(file("src/main/kotlin"))
+            sourceRoots.from(file("src/main/res"))
+        }
+    }
 }

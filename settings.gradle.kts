@@ -7,6 +7,7 @@
 // Enable Gradle features
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
+
 pluginManagement {
     // Include build-logic for convention plugins
     includeBuild("build-logic")
@@ -14,15 +15,15 @@ pluginManagement {
     repositories {
         // Primary repositories - Google Maven must be first for Hilt
         google()
-
+        gradlePluginPortal()
+        mavenCentral()
+        
         // Android alpha/preview versions
         maven {
             url = uri("https://androidx.dev/kmp/builds/11950322/artifacts/snapshots/repository")
             name = "AndroidX Snapshot"
         }
 
-        gradlePluginPortal()
-        mavenCentral()
         // Gradle releases (for org.gradle artifacts like gradle-tooling-api)
         maven {
             url = uri("https://repo.gradle.org/gradle/libs-releases")
@@ -66,7 +67,7 @@ pluginManagement {
     plugins {
         id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
     }
-
+    
     resolutionStrategy {
         eachPlugin {
             if (requested.id.namespace == "com.google.dagger") {
@@ -74,6 +75,9 @@ pluginManagement {
             }
         }
     }
+}
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
 
 dependencyResolutionManagement {
@@ -85,7 +89,7 @@ dependencyResolutionManagement {
         // Primary repositories
         google()
         mavenCentral()
-        
+
         // Gradle releases for tooling API
         maven("https://repo.gradle.org/gradle/libs-releases") {
             name = "Gradle Releases"

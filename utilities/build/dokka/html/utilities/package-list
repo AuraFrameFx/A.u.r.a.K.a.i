@@ -1,0 +1,17 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:org.example.utilities////PointingToDeclaration/utilities/org.example.utilities/index.html
+$dokka.location:org.example.utilities/JoinUtils.Companion///PointingToDeclaration/utilities/org.example.utilities/-join-utils/-companion/index.html
+$dokka.location:org.example.utilities/JoinUtils.Companion/join/#org.example.list.LinkedList/PointingToDeclaration/utilities/org.example.utilities/-join-utils/-companion/join.html
+$dokka.location:org.example.utilities/JoinUtils///PointingToDeclaration/utilities/org.example.utilities/-join-utils/index.html
+$dokka.location:org.example.utilities/JoinUtils/JoinUtils/#/PointingToDeclaration/utilities/org.example.utilities/-join-utils/-join-utils.html
+$dokka.location:org.example.utilities/SplitUtils.Companion///PointingToDeclaration/utilities/org.example.utilities/-split-utils/-companion/index.html
+$dokka.location:org.example.utilities/SplitUtils.Companion/split/#kotlin.String/PointingToDeclaration/utilities/org.example.utilities/-split-utils/-companion/split.html
+$dokka.location:org.example.utilities/SplitUtils///PointingToDeclaration/utilities/org.example.utilities/-split-utils/index.html
+$dokka.location:org.example.utilities/SplitUtils/SplitUtils/#/PointingToDeclaration/utilities/org.example.utilities/-split-utils/-split-utils.html
+$dokka.location:org.example.utilities/StringUtils.Companion///PointingToDeclaration/utilities/org.example.utilities/-string-utils/-companion/index.html
+$dokka.location:org.example.utilities/StringUtils.Companion/join/#org.example.list.LinkedList/PointingToDeclaration/utilities/org.example.utilities/-string-utils/-companion/join.html
+$dokka.location:org.example.utilities/StringUtils.Companion/split/#kotlin.String/PointingToDeclaration/utilities/org.example.utilities/-string-utils/-companion/split.html
+$dokka.location:org.example.utilities/StringUtils///PointingToDeclaration/utilities/org.example.utilities/-string-utils/index.html
+$dokka.location:org.example.utilities/StringUtils/StringUtils/#/PointingToDeclaration/utilities/org.example.utilities/-string-utils/-string-utils.html
+org.example.utilities

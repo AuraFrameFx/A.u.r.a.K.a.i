@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Code fence quality" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T14:43:10Z" hostname="AURAKAI" time="0.0">
-  <properties/>
-  <testcase name="at least half of opening code fences specify a language()" classname="docs.MarkdownFileValidationExtraTest$CodeFenceQuality" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

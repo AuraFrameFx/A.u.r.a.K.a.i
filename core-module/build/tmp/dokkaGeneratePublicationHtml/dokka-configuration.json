@@ -1,0 +1,96 @@
+{
+  "moduleName": "core-module",
+  "moduleVersion": "1.0.0",
+  "outputDir": "C:\\ReGenesis-A.O.S.P\\core-module\\build\\dokka\\html",
+  "cacheRoot": null,
+  "offlineMode": false,
+  "sourceSets": [
+    {
+      "displayName": "jvm",
+      "sourceSetID": {
+        "scopeId": ":core-module",
+        "sourceSetName": "main"
+      },
+      "classpath": [
+        "C:\\ReGenesis-A.O.S.P\\list\\build\\classes\\java\\main",
+        "C:\\ReGenesis-A.O.S.P\\list\\build\\classes\\kotlin\\main",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlinx\\kotlinx-coroutines-core-jvm\\1.10.2\\4a9f78ef49483748e2c129f3d124b8fa249dafbf\\kotlinx-coroutines-core-jvm-1.10.2.jar",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlinx\\kotlinx-coroutines-android\\1.10.2\\c8705d275d81f19e8afaf3ff9b5bf7a4b6b6c19b\\kotlinx-coroutines-android-1.10.2.jar",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlinx\\kotlinx-serialization-json-jvm\\1.9.0\\aea6f7d49fe5c458f8963ee6d4bdaf4a459ab3e7\\kotlinx-serialization-json-jvm-1.9.0.jar",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlinx\\kotlinx-serialization-core-jvm\\1.9.0\\91448df39c558f7c6147b8bd8db01debe16e0cc1\\kotlinx-serialization-core-jvm-1.9.0.jar",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.apache.commons\\commons-compress\\1.28.0\\e482f2c7a88dac3c497e96aa420b6a769f59c8d7\\commons-compress-1.28.0.jar",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\commons-io\\commons-io\\2.20.0\\36f3474daec2849c149e877614e7f979b2082cd2\\commons-io-2.20.0.jar",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.tukaani\\xz\\1.10\\1be8166f89e035a56c6bfc67dbc423996fe577e2\\xz-1.10.jar",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.slf4j\\slf4j-api\\2.0.17\\d9e58ac9c7779ba3bf8142aff6c830617a7fe60f\\slf4j-api-2.0.17.jar",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib-jdk7\\2.2.20\\bdbe3b5d872fa3b74d8fcd4e7ca3193f4abc9cc8\\kotlin-stdlib-jdk7-2.2.20.jar",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib\\2.2.20\\5380b19fa1924399b62ce3a1faffebb2b4f82272\\kotlin-stdlib-2.2.20.jar",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib-jdk8\\2.2.20\\57c4d839a6e5ad105d61ffc5cc0bf4de649c1714\\kotlin-stdlib-jdk8-2.2.20.jar",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\commons-codec\\commons-codec\\1.19.0\\8c0dbe3ae883fceda9b50a6c76e745e548073388\\commons-codec-1.19.0.jar",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.apache.commons\\commons-lang3\\3.18.0\\fb14946f0e39748a6571de0635acbe44e7885491\\commons-lang3-3.18.0.jar",
+        "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains\\annotations\\23.0.0\\8cc20c07506ec18e0834947b84a864bfc094484e\\annotations-23.0.0.jar"
+      ],
+      "sourceRoots": [
+      ],
+      "dependentSourceSets": [
+      ],
+      "samples": [
+      ],
+      "includes": [
+      ],
+      "includeNonPublic": false,
+      "reportUndocumented": false,
+      "skipEmptyPackages": true,
+      "skipDeprecated": false,
+      "jdkVersion": 24,
+      "sourceLinks": [
+      ],
+      "perPackageOptions": [
+      ],
+      "externalDocumentationLinks": [
+        {
+          "url": "https://docs.oracle.com/en/java/javase/24/docs/api/",
+          "packageListUrl": "https://docs.oracle.com/en/java/javase/24/docs/api/element-list"
+        },
+        {
+          "url": "https://kotlinlang.org/api/core/",
+          "packageListUrl": "https://kotlinlang.org/api/core/package-list"
+        }
+      ],
+      "languageVersion": null,
+      "apiVersion": null,
+      "noStdlibLink": false,
+      "noJdkLink": false,
+      "suppressedFiles": [
+      ],
+      "analysisPlatform": "jvm",
+      "documentedVisibilities": [
+        "PUBLIC"
+      ]
+    }
+  ],
+  "pluginsClasspath": [
+    "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.dokka\\templating-plugin\\2.0.0\\2c817817579cd8c92ded6f33fd9e6b746ecf01c7\\templating-plugin-2.0.0.jar",
+    "C:\\Users\\Wehtt\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.dokka\\dokka-base\\2.0.0\\dcce26b10e9af3b3f2eba0403d6a9561e6da9098\\dokka-base-2.0.0.jar"
+  ],
+  "pluginsConfiguration": [
+    {
+      "fqPluginName": "org.jetbrains.dokka.base.DokkaBase",
+      "serializationFormat": "JSON",
+      "values": "{\"customAssets\":[],\"customStyleSheets\":[],\"separateInheritedMembers\":false,\"mergeImplicitExpectActualDeclarations\":false}"
+    },
+    {
+      "fqPluginName": "org.jetbrains.dokka.versioning.VersioningPlugin",
+      "serializationFormat": "JSON",
+      "values": "{\"olderVersions\":[],\"renderVersionsNavigationOnAllPages\":true}"
+    }
+  ],
+  "modules": [
+  ],
+  "failOnWarning": false,
+  "delayTemplateSubstitution": false,
+  "suppressObviousFunctions": true,
+  "includes": [
+  ],
+  "suppressInheritedMembers": false,
+  "finalizeCoroutines": false
+}
