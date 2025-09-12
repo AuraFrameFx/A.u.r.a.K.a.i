@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 9.0.0-alpha02" type="incidents">
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.core.ktx`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-core-ktx`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.core.ktx"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="2209"
+                endOffset="2240"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="73"
+            column="20"
+            startOffset="2209"
+            endLine="73"
+            endColumn="51"
+            endOffset="2240"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.compose.bom`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-compose-bom`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.compose.bom"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="2261"
+                endOffset="2312"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="74"
+            column="20"
+            startOffset="2261"
+            endLine="74"
+            endColumn="71"
+            endOffset="2312"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.activity.compose`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-activity-compose`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.activity.compose"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="2333"
+                endOffset="2376"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="75"
+            column="20"
+            startOffset="2333"
+            endLine="75"
+            endColumn="63"
+            endOffset="2376"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.navigation.compose`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-navigation-compose`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.navigation.compose"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="2397"
+                endOffset="2443"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="76"
+            column="20"
+            startOffset="2397"
+            endLine="76"
+            endColumn="66"
+            endOffset="2443"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.hilt.android`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `hilt-android`"
+            robot="true"
+            independent="true"
+            replacement="libs.hilt.android"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="2481"
+                endOffset="2520"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="79"
+            column="20"
+            startOffset="2481"
+            endLine="79"
+            endColumn="59"
+            endOffset="2520"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.hilt.compiler`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `hilt-compiler`"
+            robot="true"
+            independent="true"
+            replacement="libs.hilt.compiler"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="2530"
+                endOffset="2570"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="80"
+            column="9"
+            startOffset="2530"
+            endLine="80"
+            endColumn="49"
+            endOffset="2570"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.kotlinx.coroutines.core`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `kotlinx-coroutines-core`"
+            robot="true"
+            independent="true"
+            replacement="libs.kotlinx.coroutines.core"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="2614"
+                endOffset="2668"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="83"
+            column="20"
+            startOffset="2614"
+            endLine="83"
+            endColumn="74"
+            endOffset="2668"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.kotlinx.coroutines.android`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `kotlinx-coroutines-android`"
+            robot="true"
+            independent="true"
+            replacement="libs.kotlinx.coroutines.android"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="2689"
+                endOffset="2746"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="84"
+            column="20"
+            startOffset="2689"
+            endLine="84"
+            endColumn="77"
+            endOffset="2746"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.room.runtime`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-room-runtime`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.room.runtime"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="2784"
+                endOffset="2818"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="87"
+            column="20"
+            startOffset="2784"
+            endLine="87"
+            endColumn="54"
+            endOffset="2818"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.room.ktx`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-room-ktx`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.room.ktx"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="2839"
+                endOffset="2869"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="88"
+            column="20"
+            startOffset="2839"
+            endLine="88"
+            endColumn="50"
+            endOffset="2869"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.room.compiler`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-room-compiler`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.room.compiler"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="2879"
+                endOffset="2914"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="89"
+            column="9"
+            startOffset="2879"
+            endLine="89"
+            endColumn="44"
+            endOffset="2914"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.timber`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `timber`"
+            robot="true"
+            independent="true"
+            replacement="libs.timber"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="2957"
+                endOffset="2994"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="92"
+            column="20"
+            startOffset="2957"
+            endLine="92"
+            endColumn="57"
+            endOffset="2994"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.desugar.jdk.libs`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `desugar-jdk-libs`"
+            robot="true"
+            independent="true"
+            replacement="libs.desugar.jdk.libs"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="3022"
+                endOffset="3064"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="93"
+            column="27"
+            startOffset="3022"
+            endLine="93"
+            endColumn="69"
+            endOffset="3064"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.benchmark.junit4`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-benchmark-junit4`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.benchmark.junit4"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="3359"
+                endOffset="3402"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="102"
+            column="31"
+            startOffset="3359"
+            endLine="102"
+            endColumn="74"
+            endOffset="3402"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.test.ext.junit`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-test-ext-junit`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.test.ext.junit"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="3434"
+                endOffset="3465"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="103"
+            column="31"
+            startOffset="3434"
+            endLine="103"
+            endColumn="62"
+            endOffset="3465"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.test.espresso.core`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-test-espresso-core`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.test.espresso.core"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="3497"
+                endOffset="3541"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="104"
+            column="31"
+            startOffset="3497"
+            endLine="104"
+            endColumn="75"
+            endOffset="3541"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.junit4`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `junit4`"
+            robot="true"
+            independent="true"
+            replacement="libs.junit4"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="3653"
+                endOffset="3673"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="108"
+            column="24"
+            startOffset="3653"
+            endLine="108"
+            endColumn="44"
+            endOffset="3673"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.mockk`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `mockk`"
+            robot="true"
+            independent="true"
+            replacement="libs.mockk"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="3698"
+                endOffset="3721"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="109"
+            column="24"
+            startOffset="3698"
+            endLine="109"
+            endColumn="47"
+            endOffset="3721"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.mockk.android`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `mockk-android`"
+            robot="true"
+            independent="true"
+            replacement="libs.mockk.android"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="3753"
+                endOffset="3784"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="110"
+            column="31"
+            startOffset="3753"
+            endLine="110"
+            endColumn="62"
+            endOffset="3784"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.hilt.android.testing`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `hilt-android-testing`"
+            robot="true"
+            independent="true"
+            replacement="libs.hilt.android.testing"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="3834"
+                endOffset="3881"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="113"
+            column="24"
+            startOffset="3834"
+            endLine="113"
+            endColumn="71"
+            endOffset="3881"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.hilt.android.testing`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `hilt-android-testing`"
+            robot="true"
+            independent="true"
+            replacement="libs.hilt.android.testing"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="3913"
+                endOffset="3960"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="114"
+            column="31"
+            startOffset="3913"
+            endLine="114"
+            endColumn="78"
+            endOffset="3960"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.hilt.compiler`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `hilt-compiler`"
+            robot="true"
+            independent="true"
+            replacement="libs.hilt.compiler"
+            priority="0">
+            <range
+                file="${:benchmark*projectDir}/build.gradle.kts"
+                startOffset="3981"
+                endOffset="4021"/>
+        </fix-replace>
+        <location
+            file="${:benchmark*projectDir}/build.gradle.kts"
+            line="115"
+            column="20"
+            startOffset="3981"
+            endLine="115"
+            endColumn="60"
+            endOffset="4021"/>
+    </incident>
+
+</incidents>

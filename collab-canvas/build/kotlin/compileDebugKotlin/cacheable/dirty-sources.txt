@@ -1,0 +1,11 @@
+C:\ReGenesis-A.O.S.P\collab-canvas\src\main\kotlin\dev\aurakai\auraframefx\collabcanvas\HookEntry.kt
+C:\ReGenesis-A.O.S.P\collab-canvas\src\main\java\dev\aurakai\collabcanvas\ui\animation\PluckAnimation.kt
+C:\ReGenesis-A.O.S.P\collab-canvas\src\main\java\dev\aurakai\collabcanvas\ui\preview\CanvasPreview.kt
+C:\ReGenesis-A.O.S.P\collab-canvas\src\main\java\dev\aurakai\collabcanvas\network\CanvasWebSocketService.kt
+C:\ReGenesis-A.O.S.P\collab-canvas\src\main\java\dev\aurakai\collabcanvas\ui\CanvasToolbar.kt
+C:\ReGenesis-A.O.S.P\collab-canvas\src\main\java\dev\aurakai\collabcanvas\ui\theme\Type.kt
+C:\ReGenesis-A.O.S.P\collab-canvas\src\main\java\dev\aurakai\collabcanvas\ui\theme\Theme.kt
+C:\ReGenesis-A.O.S.P\collab-canvas\src\main\java\dev\aurakai\collabcanvas\ui\CanvasScreen.kt
+C:\ReGenesis-A.O.S.P\collab-canvas\src\main\java\dev\aurakai\collabcanvas\ui\animation\PluckablePath.kt
+C:\ReGenesis-A.O.S.P\collab-canvas\src\main\java\dev\aurakai\collabcanvas\model\CanvasElement.kt
+C:\ReGenesis-A.O.S.P\collab-canvas\src\main\java\dev\aurakai\collabcanvas\util\PathBounds.kt
