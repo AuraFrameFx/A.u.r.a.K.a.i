@@ -33,7 +33,6 @@ class KaiAIService @Inject constructor(
      *
      * @return The string "Kai".
      */
-    override fun getName(): String = "Kai"
 
     /**
      * Retrieves the type of the agent.

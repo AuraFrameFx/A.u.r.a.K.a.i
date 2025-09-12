@@ -5,6 +5,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dev.aurakai.auraframefx.model.AgentInvokeRequest
 import dev.aurakai.auraframefx.model.AgentType
 import kotlinx.coroutines.delay
+import kotlinx.serialization.Serializable
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.serialization.Serializable
@@ -25,7 +26,6 @@ data class CascadeResponse(
     val confidence: Float? = null,
     val timestamp: String,
     val metadata: Map<String, String> = emptyMap()
-)
 
 /**
  * CascadeAIService - Advanced AI orchestration service that coordinates multiple AI agents
@@ -43,7 +43,6 @@ data class CascadeResponse(
  */
 @Singleton
 class CascadeAIService @Inject constructor(
-    @param:ApplicationContext private val context: Context
 ) {
 
     companion object {
@@ -126,7 +125,6 @@ class CascadeAIService @Inject constructor(
      */
     private fun selectAgentsForRequest(request: AgentInvokeRequest): List<AgentType> {
         val message = request.message.lowercase()
-        request.context
         val priority = request.priority
 
         val selectedAgents = mutableSetOf<AgentType>()
@@ -939,8 +937,6 @@ class CascadeAIService @Inject constructor(
      * @return A Float in the range 0.7..0.95 representing generation potential.
      */
     private fun calculateGenerationPotential(message: String): Float {
-        // Generate a random float between 0.7 and 0.95
-        return 0.7f + Random.nextFloat() * (0.95f - 0.7f)
     }
 
     /**

@@ -70,7 +70,6 @@ class NeuralWhisperAgent @Inject constructor(
         val predictionAccuracy: Float
     )
 
-    class BehaviorPredictor {
         private val predictionModels = mutableMapOf<String, PredictionModel>()
 
         data class PredictionModel(
