@@ -18,11 +18,20 @@ version = "1.0.0"
 dependencies {
     api(project(":list"))
 
+    // Kotlin standard library
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.bundles.coroutines)
+    implementation(libs.kotlinx.serialization.json)
+
+    // Utilities for file operations and compression
     implementation(libs.commons.io)
     implementation(libs.commons.compress)
     implementation(libs.xz)
 
 
+    // Testing
+    testImplementation(libs.bundles.testing)
+    testImplementation(libs.mockk)
 }
 
     useJUnitPlatform()

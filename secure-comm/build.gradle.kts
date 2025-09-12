@@ -43,4 +43,6 @@ dependencies {
     implementation(libs.bundles.firebase)
     implementation(libs.timber)
     implementation(libs.coil.compose)
+    implementation(libs.mockk.agent)
+    // Add other module-specific dependencies here
 }

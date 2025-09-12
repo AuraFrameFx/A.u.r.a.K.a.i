@@ -13,6 +13,8 @@ android {
     }
 
     buildFeatures {
+        // Enable features not covered in the library convention plugin
+        aidl = true
     }
 
     testOptions {
@@ -32,10 +34,12 @@ dependencies {
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
     implementation(project(":oracle-drive-integration"))
-    implementation(project(":romtools"))
+    // implementation(project(":romtools"))  // Temporarily disabled - KSP issues
     implementation(project(":secure-comm"))
-    implementation(project(":collab-canvas"))
+    // implementation(project(":collab-canvas"))  // Temporarily disabled - YukiHookAPI issues
     implementation(project(":colorblendr"))
+    implementation(project(":sandbox-ui"))
+    implementation(project(":datavein-oracle-native"))
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose.ui)
@@ -44,8 +48,13 @@ dependencies {
     implementation(libs.androidx.test.ext.junit)
     implementation(libs.androidx.test.espresso.core)
 
+    // ===== DATASTORE =====
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.datastore.core)
+
     // ===== KOTLIN & COROUTINES =====
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.datetime)
     implementation(libs.bundles.coroutines)
 
     // ===== NETWORKING =====
@@ -56,7 +65,7 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     // This bundle includes over 100+ APIs from Analytics, Crashlytics, Performance, etc.
     implementation(libs.bundles.firebase)
-    
+
     // Alternative: Use specific Firebase bundles for modular approach
     // implementation(libs.bundles.firebase.core)     // Analytics, Crashlytics, Performance only
     // implementation(libs.bundles.firebase.auth)     // Authentication
@@ -71,6 +80,9 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.coil.compose)
     
+    // ===== SECURITY =====
+    implementation(libs.androidx.security.crypto)
+
     // ===== CORE LIBRARY DESUGARING =====
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
     

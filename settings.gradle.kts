@@ -7,6 +7,14 @@ pluginManagement {
 
     repositories {
         mavenCentral()
+
+        // AndroidX Compose
+        maven {
+            url = uri("https://androidx.dev/storage/compose-compiler/repository/")
+            name = "AndroidX Compose"
+            content {
+                includeGroup("androidx.compose.compiler")
+            }
         }
         }
     }
@@ -36,6 +44,35 @@ dependencyResolutionManagement {
         // Primary repositories
         google()
         mavenCentral()
+
+        // YukiHook API
+        maven("https://s01.oss.sonatype.org/content/repositories/releases/") {
+            name = "YukiHookAPI"
+        }
+
+        // AndroidX Compose
+        maven("https://androidx.dev/storage/compose-compiler/repository/") {
+            name = "AndroidX Compose"
+        }
+
+        // JetBrains Compose
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev") {
+            name = "JetBrains Compose"
+        }
+
+        // Snapshots for pre-release libraries
+        maven("https://oss.sonatype.org/content/repositories/snapshots/") {
+            name = "Sonatype Snapshots"
+        }
+
+        // JitPack for GitHub dependencies
+        maven("https://jitpack.io") {
+            name = "JitPack"
+        }
+
+        // HighCapable Maven (for YukiHook)
+        maven("https://s01.oss.sonatype.org/content/groups/public/") {
+            name = "HighCapable"
         }
     }
 }
@@ -64,10 +101,6 @@ include(":module-f")
 // Testing & Quality modules
 include(":benchmark")
 include(":screenshot-tests")
-include(":jvm-test")
-include(":list")
-include(":utilities")
-includeBuild("build-logic")
 
 // ===== MODULE CONFIGURATION =====
 rootProject.children.forEach { project ->

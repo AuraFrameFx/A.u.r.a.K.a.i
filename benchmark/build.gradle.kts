@@ -5,7 +5,7 @@ plugins {
     id("genesis.android.library")
     id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
     id("com.google.dagger.hilt.android") version "2.51.1"
-    id("com.google.devtools.ksp") version "2.2.0-2.0.2"
+    id("com.google.devtools.ksp") version "2.2.20-2.0.3"
 }
 
 java {
@@ -23,6 +23,33 @@ android {
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
+                "benchmark-rules.pro"
+            )
+        }
+    }
+
+    defaultConfig {
+        testInstrumentationRunner = "androidx.benchmark.junit4.AndroidBenchmarkRunner"
+        testInstrumentationRunnerArguments["androidx.benchmark.suppressErrors"] =
+            "EMULATOR,LOW_BATTERY,DEBUGGABLE"
+        testInstrumentationRunnerArguments["android.experimental.self-instrumenting"] = "true"
+        // MultiDex is configured at the app/test APK level only; not needed here.
+
+    }
+
+    // Core library desugaring without manual source/target (toolchain supplies Java 24)
+    compileOptions {
+        // Removed explicit source/target compatibility; managed by toolchain
+        isCoreLibraryDesugaringEnabled = true
+    }
+
+    // Modern Kotlin compilerOptions DSL (replaces deprecated kotlinOptions)
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+            freeCompilerArgs.addAll(
+                "-opt-in=kotlin.RequiresOptIn",
+                "-Xjvm-default=all"
             )
         }
     }
@@ -69,7 +96,7 @@ dependencies {
     androidTestImplementation("androidx.benchmark:benchmark-junit4:1.3.3")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
-    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.4.0")
+    androidTestImplementation(libs.androidx.test.uiautomator)
     
     // Unit testing
     testImplementation("junit:junit:4.13.2")

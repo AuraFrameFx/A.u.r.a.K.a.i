@@ -5,6 +5,15 @@ plugins {
 }
 
 
+repositories {
+    gradlePluginPortal()
+    google()
+    mavenCentral()
+    maven {
+        url = uri("https://repo.gradle.org/gradle/libs-releases")
+    }
+}
+
 // Dependencies required for the convention plugins themselves.
 dependencies {
     implementation("com.android.tools.build:gradle:9.0.0-alpha02")

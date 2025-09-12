@@ -1,10 +1,8 @@
-@file:OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
+@file:OptIn(ExperimentalKotlinGradlePluginApi::class)
 
-package buildlogic
-
-import AndroidApplicationConventionPlugin
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
@@ -38,7 +36,7 @@ class AndroidApplicationConventionPluginTest {
         // So we assert that applying the class does not throw and that at least one of
         // the expected plugin IDs is either present or was attempted.
         // For deterministic behavior across environments, we accept either present or absent.
-        // The core intent is that applying our plugin is side-effect free regarding exceptions.
+        // The core intent is that applying our plugin is side effect free regarding exceptions.
         assertTrue(true) // placeholder to satisfy frameworks lacking AGP
     }
 

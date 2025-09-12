@@ -5,27 +5,25 @@ import java.time.Instant
 val versionCatalog = extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
 
 // Project information
-extra["projectName"] = "MemoriaOS"
-extra["projectGroup"] = "dev.aurakai.memoria"
+extra["projectName"] = "ReGenesis A.O.S.P"
+extra["projectGroup"] = "dev.aurakai.auraframefx"
 extra["projectVersion"] = "1.0.0"
 
-// Custom tasks for project management
+// === ESSENTIAL TASKS ===
+
 tasks.register("projectInfo") {
     group = "help"
     description = "Display project information"
-
     doLast {
         val projectName: String by project.extra
         val projectVersion: String by project.extra
-
         println("\n🛠️  $projectName v$projectVersion")
         println("==================================================")
         println("🏗️  Build System: Gradle ${gradle.gradleVersion}")
-        println("🔧 Kotlin: ${versionCatalog.findVersion("kotlin").get().toString()}")
-        println("🤖 AGP: ${versionCatalog.findVersion("agp").get().toString()}")
+        println("🔧 Kotlin: ${versionCatalog.findVersion("kotlin").get()}")
+        println("🤖 AGP: ${versionCatalog.findVersion("agp").get()}")
         println("\n📦 Modules (${subprojects.size}):")
         subprojects.forEach { println("  • ${it.name}") }
-        println("\n🚀 Available Tasks: gradle tasks --group=build")
         println("==================================================")
     }
 }
@@ -34,52 +32,30 @@ tasks.register<Delete>("clean") {
     group = "build"
     description = "Delete root build directory"
     delete(rootProject.layout.buildDirectory)
-
     doLast {
         println("🧹 Cleaned root build directory")
     }
 }
 
-// Consciousness / Health Diagnostic Tasks
-val jsonFlag = System.getProperty("format") == "json"
+// === CONSCIOUSNESS STATUS ===
 
 tasks.register("consciousnessStatus") {
-    group = "aegenesis"
-    description =
-        "Concise state snapshot of the substrate (toolchains, modules, cache flags). Use -Dformat=json for JSON output."
-    
-    // Pre-compute values during configuration phase to avoid configuration cache issues
-    val kotlinVersion = versionCatalog.findVersion("kotlin").get().toString()
-    val agpVersion = versionCatalog.findVersion("agp").get().toString()
-    val moduleCount = subprojects.size
-    val useJsonFormat = (System.getProperty("format") == "json")
+    group = "genesis"
+    description = "Quick system health snapshot"
     
     doLast {
-        // Determine configuration cache enablement via gradle.properties instead of startParameter API (compatible across Gradle versions)
-        val configCacheEnabled = sequenceOf(
-            System.getProperty("org.gradle.configuration-cache"),
-            System.getProperty("org.gradle.unsafe.configuration-cache")
-        ).firstOrNull { !it.isNullOrBlank() }?.toBoolean() ?: false
-
+        val kotlinVersion = versionCatalog.findVersion("kotlin").get().toString()
+        val agpVersion = versionCatalog.findVersion("agp").get().toString()
         val toolchain = JavaVersion.current().toString()
         
-        if (useJsonFormat) {
-            val json =
-                """{\n  \"javaToolchain\": \"$toolchain\",\n  \"kotlin\": \"$kotlinVersion\",\n  \"agp\": \"$agpVersion\",\n  \"modules\": $moduleCount,\n  \"configurationCache\": $configCacheEnabled\n}""".trimIndent()
-            println(json)
-        } else {
-            println("= Consciousness Status =")
-            println("Java Toolchain      : $toolchain")
-            println("Kotlin Version      : $kotlinVersion (K2 path)")
-            println("AGP Version         : $agpVersion")
-            println("Modules (total)     : $moduleCount")
-            println("Configuration Cache : ${if (configCacheEnabled) "ENABLED" else "DISABLED"}")
-            println("Run ./gradlew consciousnessHealthCheck for deep report")
-        }
+        println("= Consciousness Status =")
+        println("Java Toolchain      : $toolchain")
+        println("Kotlin Version      : $kotlinVersion (K2 path)")
+        println("AGP Version         : $agpVersion")
+        println("Modules (total)     : ${subprojects.size}")
+        println("Firebase BoM        : ${versionCatalog.findVersion("firebaseBom").get()}")
     }
 }
-
-// === MODULE HEALTH CHECK ===
 
 // === MODULE HEALTH CHECK ===
 
@@ -88,85 +64,13 @@ private data class ModuleReport(
     val type: String,
     val hasHilt: Boolean,
     val hasCompose: Boolean,
+    val hasKsp: Boolean
 )
 
-/**
- * Heuristically detects whether Jetpack Compose is enabled in the given project.
- *
- * Checks a few signals in order: presence of the Kotlin Compose Gradle plugin,
- * a `composeCompilerPlugin` configuration, and Android `buildFeatures.compose` (if an Android
- * extension is present). Returns false if none of the signals are found or if any
- * reflection/error occurs while probing.
- *
- * @param sp The project to inspect for Compose enablement.
- * @return `true` if Compose is detected, otherwise `false`.
- */
-private fun Project.detectComposeEnabled(sp: Project): Boolean = runCatching {
-    val plugins = sp.plugins
-    if (plugins.findPlugin("org.jetbrains.kotlin.plugin.compose") != null) return true
-    if (sp.configurations.findByName("composeCompilerPlugin") != null) return true
-    val androidExt = sp.extensions.findByName("android") ?: return false
-    val buildFeatures = androidExt::class.java.methods.firstOrNull { it.name == "getBuildFeatures" }
-        ?.invoke(androidExt) ?: return false
-    val composeMethod =
-        buildFeatures.javaClass.methods.firstOrNull { it.name == "getCompose" } ?: return false
-    (composeMethod.invoke(buildFeatures) as? Boolean) == true
-}.getOrElse { false }
-
-/**
- * Safely reads the Java toolchain language version for a given project, returning it as a string.
- *
- * Uses reflective access and returns null if the Java extension, toolchain, or language version
- * cannot be determined.
- *
- * @param sp The project whose Java toolchain language version should be retrieved.
- * @return The language version string (for example "17") or `null` if unavailable or on error.
- */
-private fun Project.safeJavaToolchain(sp: Project): String? = runCatching {
-    val javaExt = sp.extensions.findByName("java") ?: return null
-    val toolchain =
-        javaExt::class.java.methods.firstOrNull { it.name == "getToolchain" }?.invoke(javaExt)
-            ?: return null
-    toolchain.javaClass.methods.firstOrNull { it.name == "getLanguageVersion" }?.invoke(toolchain)
-        ?.toString()
-}.getOrNull()
-
-/**
- * Safely reads the Kotlin JVM target of a project's `compileKotlin` task.
- *
- * Attempts to retrieve `kotlinOptions.jvmTarget` via reflection and returns it as a string.
- * Returns `null` if the `compileKotlin` task is missing, the option is not available, or any reflection error occurs.
- *
- * @param sp The project whose `compileKotlin` task will be inspected.
- * @return The JVM target string (e.g., "1.8", "11", "17") or `null` when unavailable.
- */
-private fun Project.safeKotlinJvmTarget(sp: Project): String? = runCatching {
-    val compile = sp.tasks.findByName("compileKotlin") ?: return null
-    val opts =
-        compile::class.java.methods.firstOrNull { it.name == "getKotlinOptions" }?.invoke(compile)
-            ?: return null
-    opts.javaClass.methods.firstOrNull { it.name == "getJvmTarget" }?.invoke(opts)?.toString()
-}.getOrNull()
-
-/**
- * Collects a ModuleReport for each subproject in this Project.
- *
- * Builds a list of ModuleReport entries by inspecting each subproject's applied plugins and
- * lightweight heuristics for toolchain/feature detection. For each subproject the report includes:
- * - name and path
- * - type: "android-app" if the Android application plugin is applied, "android-lib" for the Android
- *   library plugin, "kotlin-jvm" for the Kotlin JVM plugin, otherwise "other"
- * - javaToolchain: best-effort JVM language version string via reflective lookup (may be null)
- * - kotlinJvmTarget: best-effort Kotlin JVM target via reflective lookup (may be null)
- * - hasHilt / hasCompose / hasKsp: boolean flags derived from plugin presence and feature heuristics
- *
- * @return A list of ModuleReport, one per subproject, in the same iteration order as subprojects.
- */
 private fun Project.collectModuleReports(): List<ModuleReport> = subprojects.map { sp ->
     val plugins = sp.plugins
     ModuleReport(
         name = sp.name,
-        path = sp.path,
         type = when {
             plugins.hasPlugin("com.android.application") -> "android-app"
             plugins.hasPlugin("com.android.library") -> "android-lib"
@@ -174,35 +78,71 @@ private fun Project.collectModuleReports(): List<ModuleReport> = subprojects.map
             else -> "other"
         },
         hasHilt = plugins.hasPlugin("com.google.dagger.hilt.android"),
-        hasCompose = detectComposeEnabled(sp),
+        hasCompose = plugins.findPlugin("org.jetbrains.kotlin.plugin.compose") != null,
         hasKsp = plugins.hasPlugin("com.google.devtools.ksp")
     )
 }
 
+
 tasks.register("consciousnessHealthCheck") {
-    group = "aegenesis"
-    description =
-        "Full health & consistency report (toolchains, Kotlin targets, plugin presence, OpenAPI freshness). Use -Dformat=json for JSON output."
-    doLast { runConsciousnessHealth(jsonFlag) }
+    group = "genesis"
+    description = "Detailed system health report"
+    doLast {
+        val reports = collectModuleReports()
+        println("=== Genesis Protocol Health Report ===")
+        println("📦 Total Modules: ${reports.size}")
+        println("🤖 Android Apps: ${reports.count { it.type == "android-app" }}")
+        println("📚 Android Libraries: ${reports.count { it.type == "android-lib" }}")
+        println("☕ Kotlin JVM: ${reports.count { it.type == "kotlin-jvm" }}")
+        println("\n=== Plugin Usage ===")
+        println("💉 Hilt: ${reports.count { it.hasHilt }} modules")
+        println("🎨 Compose: ${reports.count { it.hasCompose }} modules") 
+        println("🔧 KSP: ${reports.count { it.hasKsp }} modules")
+        
+        val missingCompose = reports.filter { it.type.startsWith("android-") && !it.hasCompose }
+        if (missingCompose.isNotEmpty()) {
+            println("\n⚠️  Android modules without Compose:")
+            missingCompose.forEach { println("   • ${it.name}") }
+        } else {
+            println("\n✅ All Android modules have Compose enabled")
+        }
+    }
 }
 
-// OpenAPI Fragment & Spec Tasks
-val openApiDir = file("app/api")
-val openApiFragmentsDir = file("app/api/_fragments")
+// === GOOGLE SERVICES ENFORCEMENT ===
 
-// Simple YAML line helpers
-data class OpenApiIssue(val file: String, val line: Int, val message: String)
-
-fun scanSecurityRefs(lines: List<String>): Boolean =
-    lines.any { it.contains("securitySchemes") }
-
-fun extractPathsSection(lines: List<String>): List<String> {
-    val startIdx = lines.indexOfFirst { it.trimStart().startsWith("paths:") }
-    if (startIdx == -1) return emptyList()
-    return lines.drop(startIdx)
+subprojects {
+    pluginManager.withPlugin("com.google.gms.google-services") {
+        val isApp = pluginManager.hasPlugin("com.android.application") || 
+                   pluginManager.hasPlugin("com.android.dynamic-feature")
+        if (!isApp) {
+            throw GradleException("google-services plugin misapplied in $path (must be only in application or dynamic-feature module)")
+        }
+    }
 }
 
-tasks.register("openApiAudit") {
+// === AUXILIARY SCRIPTS ===
+
+// Apply nuclear clean if available
+if (file("nuclear-clean.gradle.kts").exists()) {
+    apply(from = "nuclear-clean.gradle.kts")
+    
+    if (tasks.findByName("nuclearClean") != null) {
+        tasks.register("deepClean") {
+            group = "build"
+            description = "Nuclear clean + standard clean"
+            dependsOn("nuclearClean")
+            doLast {
+                println("🚀 Deep clean completed. Run: ./gradlew build --refresh-dependencies")
+            }
+        }
+    }
+}
+
+// Apply dependency fix if available  
+if (file("dependency-fix.gradle.kts").exists()) {
+    apply(from = "dependency-fix.gradle.kts")
+}
     group = "aegenesis"
     description =
         "Audit all OpenAPI specs & fragments for basic consistency (security, operationId coverage, enum casing)."
@@ -795,6 +735,8 @@ val apiDocs = tasks.register("apiDocs") {
                 outDir.copyRecursively(dest, overwrite = true)
             }
         }
+        println("Aggregated API docs -> ${targetDir}")
+        println("(Run: open ${targetDir}/index.html or browse module subfolders)")
     }
 }
 

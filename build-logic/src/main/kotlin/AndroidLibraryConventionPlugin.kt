@@ -15,7 +15,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
      * Configures the Android LibraryExtension and KotlinJvmProjectExtension for the target project:
      * - Applies the "com.android.library" and "org.jetbrains.kotlin.android" plugins.
      * - Sets Android compileSdk to 36 and default minSdk to 34.
-     * - Forces Java source and target compatibility to Java 1.8.
+     * - Forces Java source and target compatibility to Java 24.
      * - Sets the Kotlin JVM toolchain to Java 24.
      *
      * @param target The Gradle project to which the plugin is applied; this method mutates the project's plugins and extensions.
@@ -35,8 +35,8 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 }
 
                 compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_1_8
-                    targetCompatibility = JavaVersion.VERSION_1_8
+                    sourceCompatibility = JavaVersion.VERSION_24
+                    targetCompatibility = JavaVersion.VERSION_24
                 }
             }
 

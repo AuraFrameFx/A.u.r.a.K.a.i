@@ -2,32 +2,11 @@ plugins {
     id("genesis.android.library")
     id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
     id("com.google.dagger.hilt.android") version "2.51.1"
-    id("com.google.devtools.ksp") version "2.2.0-2.0.2"
+    id("com.google.devtools.ksp") version "2.2.20-2.0.3"
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.collabcanvas"
-    defaultConfig {
-        minSdk = 33
-    }
-
-    buildFeatures {
-        buildConfig = true
-        resValues = true
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_25
-        targetCompatibility = JavaVersion.VERSION_25
-    }
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
-            freeCompilerArgs.addAll(
-                "-Xjvm-default=all",
-                "-Xopt-in=kotlin.RequiresOptIn",
-            )
-        }
-    }
 }
 
 dependencies {
@@ -68,5 +47,12 @@ dependencies {
     implementation(platform(libs.firebase.bom))
 
 
+    // Debug
+    debugImplementation(libs.androidx.compose.ui.tooling)
+    debugImplementation(libs.androidx.compose.ui.tooling.preview)
+
+    // Xposed API (using correct path)
+    compileOnly(files("../Libs/api-82.jar"))
+    compileOnly(files("../Libs/api-82-sources.jar"))
 }
 }
