@@ -3,7 +3,7 @@
 
 plugins {
     id("genesis.android.application")
-    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
+    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20-RC"
     id("com.google.dagger.hilt.android") version "2.51.1"
     id("com.google.devtools.ksp") version "2.2.20-2.0.3"
 }
@@ -67,7 +67,7 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     // This bundle includes Analytics, Crashlytics, Performance, Auth, Firestore, Messaging, and Config
     implementation(libs.bundles.firebase)
-    
+
     // Alternative: Use specific Firebase bundles for modular approach
     // implementation(libs.bundles.firebase.core)     // Analytics, Crashlytics, Performance only
     // implementation(libs.bundles.firebase.auth)     // Authentication
@@ -75,15 +75,15 @@ dependencies {
     // implementation(libs.bundles.firebase.messaging) // FCM, Remote Config
 
     // ===== HILT DEPENDENCY INJECTION =====
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    ksp("com.google.dagger:hilt-compiler:2.51.1")
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
     // ===== UTILITIES =====
     implementation(libs.timber)
     implementation(libs.coil.compose)
     
     // ===== CORE LIBRARY DESUGARING =====
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
     
     // ===== XPOSED/LSPosed Integration =====
     compileOnly(files("../Libs/api-82.jar"))
