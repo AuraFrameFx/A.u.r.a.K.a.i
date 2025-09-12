@@ -1,0 +1,4 @@
+R_DEF: Internal format may change without notice
+local
+string colorblendr_main_name
+string colorblendr_release_name

@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-2:/color-night-v8/material_timepicker_modebutton_tint.xml",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-material-1.13.0-60:/color-night-v8/material_timepicker_modebutton_tint.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-2:/color-night-v8/material_timepicker_button_stroke.xml",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-material-1.13.0-60:/color-night-v8/material_timepicker_button_stroke.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-2:/color-night-v8/material_timepicker_clockface.xml",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-material-1.13.0-60:/color-night-v8/material_timepicker_clockface.xml"
+    }
+]

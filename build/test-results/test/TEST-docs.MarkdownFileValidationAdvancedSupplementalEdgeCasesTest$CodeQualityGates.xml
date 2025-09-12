@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Code spans and blocks – quality gates" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T14:43:09.558Z" hostname="AURAKAI" time="0.035">
+  <properties/>
+  <testcase name="inline code spans are not empty()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$CodeQualityGates" time="0.035">
+    <failure message="org.opentest4j.AssertionFailedError: Empty inline code span(s) at indices: [0, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 18, 20, 21, 23, 24, 26, 27, 29, 30, 32, 33, 35, 36, 38, 39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56, 57, 59, 60, 62, 63, 65, 66, 68] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Empty inline code span(s) at indices: [0, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 18, 20, 21, 23, 24, 26, 27, 29, 30, 32, 33, 35, 36, 38, 39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56, 57, 59, 60, 62, 63, 65, 66, 68] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$CodeQualityGates.inline code spans are not empty(MarkdownFileValidationAdvancedSupplementalEdgeCasesTest.kt:191)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,6562 @@
+Gradle start parameters:
+  tasks = [build]
+  excluded tasks = []
+  current dir = C:\ReGenesis-A.O.S.P
+  project properties args = [android.studio.version: 251.27812.49.2514.13971338, android.injected.attribution.file.location: C:\ReGenesis-A.O.S.P\.gradle, android.injected.invoked.from.ide: true]
+  system properties args = [idea.active: true, user.variant: , file.encoding: UTF-8, idea.version: 2025.1, user.language: en, user.country: US, idea.vendor.name: Google]
+
+Build failed: [Execution failed for task ':test'., Execution failed for task ':romtools:compileDebugKotlin'., Execution failed for task ':romtools:compileReleaseKotlin'., Execution failed for task ':datavein-oracle-native:lintAnalyzeDebugUnitTest'., Execution failed for task ':datavein-oracle-native:lintAnalyzeDebugAndroidTest'., Execution failed for task ':list:test'., Execution failed for task ':datavein-oracle-native:kspDebugUnitTestKotlin'., Execution failed for task ':utilities:compileTestKotlin'., Execution failed for task ':secure-comm:compileDebugUnitTestKotlin'., Execution failed for task ':sandbox-ui:testDebugUnitTest'.]
+
+Time metrics:
+  Total Gradle task time: 1,361.52 s
+  Spent time before task action: 5.69 s
+  Task action before worker execution: 1.35 s
+  Run compilation in Gradle worker: 42.53 s
+    Clear jar cache: 0.01 s
+    Clear output: 0.01 s
+    Connect to Kotlin daemon: 0.21 s
+    Calculate output size: 0.18 s
+    Run compilation: 42.28 s
+      Incremental compilation in daemon: 41.72 s
+        Store build info: 0.00 s
+        Clear outputs on rebuild: 0.01 s
+        Update caches: 0.01 s
+        Sources compilation round: 34.78 s
+          Compiler initialization time: 8.44 s
+          Compiler code analysis: 21.16 s
+          Compiler translation to IR: 2.24 s
+          Compiler code generation: 0.92 s
+            Compiler IR lowering: 0.47 s
+            Compiler backend: 0.45 s
+        Shrink and save current classpath snapshot after compilation: 3.99 s
+          Shrink current classpath snapshot non-incrementally: 2.19 s
+            Load current classpath snapshot: 1.55 s
+              Remove duplicate classes: 1.46 s
+          Save shrunk current classpath snapshot: 0.01 s
+  Start gradle worker: 0.51 s
+
+Size metrics:
+  Total size of the cache directory: 1.2 MB
+    ABI snapshot size: 72 B
+  Increase memory usage: -499915736 B
+  Total memory usage at the end of build: 3.7 GB
+  Total compiler iteration: 8
+    Number of lines analyzed: 5386
+    Analysis lines per second: 2913
+    Code generation lines per second: 3779
+  Number of times classpath snapshot is shrunk and saved after compilation: 4
+    Number of classpath entries: 376
+    Size of classpath snapshot: 30.7 MB
+    Size of shrunk classpath snapshot: 61.8 KB
+  Number of times classpath snapshot is loaded: 4
+    Number of cache hits when loading classpath entry snapshots: 354
+    Number of cache misses when loading classpath entry snapshots: 22
+  Start time of task action: 2415-08-04T21:49:42
+
+Build attributes:
+  REBUILD_REASON: Unknown Gradle changes
+
+Total time for Kotlin tasks: 51.00 s (3.7 % of all tasks time)
+Time   |% of Kotlin time|Task                                   
+12.09 s|23.7 %          |:sandbox-ui:compileDebugUnitTestKotlin 
+8.74 s |17.1 %          |:secure-comm:compileDebugUnitTestKotlin
+7.41 s |14.5 %          |:romtools:compileDebugKotlin           
+6.24 s |12.2 %          |:utilities:compileTestKotlin           
+4.63 s |9.1 %           |:utilities:compileKotlin               
+4.59 s |9.0 %           |:sandbox-ui:compileReleaseKotlin       
+4.47 s |8.8 %           |:secure-comm:compileReleaseKotlin      
+2.84 s |5.6 %           |:romtools:compileReleaseKotlin         
+
+Task ':collab-canvas:lintAnalyzeDebug' finished in 62.11 s
+Time metrics:
+  Total Gradle task time: 62.11 s
+
+Task ':datavein-oracle-native:lintAnalyzeDebug' finished in 51.94 s
+Time metrics:
+  Total Gradle task time: 51.94 s
+
+Task ':sandbox-ui:lintAnalyzeDebug' finished in 41.58 s
+Time metrics:
+  Total Gradle task time: 41.58 s
+
+Task ':benchmark:minifyBenchmarkWithR8' finished in 39.77 s
+Time metrics:
+  Total Gradle task time: 39.77 s
+
+Task ':secure-comm:lintAnalyzeDebug' finished in 37.70 s
+Time metrics:
+  Total Gradle task time: 37.70 s
+
+Task ':feature-module:lintAnalyzeDebug' finished in 30.78 s
+Time metrics:
+  Total Gradle task time: 30.78 s
+
+Task ':datavein-oracle-native:lintVitalAnalyzeRelease' finished in 29.50 s
+Time metrics:
+  Total Gradle task time: 29.50 s
+
+Task ':colorblendr:lintAnalyzeDebug' finished in 28.64 s
+Time metrics:
+  Total Gradle task time: 28.64 s
+
+Task ':datavein-oracle-native:kspDebugUnitTestKotlin' finished in 26.36 s
+Time metrics:
+  Total Gradle task time: 26.36 s
+
+Task ':colorblendr:lintVitalAnalyzeRelease' finished in 24.91 s
+Time metrics:
+  Total Gradle task time: 24.91 s
+
+Task ':collab-canvas:compileDebugJavaWithJavac' finished in 24.88 s
+Time metrics:
+  Total Gradle task time: 24.88 s
+
+Task ':feature-module:lintVitalAnalyzeRelease' finished in 24.73 s
+Time metrics:
+  Total Gradle task time: 24.73 s
+
+Task ':sandbox-ui:lintVitalAnalyzeRelease' finished in 24.67 s
+Time metrics:
+  Total Gradle task time: 24.67 s
+
+Task ':secure-comm:lintVitalAnalyzeRelease' finished in 24.17 s
+Time metrics:
+  Total Gradle task time: 24.17 s
+
+Task ':feature-module:mergeReleaseResources' finished in 23.99 s
+Time metrics:
+  Total Gradle task time: 23.99 s
+
+Task ':secure-comm:lintAnalyzeDebugUnitTest' finished in 20.89 s
+Time metrics:
+  Total Gradle task time: 20.89 s
+
+Task ':collab-canvas:lintVitalAnalyzeRelease' finished in 19.53 s
+Time metrics:
+  Total Gradle task time: 19.53 s
+
+Task ':benchmark:lintAnalyzeDebug' finished in 19.29 s
+Time metrics:
+  Total Gradle task time: 19.29 s
+
+Task ':app:mergeReleaseResources' finished in 18.54 s
+Time metrics:
+  Total Gradle task time: 18.54 s
+
+Task ':oracle-drive-integration:lintVitalAnalyzeRelease' finished in 18.33 s
+Time metrics:
+  Total Gradle task time: 18.33 s
+
+Task ':secure-comm:lintAnalyzeDebugAndroidTest' finished in 18.07 s
+Time metrics:
+  Total Gradle task time: 18.07 s
+
+Task ':colorblendr:mergeReleaseResources' finished in 17.16 s
+Time metrics:
+  Total Gradle task time: 17.16 s
+
+Task ':oracle-drive-integration:lintAnalyzeDebug' finished in 14.13 s
+Time metrics:
+  Total Gradle task time: 14.13 s
+
+Task ':list:compileTestKotlin' finished in 13.70 s
+Task info:
+  Kotlin language version: 2.2
+Time metrics:
+  Total Gradle task time: 13.70 s
+
+Task ':romtools:kspDebugKotlin' finished in 12.93 s
+Time metrics:
+  Total Gradle task time: 12.93 s
+
+Task ':collab-canvas:compileReleaseJavaWithJavac' finished in 12.81 s
+Time metrics:
+  Total Gradle task time: 12.81 s
+
+Task ':sandbox-ui:mergeReleaseResources' finished in 12.58 s
+Time metrics:
+  Total Gradle task time: 12.58 s
+
+Task ':secure-comm:kspReleaseKotlin' finished in 12.53 s
+Time metrics:
+  Total Gradle task time: 12.53 s
+
+Task ':feature-module:verifyReleaseResources' finished in 12.28 s
+Time metrics:
+  Total Gradle task time: 12.28 s
+
+Task ':romtools:kspReleaseKotlin' finished in 12.13 s
+Time metrics:
+  Total Gradle task time: 12.13 s
+
+Task ':sandbox-ui:compileDebugUnitTestKotlin' finished in 12.09 s
+Task info:
+  Kotlin language version: 2.2
+Compilation log for task ':sandbox-ui:compileDebugUnitTestKotlin':
+  Source changes: Unknown
+  Non-incremental compilation will be performed: UNKNOWN_CHANGES_IN_GRADLE_INPUTS
+  Cleaning 3 output directories
+  [ClasspathSnapshot] Shrunk current classpath snapshot after compilation (shrink mode = NonIncremental), retained 0 / 31550 classes
+Time metrics:
+  Total Gradle task time: 12.09 s
+  Spent time before task action: 2.00 s
+  Task action before worker execution: 0.15 s
+  Run compilation in Gradle worker: 9.93 s
+    Clear jar cache: 0.00 s
+    Clear output: 0.00 s
+    Connect to Kotlin daemon: 0.01 s
+    Calculate output size: 0.01 s
+    Run compilation: 9.91 s
+      Incremental compilation in daemon: 9.87 s
+        Clear outputs on rebuild: 0.00 s
+        Sources compilation round: 5.69 s
+          Compiler initialization time: 2.38 s
+          Compiler code analysis: 1.44 s
+          Compiler translation to IR: 1.38 s
+          Compiler code generation: 0.03 s
+            Compiler IR lowering: 0.03 s
+        Shrink and save current classpath snapshot after compilation: 3.73 s
+          Shrink current classpath snapshot non-incrementally: 2.07 s
+            Load current classpath snapshot: 1.51 s
+              Remove duplicate classes: 1.44 s
+  Start gradle worker: 0.00 s
+Size metrics:
+  Total size of the cache directory: 120.5 KB
+    ABI snapshot size: 18 B
+  Increase memory usage: -340461984 B
+  Total memory usage at the end of build: 279.8 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 1
+    Code generation lines per second: 29
+  Number of times classpath snapshot is shrunk and saved after compilation: 1
+    Number of classpath entries: 119
+    Size of classpath snapshot: 10.9 MB
+    Size of shrunk classpath snapshot: 4 B
+  Number of times classpath snapshot is loaded: 1
+    Number of cache hits when loading classpath entry snapshots: 105
+    Number of cache misses when loading classpath entry snapshots: 14
+  Start time of task action: 2025-09-12T14:44:14
+Build attributes:
+  REBUILD_REASON: Unknown Gradle changes
+GC metrics:
+  PS MarkSweep:
+    GC count: 0
+    GC time: 0.00 s
+  PS Scavenge:
+    GC count: 1
+    GC time: 0.36 s
+
+Task ':secure-comm:buildCMakeRelease[x86_64]' finished in 12.09 s
+Time metrics:
+  Total Gradle task time: 12.09 s
+
+Task ':romtools:mergeReleaseResources' finished in 11.80 s
+Time metrics:
+  Total Gradle task time: 11.80 s
+
+Task ':secure-comm:buildCMakeRelease[armeabi-v7a]' finished in 11.63 s
+Time metrics:
+  Total Gradle task time: 11.63 s
+
+Task ':secure-comm:buildCMakeRelease[arm64-v8a]' finished in 11.58 s
+Time metrics:
+  Total Gradle task time: 11.58 s
+
+Task ':secure-comm:mergeReleaseResources' finished in 11.03 s
+Time metrics:
+  Total Gradle task time: 11.03 s
+
+Task ':compileTestKotlin' finished in 10.38 s
+Task info:
+  Kotlin language version: 2.2
+Time metrics:
+  Total Gradle task time: 10.38 s
+
+Task ':romtools:verifyReleaseResources' finished in 10.37 s
+Time metrics:
+  Total Gradle task time: 10.37 s
+
+Task ':datavein-oracle-native:lintAnalyzeDebugAndroidTest' finished in 10.17 s
+Time metrics:
+  Total Gradle task time: 10.17 s
+
+Task ':datavein-oracle-native:configureCMakeRelease[x86_64]' finished in 9.42 s
+Time metrics:
+  Total Gradle task time: 9.42 s
+
+Task ':datavein-oracle-native:configureCMakeRelease[armeabi-v7a]' finished in 9.34 s
+Time metrics:
+  Total Gradle task time: 9.34 s
+
+Task ':collab-canvas:kspReleaseKotlin' finished in 9.17 s
+Time metrics:
+  Total Gradle task time: 9.17 s
+
+Task ':datavein-oracle-native:buildCMakeRelease[x86_64]' finished in 9.11 s
+Time metrics:
+  Total Gradle task time: 9.11 s
+
+Task ':sandbox-ui:verifyReleaseResources' finished in 9.08 s
+Time metrics:
+  Total Gradle task time: 9.08 s
+
+Task ':datavein-oracle-native:buildCMakeRelease[armeabi-v7a]' finished in 9.06 s
+Time metrics:
+  Total Gradle task time: 9.06 s
+
+Task ':datavein-oracle-native:buildCMakeRelease[arm64-v8a]' finished in 8.91 s
+Time metrics:
+  Total Gradle task time: 8.91 s
+
+Task ':test' finished in 8.84 s
+Time metrics:
+  Total Gradle task time: 8.84 s
+
+Task ':secure-comm:compileDebugUnitTestKotlin' finished in 8.74 s
+Task info:
+  Kotlin language version: 2.2
+Compilation log for task ':secure-comm:compileDebugUnitTestKotlin':
+  Source changes: Unknown
+  Non-incremental compilation will be performed: UNKNOWN_CHANGES_IN_GRADLE_INPUTS
+  Cleaning 3 output directories
+Time metrics:
+  Total Gradle task time: 8.74 s
+  Spent time before task action: 0.22 s
+  Task action before worker execution: 0.18 s
+  Run compilation in Gradle worker: 8.34 s
+    Connect to Kotlin daemon: 0.04 s
+    Calculate output size: 0.00 s
+    Run compilation: 8.29 s
+      Incremental compilation in daemon: 8.25 s
+        Clear outputs on rebuild: 0.01 s
+        Sources compilation round: 8.07 s
+          Compiler initialization time: 1.30 s
+          Compiler code analysis: 6.35 s
+  Start gradle worker: 0.00 s
+Size metrics:
+  Increase memory usage: -452070056 B
+  Total memory usage at the end of build: 294.7 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 1360
+    Analysis lines per second: 214
+  Start time of task action: 2025-09-12T14:44:16
+Build attributes:
+  REBUILD_REASON: Unknown Gradle changes
+GC metrics:
+  PS MarkSweep:
+    GC count: 0
+    GC time: 0.00 s
+  PS Scavenge:
+    GC count: 1
+    GC time: 0.36 s
+
+Task ':datavein-oracle-native:configureCMakeRelease[arm64-v8a]' finished in 8.64 s
+Time metrics:
+  Total Gradle task time: 8.64 s
+
+Task ':module-a:lintAnalyzeDebug' finished in 8.08 s
+Time metrics:
+  Total Gradle task time: 8.08 s
+
+Task ':app:processReleaseResources' finished in 7.65 s
+Time metrics:
+  Total Gradle task time: 7.65 s
+
+Task ':benchmark:mergeReleaseResources' finished in 7.60 s
+Time metrics:
+  Total Gradle task time: 7.60 s
+
+Task ':secure-comm:kspDebugUnitTestKotlin' finished in 7.52 s
+Time metrics:
+  Total Gradle task time: 7.52 s
+
+Task ':romtools:compileDebugKotlin' finished in 7.41 s
+Task info:
+  Kotlin language version: 2.2
+Compilation log for task ':romtools:compileDebugKotlin':
+  Source changes: Unknown
+  Non-incremental compilation will be performed: UNKNOWN_CHANGES_IN_GRADLE_INPUTS
+  Cleaning 3 output directories
+Time metrics:
+  Total Gradle task time: 7.41 s
+  Spent time before task action: 1.22 s
+  Task action before worker execution: 0.27 s
+  Run compilation in Gradle worker: 5.91 s
+    Clear output: 0.00 s
+    Connect to Kotlin daemon: 0.05 s
+    Calculate output size: 0.00 s
+    Run compilation: 5.85 s
+      Incremental compilation in daemon: 5.82 s
+        Clear outputs on rebuild: 0.00 s
+        Sources compilation round: 5.79 s
+          Compiler initialization time: 2.41 s
+          Compiler code analysis: 3.08 s
+  Start gradle worker: 0.01 s
+Size metrics:
+  Increase memory usage: -552272736 B
+  Total memory usage at the end of build: 161.1 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 1189
+    Analysis lines per second: 386
+  Start time of task action: 2025-09-12T14:43:08
+Build attributes:
+  REBUILD_REASON: Unknown Gradle changes
+GC metrics:
+  PS MarkSweep:
+    GC count: 1
+    GC time: 0.44 s
+  PS Scavenge:
+    GC count: 1
+    GC time: 0.40 s
+
+Task ':secure-comm:verifyReleaseResources' finished in 7.36 s
+Time metrics:
+  Total Gradle task time: 7.36 s
+
+Task ':module-b:lintAnalyzeDebug' finished in 7.35 s
+Time metrics:
+  Total Gradle task time: 7.35 s
+
+Task ':collab-canvas:compileReleaseKotlin' finished in 7.19 s
+Task info:
+  Kotlin language version: 2.2
+Time metrics:
+  Total Gradle task time: 7.19 s
+
+Task ':datavein-oracle-native:lintAnalyzeDebugUnitTest' finished in 7.11 s
+Time metrics:
+  Total Gradle task time: 7.11 s
+
+Task ':oracle-drive-integration:verifyReleaseResources' finished in 7.11 s
+Time metrics:
+  Total Gradle task time: 7.11 s
+
+Task ':benchmark:lintAnalyzeDebugUnitTest' finished in 6.89 s
+Time metrics:
+  Total Gradle task time: 6.89 s
+
+Task ':benchmark:verifyReleaseResources' finished in 6.43 s
+Time metrics:
+  Total Gradle task time: 6.43 s
+
+Task ':datavein-oracle-native:compileReleaseKotlin' finished in 6.36 s
+Task info:
+  Kotlin language version: 2.2
+Time metrics:
+  Total Gradle task time: 6.36 s
+
+Task ':feature-module:generateReleaseLintModel' finished in 6.28 s
+Time metrics:
+  Total Gradle task time: 6.28 s
+
+Task ':utilities:compileTestKotlin' finished in 6.24 s
+Task info:
+  Kotlin language version: 2.2
+Compilation log for task ':utilities:compileTestKotlin':
+  Source changes: Unknown
+  Non-incremental compilation will be performed: UNKNOWN_CHANGES_IN_GRADLE_INPUTS
+  Cleaning 3 output directories
+Time metrics:
+  Total Gradle task time: 6.24 s
+  Spent time before task action: 0.07 s
+  Task action before worker execution: 0.13 s
+  Run compilation in Gradle worker: 6.04 s
+    Clear jar cache: 0.00 s
+    Clear output: 0.00 s
+    Connect to Kotlin daemon: 0.03 s
+    Calculate output size: 0.00 s
+    Run compilation: 6.00 s
+      Incremental compilation in daemon: 5.88 s
+        Clear outputs on rebuild: 0.00 s
+        Sources compilation round: 5.84 s
+          Compiler initialization time: 0.43 s
+          Compiler code analysis: 5.19 s
+  Start gradle worker: 0.00 s
+Size metrics:
+  Increase memory usage: 293.3 MB
+  Total memory usage at the end of build: 887.9 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 626
+    Analysis lines per second: 120
+  Start time of task action: 2025-09-12T14:44:13
+Build attributes:
+  REBUILD_REASON: Unknown Gradle changes
+GC metrics:
+  PS MarkSweep:
+    GC count: 0
+    GC time: 0.00 s
+  PS Scavenge:
+    GC count: 0
+    GC time: 0.00 s
+
+Task ':benchmark:verifyBenchmarkResources' finished in 6.17 s
+Time metrics:
+  Total Gradle task time: 6.17 s
+
+Task ':benchmark:mergeBenchmarkResources' finished in 6.13 s
+Time metrics:
+  Total Gradle task time: 6.13 s
+
+Task ':secure-comm:configureCMakeRelease[x86_64]' finished in 6.12 s
+Time metrics:
+  Total Gradle task time: 6.12 s
+
+Task ':list:test' finished in 5.90 s
+Time metrics:
+  Total Gradle task time: 5.90 s
+
+Task ':secure-comm:configureCMakeRelease[arm64-v8a]' finished in 5.58 s
+Time metrics:
+  Total Gradle task time: 5.58 s
+
+Task ':secure-comm:configureCMakeRelease[armeabi-v7a]' finished in 5.47 s
+Time metrics:
+  Total Gradle task time: 5.47 s
+
+Task ':module-c:lintAnalyzeDebug' finished in 5.41 s
+Time metrics:
+  Total Gradle task time: 5.41 s
+
+Task ':secure-comm:compileReleaseJavaWithJavac' finished in 5.30 s
+Time metrics:
+  Total Gradle task time: 5.30 s
+
+Task ':datavein-oracle-native:kspReleaseKotlin' finished in 4.90 s
+Time metrics:
+  Total Gradle task time: 4.90 s
+
+Task ':app:compileReleaseAidl' finished in 4.89 s
+Time metrics:
+  Total Gradle task time: 4.89 s
+
+Task ':colorblendr:compileReleaseKotlin' finished in 4.71 s
+Task info:
+  Kotlin language version: 2.2
+Time metrics:
+  Total Gradle task time: 4.71 s
+
+Task ':colorblendr:verifyReleaseResources' finished in 4.67 s
+Time metrics:
+  Total Gradle task time: 4.67 s
+
+Task ':utilities:compileKotlin' finished in 4.63 s
+Task info:
+  Kotlin language version: 2.2
+Compilation log for task ':utilities:compileKotlin':
+  Source changes: Unknown
+  Non-incremental compilation will be performed: UNKNOWN_CHANGES_IN_GRADLE_INPUTS
+  Cleaning 3 output directories
+  [ClasspathSnapshot] Shrunk current classpath snapshot after compilation (shrink mode = NonIncremental), retained 24 / 3090 classes
+Time metrics:
+  Total Gradle task time: 4.63 s
+  Spent time before task action: 0.29 s
+  Task action before worker execution: 0.02 s
+  Run compilation in Gradle worker: 4.17 s
+    Clear jar cache: 0.00 s
+    Connect to Kotlin daemon: 0.02 s
+    Calculate output size: 0.13 s
+    Run compilation: 4.15 s
+      Incremental compilation in daemon: 3.88 s
+        Store build info: 0.00 s
+        Clear outputs on rebuild: 0.00 s
+        Update caches: 0.01 s
+        Sources compilation round: 2.98 s
+          Compiler initialization time: 0.55 s
+          Compiler code analysis: 1.72 s
+          Compiler translation to IR: 0.17 s
+          Compiler code generation: 0.33 s
+            Compiler IR lowering: 0.24 s
+            Compiler backend: 0.10 s
+        Shrink and save current classpath snapshot after compilation: 0.07 s
+          Shrink current classpath snapshot non-incrementally: 0.03 s
+            Load current classpath snapshot: 0.03 s
+              Remove duplicate classes: 0.00 s
+          Save shrunk current classpath snapshot: 0.00 s
+  Start gradle worker: 0.00 s
+Size metrics:
+  Total size of the cache directory: 365.6 KB
+    ABI snapshot size: 18 B
+  Increase memory usage: 101.9 MB
+  Total memory usage at the end of build: 594.2 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 133
+    Analysis lines per second: 77
+    Code generation lines per second: 397
+  Number of times classpath snapshot is shrunk and saved after compilation: 1
+    Number of classpath entries: 15
+    Size of classpath snapshot: 1.1 MB
+    Size of shrunk classpath snapshot: 20.2 KB
+  Number of times classpath snapshot is loaded: 1
+    Number of cache hits when loading classpath entry snapshots: 9
+    Number of cache misses when loading classpath entry snapshots: 6
+  Start time of task action: 2025-09-12T14:44:09
+Build attributes:
+  REBUILD_REASON: Unknown Gradle changes
+GC metrics:
+  PS MarkSweep:
+    GC count: 0
+    GC time: 0.00 s
+  PS Scavenge:
+    GC count: 0
+    GC time: 0.00 s
+
+Task ':sandbox-ui:compileReleaseKotlin' finished in 4.59 s
+Task info:
+  Kotlin language version: 2.2
+Compilation log for task ':sandbox-ui:compileReleaseKotlin':
+  Source changes: Unknown
+  Non-incremental compilation will be performed: UNKNOWN_CHANGES_IN_GRADLE_INPUTS
+  Cleaning 3 output directories
+  [ClasspathSnapshot] Shrunk current classpath snapshot after compilation (shrink mode = NonIncremental), retained 72 / 27943 classes
+Time metrics:
+  Total Gradle task time: 4.59 s
+  Spent time before task action: 1.30 s
+  Task action before worker execution: 0.19 s
+  Run compilation in Gradle worker: 3.01 s
+    Clear output: 0.00 s
+    Connect to Kotlin daemon: 0.02 s
+    Calculate output size: 0.02 s
+    Run compilation: 2.99 s
+      Incremental compilation in daemon: 2.97 s
+        Update caches: 0.00 s
+        Sources compilation round: 2.28 s
+          Compiler initialization time: 0.43 s
+          Compiler code analysis: 0.72 s
+          Compiler translation to IR: 0.64 s
+          Compiler code generation: 0.30 s
+            Compiler IR lowering: 0.08 s
+            Compiler backend: 0.22 s
+        Shrink and save current classpath snapshot after compilation: 0.08 s
+          Shrink current classpath snapshot non-incrementally: 0.06 s
+            Load current classpath snapshot: 0.01 s
+              Remove duplicate classes: 0.01 s
+          Save shrunk current classpath snapshot: 0.00 s
+  Start gradle worker: 0.00 s
+Size metrics:
+  Total size of the cache directory: 307.9 KB
+    ABI snapshot size: 18 B
+  Increase memory usage: 359.0 MB
+  Total memory usage at the end of build: 720.7 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 280
+    Analysis lines per second: 390
+    Code generation lines per second: 944
+  Number of times classpath snapshot is shrunk and saved after compilation: 1
+    Number of classpath entries: 99
+    Size of classpath snapshot: 8.5 MB
+    Size of shrunk classpath snapshot: 15.1 KB
+  Number of times classpath snapshot is loaded: 1
+    Number of cache hits when loading classpath entry snapshots: 98
+    Number of cache misses when loading classpath entry snapshots: 1
+  Start time of task action: 2025-09-12T14:43:00
+Build attributes:
+  REBUILD_REASON: Unknown Gradle changes
+GC metrics:
+  PS MarkSweep:
+    GC count: 0
+    GC time: 0.00 s
+  PS Scavenge:
+    GC count: 1
+    GC time: 0.03 s
+
+Task ':module-a:mergeReleaseResources' finished in 4.47 s
+Time metrics:
+  Total Gradle task time: 4.47 s
+
+Task ':module-d:lintAnalyzeDebug' finished in 4.47 s
+Time metrics:
+  Total Gradle task time: 4.47 s
+
+Task ':secure-comm:compileReleaseKotlin' finished in 4.47 s
+Task info:
+  Kotlin language version: 2.2
+Compilation log for task ':secure-comm:compileReleaseKotlin':
+  Source changes: Unknown
+  Non-incremental compilation will be performed: UNKNOWN_CHANGES_IN_GRADLE_INPUTS
+  Cleaning 3 output directories
+  [ClasspathSnapshot] Shrunk current classpath snapshot after compilation (shrink mode = NonIncremental), retained 112 / 29218 classes
+Time metrics:
+  Total Gradle task time: 4.47 s
+  Spent time before task action: 0.09 s
+  Task action before worker execution: 0.24 s
+  Run compilation in Gradle worker: 3.71 s
+    Clear jar cache: 0.00 s
+    Connect to Kotlin daemon: 0.04 s
+    Calculate output size: 0.02 s
+    Run compilation: 3.67 s
+      Incremental compilation in daemon: 3.65 s
+        Clear outputs on rebuild: 0.00 s
+        Update caches: 0.00 s
+        Sources compilation round: 2.77 s
+          Compiler initialization time: 0.53 s
+          Compiler code analysis: 1.81 s
+          Compiler translation to IR: 0.05 s
+          Compiler code generation: 0.25 s
+            Compiler IR lowering: 0.12 s
+            Compiler backend: 0.13 s
+        Shrink and save current classpath snapshot after compilation: 0.10 s
+          Shrink current classpath snapshot non-incrementally: 0.05 s
+            Load current classpath snapshot: 0.01 s
+              Remove duplicate classes: 0.01 s
+          Save shrunk current classpath snapshot: 0.00 s
+  Start gradle worker: 0.01 s
+Size metrics:
+  Total size of the cache directory: 430.4 KB
+    ABI snapshot size: 18 B
+  Increase memory usage: -150329400 B
+  Total memory usage at the end of build: 521.5 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 608
+    Analysis lines per second: 335
+    Code generation lines per second: 2409
+  Number of times classpath snapshot is shrunk and saved after compilation: 1
+    Number of classpath entries: 143
+    Size of classpath snapshot: 10.2 MB
+    Size of shrunk classpath snapshot: 26.5 KB
+  Number of times classpath snapshot is loaded: 1
+    Number of cache hits when loading classpath entry snapshots: 142
+    Number of cache misses when loading classpath entry snapshots: 1
+  Start time of task action: 2025-09-12T14:43:08
+Build attributes:
+  REBUILD_REASON: Unknown Gradle changes
+GC metrics:
+  PS MarkSweep:
+    GC count: 0
+    GC time: 0.00 s
+  PS Scavenge:
+    GC count: 1
+    GC time: 0.40 s
+
+Task ':colorblendr:generateReleaseLintModel' finished in 4.41 s
+Time metrics:
+  Total Gradle task time: 4.41 s
+
+Task ':datavein-oracle-native:mergeReleaseResources' finished in 4.33 s
+Time metrics:
+  Total Gradle task time: 4.33 s
+
+Task ':colorblendr:compileReleaseJavaWithJavac' finished in 4.32 s
+Time metrics:
+  Total Gradle task time: 4.32 s
+
+Task ':oracle-drive-integration:mergeReleaseResources' finished in 4.31 s
+Time metrics:
+  Total Gradle task time: 4.31 s
+
+Task ':sandbox-ui:kspDebugUnitTestKotlin' finished in 4.25 s
+Time metrics:
+  Total Gradle task time: 4.25 s
+
+Task ':collab-canvas:mergeReleaseResources' finished in 4.24 s
+Time metrics:
+  Total Gradle task time: 4.24 s
+
+Task ':module-f:lintAnalyzeDebug' finished in 3.97 s
+Time metrics:
+  Total Gradle task time: 3.97 s
+
+Task ':sandbox-ui:generateReleaseLintModel' finished in 3.96 s
+Time metrics:
+  Total Gradle task time: 3.96 s
+
+Task ':sandbox-ui:kspReleaseKotlin' finished in 3.93 s
+Time metrics:
+  Total Gradle task time: 3.93 s
+
+Task ':benchmark:generateDebugAndroidTestLintModel' finished in 3.87 s
+Time metrics:
+  Total Gradle task time: 3.87 s
+
+Task ':module-a:lintAnalyzeDebugUnitTest' finished in 3.83 s
+Time metrics:
+  Total Gradle task time: 3.83 s
+
+Task ':collab-canvas:verifyReleaseResources' finished in 3.82 s
+Time metrics:
+  Total Gradle task time: 3.82 s
+
+Task ':colorblendr:kspReleaseKotlin' finished in 3.75 s
+Time metrics:
+  Total Gradle task time: 3.75 s
+
+Task ':datavein-oracle-native:verifyReleaseResources' finished in 3.66 s
+Time metrics:
+  Total Gradle task time: 3.66 s
+
+Task ':benchmark:parseReleaseLocalResources' finished in 3.50 s
+Time metrics:
+  Total Gradle task time: 3.50 s
+
+Task ':feature-module:copyReleaseJniLibsProjectAndLocalJars' finished in 3.32 s
+Time metrics:
+  Total Gradle task time: 3.32 s
+
+Task ':module-d:mergeReleaseResources' finished in 3.19 s
+Time metrics:
+  Total Gradle task time: 3.19 s
+
+Task ':feature-module:checkReleaseAarMetadata' finished in 3.09 s
+Time metrics:
+  Total Gradle task time: 3.09 s
+
+Task ':colorblendr:lintAnalyzeDebugUnitTest' finished in 3.01 s
+Time metrics:
+  Total Gradle task time: 3.01 s
+
+Task ':feature-module:lintAnalyzeDebugUnitTest' finished in 2.89 s
+Time metrics:
+  Total Gradle task time: 2.89 s
+
+Task ':module-e:lintAnalyzeDebug' finished in 2.88 s
+Time metrics:
+  Total Gradle task time: 2.88 s
+
+Task ':romtools:compileReleaseKotlin' finished in 2.84 s
+Task info:
+  Kotlin language version: 2.2
+Compilation log for task ':romtools:compileReleaseKotlin':
+  Source changes: Unknown
+  Non-incremental compilation will be performed: UNKNOWN_CHANGES_IN_GRADLE_INPUTS
+  Cleaning 3 output directories
+Time metrics:
+  Total Gradle task time: 2.84 s
+  Spent time before task action: 0.50 s
+  Task action before worker execution: 0.18 s
+  Run compilation in Gradle worker: 1.42 s
+    Clear output: 0.00 s
+    Connect to Kotlin daemon: 0.01 s
+    Calculate output size: 0.00 s
+    Run compilation: 1.41 s
+      Incremental compilation in daemon: 1.40 s
+        Clear outputs on rebuild: 0.00 s
+        Sources compilation round: 1.38 s
+          Compiler initialization time: 0.41 s
+          Compiler code analysis: 0.85 s
+  Start gradle worker: 0.49 s
+Size metrics:
+  Increase memory usage: 195.0 MB
+  Total memory usage at the end of build: 367.5 MB
+  Total compiler iteration: 1
+    Number of lines analyzed: 1189
+    Analysis lines per second: 1391
+  Start time of task action: 2025-09-12T14:43:30
+Build attributes:
+  REBUILD_REASON: Unknown Gradle changes
+GC metrics:
+  PS MarkSweep:
+    GC count: 0
+    GC time: 0.00 s
+  PS Scavenge:
+    GC count: 0
+    GC time: 0.00 s
+
+Task ':feature-module:mergeReleaseJavaResource' finished in 2.79 s
+Time metrics:
+  Total Gradle task time: 2.79 s
+
+Task ':benchmark:lintAnalyzeDebugAndroidTest' finished in 2.76 s
+Time metrics:
+  Total Gradle task time: 2.76 s
+
+Task ':collab-canvas:lintAnalyzeDebugAndroidTest' finished in 2.75 s
+Time metrics:
+  Total Gradle task time: 2.75 s
+
+Task ':module-e:mergeReleaseResources' finished in 2.68 s
+Time metrics:
+  Total Gradle task time: 2.68 s
+
+Task ':module-e:lintAnalyzeDebugUnitTest' finished in 2.65 s
+Time metrics:
+  Total Gradle task time: 2.65 s
+
+Task ':collab-canvas:lintAnalyzeDebugUnitTest' finished in 2.52 s
+Time metrics:
+  Total Gradle task time: 2.52 s
+
+Task ':app:collectReleaseDependencies' finished in 2.47 s
+Time metrics:
+  Total Gradle task time: 2.47 s
+
+Task ':module-d:verifyReleaseResources' finished in 2.41 s
+Time metrics:
+  Total Gradle task time: 2.41 s
+
+Task ':module-e:lintAnalyzeDebugAndroidTest' finished in 2.40 s
+Time metrics:
+  Total Gradle task time: 2.40 s
+
+Task ':feature-module:lintAnalyzeDebugAndroidTest' finished in 2.32 s
+Time metrics:
+  Total Gradle task time: 2.32 s
+
+Task ':secure-comm:generateDebugLintModel' finished in 2.29 s
+Time metrics:
+  Total Gradle task time: 2.29 s
+
+Task ':feature-module:generateDebugLintModel' finished in 2.24 s
+Time metrics:
+  Total Gradle task time: 2.24 s
+
+Task ':oracle-drive-integration:lintAnalyzeDebugAndroidTest' finished in 2.14 s
+Time metrics:
+  Total Gradle task time: 2.14 s
+
+Task ':module-b:mergeReleaseResources' finished in 1.98 s
+Time metrics:
+  Total Gradle task time: 1.98 s
+
+Task ':module-d:lintAnalyzeDebugUnitTest' finished in 1.98 s
+Time metrics:
+  Total Gradle task time: 1.98 s
+
+Task ':module-f:mergeReleaseResources' finished in 1.97 s
+Time metrics:
+  Total Gradle task time: 1.97 s
+
+Task ':module-c:lintAnalyzeDebugUnitTest' finished in 1.96 s
+Time metrics:
+  Total Gradle task time: 1.96 s
+
+Task ':module-b:lintAnalyzeDebugAndroidTest' finished in 1.92 s
+Time metrics:
+  Total Gradle task time: 1.92 s
+
+Task ':module-a:verifyReleaseResources' finished in 1.89 s
+Time metrics:
+  Total Gradle task time: 1.89 s
+
+Task ':sandbox-ui:lintAnalyzeDebugUnitTest' finished in 1.87 s
+Time metrics:
+  Total Gradle task time: 1.87 s
+
+Task ':app:extractReleaseNativeSymbolTables' finished in 1.83 s
+Time metrics:
+  Total Gradle task time: 1.83 s
+
+Task ':app:stripReleaseDebugSymbols' finished in 1.80 s
+Time metrics:
+  Total Gradle task time: 1.80 s
+
+Task ':sandbox-ui:testDebugUnitTest' finished in 1.76 s
+Time metrics:
+  Total Gradle task time: 1.76 s
+
+Task ':benchmark:compileReleaseJavaWithJavac' finished in 1.71 s
+Time metrics:
+  Total Gradle task time: 1.71 s
+
+Task ':module-a:lintAnalyzeDebugAndroidTest' finished in 1.59 s
+Time metrics:
+  Total Gradle task time: 1.59 s
+
+Task ':colorblendr:lintAnalyzeDebugAndroidTest' finished in 1.55 s
+Time metrics:
+  Total Gradle task time: 1.55 s
+
+Task ':module-b:verifyReleaseResources' finished in 1.53 s
+Time metrics:
+  Total Gradle task time: 1.53 s
+
+Task ':module-f:verifyReleaseResources' finished in 1.50 s
+Time metrics:
+  Total Gradle task time: 1.50 s
+
+Task ':datavein-oracle-native:generateReleaseLintModel' finished in 1.47 s
+Time metrics:
+  Total Gradle task time: 1.47 s
+
+Task ':collab-canvas:generateDebugUnitTestLintModel' finished in 1.46 s
+Time metrics:
+  Total Gradle task time: 1.46 s
+
+Task ':module-e:verifyReleaseResources' finished in 1.45 s
+Time metrics:
+  Total Gradle task time: 1.45 s
+
+Task ':romtools:generateDebugUnitTestStubRFile' finished in 1.38 s
+Time metrics:
+  Total Gradle task time: 1.38 s
+
+Task ':app:mergeReleaseNativeDebugMetadata' finished in 1.37 s
+Time metrics:
+  Total Gradle task time: 1.37 s
+
+Task ':module-c:verifyReleaseResources' finished in 1.32 s
+Time metrics:
+  Total Gradle task time: 1.32 s
+
+Task ':sandbox-ui:lintAnalyzeDebugAndroidTest' finished in 1.23 s
+Time metrics:
+  Total Gradle task time: 1.23 s
+
+Task ':collab-canvas:generateDebugAndroidTestLintModel' finished in 1.22 s
+Time metrics:
+  Total Gradle task time: 1.22 s
+
+Task ':benchmark:compileBenchmarkJavaWithJavac' finished in 1.21 s
+Time metrics:
+  Total Gradle task time: 1.21 s
+
+Task ':module-b:copyReleaseJniLibsProjectAndLocalJars' finished in 1.19 s
+Time metrics:
+  Total Gradle task time: 1.19 s
+
+Task ':sandbox-ui:lintReportDebug' finished in 1.18 s
+Time metrics:
+  Total Gradle task time: 1.18 s
+
+Task ':datavein-oracle-native:stripReleaseDebugSymbols' finished in 1.15 s
+Time metrics:
+  Total Gradle task time: 1.15 s
+
+Task ':module-d:lintAnalyzeDebugAndroidTest' finished in 1.13 s
+Time metrics:
+  Total Gradle task time: 1.13 s
+
+Task ':colorblendr:generateDebugUnitTestLintModel' finished in 1.12 s
+Time metrics:
+  Total Gradle task time: 1.12 s
+
+Task ':module-c:mergeReleaseResources' finished in 1.11 s
+Time metrics:
+  Total Gradle task time: 1.11 s
+
+Task ':datavein-oracle-native:bundleReleaseAar' finished in 1.11 s
+Time metrics:
+  Total Gradle task time: 1.11 s
+
+Task ':colorblendr:generateDebugLintModel' finished in 1.10 s
+Time metrics:
+  Total Gradle task time: 1.10 s
+
+Task ':module-a:generateDebugUnitTestStubRFile' finished in 1.04 s
+Time metrics:
+  Total Gradle task time: 1.04 s
+
+Task ':sandbox-ui:generateDebugLintModel' finished in 1.03 s
+Time metrics:
+  Total Gradle task time: 1.03 s
+
+Task ':secure-comm:stripReleaseDebugSymbols' finished in 1.02 s
+Time metrics:
+  Total Gradle task time: 1.02 s
+
+Task ':secure-comm:copyReleaseJniLibsProjectOnly' finished in 0.98 s
+Time metrics:
+  Total Gradle task time: 0.98 s
+
+Task ':module-b:mergeReleaseAssets' finished in 0.97 s
+Time metrics:
+  Total Gradle task time: 0.97 s
+
+Task ':benchmark:mapBenchmarkSourceSetPaths' finished in 0.96 s
+Time metrics:
+  Total Gradle task time: 0.96 s
+
+Task ':oracle-drive-integration:lintAnalyzeDebugUnitTest' finished in 0.94 s
+Time metrics:
+  Total Gradle task time: 0.94 s
+
+Task ':module-a:generateDebugAndroidTestLintModel' finished in 0.91 s
+Time metrics:
+  Total Gradle task time: 0.91 s
+
+Task ':benchmark:bundleLibRuntimeToJarDebug' finished in 0.91 s
+Time metrics:
+  Total Gradle task time: 0.91 s
+
+Task ':module-a:mapReleaseSourceSetPaths' finished in 0.90 s
+Time metrics:
+  Total Gradle task time: 0.90 s
+
+Task ':module-a:generateDebugLintReportModel' finished in 0.87 s
+Time metrics:
+  Total Gradle task time: 0.87 s
+
+Task ':app:mergeReleaseArtProfile' finished in 0.87 s
+Time metrics:
+  Total Gradle task time: 0.87 s
+
+Task ':module-b:parseReleaseLocalResources' finished in 0.84 s
+Time metrics:
+  Total Gradle task time: 0.84 s
+
+Task ':module-c:lintAnalyzeDebugAndroidTest' finished in 0.84 s
+Time metrics:
+  Total Gradle task time: 0.84 s
+
+Task ':benchmark:mergeBenchmarkJavaResource' finished in 0.82 s
+Time metrics:
+  Total Gradle task time: 0.82 s
+
+Task ':oracle-drive-integration:extractDebugAnnotations' finished in 0.79 s
+Time metrics:
+  Total Gradle task time: 0.79 s
+
+Task ':module-b:lintAnalyzeDebugUnitTest' finished in 0.79 s
+Time metrics:
+  Total Gradle task time: 0.79 s
+
+Task ':romtools:extractDebugAnnotations' finished in 0.74 s
+Time metrics:
+  Total Gradle task time: 0.74 s
+
+Task ':secure-comm:mapReleaseSourceSetPaths' finished in 0.72 s
+Time metrics:
+  Total Gradle task time: 0.72 s
+
+Task ':oracle-drive-integration:generateDebugUnitTestStubRFile' finished in 0.70 s
+Time metrics:
+  Total Gradle task time: 0.70 s
+
+Task ':module-a:bundleLibRuntimeToJarDebug' finished in 0.67 s
+Time metrics:
+  Total Gradle task time: 0.67 s
+
+Task ':feature-module:generateDebugUnitTestStubRFile' finished in 0.66 s
+Time metrics:
+  Total Gradle task time: 0.66 s
+
+Task ':sandbox-ui:bundleLibCompileToJarRelease' finished in 0.66 s
+Time metrics:
+  Total Gradle task time: 0.66 s
+
+Task ':datavein-oracle-native:configureCMakeDebug[armeabi-v7a]' finished in 0.64 s
+Time metrics:
+  Total Gradle task time: 0.64 s
+
+Task ':secure-comm:mergeReleaseNativeLibs' finished in 0.63 s
+Time metrics:
+  Total Gradle task time: 0.63 s
+
+Task ':benchmark:javaPreCompileRelease' finished in 0.61 s
+Time metrics:
+  Total Gradle task time: 0.61 s
+
+Task ':module-f:lintAnalyzeDebugUnitTest' finished in 0.61 s
+Time metrics:
+  Total Gradle task time: 0.61 s
+
+Task ':romtools:extractDeepLinksForAarDebug' finished in 0.61 s
+Time metrics:
+  Total Gradle task time: 0.61 s
+
+Task ':datavein-oracle-native:configureCMakeDebug[arm64-v8a]' finished in 0.61 s
+Time metrics:
+  Total Gradle task time: 0.61 s
+
+Task ':datavein-oracle-native:configureCMakeDebug[x86_64]' finished in 0.60 s
+Time metrics:
+  Total Gradle task time: 0.60 s
+
+Task ':oracle-drive-integration:checkReleaseAarMetadata' finished in 0.60 s
+Time metrics:
+  Total Gradle task time: 0.60 s
+
+Task ':secure-comm:configureCMakeDebug[arm64-v8a]' finished in 0.58 s
+Time metrics:
+  Total Gradle task time: 0.58 s
+
+Task ':secure-comm:configureCMakeDebug[armeabi-v7a]' finished in 0.58 s
+Time metrics:
+  Total Gradle task time: 0.58 s
+
+Task ':colorblendr:lintReportDebug' finished in 0.54 s
+Time metrics:
+  Total Gradle task time: 0.54 s
+
+Task ':secure-comm:configureCMakeDebug[x86_64]' finished in 0.54 s
+Time metrics:
+  Total Gradle task time: 0.54 s
+
+Task ':datavein-oracle-native:mergeReleaseNativeLibs' finished in 0.53 s
+Time metrics:
+  Total Gradle task time: 0.53 s
+
+Task ':secure-comm:generateDebugUnitTestStubRFile' finished in 0.53 s
+Time metrics:
+  Total Gradle task time: 0.53 s
+
+Task ':feature-module:lintReportDebug' finished in 0.52 s
+Time metrics:
+  Total Gradle task time: 0.52 s
+
+Task ':app:expandReleaseL8ArtProfileWildcards' finished in 0.51 s
+Time metrics:
+  Total Gradle task time: 0.51 s
+
+Task ':secure-comm:checkReleaseAarMetadata' finished in 0.51 s
+Time metrics:
+  Total Gradle task time: 0.51 s
+
+Task ':secure-comm:bundleReleaseAar' finished in 0.51 s
+Time metrics:
+  Total Gradle task time: 0.51 s
+
+Task ':datavein-oracle-native:bundleLibRuntimeToJarRelease' finished in 0.50 s
+Time metrics:
+  Total Gradle task time: 0.50 s
+
+Task ':module-a:checkReleaseAarMetadata' finished in 0.50 s
+Time metrics:
+  Total Gradle task time: 0.50 s
+
+Task ':sandbox-ui:syncDebugLibJars' finished in 0.48 s
+Time metrics:
+  Total Gradle task time: 0.48 s
+
+Task ':secure-comm:generateDebugUnitTestLintModel' finished in 0.48 s
+Time metrics:
+  Total Gradle task time: 0.48 s
+
+Task ':datavein-oracle-native:buildCMakeDebug[arm64-v8a]' finished in 0.47 s
+Time metrics:
+  Total Gradle task time: 0.47 s
+
+Task ':secure-comm:buildCMakeDebug[arm64-v8a]' finished in 0.47 s
+Time metrics:
+  Total Gradle task time: 0.47 s
+
+Task ':app:mergeReleaseNativeLibs' finished in 0.46 s
+Time metrics:
+  Total Gradle task time: 0.46 s
+
+Task ':oracle-drive-integration:generateDebugLintReportModel' finished in 0.44 s
+Time metrics:
+  Total Gradle task time: 0.44 s
+
+Task ':module-a:lintReportDebug' finished in 0.44 s
+Time metrics:
+  Total Gradle task time: 0.44 s
+
+Task ':app:processReleaseMainManifest' finished in 0.42 s
+Time metrics:
+  Total Gradle task time: 0.42 s
+
+Task ':benchmark:generateDebugUnitTestStubRFile' finished in 0.41 s
+Time metrics:
+  Total Gradle task time: 0.41 s
+
+Task ':module-c:lintReportDebug' finished in 0.41 s
+Time metrics:
+  Total Gradle task time: 0.41 s
+
+Task ':datavein-oracle-native:buildCMakeDebug[armeabi-v7a]' finished in 0.41 s
+Time metrics:
+  Total Gradle task time: 0.41 s
+
+Task ':secure-comm:buildCMakeDebug[x86_64]' finished in 0.41 s
+Time metrics:
+  Total Gradle task time: 0.41 s
+
+Task ':module-a:createFullJarDebug' finished in 0.41 s
+Time metrics:
+  Total Gradle task time: 0.41 s
+
+Task ':datavein-oracle-native:buildCMakeDebug[x86_64]' finished in 0.40 s
+Time metrics:
+  Total Gradle task time: 0.40 s
+
+Task ':secure-comm:buildCMakeDebug[armeabi-v7a]' finished in 0.40 s
+Time metrics:
+  Total Gradle task time: 0.40 s
+
+Task ':collab-canvas:extractDebugAnnotations' finished in 0.40 s
+Time metrics:
+  Total Gradle task time: 0.40 s
+
+Task ':colorblendr:copyReleaseJniLibsProjectAndLocalJars' finished in 0.40 s
+Time metrics:
+  Total Gradle task time: 0.40 s
+
+Task ':module-b:lintReportDebug' finished in 0.39 s
+Time metrics:
+  Total Gradle task time: 0.39 s
+
+Task ':colorblendr:mergeReleaseJavaResource' finished in 0.39 s
+Time metrics:
+  Total Gradle task time: 0.39 s
+
+Task ':feature-module:generateDebugUnitTestLintModel' finished in 0.38 s
+Time metrics:
+  Total Gradle task time: 0.38 s
+
+Task ':romtools:mapReleaseSourceSetPaths' finished in 0.36 s
+Time metrics:
+  Total Gradle task time: 0.36 s
+
+Task ':datavein-oracle-native:checkDebugAarMetadata' finished in 0.35 s
+Time metrics:
+  Total Gradle task time: 0.35 s
+
+Task ':colorblendr:syncDebugLibJars' finished in 0.35 s
+Time metrics:
+  Total Gradle task time: 0.35 s
+
+Task ':collab-canvas:bundleDebugLocalLintAar' finished in 0.34 s
+Time metrics:
+  Total Gradle task time: 0.34 s
+
+Task ':collab-canvas:generateDebugUnitTestStubRFile' finished in 0.33 s
+Time metrics:
+  Total Gradle task time: 0.33 s
+
+Task ':collab-canvas:copyReleaseJniLibsProjectAndLocalJars' finished in 0.32 s
+Time metrics:
+  Total Gradle task time: 0.32 s
+
+Task ':module-f:lintAnalyzeDebugAndroidTest' finished in 0.32 s
+Time metrics:
+  Total Gradle task time: 0.32 s
+
+Task ':module-e:packageReleaseResources' finished in 0.31 s
+Time metrics:
+  Total Gradle task time: 0.31 s
+
+Task ':collab-canvas:extractReleaseAnnotations' finished in 0.31 s
+Time metrics:
+  Total Gradle task time: 0.31 s
+
+Task ':app:checkReleaseDuplicateClasses' finished in 0.31 s
+Time metrics:
+  Total Gradle task time: 0.31 s
+
+Task ':feature-module:generateDebugAndroidTestLintModel' finished in 0.31 s
+Time metrics:
+  Total Gradle task time: 0.31 s
+
+Task ':oracle-drive-integration:lintReportDebug' finished in 0.31 s
+Time metrics:
+  Total Gradle task time: 0.31 s
+
+Task ':feature-module:javaPreCompileRelease' finished in 0.31 s
+Time metrics:
+  Total Gradle task time: 0.31 s
+
+Task ':collab-canvas:checkReleaseAarMetadata' finished in 0.29 s
+Time metrics:
+  Total Gradle task time: 0.29 s
+
+Task ':oracle-drive-integration:copyReleaseJniLibsProjectAndLocalJars' finished in 0.29 s
+Time metrics:
+  Total Gradle task time: 0.29 s
+
+Task ':app:sdkReleaseDependencyData' finished in 0.29 s
+Time metrics:
+  Total Gradle task time: 0.29 s
+
+Task ':module-a:bundleReleaseAar' finished in 0.29 s
+Time metrics:
+  Total Gradle task time: 0.29 s
+
+Task ':sandbox-ui:copyReleaseJniLibsProjectAndLocalJars' finished in 0.29 s
+Time metrics:
+  Total Gradle task time: 0.29 s
+
+Task ':app:packageReleaseResources' finished in 0.28 s
+Time metrics:
+  Total Gradle task time: 0.28 s
+
+Task ':romtools:copyReleaseJniLibsProjectAndLocalJars' finished in 0.28 s
+Time metrics:
+  Total Gradle task time: 0.28 s
+
+Task ':collab-canvas:bundleLibRuntimeToDirDebug' finished in 0.28 s
+Time metrics:
+  Total Gradle task time: 0.28 s
+
+Task ':oracle-drive-integration:generateReleaseLintModel' finished in 0.27 s
+Time metrics:
+  Total Gradle task time: 0.27 s
+
+Task ':collab-canvas:compileDebugKotlin' finished in 0.27 s
+Time metrics:
+  Total Gradle task time: 0.27 s
+
+Task ':datavein-oracle-native:copyReleaseJniLibsProjectOnly' finished in 0.27 s
+Time metrics:
+  Total Gradle task time: 0.27 s
+
+Task ':colorblendr:bundleLibRuntimeToJarDebug' finished in 0.27 s
+Time metrics:
+  Total Gradle task time: 0.27 s
+
+Task ':sandbox-ui:mergeReleaseJavaResource' finished in 0.27 s
+Time metrics:
+  Total Gradle task time: 0.27 s
+
+Task ':module-c:writeDebugLintModelMetadata' finished in 0.26 s
+Time metrics:
+  Total Gradle task time: 0.26 s
+
+Task ':feature-module:extractReleaseAnnotations' finished in 0.26 s
+Time metrics:
+  Total Gradle task time: 0.26 s
+
+Task ':module-b:generateReleaseRFile' finished in 0.25 s
+Time metrics:
+  Total Gradle task time: 0.25 s
+
+Task ':benchmark:checkBenchmarkAarMetadata' finished in 0.24 s
+Time metrics:
+  Total Gradle task time: 0.24 s
+
+Task ':secure-comm:javaPreCompileRelease' finished in 0.24 s
+Time metrics:
+  Total Gradle task time: 0.24 s
+
+Task ':module-b:javaPreCompileRelease' finished in 0.24 s
+Time metrics:
+  Total Gradle task time: 0.24 s
+
+Task ':module-d:lintReportDebug' finished in 0.24 s
+Time metrics:
+  Total Gradle task time: 0.24 s
+
+Task ':secure-comm:lintReportDebug' finished in 0.23 s
+Time metrics:
+  Total Gradle task time: 0.23 s
+
+Task ':romtools:checkReleaseAarMetadata' finished in 0.23 s
+Time metrics:
+  Total Gradle task time: 0.23 s
+
+Task ':collab-canvas:generateDebugLintReportModel' finished in 0.23 s
+Time metrics:
+  Total Gradle task time: 0.23 s
+
+Task ':collab-canvas:generateDebugLintModel' finished in 0.22 s
+Time metrics:
+  Total Gradle task time: 0.22 s
+
+Task ':feature-module:generateReleaseLintVitalModel' finished in 0.22 s
+Time metrics:
+  Total Gradle task time: 0.22 s
+
+Task ':colorblendr:generateDebugLintReportModel' finished in 0.22 s
+Time metrics:
+  Total Gradle task time: 0.22 s
+
+Task ':collab-canvas:lintReportDebug' finished in 0.22 s
+Time metrics:
+  Total Gradle task time: 0.22 s
+
+Task ':module-f:packageReleaseResources' finished in 0.21 s
+Time metrics:
+  Total Gradle task time: 0.21 s
+
+Task ':oracle-drive-integration:copyReleaseJniLibsProjectOnly' finished in 0.20 s
+Time metrics:
+  Total Gradle task time: 0.20 s
+
+Task ':module-a:bundleDebugLocalLintAar' finished in 0.20 s
+Time metrics:
+  Total Gradle task time: 0.20 s
+
+Task ':datavein-oracle-native:mergeReleaseJniLibFolders' finished in 0.20 s
+Time metrics:
+  Total Gradle task time: 0.20 s
+
+Task ':colorblendr:generateDebugAndroidTestLintModel' finished in 0.20 s
+Time metrics:
+  Total Gradle task time: 0.20 s
+
+Task ':feature-module:bundleLibRuntimeToJarDebug' finished in 0.20 s
+Time metrics:
+  Total Gradle task time: 0.20 s
+
+Task ':module-b:prepareReleaseArtProfile' finished in 0.20 s
+Time metrics:
+  Total Gradle task time: 0.20 s
+
+Task ':module-b:bundleLibCompileToJarDebug' finished in 0.20 s
+Time metrics:
+  Total Gradle task time: 0.20 s
+
+Task ':module-b:processReleaseManifest' finished in 0.20 s
+Time metrics:
+  Total Gradle task time: 0.20 s
+
+Task ':module-e:lintReportDebug' finished in 0.20 s
+Time metrics:
+  Total Gradle task time: 0.20 s
+
+Task ':app:extractReleaseVersionControlInfo' finished in 0.19 s
+Time metrics:
+  Total Gradle task time: 0.19 s
+
+Task ':benchmark:generateDebugUnitTestLintModel' finished in 0.18 s
+Time metrics:
+  Total Gradle task time: 0.18 s
+
+Task ':collab-canvas:bundleReleaseAar' finished in 0.18 s
+Time metrics:
+  Total Gradle task time: 0.18 s
+
+Task ':sandbox-ui:packageReleaseResources' finished in 0.18 s
+Time metrics:
+  Total Gradle task time: 0.18 s
+
+Task ':module-f:generateDebugLintReportModel' finished in 0.18 s
+Time metrics:
+  Total Gradle task time: 0.18 s
+
+Task ':module-e:bundleDebugLocalLintAar' finished in 0.17 s
+Time metrics:
+  Total Gradle task time: 0.17 s
+
+Task ':collab-canvas:mergeReleaseJavaResource' finished in 0.17 s
+Time metrics:
+  Total Gradle task time: 0.17 s
+
+Task ':app:processDebugResources' finished in 0.17 s
+Time metrics:
+  Total Gradle task time: 0.17 s
+
+Task ':datavein-oracle-native:bundleLibRuntimeToJarDebug' finished in 0.17 s
+Time metrics:
+  Total Gradle task time: 0.17 s
+
+Task ':colorblendr:generateDebugUnitTestStubRFile' finished in 0.16 s
+Time metrics:
+  Total Gradle task time: 0.16 s
+
+Task ':datavein-oracle-native:generateDebugLintReportModel' finished in 0.16 s
+Time metrics:
+  Total Gradle task time: 0.16 s
+
+Task ':romtools:parseReleaseLocalResources' finished in 0.16 s
+Time metrics:
+  Total Gradle task time: 0.16 s
+
+Task ':secure-comm:bundleDebugLocalLintAar' finished in 0.15 s
+Time metrics:
+  Total Gradle task time: 0.15 s
+
+Task ':module-a:processReleaseManifest' finished in 0.15 s
+Time metrics:
+  Total Gradle task time: 0.15 s
+
+Task ':module-c:generateDebugUnitTestLintModel' finished in 0.15 s
+Time metrics:
+  Total Gradle task time: 0.15 s
+
+Task ':benchmark:mergeBenchmarkJniLibFolders' finished in 0.15 s
+Time metrics:
+  Total Gradle task time: 0.15 s
+
+Task ':module-d:generateDebugUnitTestLintModel' finished in 0.15 s
+Time metrics:
+  Total Gradle task time: 0.15 s
+
+Task ':module-b:generateDebugLintReportModel' finished in 0.15 s
+Time metrics:
+  Total Gradle task time: 0.15 s
+
+Task ':module-a:parseReleaseLocalResources' finished in 0.15 s
+Time metrics:
+  Total Gradle task time: 0.15 s
+
+Task ':secure-comm:bundleReleaseLocalLintAar' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':module-c:generateDebugAndroidTestLintModel' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':colorblendr:copyReleaseJniLibsProjectOnly' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':datavein-oracle-native:packageReleaseResources' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':secure-comm:generateDebugAndroidTestLintModel' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':feature-module:mergeReleaseJniLibFolders' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':datavein-oracle-native:syncReleaseLibJars' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':oracle-drive-integration:generateReleaseLintVitalModel' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':romtools:javaPreCompileDebugUnitTest' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':feature-module:packageReleaseResources' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':module-d:generateDebugAndroidTestLintModel' finished in 0.13 s
+Time metrics:
+  Total Gradle task time: 0.13 s
+
+Task ':module-c:bundleDebugLocalLintAar' finished in 0.13 s
+Time metrics:
+  Total Gradle task time: 0.13 s
+
+Task ':module-a:mergeReleaseJavaResource' finished in 0.13 s
+Time metrics:
+  Total Gradle task time: 0.13 s
+
+Task ':oracle-drive-integration:parseReleaseLocalResources' finished in 0.13 s
+Time metrics:
+  Total Gradle task time: 0.13 s
+
+Task ':module-e:generateReleaseRFile' finished in 0.13 s
+Time metrics:
+  Total Gradle task time: 0.13 s
+
+Task ':colorblendr:packageReleaseResources' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':oracle-drive-integration:bundleLibRuntimeToJarDebug' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':module-e:mergeReleaseJniLibFolders' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':secure-comm:parseReleaseLocalResources' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':app:checkReleaseAarMetadata' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':datavein-oracle-native:generateDebugAndroidTestLintModel' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':module-f:lintReportDebug' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':feature-module:parseReleaseLocalResources' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':feature-module:generateDebugLintReportModel' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':datavein-oracle-native:generateReleaseLintVitalModel' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':module-b:extractProguardFiles' finished in 0.12 s
+Time metrics:
+  Total Gradle task time: 0.12 s
+
+Task ':jar' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':oracle-drive-integration:mapReleaseSourceSetPaths' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':secure-comm:javaPreCompileDebugUnitTest' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':collab-canvas:syncDebugLibJars' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':secure-comm:generateReleaseRFile' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':datavein-oracle-native:processReleaseManifest' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':collab-canvas:bundleLibCompileToJarDebug' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':collab-canvas:bundleLibCompileToJarRelease' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':app:javaPreCompileDebugUnitTest' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':module-b:processDebugManifest' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':module-b:createFullJarDebug' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':sandbox-ui:mapReleaseSourceSetPaths' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':colorblendr:parseReleaseLocalResources' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':module-b:packageReleaseResources' finished in 0.11 s
+Time metrics:
+  Total Gradle task time: 0.11 s
+
+Task ':app:mergeExtDexDebug' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':collab-canvas:processDebugManifest' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':colorblendr:processDebugManifest' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':secure-comm:bundleLibRuntimeToDirDebug' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':collab-canvas:generateReleaseRFile' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':oracle-drive-integration:packageReleaseResources' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':app:mergeReleaseAssets' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':colorblendr:compileDebugKotlin' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':module-e:parseReleaseLocalResources' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':module-a:generateReleaseRFile' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':module-b:generateDebugAndroidTestLintModel' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':module-e:generateDebugUnitTestLintModel' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':colorblendr:extractDeepLinksRelease' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':benchmark:generateDebugLintReportModel' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':collab-canvas:bundleDebugAar' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':feature-module:processDebugManifest' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':collab-canvas:packageReleaseResources' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':benchmark:generateBenchmarkLibraryProguardRules' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':colorblendr:mapReleaseSourceSetPaths' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':oracle-drive-integration:exportReleaseConsumerProguardFiles' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':secure-comm:packageReleaseResources' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':module-d:bundleReleaseAar' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':module-b:extractDebugAnnotations' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':module-e:generateDebugAndroidTestLintModel' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':sandbox-ui:bundleReleaseAar' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':sandbox-ui:generateDebugUnitTestStubRFile' finished in 0.10 s
+Time metrics:
+  Total Gradle task time: 0.10 s
+
+Task ':collab-canvas:mergeReleaseJniLibFolders' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':colorblendr:generateReleaseLintVitalModel' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':sandbox-ui:kspDebugKotlin' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':datavein-oracle-native:bundleDebugLocalLintAar' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':module-a:copyReleaseJniLibsProjectAndLocalJars' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':datavein-oracle-native:javaPreCompileRelease' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':colorblendr:processReleaseManifest' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':benchmark:packageBenchmarkResources' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':app:compileDebugAidl' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':benchmark:bundleBenchmarkAar' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':oracle-drive-integration:compileDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':secure-comm:generateDebugRFile' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':sandbox-ui:generateDebugUnitTestLintModel' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':module-a:bundleDebugAar' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':module-f:generateDebugAndroidTestLintModel' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':secure-comm:generateDebugLintReportModel' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':secure-comm:kspDebugKotlin' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':sandbox-ui:extractReleaseAnnotations' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':datavein-oracle-native:compileDebugJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':colorblendr:exportReleaseConsumerProguardFiles' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':sandbox-ui:mergeDebugNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':app:mergeReleaseJniLibFolders' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':sandbox-ui:generateReleaseLintVitalModel' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':module-d:packageReleaseResources' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':sandbox-ui:generateDebugLintReportModel' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':collab-canvas:processReleaseJavaRes' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':collab-canvas:kspDebugKotlin' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':feature-module:compileDebugJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':module-f:generateReleaseRFile' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':oracle-drive-integration:processDebugManifest' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':feature-module:kspDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':module-d:compileReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':datavein-oracle-native:bundleReleaseLocalLintAar' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':benchmark:packageReleaseResources' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':colorblendr:mergeReleaseJniLibFolders' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':feature-module:copyReleaseJniLibsProjectOnly' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':oracle-drive-integration:generateReleaseRFile' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':sandbox-ui:bundleReleaseLocalLintAar' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':secure-comm:generateReleaseLintModel' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':colorblendr:bundleReleaseAar' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':jvm-test:compileTestJava' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':collab-canvas:mapReleaseSourceSetPaths' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':module-f:extractProguardFiles' finished in 0.08 s
+Time metrics:
+  Total Gradle task time: 0.08 s
+
+Task ':romtools:generateDebugRFile' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':feature-module:mapReleaseSourceSetPaths' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':app:mapDebugSourceSetPaths' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':app:mergeDebugResources' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':colorblendr:compileDebugJavaWithJavac' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':feature-module:bundleReleaseLocalLintAar' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':module-f:checkReleaseAarMetadata' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':oracle-drive-integration:packageDebugResources' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':module-d:extractDeepLinksForAarRelease' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':app:processReleaseNavigationResources' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':module-b:bundleDebugLocalLintAar' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':feature-module:packageDebugResources' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':colorblendr:packageDebugResources' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':app:createDebugCompatibleScreenManifests' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':collab-canvas:packageDebugResources' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':colorblendr:extractDeepLinksDebug' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':datavein-oracle-native:extractDeepLinksDebug' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':app:checkDebugAarMetadata' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':datavein-oracle-native:processDebugManifest' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':datavein-oracle-native:kspDebugKotlin' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':feature-module:bundleLibCompileToJarDebug' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':romtools:mergeReleaseJniLibFolders' finished in 0.07 s
+Time metrics:
+  Total Gradle task time: 0.07 s
+
+Task ':feature-module:bundleLibRuntimeToDirDebug' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':collab-canvas:syncReleaseLibJars' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':oracle-drive-integration:generateDebugAndroidTestLintModel' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':module-f:mergeReleaseJavaResource' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':feature-module:bundleLibCompileToJarRelease' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':secure-comm:packageDebugResources' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':module-b:mergeReleaseJavaResource' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':compileJava' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':app:processDebugMainManifest' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':datavein-oracle-native:bundleLibCompileToJarDebug' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':romtools:generateReleaseRFile' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':secure-comm:generateReleaseLintVitalModel' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':feature-module:bundleDebugLocalLintAar' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':module-c:generateDebugLintReportModel' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':app:packageDebugResources' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':datavein-oracle-native:bundleLibRuntimeToDirDebug' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':datavein-oracle-native:generateDebugUnitTestStubRFile' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':colorblendr:kspDebugKotlin' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':secure-comm:bundleLibCompileToJarDebug' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':secure-comm:syncReleaseLibJars' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':datavein-oracle-native:packageDebugResources' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':sandbox-ui:bundleLibCompileToJarDebug' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':romtools:javaPreCompileRelease' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':jvm-test:compileJava' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':module-a:testDebugUnitTest' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':oracle-drive-integration:javaPreCompileRelease' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':module-a:extractProguardFiles' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':module-b:generateDebugUnitTestLintModel' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':app:l8DexDesugarLibDebug' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':feature-module:extractDeepLinksDebug' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':collab-canvas:parseReleaseLocalResources' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':app:createReleaseCompatibleScreenManifests' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':app:extractDeepLinksRelease' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':feature-module:bundleReleaseAar' finished in 0.06 s
+Time metrics:
+  Total Gradle task time: 0.06 s
+
+Task ':app:writeReleaseAppMetadata' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':core-module:jar' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':oracle-drive-integration:copyDebugJniLibsProjectOnly' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':collab-canvas:javaPreCompileRelease' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':collab-canvas:extractProguardFiles' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':feature-module:syncReleaseLibJars' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':secure-comm:bundleLibRuntimeToJarRelease' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':module-e:extractProguardFiles' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':oracle-drive-integration:bundleReleaseAar' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':app:parseReleaseLocalResources' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':collab-canvas:processReleaseManifest' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':module-d:extractReleaseAnnotations' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':sandbox-ui:compileDebugKotlin' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':romtools:copyReleaseJniLibsProjectOnly' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':app:generateReleaseRFile' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':secure-comm:copyReleaseJniLibsProjectAndLocalJars' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':oracle-drive-integration:generateDebugLintModel' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':secure-comm:processDebugManifest' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':sandbox-ui:processDebugManifest' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':collab-canvas:generateReleaseLintVitalModel' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':module-a:packageReleaseResources' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':module-f:prepareReleaseArtProfile' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':secure-comm:compileDebugKotlin' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':colorblendr:bundleReleaseLocalLintAar' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':secure-comm:bundleLibCompileToJarRelease' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':oracle-drive-integration:generateDebugUnitTestLintModel' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':list:compileJava' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':sandbox-ui:packageDebugResources' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':core-module:compileJava' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':colorblendr:javaPreCompileRelease' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':datavein-oracle-native:extractReleaseAnnotations' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':collab-canvas:generateReleaseLintModel' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':module-f:generateDebugResources' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':romtools:processDebugManifest' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':sandbox-ui:compileDebugJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':app:mergeDebugNativeLibs' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':feature-module:generateReleaseRFile' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':oracle-drive-integration:mergeReleaseAssets' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':feature-module:extractDebugAnnotations' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':module-e:prepareReleaseArtProfile' finished in 0.05 s
+Time metrics:
+  Total Gradle task time: 0.05 s
+
+Task ':sandbox-ui:checkReleaseAarMetadata' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':secure-comm:exportReleaseConsumerProguardFiles' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':collab-canvas:bundleLibRuntimeToJarDebug' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':sandbox-ui:generateDebugAndroidTestLintModel' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':benchmark:processBenchmarkManifest' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-d:generateDebugLintReportModel' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':secure-comm:compileDebugJavaWithJavac' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':colorblendr:syncReleaseLibJars' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':benchmark:checkReleaseAarMetadata' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-a:generateDebugUnitTestLintModel' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-e:bundleLibRuntimeToJarDebug' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-f:parseReleaseLocalResources' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':app:generateDebugRFile' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':romtools:copyDebugJniLibsProjectOnly' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':romtools:processReleaseManifest' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':sandbox-ui:mergeReleaseConsumerProguardFiles' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':secure-comm:bundleLibRuntimeToJarDebug' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':colorblendr:bundleDebugAar' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-a:prepareReleaseArtProfile' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':app:compressReleaseAssets' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':benchmark:generateBenchmarkRFile' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':app:mergeDebugAssets' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':sandbox-ui:processReleaseManifest' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':feature-module:extractDeepLinksForAarDebug' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-a:writeDebugLintModelMetadata' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-b:checkReleaseAarMetadata' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-b:syncReleaseLibJars' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-e:generateDebugLintReportModel' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':sandbox-ui:bundleDebugAar' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':utilities:jar' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':feature-module:processReleaseManifest' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':colorblendr:checkReleaseAarMetadata' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':datavein-oracle-native:generateDebugUnitTestLintModel' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-d:generateDebugUnitTestStubRFile' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-e:generateDebugUnitTestStubRFile' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':app:desugarDebugFileDependencies' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':sandbox-ui:compileDebugLibraryResources' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':datavein-oracle-native:processReleaseNavigationResources' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':sandbox-ui:bundleLibRuntimeToJarRelease' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':datavein-oracle-native:bundleLibCompileToJarRelease' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':datavein-oracle-native:copyReleaseJniLibsProjectAndLocalJars' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':collab-canvas:bundleLibRuntimeToJarRelease' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':benchmark:kspBenchmarkKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-e:mergeReleaseConsumerProguardFiles' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':feature-module:createFullJarRelease' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':sandbox-ui:extractProguardFiles' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':secure-comm:extractReleaseAnnotations' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-a:javaPreCompileRelease' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-d:processReleaseManifest' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':list:compileKotlin' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':romtools:packageDebugResources' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':oracle-drive-integration:extractDeepLinksDebug' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':datavein-oracle-native:compileDebugKotlin' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':app:mapReleaseSourceSetPaths' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':colorblendr:extractReleaseAnnotations' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':oracle-drive-integration:writeReleaseLintModelMetadata' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':benchmark:bundleReleaseAar' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':module-c:bundleLibRuntimeToJarDebug' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':sandbox-ui:generateReleaseRFile' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':app:javaPreCompileRelease' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':sandbox-ui:syncReleaseLibJars' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-d:bundleDebugLocalLintAar' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':romtools:packageReleaseResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':sandbox-ui:generateReleaseResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':datavein-oracle-native:generateDebugLintModel' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':datavein-oracle-native:mapReleaseSourceSetPaths' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-e:extractReleaseAnnotations' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-f:packageDebugResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':core-module:compileKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':colorblendr:generateReleaseRFile' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':secure-comm:processReleaseManifest' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':core-module:compileTestJava' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-a:extractReleaseAnnotations' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-d:syncReleaseLibJars' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-f:generateDebugUnitTestStubRFile' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':compileKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':collab-canvas:compileDebugLibraryResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':datavein-oracle-native:checkReleaseAarMetadata' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':benchmark:processReleaseManifest' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-a:mergeReleaseAssets' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-d:parseReleaseLocalResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-e:processDebugManifest' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-e:checkReleaseAarMetadata' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-e:processReleaseManifest' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':utilities:compileJava' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':datavein-oracle-native:generateDebugRFile' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':benchmark:javaPreCompileBenchmark' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-b:generateReleaseResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-c:generateReleaseRFile' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-e:bundleLibCompileToJarDebug' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-f:bundleReleaseAar' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':romtools:extractDeepLinksDebug' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':colorblendr:generateReleaseResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':datavein-oracle-native:extractDeepLinksRelease' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':feature-module:writeReleaseLintModelMetadata' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':sandbox-ui:bundleDebugLocalLintAar' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-c:generateReleaseResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-c:generateDebugUnitTestStubRFile' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':app:generateDebugResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':colorblendr:processDebugNavigationResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':sandbox-ui:extractDeepLinksDebug' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':oracle-drive-integration:compileDebugLibraryResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':feature-module:compileDebugLibraryResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':app:processDebugManifest' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':collab-canvas:generateReleaseResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-d:extractProguardFiles' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-f:extractDebugAnnotations' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-f:generateDebugUnitTestLintModel' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':app:processDebugNavigationResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':sandbox-ui:mergeReleaseNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':collab-canvas:generateReleaseBuildConfig' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':sandbox-ui:parseReleaseLocalResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':app:extractProguardFiles' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':sandbox-ui:bundleLibRuntimeToJarDebug' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-c:kspReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-f:mapReleaseSourceSetPaths' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':secure-comm:processDebugNavigationResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':secure-comm:compileDebugLibraryResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':romtools:compileDebugLibraryResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':sandbox-ui:copyReleaseJniLibsProjectOnly' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':datavein-oracle-native:parseReleaseLocalResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':oracle-drive-integration:extractReleaseAnnotations' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':collab-canvas:bundleReleaseLocalLintAar' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':benchmark:extractBenchmarkAnnotations' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':romtools:extractReleaseAnnotations' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-b:generateDebugUnitTestStubRFile' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-c:packageReleaseResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-d:createFullJarDebug' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-f:generateReleaseResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-f:processReleaseManifest' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-f:extractReleaseAnnotations' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':processTestResources' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':core-module:processResources' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':app:checkDebugDuplicateClasses' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':oracle-drive-integration:generateReleaseResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':secure-comm:generateReleaseResources' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':colorblendr:generateReleaseBuildConfig' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':oracle-drive-integration:processReleaseManifest' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':secure-comm:mergeReleaseJavaResource' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':datavein-oracle-native:mergeReleaseJavaResource' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':collab-canvas:writeReleaseLintModelMetadata' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':secure-comm:writeReleaseLintModelMetadata' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':sandbox-ui:writeReleaseLintModelMetadata' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':benchmark:mergeBenchmarkAssets' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':collab-canvas:kspDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-a:generateReleaseAssets' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':module-d:javaPreCompileRelease' finished in 0.03 s
+Time metrics:
+  Total Gradle task time: 0.03 s
+
+Task ':list:processResources' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':oracle-drive-integration:javaPreCompileDebug' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':sandbox-ui:extractDeepLinksRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:createFullJarDebug' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:generateReleaseRFile' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-b:bundleLibRuntimeToJarDebug' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-d:generateReleaseRFile' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-f:mergeReleaseGeneratedProguardFiles' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':romtools:javaPreCompileDebug' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':romtools:generateDebugResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':sandbox-ui:mergeReleaseJniLibFolders' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':sandbox-ui:javaPreCompileRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':feature-module:writeReleaseAarMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':oracle-drive-integration:bundleLibRuntimeToJarRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':sandbox-ui:generateDebugResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:writeDebugAarMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:processReleaseManifestForPackage' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:packageDebugResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:generateReleaseResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':romtools:mergeReleaseJavaResource' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:mergeReleaseAssets' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-b:bundleReleaseAar' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:lintDebug' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:processDebugNavigationResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':feature-module:processDebugNavigationResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':feature-module:generateDebugRFile' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':secure-comm:mergeDebugJniLibFolders' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':secure-comm:mergeReleaseJniLibFolders' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:compileReleaseNavigationResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-c:mergeReleaseJniLibFolders' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-c:processReleaseManifest' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-f:mergeDebugAssets' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-f:kspReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:generateDebugBuildConfig' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:processDebugNavigationResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:generateDebugBuildConfig' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:mergeDebugNativeDebugMetadata' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':sandbox-ui:generateDebugRFile' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':romtools:mergeDebugJavaResource' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':secure-comm:extractDebugAnnotations' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':secure-comm:createFullJarRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:createFullJarDebug' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:mergeReleaseJniLibFolders' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:extractReleaseAnnotations' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-a:processDebugManifest' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-e:javaPreCompileRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-f:mergeReleaseConsumerProguardFiles' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':colorblendr:writeDebugAarMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:stripDebugDebugSymbols' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:generateReleaseRFile' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:generateReleaseBuildConfig' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:createFullJarRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:extractDeepLinksForAarRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':romtools:writeReleaseLintModelMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':colorblendr:bundleDebugLocalLintAar' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':oracle-drive-integration:mergeReleaseJavaResource' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:mergeReleaseJavaResource' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-b:extractReleaseAnnotations' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-f:copyDebugJniLibsProjectAndLocalJars' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:compressDebugAssets' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':feature-module:parseDebugLocalResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':feature-module:writeDebugAarMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:mergeReleaseNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':sandbox-ui:processReleaseNavigationResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:generateReleaseResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':romtools:writeReleaseAarMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':colorblendr:bundleLibCompileToJarRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':oracle-drive-integration:extractDeepLinksForAarRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:writeReleaseLintModelMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':romtools:checkDebugAarMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':colorblendr:extractDebugAnnotations' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:createFullJarRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:mergeDebugGeneratedProguardFiles' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:mapReleaseSourceSetPaths' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:syncReleaseLibJars' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-f:javaPreCompileRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-f:bundleDebugLocalLintAar' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:javaPreCompileDebug' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:generateDebugResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':colorblendr:generateDebugResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':colorblendr:javaPreCompileDebug' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:javaPreCompileDebug' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':secure-comm:parseDebugLocalResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:generateDebugRFile' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':oracle-drive-integration:generateDebugRFile' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':oracle-drive-integration:compileDebugJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':romtools:mergeReleaseNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:generateReleaseResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:writeReleaseAarMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':romtools:extractDeepLinksRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:extractProguardFiles' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':colorblendr:mergeReleaseConsumerProguardFiles' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':secure-comm:syncDebugLibJars' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':feature-module:writeDebugLintModelMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':oracle-drive-integration:bundleReleaseLocalLintAar' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:bundleDebugLocalLintAar' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:javaPreCompileDebugUnitTest' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-b:compileDebugUnitTestJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-c:packageDebugResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-c:bundleReleaseAar' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-c:mapReleaseSourceSetPaths' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-d:mergeReleaseJniLibFolders' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-e:syncReleaseLibJars' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:syncBenchmarkLibJars' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':oracle-drive-integration:kspDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':colorblendr:generateDebugBuildConfig' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':feature-module:generateDebugResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:generateDebugResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':secure-comm:generateDebugResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':oracle-drive-integration:parseDebugLocalResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:parseDebugLocalResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':colorblendr:parseDebugLocalResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':colorblendr:generateDebugRFile' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':oracle-drive-integration:extractDeepLinksRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':romtools:processDebugJavaRes' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':colorblendr:bundleLibRuntimeToJarRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':feature-module:mergeReleaseConsumerProguardFiles' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:writeReleaseSigningConfigVersions' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':oracle-drive-integration:bundleDebugLocalLintAar' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:exportReleaseConsumerProguardFiles' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':romtools:processReleaseJavaRes' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-b:mergeReleaseJniLibFolders' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-b:processReleaseNavigationResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-e:mapReleaseSourceSetPaths' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-e:bundleReleaseAar' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-f:mergeReleaseJniLibFolders' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-f:syncReleaseLibJars' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':processResources' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':sandbox-ui:parseDebugLocalResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:writeDebugAarMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':app:extractDeepLinksDebug' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':colorblendr:writeReleaseAarMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':sandbox-ui:writeReleaseAarMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':feature-module:extractProguardFiles' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':sandbox-ui:compileReleaseJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:mergeReleaseConsumerProguardFiles' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:writeDebugLintModelMetadata' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':oracle-drive-integration:syncReleaseLibJars' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':benchmark:generateBenchmarkBuildConfig' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':collab-canvas:javaPreCompileDebugUnitTest' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':datavein-oracle-native:bundleDebugAar' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-b:packageDebugResources' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-b:generateDebugRFile' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-b:mapReleaseSourceSetPaths' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-c:javaPreCompileRelease' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-c:mergeReleaseJavaResource' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-d:mergeReleaseJavaResource' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':module-e:mergeDebugConsumerProguardFiles' finished in 0.02 s
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':romtools:copyRomTools' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.02 s
+
+Task ':sandbox-ui:writeDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:mergeDebugJniLibFolders' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:mergeDebugJniLibFolders' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:mergeDebugJniLibFolders' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:prepareReleaseArtProfile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:extractDeepLinksRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:mergeReleaseStartupProfile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:extractProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:extractProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:checkDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:generateDebugBuildConfig' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:createFullJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:mergeDebugAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:generateReleaseResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:compileDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:writeDebugLintModelMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-c:createFullJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:syncDebugLibJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:bundleLibCompileToJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:bundleDebugAar' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:javaPreCompileDebugUnitTest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:compileDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:processDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:processDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:javaPreCompileDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:mergeReleaseNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:writeReleaseAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:processReleaseManifest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:checkDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:createFullJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:parseBenchmarkLocalResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:prepareReleaseArtProfile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:bundleLibCompileToJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':jvm-test:jar' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:kspReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:syncReleaseLibJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:bundleLibCompileToJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:writeReleaseAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-c:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-c:extractReleaseAnnotations' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:checkReleaseAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:copyReleaseJniLibsProjectAndLocalJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:writeDebugLintModelMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:mergeReleaseJavaResource' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':romtools:processDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':romtools:parseDebugLocalResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:writeDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:mergeDebugNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:processDebugManifestForPackage' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:bundleLibRuntimeToDirDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:copyReleaseJniLibsProjectOnly' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:generateReleaseResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:writeReleaseAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:bundleLibRuntimeToJarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:mergeReleaseAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':romtools:mergeReleaseAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:extractProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:extractDeepLinksForAarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:writeReleaseLintModelMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:prepareDebugArtProfile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:mergeDebugJavaResource' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:syncDebugLibJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:extractDebugAnnotations' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:mergeDebugJavaResource' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:extractDebugAnnotations' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:bundleLibCompileToJarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:mergeDebugGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:mergeReleaseGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:mergeDebugJniLibFolders' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:compileReleaseJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-c:compileDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:compileDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:packageDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:generateReleaseResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:mergeDebugNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:compileReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:compileDebugUnitTestJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:javaPreCompileDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:writeDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:extractDeepLinksDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:processDebugJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:compileDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:bundleLibCompileToJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:mergeReleaseJniLibFolders' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:writeReleaseAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:mergeReleaseAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:mergeReleaseAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:prepareLintJarForPublish' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':romtools:extractProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:extractDeepLinksForAarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:compileDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:javaPreCompileDebugUnitTest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:checkDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:packageDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:mergeReleaseJniLibFolders' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:writeReleaseAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-c:extractDebugAnnotations' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-c:parseReleaseLocalResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-c:syncReleaseLibJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:mapReleaseSourceSetPaths' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:bundleLibCompileToJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:mergeReleaseAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:createFullJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:checkDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:mergeDebugJniLibFolders' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:copyReleaseJniLibsProjectAndLocalJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':list:jar' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':romtools:writeDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:validateSigningDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:processReleaseNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:extractDeepLinksRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:extractDeepLinksRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:mergeReleaseAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:createFullJarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:createFullJarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:mergeDebugGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:stripDebugDebugSymbols' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:copyDebugJniLibsProjectAndLocalJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:syncDebugLibJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:createFullJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:generateBenchmarkResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:extractProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:generateReleaseBuildConfig' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:writeDebugLintModelMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:compileDebugUnitTestJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:javaPreCompileDebugUnitTest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:extractDeepLinksForAarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-c:processDebugJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-c:checkReleaseAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-c:extractProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:extractDebugAnnotations' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:mergeDebugAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:copyReleaseJniLibsProjectAndLocalJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:mergeReleaseNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:mergeReleaseAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:processReleaseJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:javaPreCompileDebugUnitTest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:extractDeepLinksDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:kspDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:processReleaseNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':romtools:generateReleaseResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:compileReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:mergeReleaseAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:mergeReleaseGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:mergeDebugJavaResource' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:checkDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:writeDebugLintModelMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:writeDebugLintModelMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:writeDebugLintModelMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:createFullJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:mergeDebugConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:writeBenchmarkAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:compileBenchmarkKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:compileReleaseLibraryResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:compileDebugUnitTestJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:compileReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:javaPreCompileDebugUnitTest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:mergeDebugJavaResource' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:processReleaseNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:mergeDebugJavaResource' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:extractDeepLinksForAarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:writeReleaseAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:compileReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:javaPreCompileDebugUnitTest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:bundleDebugAar' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:prepareReleaseArtProfile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:processReleaseNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:mergeReleaseAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:mergeReleaseGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:extractDeepLinksForAarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:extractDeepLinksForAarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:stripReleaseDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:mergeDebugConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:mergeDebugJavaResource' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:writeDebugLintModelMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':romtools:writeDebugLintModelMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:writeDebugLintModelMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:mergeReleaseGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:prepareLintJarForPublish' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:testDebugUnitTest' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:javaPreCompileDebugUnitTest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:bundleDebugAar' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':list:processTestResources' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:processDebugJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:testDebugUnitTest' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-c:bundleLibCompileToJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:packageDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:mergeReleaseAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:javaPreCompileDebugUnitTest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:parseDebugLocalResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:compileDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:extractDeepLinksForAarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:testDebugUnitTest' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:copyDebugJniLibsProjectOnly' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:copyDebugJniLibsProjectOnly' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:mergeDebugNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:bundleLibCompileToJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:prepareReleaseArtProfile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:prepareReleaseArtProfile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:processReleaseNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:processReleaseJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:exportReleaseConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':compileTestJava' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:exportReleaseConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:stripReleaseDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:prepareDebugArtProfile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:checkDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:extractDeepLinksForAarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:mergeDebugJavaResource' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:checkDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:createFullJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:extractDebugAnnotations' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:mergeDebugConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:processDebugManifest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:writeReleaseAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:mergeDebugNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:extractDebugAnnotations' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:mergeDebugJavaResource' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:processDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:mergeReleaseConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-c:mergeReleaseAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:extractDebugAnnotations' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:generateReleaseResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:writeReleaseAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:bundleLibRuntimeToJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:mergeReleaseConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:testDebugUnitTest' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:mergeDebugJniLibFolders' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':romtools:mergeDebugNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:processDebugJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:processReleaseNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:prepareLintJarForPublish' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:mergeReleaseGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:extractDeepLinksForAarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:mergeDebugConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':romtools:stripDebugDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:checkDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:mergeDebugGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:mergeDebugJavaResource' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:extractDeepLinksForAarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:stripDebugDebugSymbols' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:copyDebugJniLibsProjectAndLocalJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:createFullJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:createFullJarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:mergeReleaseConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:mergeReleaseConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:extractDeepLinksForAarBenchmark' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:processBenchmarkJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':secure-comm:compileReleaseLibraryResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:parseDebugLocalResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:compileDebugJavaWithJavac' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:copyReleaseJniLibsProjectAndLocalJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:mergeBenchmarkGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:mergeReleaseConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:kspDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:compileDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':core-module:compileTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:compileDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:syncDebugLibJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:mergeReleaseNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:compileDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:checkDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:javaPreCompileDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:javaPreCompileDebugUnitTest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':list:compileTestJava' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:checkDebugAarMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:generateDebugRFile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:kspDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:writeDebugLintModelMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:javaPreCompileDebugUnitTest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:syncDebugLibJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:bundleLibRuntimeToJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:writeDebugLintModelMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:createFullJarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:lintDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:javaPreCompileDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:mergeDebugAssets' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:compileDebugNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:processDebugJavaRes' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':app:writeDebugAppMetadata' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':feature-module:mergeReleaseNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:prepareReleaseArtProfile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:prepareReleaseArtProfile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':datavein-oracle-native:prepareLintJarForPublish' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:prepareLintJarForPublish' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:prepareLintJarForPublish' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':romtools:extractDeepLinksForAarRelease' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:copyDebugJniLibsProjectAndLocalJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:extractDeepLinksForAarDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':sandbox-ui:mergeDebugConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:mergeDebugJavaResource' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:mergeReleaseGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':collab-canvas:mergeReleaseConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:copyBenchmarkJniLibsProjectAndLocalJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:prepareBenchmarkArtProfile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:compileReleaseLibraryResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:generateDebugResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':benchmark:mergeBenchmarkConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':colorblendr:lintDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:mergeDebugGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:processReleaseNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:mergeReleaseGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-a:mergeReleaseConsumerProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:processDebugJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:compileReleaseJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:mergeReleaseGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-c:copyReleaseJniLibsProjectAndLocalJars' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:prepareReleaseArtProfile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:mergeReleaseGeneratedProguardFiles' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-d:kspDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:parseDebugLocalResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:compileDebugJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:processDebugJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-e:compileDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:generateDebugRFile' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:processDebugManifest' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:mergeDebugJavaResource' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-b:lintDebug' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:stripReleaseDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:processReleaseNavigationResources' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:compileDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':module-f:testDebugUnitTest' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:processDebugUnitTestJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':utilities:processResources' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':oracle-drive-integration:mergeDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:mergeDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:compileDebugLibraryResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:mergeDebugNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:mergeDebugNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:mergeDebugJniLibFolders' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:processDebugJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:processDebugJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:bundleLibRuntimeToDirDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:bundleLibRuntimeToDirDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:writeDebugSigningConfigVersions' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:mergeReleaseNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:prepareReleaseArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':romtools:processReleaseNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:processReleaseJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:processReleaseJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:stripReleaseDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:stripReleaseDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':romtools:copyDebugJniLibsProjectAndLocalJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:stripDebugDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:mergeDebugConsumerProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:copyDebugJniLibsProjectAndLocalJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:stripDebugDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:copyDebugJniLibsProjectAndLocalJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:extractDeepLinksForAarDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:prepareDebugArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:syncDebugLibJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:mergeReleaseGeneratedProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:checkDebugAarMetadata' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:generateDebugRFile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:processDebugJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:mergeDebugJavaResource' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:extractDeepLinksForAarRelease' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:compileReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:processReleaseJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:processDebugUnitTestJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:processTestResources' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:compileDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':jvm-test:test' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:compileDebugUnitTestJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:mergeDebugConsumerProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:prepareDebugArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:parseDebugLocalResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:prepareDebugArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:writeDebugAarMetadata' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:bundleDebugAar' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:extractDeepLinksForAarRelease' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:checkDebugAarMetadata' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:parseDebugLocalResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:generateDebugRFile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:compileDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:processDebugManifest' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:compileReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:mergeReleaseGeneratedProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:writeReleaseAarMetadata' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:javaPreCompileDebugUnitTest' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:generateDebugRFile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:processDebugManifest' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:processDebugUnitTestJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:copyDebugJniLibsProjectAndLocalJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:generateDebugResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:extractDeepLinksForAarDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:javaPreCompileDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:bundleDebugAar' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:processReleaseNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:mergeReleaseGeneratedProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:processDebugUnitTestJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:compileDebugJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:bundleDebugAar' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:writeReleaseAarMetadata' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:compileReleaseJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:javaPreCompileDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:mergeDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:mergeDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:mergeDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:mergeDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':romtools:mergeDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:compileDebugLibraryResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:processDebugJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:mergeDebugJniLibFolders' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:mergeDebugJniLibFolders' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':romtools:prepareReleaseArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:mergeDebugNativeLibs' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:kspReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:compileReleaseJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:processReleaseJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':romtools:prepareDebugArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:stripDebugDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:mergeDebugGeneratedProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:prepareDebugArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:extractDeepLinksForAarDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:mergeDebugGeneratedProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:extractDeepLinksForAarDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:prepareDebugArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:mergeDebugGeneratedProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:kspReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:compileReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:processReleaseJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:mergeBenchmarkNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:processBenchmarkNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:compileDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:syncDebugLibJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:compileDebugUnitTestJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:processDebugUnitTestJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:testDebugUnitTest' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:test' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:kspDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:generateDebugRFile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:compileDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:javaPreCompileDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:compileDebugJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:prepareLintJarForPublish' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:writeDebugAarMetadata' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:processReleaseJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:compileDebugUnitTestJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:processDebugUnitTestJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:mergeDebugJniLibFolders' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:generateDebugResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:mergeDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:syncDebugLibJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:compileReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:compileDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:stripDebugDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:copyDebugJniLibsProjectAndLocalJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:processDebugNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:mergeDebugJavaResource' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:extractDeepLinksForAarRelease' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:mergeReleaseConsumerProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:prepareReleaseArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:kspDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:compileDebugUnitTestJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:checkDebugAarMetadata' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:mergeDebugJavaResource' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:compileReleaseJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:lintDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:mergeDebugJniLibFolders' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:processDebugNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:compileDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:mergeDebugGeneratedProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:writeDebugAarMetadata' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:mergeReleaseNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:stripReleaseDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:kspReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:compileReleaseJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:testDebugUnitTest' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:processDebugNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:extractDeepLinksForAarDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:javaPreCompileDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:mergeDebugConsumerProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:prepareLintJarForPublish' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:compileDebugUnitTestJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':romtools:preBuild' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:preBuild' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':app:parseDebugLocalResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':romtools:mergeDebugJniLibFolders' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:copyDebugJniLibsProjectOnly' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:copyDebugJniLibsProjectOnly' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:mergeDebugNativeLibs' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:copyDebugJniLibsProjectOnly' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:copyDebugJniLibsProjectOnly' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:processReleaseJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:prepareLintJarForPublish' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:prepareLintJarForPublish' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:compileReleaseJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':romtools:stripReleaseDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:stripReleaseDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:copyDebugJniLibsProjectAndLocalJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:mergeDebugConsumerProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:prepareDebugArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:stripDebugDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:mergeDebugConsumerProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:copyDebugJniLibsProjectAndLocalJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:processDebugNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:extractDeepLinksForAarDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:mergeDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:prepareDebugArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:writeDebugAarMetadata' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:bundleDebugAar' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:processReleaseNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:kspReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:kspDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:processDebugUnitTestJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:testDebugUnitTest' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:lintDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':jvm-test:compileKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':jvm-test:compileTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':jvm-test:processTestResources' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:processDebugUnitTestJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:copyDebugJniLibsProjectAndLocalJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:processDebugNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:parseDebugLocalResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:kspDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:extractDeepLinksForAarDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:kspDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:copyDebugJniLibsProjectAndLocalJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:extractDeepLinksForAarDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:prepareLintJarForPublish' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:kspDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:compileDebugJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:kspDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:processDebugUnitTestJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:kspDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:mergeDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:javaPreCompileDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:compileDebugJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:mergeDebugConsumerProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:syncDebugLibJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:writeDebugAarMetadata' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:processReleaseNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:processDebugUnitTestJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:testDebugUnitTest' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:mergeDebugJniLibFolders' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:mergeDebugNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:copyDebugJniLibsProjectAndLocalJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:generateDebugResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:kspDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:compileDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:mergeDebugConsumerProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:processDebugJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:syncDebugLibJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:writeDebugAarMetadata' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:bundleDebugAar' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:mergeReleaseNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:stripReleaseDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:kspReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:processReleaseJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:compileDebugUnitTestJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:stripDebugDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:prepareDebugArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:prepareLintJarForPublish' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:processReleaseJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:kspDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:compileDebugUnitTestJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:kspDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:mergeDebugGeneratedProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:processDebugJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:lintDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:kspDebugUnitTestKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:processDebugUnitTestJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:lintDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:processDebugUnitTestJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:processDebugUnitTestJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:preDebugBuild' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:preBuild' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:preDebugBuild' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:parseDebugLocalResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:processDebugJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:mergeReleaseGeneratedProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:exportReleaseConsumerProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:generateReleaseAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':romtools:prepareLintJarForPublish' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:stripDebugDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:copyDebugJniLibsProjectAndLocalJars' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:prepareDebugArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':colorblendr:mergeDebugGeneratedProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:compileReleaseJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:stripBenchmarkDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:mergeDebugJniLibFolders' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:kspDebugKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:javaPreCompileDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:mergeReleaseNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:stripReleaseDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':benchmark:preDebugAndroidTestBuild' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':collab-canvas:test' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:testClasses' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':core-module:check' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':jvm-test:processResources' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':list:assemble' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:testDebugUnitTest' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:stripDebugDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-a:stripReleaseDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':datavein-oracle-native:assembleRelease' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:mergeDebugNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:stripDebugDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:mergeDebugGeneratedProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:mergeDebugConsumerProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:mergeReleaseNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:stripReleaseDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:kspReleaseKotlin' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:processReleaseJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:mergeDebugJniLibFolders' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:mergeDebugNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:extractDeepLinksForAarDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:mergeDebugGeneratedProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:prepareDebugArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:prepareLintJarForPublish' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:bundleDebugAar' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:mergeReleaseNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:stripReleaseDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:compileReleaseJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-c:processReleaseJavaRes' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:stripDebugDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:processDebugNavigationResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:parseDebugLocalResources' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:extractDeepLinksForAarDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:generateDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:mergeDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:javaPreCompileDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:compileDebugJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:mergeDebugGeneratedProguardFiles' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:prepareDebugArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:mergeDebugNativeLibs' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-e:generateDebugAssets' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:stripDebugDebugSymbols' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:prepareDebugArtProfile' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:writeDebugAarMetadata' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-b:lint' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-d:lintDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':module-f:compileDebugUnitTestJavaWithJavac' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:lintDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':oracle-drive-integration:lintDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':utilities:processTestResources' was skipped: NO-SOURCE
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:lintDebug' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':utilities:classes' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':feature-module:build' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:assembleRelease' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':sandbox-ui:assemble' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':secure-comm:preBuild' finished in 0.00 s
+
+Task ':sandbox-ui:preBuild' finished in 0.00 s
+
+Task ':datavein-oracle-native:preBuild' finished in 0.00 s
+
+Task ':collab-canvas:preDebugBuild' finished in 0.00 s
+
+Task ':romtools:preDebugBuild' finished in 0.00 s
+
+Task ':app:preBuild' finished in 0.00 s
+
+Task ':feature-module:preBuild' finished in 0.00 s
+
+Task ':core-module:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+
+Task ':list:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+
+Task ':feature-module:preDebugBuild' finished in 0.00 s
+
+Task ':datavein-oracle-native:preDebugBuild' finished in 0.00 s
+
+Task ':app:preDebugBuild' finished in 0.00 s
+
+Task ':colorblendr:preBuild' finished in 0.00 s
+
+Task ':colorblendr:preDebugBuild' finished in 0.00 s
+
+Task ':checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+
+Task ':oracle-drive-integration:preDebugBuild' finished in 0.00 s
+
+Task ':app:generateDebugAssets' finished in 0.00 s
+
+Task ':collab-canvas:generateDebugAssets' finished in 0.00 s
+
+Task ':colorblendr:generateDebugAssets' finished in 0.00 s
+
+Task ':datavein-oracle-native:generateDebugAssets' finished in 0.00 s
+
+Task ':feature-module:generateDebugAssets' finished in 0.00 s
+
+Task ':oracle-drive-integration:generateDebugAssets' finished in 0.00 s
+
+Task ':romtools:generateDebugAssets' finished in 0.00 s
+
+Task ':sandbox-ui:generateDebugAssets' finished in 0.00 s
+
+Task ':secure-comm:generateDebugAssets' finished in 0.00 s
+
+Task ':list:classes' finished in 0.00 s
+
+Task ':classes' finished in 0.00 s
+
+Task ':core-module:classes' finished in 0.00 s
+
+Task ':assemble' finished in 0.00 s
+
+Task ':app:preReleaseBuild' finished in 0.00 s
+
+Task ':collab-canvas:preReleaseBuild' finished in 0.00 s
+
+Task ':colorblendr:preReleaseBuild' finished in 0.00 s
+
+Task ':datavein-oracle-native:preReleaseBuild' finished in 0.00 s
+
+Task ':feature-module:preReleaseBuild' finished in 0.00 s
+
+Task ':oracle-drive-integration:preReleaseBuild' finished in 0.00 s
+
+Task ':romtools:preReleaseBuild' finished in 0.00 s
+
+Task ':sandbox-ui:preReleaseBuild' finished in 0.00 s
+
+Task ':secure-comm:preReleaseBuild' finished in 0.00 s
+
+Task ':app:generateReleaseAssets' finished in 0.00 s
+
+Task ':collab-canvas:generateReleaseAssets' finished in 0.00 s
+
+Task ':colorblendr:generateReleaseAssets' finished in 0.00 s
+
+Task ':datavein-oracle-native:generateReleaseAssets' finished in 0.00 s
+
+Task ':feature-module:generateReleaseAssets' finished in 0.00 s
+
+Task ':oracle-drive-integration:generateReleaseAssets' finished in 0.00 s
+
+Task ':romtools:generateReleaseAssets' finished in 0.00 s
+
+Task ':sandbox-ui:generateReleaseAssets' finished in 0.00 s
+
+Task ':testClasses' finished in 0.00 s
+
+Task ':app:preDebugAndroidTestBuild' was skipped: SKIPPED
+
+Task ':app:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':collab-canvas:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':collab-canvas:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':colorblendr:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':colorblendr:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':datavein-oracle-native:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':datavein-oracle-native:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':feature-module:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':feature-module:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':oracle-drive-integration:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':oracle-drive-integration:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':romtools:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':romtools:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':sandbox-ui:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':sandbox-ui:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':secure-comm:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':secure-comm:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':benchmark:preBuild' finished in 0.00 s
+
+Task ':benchmark:preBenchmarkBuild' finished in 0.00 s
+
+Task ':benchmark:generateBenchmarkAssets' finished in 0.00 s
+
+Task ':benchmark:preDebugBuild' finished in 0.00 s
+
+Task ':benchmark:mergeDebugNativeLibs' was skipped: NO-SOURCE
+
+Task ':benchmark:stripDebugDebugSymbols' was skipped: NO-SOURCE
+
+Task ':benchmark:generateDebugAssets' finished in 0.00 s
+
+Task ':benchmark:assembleDebug' finished in 0.00 s
+
+Task ':benchmark:preReleaseBuild' finished in 0.00 s
+
+Task ':benchmark:generateReleaseAssets' finished in 0.00 s
+
+Task ':benchmark:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':benchmark:test' finished in 0.00 s
+
+Task ':collab-canvas:assembleDebug' finished in 0.00 s
+
+Task ':colorblendr:assembleDebug' finished in 0.00 s
+
+Task ':benchmark:assembleRelease' finished in 0.00 s
+
+Task ':collab-canvas:assembleRelease' finished in 0.00 s
+
+Task ':collab-canvas:assemble' finished in 0.00 s
+
+Task ':core-module:assemble' finished in 0.00 s
+
+Task ':core-module:spotlessCheck' finished in 0.00 s
+
+Task ':core-module:build' finished in 0.00 s
+
+Task ':datavein-oracle-native:assembleDebug' finished in 0.00 s
+
+Task ':colorblendr:test' finished in 0.00 s
+
+Task ':colorblendr:lint' finished in 0.00 s
+
+Task ':colorblendr:check' finished in 0.00 s
+
+Task ':feature-module:assembleDebug' finished in 0.00 s
+
+Task ':feature-module:lint' finished in 0.00 s
+
+Task ':jvm-test:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+
+Task ':jvm-test:classes' finished in 0.00 s
+
+Task ':jvm-test:assemble' finished in 0.00 s
+
+Task ':jvm-test:testClasses' finished in 0.00 s
+
+Task ':jvm-test:check' finished in 0.00 s
+
+Task ':jvm-test:build' finished in 0.00 s
+
+Task ':list:spotlessCheck' finished in 0.00 s
+
+Task ':feature-module:test' finished in 0.00 s
+
+Task ':feature-module:check' finished in 0.00 s
+
+Task ':module-a:preBuild' finished in 0.00 s
+
+Task ':module-a:preDebugBuild' finished in 0.00 s
+
+Task ':module-a:generateDebugAssets' finished in 0.00 s
+
+Task ':module-a:assembleDebug' finished in 0.00 s
+
+Task ':module-a:preReleaseBuild' finished in 0.00 s
+
+Task ':module-a:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':module-a:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':datavein-oracle-native:assemble' finished in 0.00 s
+
+Task ':module-a:test' finished in 0.00 s
+
+Task ':module-b:preBuild' finished in 0.00 s
+
+Task ':module-b:preDebugBuild' finished in 0.00 s
+
+Task ':module-b:generateDebugAssets' finished in 0.00 s
+
+Task ':module-a:assembleRelease' finished in 0.00 s
+
+Task ':module-a:assemble' finished in 0.00 s
+
+Task ':module-b:preReleaseBuild' finished in 0.00 s
+
+Task ':module-b:assembleDebug' finished in 0.00 s
+
+Task ':module-b:generateReleaseAssets' finished in 0.00 s
+
+Task ':module-b:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':module-b:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':module-b:test' finished in 0.00 s
+
+Task ':module-c:preBuild' finished in 0.00 s
+
+Task ':module-c:preDebugBuild' finished in 0.00 s
+
+Task ':module-c:generateDebugAssets' finished in 0.00 s
+
+Task ':module-c:assembleDebug' finished in 0.00 s
+
+Task ':module-c:preReleaseBuild' finished in 0.00 s
+
+Task ':module-c:generateReleaseAssets' finished in 0.00 s
+
+Task ':module-c:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':module-c:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':colorblendr:assembleRelease' finished in 0.00 s
+
+Task ':colorblendr:assemble' finished in 0.00 s
+
+Task ':colorblendr:build' finished in 0.00 s
+
+Task ':module-c:test' finished in 0.00 s
+
+Task ':module-d:preBuild' finished in 0.00 s
+
+Task ':module-d:preDebugBuild' finished in 0.00 s
+
+Task ':module-d:prepareLintJarForPublish' finished in 0.00 s
+
+Task ':module-d:assembleDebug' finished in 0.00 s
+
+Task ':module-d:preReleaseBuild' finished in 0.00 s
+
+Task ':module-c:assembleRelease' finished in 0.00 s
+
+Task ':module-c:assemble' finished in 0.00 s
+
+Task ':module-d:generateReleaseAssets' finished in 0.00 s
+
+Task ':module-b:assembleRelease' finished in 0.00 s
+
+Task ':module-b:assemble' finished in 0.00 s
+
+Task ':module-d:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':module-d:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':list:testClasses' finished in 0.00 s
+
+Task ':module-a:lint' finished in 0.00 s
+
+Task ':module-a:check' finished in 0.00 s
+
+Task ':module-a:build' finished in 0.00 s
+
+Task ':module-d:test' finished in 0.00 s
+
+Task ':module-e:preBuild' finished in 0.00 s
+
+Task ':module-e:preDebugBuild' finished in 0.00 s
+
+Task ':module-e:assembleDebug' finished in 0.00 s
+
+Task ':module-e:preReleaseBuild' finished in 0.00 s
+
+Task ':module-e:generateReleaseAssets' finished in 0.00 s
+
+Task ':module-e:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':module-e:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':module-e:test' finished in 0.00 s
+
+Task ':module-f:preBuild' finished in 0.00 s
+
+Task ':module-f:preDebugBuild' finished in 0.00 s
+
+Task ':module-f:generateDebugAssets' finished in 0.00 s
+
+Task ':module-f:assembleDebug' finished in 0.00 s
+
+Task ':module-f:preReleaseBuild' finished in 0.00 s
+
+Task ':module-c:lint' finished in 0.00 s
+
+Task ':module-c:check' finished in 0.00 s
+
+Task ':module-c:build' finished in 0.00 s
+
+Task ':module-b:check' finished in 0.00 s
+
+Task ':module-b:build' finished in 0.00 s
+
+Task ':module-f:generateReleaseAssets' finished in 0.00 s
+
+Task ':benchmark:assembleBenchmark' finished in 0.00 s
+
+Task ':benchmark:assemble' finished in 0.00 s
+
+Task ':module-f:preDebugAndroidTestBuild' finished in 0.00 s
+
+Task ':module-f:preDebugUnitTestBuild' finished in 0.00 s
+
+Task ':module-d:lint' finished in 0.00 s
+
+Task ':module-d:check' finished in 0.00 s
+
+Task ':module-f:test' finished in 0.00 s
+
+Task ':oracle-drive-integration:assembleDebug' finished in 0.00 s
+
+Task ':module-d:assembleRelease' finished in 0.00 s
+
+Task ':module-d:assemble' finished in 0.00 s
+
+Task ':module-d:build' finished in 0.00 s
+
+Task ':module-e:lint' finished in 0.00 s
+
+Task ':module-e:check' finished in 0.00 s
+
+Task ':romtools:verifyRomTools' finished in 0.00 s
+
+Task ':sandbox-ui:assembleDebug' finished in 0.00 s
+
+Task ':screenshot-tests:assemble' finished in 0.00 s
+
+Task ':screenshot-tests:check' finished in 0.00 s
+
+Task ':screenshot-tests:build' finished in 0.00 s
+
+Task ':secure-comm:assembleDebug' finished in 0.00 s
+
+Task ':module-e:assembleRelease' finished in 0.00 s
+
+Task ':module-e:assemble' finished in 0.00 s
+
+Task ':module-e:build' finished in 0.00 s
+
+Task ':oracle-drive-integration:test' finished in 0.00 s
+
+Task ':secure-comm:lint' finished in 0.00 s
+
+Task ':utilities:checkKotlinGradlePluginConfigurationErrors' was skipped: SKIPPED
+
+Task ':oracle-drive-integration:lint' finished in 0.00 s
+
+Task ':oracle-drive-integration:check' finished in 0.00 s
+
+Task ':utilities:spotlessCheck' finished in 0.00 s
+
+Task ':sandbox-ui:lint' finished in 0.00 s
+
+Task ':module-f:assembleRelease' finished in 0.00 s
+
+Task ':module-f:assemble' finished in 0.00 s
+
+Task ':module-f:lint' finished in 0.00 s
+
+Task ':module-f:check' finished in 0.00 s
+
+Task ':module-f:build' finished in 0.00 s
+
+Task ':utilities:assemble' finished in 0.00 s
+
+Task ':oracle-drive-integration:assembleRelease' finished in 0.00 s
+
+Task ':oracle-drive-integration:assemble' finished in 0.00 s
+
+Task ':oracle-drive-integration:build' finished in 0.00 s
+
+Task ':collab-canvas:lint' finished in 0.00 s
+
+Task ':collab-canvas:check' finished in 0.00 s
+
+Task ':collab-canvas:build' finished in 0.00 s
+
+Task ':feature-module:assembleRelease' finished in 0.00 s
+
+Task ':feature-module:assemble' finished in 0.00 s
+
+Task ':secure-comm:assemble' finished in 0.00 s
+
+Task ':sandbox-ui:assembleRelease' finished in 0.00 s
+

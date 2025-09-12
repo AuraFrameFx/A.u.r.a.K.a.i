@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_icon_light_normal.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/notification_icon_background.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-core-1.17.0-46:/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_icon_disabled.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_icon_disabled.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_icon_dark_focused.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/ic_call_answer_video_low.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-core-1.17.0-46:/drawable/ic_call_answer_video_low.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_icon_light_focused.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/abc_vector_test.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-appcompat-resources-1.6.1-20:/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_text_light_normal.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/notification_bg.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-core-1.17.0-46:/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_text_light.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/ic_call_decline.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-core-1.17.0-46:/drawable/ic_call_decline.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_icon_light.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/notification_tile_bg.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-core-1.17.0-46:/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_icon_dark.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/ic_call_answer.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-core-1.17.0-46:/drawable/ic_call_answer.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/ic_call_answer_video.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-core-1.17.0-46:/drawable/ic_call_answer_video.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_text_disabled.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_text_dark_focused.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/notification_bg_low.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-core-1.17.0-46:/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_text_dark.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_icon_dark_normal.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_icon_dark_normal.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/ic_call_answer_low.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-core-1.17.0-46:/drawable/ic_call_answer_low.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_text_light_focused.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_text_light_focused.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/ic_call_decline_low.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-core-1.17.0-46:/drawable/ic_call_decline_low.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/drawable/common_google_signin_btn_text_dark_normal.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/drawable/common_google_signin_btn_text_dark_normal.xml"
+    }
+]

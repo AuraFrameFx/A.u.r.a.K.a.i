@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Code fences – language tags" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T14:43:09.759Z" hostname="AURAKAI" time="0.001">
+  <properties/>
+  <testcase name="language tags are plausible when provided()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$CodeFencesLanguageTags" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-2:/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-jetified-play-services-auth-20.7.0-11:/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-2:/drawable-watch-v20/common_google_signin_btn_text_disabled.xml",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-jetified-play-services-auth-20.7.0-11:/drawable-watch-v20/common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-2:/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-jetified-play-services-auth-20.7.0-11:/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-2:/drawable-watch-v20/abc_dialog_material_background.xml",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-appcompat-1.7.1-16:/drawable-watch-v20/abc_dialog_material_background.xml"
+    }
+]

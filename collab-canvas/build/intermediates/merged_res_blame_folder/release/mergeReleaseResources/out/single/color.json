@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/color/common_google_signin_btn_text_dark.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/color/vector_tint_color.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-ui-release-50:/color/vector_tint_color.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/color/vector_tint_theme_color.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-ui-release-50:/color/vector_tint_theme_color.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/color/common_google_signin_btn_text_light.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-release-2:/color/common_google_signin_btn_tint.xml",
+        "source": "dev.aurakai.auraframefx.collabcanvas.collab-canvas-jetified-play-services-base-18.5.0-48:/color/common_google_signin_btn_tint.xml"
+    }
+]

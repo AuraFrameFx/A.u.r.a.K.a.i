@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-2:/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-material-1.13.0-60:/layout-sw600dp-v13/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-2:/layout-sw600dp-v13/mtrl_layout_snackbar.xml",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-material-1.13.0-60:/layout-sw600dp-v13/mtrl_layout_snackbar.xml"
+    }
+]

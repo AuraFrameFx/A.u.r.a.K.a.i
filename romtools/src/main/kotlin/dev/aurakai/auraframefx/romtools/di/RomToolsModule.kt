@@ -2,12 +2,13 @@
 package dev.aurakai.auraframefx.romtools.di
 
 import android.content.Context
-import dagger.Binds
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.components.SingletonComponent
+// Hilt imports temporarily commented out
+// import dagger.Binds
+// import dagger.Module
+// import dagger.Provides
+// import dagger.hilt.InstallIn
+// import dagger.hilt.android.qualifiers.ApplicationContext
+// import dagger.hilt.components.SingletonComponent
 import dev.aurakai.auraframefx.romtools.BackupManager
 import dev.aurakai.auraframefx.romtools.BackupManagerImpl
 import dev.aurakai.auraframefx.romtools.FlashManager
@@ -23,48 +24,48 @@ import dev.aurakai.auraframefx.romtools.bootloader.BootloaderManagerImpl
 import javax.inject.Singleton
 
 /**
- * Hilt module providing dependencies for the ROM Tools system.
- * Integrates all ROM modification and management components.
+ * ROM Tools module - Hilt temporarily disabled.
+ * TODO: Re-enable when Hilt plugin configuration is resolved.
  */
-@Module
-@InstallIn(SingletonComponent::class)
-abstract class RomToolsModule {
+// @Module
+// @InstallIn(SingletonComponent::class)
+class RomToolsModule {
 
-    @Binds
-    @Singleton
-    abstract fun bindBootloaderManager(
+    // @Binds
+    // @Singleton
+    fun bindBootloaderManager(
         bootloaderManagerImpl: BootloaderManagerImpl
-    ): BootloaderManager
+    ): BootloaderManager = bootloaderManagerImpl
 
-    @Binds
-    @Singleton
-    abstract fun bindRecoveryManager(
+    // @Binds
+    // @Singleton
+    fun bindRecoveryManager(
         recoveryManagerImpl: RecoveryManagerImpl
-    ): RecoveryManager
+    ): RecoveryManager = recoveryManagerImpl
 
-    @Binds
-    @Singleton
-    abstract fun bindSystemModificationManager(
+    // @Binds
+    // @Singleton
+    fun bindSystemModificationManager(
         systemModificationManagerImpl: SystemModificationManagerImpl
-    ): SystemModificationManager
+    ): SystemModificationManager = systemModificationManagerImpl
 
-    @Binds
-    @Singleton
-    abstract fun bindFlashManager(
+    // @Binds
+    // @Singleton
+    fun bindFlashManager(
         flashManagerImpl: FlashManagerImpl
-    ): FlashManager
+    ): FlashManager = flashManagerImpl
 
-    @Binds
-    @Singleton
-    abstract fun bindRomVerificationManager(
+    // @Binds
+    // @Singleton
+    fun bindRomVerificationManager(
         romVerificationManagerImpl: RomVerificationManagerImpl
-    ): RomVerificationManager
+    ): RomVerificationManager = romVerificationManagerImpl
 
-    @Binds
-    @Singleton
-    abstract fun bindBackupManager(
+    // @Binds
+    // @Singleton
+    fun bindBackupManager(
         backupManagerImpl: BackupManagerImpl
-    ): BackupManager
+    ): BackupManager = backupManagerImpl
 
     companion object {
 

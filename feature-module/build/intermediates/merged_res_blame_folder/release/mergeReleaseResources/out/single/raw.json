@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-2:/raw/firebase_common_keep.xml",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-jetified-firebase-common-22.0.0-40:/raw/firebase_common_keep.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.featuremodule.feature-module-release-2:/raw/firebase_crashlytics_keep.xml",
+        "source": "dev.aurakai.auraframefx.featuremodule.feature-module-jetified-firebase-crashlytics-20.0.1-9:/raw/firebase_crashlytics_keep.xml"
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-release-2:/color/vector_tint_color.xml",
+        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-jetified-ui-release-35:/color/vector_tint_color.xml"
+    },
+    {
+        "merged": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-release-2:/color/vector_tint_theme_color.xml",
+        "source": "dev.aurakai.auraframefx.dataveinoraclenative.datavein-oracle-native-jetified-ui-release-35:/color/vector_tint_theme_color.xml"
+    }
+]

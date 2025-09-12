@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 9.0.0-alpha05" type="partial_results">
+    <map id="NotificationPermission">
+        <location id="class"
+            file="$GRADLE_USER_HOME/caches/9.1.0-rc-1/transforms/48aaebff67f36ca2005da556a6527537/workspace/transformed/jetified-firebase-messaging-25.0.0/jars/classes.jar"/>
+        <entry
+            name="className"
+            string="com/google/firebase/messaging/DisplayNotification"/>
+    </map>
+    <map id="UnusedResources">
+        <location id="R.string.oracle_drive_integration_debug_name"
+            file="${:oracle-drive-integration*debug*MAIN*sourceProvider*0*resDir*1}/values/strings.xml"
+            line="3"
+            column="13"
+            startOffset="63"
+            endLine="3"
+            endColumn="55"
+            endOffset="105"/>
+        <location id="R.string.oracle_drive_integration_main_name"
+            file="${:oracle-drive-integration*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="3"
+            column="13"
+            startOffset="63"
+            endLine="3"
+            endColumn="54"
+            endOffset="104"/>
+        <entry
+            name="model"
+            string="string[oracle_drive_integration_main_name(D),oracle_drive_integration_debug_name(D)];;;;"/>
+    </map>
+
+</incidents>

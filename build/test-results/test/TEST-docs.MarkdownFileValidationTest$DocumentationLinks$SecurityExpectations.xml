@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Security section expectations" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T14:43:10.457Z" hostname="AURAKAI" time="0.012">
+  <properties/>
+  <testcase name="mentions key security features()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$SecurityExpectations" time="0.012">
+    <failure message="org.opentest4j.AssertionFailedError: Security section should mention: [TLS 1.3, Root Detection, Certificate pinning] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Security section should mention: [TLS 1.3, Root Detection, Certificate pinning] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at docs.MarkdownFileValidationTest$DocumentationLinks$SecurityExpectations.mentions key security features(MarkdownFileValidationTest.kt:273)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

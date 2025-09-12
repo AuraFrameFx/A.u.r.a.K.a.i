@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Slug normalization – additional cases" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-09-12T14:43:09.976Z" hostname="AURAKAI" time="0.003">
+  <properties/>
+  <testcase name="underscores are removed, not converted to hyphens()" classname="docs.MarkdownFileValidationAdvancedTest$SlugNormalizationAdditionalCases" time="0.0"/>
+  <testcase name="slashes are removed, spaces become hyphens()" classname="docs.MarkdownFileValidationAdvancedTest$SlugNormalizationAdditionalCases" time="0.001"/>
+  <testcase name="non latin only results in empty slug()" classname="docs.MarkdownFileValidationAdvancedTest$SlugNormalizationAdditionalCases" time="0.001"/>
+  <testcase name="parentheses are stripped but content kept()" classname="docs.MarkdownFileValidationAdvancedTest$SlugNormalizationAdditionalCases" time="0.0"/>
+  <testcase name="trims leading and trailing hyphens after cleanup()" classname="docs.MarkdownFileValidationAdvancedTest$SlugNormalizationAdditionalCases" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

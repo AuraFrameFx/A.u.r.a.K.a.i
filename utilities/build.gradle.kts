@@ -42,6 +42,7 @@ dependencies {
     // Testing (JUnit 5)
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation(libs.mockk)
     // Bind a simple logger only during tests
     testRuntimeOnly(libs.slf4j.simple)

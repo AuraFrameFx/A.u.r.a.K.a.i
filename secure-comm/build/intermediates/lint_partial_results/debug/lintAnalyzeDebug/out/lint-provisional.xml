@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 9.0.0-alpha05" type="conditional_incidents">
+
+    <incident
+        id="InlinedApi"
+        severity="warning"
+        message="">
+        <fix-data minSdk="26-∞" requiresApi="31-∞"/>
+        <location
+            file="${:secure-comm*debug*MAIN*sourceProvider*0*javaDir*2}/dev/aurakai/auraframefx/securecomm/crypto/CryptoManager.kt"
+            line="53"
+            column="17"
+            startOffset="1803"
+            endLine="53"
+            endColumn="48"
+            endOffset="1834"/>
+        <map>
+            <entry
+                name="message"
+                string="Field requires API level 31 (current min is %1$s): `android.security.keystore.KeyProperties#PURPOSE_AGREE_KEY`"/>
+            <api-levels id="minSdk"
+                value="26-∞"/>
+            <entry
+                name="name"
+                string="PURPOSE_AGREE_KEY"/>
+            <entry
+                name="owner"
+                string="android.security.keystore.KeyProperties"/>
+            <api-levels id="requiresApi"
+                value="31-∞"/>
+        </map>
+    </incident>
+
+</incidents>
