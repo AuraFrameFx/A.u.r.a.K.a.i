@@ -11,62 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup">
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin-dsl/precompiled-script-plugins-metadata/accessors/5021cc0c36b38acd6fe581eea36240b3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/dirty-sources.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/libs/build-logic.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/libs/build-logic.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors12747435064648587820/.gradle/9.1.0-rc-1/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors12747435064648587820/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors12747435064648587820/.gradle/9.1.0-rc-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors12747435064648587820/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors12747435064648587820/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors12747435064648587820/.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors12747435064648587820/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14871526307831616270/.gradle/9.1.0-rc-1/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14871526307831616270/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14871526307831616270/.gradle/9.1.0-rc-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14871526307831616270/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14871526307831616270/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14871526307831616270/.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors14871526307831616270/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors17285426340610489151/.gradle/9.1.0-rc-1/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors17285426340610489151/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors17285426340610489151/.gradle/9.1.0-rc-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors17285426340610489151/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors17285426340610489151/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors17285426340610489151/.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors17285426340610489151/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8183303128316677283/.gradle/9.1.0-rc-1/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8183303128316677283/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8183303128316677283/.gradle/9.1.0-rc-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8183303128316677283/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8183303128316677283/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8183303128316677283/.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors8183303128316677283/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidLibraryConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidLibraryConventionPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/buildlogic.android-library-conventions.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/buildlogic.android-library-conventions.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-a/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-a/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-b/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-b/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-c/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-c/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-d/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-d/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-e/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-e/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-f/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-f/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -719,7 +669,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757700733624</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup">
+      <option name="closed" value="true" />
+      <created>1757702343302</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1757702343302</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
