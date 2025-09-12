@@ -13,12 +13,12 @@ plugins {
     // id("org.jetbrains.kotlin.android")
 }
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(24)
 }
 // Java toolchain configuration at the project level
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17)) // Correctly sets the toolchain for Java sources
+        languageVersion.set(JavaLanguageVersion.of(24)) // Correctly sets the toolchain for Java sources
     }
 }
 

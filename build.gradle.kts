@@ -98,7 +98,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 }
 kotlin {
-    jvmToolchain(8)
+    jvmToolchain(24)
 }
 
 // Configure JUnit 5 for tests
@@ -127,4 +127,5 @@ if (file("nuclear-clean.gradle.kts").exists()) {
 // Apply dependency fix if available  
 if (file("dependency-fix.gradle.kts").exists()) {
     apply(from = "dependency-fix.gradle.kts")
+
 }
