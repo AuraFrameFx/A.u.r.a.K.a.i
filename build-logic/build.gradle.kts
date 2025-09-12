@@ -13,9 +13,9 @@ dependencies {
     implementation("com.google.dagger:hilt-android-gradle-plugin:2.51.1")
     
     // Test dependencies
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.10.2")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.13.4")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.13.4")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.13.4")
     testImplementation("org.gradle:gradle-tooling-api:9.0.0")
     testImplementation(gradleTestKit())
 }
