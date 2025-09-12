@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest3453688795559259703.xml:2:13-83
-INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest3453688795559259703.xml:2:13-83
+ADDED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest10087922793013824601.xml:2:13-83
+INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest10087922793013824601.xml:2:13-83
 	package
-		INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest3453688795559259703.xml
+		INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest10087922793013824601.xml
 	xmlns:android
-		ADDED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest3453688795559259703.xml:2:23-81
+		ADDED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest10087922793013824601.xml:2:23-81
 uses-sdk
-INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest3453688795559259703.xml reason: use-sdk injection requested
-INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest3453688795559259703.xml
-INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest3453688795559259703.xml
+INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest10087922793013824601.xml reason: use-sdk injection requested
+INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest10087922793013824601.xml
+INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest10087922793013824601.xml
 	android:targetSdkVersion
-		INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest3453688795559259703.xml
+		INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest10087922793013824601.xml
 	android:minSdkVersion
-		INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest3453688795559259703.xml
+		INJECTED from C:\ReGenesis-A.O.S.P\benchmark\build\intermediates\tmp\ProcessLibraryManifest\benchmark\tempAndroidManifest10087922793013824601.xml

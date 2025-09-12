@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="License badge coherence" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:17:41.586Z" hostname="AURAKAI" time="0.002">
+<testsuite name="License badge coherence" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:27:49.137Z" hostname="AURAKAI" time="0.003">
   <properties/>
-  <testcase name="license section present when license badge is shown()" classname="docs.MarkdownFileValidationExtraTest$LicenseBadgeCoherence" time="0.002">
+  <testcase name="license section present when license badge is shown()" classname="docs.MarkdownFileValidationExtraTest$LicenseBadgeCoherence" time="0.003">
     <failure message="org.opentest4j.AssertionFailedError: License badge present but '## License' section not found ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: License badge present but '## License' section not found ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

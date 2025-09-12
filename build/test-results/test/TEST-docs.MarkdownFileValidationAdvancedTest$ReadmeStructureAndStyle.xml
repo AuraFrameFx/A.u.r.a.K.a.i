@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="README structure and style" tests="4" skipped="0" failures="3" errors="0" timestamp="2025-09-12T07:17:41.548Z" hostname="AURAKAI" time="0.014">
+<testsuite name="README structure and style" tests="4" skipped="0" failures="3" errors="0" timestamp="2025-09-12T07:27:49.093Z" hostname="AURAKAI" time="0.017">
   <properties/>
-  <testcase name="README has a License section when LICENSE file exists()" classname="docs.MarkdownFileValidationAdvancedTest$ReadmeStructureAndStyle" time="0.006">
+  <testcase name="README has a License section when LICENSE file exists()" classname="docs.MarkdownFileValidationAdvancedTest$ReadmeStructureAndStyle" time="0.007">
     <failure message="org.opentest4j.AssertionFailedError: Expected a '## License' section in README when LICENSE file exists ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected a '## License' section in README when LICENSE file exists ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

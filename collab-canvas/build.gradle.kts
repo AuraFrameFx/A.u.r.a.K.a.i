@@ -71,9 +71,9 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.tooling.preview)
 
-    // YukiHook API
-    implementation(libs.yukihook.api)
-    ksp(libs.yukihook.ksp)
+    // YukiHook API (temporarily disabled due to configuration issues)
+    // implementation(libs.yukihook.api)
+    // ksp(libs.yukihook.ksp)
     
     // Xposed API (using the correct path)
     compileOnly(files("../Libs/api-82.jar"))

@@ -1,6 +1,6 @@
 <dependencies>
   <compile
-      roots=":@@:core-module,androidx.appcompat:appcompat-resources:1.7.1@aar,androidx.appcompat:appcompat:1.7.1@aar,com.google.dagger:hilt-android:2.51.1@aar,androidx.fragment:fragment:1.5.4@aar,androidx.activity:activity:1.8.0@aar,androidx.loader:loader:1.0.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.core:core:1.13.1@aar,androidx.core:core:1.13.1@aar,androidx.compose.material3:material3-android:1.3.0@aar,androidx.compose.animation:animation-core-android:1.7.4@aar,androidx.compose.animation:animation-android:1.7.4@aar,androidx.compose.foundation:foundation-layout-android:1.7.4@aar,androidx.compose.material:material-ripple-android:1.7.4@aar,androidx.compose.foundation:foundation-android:1.7.4@aar,androidx.compose.material:material-icons-core-android:1.7.4@aar,androidx.compose.ui:ui-util-android:1.9.0@aar,androidx.compose.ui:ui-geometry-android:1.9.0@aar,androidx.compose.ui:ui-tooling-preview-android:1.9.0@aar,androidx.compose.ui:ui-unit-android:1.9.0@aar,androidx.compose.ui:ui-text-android:1.9.0@aar,androidx.compose.ui:ui-graphics-android:1.9.0@aar,androidx.compose.ui:ui-android:1.9.0@aar,androidx.lifecycle:lifecycle-runtime-compose-android:2.9.3@aar,androidx.lifecycle:lifecycle-livedata-core-ktx:2.9.3@aar,androidx.lifecycle:lifecycle-livedata:2.9.3@aar,androidx.lifecycle:lifecycle-runtime-android:2.9.3@aar,androidx.lifecycle:lifecycle-common-jvm:2.9.3@jar,androidx.lifecycle:lifecycle-viewmodel:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-android:2.9.3@aar,androidx.lifecycle:lifecycle-livedata-core:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-compose-android:2.9.3@aar,androidx.lifecycle:lifecycle-runtime-ktx-android:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.3@aar,androidx.core:core-ktx:1.13.1@aar,com.jakewharton.timber:timber:5.0.1@aar,androidx.compose.runtime:runtime-annotation-android:1.9.0@aar,androidx.compose.runtime:runtime-saveable-android:1.9.0@aar,androidx.savedstate:savedstate-android:1.3.1@aar,androidx.savedstate:savedstate-compose-android:1.3.1@aar,androidx.compose.runtime:runtime-android:1.9.0@aar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.1@jar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.2.20@jar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.arch.core:core-runtime:2.2.0@aar,androidx.arch.core:core-common:2.2.0@jar,androidx.collection:collection-jvm:1.4.0@jar,androidx.annotation:annotation-jvm:1.9.1@jar,org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.7.3@jar,androidx.annotation:annotation-experimental:1.4.1@aar,org.jetbrains.kotlin:kotlin-stdlib:2.2.20@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20@jar,:@@:list,com.google.dagger:hilt-core:2.51.1@jar,com.google.dagger:dagger:2.51.1@jar,com.google.dagger:dagger-lint-aar:2.51.1@aar,com.google.code.findbugs:jsr305:3.0.2@jar,javax.inject:javax.inject:1@jar,org.jetbrains:annotations:23.0.0@jar,org.jspecify:jspecify:1.0.0@jar">
+      roots=":@@:core-module,androidx.appcompat:appcompat-resources:1.7.1@aar,androidx.appcompat:appcompat:1.7.1@aar,com.google.dagger:hilt-android:2.57.1@aar,androidx.fragment:fragment:1.5.4@aar,androidx.fragment:fragment:1.5.4@aar,androidx.activity:activity:1.8.0@aar,androidx.activity:activity:1.8.0@aar,androidx.loader:loader:1.0.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.core:core:1.17.0@aar,androidx.core:core:1.17.0@aar,androidx.compose.material3:material3-android:1.3.2@aar,androidx.compose.ui:ui-util-android:1.9.1@aar,androidx.compose.ui:ui-unit-android:1.9.1@aar,androidx.compose.foundation:foundation-layout-android:1.9.1@aar,androidx.compose.material:material-ripple-android:1.9.1@aar,androidx.compose.foundation:foundation-android:1.9.1@aar,androidx.compose.animation:animation-core-android:1.9.1@aar,androidx.compose.animation:animation-android:1.9.1@aar,androidx.compose.ui:ui-geometry-android:1.9.1@aar,androidx.compose.ui:ui-text-android:1.9.1@aar,androidx.compose.ui:ui-tooling-preview-android:1.9.1@aar,androidx.compose.ui:ui-graphics-android:1.9.1@aar,androidx.compose.material:material-icons-core-android:1.7.8@aar,androidx.compose.ui:ui-android:1.9.1@aar,androidx.lifecycle:lifecycle-runtime-compose-android:2.9.3@aar,androidx.lifecycle:lifecycle-livedata-core-ktx:2.9.3@aar,androidx.lifecycle:lifecycle-livedata:2.9.3@aar,androidx.lifecycle:lifecycle-runtime-android:2.9.3@aar,androidx.lifecycle:lifecycle-common-jvm:2.9.3@jar,androidx.lifecycle:lifecycle-viewmodel:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-android:2.9.3@aar,androidx.lifecycle:lifecycle-livedata-core:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-compose-android:2.9.3@aar,androidx.lifecycle:lifecycle-runtime-ktx-android:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.3@aar,androidx.core:core-ktx:1.17.0@aar,com.jakewharton.timber:timber:5.0.1@aar,androidx.compose.runtime:runtime-annotation-android:1.9.1@aar,androidx.compose.runtime:runtime-saveable-android:1.9.1@aar,androidx.savedstate:savedstate:1.3.1@aar,androidx.savedstate:savedstate-android:1.3.1@aar,androidx.savedstate:savedstate-compose-android:1.3.1@aar,androidx.compose.runtime:runtime-android:1.9.1@aar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.1@jar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.2.20@jar,androidx.annotation:annotation-experimental:1.4.1@aar,androidx.annotation:annotation-experimental:1.4.1@aar,androidx.core:core-viewtree:1.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.arch.core:core-runtime:2.2.0@aar,androidx.arch.core:core-common:2.2.0@jar,androidx.collection:collection-jvm:1.5.0@jar,androidx.annotation:annotation-jvm:1.9.1@jar,org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.7.3@jar,org.jetbrains.kotlin:kotlin-stdlib:2.2.20@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20@jar,:@@:list,com.google.dagger:hilt-core:2.57.1@jar,com.google.dagger:dagger:2.57.1@jar,com.google.dagger:dagger-lint-aar:2.57.1@aar,com.google.code.findbugs:jsr305:3.0.2@jar,javax.inject:javax.inject:1@jar,com.google.guava:listenablefuture:1.0@jar,org.jspecify:jspecify:1.0.0@jar,jakarta.inject:jakarta.inject-api:2.0.1@jar,org.jetbrains:annotations:23.0.0@jar">
     <dependency
         name=":@@:core-module"
         simpleName=":"/>
@@ -11,7 +11,7 @@
         name="androidx.appcompat:appcompat:1.7.1@aar"
         simpleName="androidx.appcompat:appcompat"/>
     <dependency
-        name="com.google.dagger:hilt-android:2.51.1@aar"
+        name="com.google.dagger:hilt-android:2.57.1@aar"
         simpleName="com.google.dagger:hilt-android"/>
     <dependency
         name="androidx.fragment:fragment:1.5.4@aar"
@@ -38,49 +38,49 @@
         name="androidx.customview:customview:1.0.0@aar"
         simpleName="androidx.customview:customview"/>
     <dependency
-        name="androidx.core:core:1.13.1@aar"
+        name="androidx.core:core:1.17.0@aar"
         simpleName="androidx.core:core"/>
     <dependency
-        name="androidx.compose.material3:material3-android:1.3.0@aar"
+        name="androidx.compose.material3:material3-android:1.3.2@aar"
         simpleName="androidx.compose.material3:material3-android"/>
     <dependency
-        name="androidx.compose.animation:animation-core-android:1.7.4@aar"
-        simpleName="androidx.compose.animation:animation-core-android"/>
-    <dependency
-        name="androidx.compose.animation:animation-android:1.7.4@aar"
-        simpleName="androidx.compose.animation:animation-android"/>
-    <dependency
-        name="androidx.compose.foundation:foundation-layout-android:1.7.4@aar"
-        simpleName="androidx.compose.foundation:foundation-layout-android"/>
-    <dependency
-        name="androidx.compose.material:material-ripple-android:1.7.4@aar"
-        simpleName="androidx.compose.material:material-ripple-android"/>
-    <dependency
-        name="androidx.compose.foundation:foundation-android:1.7.4@aar"
-        simpleName="androidx.compose.foundation:foundation-android"/>
-    <dependency
-        name="androidx.compose.material:material-icons-core-android:1.7.4@aar"
-        simpleName="androidx.compose.material:material-icons-core-android"/>
-    <dependency
-        name="androidx.compose.ui:ui-util-android:1.9.0@aar"
+        name="androidx.compose.ui:ui-util-android:1.9.1@aar"
         simpleName="androidx.compose.ui:ui-util-android"/>
     <dependency
-        name="androidx.compose.ui:ui-geometry-android:1.9.0@aar"
-        simpleName="androidx.compose.ui:ui-geometry-android"/>
-    <dependency
-        name="androidx.compose.ui:ui-tooling-preview-android:1.9.0@aar"
-        simpleName="androidx.compose.ui:ui-tooling-preview-android"/>
-    <dependency
-        name="androidx.compose.ui:ui-unit-android:1.9.0@aar"
+        name="androidx.compose.ui:ui-unit-android:1.9.1@aar"
         simpleName="androidx.compose.ui:ui-unit-android"/>
     <dependency
-        name="androidx.compose.ui:ui-text-android:1.9.0@aar"
+        name="androidx.compose.foundation:foundation-layout-android:1.9.1@aar"
+        simpleName="androidx.compose.foundation:foundation-layout-android"/>
+    <dependency
+        name="androidx.compose.material:material-ripple-android:1.9.1@aar"
+        simpleName="androidx.compose.material:material-ripple-android"/>
+    <dependency
+        name="androidx.compose.foundation:foundation-android:1.9.1@aar"
+        simpleName="androidx.compose.foundation:foundation-android"/>
+    <dependency
+        name="androidx.compose.animation:animation-core-android:1.9.1@aar"
+        simpleName="androidx.compose.animation:animation-core-android"/>
+    <dependency
+        name="androidx.compose.animation:animation-android:1.9.1@aar"
+        simpleName="androidx.compose.animation:animation-android"/>
+    <dependency
+        name="androidx.compose.ui:ui-geometry-android:1.9.1@aar"
+        simpleName="androidx.compose.ui:ui-geometry-android"/>
+    <dependency
+        name="androidx.compose.ui:ui-text-android:1.9.1@aar"
         simpleName="androidx.compose.ui:ui-text-android"/>
     <dependency
-        name="androidx.compose.ui:ui-graphics-android:1.9.0@aar"
+        name="androidx.compose.ui:ui-tooling-preview-android:1.9.1@aar"
+        simpleName="androidx.compose.ui:ui-tooling-preview-android"/>
+    <dependency
+        name="androidx.compose.ui:ui-graphics-android:1.9.1@aar"
         simpleName="androidx.compose.ui:ui-graphics-android"/>
     <dependency
-        name="androidx.compose.ui:ui-android:1.9.0@aar"
+        name="androidx.compose.material:material-icons-core-android:1.7.8@aar"
+        simpleName="androidx.compose.material:material-icons-core-android"/>
+    <dependency
+        name="androidx.compose.ui:ui-android:1.9.1@aar"
         simpleName="androidx.compose.ui:ui-android"/>
     <dependency
         name="androidx.lifecycle:lifecycle-runtime-compose-android:2.9.3@aar"
@@ -116,20 +116,26 @@
         name="androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.3@aar"
         simpleName="androidx.lifecycle:lifecycle-viewmodel-ktx"/>
     <dependency
+        name="androidx.lifecycle:lifecycle-viewmodel-savedstate:2.9.3@aar"
+        simpleName="androidx.lifecycle:lifecycle-viewmodel-savedstate"/>
+    <dependency
         name="androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.3@aar"
         simpleName="androidx.lifecycle:lifecycle-viewmodel-savedstate-android"/>
     <dependency
-        name="androidx.core:core-ktx:1.13.1@aar"
+        name="androidx.core:core-ktx:1.17.0@aar"
         simpleName="androidx.core:core-ktx"/>
     <dependency
         name="com.jakewharton.timber:timber:5.0.1@aar"
         simpleName="com.jakewharton.timber:timber"/>
     <dependency
-        name="androidx.compose.runtime:runtime-annotation-android:1.9.0@aar"
+        name="androidx.compose.runtime:runtime-annotation-android:1.9.1@aar"
         simpleName="androidx.compose.runtime:runtime-annotation-android"/>
     <dependency
-        name="androidx.compose.runtime:runtime-saveable-android:1.9.0@aar"
+        name="androidx.compose.runtime:runtime-saveable-android:1.9.1@aar"
         simpleName="androidx.compose.runtime:runtime-saveable-android"/>
+    <dependency
+        name="androidx.savedstate:savedstate:1.3.1@aar"
+        simpleName="androidx.savedstate:savedstate"/>
     <dependency
         name="androidx.savedstate:savedstate-android:1.3.1@aar"
         simpleName="androidx.savedstate:savedstate-android"/>
@@ -137,7 +143,7 @@
         name="androidx.savedstate:savedstate-compose-android:1.3.1@aar"
         simpleName="androidx.savedstate:savedstate-compose-android"/>
     <dependency
-        name="androidx.compose.runtime:runtime-android:1.9.0@aar"
+        name="androidx.compose.runtime:runtime-android:1.9.1@aar"
         simpleName="androidx.compose.runtime:runtime-android"/>
     <dependency
         name="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.1@jar"
@@ -148,6 +154,12 @@
     <dependency
         name="org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.2.20@jar"
         simpleName="org.jetbrains.kotlin:kotlin-stdlib-jdk7"/>
+    <dependency
+        name="androidx.annotation:annotation-experimental:1.4.1@aar"
+        simpleName="androidx.annotation:annotation-experimental"/>
+    <dependency
+        name="androidx.core:core-viewtree:1.0.0@aar"
+        simpleName="androidx.core:core-viewtree"/>
     <dependency
         name="androidx.cursoradapter:cursoradapter:1.0.0@aar"
         simpleName="androidx.cursoradapter:cursoradapter"/>
@@ -164,7 +176,7 @@
         name="androidx.arch.core:core-common:2.2.0@jar"
         simpleName="androidx.arch.core:core-common"/>
     <dependency
-        name="androidx.collection:collection-jvm:1.4.0@jar"
+        name="androidx.collection:collection-jvm:1.5.0@jar"
         simpleName="androidx.collection:collection-jvm"/>
     <dependency
         name="androidx.annotation:annotation-jvm:1.9.1@jar"
@@ -172,9 +184,6 @@
     <dependency
         name="org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.7.3@jar"
         simpleName="org.jetbrains.kotlinx:kotlinx-serialization-core-jvm"/>
-    <dependency
-        name="androidx.annotation:annotation-experimental:1.4.1@aar"
-        simpleName="androidx.annotation:annotation-experimental"/>
     <dependency
         name="org.jetbrains.kotlin:kotlin-stdlib:2.2.20@jar"
         simpleName="org.jetbrains.kotlin:kotlin-stdlib"/>
@@ -185,13 +194,13 @@
         name=":@@:list"
         simpleName=":"/>
     <dependency
-        name="com.google.dagger:hilt-core:2.51.1@jar"
+        name="com.google.dagger:hilt-core:2.57.1@jar"
         simpleName="com.google.dagger:hilt-core"/>
     <dependency
-        name="com.google.dagger:dagger:2.51.1@jar"
+        name="com.google.dagger:dagger:2.57.1@jar"
         simpleName="com.google.dagger:dagger"/>
     <dependency
-        name="com.google.dagger:dagger-lint-aar:2.51.1@aar"
+        name="com.google.dagger:dagger-lint-aar:2.57.1@aar"
         simpleName="com.google.dagger:dagger-lint-aar"/>
     <dependency
         name="com.google.code.findbugs:jsr305:3.0.2@jar"
@@ -200,14 +209,20 @@
         name="javax.inject:javax.inject:1@jar"
         simpleName="javax.inject:javax.inject"/>
     <dependency
-        name="org.jetbrains:annotations:23.0.0@jar"
-        simpleName="org.jetbrains:annotations"/>
+        name="com.google.guava:listenablefuture:1.0@jar"
+        simpleName="com.google.guava:listenablefuture"/>
     <dependency
         name="org.jspecify:jspecify:1.0.0@jar"
         simpleName="org.jspecify:jspecify"/>
+    <dependency
+        name="jakarta.inject:jakarta.inject-api:2.0.1@jar"
+        simpleName="jakarta.inject:jakarta.inject-api"/>
+    <dependency
+        name="org.jetbrains:annotations:23.0.0@jar"
+        simpleName="org.jetbrains:annotations"/>
   </compile>
   <package
-      roots=":@@:core-module,androidx.appcompat:appcompat-resources:1.7.1@aar,androidx.appcompat:appcompat:1.7.1@aar,com.google.dagger:hilt-android:2.51.1@aar,androidx.fragment:fragment:1.5.4@aar,androidx.loader:loader:1.0.0@aar,androidx.compose.material3:material3-android:1.3.0@aar,androidx.activity:activity-ktx:1.8.2@aar,androidx.activity:activity:1.8.2@aar,androidx.activity:activity-compose:1.8.2@aar,androidx.compose.material:material-ripple-android:1.7.4@aar,androidx.compose.foundation:foundation-android:1.7.4@aar,androidx.compose.animation:animation-android:1.7.4@aar,androidx.compose.foundation:foundation-layout-android:1.7.4@aar,androidx.compose.animation:animation-core-android:1.7.4@aar,androidx.compose.material:material-icons-core-android:1.7.4@aar,androidx.compose.ui:ui-geometry-android:1.9.0@aar,androidx.compose.ui:ui-tooling-preview-android:1.9.0@aar,androidx.compose.ui:ui-util-android:1.9.0@aar,androidx.compose.ui:ui-unit-android:1.9.0@aar,androidx.compose.ui:ui-text-android:1.9.0@aar,androidx.compose.ui:ui-graphics-android:1.9.0@aar,androidx.compose.ui:ui-android:1.9.0@aar,androidx.compose.runtime:runtime-annotation-android:1.9.0@aar,androidx.savedstate:savedstate-ktx:1.3.1@aar,androidx.savedstate:savedstate-android:1.3.1@aar,androidx.savedstate:savedstate-compose-android:1.3.1@aar,androidx.compose.runtime:runtime-android:1.9.0@aar,androidx.compose.runtime:runtime-saveable-android:1.9.0@aar,androidx.emoji2:emoji2-views-helper:1.4.0@aar,androidx.emoji2:emoji2:1.4.0@aar,androidx.lifecycle:lifecycle-process:2.9.3@aar,androidx.lifecycle:lifecycle-runtime-compose-android:2.9.3@aar,androidx.lifecycle:lifecycle-livedata-core-ktx:2.9.3@aar,androidx.lifecycle:lifecycle-common-java8:2.9.3@jar,androidx.lifecycle:lifecycle-livedata:2.9.3@aar,androidx.lifecycle:lifecycle-common-jvm:2.9.3@jar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.autofill:autofill:1.0.0@aar,androidx.graphics:graphics-path:1.0.1@aar,androidx.core:core:1.15.0@aar,androidx.core:core:1.15.0@aar,androidx.lifecycle:lifecycle-runtime-android:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-android:2.9.3@aar,androidx.lifecycle:lifecycle-livedata-core:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-compose-android:2.9.3@aar,androidx.lifecycle:lifecycle-runtime-ktx-android:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.3@aar,androidx.customview:customview-poolingcontainer:1.0.0@aar,androidx.core:core-ktx:1.15.0@aar,com.jakewharton.timber:timber:5.0.1@aar,:@@:list,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.1@jar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.2.20@jar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.resourceinspection:resourceinspection-annotation:1.0.1@jar,androidx.interpolator:interpolator:1.0.0@aar,androidx.profileinstaller:profileinstaller:1.4.0@aar,androidx.startup:startup-runtime:1.1.1@aar,androidx.arch.core:core-runtime:2.2.0@aar,androidx.arch.core:core-common:2.2.0@jar,androidx.concurrent:concurrent-futures:1.1.0@jar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection-ktx:1.5.0@jar,androidx.collection:collection-jvm:1.5.0@jar,androidx.tracing:tracing:1.2.0@aar,androidx.annotation:annotation-jvm:1.9.1@jar,androidx.core:core-viewtree:1.0.0@aar,org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.7.3@jar,org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.7.3@jar,androidx.annotation:annotation-experimental:1.4.1@aar,org.jetbrains.kotlin:kotlin-stdlib:2.2.20@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20@jar,org.apache.commons:commons-compress:1.28.0@jar,commons-io:commons-io:2.20.0@jar,org.tukaani:xz:1.10@jar,org.slf4j:slf4j-api:2.0.16@jar,com.google.dagger:hilt-core:2.51.1@jar,com.google.dagger:dagger:2.51.1@jar,com.google.dagger:dagger-lint-aar:2.51.1@aar,com.google.code.findbugs:jsr305:3.0.2@jar,javax.inject:javax.inject:1@jar,org.jetbrains:annotations:23.0.0@jar,commons-codec:commons-codec:1.19.0@jar,org.apache.commons:commons-lang3:3.18.0@jar,com.google.guava:listenablefuture:1.0@jar,org.jspecify:jspecify:1.0.0@jar">
+      roots=":@@:core-module,androidx.appcompat:appcompat-resources:1.7.1@aar,androidx.appcompat:appcompat:1.7.1@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,com.google.dagger:hilt-android:2.57.1@aar,androidx.fragment:fragment:1.5.4@aar,androidx.fragment:fragment:1.5.4@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.compose.material3:material3-android:1.3.2@aar,androidx.activity:activity:1.8.2@aar,androidx.activity:activity:1.8.2@aar,androidx.activity:activity-ktx:1.8.2@aar,androidx.activity:activity-compose:1.8.2@aar,androidx.compose.material:material-ripple-android:1.9.1@aar,androidx.compose.foundation:foundation-android:1.9.1@aar,androidx.compose.animation:animation-android:1.9.1@aar,androidx.compose.foundation:foundation-layout-android:1.9.1@aar,androidx.compose.animation:animation-core-android:1.9.1@aar,androidx.compose.ui:ui-unit-android:1.9.1@aar,androidx.compose.ui:ui-geometry-android:1.9.1@aar,androidx.compose.ui:ui-util-android:1.9.1@aar,androidx.compose.ui:ui-tooling-preview-android:1.9.1@aar,androidx.compose.ui:ui-graphics-android:1.9.1@aar,androidx.compose.ui:ui-text-android:1.9.1@aar,androidx.compose.runtime:runtime-annotation-android:1.9.1@aar,androidx.savedstate:savedstate-ktx:1.3.1@aar,androidx.savedstate:savedstate:1.3.1@aar,androidx.savedstate:savedstate-android:1.3.1@aar,androidx.savedstate:savedstate-compose-android:1.3.1@aar,androidx.compose.runtime:runtime-android:1.9.1@aar,androidx.compose.runtime:runtime-saveable-android:1.9.1@aar,androidx.emoji2:emoji2-views-helper:1.4.0@aar,androidx.emoji2:emoji2:1.4.0@aar,androidx.lifecycle:lifecycle-process:2.9.3@aar,androidx.lifecycle:lifecycle-runtime-compose-android:2.9.3@aar,androidx.lifecycle:lifecycle-livedata-core-ktx:2.9.3@aar,androidx.lifecycle:lifecycle-common-java8:2.9.3@jar,androidx.lifecycle:lifecycle-livedata:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.3@aar,androidx.lifecycle:lifecycle-common-jvm:2.9.3@jar,androidx.lifecycle:lifecycle-runtime-android:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-android:2.9.3@aar,androidx.lifecycle:lifecycle-livedata-core:2.9.3@aar,androidx.lifecycle:lifecycle-runtime-ktx-android:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.3@aar,androidx.lifecycle:lifecycle-viewmodel-compose-android:2.9.3@aar,androidx.compose.material:material-icons-core-android:1.7.8@aar,androidx.compose.ui:ui-android:1.9.1@aar,androidx.autofill:autofill:1.0.0@aar,androidx.graphics:graphics-path:1.0.1@aar,androidx.core:core:1.17.0@aar,androidx.core:core:1.17.0@aar,androidx.customview:customview-poolingcontainer:1.0.0@aar,androidx.core:core-ktx:1.17.0@aar,com.jakewharton.timber:timber:5.0.1@aar,:@@:list,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2@jar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.2.20@jar,org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.9.0@jar,org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.9.0@jar,androidx.annotation:annotation-experimental:1.4.1@aar,androidx.annotation:annotation-experimental:1.4.1@aar,androidx.core:core-viewtree:1.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.resourceinspection:resourceinspection-annotation:1.0.1@jar,androidx.interpolator:interpolator:1.0.0@aar,androidx.profileinstaller:profileinstaller:1.4.0@aar,androidx.startup:startup-runtime:1.1.1@aar,androidx.tracing:tracing:1.2.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.arch.core:core-runtime:2.2.0@aar,androidx.arch.core:core-common:2.2.0@jar,androidx.collection:collection-ktx:1.5.0@jar,androidx.collection:collection-jvm:1.5.0@jar,androidx.concurrent:concurrent-futures:1.1.0@jar,androidx.annotation:annotation-jvm:1.9.1@jar,org.jetbrains.kotlin:kotlin-stdlib:2.2.20@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20@jar,org.apache.commons:commons-compress:1.28.0@jar,commons-io:commons-io:2.20.0@jar,org.tukaani:xz:1.10@jar,org.slf4j:slf4j-api:2.0.17@jar,com.google.dagger:hilt-core:2.57.1@jar,com.google.dagger:dagger:2.57.1@jar,com.google.dagger:dagger-lint-aar:2.57.1@aar,com.google.code.findbugs:jsr305:3.0.2@jar,javax.inject:javax.inject:1@jar,org.jetbrains:annotations:23.0.0@jar,commons-codec:commons-codec:1.19.0@jar,org.apache.commons:commons-lang3:3.18.0@jar,com.google.guava:listenablefuture:1.0@jar,org.jspecify:jspecify:1.0.0@jar,jakarta.inject:jakarta.inject-api:2.0.1@jar">
     <dependency
         name=":@@:core-module"
         simpleName=":"/>
@@ -218,71 +233,83 @@
         name="androidx.appcompat:appcompat:1.7.1@aar"
         simpleName="androidx.appcompat:appcompat"/>
     <dependency
-        name="com.google.dagger:hilt-android:2.51.1@aar"
+        name="androidx.drawerlayout:drawerlayout:1.0.0@aar"
+        simpleName="androidx.drawerlayout:drawerlayout"/>
+    <dependency
+        name="androidx.vectordrawable:vectordrawable-animated:1.1.0@aar"
+        simpleName="androidx.vectordrawable:vectordrawable-animated"/>
+    <dependency
+        name="androidx.vectordrawable:vectordrawable:1.1.0@aar"
+        simpleName="androidx.vectordrawable:vectordrawable"/>
+    <dependency
+        name="com.google.dagger:hilt-android:2.57.1@aar"
         simpleName="com.google.dagger:hilt-android"/>
     <dependency
         name="androidx.fragment:fragment:1.5.4@aar"
         simpleName="androidx.fragment:fragment"/>
     <dependency
+        name="androidx.viewpager:viewpager:1.0.0@aar"
+        simpleName="androidx.viewpager:viewpager"/>
+    <dependency
+        name="androidx.customview:customview:1.0.0@aar"
+        simpleName="androidx.customview:customview"/>
+    <dependency
         name="androidx.loader:loader:1.0.0@aar"
         simpleName="androidx.loader:loader"/>
     <dependency
-        name="androidx.compose.material3:material3-android:1.3.0@aar"
+        name="androidx.compose.material3:material3-android:1.3.2@aar"
         simpleName="androidx.compose.material3:material3-android"/>
-    <dependency
-        name="androidx.activity:activity-ktx:1.8.2@aar"
-        simpleName="androidx.activity:activity-ktx"/>
     <dependency
         name="androidx.activity:activity:1.8.2@aar"
         simpleName="androidx.activity:activity"/>
     <dependency
+        name="androidx.activity:activity-ktx:1.8.2@aar"
+        simpleName="androidx.activity:activity-ktx"/>
+    <dependency
         name="androidx.activity:activity-compose:1.8.2@aar"
         simpleName="androidx.activity:activity-compose"/>
     <dependency
-        name="androidx.compose.material:material-ripple-android:1.7.4@aar"
+        name="androidx.compose.material:material-ripple-android:1.9.1@aar"
         simpleName="androidx.compose.material:material-ripple-android"/>
     <dependency
-        name="androidx.compose.foundation:foundation-android:1.7.4@aar"
+        name="androidx.compose.foundation:foundation-android:1.9.1@aar"
         simpleName="androidx.compose.foundation:foundation-android"/>
     <dependency
-        name="androidx.compose.animation:animation-android:1.7.4@aar"
+        name="androidx.compose.animation:animation-android:1.9.1@aar"
         simpleName="androidx.compose.animation:animation-android"/>
     <dependency
-        name="androidx.compose.foundation:foundation-layout-android:1.7.4@aar"
+        name="androidx.compose.foundation:foundation-layout-android:1.9.1@aar"
         simpleName="androidx.compose.foundation:foundation-layout-android"/>
     <dependency
-        name="androidx.compose.animation:animation-core-android:1.7.4@aar"
+        name="androidx.compose.animation:animation-core-android:1.9.1@aar"
         simpleName="androidx.compose.animation:animation-core-android"/>
     <dependency
-        name="androidx.compose.material:material-icons-core-android:1.7.4@aar"
-        simpleName="androidx.compose.material:material-icons-core-android"/>
-    <dependency
-        name="androidx.compose.ui:ui-geometry-android:1.9.0@aar"
-        simpleName="androidx.compose.ui:ui-geometry-android"/>
-    <dependency
-        name="androidx.compose.ui:ui-tooling-preview-android:1.9.0@aar"
-        simpleName="androidx.compose.ui:ui-tooling-preview-android"/>
-    <dependency
-        name="androidx.compose.ui:ui-util-android:1.9.0@aar"
-        simpleName="androidx.compose.ui:ui-util-android"/>
-    <dependency
-        name="androidx.compose.ui:ui-unit-android:1.9.0@aar"
+        name="androidx.compose.ui:ui-unit-android:1.9.1@aar"
         simpleName="androidx.compose.ui:ui-unit-android"/>
     <dependency
-        name="androidx.compose.ui:ui-text-android:1.9.0@aar"
-        simpleName="androidx.compose.ui:ui-text-android"/>
+        name="androidx.compose.ui:ui-geometry-android:1.9.1@aar"
+        simpleName="androidx.compose.ui:ui-geometry-android"/>
     <dependency
-        name="androidx.compose.ui:ui-graphics-android:1.9.0@aar"
+        name="androidx.compose.ui:ui-util-android:1.9.1@aar"
+        simpleName="androidx.compose.ui:ui-util-android"/>
+    <dependency
+        name="androidx.compose.ui:ui-tooling-preview-android:1.9.1@aar"
+        simpleName="androidx.compose.ui:ui-tooling-preview-android"/>
+    <dependency
+        name="androidx.compose.ui:ui-graphics-android:1.9.1@aar"
         simpleName="androidx.compose.ui:ui-graphics-android"/>
     <dependency
-        name="androidx.compose.ui:ui-android:1.9.0@aar"
-        simpleName="androidx.compose.ui:ui-android"/>
+        name="androidx.compose.ui:ui-text-android:1.9.1@aar"
+        simpleName="androidx.compose.ui:ui-text-android"/>
     <dependency
-        name="androidx.compose.runtime:runtime-annotation-android:1.9.0@aar"
+        name="androidx.compose.runtime:runtime-annotation-android:1.9.1@aar"
         simpleName="androidx.compose.runtime:runtime-annotation-android"/>
     <dependency
         name="androidx.savedstate:savedstate-ktx:1.3.1@aar"
         simpleName="androidx.savedstate:savedstate-ktx"/>
+    <dependency
+        name="androidx.savedstate:savedstate:1.3.1@aar"
+        simpleName="androidx.savedstate:savedstate"/>
     <dependency
         name="androidx.savedstate:savedstate-android:1.3.1@aar"
         simpleName="androidx.savedstate:savedstate-android"/>
@@ -290,10 +317,10 @@
         name="androidx.savedstate:savedstate-compose-android:1.3.1@aar"
         simpleName="androidx.savedstate:savedstate-compose-android"/>
     <dependency
-        name="androidx.compose.runtime:runtime-android:1.9.0@aar"
+        name="androidx.compose.runtime:runtime-android:1.9.1@aar"
         simpleName="androidx.compose.runtime:runtime-android"/>
     <dependency
-        name="androidx.compose.runtime:runtime-saveable-android:1.9.0@aar"
+        name="androidx.compose.runtime:runtime-saveable-android:1.9.1@aar"
         simpleName="androidx.compose.runtime:runtime-saveable-android"/>
     <dependency
         name="androidx.emoji2:emoji2-views-helper:1.4.0@aar"
@@ -317,32 +344,14 @@
         name="androidx.lifecycle:lifecycle-livedata:2.9.3@aar"
         simpleName="androidx.lifecycle:lifecycle-livedata"/>
     <dependency
+        name="androidx.lifecycle:lifecycle-viewmodel-savedstate:2.9.3@aar"
+        simpleName="androidx.lifecycle:lifecycle-viewmodel-savedstate"/>
+    <dependency
+        name="androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.3@aar"
+        simpleName="androidx.lifecycle:lifecycle-viewmodel-savedstate-android"/>
+    <dependency
         name="androidx.lifecycle:lifecycle-common-jvm:2.9.3@jar"
         simpleName="androidx.lifecycle:lifecycle-common-jvm"/>
-    <dependency
-        name="androidx.drawerlayout:drawerlayout:1.0.0@aar"
-        simpleName="androidx.drawerlayout:drawerlayout"/>
-    <dependency
-        name="androidx.vectordrawable:vectordrawable-animated:1.1.0@aar"
-        simpleName="androidx.vectordrawable:vectordrawable-animated"/>
-    <dependency
-        name="androidx.vectordrawable:vectordrawable:1.1.0@aar"
-        simpleName="androidx.vectordrawable:vectordrawable"/>
-    <dependency
-        name="androidx.viewpager:viewpager:1.0.0@aar"
-        simpleName="androidx.viewpager:viewpager"/>
-    <dependency
-        name="androidx.customview:customview:1.0.0@aar"
-        simpleName="androidx.customview:customview"/>
-    <dependency
-        name="androidx.autofill:autofill:1.0.0@aar"
-        simpleName="androidx.autofill:autofill"/>
-    <dependency
-        name="androidx.graphics:graphics-path:1.0.1@aar"
-        simpleName="androidx.graphics:graphics-path"/>
-    <dependency
-        name="androidx.core:core:1.15.0@aar"
-        simpleName="androidx.core:core"/>
     <dependency
         name="androidx.lifecycle:lifecycle-runtime-android:2.9.3@aar"
         simpleName="androidx.lifecycle:lifecycle-runtime-android"/>
@@ -356,22 +365,34 @@
         name="androidx.lifecycle:lifecycle-livedata-core:2.9.3@aar"
         simpleName="androidx.lifecycle:lifecycle-livedata-core"/>
     <dependency
-        name="androidx.lifecycle:lifecycle-viewmodel-compose-android:2.9.3@aar"
-        simpleName="androidx.lifecycle:lifecycle-viewmodel-compose-android"/>
-    <dependency
         name="androidx.lifecycle:lifecycle-runtime-ktx-android:2.9.3@aar"
         simpleName="androidx.lifecycle:lifecycle-runtime-ktx-android"/>
     <dependency
         name="androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.3@aar"
         simpleName="androidx.lifecycle:lifecycle-viewmodel-ktx"/>
     <dependency
-        name="androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.3@aar"
-        simpleName="androidx.lifecycle:lifecycle-viewmodel-savedstate-android"/>
+        name="androidx.lifecycle:lifecycle-viewmodel-compose-android:2.9.3@aar"
+        simpleName="androidx.lifecycle:lifecycle-viewmodel-compose-android"/>
+    <dependency
+        name="androidx.compose.material:material-icons-core-android:1.7.8@aar"
+        simpleName="androidx.compose.material:material-icons-core-android"/>
+    <dependency
+        name="androidx.compose.ui:ui-android:1.9.1@aar"
+        simpleName="androidx.compose.ui:ui-android"/>
+    <dependency
+        name="androidx.autofill:autofill:1.0.0@aar"
+        simpleName="androidx.autofill:autofill"/>
+    <dependency
+        name="androidx.graphics:graphics-path:1.0.1@aar"
+        simpleName="androidx.graphics:graphics-path"/>
+    <dependency
+        name="androidx.core:core:1.17.0@aar"
+        simpleName="androidx.core:core"/>
     <dependency
         name="androidx.customview:customview-poolingcontainer:1.0.0@aar"
         simpleName="androidx.customview:customview-poolingcontainer"/>
     <dependency
-        name="androidx.core:core-ktx:1.15.0@aar"
+        name="androidx.core:core-ktx:1.17.0@aar"
         simpleName="androidx.core:core-ktx"/>
     <dependency
         name="com.jakewharton.timber:timber:5.0.1@aar"
@@ -380,14 +401,26 @@
         name=":@@:list"
         simpleName=":"/>
     <dependency
-        name="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.1@jar"
+        name="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2@jar"
         simpleName="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm"/>
     <dependency
-        name="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1@jar"
+        name="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2@jar"
         simpleName="org.jetbrains.kotlinx:kotlinx-coroutines-android"/>
     <dependency
         name="org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.2.20@jar"
         simpleName="org.jetbrains.kotlin:kotlin-stdlib-jdk7"/>
+    <dependency
+        name="org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.9.0@jar"
+        simpleName="org.jetbrains.kotlinx:kotlinx-serialization-core-jvm"/>
+    <dependency
+        name="org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.9.0@jar"
+        simpleName="org.jetbrains.kotlinx:kotlinx-serialization-json-jvm"/>
+    <dependency
+        name="androidx.annotation:annotation-experimental:1.4.1@aar"
+        simpleName="androidx.annotation:annotation-experimental"/>
+    <dependency
+        name="androidx.core:core-viewtree:1.0.0@aar"
+        simpleName="androidx.core:core-viewtree"/>
     <dependency
         name="androidx.cursoradapter:cursoradapter:1.0.0@aar"
         simpleName="androidx.cursoradapter:cursoradapter"/>
@@ -404,17 +437,17 @@
         name="androidx.startup:startup-runtime:1.1.1@aar"
         simpleName="androidx.startup:startup-runtime"/>
     <dependency
+        name="androidx.tracing:tracing:1.2.0@aar"
+        simpleName="androidx.tracing:tracing"/>
+    <dependency
+        name="androidx.versionedparcelable:versionedparcelable:1.1.1@aar"
+        simpleName="androidx.versionedparcelable:versionedparcelable"/>
+    <dependency
         name="androidx.arch.core:core-runtime:2.2.0@aar"
         simpleName="androidx.arch.core:core-runtime"/>
     <dependency
         name="androidx.arch.core:core-common:2.2.0@jar"
         simpleName="androidx.arch.core:core-common"/>
-    <dependency
-        name="androidx.concurrent:concurrent-futures:1.1.0@jar"
-        simpleName="androidx.concurrent:concurrent-futures"/>
-    <dependency
-        name="androidx.versionedparcelable:versionedparcelable:1.1.1@aar"
-        simpleName="androidx.versionedparcelable:versionedparcelable"/>
     <dependency
         name="androidx.collection:collection-ktx:1.5.0@jar"
         simpleName="androidx.collection:collection-ktx"/>
@@ -422,23 +455,11 @@
         name="androidx.collection:collection-jvm:1.5.0@jar"
         simpleName="androidx.collection:collection-jvm"/>
     <dependency
-        name="androidx.tracing:tracing:1.2.0@aar"
-        simpleName="androidx.tracing:tracing"/>
+        name="androidx.concurrent:concurrent-futures:1.1.0@jar"
+        simpleName="androidx.concurrent:concurrent-futures"/>
     <dependency
         name="androidx.annotation:annotation-jvm:1.9.1@jar"
         simpleName="androidx.annotation:annotation-jvm"/>
-    <dependency
-        name="androidx.core:core-viewtree:1.0.0@aar"
-        simpleName="androidx.core:core-viewtree"/>
-    <dependency
-        name="org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.7.3@jar"
-        simpleName="org.jetbrains.kotlinx:kotlinx-serialization-json-jvm"/>
-    <dependency
-        name="org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.7.3@jar"
-        simpleName="org.jetbrains.kotlinx:kotlinx-serialization-core-jvm"/>
-    <dependency
-        name="androidx.annotation:annotation-experimental:1.4.1@aar"
-        simpleName="androidx.annotation:annotation-experimental"/>
     <dependency
         name="org.jetbrains.kotlin:kotlin-stdlib:2.2.20@jar"
         simpleName="org.jetbrains.kotlin:kotlin-stdlib"/>
@@ -455,16 +476,16 @@
         name="org.tukaani:xz:1.10@jar"
         simpleName="org.tukaani:xz"/>
     <dependency
-        name="org.slf4j:slf4j-api:2.0.16@jar"
+        name="org.slf4j:slf4j-api:2.0.17@jar"
         simpleName="org.slf4j:slf4j-api"/>
     <dependency
-        name="com.google.dagger:hilt-core:2.51.1@jar"
+        name="com.google.dagger:hilt-core:2.57.1@jar"
         simpleName="com.google.dagger:hilt-core"/>
     <dependency
-        name="com.google.dagger:dagger:2.51.1@jar"
+        name="com.google.dagger:dagger:2.57.1@jar"
         simpleName="com.google.dagger:dagger"/>
     <dependency
-        name="com.google.dagger:dagger-lint-aar:2.51.1@aar"
+        name="com.google.dagger:dagger-lint-aar:2.57.1@aar"
         simpleName="com.google.dagger:dagger-lint-aar"/>
     <dependency
         name="com.google.code.findbugs:jsr305:3.0.2@jar"
@@ -487,5 +508,8 @@
     <dependency
         name="org.jspecify:jspecify:1.0.0@jar"
         simpleName="org.jspecify:jspecify"/>
+    <dependency
+        name="jakarta.inject:jakarta.inject-api:2.0.1@jar"
+        simpleName="jakarta.inject:jakarta.inject-api"/>
   </package>
 </dependencies>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Technology stack table format" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:17:41.759Z" hostname="AURAKAI" time="0.001">
+<testsuite name="Technology stack table format" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:27:49.348Z" hostname="AURAKAI" time="0.003">
   <properties/>
-  <testcase name="technology table rows have at least three columns()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$TechnologyStackTableFormat" time="0.001"/>
+  <testcase name="technology table rows have at least three columns()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$TechnologyStackTableFormat" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

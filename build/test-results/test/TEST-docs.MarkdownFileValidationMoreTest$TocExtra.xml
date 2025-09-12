@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Table of Contents - extra checks" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:17:41.649Z" hostname="AURAKAI" time="0.002">
+<testsuite name="Table of Contents - extra checks" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:27:49.220Z" hostname="AURAKAI" time="0.002">
   <properties/>
   <testcase name="table of contents has at least 4 entries and uses bullet list()" classname="docs.MarkdownFileValidationMoreTest$TocExtra" time="0.002">
     <failure message="org.opentest4j.AssertionFailedError: Table of Contents section not found ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Table of Contents section not found ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;

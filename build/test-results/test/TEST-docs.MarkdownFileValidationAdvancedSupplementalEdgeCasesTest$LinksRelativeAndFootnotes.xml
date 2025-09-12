@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Links – relative targets and footnotes" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:17:41.364Z" hostname="AURAKAI" time="0.007">
+<testsuite name="Links – relative targets and footnotes" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:27:48.783Z" hostname="AURAKAI" time="0.01">
   <properties/>
-  <testcase name="footnote references and definitions are consistent()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$LinksRelativeAndFootnotes" time="0.005"/>
+  <testcase name="footnote references and definitions are consistent()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$LinksRelativeAndFootnotes" time="0.008"/>
   <testcase name="relative links point to existing files()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$LinksRelativeAndFootnotes" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

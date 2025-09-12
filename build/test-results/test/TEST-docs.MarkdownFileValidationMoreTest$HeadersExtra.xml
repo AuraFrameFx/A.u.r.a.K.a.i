@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Headers - extra validations" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:17:41.633Z" hostname="AURAKAI" time="0.009">
+<testsuite name="Headers - extra validations" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:27:49.201Z" hostname="AURAKAI" time="0.012">
   <properties/>
   <testcase name="headers should not exceed 80 characters()" classname="docs.MarkdownFileValidationMoreTest$HeadersExtra" time="0.001"/>
-  <testcase name="contains License and Contributing sections if linked()" classname="docs.MarkdownFileValidationMoreTest$HeadersExtra" time="0.008"/>
+  <testcase name="contains License and Contributing sections if linked()" classname="docs.MarkdownFileValidationMoreTest$HeadersExtra" time="0.011"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

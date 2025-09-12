@@ -179,7 +179,7 @@ document.getElementById(id).style.display = 'none';
     <div class="mdl-layout__header-row">
       <span class="mdl-layout-title">Lint Report: 1 error</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Sep 12 00:59:41 MDT 2025 by AGP (9.0.0-alpha02)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Sep 12 01:29:57 MDT 2025 by AGP (9.0.0-alpha02)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -204,7 +204,7 @@ document.getElementById(id).style.display = 'none';
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
 <a href="#LintError">LintError</a>: Lint Failure</td></tr>
-<tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (85)</a>
+<tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (86)</a>
 </td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (43)</a>
 </td></tr>
@@ -361,6 +361,32 @@ Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">
 Configuration.screenWidthDp and Configuration.screenHeightDp have different insets behaviour depending on target SDK version, and are rounded to the nearest Dp. This means that using these values in composition to size a layout can result in issues, as these values do not accurately represent the actual available window size. Instead it is recommended to use WindowInfo.containerSize which accurately represents the window size.<br/><div class="vendor">
 Vendor: Jetpack Compose<br/>
 Identifier: androidx.compose.ui<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ConstantContentStateKeyInItemsCall<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+When using shared elements (<code>Modifier.sharedElement</code> or <code>Modifier.sharedBounds</code>) in a LazyList, each Composable within an <code>items</code> block should have its own unique key. Otherwise, only one item of the visible layout will be rendered, regardless if there's an ongoing shared element transition.<br/><div class="vendor">
+Vendor: Jetpack Compose<br/>
+Identifier: androidx.compose.animation<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ContextCastToActivity<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Casting Context to Activity is an error as Contexts are not always Activities. Use LocalActivity instead<br/><div class="vendor">
+Vendor: Jetpack Activity Compose<br/>
+Identifier: androidx.activity.compose<br/>
 Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
 </div>
 <br/>
@@ -546,19 +572,6 @@ FragmentContainerView replaces the &lt;fragment> tag as the preferred           
 Vendor: Android Open Source Project<br/>
 Identifier: androidx.fragment<br/>
 Feedback: <a href="https://issuetracker.google.com/issues/new?component=460964">https://issuetracker.google.com/issues/new?component=460964</a><br/>
-</div>
-<br/>
-<br/></div>
-</div>
-</div>
-<div class="issue">
-<div class="id">FrequentlyChangedStateReadInComposition<div class="issueSeparator"></div>
-</div>
-<div class="metadata"><div class="explanation">
-This property is observable and is updated after every scroll or remeasure. If you use it in the composable function directly, it will be recomposed on every change, causing potential performance issues including infinity recomposition loops. Prefer wrapping it with derivedStateOf to use calculation based on this property in composition or collect changes inside LaunchedEffect instead.<br/><div class="vendor">
-Vendor: Jetpack Compose<br/>
-Identifier: androidx.compose.foundation<br/>
-Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
 </div>
 <br/>
 <br/></div>
@@ -1089,38 +1102,12 @@ Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">
 </div>
 </div>
 <div class="issue">
-<div class="id">UnrememberedAnimatable<div class="issueSeparator"></div>
-</div>
-<div class="metadata"><div class="explanation">
-Animatable instances created during composition need to be `remember`ed, otherwise they will be recreated during recomposition, and lose their state. Either hoist the Animatable to an object that is not created during composition, or wrap the Animatable in a call to <code>remember</code>.<br/><div class="vendor">
-Vendor: Jetpack Compose<br/>
-Identifier: androidx.compose.animation.core<br/>
-Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
-</div>
-<br/>
-<br/></div>
-</div>
-</div>
-<div class="issue">
 <div class="id">UnrememberedGetBackStackEntry<div class="issueSeparator"></div>
 </div>
 <div class="metadata"><div class="explanation">
 Backstack entries retrieved during composition need to be `remember`ed, otherwise they will be retrieved from the navController again, and be changed. You also need to pass in a key of a NavBackStackEntry to the remember call or they will not be updated properly. If this is in a <code>NavGraphBuilder.composable</code> scope, you should pass in the lambda's given entry as the key. Either hoist the state to an object that is not created during composition, or wrap the state in a call to <code>remember</code> with a <code>NavBackStackEntry</code> as a key.<br/><div class="vendor">
 Vendor: Jetpack Navigation Compose<br/>
 Identifier: androidx.navigation.compose<br/>
-</div>
-<br/>
-<br/></div>
-</div>
-</div>
-<div class="issue">
-<div class="id">UnrememberedMutableInteractionSource<div class="issueSeparator"></div>
-</div>
-<div class="metadata"><div class="explanation">
-MutableInteractionSource instances created during composition need to be `remember`ed, otherwise they will be recreated during recomposition, and lose their state. Either hoist the MutableInteractionSource to an object that is not created during composition, or wrap the MutableInteractionSource in a call to <code>remember</code>.<br/><div class="vendor">
-Vendor: Jetpack Compose<br/>
-Identifier: androidx.compose.foundation<br/>
-Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
 </div>
 <br/>
 <br/></div>
@@ -1273,6 +1260,32 @@ Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">
 The <code>content</code> lambda in Scaffold has a padding parameter which will include any inner padding for the content due to app bars. If this parameter is ignored, then content may be obscured by the app bars resulting in visual issues or elements that can't be interacted with.<br/><div class="vendor">
 Vendor: Jetpack Compose<br/>
 Identifier: androidx.compose.material3<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnusedSharedTransitionModifierParameter<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+When using <code>SharedTransitionScope</code> the provided <code>Modifier</code> should always be used on the top-most child, as the <code>Modifier</code> both obtains the root coordinates and creates an overlay. Otherwise, consider using <code>SharedTransitionLayout</code>.<br/><div class="vendor">
+Vendor: Jetpack Compose<br/>
+Identifier: androidx.compose.animation<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnusedTargetStateInContentKeyLambda<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+In <code>AnimatedContent</code>, the <code>contentKey</code> lambda may be used when the <code>targetState</code> is expected to mutate frequently but not all mutations are desired to be considered a target state change. So <code>contentKey</code> is expected to always use the given <code>targetState</code> parameter to calculate its result.<br/><div class="vendor">
+Vendor: Jetpack Compose<br/>
+Identifier: androidx.compose.animation<br/>
 Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
 </div>
 <br/>

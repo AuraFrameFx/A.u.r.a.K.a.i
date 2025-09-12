@@ -1,18 +1,18 @@
 [
     {
         "merged": "dev.aurakai.auraframefx.module.a.module-a-release-3:/layout-v21/notification_template_custom_big.xml",
-        "source": "dev.aurakai.auraframefx.module.a.module-a-core-1.13.1-14:/layout-v21/notification_template_custom_big.xml"
+        "source": "dev.aurakai.auraframefx.module.a.module-a-core-1.17.0-18:/layout-v21/notification_template_custom_big.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.module.a.module-a-release-3:/layout-v21/notification_template_icon_group.xml",
-        "source": "dev.aurakai.auraframefx.module.a.module-a-core-1.13.1-14:/layout-v21/notification_template_icon_group.xml"
+        "source": "dev.aurakai.auraframefx.module.a.module-a-core-1.17.0-18:/layout-v21/notification_template_icon_group.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.module.a.module-a-release-3:/layout-v21/notification_action_tombstone.xml",
-        "source": "dev.aurakai.auraframefx.module.a.module-a-core-1.13.1-14:/layout-v21/notification_action_tombstone.xml"
+        "source": "dev.aurakai.auraframefx.module.a.module-a-core-1.17.0-18:/layout-v21/notification_action_tombstone.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.module.a.module-a-release-3:/layout-v21/notification_action.xml",
-        "source": "dev.aurakai.auraframefx.module.a.module-a-core-1.13.1-14:/layout-v21/notification_action.xml"
+        "source": "dev.aurakai.auraframefx.module.a.module-a-core-1.17.0-18:/layout-v21/notification_action.xml"
     }
 ]

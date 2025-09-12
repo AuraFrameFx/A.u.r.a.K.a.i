@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Tools and scripts presence" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:17:41.652Z" hostname="AURAKAI" time="0.001">
+<testsuite name="Tools and scripts presence" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:27:49.223Z" hostname="AURAKAI" time="0.0">
   <properties/>
-  <testcase name="gradle wrapper exists when used in README commands()" classname="docs.MarkdownFileValidationMoreTest$ToolsAndScripts" time="0.001"/>
+  <testcase name="gradle wrapper exists when used in README commands()" classname="docs.MarkdownFileValidationMoreTest$ToolsAndScripts" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

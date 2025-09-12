@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Documentation links" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:17:41.670Z" hostname="AURAKAI" time="0.003">
+<testsuite name="Documentation links" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:27:49.238Z" hostname="AURAKAI" time="0.002">
   <properties/>
-  <testcase name="linked local documentation files exist()" classname="docs.MarkdownFileValidationTest$DocumentationLinks" time="0.003">
+  <testcase name="linked local documentation files exist()" classname="docs.MarkdownFileValidationTest$DocumentationLinks" time="0.002">
     <failure message="org.opentest4j.AssertionFailedError: Missing required local documentation targets referenced in README: [Architecture.md] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Missing required local documentation targets referenced in README: [Architecture.md] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

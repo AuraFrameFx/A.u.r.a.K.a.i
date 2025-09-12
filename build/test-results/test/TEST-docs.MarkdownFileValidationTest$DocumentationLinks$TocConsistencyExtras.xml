@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ToC consistency (extras)" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:17:41.762Z" hostname="AURAKAI" time="0.005">
+<testsuite name="ToC consistency (extras)" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:27:49.359Z" hostname="AURAKAI" time="0.007">
   <properties/>
   <testcase name="toc anchors are unique()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$TocConsistencyExtras" time="0.002"/>
   <testcase name="selected sections appear in ToC when headers exist()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$TocConsistencyExtras" time="0.002"/>

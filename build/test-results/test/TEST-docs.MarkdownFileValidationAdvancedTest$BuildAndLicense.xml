@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Build tooling and licensing" tests="3" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:17:41.480Z" hostname="AURAKAI" time="0.018">
+<testsuite name="Build tooling and licensing" tests="3" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:27:49.004Z" hostname="AURAKAI" time="0.024">
   <properties/>
   <testcase name="license badge matches LICENSE content()" classname="docs.MarkdownFileValidationAdvancedTest$BuildAndLicense" time="0.0"/>
-  <testcase name="has Overview and Getting Started sections()" classname="docs.MarkdownFileValidationAdvancedTest$BuildAndLicense" time="0.016">
+  <testcase name="has Overview and Getting Started sections()" classname="docs.MarkdownFileValidationAdvancedTest$BuildAndLicense" time="0.022">
     <failure message="org.gradle.internal.exceptions.DefaultMultiCauseException: Multiple Failures (2 failures)&#13;&#10;&#9;org.opentest4j.AssertionFailedError: Expected an '## Overview' section ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;&#13;&#10;&#9;org.opentest4j.AssertionFailedError: Expected a '## Getting Started' or '## Quickstart' section ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.gradle.internal.exceptions.DefaultMultiCauseException">org.gradle.internal.exceptions.DefaultMultiCauseException: Multiple Failures (2 failures)
 	org.opentest4j.AssertionFailedError: Expected an '## Overview' section ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	org.opentest4j.AssertionFailedError: Expected a '## Getting Started' or '## Quickstart' section ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;

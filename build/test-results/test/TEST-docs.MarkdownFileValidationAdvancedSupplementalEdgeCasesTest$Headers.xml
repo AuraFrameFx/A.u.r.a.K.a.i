@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Headers – uniqueness and structure" tests="2" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:17:41.303Z" hostname="AURAKAI" time="0.048">
+<testsuite name="Headers – uniqueness and structure" tests="2" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:27:48.725Z" hostname="AURAKAI" time="0.049">
   <properties/>
-  <testcase name="h2 header slugs are unique()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$Headers" time="0.041"/>
-  <testcase name="has a single H1 header at top()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$Headers" time="0.005">
+  <testcase name="h2 header slugs are unique()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$Headers" time="0.039"/>
+  <testcase name="has a single H1 header at top()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$Headers" time="0.007">
     <failure message="org.opentest4j.AssertionFailedError: README should contain exactly one H1 header ==&gt; expected: &lt;1&gt; but was: &lt;44&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: README should contain exactly one H1 header ==&gt; expected: &lt;1&gt; but was: &lt;44&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

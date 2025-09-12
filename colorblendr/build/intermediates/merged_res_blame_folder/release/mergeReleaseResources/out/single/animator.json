@@ -1,26 +1,26 @@
 [
     {
         "merged": "dev.aurakai.auraframefx.colorblendr-release-3:/animator/fragment_open_enter.xml",
-        "source": "dev.aurakai.auraframefx.colorblendr-fragment-1.5.4-39:/animator/fragment_open_enter.xml"
+        "source": "dev.aurakai.auraframefx.colorblendr-fragment-1.5.4-27:/animator/fragment_open_enter.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.colorblendr-release-3:/animator/fragment_fade_exit.xml",
-        "source": "dev.aurakai.auraframefx.colorblendr-fragment-1.5.4-39:/animator/fragment_fade_exit.xml"
+        "source": "dev.aurakai.auraframefx.colorblendr-fragment-1.5.4-27:/animator/fragment_fade_exit.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.colorblendr-release-3:/animator/fragment_close_enter.xml",
-        "source": "dev.aurakai.auraframefx.colorblendr-fragment-1.5.4-39:/animator/fragment_close_enter.xml"
+        "source": "dev.aurakai.auraframefx.colorblendr-fragment-1.5.4-27:/animator/fragment_close_enter.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.colorblendr-release-3:/animator/fragment_fade_enter.xml",
-        "source": "dev.aurakai.auraframefx.colorblendr-fragment-1.5.4-39:/animator/fragment_fade_enter.xml"
+        "source": "dev.aurakai.auraframefx.colorblendr-fragment-1.5.4-27:/animator/fragment_fade_enter.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.colorblendr-release-3:/animator/fragment_close_exit.xml",
-        "source": "dev.aurakai.auraframefx.colorblendr-fragment-1.5.4-39:/animator/fragment_close_exit.xml"
+        "source": "dev.aurakai.auraframefx.colorblendr-fragment-1.5.4-27:/animator/fragment_close_exit.xml"
     },
     {
         "merged": "dev.aurakai.auraframefx.colorblendr-release-3:/animator/fragment_open_exit.xml",
-        "source": "dev.aurakai.auraframefx.colorblendr-fragment-1.5.4-39:/animator/fragment_open_exit.xml"
+        "source": "dev.aurakai.auraframefx.colorblendr-fragment-1.5.4-27:/animator/fragment_open_exit.xml"
     }
 ]

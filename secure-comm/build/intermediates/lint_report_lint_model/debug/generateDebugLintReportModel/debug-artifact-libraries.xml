@@ -1,9 +1,9 @@
 <libraries>
   <library
-      name="androidx.hilt:hilt-work:1.2.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\38b6e5238a8ac4094a2329fd93faeb50\workspace\transformed\jetified-hilt-work-1.2.0\jars\classes.jar"
-      resolved="androidx.hilt:hilt-work:1.2.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\38b6e5238a8ac4094a2329fd93faeb50\workspace\transformed\jetified-hilt-work-1.2.0"
+      name="androidx.hilt:hilt-work:1.3.0@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f4bc5a4588aefa54e0c522ed227b743f\workspace\transformed\jetified-hilt-work-1.3.0\jars\classes.jar"
+      resolved="androidx.hilt:hilt-work:1.3.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f4bc5a4588aefa54e0c522ed227b743f\workspace\transformed\jetified-hilt-work-1.3.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -13,10 +13,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.dagger:hilt-android:2.51.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d2f140e418135e289684982a052515ac\workspace\transformed\jetified-hilt-android-2.51.1\jars\classes.jar"
-      resolved="com.google.dagger:hilt-android:2.51.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d2f140e418135e289684982a052515ac\workspace\transformed\jetified-hilt-android-2.51.1"
+      name="com.google.dagger:hilt-android:2.57.1@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\94eb3987dca7a88afcaec754064b89db\workspace\transformed\jetified-hilt-android-2.57.1\jars\classes.jar"
+      resolved="com.google.dagger:hilt-android:2.57.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\94eb3987dca7a88afcaec754064b89db\workspace\transformed\jetified-hilt-android-2.57.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -30,10 +30,10 @@
       jars="C:\ReGenesis-A.O.S.P\core-module\build\libs\core-module-1.0.0.jar"
       resolved="::"/>
   <library
-      name="androidx.work:work-runtime:2.10.3@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3ebe094769019c988a36e015e46b8d12\workspace\transformed\work-runtime-2.10.3\jars\classes.jar"
-      resolved="androidx.work:work-runtime:2.10.3"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3ebe094769019c988a36e015e46b8d12\workspace\transformed\work-runtime-2.10.3"
+      name="androidx.work:work-runtime:2.10.4@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\44ecd6bc03b6f46d55d1b26fe10fae5b\workspace\transformed\work-runtime-2.10.4\jars\classes.jar"
+      resolved="androidx.work:work-runtime:2.10.4"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\44ecd6bc03b6f46d55d1b26fe10fae5b\workspace\transformed\work-runtime-2.10.4"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -43,10 +43,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.work:work-runtime-ktx:2.10.3@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3bcd30a06f885a15362290445d4175c9\workspace\transformed\work-runtime-ktx-2.10.3\jars\classes.jar"
-      resolved="androidx.work:work-runtime-ktx:2.10.3"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3bcd30a06f885a15362290445d4175c9\workspace\transformed\work-runtime-ktx-2.10.3"
+      name="androidx.work:work-runtime-ktx:2.10.4@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b253af16b846f032073c42048a10d502\workspace\transformed\work-runtime-ktx-2.10.4\jars\classes.jar"
+      resolved="androidx.work:work-runtime-ktx:2.10.4"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b253af16b846f032073c42048a10d502\workspace\transformed\work-runtime-ktx-2.10.4"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -56,20 +56,22 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.7.0@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-serialization-json-jvm\1.7.0\f4a6f6e002edb22725309b829bacdb5ac2fb4630\kotlinx-serialization-json-jvm-1.7.0.jar"
-      resolved="org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.7.0"
-      provided="true"/>
+      name="org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.9.0@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-serialization-json-jvm\1.9.0\aea6f7d49fe5c458f8963ee6d4bdaf4a459ab3e7\kotlinx-serialization-json-jvm-1.9.0.jar"
+      resolved="org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.9.0"/>
   <library
-      name="org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.7.0@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-serialization-core-jvm\1.7.0\d12521a5361493aa8a3fb43b2d729b5edae1b100\kotlinx-serialization-core-jvm-1.7.0.jar"
-      resolved="org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.7.0"
-      provided="true"/>
+      name="org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.9.0@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-serialization-core-jvm\1.9.0\91448df39c558f7c6147b8bd8db01debe16e0cc1\kotlinx-serialization-core-jvm-1.9.0.jar"
+      resolved="org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.9.0"/>
   <library
-      name="com.google.firebase:firebase-analytics-ktx:22.1.2@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d985d7f8d8e0ea2f650295687013cac6\workspace\transformed\jetified-firebase-analytics-ktx-22.1.2\jars\classes.jar"
-      resolved="com.google.firebase:firebase-analytics-ktx:22.1.2"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d985d7f8d8e0ea2f650295687013cac6\workspace\transformed\jetified-firebase-analytics-ktx-22.1.2"
+      name="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-core-jvm\1.10.2\4a9f78ef49483748e2c129f3d124b8fa249dafbf\kotlinx-coroutines-core-jvm-1.10.2.jar"
+      resolved="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2"/>
+  <library
+      name="com.google.firebase:firebase-analytics-ktx:22.5.0@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8ee722b06b6270f14fb6da0d0927c8e5\workspace\transformed\jetified-firebase-analytics-ktx-22.5.0\jars\classes.jar"
+      resolved="com.google.firebase:firebase-analytics-ktx:22.5.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8ee722b06b6270f14fb6da0d0927c8e5\workspace\transformed\jetified-firebase-analytics-ktx-22.5.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -79,10 +81,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.firebase:firebase-crashlytics-ktx:19.2.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2049b1bc0d1e87535bb052cfe93cac5c\workspace\transformed\jetified-firebase-crashlytics-ktx-19.2.1\jars\classes.jar"
-      resolved="com.google.firebase:firebase-crashlytics-ktx:19.2.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2049b1bc0d1e87535bb052cfe93cac5c\workspace\transformed\jetified-firebase-crashlytics-ktx-19.2.1"
+      name="com.google.firebase:firebase-crashlytics-ktx:19.4.4@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9c763dced052f764f6e41a6663768cac\workspace\transformed\jetified-firebase-crashlytics-ktx-19.4.4\jars\classes.jar"
+      resolved="com.google.firebase:firebase-crashlytics-ktx:19.4.4"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9c763dced052f764f6e41a6663768cac\workspace\transformed\jetified-firebase-crashlytics-ktx-19.4.4"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -92,10 +94,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.firebase:firebase-perf-ktx:21.0.2@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\729862a1dea87def64c3fac56f2d248d\workspace\transformed\jetified-firebase-perf-ktx-21.0.2\jars\classes.jar"
-      resolved="com.google.firebase:firebase-perf-ktx:21.0.2"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\729862a1dea87def64c3fac56f2d248d\workspace\transformed\jetified-firebase-perf-ktx-21.0.2"
+      name="com.google.firebase:firebase-perf-ktx:21.0.5@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ba27d4df2c1f136c0cfa83a7c5d3c811\workspace\transformed\jetified-firebase-perf-ktx-21.0.5\jars\classes.jar"
+      resolved="com.google.firebase:firebase-perf-ktx:21.0.5"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ba27d4df2c1f136c0cfa83a7c5d3c811\workspace\transformed\jetified-firebase-perf-ktx-21.0.5"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -105,10 +107,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.firebase:firebase-auth-ktx:23.1.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ae7dc775fb91824475f35d93ae82d01b\workspace\transformed\jetified-firebase-auth-ktx-23.1.0\jars\classes.jar"
-      resolved="com.google.firebase:firebase-auth-ktx:23.1.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ae7dc775fb91824475f35d93ae82d01b\workspace\transformed\jetified-firebase-auth-ktx-23.1.0"
+      name="com.google.firebase:firebase-auth-ktx:23.2.1@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\edd2c383e59496552c08ecb87a8297ae\workspace\transformed\jetified-firebase-auth-ktx-23.2.1\jars\classes.jar"
+      resolved="com.google.firebase:firebase-auth-ktx:23.2.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\edd2c383e59496552c08ecb87a8297ae\workspace\transformed\jetified-firebase-auth-ktx-23.2.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -118,10 +120,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.firebase:firebase-firestore-ktx:25.1.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1f500b6675b67209cb9f120572b3f6d2\workspace\transformed\jetified-firebase-firestore-ktx-25.1.1\jars\classes.jar"
-      resolved="com.google.firebase:firebase-firestore-ktx:25.1.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1f500b6675b67209cb9f120572b3f6d2\workspace\transformed\jetified-firebase-firestore-ktx-25.1.1"
+      name="com.google.firebase:firebase-firestore-ktx:25.1.4@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1fb704a0b91d99ea91f80a2e8f8c13d3\workspace\transformed\jetified-firebase-firestore-ktx-25.1.4\jars\classes.jar"
+      resolved="com.google.firebase:firebase-firestore-ktx:25.1.4"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1fb704a0b91d99ea91f80a2e8f8c13d3\workspace\transformed\jetified-firebase-firestore-ktx-25.1.4"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -131,10 +133,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.firebase:firebase-messaging-ktx:24.1.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9c217e9769248ae14eaac1974edad8ea\workspace\transformed\jetified-firebase-messaging-ktx-24.1.0\jars\classes.jar"
-      resolved="com.google.firebase:firebase-messaging-ktx:24.1.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9c217e9769248ae14eaac1974edad8ea\workspace\transformed\jetified-firebase-messaging-ktx-24.1.0"
+      name="com.google.firebase:firebase-messaging-ktx:24.1.2@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a5622cd9419716a2e696084137e47e0e\workspace\transformed\jetified-firebase-messaging-ktx-24.1.2\jars\classes.jar"
+      resolved="com.google.firebase:firebase-messaging-ktx:24.1.2"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a5622cd9419716a2e696084137e47e0e\workspace\transformed\jetified-firebase-messaging-ktx-24.1.2"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -144,10 +146,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.firebase:firebase-config-ktx:22.0.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a59e7243773847549bfaa1c7df46bf3c\workspace\transformed\jetified-firebase-config-ktx-22.0.1\jars\classes.jar"
-      resolved="com.google.firebase:firebase-config-ktx:22.0.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a59e7243773847549bfaa1c7df46bf3c\workspace\transformed\jetified-firebase-config-ktx-22.0.1"
+      name="com.google.firebase:firebase-config-ktx:22.1.2@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\5b7ac360b4534859513c9d13825729d8\workspace\transformed\jetified-firebase-config-ktx-22.1.2\jars\classes.jar"
+      resolved="com.google.firebase:firebase-config-ktx:22.1.2"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\5b7ac360b4534859513c9d13825729d8\workspace\transformed\jetified-firebase-config-ktx-22.1.2"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -158,9 +160,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-common-ktx:21.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c1b4d72dc8273d4df429b65d21f43706\workspace\transformed\jetified-firebase-common-ktx-21.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\db3d76f75a849270497b79fe995b87e9\workspace\transformed\jetified-firebase-common-ktx-21.0.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-common-ktx:21.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c1b4d72dc8273d4df429b65d21f43706\workspace\transformed\jetified-firebase-common-ktx-21.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\db3d76f75a849270497b79fe995b87e9\workspace\transformed\jetified-firebase-common-ktx-21.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -171,9 +173,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-crashlytics:20.0.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3219ecbef463a89d15d8a872e5589217\workspace\transformed\jetified-firebase-crashlytics-20.0.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b7a3f3892d84d854ab3043878483da5e\workspace\transformed\jetified-firebase-crashlytics-20.0.1\jars\classes.jar"
       resolved="com.google.firebase:firebase-crashlytics:20.0.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3219ecbef463a89d15d8a872e5589217\workspace\transformed\jetified-firebase-crashlytics-20.0.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b7a3f3892d84d854ab3043878483da5e\workspace\transformed\jetified-firebase-crashlytics-20.0.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -184,9 +186,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-perf:22.0.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9d1328414e747719ba1b38e3b31c7c64\workspace\transformed\jetified-firebase-perf-22.0.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f42d125b39680003da3ae241bc046976\workspace\transformed\jetified-firebase-perf-22.0.1\jars\classes.jar"
       resolved="com.google.firebase:firebase-perf:22.0.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9d1328414e747719ba1b38e3b31c7c64\workspace\transformed\jetified-firebase-perf-22.0.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f42d125b39680003da3ae241bc046976\workspace\transformed\jetified-firebase-perf-22.0.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -197,9 +199,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-auth:24.0.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8964265269fb0f8fe9675db2e4298d67\workspace\transformed\jetified-firebase-auth-24.0.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\89d65a8025beef03723f81bb75aabf0f\workspace\transformed\jetified-firebase-auth-24.0.1\jars\classes.jar"
       resolved="com.google.firebase:firebase-auth:24.0.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8964265269fb0f8fe9675db2e4298d67\workspace\transformed\jetified-firebase-auth-24.0.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\89d65a8025beef03723f81bb75aabf0f\workspace\transformed\jetified-firebase-auth-24.0.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -210,9 +212,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-firestore:26.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\45e48d5c52928a2ba9ad0dbf3ea5af0e\workspace\transformed\jetified-firebase-firestore-26.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8810e3a6ca02400d143293db70feb23f\workspace\transformed\jetified-firebase-firestore-26.0.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-firestore:26.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\45e48d5c52928a2ba9ad0dbf3ea5af0e\workspace\transformed\jetified-firebase-firestore-26.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8810e3a6ca02400d143293db70feb23f\workspace\transformed\jetified-firebase-firestore-26.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -223,9 +225,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-messaging:25.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2e6a0f86513d474f1555d278f1976295\workspace\transformed\jetified-firebase-messaging-25.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f13db3e64b7a419a54f850e843645c7a\workspace\transformed\jetified-firebase-messaging-25.0.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-messaging:25.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2e6a0f86513d474f1555d278f1976295\workspace\transformed\jetified-firebase-messaging-25.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f13db3e64b7a419a54f850e843645c7a\workspace\transformed\jetified-firebase-messaging-25.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -236,9 +238,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-config:23.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9a3e2b7d570bda472d803a467863d75a\workspace\transformed\jetified-firebase-config-23.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\85b3d4b40d358ba8a65bbdfa3caca3dc\workspace\transformed\jetified-firebase-config-23.0.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-config:23.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9a3e2b7d570bda472d803a467863d75a\workspace\transformed\jetified-firebase-config-23.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\85b3d4b40d358ba8a65bbdfa3caca3dc\workspace\transformed\jetified-firebase-config-23.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -249,9 +251,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-analytics:23.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d742dda37181b2ed718f4a4af058c8dc\workspace\transformed\jetified-firebase-analytics-23.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a42b47fa9a553a9a609ee0d23628c02a\workspace\transformed\jetified-firebase-analytics-23.0.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-analytics:23.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d742dda37181b2ed718f4a4af058c8dc\workspace\transformed\jetified-firebase-analytics-23.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a42b47fa9a553a9a609ee0d23628c02a\workspace\transformed\jetified-firebase-analytics-23.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -262,9 +264,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-measurement-api:23.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\08ce670c050683b28ac5192e79986815\workspace\transformed\jetified-play-services-measurement-api-23.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\daa4b0529fa9a52550510f02e76c6381\workspace\transformed\jetified-play-services-measurement-api-23.0.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-measurement-api:23.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\08ce670c050683b28ac5192e79986815\workspace\transformed\jetified-play-services-measurement-api-23.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\daa4b0529fa9a52550510f02e76c6381\workspace\transformed\jetified-play-services-measurement-api-23.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -275,9 +277,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-installations:19.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\7071b4921b6dbea733d1f97866aae9d9\workspace\transformed\jetified-firebase-installations-19.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\87f7d29b4078aa9d80d83cd3d59fc43c\workspace\transformed\jetified-firebase-installations-19.0.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-installations:19.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\7071b4921b6dbea733d1f97866aae9d9\workspace\transformed\jetified-firebase-installations-19.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\87f7d29b4078aa9d80d83cd3d59fc43c\workspace\transformed\jetified-firebase-installations-19.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -288,9 +290,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-sessions:3.0.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f4b178f741ce0047eb9a7d74a22cb159\workspace\transformed\jetified-firebase-sessions-3.0.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\632f142c52e64f45b1f697367453f1e7\workspace\transformed\jetified-firebase-sessions-3.0.1\jars\classes.jar"
       resolved="com.google.firebase:firebase-sessions:3.0.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f4b178f741ce0047eb9a7d74a22cb159\workspace\transformed\jetified-firebase-sessions-3.0.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\632f142c52e64f45b1f697367453f1e7\workspace\transformed\jetified-firebase-sessions-3.0.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -301,9 +303,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-auth-interop:20.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f61dd22d72dfa4b5a336ba7cbd5d846f\workspace\transformed\jetified-firebase-auth-interop-20.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\733c305642259d349764252763bd43a9\workspace\transformed\jetified-firebase-auth-interop-20.0.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-auth-interop:20.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f61dd22d72dfa4b5a336ba7cbd5d846f\workspace\transformed\jetified-firebase-auth-interop-20.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\733c305642259d349764252763bd43a9\workspace\transformed\jetified-firebase-auth-interop-20.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -314,9 +316,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-common:22.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9d0862f94fd38ad097add089d8c28386\workspace\transformed\jetified-firebase-common-22.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\886c892594ed2d5974904f77fabf7b8b\workspace\transformed\jetified-firebase-common-22.0.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-common:22.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9d0862f94fd38ad097add089d8c28386\workspace\transformed\jetified-firebase-common-22.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\886c892594ed2d5974904f77fabf7b8b\workspace\transformed\jetified-firebase-common-22.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -327,9 +329,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.recaptcha:recaptcha:18.6.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\19f09eb56c6e039b10f957d0fb1e4f1f\workspace\transformed\jetified-recaptcha-18.6.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\86261a990e246bfcdf4eb6223a3d288b\workspace\transformed\jetified-recaptcha-18.6.1\jars\classes.jar"
       resolved="com.google.android.recaptcha:recaptcha:18.6.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\19f09eb56c6e039b10f957d0fb1e4f1f\workspace\transformed\jetified-recaptcha-18.6.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\86261a990e246bfcdf4eb6223a3d288b\workspace\transformed\jetified-recaptcha-18.6.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -339,10 +341,14 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-play-services\1.10.2\61cc2b7de54f902c76fb2e3649bb1cd890a4a1cc\kotlinx-coroutines-play-services-1.10.2.jar"
+      resolved="org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2"/>
+  <library
       name="io.coil-kt:coil-compose:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3bcdd05e8d201b693a84a2a9613c2366\workspace\transformed\jetified-coil-compose-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2ffe955c1cd51600d05aa4a382c633b8\workspace\transformed\jetified-coil-compose-2.7.0\jars\classes.jar"
       resolved="io.coil-kt:coil-compose:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3bcdd05e8d201b693a84a2a9613c2366\workspace\transformed\jetified-coil-compose-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2ffe955c1cd51600d05aa4a382c633b8\workspace\transformed\jetified-coil-compose-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -353,9 +359,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="io.coil-kt:coil-compose-base:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1c48e6908ef267d9be0c0e6ff6d839a6\workspace\transformed\jetified-coil-compose-base-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3ed38da7cb5504b20aeea55c2dc412a4\workspace\transformed\jetified-coil-compose-base-2.7.0\jars\classes.jar"
       resolved="io.coil-kt:coil-compose-base:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1c48e6908ef267d9be0c0e6ff6d839a6\workspace\transformed\jetified-coil-compose-base-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3ed38da7cb5504b20aeea55c2dc412a4\workspace\transformed\jetified-coil-compose-base-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -366,9 +372,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="io.coil-kt:coil:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ef483933e9b109ae155e2f78a24f1f13\workspace\transformed\jetified-coil-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\01a22909da42cc2409212cbe1e7ee6ea\workspace\transformed\jetified-coil-2.7.0\jars\classes.jar"
       resolved="io.coil-kt:coil:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ef483933e9b109ae155e2f78a24f1f13\workspace\transformed\jetified-coil-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\01a22909da42cc2409212cbe1e7ee6ea\workspace\transformed\jetified-coil-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -379,9 +385,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="io.coil-kt:coil-base:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9877ede2724541598d824ede9f75a887\workspace\transformed\jetified-coil-base-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4c88053f37bae7b8cf5542d2ad383478\workspace\transformed\jetified-coil-base-2.7.0\jars\classes.jar"
       resolved="io.coil-kt:coil-base:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9877ede2724541598d824ede9f75a887\workspace\transformed\jetified-coil-base-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4c88053f37bae7b8cf5542d2ad383478\workspace\transformed\jetified-coil-base-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -392,9 +398,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-measurement:23.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\47766bccec0e7c7fa999d20cc280419d\workspace\transformed\jetified-play-services-measurement-23.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\efa104c5b6da3ffb5d04bce715cd7932\workspace\transformed\jetified-play-services-measurement-23.0.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-measurement:23.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\47766bccec0e7c7fa999d20cc280419d\workspace\transformed\jetified-play-services-measurement-23.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\efa104c5b6da3ffb5d04bce715cd7932\workspace\transformed\jetified-play-services-measurement-23.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -405,9 +411,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-measurement-sdk:23.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3187bbf7f08dca16e763485033c0dbd2\workspace\transformed\jetified-play-services-measurement-sdk-23.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\7a3aa1af0be9851c76ff4b033ee91e1f\workspace\transformed\jetified-play-services-measurement-sdk-23.0.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-measurement-sdk:23.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3187bbf7f08dca16e763485033c0dbd2\workspace\transformed\jetified-play-services-measurement-sdk-23.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\7a3aa1af0be9851c76ff4b033ee91e1f\workspace\transformed\jetified-play-services-measurement-sdk-23.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -418,9 +424,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-abt:21.1.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9c7b5d9f40c7b889d92f11eab31b1ca4\workspace\transformed\jetified-firebase-abt-21.1.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1b9b0c349e107ce69f13e0abdcafa582\workspace\transformed\jetified-firebase-abt-21.1.1\jars\classes.jar"
       resolved="com.google.firebase:firebase-abt:21.1.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9c7b5d9f40c7b889d92f11eab31b1ca4\workspace\transformed\jetified-firebase-abt-21.1.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1b9b0c349e107ce69f13e0abdcafa582\workspace\transformed\jetified-firebase-abt-21.1.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -431,9 +437,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-measurement-connector:20.0.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2f24cedbf432b369dcf5faab9d3e2d52\workspace\transformed\jetified-firebase-measurement-connector-20.0.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\cdb7c73de63b8a722cd82061312f73d9\workspace\transformed\jetified-firebase-measurement-connector-20.0.1\jars\classes.jar"
       resolved="com.google.firebase:firebase-measurement-connector:20.0.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2f24cedbf432b369dcf5faab9d3e2d52\workspace\transformed\jetified-firebase-measurement-connector-20.0.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\cdb7c73de63b8a722cd82061312f73d9\workspace\transformed\jetified-firebase-measurement-connector-20.0.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -444,9 +450,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-installations-interop:17.2.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\680ccd8273c77aac13baa82e654fd80b\workspace\transformed\jetified-firebase-installations-interop-17.2.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9c4bdb7ed669476a0d3431daa683785b\workspace\transformed\jetified-firebase-installations-interop-17.2.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-installations-interop:17.2.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\680ccd8273c77aac13baa82e654fd80b\workspace\transformed\jetified-firebase-installations-interop-17.2.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9c4bdb7ed669476a0d3431daa683785b\workspace\transformed\jetified-firebase-installations-interop-17.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -457,9 +463,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-auth-api-phone:18.0.2@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\031b4210ab98e4fdc7c7897b6c43ba2a\workspace\transformed\jetified-play-services-auth-api-phone-18.0.2\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\eaf72e466f6a6328a27185f5ee104926\workspace\transformed\jetified-play-services-auth-api-phone-18.0.2\jars\classes.jar"
       resolved="com.google.android.gms:play-services-auth-api-phone:18.0.2"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\031b4210ab98e4fdc7c7897b6c43ba2a\workspace\transformed\jetified-play-services-auth-api-phone-18.0.2"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\eaf72e466f6a6328a27185f5ee104926\workspace\transformed\jetified-play-services-auth-api-phone-18.0.2"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -470,9 +476,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.play:integrity:1.3.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\83dad581bfc24a05fafeee92bb199e8e\workspace\transformed\jetified-integrity-1.3.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ad56d3ce7d37132f9d83bc1293e857a9\workspace\transformed\jetified-integrity-1.3.0\jars\classes.jar"
       resolved="com.google.android.play:integrity:1.3.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\83dad581bfc24a05fafeee92bb199e8e\workspace\transformed\jetified-integrity-1.3.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ad56d3ce7d37132f9d83bc1293e857a9\workspace\transformed\jetified-integrity-1.3.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -483,9 +489,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-appcheck-interop:17.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\fa98ecfc7c6a81c06be1240de2dcf8de\workspace\transformed\jetified-firebase-appcheck-interop-17.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c68117c3fe5681b980779542323dfa06\workspace\transformed\jetified-firebase-appcheck-interop-17.0.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-appcheck-interop:17.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\fa98ecfc7c6a81c06be1240de2dcf8de\workspace\transformed\jetified-firebase-appcheck-interop-17.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c68117c3fe5681b980779542323dfa06\workspace\transformed\jetified-firebase-appcheck-interop-17.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -496,9 +502,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-iid-interop:17.1.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f0091e7651192a2c709284e4bde871ce\workspace\transformed\jetified-firebase-iid-interop-17.1.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b612f9cb7aa67f697665a1cd80638bf0\workspace\transformed\jetified-firebase-iid-interop-17.1.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-iid-interop:17.1.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f0091e7651192a2c709284e4bde871ce\workspace\transformed\jetified-firebase-iid-interop-17.1.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b612f9cb7aa67f697665a1cd80638bf0\workspace\transformed\jetified-firebase-iid-interop-17.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -509,9 +515,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-measurement-impl:23.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e84014de34774b562436e5143f193944\workspace\transformed\jetified-play-services-measurement-impl-23.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c0eb3069e433bd4d79829de65519c710\workspace\transformed\jetified-play-services-measurement-impl-23.0.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-measurement-impl:23.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e84014de34774b562436e5143f193944\workspace\transformed\jetified-play-services-measurement-impl-23.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c0eb3069e433bd4d79829de65519c710\workspace\transformed\jetified-play-services-measurement-impl-23.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -522,9 +528,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-database-collection:18.0.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\53a543c975959e586371451ff99150a8\workspace\transformed\jetified-firebase-database-collection-18.0.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\de7c1bf1d29c775959e4aeee44d14eb0\workspace\transformed\jetified-firebase-database-collection-18.0.1\jars\classes.jar"
       resolved="com.google.firebase:firebase-database-collection:18.0.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\53a543c975959e586371451ff99150a8\workspace\transformed\jetified-firebase-database-collection-18.0.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\de7c1bf1d29c775959e4aeee44d14eb0\workspace\transformed\jetified-firebase-database-collection-18.0.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -535,9 +541,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-base:18.5.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ed759c74269ba928a312aa8fcf938723\workspace\transformed\jetified-play-services-base-18.5.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\977e1fa02dfcb0f8aac3a8faf3bd4f0f\workspace\transformed\jetified-play-services-base-18.5.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-base:18.5.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ed759c74269ba928a312aa8fcf938723\workspace\transformed\jetified-play-services-base-18.5.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\977e1fa02dfcb0f8aac3a8faf3bd4f0f\workspace\transformed\jetified-play-services-base-18.5.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -548,9 +554,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-tasks:18.2.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e2ab7a6036ebfca74542b571b75af16d\workspace\transformed\jetified-play-services-tasks-18.2.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\87aa5c695b4ecdb5892684b627775576\workspace\transformed\jetified-play-services-tasks-18.2.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-tasks:18.2.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e2ab7a6036ebfca74542b571b75af16d\workspace\transformed\jetified-play-services-tasks-18.2.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\87aa5c695b4ecdb5892684b627775576\workspace\transformed\jetified-play-services-tasks-18.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -561,9 +567,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-ads-identifier:18.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\99ad5c162774317ddb2ee8e09c9b0c93\workspace\transformed\jetified-play-services-ads-identifier-18.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ac8bac8ccaf950ce5d95ebf27b9989f3\workspace\transformed\jetified-play-services-ads-identifier-18.0.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-ads-identifier:18.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\99ad5c162774317ddb2ee8e09c9b0c93\workspace\transformed\jetified-play-services-ads-identifier-18.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ac8bac8ccaf950ce5d95ebf27b9989f3\workspace\transformed\jetified-play-services-ads-identifier-18.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -574,9 +580,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-measurement-sdk-api:23.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\231a2c152c53950307c761363f9f3e06\workspace\transformed\jetified-play-services-measurement-sdk-api-23.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\5801785f4a5fe60bfc2c51d0c3fad70d\workspace\transformed\jetified-play-services-measurement-sdk-api-23.0.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-measurement-sdk-api:23.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\231a2c152c53950307c761363f9f3e06\workspace\transformed\jetified-play-services-measurement-sdk-api-23.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\5801785f4a5fe60bfc2c51d0c3fad70d\workspace\transformed\jetified-play-services-measurement-sdk-api-23.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -587,9 +593,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-measurement-base:23.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\55449308f41efc419dfabad5b27bb960\workspace\transformed\jetified-play-services-measurement-base-23.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4772d9b50e6fe4284ac978c43d12cba8\workspace\transformed\jetified-play-services-measurement-base-23.0.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-measurement-base:23.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\55449308f41efc419dfabad5b27bb960\workspace\transformed\jetified-play-services-measurement-base-23.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4772d9b50e6fe4284ac978c43d12cba8\workspace\transformed\jetified-play-services-measurement-base-23.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -600,9 +606,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-stats:17.0.2@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\915d3b5f7b738180b240ae5a3e7f5e1e\workspace\transformed\jetified-play-services-stats-17.0.2\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\65b7c01f6f6e994b4673063611045e48\workspace\transformed\jetified-play-services-stats-17.0.2\jars\classes.jar"
       resolved="com.google.android.gms:play-services-stats:17.0.2"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\915d3b5f7b738180b240ae5a3e7f5e1e\workspace\transformed\jetified-play-services-stats-17.0.2"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\65b7c01f6f6e994b4673063611045e48\workspace\transformed\jetified-play-services-stats-17.0.2"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -613,9 +619,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-basement:18.5.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a9dcac2746b533dd703cdd4163f9c124\workspace\transformed\jetified-play-services-basement-18.5.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\14a58f5e9115b12ce5db6c0fc25c0bf6\workspace\transformed\jetified-play-services-basement-18.5.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-basement:18.5.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a9dcac2746b533dd703cdd4163f9c124\workspace\transformed\jetified-play-services-basement-18.5.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\14a58f5e9115b12ce5db6c0fc25c0bf6\workspace\transformed\jetified-play-services-basement-18.5.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -626,10 +632,10 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.fragment:fragment:1.5.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\46783c02b4542f781755174f0e1128ba\workspace\transformed\fragment-1.5.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8d20799f5c5ad1b3e3e8644d41f6210a\workspace\transformed\fragment-1.5.1\jars\classes.jar"
       resolved="androidx.fragment:fragment:1.5.1"
       provided="true"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\46783c02b4542f781755174f0e1128ba\workspace\transformed\fragment-1.5.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8d20799f5c5ad1b3e3e8644d41f6210a\workspace\transformed\fragment-1.5.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -640,10 +646,10 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.activity:activity:1.5.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d2a89bf4b6bd0f6dff2dc10dc2689e7e\workspace\transformed\jetified-activity-1.5.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\7e1eb3c4b1f82fc8e0f3b6c39cea5a8e\workspace\transformed\jetified-activity-1.5.1\jars\classes.jar"
       resolved="androidx.activity:activity:1.5.1"
       provided="true"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d2a89bf4b6bd0f6dff2dc10dc2689e7e\workspace\transformed\jetified-activity-1.5.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\7e1eb3c4b1f82fc8e0f3b6c39cea5a8e\workspace\transformed\jetified-activity-1.5.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -654,9 +660,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.legacy:legacy-support-core-utils:1.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b3d77a76a048c708399763bb2b55c846\workspace\transformed\legacy-support-core-utils-1.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4ddb3a618c84b3c697e7fb8633ad2fd7\workspace\transformed\legacy-support-core-utils-1.0.0\jars\classes.jar"
       resolved="androidx.legacy:legacy-support-core-utils:1.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b3d77a76a048c708399763bb2b55c846\workspace\transformed\legacy-support-core-utils-1.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4ddb3a618c84b3c697e7fb8633ad2fd7\workspace\transformed\legacy-support-core-utils-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -667,9 +673,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.loader:loader:1.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b75f7b8afa08d1d79f992dd688a3a740\workspace\transformed\loader-1.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ea2d7a20159cbeefbaacca0f78d4fa1c\workspace\transformed\loader-1.0.0\jars\classes.jar"
       resolved="androidx.loader:loader:1.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b75f7b8afa08d1d79f992dd688a3a740\workspace\transformed\loader-1.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ea2d7a20159cbeefbaacca0f78d4fa1c\workspace\transformed\loader-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -680,9 +686,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4fc5ac046182179fbccddeb2797afd94\workspace\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c523ed57b324ddfe5e538b53db9104f5\workspace\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4fc5ac046182179fbccddeb2797afd94\workspace\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c523ed57b324ddfe5e538b53db9104f5\workspace\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -693,9 +699,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-viewmodel:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4477069c154ccfb2d25938d80d5ccdfd\workspace\transformed\lifecycle-viewmodel-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\cfa3f699cd8e2ccf8ae0b01aad7fa780\workspace\transformed\lifecycle-viewmodel-2.7.0\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-viewmodel:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4477069c154ccfb2d25938d80d5ccdfd\workspace\transformed\lifecycle-viewmodel-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\cfa3f699cd8e2ccf8ae0b01aad7fa780\workspace\transformed\lifecycle-viewmodel-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -706,9 +712,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-livedata-core:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1068840e84acd766c97e689b11e2284d\workspace\transformed\lifecycle-livedata-core-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\110eb08c8104bf54fe6426eeddc39ab5\workspace\transformed\lifecycle-livedata-core-2.7.0\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-livedata-core:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1068840e84acd766c97e689b11e2284d\workspace\transformed\lifecycle-livedata-core-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\110eb08c8104bf54fe6426eeddc39ab5\workspace\transformed\lifecycle-livedata-core-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -719,9 +725,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-livedata:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\05f1aa910c6963e3b9c9a2b09d55b469\workspace\transformed\lifecycle-livedata-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4324214c2fee63ba66fe91f7c7160e78\workspace\transformed\lifecycle-livedata-2.7.0\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-livedata:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\05f1aa910c6963e3b9c9a2b09d55b469\workspace\transformed\lifecycle-livedata-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4324214c2fee63ba66fe91f7c7160e78\workspace\transformed\lifecycle-livedata-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -732,9 +738,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\bc2c6e566de4c5fd66ea3c32edde6337\workspace\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d475e4a3acd09b3e2d0c207aabaa8ee2\workspace\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\bc2c6e566de4c5fd66ea3c32edde6337\workspace\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d475e4a3acd09b3e2d0c207aabaa8ee2\workspace\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -745,10 +751,10 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.core:core-ktx:1.2.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\bf437bfb512d2ff6fce425bb3e002f05\workspace\transformed\jetified-core-ktx-1.2.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\6cc63e3a9a486dc1a92fbcd944da1a28\workspace\transformed\jetified-core-ktx-1.2.0\jars\classes.jar"
       resolved="androidx.core:core-ktx:1.2.0"
       provided="true"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\bf437bfb512d2ff6fce425bb3e002f05\workspace\transformed\jetified-core-ktx-1.2.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\6cc63e3a9a486dc1a92fbcd944da1a28\workspace\transformed\jetified-core-ktx-1.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -759,9 +765,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.viewpager:viewpager:1.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e1bd19bf38fa1fce37c0dc0923b09e3d\workspace\transformed\viewpager-1.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f64c4c7eb8cd73424422dede5dbc95f6\workspace\transformed\viewpager-1.0.0\jars\classes.jar"
       resolved="androidx.viewpager:viewpager:1.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e1bd19bf38fa1fce37c0dc0923b09e3d\workspace\transformed\viewpager-1.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f64c4c7eb8cd73424422dede5dbc95f6\workspace\transformed\viewpager-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -772,9 +778,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.browser:browser:1.4.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\bf436df8b2e17d9b7ce7585c779c510f\workspace\transformed\browser-1.4.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3a66b3dc9a1a88edfee2b090c0784864\workspace\transformed\browser-1.4.0\jars\classes.jar"
       resolved="androidx.browser:browser:1.4.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\bf436df8b2e17d9b7ce7585c779c510f\workspace\transformed\browser-1.4.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3a66b3dc9a1a88edfee2b090c0784864\workspace\transformed\browser-1.4.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -785,9 +791,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.customview:customview:1.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4bc8a2b8cac16086f379fa2c4ffaace1\workspace\transformed\customview-1.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\91170aeb8101729ad8deaaa2d290da23\workspace\transformed\customview-1.0.0\jars\classes.jar"
       resolved="androidx.customview:customview:1.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4bc8a2b8cac16086f379fa2c4ffaace1\workspace\transformed\customview-1.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\91170aeb8101729ad8deaaa2d290da23\workspace\transformed\customview-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -798,10 +804,10 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.core:core:1.12.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9e088febbbd1c39f823e304293d45100\workspace\transformed\core-1.12.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8418864764d65cb68629b0edf3c296c1\workspace\transformed\core-1.12.0\jars\classes.jar"
       resolved="androidx.core:core:1.12.0"
       provided="true"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9e088febbbd1c39f823e304293d45100\workspace\transformed\core-1.12.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8418864764d65cb68629b0edf3c296c1\workspace\transformed\core-1.12.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -812,9 +818,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-runtime:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3b24b214f9c686dfe10973965aac6d36\workspace\transformed\lifecycle-runtime-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e91a15eb4c40a1250e5c15652d487ae5\workspace\transformed\lifecycle-runtime-2.7.0\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-runtime:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3b24b214f9c686dfe10973965aac6d36\workspace\transformed\lifecycle-runtime-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e91a15eb4c40a1250e5c15652d487ae5\workspace\transformed\lifecycle-runtime-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -829,9 +835,9 @@
       resolved="androidx.lifecycle:lifecycle-common:2.7.0"/>
   <library
       name="androidx.compose.animation:animation-core-android:1.6.8@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\6f37ba9bba8139ebce22161f872b1781\workspace\transformed\jetified-animation-core-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\85878b6de25efa9ce2df506efc53a7a5\workspace\transformed\jetified-animation-core-release\jars\classes.jar"
       resolved="androidx.compose.animation:animation-core-android:1.6.8"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\6f37ba9bba8139ebce22161f872b1781\workspace\transformed\jetified-animation-core-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\85878b6de25efa9ce2df506efc53a7a5\workspace\transformed\jetified-animation-core-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -842,9 +848,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.compose.animation:animation-android:1.6.8@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\80adcd7fefb59e0bdb94996ac2104d4a\workspace\transformed\jetified-animation-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\be8a825e424f936bcce750e897c5baac\workspace\transformed\jetified-animation-release\jars\classes.jar"
       resolved="androidx.compose.animation:animation-android:1.6.8"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\80adcd7fefb59e0bdb94996ac2104d4a\workspace\transformed\jetified-animation-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\be8a825e424f936bcce750e897c5baac\workspace\transformed\jetified-animation-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -855,9 +861,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.compose.foundation:foundation-layout-android:1.6.8@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\548330e56ca52d17e25362010f8b4d20\workspace\transformed\jetified-foundation-layout-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0403b441d66aec4efc8f06dd27bc9e54\workspace\transformed\jetified-foundation-layout-release\jars\classes.jar"
       resolved="androidx.compose.foundation:foundation-layout-android:1.6.8"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\548330e56ca52d17e25362010f8b4d20\workspace\transformed\jetified-foundation-layout-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0403b441d66aec4efc8f06dd27bc9e54\workspace\transformed\jetified-foundation-layout-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -868,9 +874,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.compose.foundation:foundation-android:1.6.8@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\7f9e567c2c9ba336722c5d38bd884297\workspace\transformed\jetified-foundation-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\541b7b787d0de65e4d23d0019c4e71f0\workspace\transformed\jetified-foundation-release\jars\classes.jar"
       resolved="androidx.compose.foundation:foundation-android:1.6.8"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\7f9e567c2c9ba336722c5d38bd884297\workspace\transformed\jetified-foundation-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\541b7b787d0de65e4d23d0019c4e71f0\workspace\transformed\jetified-foundation-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -881,9 +887,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.compose.ui:ui-util-android:1.6.8@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\20ebca62f2393ff9c74b8cecb8ad5b36\workspace\transformed\jetified-ui-util-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\10d1c1208b607a98b47aa509c3334307\workspace\transformed\jetified-ui-util-release\jars\classes.jar"
       resolved="androidx.compose.ui:ui-util-android:1.6.8"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\20ebca62f2393ff9c74b8cecb8ad5b36\workspace\transformed\jetified-ui-util-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\10d1c1208b607a98b47aa509c3334307\workspace\transformed\jetified-ui-util-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -894,9 +900,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.compose.ui:ui-unit-android:1.6.8@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\96d35ffb1ee21d41aa45a9228463dc90\workspace\transformed\jetified-ui-unit-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f118baceee2a8f0529dc1a6a8369338c\workspace\transformed\jetified-ui-unit-release\jars\classes.jar"
       resolved="androidx.compose.ui:ui-unit-android:1.6.8"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\96d35ffb1ee21d41aa45a9228463dc90\workspace\transformed\jetified-ui-unit-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f118baceee2a8f0529dc1a6a8369338c\workspace\transformed\jetified-ui-unit-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -907,9 +913,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.compose.ui:ui-text-android:1.6.8@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8120a93c8b4f49a7fce40bee5c9db9dd\workspace\transformed\jetified-ui-text-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0793d482c3c466619f4a63dd1f810532\workspace\transformed\jetified-ui-text-release\jars\classes.jar"
       resolved="androidx.compose.ui:ui-text-android:1.6.8"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8120a93c8b4f49a7fce40bee5c9db9dd\workspace\transformed\jetified-ui-text-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0793d482c3c466619f4a63dd1f810532\workspace\transformed\jetified-ui-text-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -920,9 +926,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.compose.ui:ui-graphics-android:1.6.8@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\14d67b65d345d434a40083a1d7a92ef1\workspace\transformed\jetified-ui-graphics-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\5bf6236f91a9ddd38744de29bb954ca2\workspace\transformed\jetified-ui-graphics-release\jars\classes.jar"
       resolved="androidx.compose.ui:ui-graphics-android:1.6.8"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\14d67b65d345d434a40083a1d7a92ef1\workspace\transformed\jetified-ui-graphics-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\5bf6236f91a9ddd38744de29bb954ca2\workspace\transformed\jetified-ui-graphics-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -933,9 +939,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.compose.ui:ui-geometry-android:1.6.8@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\efc5b7a7769923b169bd0edd107121c9\workspace\transformed\jetified-ui-geometry-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\912813ab43afbc43343439e30fc153e8\workspace\transformed\jetified-ui-geometry-release\jars\classes.jar"
       resolved="androidx.compose.ui:ui-geometry-android:1.6.8"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\efc5b7a7769923b169bd0edd107121c9\workspace\transformed\jetified-ui-geometry-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\912813ab43afbc43343439e30fc153e8\workspace\transformed\jetified-ui-geometry-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -946,9 +952,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.compose.ui:ui-android:1.6.8@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c65e3f18a33a0216401aac85ff82f279\workspace\transformed\jetified-ui-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\eac5d31c44bd8a21c25fbf9108eba5dc\workspace\transformed\jetified-ui-release\jars\classes.jar"
       resolved="androidx.compose.ui:ui-android:1.6.8"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c65e3f18a33a0216401aac85ff82f279\workspace\transformed\jetified-ui-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\eac5d31c44bd8a21c25fbf9108eba5dc\workspace\transformed\jetified-ui-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -959,9 +965,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.compose.runtime:runtime-saveable-android:1.6.8@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\fb82ef9cc8411d578100081ac08eb721\workspace\transformed\jetified-runtime-saveable-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\df735a256ec7f4c3281e7132e76131a8\workspace\transformed\jetified-runtime-saveable-release\jars\classes.jar"
       resolved="androidx.compose.runtime:runtime-saveable-android:1.6.8"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\fb82ef9cc8411d578100081ac08eb721\workspace\transformed\jetified-runtime-saveable-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\df735a256ec7f4c3281e7132e76131a8\workspace\transformed\jetified-runtime-saveable-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -972,9 +978,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.compose.runtime:runtime-android:1.6.8@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a73051ac3260639098e72e5be6e23aea\workspace\transformed\jetified-runtime-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\72aef13b0f768cf20d7245827ea926c2\workspace\transformed\jetified-runtime-release\jars\classes.jar"
       resolved="androidx.compose.runtime:runtime-android:1.6.8"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a73051ac3260639098e72e5be6e23aea\workspace\transformed\jetified-runtime-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\72aef13b0f768cf20d7245827ea926c2\workspace\transformed\jetified-runtime-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -984,22 +990,14 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-android\1.9.0\6cf3b8df5a2ce8c6b0dffe55657a827c405ee2fe\kotlinx-coroutines-android-1.9.0.jar"
-      resolved="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0"/>
-  <library
-      name="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.9.0@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-core-jvm\1.9.0\9beade4c1c1569e4f36cbd2c37e02e3e41502601\kotlinx-coroutines-core-jvm-1.9.0.jar"
-      resolved="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.9.0"/>
-  <library
-      name="org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.9.0@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-play-services\1.9.0\9d715295c29dddf8c381565c513fb2d9923f9f41\kotlinx-coroutines-play-services-1.9.0.jar"
-      resolved="org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.9.0"/>
+      name="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-android\1.10.2\c8705d275d81f19e8afaf3ff9b5bf7a4b6b6c19b\kotlinx-coroutines-android-1.10.2.jar"
+      resolved="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2"/>
   <library
       name="androidx.privacysandbox.ads:ads-adservices-java:1.1.0-beta11@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3e5ee14ac675e2958ba6865d182e4eef\workspace\transformed\jetified-ads-adservices-java-1.1.0-beta11\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e25a879653af33139118e70f9d54f839\workspace\transformed\jetified-ads-adservices-java-1.1.0-beta11\jars\classes.jar"
       resolved="androidx.privacysandbox.ads:ads-adservices-java:1.1.0-beta11"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3e5ee14ac675e2958ba6865d182e4eef\workspace\transformed\jetified-ads-adservices-java-1.1.0-beta11"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e25a879653af33139118e70f9d54f839\workspace\transformed\jetified-ads-adservices-java-1.1.0-beta11"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1010,9 +1008,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0f732a79e4df073606256f1089b22540\workspace\transformed\jetified-ads-adservices-1.1.0-beta11\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\fc251d1acdb2aecf6c62dd2e3a2439aa\workspace\transformed\jetified-ads-adservices-1.1.0-beta11\jars\classes.jar"
       resolved="androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0f732a79e4df073606256f1089b22540\workspace\transformed\jetified-ads-adservices-1.1.0-beta11"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\fc251d1acdb2aecf6c62dd2e3a2439aa\workspace\transformed\jetified-ads-adservices-1.1.0-beta11"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1035,9 +1033,9 @@
       resolved="com.squareup.okhttp3:logging-interceptor:5.1.0"/>
   <library
       name="com.jakewharton.timber:timber:5.0.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\5f6ae4ff23f6753668b0356432793f53\workspace\transformed\jetified-timber-5.0.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2b1ac82fa0f1654f1caf1e34ceae8569\workspace\transformed\jetified-timber-5.0.1\jars\classes.jar"
       resolved="com.jakewharton.timber:timber:5.0.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\5f6ae4ff23f6753668b0356432793f53\workspace\transformed\jetified-timber-5.0.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2b1ac82fa0f1654f1caf1e34ceae8569\workspace\transformed\jetified-timber-5.0.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1051,14 +1049,14 @@
       jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\io.mockk\mockk-agent-jvm\1.14.5\b1a1a2942efaf18762176a525ecb6350dca51c12\mockk-agent-jvm-1.14.5.jar"
       resolved="io.mockk:mockk-agent-jvm:1.14.5"/>
   <library
-      name="org.bouncycastle:bcprov-jdk18on:1.78.1@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.bouncycastle\bcprov-jdk18on\1.78.1\39e9e45359e20998eb79c1828751f94a818d25f8\bcprov-jdk18on-1.78.1.jar"
-      resolved="org.bouncycastle:bcprov-jdk18on:1.78.1"/>
+      name="org.bouncycastle:bcprov-jdk18on:1.81@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.bouncycastle\bcprov-jdk18on\1.81\d17c094daef57dbd80af71687a475aa6df7cbe54\bcprov-jdk18on-1.81.jar"
+      resolved="org.bouncycastle:bcprov-jdk18on:1.81"/>
   <library
       name="com.squareup.okhttp3:okhttp-android:5.1.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\fea0debeab3e5324dc21da466c934057\workspace\transformed\jetified-okhttp-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\aa5c332e94e31db0b6dda91452d94d1c\workspace\transformed\jetified-okhttp-release\jars\classes.jar"
       resolved="com.squareup.okhttp3:okhttp-android:5.1.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\fea0debeab3e5324dc21da466c934057\workspace\transformed\jetified-okhttp-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\aa5c332e94e31db0b6dda91452d94d1c\workspace\transformed\jetified-okhttp-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1072,87 +1070,10 @@
       jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\2.2.20\bdbe3b5d872fa3b74d8fcd4e7ca3193f4abc9cc8\kotlin-stdlib-jdk7-2.2.20.jar"
       resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.2.20"/>
   <library
-      name="androidx.annotation:annotation-experimental:1.4.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\20c50f9a0a91183325b5c1c4a80f626b\workspace\transformed\jetified-annotation-experimental-1.4.1\jars\classes.jar"
-      resolved="androidx.annotation:annotation-experimental:1.4.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\20c50f9a0a91183325b5c1c4a80f626b\workspace\transformed\jetified-annotation-experimental-1.4.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.credentials:credentials-play-services-auth:1.2.0-rc01@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\da40e3f8b5d64ed280bb1cc611b2465f\workspace\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\jars\classes.jar"
-      resolved="androidx.credentials:credentials-play-services-auth:1.2.0-rc01"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\da40e3f8b5d64ed280bb1cc611b2465f\workspace\transformed\jetified-credentials-play-services-auth-1.2.0-rc01"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.credentials:credentials:1.2.0-rc01@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f593f8ac2f82d7d23fac8e12f9d146f5\workspace\transformed\jetified-credentials-1.2.0-rc01\jars\classes.jar"
-      resolved="androidx.credentials:credentials:1.2.0-rc01"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f593f8ac2f82d7d23fac8e12f9d146f5\workspace\transformed\jetified-credentials-1.2.0-rc01"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="io.mockk:mockk-agent-api-jvm:1.14.5@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\io.mockk\mockk-agent-api-jvm\1.14.5\4e92555e63eb400f5d37b344ed9130a899aba1bb\mockk-agent-api-jvm-1.14.5.jar"
-      resolved="io.mockk:mockk-agent-api-jvm:1.14.5"/>
-  <library
-      name="com.squareup.okio:okio-jvm:3.15.0@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio-jvm\3.15.0\cb3c285187640f543150fcac1ae012bdd778c0e1\okio-jvm-3.15.0.jar"
-      resolved="com.squareup.okio:okio-jvm:3.15.0"/>
-  <library
-      name="androidx.savedstate:savedstate:1.2.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a2a3340c303af89e5c7824a66c3b5cfb\workspace\transformed\jetified-savedstate-1.2.1\jars\classes.jar"
-      resolved="androidx.savedstate:savedstate:1.2.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a2a3340c303af89e5c7824a66c3b5cfb\workspace\transformed\jetified-savedstate-1.2.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.versionedparcelable:versionedparcelable:1.1.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\85b3f95e1898aacb335b636f047a8f1c\workspace\transformed\versionedparcelable-1.1.1\jars\classes.jar"
-      resolved="androidx.versionedparcelable:versionedparcelable:1.1.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\85b3f95e1898aacb335b636f047a8f1c\workspace\transformed\versionedparcelable-1.1.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.collection:collection-jvm:1.4.0@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\androidx.collection\collection-jvm\1.4.0\e209fb7bd1183032f55a0408121c6251a81acb49\collection-jvm-1.4.0.jar"
-      resolved="androidx.collection:collection-jvm:1.4.0"/>
-  <library
       name="com.google.firebase:firebase-config-interop:16.0.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4122212d910f2df5154e82ef66b45b34\workspace\transformed\jetified-firebase-config-interop-16.0.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c98ee3ad0c95bd923cb85aae4af8cd60\workspace\transformed\jetified-firebase-config-interop-16.0.1\jars\classes.jar"
       resolved="com.google.firebase:firebase-config-interop:16.0.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4122212d910f2df5154e82ef66b45b34\workspace\transformed\jetified-firebase-config-interop-16.0.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c98ee3ad0c95bd923cb85aae4af8cd60\workspace\transformed\jetified-firebase-config-interop-16.0.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1163,10 +1084,10 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-datatransport:18.2.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\58d83569756a665b6e39d665fe6e9d38\workspace\transformed\jetified-firebase-datatransport-18.2.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e2aa1f6fc4a3b5d5117887119a5f3fda\workspace\transformed\jetified-firebase-datatransport-18.2.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-datatransport:18.2.0"
       provided="true"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\58d83569756a665b6e39d665fe6e9d38\workspace\transformed\jetified-firebase-datatransport-18.2.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e2aa1f6fc4a3b5d5117887119a5f3fda\workspace\transformed\jetified-firebase-datatransport-18.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1177,10 +1098,10 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.datatransport:transport-backend-cct:3.1.9@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\6a31a81a6c4050920529d9e38cb4e936\workspace\transformed\jetified-transport-backend-cct-3.1.9\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\aa1231968d34da0cfa1f0f4eebfe0428\workspace\transformed\jetified-transport-backend-cct-3.1.9\jars\classes.jar"
       resolved="com.google.android.datatransport:transport-backend-cct:3.1.9"
       provided="true"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\6a31a81a6c4050920529d9e38cb4e936\workspace\transformed\jetified-transport-backend-cct-3.1.9"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\aa1231968d34da0cfa1f0f4eebfe0428\workspace\transformed\jetified-transport-backend-cct-3.1.9"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1191,9 +1112,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.firebase:firebase-encoders-json:18.0.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0d0cd7c56c9f85d4c1e58118649364a0\workspace\transformed\jetified-firebase-encoders-json-18.0.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\5daf1c16f070dafcb6a47c1bb0c74a79\workspace\transformed\jetified-firebase-encoders-json-18.0.1\jars\classes.jar"
       resolved="com.google.firebase:firebase-encoders-json:18.0.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0d0cd7c56c9f85d4c1e58118649364a0\workspace\transformed\jetified-firebase-encoders-json-18.0.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\5daf1c16f070dafcb6a47c1bb0c74a79\workspace\transformed\jetified-firebase-encoders-json-18.0.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1204,10 +1125,10 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.datatransport:transport-runtime:3.1.9@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2f5cf48584b5e2df40e6652de45cf29d\workspace\transformed\jetified-transport-runtime-3.1.9\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f91124487503d2b143f38c4c31b6a64b\workspace\transformed\jetified-transport-runtime-3.1.9\jars\classes.jar"
       resolved="com.google.android.datatransport:transport-runtime:3.1.9"
       provided="true"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2f5cf48584b5e2df40e6652de45cf29d\workspace\transformed\jetified-transport-runtime-3.1.9"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f91124487503d2b143f38c4c31b6a64b\workspace\transformed\jetified-transport-runtime-3.1.9"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1225,10 +1146,49 @@
       jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\com.google.firebase\firebase-encoders\17.0.0\26f52dc549c42575b155f8c720e84059ee600a85\firebase-encoders-17.0.0.jar"
       resolved="com.google.firebase:firebase-encoders:17.0.0"/>
   <library
+      name="androidx.credentials:credentials-play-services-auth:1.2.0-rc01@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f49cc65a34bc929a428b955969c90a57\workspace\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\jars\classes.jar"
+      resolved="androidx.credentials:credentials-play-services-auth:1.2.0-rc01"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f49cc65a34bc929a428b955969c90a57\workspace\transformed\jetified-credentials-play-services-auth-1.2.0-rc01"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.credentials:credentials:1.2.0-rc01@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\15480ad36e3416c86a2547c2e4935e5c\workspace\transformed\jetified-credentials-1.2.0-rc01\jars\classes.jar"
+      resolved="androidx.credentials:credentials:1.2.0-rc01"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\15480ad36e3416c86a2547c2e4935e5c\workspace\transformed\jetified-credentials-1.2.0-rc01"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8b5e96e8d54c42f51283bf255e324763\workspace\transformed\localbroadcastmanager-1.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b032da97409ad68fb25e801746613d45\workspace\transformed\localbroadcastmanager-1.0.0\jars\classes.jar"
       resolved="androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8b5e96e8d54c42f51283bf255e324763\workspace\transformed\localbroadcastmanager-1.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b032da97409ad68fb25e801746613d45\workspace\transformed\localbroadcastmanager-1.0.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.versionedparcelable:versionedparcelable:1.1.1@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\00a39502165629b3720d17ae7fe25513\workspace\transformed\versionedparcelable-1.1.1\jars\classes.jar"
+      resolved="androidx.versionedparcelable:versionedparcelable:1.1.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\00a39502165629b3720d17ae7fe25513\workspace\transformed\versionedparcelable-1.1.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1239,10 +1199,10 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.datatransport:transport-api:3.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\baef9320e9370e2ed4f22d697ace0ff3\workspace\transformed\jetified-transport-api-3.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\054e9684574fb5a9c1d023d255666b26\workspace\transformed\jetified-transport-api-3.0.0\jars\classes.jar"
       resolved="com.google.android.datatransport:transport-api:3.0.0"
       provided="true"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\baef9320e9370e2ed4f22d697ace0ff3\workspace\transformed\jetified-transport-api-3.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\054e9684574fb5a9c1d023d255666b26\workspace\transformed\jetified-transport-api-3.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1253,9 +1213,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.documentfile:documentfile:1.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ea10d0effb3731fa859cab816a454795\workspace\transformed\documentfile-1.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a39532785c6b5d64743dbfa06ded5391\workspace\transformed\documentfile-1.0.0\jars\classes.jar"
       resolved="androidx.documentfile:documentfile:1.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ea10d0effb3731fa859cab816a454795\workspace\transformed\documentfile-1.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a39532785c6b5d64743dbfa06ded5391\workspace\transformed\documentfile-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1266,9 +1226,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.print:print:1.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\72f2e7b243c7cfb49d3331ec2b7c534b\workspace\transformed\print-1.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\da466b09415c21f96b5eeb637b135245\workspace\transformed\print-1.0.0\jars\classes.jar"
       resolved="androidx.print:print:1.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\72f2e7b243c7cfb49d3331ec2b7c534b\workspace\transformed\print-1.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\da466b09415c21f96b5eeb637b135245\workspace\transformed\print-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1279,9 +1239,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.arch.core:core-runtime:2.2.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\719874d28b76a6d84cc9697643a7d7aa\workspace\transformed\core-runtime-2.2.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c32c8aadbae7a3a380a5e02ae439fc98\workspace\transformed\core-runtime-2.2.0\jars\classes.jar"
       resolved="androidx.arch.core:core-runtime:2.2.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\719874d28b76a6d84cc9697643a7d7aa\workspace\transformed\core-runtime-2.2.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c32c8aadbae7a3a380a5e02ae439fc98\workspace\transformed\core-runtime-2.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1295,10 +1255,48 @@
       jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\androidx.arch.core\core-common\2.2.0\5e1b8b81dfd5f52c56a8d53b18ca759c19a301f3\core-common-2.2.0.jar"
       resolved="androidx.arch.core:core-common:2.2.0"/>
   <library
+      name="androidx.savedstate:savedstate:1.2.1@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\6fa2a9bae371c935fb2d21a40df103fd\workspace\transformed\jetified-savedstate-1.2.1\jars\classes.jar"
+      resolved="androidx.savedstate:savedstate:1.2.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\6fa2a9bae371c935fb2d21a40df103fd\workspace\transformed\jetified-savedstate-1.2.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.collection:collection-jvm:1.4.0@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\androidx.collection\collection-jvm\1.4.0\e209fb7bd1183032f55a0408121c6251a81acb49\collection-jvm-1.4.0.jar"
+      resolved="androidx.collection:collection-jvm:1.4.0"/>
+  <library
       name="androidx.annotation:annotation-jvm:1.8.1@jar"
       jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\androidx.annotation\annotation-jvm\1.8.1\b8a16fe526014b7941c1debaccaf9c5153692dbb\annotation-jvm-1.8.1.jar"
       resolved="androidx.annotation:annotation-jvm:1.8.1"
       provided="true"/>
+  <library
+      name="androidx.annotation:annotation-experimental:1.4.1@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\6589b3f4e1da6ddc501680a5ea4f87ac\workspace\transformed\jetified-annotation-experimental-1.4.1\jars\classes.jar"
+      resolved="androidx.annotation:annotation-experimental:1.4.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\6589b3f4e1da6ddc501680a5ea4f87ac\workspace\transformed\jetified-annotation-experimental-1.4.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="io.mockk:mockk-agent-api-jvm:1.14.5@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\io.mockk\mockk-agent-api-jvm\1.14.5\4e92555e63eb400f5d37b344ed9130a899aba1bb\mockk-agent-api-jvm-1.14.5.jar"
+      resolved="io.mockk:mockk-agent-api-jvm:1.14.5"/>
+  <library
+      name="com.squareup.okio:okio-jvm:3.15.0@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio-jvm\3.15.0\cb3c285187640f543150fcac1ae012bdd778c0e1\okio-jvm-3.15.0.jar"
+      resolved="com.squareup.okio:okio-jvm:3.15.0"/>
   <library
       name="org.jetbrains.kotlin:kotlin-stdlib:2.2.20@jar"
       jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\2.2.20\5380b19fa1924399b62ce3a1faffebb2b4f82272\kotlin-stdlib-2.2.20.jar"
@@ -1308,18 +1306,18 @@
       jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk8\2.2.20\57c4d839a6e5ad105d61ffc5cc0bf4de649c1714\kotlin-stdlib-jdk8-2.2.20.jar"
       resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20"/>
   <library
-      name="com.google.dagger:hilt-core:2.51.1@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\com.google.dagger\hilt-core\2.51.1\ea893fd757e1c12c960441c1a9056b13bf07d8f1\hilt-core-2.51.1.jar"
-      resolved="com.google.dagger:hilt-core:2.51.1"/>
+      name="com.google.dagger:hilt-core:2.57.1@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\com.google.dagger\hilt-core\2.57.1\b6ff65e421f2dad01a39dec682dcebec22f1655\hilt-core-2.57.1.jar"
+      resolved="com.google.dagger:hilt-core:2.57.1"/>
   <library
-      name="com.google.dagger:dagger:2.51.1@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\com.google.dagger\dagger\2.51.1\48cb41ae824574a5c5f961e45c833650bf19c956\dagger-2.51.1.jar"
-      resolved="com.google.dagger:dagger:2.51.1"/>
+      name="com.google.dagger:dagger:2.57.1@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\com.google.dagger\dagger\2.57.1\1356f58991366837156cabfcd3956cfc2a6cf6a6\dagger-2.57.1.jar"
+      resolved="com.google.dagger:dagger:2.57.1"/>
   <library
-      name="com.google.dagger:dagger-lint-aar:2.51.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\bf3b928efaa13fe776adeebd8101b9ad\workspace\transformed\jetified-dagger-lint-aar-2.51.1\jars\classes.jar"
-      resolved="com.google.dagger:dagger-lint-aar:2.51.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\bf3b928efaa13fe776adeebd8101b9ad\workspace\transformed\jetified-dagger-lint-aar-2.51.1"
+      name="com.google.dagger:dagger-lint-aar:2.57.1@aar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\cfd3707f476f2af3ebf3fb8654205891\workspace\transformed\jetified-dagger-lint-aar-2.57.1\jars\classes.jar"
+      resolved="com.google.dagger:dagger-lint-aar:2.57.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\cfd3707f476f2af3ebf3fb8654205891\workspace\transformed\jetified-dagger-lint-aar-2.57.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1346,18 +1344,22 @@
       jars="C:\ReGenesis-A.O.S.P\list\build\libs\list-1.0.0.jar"
       resolved="::"/>
   <library
-      name="androidx.hilt:hilt-common:1.2.0@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\androidx.hilt\hilt-common\1.2.0\9ca9c006cfce81d1435a0735fdab4b9e1166faa1\hilt-common-1.2.0.jar"
-      resolved="androidx.hilt:hilt-common:1.2.0"/>
+      name="androidx.hilt:hilt-common:1.3.0@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\androidx.hilt\hilt-common\1.3.0\7e598ad952f14002a6ae86dd69e7b8bcf5d9d6fc\hilt-common-1.3.0.jar"
+      resolved="androidx.hilt:hilt-common:1.3.0"/>
+  <library
+      name="org.jspecify:jspecify:1.0.0@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jspecify\jspecify\1.0.0\7425a601c1c7ec76645a78d22b8c6a627edee507\jspecify-1.0.0.jar"
+      resolved="org.jspecify:jspecify:1.0.0"/>
   <library
       name="com.google.code.gson:gson:2.13.1@jar"
       jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.13.1\853ce06c11316b33a8eae5e9095da096a9528b8f\gson-2.13.1.jar"
       resolved="com.google.code.gson:gson:2.13.1"/>
   <library
       name="com.google.firebase:firebase-components:19.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f0b0d73abb19e79889db87f6315e13f8\workspace\transformed\jetified-firebase-components-19.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d233a0501a4077564dcddc98ba531692\workspace\transformed\jetified-firebase-components-19.0.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-components:19.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f0b0d73abb19e79889db87f6315e13f8\workspace\transformed\jetified-firebase-components-19.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d233a0501a4077564dcddc98ba531692\workspace\transformed\jetified-firebase-components-19.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1379,11 +1381,15 @@
       jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.15.11\a38b16385e867f59a641330f0362ebe742788ed8\byte-buddy-agent-1.15.11.jar"
       resolved="net.bytebuddy:byte-buddy-agent:1.15.11"/>
   <library
+      name="jakarta.inject:jakarta.inject-api:2.0.1@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\jakarta.inject\jakarta.inject-api\2.0.1\4c28afe1991a941d7702fe1362c365f0a8641d1e\jakarta.inject-api-2.0.1.jar"
+      resolved="jakarta.inject:jakarta.inject-api:2.0.1"/>
+  <library
       name="androidx.startup:startup-runtime:1.1.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\835d449ade1c0f07f11db732545ca567\workspace\transformed\jetified-startup-runtime-1.1.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\20b8180b2f17424793f48c8ba9e77a69\workspace\transformed\jetified-startup-runtime-1.1.1\jars\classes.jar"
       resolved="androidx.startup:startup-runtime:1.1.1"
       provided="true"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\835d449ade1c0f07f11db732545ca567\workspace\transformed\jetified-startup-runtime-1.1.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\20b8180b2f17424793f48c8ba9e77a69\workspace\transformed\jetified-startup-runtime-1.1.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1410,9 +1416,9 @@
       resolved="com.google.firebase:firebase-annotations:17.0.0"/>
   <library
       name="com.google.firebase:protolite-well-known-types:18.0.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1b559055aaeecc582d161b5966053712\workspace\transformed\jetified-protolite-well-known-types-18.0.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0d2b6e6e6da756941f77a905d153884d\workspace\transformed\jetified-protolite-well-known-types-18.0.1\jars\classes.jar"
       resolved="com.google.firebase:protolite-well-known-types:18.0.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1b559055aaeecc582d161b5966053712\workspace\transformed\jetified-protolite-well-known-types-18.0.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0d2b6e6e6da756941f77a905d153884d\workspace\transformed\jetified-protolite-well-known-types-18.0.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1423,9 +1429,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.play:core-common:2.0.3@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b7336fa51a8269199d558ce48dd66c59\workspace\transformed\jetified-core-common-2.0.3\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c10f4ac6745c622e1ef0add489812c40\workspace\transformed\jetified-core-common-2.0.3\jars\classes.jar"
       resolved="com.google.android.play:core-common:2.0.3"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b7336fa51a8269199d558ce48dd66c59\workspace\transformed\jetified-core-common-2.0.3"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\c10f4ac6745c622e1ef0add489812c40\workspace\transformed\jetified-core-common-2.0.3"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1449,22 +1455,10 @@
       resolved="com.google.j2objc:j2objc-annotations:1.3"
       provided="true"/>
   <library
-      name="org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.7.3@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-serialization-json-jvm\1.7.3\6701e8c68d9e82387ce72ee96e8ddf058208d58f\kotlinx-serialization-json-jvm-1.7.3.jar"
-      resolved="org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.7.3"/>
-  <library
-      name="org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.7.3@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-serialization-core-jvm\1.7.3\1f226780b845ff9206474c05159245d861556249\kotlinx-serialization-core-jvm-1.7.3.jar"
-      resolved="org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.7.3"/>
-  <library
-      name="androidx.concurrent:concurrent-futures-ktx:1.1.0@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\androidx.concurrent\concurrent-futures-ktx\1.1.0\b4c245baf36d1a9e7defaf3be84f7a2ad4e1c797\concurrent-futures-ktx-1.1.0.jar"
-      resolved="androidx.concurrent:concurrent-futures-ktx:1.1.0"/>
-  <library
       name="androidx.room:room-runtime:2.6.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\edb36d7dba71274648e4781cad5afdcb\workspace\transformed\room-runtime-2.6.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2b45b4b5963cb6f334b19ad21c87a3c7\workspace\transformed\room-runtime-2.6.1\jars\classes.jar"
       resolved="androidx.room:room-runtime:2.6.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\edb36d7dba71274648e4781cad5afdcb\workspace\transformed\room-runtime-2.6.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2b45b4b5963cb6f334b19ad21c87a3c7\workspace\transformed\room-runtime-2.6.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1479,9 +1473,9 @@
       resolved="androidx.room:room-common:2.6.1"/>
   <library
       name="androidx.room:room-ktx:2.6.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\95f35866b0de8defcc6ef35be8e7e5b8\workspace\transformed\jetified-room-ktx-2.6.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\6c89b05b9e06904dc78b1e547d9ce915\workspace\transformed\jetified-room-ktx-2.6.1\jars\classes.jar"
       resolved="androidx.room:room-ktx:2.6.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\95f35866b0de8defcc6ef35be8e7e5b8\workspace\transformed\jetified-room-ktx-2.6.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\6c89b05b9e06904dc78b1e547d9ce915\workspace\transformed\jetified-room-ktx-2.6.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1492,9 +1486,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.accompanist:accompanist-drawablepainter:0.32.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e237ef3bdca9315f789397caf9ccd1d7\workspace\transformed\jetified-accompanist-drawablepainter-0.32.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ac40c54a7079ac8f30ba818ef2487618\workspace\transformed\jetified-accompanist-drawablepainter-0.32.0\jars\classes.jar"
       resolved="com.google.accompanist:accompanist-drawablepainter:0.32.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e237ef3bdca9315f789397caf9ccd1d7\workspace\transformed\jetified-accompanist-drawablepainter-0.32.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ac40c54a7079ac8f30ba818ef2487618\workspace\transformed\jetified-accompanist-drawablepainter-0.32.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1505,9 +1499,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.appcompat:appcompat-resources:1.7.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\689090505261aad50aa4b801a4d90727\workspace\transformed\jetified-appcompat-resources-1.7.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d66d9da39a2606ae937815a44c87b80c\workspace\transformed\jetified-appcompat-resources-1.7.1\jars\classes.jar"
       resolved="androidx.appcompat:appcompat-resources:1.7.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\689090505261aad50aa4b801a4d90727\workspace\transformed\jetified-appcompat-resources-1.7.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d66d9da39a2606ae937815a44c87b80c\workspace\transformed\jetified-appcompat-resources-1.7.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1518,9 +1512,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.appcompat:appcompat:1.7.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\dfe4f29c3ce72f34963a5b49364fdbc8\workspace\transformed\appcompat-1.7.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4e741c31c2a809104147122598e8bede\workspace\transformed\appcompat-1.7.1\jars\classes.jar"
       resolved="androidx.appcompat:appcompat:1.7.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\dfe4f29c3ce72f34963a5b49364fdbc8\workspace\transformed\appcompat-1.7.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4e741c31c2a809104147122598e8bede\workspace\transformed\appcompat-1.7.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1531,9 +1525,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-auth:20.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\74b4b375bcb5b61349940ceac4beb0da\workspace\transformed\jetified-play-services-auth-20.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b1a1ed4ac6a4d09ddf9b397e3acd4d5c\workspace\transformed\jetified-play-services-auth-20.7.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-auth:20.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\74b4b375bcb5b61349940ceac4beb0da\workspace\transformed\jetified-play-services-auth-20.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b1a1ed4ac6a4d09ddf9b397e3acd4d5c\workspace\transformed\jetified-play-services-auth-20.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1544,9 +1538,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-cloud-messaging:17.2.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\af961de83284d1429e17b685cd3bb7e4\workspace\transformed\jetified-play-services-cloud-messaging-17.2.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d1cf486d92d51ae763a82a6878ab979b\workspace\transformed\jetified-play-services-cloud-messaging-17.2.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-cloud-messaging:17.2.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\af961de83284d1429e17b685cd3bb7e4\workspace\transformed\jetified-play-services-cloud-messaging-17.2.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d1cf486d92d51ae763a82a6878ab979b\workspace\transformed\jetified-play-services-cloud-messaging-17.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1557,9 +1551,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-fido:20.1.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\361a6f88a816819629c32ca3f4f029a0\workspace\transformed\jetified-play-services-fido-20.1.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2d0a0847bbde47cf75d55d891a3bcbd4\workspace\transformed\jetified-play-services-fido-20.1.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-fido:20.1.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\361a6f88a816819629c32ca3f4f029a0\workspace\transformed\jetified-play-services-fido-20.1.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2d0a0847bbde47cf75d55d891a3bcbd4\workspace\transformed\jetified-play-services-fido-20.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1570,9 +1564,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-auth-base:18.0.4@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ae5cfb03c8561e55d97bb456a7916517\workspace\transformed\jetified-play-services-auth-base-18.0.4\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e4d8037f3d4d8b114d1ec78c29a8abde\workspace\transformed\jetified-play-services-auth-base-18.0.4\jars\classes.jar"
       resolved="com.google.android.gms:play-services-auth-base:18.0.4"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ae5cfb03c8561e55d97bb456a7916517\workspace\transformed\jetified-play-services-auth-base-18.0.4"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e4d8037f3d4d8b114d1ec78c29a8abde\workspace\transformed\jetified-play-services-auth-base-18.0.4"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1583,9 +1577,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.fragment:fragment:1.5.4@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e0f9a1d3ad7faec418bd2adb39ea2ab8\workspace\transformed\fragment-1.5.4\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\87de95ab5b7afc5f1b89510b52e58510\workspace\transformed\fragment-1.5.4\jars\classes.jar"
       resolved="androidx.fragment:fragment:1.5.4"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e0f9a1d3ad7faec418bd2adb39ea2ab8\workspace\transformed\fragment-1.5.4"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\87de95ab5b7afc5f1b89510b52e58510\workspace\transformed\fragment-1.5.4"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1596,9 +1590,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.activity:activity-ktx:1.8.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\888a8119c94aebb9fffe3f9e12e9cde3\workspace\transformed\jetified-activity-ktx-1.8.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8991774970df1dea71ecda20f1eedc15\workspace\transformed\jetified-activity-ktx-1.8.0\jars\classes.jar"
       resolved="androidx.activity:activity-ktx:1.8.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\888a8119c94aebb9fffe3f9e12e9cde3\workspace\transformed\jetified-activity-ktx-1.8.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\8991774970df1dea71ecda20f1eedc15\workspace\transformed\jetified-activity-ktx-1.8.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1609,9 +1603,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.activity:activity:1.8.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d4e891ebae65bf1153a28dabec8461f4\workspace\transformed\jetified-activity-1.8.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0e0554b42ce3ad6c6524176cd84a0d60\workspace\transformed\jetified-activity-1.8.0\jars\classes.jar"
       resolved="androidx.activity:activity:1.8.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d4e891ebae65bf1153a28dabec8461f4\workspace\transformed\jetified-activity-1.8.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0e0554b42ce3ad6c6524176cd84a0d60\workspace\transformed\jetified-activity-1.8.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1622,9 +1616,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.customview:customview-poolingcontainer:1.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b2bdba9664f76f50eef2d862b1c7c90d\workspace\transformed\jetified-customview-poolingcontainer-1.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\11dda0469d6a1e0c34b344769683b907\workspace\transformed\jetified-customview-poolingcontainer-1.0.0\jars\classes.jar"
       resolved="androidx.customview:customview-poolingcontainer:1.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b2bdba9664f76f50eef2d862b1c7c90d\workspace\transformed\jetified-customview-poolingcontainer-1.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\11dda0469d6a1e0c34b344769683b907\workspace\transformed\jetified-customview-poolingcontainer-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1635,9 +1629,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.core:core-ktx:1.13.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\5d7c4dbf6b88622556df4182297cd1c7\workspace\transformed\jetified-core-ktx-1.13.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b30ca7627094d5d41db0779009ae360e\workspace\transformed\jetified-core-ktx-1.13.0\jars\classes.jar"
       resolved="androidx.core:core-ktx:1.13.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\5d7c4dbf6b88622556df4182297cd1c7\workspace\transformed\jetified-core-ktx-1.13.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b30ca7627094d5d41db0779009ae360e\workspace\transformed\jetified-core-ktx-1.13.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1648,9 +1642,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.drawerlayout:drawerlayout:1.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\75b54e314cda5b4a11b01812f5901c28\workspace\transformed\drawerlayout-1.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\94a72c170f96322f9809253dfc4eae7d\workspace\transformed\drawerlayout-1.0.0\jars\classes.jar"
       resolved="androidx.drawerlayout:drawerlayout:1.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\75b54e314cda5b4a11b01812f5901c28\workspace\transformed\drawerlayout-1.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\94a72c170f96322f9809253dfc4eae7d\workspace\transformed\drawerlayout-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1661,9 +1655,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.emoji2:emoji2-views-helper:1.3.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\cc3de1d62391009caea94be5e4146055\workspace\transformed\jetified-emoji2-views-helper-1.3.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\bba953ddf5c74d56105c58d418d26d15\workspace\transformed\jetified-emoji2-views-helper-1.3.0\jars\classes.jar"
       resolved="androidx.emoji2:emoji2-views-helper:1.3.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\cc3de1d62391009caea94be5e4146055\workspace\transformed\jetified-emoji2-views-helper-1.3.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\bba953ddf5c74d56105c58d418d26d15\workspace\transformed\jetified-emoji2-views-helper-1.3.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1674,9 +1668,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.emoji2:emoji2:1.3.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\85423f0f5433263ea4f3fe2347144a35\workspace\transformed\jetified-emoji2-1.3.0\jars\classes.jar;C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\85423f0f5433263ea4f3fe2347144a35\workspace\transformed\jetified-emoji2-1.3.0\jars\libs\repackaged.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4e1e8153d4253fe67d24a7b30e9cce09\workspace\transformed\jetified-emoji2-1.3.0\jars\classes.jar;C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4e1e8153d4253fe67d24a7b30e9cce09\workspace\transformed\jetified-emoji2-1.3.0\jars\libs\repackaged.jar"
       resolved="androidx.emoji2:emoji2:1.3.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\85423f0f5433263ea4f3fe2347144a35\workspace\transformed\jetified-emoji2-1.3.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4e1e8153d4253fe67d24a7b30e9cce09\workspace\transformed\jetified-emoji2-1.3.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1687,9 +1681,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.vectordrawable:vectordrawable-animated:1.1.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\396103fcc37923e57fe67c39c431f98b\workspace\transformed\vectordrawable-animated-1.1.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\bba312fefa0c88d1a95a67faa7b880c4\workspace\transformed\vectordrawable-animated-1.1.0\jars\classes.jar"
       resolved="androidx.vectordrawable:vectordrawable-animated:1.1.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\396103fcc37923e57fe67c39c431f98b\workspace\transformed\vectordrawable-animated-1.1.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\bba312fefa0c88d1a95a67faa7b880c4\workspace\transformed\vectordrawable-animated-1.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1700,9 +1694,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.vectordrawable:vectordrawable:1.1.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2663fdd1f99438c43ccd3b6327bf7812\workspace\transformed\vectordrawable-1.1.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1deff8a1a707b305ae92ed7c4643513d\workspace\transformed\vectordrawable-1.1.0\jars\classes.jar"
       resolved="androidx.vectordrawable:vectordrawable:1.1.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\2663fdd1f99438c43ccd3b6327bf7812\workspace\transformed\vectordrawable-1.1.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\1deff8a1a707b305ae92ed7c4643513d\workspace\transformed\vectordrawable-1.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1713,9 +1707,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.autofill:autofill:1.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\35bb48ae3640b6d75a8cc952e5c29e74\workspace\transformed\jetified-autofill-1.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e056645f9ae4ddda522de9a5e13bf08d\workspace\transformed\jetified-autofill-1.0.0\jars\classes.jar"
       resolved="androidx.autofill:autofill:1.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\35bb48ae3640b6d75a8cc952e5c29e74\workspace\transformed\jetified-autofill-1.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e056645f9ae4ddda522de9a5e13bf08d\workspace\transformed\jetified-autofill-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1726,9 +1720,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.core:core:1.13.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9cbebcf616fcbb97acb7fb319ae4976d\workspace\transformed\core-1.13.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3e6a2b0ec35bd5fb77ff25f7b362bcb3\workspace\transformed\core-1.13.0\jars\classes.jar"
       resolved="androidx.core:core:1.13.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9cbebcf616fcbb97acb7fb319ae4976d\workspace\transformed\core-1.13.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3e6a2b0ec35bd5fb77ff25f7b362bcb3\workspace\transformed\core-1.13.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1739,9 +1733,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d8379e0e94bebc5923542dea7add3a68\workspace\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\763a4f4ef283659e78fd6b79a743de7d\workspace\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d8379e0e94bebc5923542dea7add3a68\workspace\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\763a4f4ef283659e78fd6b79a743de7d\workspace\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1752,9 +1746,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-runtime-ktx:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\83179e3abcb9b70295ab72884fa4f1c1\workspace\transformed\jetified-lifecycle-runtime-ktx-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f4109182c621360371299b4b1b368581\workspace\transformed\jetified-lifecycle-runtime-ktx-2.7.0\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-runtime-ktx:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\83179e3abcb9b70295ab72884fa4f1c1\workspace\transformed\jetified-lifecycle-runtime-ktx-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f4109182c621360371299b4b1b368581\workspace\transformed\jetified-lifecycle-runtime-ktx-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1765,9 +1759,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-service:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4248e2c9651bcc5b676e1affd167a6e1\workspace\transformed\jetified-lifecycle-service-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\47e6e0e6bf529d3c44afcc166109748c\workspace\transformed\jetified-lifecycle-service-2.7.0\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-service:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4248e2c9651bcc5b676e1affd167a6e1\workspace\transformed\jetified-lifecycle-service-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\47e6e0e6bf529d3c44afcc166109748c\workspace\transformed\jetified-lifecycle-service-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1778,9 +1772,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-process:2.7.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0772130ed7b56293aa6c8f2b1ea74641\workspace\transformed\jetified-lifecycle-process-2.7.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\73ac0e9d8b48b8e028efe0070a385b86\workspace\transformed\jetified-lifecycle-process-2.7.0\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-process:2.7.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\0772130ed7b56293aa6c8f2b1ea74641\workspace\transformed\jetified-lifecycle-process-2.7.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\73ac0e9d8b48b8e028efe0070a385b86\workspace\transformed\jetified-lifecycle-process-2.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1791,9 +1785,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.savedstate:savedstate-ktx:1.2.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\31402b9a325f543514700ed82e8156cf\workspace\transformed\jetified-savedstate-ktx-1.2.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\48cbf21af79918e58d5a0d481af42982\workspace\transformed\jetified-savedstate-ktx-1.2.1\jars\classes.jar"
       resolved="androidx.savedstate:savedstate-ktx:1.2.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\31402b9a325f543514700ed82e8156cf\workspace\transformed\jetified-savedstate-ktx-1.2.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\48cbf21af79918e58d5a0d481af42982\workspace\transformed\jetified-savedstate-ktx-1.2.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1802,6 +1796,10 @@
       symbolFile="R.txt"
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
+  <library
+      name="androidx.concurrent:concurrent-futures-ktx:1.1.0@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\androidx.concurrent\concurrent-futures-ktx\1.1.0\b4c245baf36d1a9e7defaf3be84f7a2ad4e1c797\concurrent-futures-ktx-1.1.0.jar"
+      resolved="androidx.concurrent:concurrent-futures-ktx:1.1.0"/>
   <library
       name="androidx.datastore:datastore-preferences-external-protobuf:1.1.7@jar"
       jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\androidx.datastore\datastore-preferences-external-protobuf\1.1.7\ddd0a2d64e3c928359c993d1291e535d5d7fc9a3\datastore-preferences-external-protobuf-1.1.7.jar"
@@ -1812,9 +1810,9 @@
       resolved="androidx.datastore:datastore-preferences-proto:1.1.7"/>
   <library
       name="androidx.datastore:datastore-preferences-core-android:1.1.7@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\99819ced86fd37fcc2e5e6cdc51febec\workspace\transformed\jetified-datastore-preferences-core-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9bd9cca9e0983da47d9ddf0b6cd58c9d\workspace\transformed\jetified-datastore-preferences-core-release\jars\classes.jar"
       resolved="androidx.datastore:datastore-preferences-core-android:1.1.7"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\99819ced86fd37fcc2e5e6cdc51febec\workspace\transformed\jetified-datastore-preferences-core-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\9bd9cca9e0983da47d9ddf0b6cd58c9d\workspace\transformed\jetified-datastore-preferences-core-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1829,9 +1827,9 @@
       resolved="androidx.datastore:datastore-core-okio-jvm:1.1.7"/>
   <library
       name="androidx.datastore:datastore-core-android:1.1.7@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\fc456faa7da5760e45cd1fe9769a4f9e\workspace\transformed\jetified-datastore-core-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a0b9f1ae330fb752a63bdcef65c8ee02\workspace\transformed\jetified-datastore-core-release\jars\classes.jar"
       resolved="androidx.datastore:datastore-core-android:1.1.7"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\fc456faa7da5760e45cd1fe9769a4f9e\workspace\transformed\jetified-datastore-core-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a0b9f1ae330fb752a63bdcef65c8ee02\workspace\transformed\jetified-datastore-core-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1842,9 +1840,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.datastore:datastore-preferences-android:1.1.7@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\79f849ece84d8c248b2a865c1395b183\workspace\transformed\jetified-datastore-preferences-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3d7a4ceccbe4cb307134151b868f04c3\workspace\transformed\jetified-datastore-preferences-release\jars\classes.jar"
       resolved="androidx.datastore:datastore-preferences-android:1.1.7"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\79f849ece84d8c248b2a865c1395b183\workspace\transformed\jetified-datastore-preferences-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3d7a4ceccbe4cb307134151b868f04c3\workspace\transformed\jetified-datastore-preferences-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1855,9 +1853,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.datastore:datastore-android:1.1.7@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ecdc134371d454e46e58448b312ecb47\workspace\transformed\jetified-datastore-release\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\de002966c73ec8f605a8b9d0b2af55ee\workspace\transformed\jetified-datastore-release\jars\classes.jar"
       resolved="androidx.datastore:datastore-android:1.1.7"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\ecdc134371d454e46e58448b312ecb47\workspace\transformed\jetified-datastore-release"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\de002966c73ec8f605a8b9d0b2af55ee\workspace\transformed\jetified-datastore-release"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1876,9 +1874,9 @@
       resolved="org.jetbrains.kotlin:kotlin-reflect:2.1.20"/>
   <library
       name="androidx.profileinstaller:profileinstaller:1.3.1@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\09d399273af909de40188b94116e8c80\workspace\transformed\jetified-profileinstaller-1.3.1\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\21ff469f2c4bba96afc98e70c911a163\workspace\transformed\jetified-profileinstaller-1.3.1\jars\classes.jar"
       resolved="androidx.profileinstaller:profileinstaller:1.3.1"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\09d399273af909de40188b94116e8c80\workspace\transformed\jetified-profileinstaller-1.3.1"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\21ff469f2c4bba96afc98e70c911a163\workspace\transformed\jetified-profileinstaller-1.3.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1889,9 +1887,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.startup:startup-runtime:1.2.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\62db9ad4ec095e7314842d0201f9a97a\workspace\transformed\jetified-startup-runtime-1.2.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\afed5573aabe3b509a218b0af5ab3408\workspace\transformed\jetified-startup-runtime-1.2.0\jars\classes.jar"
       resolved="androidx.startup:startup-runtime:1.2.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\62db9ad4ec095e7314842d0201f9a97a\workspace\transformed\jetified-startup-runtime-1.2.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\afed5573aabe3b509a218b0af5ab3408\workspace\transformed\jetified-startup-runtime-1.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1902,9 +1900,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.tracing:tracing:1.2.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\caabd6688292c1b39823880a08d2781e\workspace\transformed\jetified-tracing-1.2.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a160fb15553e713a67abb866449e2262\workspace\transformed\jetified-tracing-1.2.0\jars\classes.jar"
       resolved="androidx.tracing:tracing:1.2.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\caabd6688292c1b39823880a08d2781e\workspace\transformed\jetified-tracing-1.2.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a160fb15553e713a67abb866449e2262\workspace\transformed\jetified-tracing-1.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1915,9 +1913,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.tracing:tracing-ktx:1.2.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\32eacea6ef31e56aea7dacb938e5c33d\workspace\transformed\jetified-tracing-ktx-1.2.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\dd79442f8241a324adf45cf46f4055e8\workspace\transformed\jetified-tracing-ktx-1.2.0\jars\classes.jar"
       resolved="androidx.tracing:tracing-ktx:1.2.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\32eacea6ef31e56aea7dacb938e5c33d\workspace\transformed\jetified-tracing-ktx-1.2.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\dd79442f8241a324adf45cf46f4055e8\workspace\transformed\jetified-tracing-ktx-1.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1932,9 +1930,9 @@
       resolved="androidx.concurrent:concurrent-futures:1.1.0"/>
   <library
       name="com.google.firebase:firebase-datatransport:19.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4a62f75357831279af60126c88ed6e5a\workspace\transformed\jetified-firebase-datatransport-19.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\900f25c899fbd2feb5d8ca204cd0abf8\workspace\transformed\jetified-firebase-datatransport-19.0.0\jars\classes.jar"
       resolved="com.google.firebase:firebase-datatransport:19.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4a62f75357831279af60126c88ed6e5a\workspace\transformed\jetified-firebase-datatransport-19.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\900f25c899fbd2feb5d8ca204cd0abf8\workspace\transformed\jetified-firebase-datatransport-19.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1945,9 +1943,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.datatransport:transport-backend-cct:3.3.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\61627364d3854cb1bf5f32b390336334\workspace\transformed\jetified-transport-backend-cct-3.3.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\96454d1eb72edeb1c819a4944030974d\workspace\transformed\jetified-transport-backend-cct-3.3.0\jars\classes.jar"
       resolved="com.google.android.datatransport:transport-backend-cct:3.3.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\61627364d3854cb1bf5f32b390336334\workspace\transformed\jetified-transport-backend-cct-3.3.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\96454d1eb72edeb1c819a4944030974d\workspace\transformed\jetified-transport-backend-cct-3.3.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1958,9 +1956,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.datatransport:transport-runtime:3.3.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\343ba65142297cb61f32bff3bd89ee9d\workspace\transformed\jetified-transport-runtime-3.3.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\09603d8b749c73c850fe47c8539028f8\workspace\transformed\jetified-transport-runtime-3.3.0\jars\classes.jar"
       resolved="com.google.android.datatransport:transport-runtime:3.3.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\343ba65142297cb61f32bff3bd89ee9d\workspace\transformed\jetified-transport-runtime-3.3.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\09603d8b749c73c850fe47c8539028f8\workspace\transformed\jetified-transport-runtime-3.3.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1971,9 +1969,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.datatransport:transport-api:3.2.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d283ffeb9f306d8b0522f89ae54600ea\workspace\transformed\jetified-transport-api-3.2.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a4115367e4a0e614106f1a95ab6da48b\workspace\transformed\jetified-transport-api-3.2.0\jars\classes.jar"
       resolved="com.google.android.datatransport:transport-api:3.2.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\d283ffeb9f306d8b0522f89ae54600ea\workspace\transformed\jetified-transport-api-3.2.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a4115367e4a0e614106f1a95ab6da48b\workspace\transformed\jetified-transport-api-3.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1984,9 +1982,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.interpolator:interpolator:1.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a4cdc63bf2584ecb77bbbb84d9497099\workspace\transformed\interpolator-1.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\33f5d7c6c7560d047788f1d1f11048a9\workspace\transformed\interpolator-1.0.0\jars\classes.jar"
       resolved="androidx.interpolator:interpolator:1.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\a4cdc63bf2584ecb77bbbb84d9497099\workspace\transformed\interpolator-1.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\33f5d7c6c7560d047788f1d1f11048a9\workspace\transformed\interpolator-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1997,9 +1995,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.cursoradapter:cursoradapter:1.0.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3beb6b7df64b320f66f55c01f1716658\workspace\transformed\cursoradapter-1.0.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\57c439b7db80319a16659beebeebbb64\workspace\transformed\cursoradapter-1.0.0\jars\classes.jar"
       resolved="androidx.cursoradapter:cursoradapter:1.0.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3beb6b7df64b320f66f55c01f1716658\workspace\transformed\cursoradapter-1.0.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\57c439b7db80319a16659beebeebbb64\workspace\transformed\cursoradapter-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -2014,9 +2012,9 @@
       resolved="androidx.resourceinspection:resourceinspection-annotation:1.0.1"/>
   <library
       name="androidx.exifinterface:exifinterface:1.3.7@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\987ee38548ddfef6670dd326385388c5\workspace\transformed\exifinterface-1.3.7\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\583b320f06c9c75e1ebc2f4307e07344\workspace\transformed\exifinterface-1.3.7\jars\classes.jar"
       resolved="androidx.exifinterface:exifinterface:1.3.7"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\987ee38548ddfef6670dd326385388c5\workspace\transformed\exifinterface-1.3.7"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\583b320f06c9c75e1ebc2f4307e07344\workspace\transformed\exifinterface-1.3.7"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -2027,9 +2025,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.sqlite:sqlite-framework:2.4.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4daa9f5143e1dc26f37b05131ea46301\workspace\transformed\sqlite-framework-2.4.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f4aa20ec1f84b334e7a792454c365add\workspace\transformed\sqlite-framework-2.4.0\jars\classes.jar"
       resolved="androidx.sqlite:sqlite-framework:2.4.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\4daa9f5143e1dc26f37b05131ea46301\workspace\transformed\sqlite-framework-2.4.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\f4aa20ec1f84b334e7a792454c365add\workspace\transformed\sqlite-framework-2.4.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -2040,9 +2038,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.sqlite:sqlite:2.4.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e9dba5f25b11db86305b2d5485f281e8\workspace\transformed\sqlite-2.4.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b2139979a931b0e088003b6381655132\workspace\transformed\sqlite-2.4.0\jars\classes.jar"
       resolved="androidx.sqlite:sqlite:2.4.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\e9dba5f25b11db86305b2d5485f281e8\workspace\transformed\sqlite-2.4.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\b2139979a931b0e088003b6381655132\workspace\transformed\sqlite-2.4.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -2065,9 +2063,9 @@
       resolved="io.grpc:grpc-okhttp:1.62.2"/>
   <library
       name="com.google.android.libraries.identity.googleid:googleid:1.1.0@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\cf8eae9a198694a8512f91153276a71b\workspace\transformed\jetified-googleid-1.1.0\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3af6333a37e1decd931283d19dc73768\workspace\transformed\jetified-googleid-1.1.0\jars\classes.jar"
       resolved="com.google.android.libraries.identity.googleid:googleid:1.1.0"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\cf8eae9a198694a8512f91153276a71b\workspace\transformed\jetified-googleid-1.1.0"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3af6333a37e1decd931283d19dc73768\workspace\transformed\jetified-googleid-1.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -2090,9 +2088,9 @@
       resolved="io.grpc:grpc-protobuf-lite:1.62.2"/>
   <library
       name="io.grpc:grpc-android:1.62.2@aar"
-      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3d01db6346a62a35afe45a7e5ba5c151\workspace\transformed\jetified-grpc-android-1.62.2\jars\classes.jar"
+      jars="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\07ea3c010e71196555412fe808a20eee\workspace\transformed\jetified-grpc-android-1.62.2\jars\classes.jar"
       resolved="io.grpc:grpc-android:1.62.2"
-      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\3d01db6346a62a35afe45a7e5ba5c151\workspace\transformed\jetified-grpc-android-1.62.2"
+      folder="C:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\07ea3c010e71196555412fe808a20eee\workspace\transformed\jetified-grpc-android-1.62.2"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -2138,9 +2136,9 @@
       jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.tukaani\xz\1.10\1be8166f89e035a56c6bfc67dbc423996fe577e2\xz-1.10.jar"
       resolved="org.tukaani:xz:1.10"/>
   <library
-      name="org.slf4j:slf4j-api:2.0.16@jar"
-      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\2.0.16\172931663a09a1fa515567af5fbef00897d3c04\slf4j-api-2.0.16.jar"
-      resolved="org.slf4j:slf4j-api:2.0.16"/>
+      name="org.slf4j:slf4j-api:2.0.17@jar"
+      jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\2.0.17\d9e58ac9c7779ba3bf8142aff6c830617a7fe60f\slf4j-api-2.0.17.jar"
+      resolved="org.slf4j:slf4j-api:2.0.17"/>
   <library
       name="commons-codec:commons-codec:1.19.0@jar"
       jars="C:\Users\Wehtt\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.19.0\8c0dbe3ae883fceda9b50a6c76e745e548073388\commons-codec-1.19.0.jar"

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Slug normalization – edge cases" tests="4" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:17:41.440Z" hostname="AURAKAI" time="0.021">
+<testsuite name="Slug normalization – edge cases" tests="4" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:27:48.921Z" hostname="AURAKAI" time="0.057">
   <properties/>
-  <testcase name="accents stripped and em dash removed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.017"/>
+  <testcase name="accents stripped and em dash removed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.048"/>
   <testcase name="en dash normalized via spaces()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.001"/>
-  <testcase name="underscores removed and spaces collapsed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.002">
+  <testcase name="underscores removed and spaces collapsed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.003">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;a-b-c&gt; but was: &lt;ab-c&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;a-b-c&gt; but was: &lt;ab-c&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -18,7 +18,7 @@
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 </failure>
   </testcase>
-  <testcase name="emoji and punctuation removed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.0"/>
+  <testcase name="emoji and punctuation removed()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$SlugNormalizationEdgeCases" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

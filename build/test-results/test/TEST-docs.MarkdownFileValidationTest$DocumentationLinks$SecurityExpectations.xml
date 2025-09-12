@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Security section expectations" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:17:41.755Z" hostname="AURAKAI" time="0.004">
+<testsuite name="Security section expectations" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:27:49.345Z" hostname="AURAKAI" time="0.003">
   <properties/>
-  <testcase name="mentions key security features()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$SecurityExpectations" time="0.004">
+  <testcase name="mentions key security features()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$SecurityExpectations" time="0.003">
     <failure message="org.opentest4j.AssertionFailedError: Security section should mention: [TLS 1.3, Root Detection, Certificate pinning] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Security section should mention: [TLS 1.3, Root Detection, Certificate pinning] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
