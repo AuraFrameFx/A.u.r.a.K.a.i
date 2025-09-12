@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Optional artifacts presence (conditional)" tests="8" skipped="0" failures="2" errors="0" timestamp="2025-09-12T07:27:49.322Z" hostname="AURAKAI" time="0.015">
+<testsuite name="Optional artifacts presence (conditional)" tests="8" skipped="0" failures="2" errors="0" timestamp="2025-09-12T13:18:16.863Z" hostname="AURAKAI" time="0.018">
   <properties/>
   <testcase name="contributing guide exists when referenced()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.002">
     <failure message="org.opentest4j.AssertionFailedError: README references contributing but no CONTRIBUTING.md found in: [CONTRIBUTING.md, docs/CONTRIBUTING.md] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: README references contributing but no CONTRIBUTING.md found in: [CONTRIBUTING.md, docs/CONTRIBUTING.md] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
@@ -16,10 +16,10 @@
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 </failure>
   </testcase>
-  <testcase name="security policy exists when referenced()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.002"/>
-  <testcase name="gradle wrapper exists when README uses gradlew()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.001"/>
-  <testcase name="docker artifacts exist when README mentions Docker()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.002"/>
-  <testcase name="roadmap exists when referenced()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.002">
+  <testcase name="security policy exists when referenced()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.004"/>
+  <testcase name="gradle wrapper exists when README uses gradlew()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.0"/>
+  <testcase name="docker artifacts exist when README mentions Docker()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.001"/>
+  <testcase name="roadmap exists when referenced()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.003">
     <failure message="org.opentest4j.AssertionFailedError: README references a roadmap but none found: [ROADMAP.md, docs/ROADMAP.md] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: README references a roadmap but none found: [ROADMAP.md, docs/ROADMAP.md] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -34,9 +34,9 @@
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 </failure>
   </testcase>
-  <testcase name="changelog exists when referenced()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.002"/>
-  <testcase name="environment example exists when referenced()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.002"/>
-  <testcase name="code of conduct exists when referenced()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.001"/>
+  <testcase name="changelog exists when referenced()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.001"/>
+  <testcase name="environment example exists when referenced()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.001"/>
+  <testcase name="code of conduct exists when referenced()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

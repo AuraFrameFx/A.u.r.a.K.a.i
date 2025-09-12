@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Code fence languages" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:27:49.253Z" hostname="AURAKAI" time="0.011">
+<testsuite name="Code fence languages" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T13:18:16.783Z" hostname="AURAKAI" time="0.009">
   <properties/>
-  <testcase name="contains bash and gradle-related code fences()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$CodeFenceLanguages" time="0.011">
+  <testcase name="contains bash and gradle-related code fences()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$CodeFenceLanguages" time="0.009">
     <failure message="org.opentest4j.AssertionFailedError: Expected code fences for Gradle build scripts (kotlin/groovy/gradle) ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected code fences for Gradle build scripts (kotlin/groovy/gradle) ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

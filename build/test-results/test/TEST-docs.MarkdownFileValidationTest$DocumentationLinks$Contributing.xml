@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Contributing and quality gates" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T07:27:49.296Z" hostname="AURAKAI" time="0.001">
+<testsuite name="Contributing and quality gates" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-09-12T13:18:16.808Z" hostname="AURAKAI" time="0.001">
   <properties/>
   <testcase name="mentions test coverage threshold and JUnit()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$Contributing" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: Coverage guidance missing ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Coverage guidance missing ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;

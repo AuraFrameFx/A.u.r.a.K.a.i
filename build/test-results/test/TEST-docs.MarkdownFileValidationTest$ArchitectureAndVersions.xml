@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Architecture and versions table" tests="2" skipped="0" failures="2" errors="0" timestamp="2025-09-12T07:27:49.226Z" hostname="AURAKAI" time="0.003">
+<testsuite name="Architecture and versions table" tests="2" skipped="0" failures="2" errors="0" timestamp="2025-09-12T13:18:16.667Z" hostname="AURAKAI" time="0.004">
   <properties/>
   <testcase name="versions appear in semver-like or rc alpha formats()" classname="docs.MarkdownFileValidationTest$ArchitectureAndVersions" time="0.002">
     <failure message="org.opentest4j.AssertionFailedError: Expected multiple version-like strings; found 5 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected multiple version-like strings; found 5 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;

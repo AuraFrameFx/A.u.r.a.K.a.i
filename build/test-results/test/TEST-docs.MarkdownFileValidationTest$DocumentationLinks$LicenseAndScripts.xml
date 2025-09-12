@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="License and scripts" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:27:49.314Z" hostname="AURAKAI" time="0.002">
+<testsuite name="License and scripts" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T13:18:16.853Z" hostname="AURAKAI" time="0.003">
   <properties/>
   <testcase name="nuclear clean script exists when documented()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$LicenseAndScripts" time="0.0"/>
   <testcase name="license file exists and mentions MIT()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$LicenseAndScripts" time="0.002"/>

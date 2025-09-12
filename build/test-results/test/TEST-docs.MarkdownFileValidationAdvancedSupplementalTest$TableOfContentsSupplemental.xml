@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Table of Contents – supplemental checks" tests="2" skipped="0" failures="2" errors="0" timestamp="2025-09-12T07:27:48.997Z" hostname="AURAKAI" time="0.003">
+<testsuite name="Table of Contents – supplemental checks" tests="2" skipped="0" failures="2" errors="0" timestamp="2025-09-12T13:18:16.210Z" hostname="AURAKAI" time="0.017">
   <properties/>
-  <testcase name="toc anchors resolve to existing headers()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$TableOfContentsSupplemental" time="0.002">
+  <testcase name="toc anchors resolve to existing headers()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$TableOfContentsSupplemental" time="0.01">
     <failure message="org.opentest4j.AssertionFailedError: Table of Contents section not found ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Table of Contents section not found ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -16,7 +16,7 @@
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 </failure>
   </testcase>
-  <testcase name="slug normalization additional cases()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$TableOfContentsSupplemental" time="0.001">
+  <testcase name="slug normalization additional cases()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$TableOfContentsSupplemental" time="0.006">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;cafe&gt; but was: &lt;caf&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;cafe&gt; but was: &lt;caf&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

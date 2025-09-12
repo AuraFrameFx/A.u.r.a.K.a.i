@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Content hygiene (extended)" tests="4" skipped="0" failures="2" errors="0" timestamp="2025-09-12T07:27:49.269Z" hostname="AURAKAI" time="0.021">
+<testsuite name="Content hygiene (extended)" tests="4" skipped="0" failures="2" errors="0" timestamp="2025-09-12T13:18:16.796Z" hostname="AURAKAI" time="0.007">
   <properties/>
-  <testcase name="no CRLF line endings in README()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$ContentHygieneExtended" time="0.003">
+  <testcase name="no CRLF line endings in README()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$ContentHygieneExtended" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: CRLF line endings detected; please normalize to LF ==&gt; expected: &lt;false&gt; but was: &lt;true&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: CRLF line endings detected; please normalize to LF ==&gt; expected: &lt;false&gt; but was: &lt;true&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -16,7 +16,7 @@
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 </failure>
   </testcase>
-  <testcase name="no trailing whitespace in README()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$ContentHygieneExtended" time="0.007">
+  <testcase name="no trailing whitespace in README()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$ContentHygieneExtended" time="0.002">
     <failure message="org.opentest4j.AssertionFailedError: Trailing whitespace detected on lines: [22, 40, 47, 73, 80, 101, 124, 141, 181, 190, 193, 194, 202, 205, 244, 261, 279, 294, 321, 340, 356, 374, 380, 421, 434, 439, 462, 486, 510, 541, 560] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Trailing whitespace detected on lines: [22, 40, 47, 73, 80, 101, 124, 141, 181, 190, 193, 194, 202, 205, 244, 261, 279, 294, 321, 340, 356, 374, 380, 421, 434, 439, 462, 486, 510, 541, 560] ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -31,8 +31,8 @@
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 </failure>
   </testcase>
-  <testcase name="external images use https scheme()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$ContentHygieneExtended" time="0.002"/>
-  <testcase name="avoid vague link text for external links()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$ContentHygieneExtended" time="0.009"/>
+  <testcase name="external images use https scheme()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$ContentHygieneExtended" time="0.001"/>
+  <testcase name="avoid vague link text for external links()" classname="docs.MarkdownFileValidationTest$DocumentationLinks$ContentHygieneExtended" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

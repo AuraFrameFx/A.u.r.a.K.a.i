@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Images – transport and alt text quality" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T07:27:48.775Z" hostname="AURAKAI" time="0.007">
+<testsuite name="Images – transport and alt text quality" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T13:18:15.893Z" hostname="AURAKAI" time="0.029">
   <properties/>
-  <testcase name="no images use insecure http transport()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$ImagesTransport" time="0.004"/>
-  <testcase name="image alt text is descriptive – not just file names()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$ImagesTransport" time="0.002"/>
+  <testcase name="no images use insecure http transport()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$ImagesTransport" time="0.012"/>
+  <testcase name="image alt text is descriptive – not just file names()" classname="docs.MarkdownFileValidationAdvancedSupplementalEdgeCasesTest$ImagesTransport" time="0.007"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
