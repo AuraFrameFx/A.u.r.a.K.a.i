@@ -9,7 +9,248 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="Update build metadata and timing files; remove obsolete lock files; rename index files">
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup">
+      <change afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/expanded/expanded.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/4saljgi6wzfomfzf6ztjg0ky3/candidates.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/.globals.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/.strings.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_app.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_benchmark.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_collab-canvas.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_colorblendr.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_core-module.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_datavein-oracle-native.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_feature-module.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_jvm-test.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_list.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_module-a.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_module-b.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_module-c.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_module-d.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_module-e.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_module-f.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_oracle-drive-integration.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_romtools.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_sandbox-ui.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_screenshot-tests.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_secure-comm.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/_utilities.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/buildfingerprint.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/classloaderscopes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/entry.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/projectfingerprint.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/5583be36-7bb6-4c26-9221-df88ff67f054/work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/8b0bede2-54f1-446c-90c6-604d18c2d391/.globals.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/8b0bede2-54f1-446c-90c6-604d18c2d391/.strings.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/8b0bede2-54f1-446c-90c6-604d18c2d391/_core-module.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/8b0bede2-54f1-446c-90c6-604d18c2d391/_feature-module.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/8b0bede2-54f1-446c-90c6-604d18c2d391/_list.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/8b0bede2-54f1-446c-90c6-604d18c2d391/_romtools.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/8b0bede2-54f1-446c-90c6-604d18c2d391/_sandbox-ui.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/8b0bede2-54f1-446c-90c6-604d18c2d391/_utilities.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/8b0bede2-54f1-446c-90c6-604d18c2d391/buildfingerprint.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/8b0bede2-54f1-446c-90c6-604d18c2d391/classloaderscopes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/8b0bede2-54f1-446c-90c6-604d18c2d391/entry.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/8b0bede2-54f1-446c-90c6-604d18c2d391/projectfingerprint.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/8b0bede2-54f1-446c-90c6-604d18c2d391/work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/95408ce3-fbdd-4d26-be97-82e0f2ba01f3/classloaderscopes16161132720599808516.tmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/d46a9fb7-04c5-49b4-8cc2-8bfc9ce783c2/.globals.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/d46a9fb7-04c5-49b4-8cc2-8bfc9ce783c2/.globals.work.bin.build-logic" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/d46a9fb7-04c5-49b4-8cc2-8bfc9ce783c2/.strings.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/d46a9fb7-04c5-49b4-8cc2-8bfc9ce783c2/_build-logic.work.bin.build-logic" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/d46a9fb7-04c5-49b4-8cc2-8bfc9ce783c2/build.work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/d46a9fb7-04c5-49b4-8cc2-8bfc9ce783c2/classloaderscopes15088390841720853602.tmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/d46a9fb7-04c5-49b4-8cc2-8bfc9ce783c2/work.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/d46a9fb7-04c5-49b4-8cc2-8bfc9ce783c2/work.bin.build-logic" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors16349283686141469624/.gradle/9.1.0-rc-1/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors16349283686141469624/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors16349283686141469624/.gradle/9.1.0-rc-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors16349283686141469624/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors16349283686141469624/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors16349283686141469624/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors16349283686141469624/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2040644125294816363/.gradle/9.1.0-rc-1/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2040644125294816363/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2040644125294816363/.gradle/9.1.0-rc-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2040644125294816363/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2040644125294816363/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2040644125294816363/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2040644125294816363/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2738779501078919793/.gradle/9.1.0-rc-1/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2738779501078919793/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2738779501078919793/.gradle/9.1.0-rc-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2738779501078919793/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2738779501078919793/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2738779501078919793/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors2738779501078919793/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9522073623830181659/.gradle/9.1.0-rc-1/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9522073623830181659/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9522073623830181659/.gradle/9.1.0-rc-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9522073623830181659/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9522073623830181659/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9522073623830181659/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/build/tmp/generatePrecompiledScriptPluginAccessors/accessors9522073623830181659/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/492oyhui4a8tnqz6a38afd3vq/7e7e1tvojlr5mf9ikekbn7ogm/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/4saljgi6wzfomfzf6ztjg0ky3/8icf7me61ypise57ng3bmzge7/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/configuration-cache/cen3l2zb1h0s9m0vuxd932wex/7siogrn4753ibezme8yu46y3x/configuration-cache-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/kotlin-build/AOSPReGenesis-build-2025-09-12-11-37-02-0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/kotlin-build/AOSPReGenesis-build-2025-09-12-11-39-04-0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/kotlin-build/AOSPReGenesis-build-2025-09-12-11-41-15-0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/kotlin-build/AOSPReGenesis-build-2025-09-12-11-42-04-0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/kotlin-build/AOSPReGenesis-build-2025-09-12-11-42-12-0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/kotlin-build/AOSPReGenesis-build-2025-09-12-11-42-58-0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/kotlin-build/AOSPReGenesis-build-2025-09-12-11-43-29-0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/kotlin-build/AOSPReGenesis-build-2025-09-12-11-43-36-0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/kotlin-build/AOSPReGenesis-build-2025-09-12-12-04-30-0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/kotlin-build/AOSPReGenesis-build-2025-09-12-12-06-15-0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/kotlin-build/AOSPReGenesis-build-2025-09-12-12-06-48-0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/kotlin-build/AOSPReGenesis-build-2025-09-12-12-07-13-0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/kotlin-build/AOSPReGenesis-build-2025-09-12-12-10-00-0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core-module/build/tmp/.cache/expanded/zip_0310cb8d02fc443c16f361751adc6a51/META-INF/services/org.jetbrains.dokka.plugability.DokkaPlugin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core-module/build/tmp/.cache/expanded/zip_63f32cde9a754aafb1760fecd191aaf8/META-INF/services/org.jetbrains.dokka.plugability.DokkaPlugin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core-module/build/tmp/dokkaGeneratePublicationHtml/dokka-configuration.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core-module/build/tmp/dokkaGeneratePublicationHtml/dokka-worker.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feature-module/build/tmp/.cache/expanded/zip_0310cb8d02fc443c16f361751adc6a51/META-INF/services/org.jetbrains.dokka.plugability.DokkaPlugin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feature-module/build/tmp/.cache/expanded/zip_63f32cde9a754aafb1760fecd191aaf8/META-INF/services/org.jetbrains.dokka.plugability.DokkaPlugin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feature-module/build/tmp/dokkaGeneratePublicationHtml/dokka-configuration.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feature-module/build/tmp/dokkaGeneratePublicationHtml/dokka-worker.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/images/anchor-copy-button.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/images/copy-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/images/copy-successful-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/images/footer-go-to-link.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/images/go-to-top-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/images/logo-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/list/org.example.list/-linked-list/-linked-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/list/org.example.list/-linked-list/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/list/org.example.list/-linked-list/get.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/list/org.example.list/-linked-list/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/list/org.example.list/-linked-list/remove.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/list/org.example.list/-linked-list/size.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/list/org.example.list/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/list/package-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/navigation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/scripts/clipboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/scripts/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/scripts/navigation-loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/scripts/pages.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/scripts/platform-content-handler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/scripts/prism.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/scripts/sourceset_dependencies.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/scripts/symbol-parameters-wrapper_deferred.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/styles/font-jb-sans-auto.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/styles/logo-styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/styles/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/styles/prism.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/styles/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/abstract-class-kotlin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/abstract-class.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/annotation-kotlin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/annotation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/arrow-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/burger.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/checkbox-off.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/checkbox-on.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/class-kotlin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/class.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/cross.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/enum-kotlin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/enum.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/exception-class.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/field-value.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/field-variable.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/filter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/function.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/homepage.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/interface-kotlin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/interface.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/object.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/placeholder.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/theme-toggle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/assets/typealias-kotlin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/ui-kit.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/dokka/html/ui-kit/ui-kit.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/tmp/.cache/expanded/zip_0310cb8d02fc443c16f361751adc6a51/META-INF/services/org.jetbrains.dokka.plugability.DokkaPlugin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/tmp/.cache/expanded/zip_63f32cde9a754aafb1760fecd191aaf8/META-INF/services/org.jetbrains.dokka.plugability.DokkaPlugin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/tmp/dokkaGeneratePublicationHtml/dokka-configuration.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/build/tmp/dokkaGeneratePublicationHtml/dokka-worker.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/romtools/build/tmp/.cache/expanded/zip_0310cb8d02fc443c16f361751adc6a51/META-INF/services/org.jetbrains.dokka.plugability.DokkaPlugin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/romtools/build/tmp/.cache/expanded/zip_63f32cde9a754aafb1760fecd191aaf8/META-INF/services/org.jetbrains.dokka.plugability.DokkaPlugin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/romtools/build/tmp/dokkaGeneratePublicationHtml/dokka-configuration.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/romtools/build/tmp/dokkaGeneratePublicationHtml/dokka-worker.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sandbox-ui/build/tmp/.cache/expanded/zip_0310cb8d02fc443c16f361751adc6a51/META-INF/services/org.jetbrains.dokka.plugability.DokkaPlugin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sandbox-ui/build/tmp/.cache/expanded/zip_63f32cde9a754aafb1760fecd191aaf8/META-INF/services/org.jetbrains.dokka.plugability.DokkaPlugin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sandbox-ui/build/tmp/dokkaGeneratePublicationHtml/dokka-configuration.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sandbox-ui/build/tmp/dokkaGeneratePublicationHtml/dokka-worker.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/images/anchor-copy-button.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/images/copy-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/images/copy-successful-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/images/footer-go-to-link.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/images/go-to-top-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/images/logo-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/navigation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/scripts/clipboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/scripts/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/scripts/navigation-loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/scripts/pages.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/scripts/platform-content-handler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/scripts/prism.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/scripts/sourceset_dependencies.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/scripts/symbol-parameters-wrapper_deferred.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/styles/font-jb-sans-auto.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/styles/logo-styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/styles/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/styles/prism.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/styles/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/abstract-class-kotlin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/abstract-class.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/annotation-kotlin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/annotation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/arrow-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/burger.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/checkbox-off.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/checkbox-on.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/class-kotlin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/class.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/cross.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/enum-kotlin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/enum.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/exception-class.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/field-value.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/field-variable.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/filter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/function.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/homepage.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/interface-kotlin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/interface.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/object.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/placeholder.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/theme-toggle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/assets/typealias-kotlin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/ui-kit.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/ui-kit/ui-kit.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/-join-utils/-companion/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/-join-utils/-companion/join.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/-join-utils/-join-utils.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/-join-utils/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/-split-utils/-companion/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/-split-utils/-companion/split.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/-split-utils/-split-utils.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/-split-utils/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/-string-utils/-companion/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/-string-utils/-companion/join.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/-string-utils/-companion/split.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/-string-utils/-string-utils.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/-string-utils/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/org.example.utilities/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/dokka/html/utilities/package-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/tmp/.cache/expanded/zip_0310cb8d02fc443c16f361751adc6a51/META-INF/services/org.jetbrains.dokka.plugability.DokkaPlugin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/tmp/.cache/expanded/zip_63f32cde9a754aafb1760fecd191aaf8/META-INF/services/org.jetbrains.dokka.plugability.DokkaPlugin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/tmp/dokkaGeneratePublicationHtml/dokka-configuration.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/build/tmp/dokkaGeneratePublicationHtml/dokka-worker.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/dependabot.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/Autonomous.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" />
@@ -3216,6 +3457,7 @@
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/classes/kotlin/main/AndroidHiltConventionPlugin.class" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/classes/kotlin/main/AndroidHiltConventionPlugin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/classes/kotlin/main/Buildlogic_androidApplicationConventionsPlugin.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build/classes/kotlin/main/Buildlogic_android_application_conventions_gradle$2$3$1.class" beforeDir="false" />
@@ -22428,7 +22670,8 @@
     <MESSAGE value="Update KSP cache files" />
     <MESSAGE value="Update build metadata and timing files; remove obsolete lock files; rename cache indexes" />
     <MESSAGE value="Update build metadata and timing files; remove obsolete lock files; rename index files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update build metadata and timing files; remove obsolete lock files; rename index files" />
+    <MESSAGE value="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
