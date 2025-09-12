@@ -6,6 +6,7 @@ ksp = "2.2.20-2.0.3"
 desugar_jdk_libs = "2.1.5"
 
 # ===== HOOKING FRAMEWORKS =====
+multidex = "2.0.1"
 xposed = "82"
 api = "82"
 lsposed = "6.4"
@@ -149,6 +150,7 @@ testing-android = [
 
 [libraries]
 # ===== GENERATIVE AI =====
+androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
 google-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 
 # ===== YUKIHOOK & XPOSED =====

@@ -91,7 +91,7 @@ dependencies {
     // Utilities
     implementation(libs.timber)
     coreLibraryDesugaring(libs.desugar.jdk.libs)
-    implementation("androidx.multidex:multidex:2.0.1") // Add multidex dependency
+    implementation(libs.androidx.multidex) // Add multidex dependency
 
     // Project dependencies
     implementation(project(":core-module"))
