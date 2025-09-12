@@ -2,7 +2,7 @@
 plugins {
     id("genesis.android.library")
     id("genesis.android.compose")
-    id("genesis.android.hilt")
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -12,6 +12,11 @@ android {
 dependencies {
     implementation(project(":core-module"))
     implementation(libs.androidx.core.ktx)
+    
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    
     // Add other module-specific dependencies here
     implementation(kotlin("stdlib-jdk8"))
 }

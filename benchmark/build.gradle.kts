@@ -4,9 +4,9 @@
 plugins {
     id("genesis.android.library")
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
     // Kotlin Android is applied by the convention plugin; avoid double-applying to prevent duplicate tasks
+    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 
 java {
@@ -70,27 +70,27 @@ android {
 
 dependencies {
     // Core AndroidX
-    implementation("androidx.core:core-ktx:1.17.0")
-    implementation(platform("androidx.compose:compose-bom:2025.09.00"))
-    implementation("androidx.activity:activity-compose:1.11.0")
-    implementation("androidx.navigation:navigation-compose:2.9.4")
+    implementation(libs.androidx.core.ktx)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.navigation.compose)
     
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.57.1")
-    ksp("com.google.dagger:hilt-compiler:2.57.1")
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
     
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
     
     // Room
-    implementation("androidx.room:room-runtime:2.8.0")
-    implementation("androidx.room:room-ktx:2.8.0")
-    ksp("androidx.room:room-compiler:2.8.0")
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
     
     // Utilities
-    implementation("com.jakewharton.timber:timber:5.0.1")
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
+    implementation(libs.timber)
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
     
     // Project dependencies
     implementation(project(":core-module"))
@@ -99,20 +99,20 @@ dependencies {
     implementation(project(":oracle-drive-integration"))
     
     // Benchmark testing
-    androidTestImplementation("androidx.benchmark:benchmark-junit4:1.4.1")
-    androidTestImplementation("androidx.test.ext:junit:1.3.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
+    androidTestImplementation(libs.androidx.benchmark.junit4)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(libs.androidx.test.uiautomator)
     
     // Unit testing
-    testImplementation("junit:junit:4.13.2")
-    testImplementation("io.mockk:mockk:1.14.5")
-    androidTestImplementation("io.mockk:mockk-android:1.14.5")
+    testImplementation(libs.junit4)
+    testImplementation(libs.mockk)
+    androidTestImplementation(libs.mockk.android)
     
     // Hilt testing
-    testImplementation("com.google.dagger:hilt-android-testing:2.57.1")
-    androidTestImplementation("com.google.dagger:hilt-android-testing:2.57.1")
-    kspAndroidTest("com.google.dagger:hilt-compiler:2.57.1")
+    testImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.hilt.android.testing)
+    kspAndroidTest(libs.hilt.compiler)
     implementation(kotlin("stdlib-jdk8"))
 }
 

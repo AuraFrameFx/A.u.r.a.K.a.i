@@ -2,8 +2,8 @@
 plugins {
     id("genesis.android.library")
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 
 android {
@@ -31,8 +31,8 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    ksp("com.google.dagger:hilt-compiler:2.51.1")
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)

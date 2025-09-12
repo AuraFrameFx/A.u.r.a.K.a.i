@@ -4,7 +4,7 @@
 plugins {
     id("genesis.android.library")
     id("genesis.android.native")
-    id("genesis.android.hilt")
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -20,6 +20,7 @@ android {
 dependencies {
     implementation(project(":core-module"))
     implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
     implementation(libs.hilt.work)
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.kotlinx.serialization.json)

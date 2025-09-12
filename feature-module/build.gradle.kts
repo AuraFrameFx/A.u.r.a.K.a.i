@@ -3,11 +3,9 @@
 
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.hilt)
     alias(libs.plugins.dokka)
+    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
     alias(libs.plugins.ksp)  // Required for Hilt annotation processing
 }
 
