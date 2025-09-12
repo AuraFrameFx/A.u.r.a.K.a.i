@@ -62,7 +62,7 @@ dokkaGradlePlugin = "2.0.0"
 
 # ===== TESTING =====
 junit = "4.13.2"
-junitJupiter = "5.10.2"
+junitJupiter = "5.13.4"
 androidxTestJunit = "1.1.5"
 espressoCore = "3.7.0"
 mockk = "1.13.12"
