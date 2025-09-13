@@ -112,16 +112,13 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Determines which AI agents should run for a given invoke request.
+     * Selects which agents should run for the given invoke request.
      *
-     * Examines the request message (case-insensitive) and priority to pick a set of agents:
-     * - Always includes Genesis.
-     * - Adds Aura when emotional content is detected.
-     * - Adds Kai when security-related content is detected.
-     * - Adds Cascade for complex queries or when the request priority is high.
-     * - Adds DataveinConstructor for technical content.
+     * Inspects the request message and priority to determine agents to include:
+     * always includes Genesis; adds Aura for emotional content; Kai for security-related content;
+     * Cascade for complex queries or high priority; DataveinConstructor for technical content.
      *
-     * @param request The incoming invoke request whose message and priority are evaluated.
+     * @param request The invoke request whose message and priority are evaluated.
      * @return A sorted list of unique AgentType values selected for the cascade.
      */
     private fun selectAgentsForRequest(request: AgentInvokeRequest): List<AgentType> {
@@ -158,17 +155,18 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Dispatches the request to the appropriate agent handler and returns that agent's response.
+     * Dispatches the request to the specified agent implementation and returns that agent's response.
      *
-     * The function selects the concrete processing implementation based on [agentType] and
-     * invokes it with the original [request] and the accumulated [cascadeContext] produced
-     * by earlier cascade steps.
+     * Calls the concrete processing function for the given [agentType], passing the original
+     * [request] and the accumulated [cascadeContext] produced by earlier cascade steps so handlers
+     * can produce context-aware outputs. The USER agent returns a fixed informational response and
+     * does not perform processing.
      *
-     * @param agentType The agent to run (e.g., Genesis, Aura, Kai, Cascade, DataveinConstructor).
+     * @param agentType The agent to invoke.
      * @param request The original invocation payload for the agent.
-     * @param cascadeContext Context map built from the original request and prior agent results; used
-     *        by agent handlers to produce context-aware responses.
-     * @return The selected agent's resulting [CascadeResponse].
+     * @param cascadeContext Map built from the original request and prior agent results; used by agent handlers
+     *        to inform context-aware responses.
+     * @return The resulting [CascadeResponse] from the selected agent.
      */
     private suspend fun processWithAgent(
         agentType: AgentType,

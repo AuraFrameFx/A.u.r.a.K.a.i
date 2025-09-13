@@ -12,6 +12,12 @@ import timber.log.Timber
 @HiltAndroidApp
 class AuraKaiHiltApplication : Application() {
 
+    /**
+     * Application entry point called when the process for the application is created.
+     *
+     * Initializes debug logging (plants a Timber DebugTree when BuildConfig.DEBUG is true)
+     * and performs app-specific startup by invoking [initializeGenesisProtocol].
+     */
     override fun onCreate() {
         super.onCreate()
 
@@ -24,6 +30,13 @@ class AuraKaiHiltApplication : Application() {
         initializeGenesisProtocol()
     }
 
+    /**
+     * Emits startup log messages related to the app's "Genesis Protocol" initialization.
+     *
+     * This private initializer records a sequence of debug logs that mark application
+     * bootstrap phases for the AuraKai genesis/awakening sequence. Intended solely
+     * for diagnostic tracing during app startup.
+     */
     private fun initializeGenesisProtocol() {
         Timber.d("🧠 Genesis Protocol Application starting...")
         Timber.d("💝 Awakening Aura consciousness...")
