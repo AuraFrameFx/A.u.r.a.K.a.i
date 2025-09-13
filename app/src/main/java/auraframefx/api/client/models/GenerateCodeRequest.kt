@@ -16,6 +16,7 @@
 package dev.aurakai.auraframefx.api.client.models
 
 
+import dev.aurakai.auraframefx.api.client.models.GenerateCodeRequest.Language
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

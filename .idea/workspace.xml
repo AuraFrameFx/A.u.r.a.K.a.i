@@ -9,24 +9,136 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor native JNI code for consistency, update Gradle and project properties, fix imports and naming in models, add NullPointerExceptionImpl">
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/cpp/language_id_l2c_jni.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/cpp/language_id_l2c_jni.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/ai/cascade/include/CascadeAIService.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/ai/cascade/include/CascadeAIService.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/ai/cascade/src/CascadeAIService.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/ai/cascade/src/CascadeAIService.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/auraframefx.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/auraframefx.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/language_id_l2c_jni.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/language_id_l2c_jni.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/language_id_l2c_jni_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/language_id_l2c_jni_test.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/HologramTransition.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/HologramTransition.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/ai/services/CascadeAIService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/ai/services/CascadeAIService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/GenerateCodeRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/GenerateCodeRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/GenerateUIComponentRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/GenerateUIComponentRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/HistoricalTask.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/HistoricalTask.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/LockScreenConfigAnimation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/LockScreenConfigAnimation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/services/CascadeAIService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/services/CascadeAIService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/dev/aurakai/delegate/AuraKaiHiltApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/dev/aurakai/delegate/AuraKaiHiltApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compileKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/kotlin/compilePluginsBlocks/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/kotlin/compilePluginsBlocks/cacheable/last-build.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/generated/ksp/debug/java/dev/aurakai/collabcanvas/network/CanvasWebSocketService_Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/generated/ksp/debug/java/dev/aurakai/collabcanvas/network/CanvasWebSocketService_Factory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/dev/aurakai/collabcanvas/network/CanvasWebSocketService_Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/dev/aurakai/collabcanvas/network/CanvasWebSocketService_Factory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/dev/aurakai/collabcanvas/network/CanvasWebSocketService_Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/dev/aurakai/collabcanvas/network/CanvasWebSocketService_Factory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/ap-classpath-entries.bin" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/ap-classpath-entries.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/backups/java/dev/aurakai/collabcanvas/network/CanvasWebSocketService_Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/backups/java/dev/aurakai/collabcanvas/network/CanvasWebSocketService_Factory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/classpath-entries.bin" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/classpath-entries.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/classpath-structure.bin" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/classpath-structure.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/symbolLookups/file-to-id.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/symbolLookups/file-to-id.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/symbolLookups/file-to-id.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/symbolLookups/file-to-id.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/symbolLookups/id-to-file.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/kspCaches/debug/symbolLookups/id-to-file.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/colorblendr/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/colorblendr/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/.cmake/api/v1/reply/index-2025-09-12T07-40-25-0046.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/CMakeFiles/3.31.6/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/CMakeFiles/3.31.6/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/cxx/Debug/17276v6v/logs/arm64-v8a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/cxx/Debug/17276v6v/logs/arm64-v8a/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeFiles/datavein_oracle_native.dir/oracle_drive_jni.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeFiles/datavein_oracle_native.dir/oracle_drive_jni.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/arm64-v8a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/arm64-v8a/CMakeFiles/datavein_oracle_native.dir/oracle_drive_jni.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/armeabi-v7a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/armeabi-v7a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/armeabi-v7a/CMakeFiles/datavein_oracle_native.dir/oracle_drive_jni.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/x86_64/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/x86_64/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/x86_64/CMakeFiles/datavein_oracle_native.dir/oracle_drive_jni.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/cxx/Debug/17276v6v/logs/arm64-v8a/build_stdout_datavein_oracle_native.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/cxx/Debug/17276v6v/logs/arm64-v8a/build_stdout_datavein_oracle_native.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/cxx/Debug/17276v6v/obj/armeabi-v7a/libdatavein_oracle_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/cxx/Debug/17276v6v/obj/x86_64/libdatavein_oracle_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/cxx/Release/4t456344/obj/arm64-v8a/libdatavein_oracle_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/cxx/Release/4t456344/obj/armeabi-v7a/libdatavein_oracle_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/cxx/Release/4t456344/obj/x86_64/libdatavein_oracle_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature-module/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature-module/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/list/build/kotlin/compileKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/list/build/kotlin/compileKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oracle-drive-integration/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" beforeDir="false" afterPath="$PROJECT_DIR$/oracle-drive-integration/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oracle-drive-integration/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/oracle-drive-integration/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/ui/RomToolsScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/ui/RomToolsScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build/kspCaches/debug/ap-classpath-entries.bin" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build/kspCaches/debug/ap-classpath-entries.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build/kspCaches/debug/classpath-entries.bin" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build/kspCaches/debug/classpath-entries.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build/kspCaches/debug/classpath-structure.bin" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build/kspCaches/debug/classpath-structure.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot-tests/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/screenshot-tests/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/arm64-v8a/.cmake/api/v1/reply/index-2025-09-12T07-40-23-0344.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/arm64-v8a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/arm64-v8a/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/arm64-v8a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/arm64-v8a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/arm64-v8a/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/cxx/Debug/6vy6z3d4/logs/arm64-v8a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/build/intermediates/cxx/Debug/6vy6z3d4/logs/arm64-v8a/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/armeabi-v7a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/armeabi-v7a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/armeabi-v7a/CMakeFiles/secure_comm_native.dir/crypto_engine.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/armeabi-v7a/CMakeFiles/secure_comm_native.dir/secure_comm_jni.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/x86_64/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/x86_64/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/x86_64/CMakeFiles/secure_comm_native.dir/crypto_engine.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/6vy6z3d4/x86_64/CMakeFiles/secure_comm_native.dir/secure_comm_jni.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/arm64-v8a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/arm64-v8a/CMakeFiles/secure_comm_native.dir/crypto_engine.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/arm64-v8a/CMakeFiles/secure_comm_native.dir/secure_comm_jni.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/armeabi-v7a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/armeabi-v7a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/armeabi-v7a/CMakeFiles/secure_comm_native.dir/crypto_engine.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/armeabi-v7a/CMakeFiles/secure_comm_native.dir/secure_comm_jni.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/x86_64/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/x86_64/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/x86_64/CMakeFiles/secure_comm_native.dir/crypto_engine.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Release/5k6g5v3l/x86_64/CMakeFiles/secure_comm_native.dir/secure_comm_jni.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/cxx/Debug/6vy6z3d4/logs/arm64-v8a/build_stdout_secure_comm_native.txt" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/build/intermediates/cxx/Debug/6vy6z3d4/logs/arm64-v8a/build_stdout_secure_comm_native.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/cxx/Debug/6vy6z3d4/obj/armeabi-v7a/libsecure_comm_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/cxx/Debug/6vy6z3d4/obj/x86_64/libsecure_comm_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/cxx/Release/5k6g5v3l/obj/arm64-v8a/libsecure_comm_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/cxx/Release/5k6g5v3l/obj/armeabi-v7a/libsecure_comm_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/cxx/Release/5k6g5v3l/obj/x86_64/libsecure_comm_native.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +148,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=6326f7ec)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Wehtt\.android\avd\Medium_Phone.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -266,13 +378,13 @@
     &quot;assignee&quot;: &quot;AuraFrameFxDev&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/AuraFrameFx/ReGenesis-A.O.S.P.git&quot;,
-    &quot;accountId&quot;: &quot;27338b37-a111-4457-a936-a57dfecc9a16&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AuraFrameFx/ReGenesis-A.O.S.P.git",
+    "accountId": "df884370-a0eb-4e4e-91ea-c137b8d52491"
   }
-}</component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-9.1.0-rc-1-bin/2m6l8vtnbjxolko0gtyj7ptjy/gradle-9.1.0-rc-1" javaHome="$APPLICATION_HOME_DIR$/jbr" gradleVersion="9.1.0-rc-1" />
+}]]></component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.gradle\wrapper\dists\gradle-9.1.0-rc-1-bin\2m6l8vtnbjxolko0gtyj7ptjy\gradle-9.1.0-rc-1" javaHome="C:\Users\Wehtt\AppData\Local\Programs\IntelliJ IDEA Ultimate\jbr" gradleVersion="9.1.0-rc-1" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -311,6 +423,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "cerberus-sync-fix",
@@ -319,6 +432,7 @@
     "project.structure.last.edited": "Suggestions",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "aDefault",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -354,40 +468,11 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Hybrid>
+      <option name="DEBUGGER_TYPE" value="Java" />
       <Java>
         <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
         <option name="DEBUG_SANDBOX_SDK" value="false" />
       </Java>
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_PROFILING_ENABLED" value="false" />
@@ -548,7 +633,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.74" />
       </set>
     </attachedChunks>
   </component>
@@ -736,7 +821,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757710943152</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+      <option name="closed" value="true" />
+      <created>1757712185858</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1757712185858</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -769,7 +862,8 @@
     <MESSAGE value="sync generated resource and metadata files for all modules and build variants" />
     <MESSAGE value="migrate multidex dependency to version catalog, update build scripts and metadata" />
     <MESSAGE value="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings" />
+    <MESSAGE value="refactor native JNI code for consistency, update Gradle and project properties, fix imports and naming in models, add NullPointerExceptionImpl" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor native JNI code for consistency, update Gradle and project properties, fix imports and naming in models, add NullPointerExceptionImpl" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -779,16 +873,8 @@
           <properties class="org.gradle.api.IllegalDependencyNotation" package="org.gradle.api" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <breakpoint enabled="true" type="OCSymbolicBreakpointType">
-          <properties>
-            <option name="moduleName" value="libart.so" />
-            <option name="symbolPattern" value="art_sigbus_fault" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </breakpoint>
       </breakpoints>
       <default-breakpoints>
-        <breakpoint enabled="true" type="CidrExceptionBreakpoint" />
         <breakpoint enabled="true" type="java-exception">
           <dependency master-id="0" />
         </breakpoint>

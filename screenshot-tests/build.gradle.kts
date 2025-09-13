@@ -17,8 +17,8 @@ tasks.register("placeholderInfo") {
 
 tasks.register("updateScreenshots") {
     group = "screenshot"
-    description = "Update Genesis Protocol UI component screenshots"
-    doLast {
+    description = "Update Genesis Protocol UI component screenshots" +
+            "       doLast {
         println("📸 Genesis Protocol screenshots update ready")
         println("🎨 Configure screenshot baseline when Paparazzi is available")
     }

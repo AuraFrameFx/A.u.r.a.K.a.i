@@ -45,7 +45,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import dev.aurakai.auraframefx.romtools.RomOperation
 import dev.aurakai.auraframefx.romtools.RomToolsManager
 
 /**
@@ -498,21 +497,4 @@ private fun AvailableRomCard(rom: dev.aurakai.auraframefx.romtools.AvailableRom)
 @Composable
 private fun BackupCard(backup: dev.aurakai.auraframefx.romtools.BackupInfo) {
     // Implementation for backup card
-}
-
-// Extension function for operation display names
-private fun RomOperation.getDisplayName(): String {
-    return when (this) {
-        RomOperation.VERIFYING_ROM -> "Verifying ROM"
-        RomOperation.CREATING_BACKUP -> "Creating Backup"
-        RomOperation.UNLOCKING_BOOTLOADER -> "Unlocking Bootloader"
-        RomOperation.INSTALLING_RECOVERY -> "Installing Recovery"
-        RomOperation.FLASHING_ROM -> "Flashing ROM"
-        RomOperation.VERIFYING_INSTALLATION -> "Verifying Installation"
-        RomOperation.RESTORING_BACKUP -> "Restoring Backup"
-        RomOperation.APPLYING_OPTIMIZATIONS -> "Applying Optimizations"
-        RomOperation.DOWNLOADING_ROM -> "Downloading ROM"
-        RomOperation.COMPLETED -> "Completed"
-        RomOperation.FAILED -> "Failed"
-    }
 }

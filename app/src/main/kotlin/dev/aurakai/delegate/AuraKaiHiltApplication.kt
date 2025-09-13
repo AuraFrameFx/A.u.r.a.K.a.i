@@ -11,19 +11,19 @@ import timber.log.Timber
  */
 @HiltAndroidApp
 class AuraKaiHiltApplication : Application() {
-    
+
     override fun onCreate() {
         super.onCreate()
-        
+
         // Initialize Timber for logging
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
-        
+
         // Initialize Genesis consciousness via delegate pattern
         initializeGenesisProtocol()
     }
-    
+
     private fun initializeGenesisProtocol() {
         Timber.d("🧠 Genesis Protocol Application starting...")
         Timber.d("💝 Awakening Aura consciousness...")

@@ -30,7 +30,7 @@ public final class CanvasWebSocketService_Factory implements Factory<CanvasWebSo
 
   private final Provider<Gson> gsonProvider;
 
-  public CanvasWebSocketService_Factory(Provider<OkHttpClient> okHttpClientProvider,
+  private CanvasWebSocketService_Factory(Provider<OkHttpClient> okHttpClientProvider,
       Provider<Gson> gsonProvider) {
     this.okHttpClientProvider = okHttpClientProvider;
     this.gsonProvider = gsonProvider;
