@@ -17,6 +17,19 @@ sealed class LockScreenAnimationType {
     object Zoom : LockScreenAnimationType()
 }
 
+/**
+ * Shows or hides [content] with the specified lock-screen animation.
+ *
+ * Displays the given composable inside an AnimatedVisibility whose enter/exit transitions
+ * are chosen by [animationType] (Fade, Slide, or Zoom). The [visible] flag controls whether
+ * the content is shown. The provided [modifier] is applied to the AnimatedVisibility container.
+ *
+ * @param visible When true the content is shown using the enter animation; when false the
+ * content is hidden using the exit animation.
+ * @param animationType Selects which animation variant to use: Fade, Slide, or Zoom.
+ * @param modifier Modifier applied to the AnimatedVisibility container.
+ * @param content Composable content to display with the chosen animation.
+ */
 @Composable
 fun LockScreenAnimatedContent(
     visible: Boolean,
