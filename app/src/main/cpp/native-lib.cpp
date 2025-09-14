@@ -57,13 +57,13 @@ Java_dev_aurakai_auraframefx_ai_services_CascadeAIService_nativeInitialize(
 }
 
 extern "C" /**
- * @brief Processes a request string from Java and returns a JSON-like response.
+ * @brief Handle a request string from Java and return a JSON-like response.
  *
- * Converts the provided Java UTF-8 string to native memory, processes its content,
- * and returns a new Java string containing a JSON-like response. If `request` is null
- * or cannot be converted to UTF-8, a JSON-like error string is returned instead.
+ * Converts the provided Java string to native UTF-8, processes it, and returns a newly
+ * allocated Java string containing a JSON-like response. If `request` is null or cannot
+ * be converted, a JSON-like error string is returned.
  *
- * @param request Java UTF-8 string containing the request payload (may be null).
+ * @param request Nullable Java UTF-8 string containing the request payload.
  * @return jstring Newly allocated Java string with the response or an error JSON-like message.
  */
 JNIEXPORT jstring
