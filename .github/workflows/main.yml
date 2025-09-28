@@ -20,11 +20,11 @@ jobs:
         distribution: 'azul'
         java-version: '24'
 
-    - name: Download dependencies and build all modules
+    - name: Download dependencies
       run: ./gradlew assembleDebug
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: your-artifact-name
+        name: you-app-name
         path: path/to/artifacts
