@@ -1,5 +1,3 @@
-name: Build and Package All APKs
-
 on:
   push:
     branches: [ "master" ]
