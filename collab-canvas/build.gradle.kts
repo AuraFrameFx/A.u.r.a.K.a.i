@@ -51,4 +51,6 @@ dependencies {
     }
     androidTestImplementation(libs.hilt.android.testing)
     kspTest(libs.hilt.compiler) // Ensure Hilt annotation processor is present for tests
+
+    // Desugaring
 }
