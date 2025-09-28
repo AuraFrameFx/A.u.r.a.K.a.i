@@ -29,7 +29,7 @@ class DefaultVertexAIClient : VertexAIClient {
         specification: String,
         language: String,
         style: String,
-    ): String? =
+    ): String =
         """
         // Generated $language code in $style style
         // Specification: $specification
@@ -40,13 +40,13 @@ class DefaultVertexAIClient : VertexAIClient {
         }
         """.trimIndent()
 
-    override suspend fun generateText(prompt: String): String? = "AI generated response for: $prompt"
+    override suspend fun generateText(prompt: String): String = "AI generated response for: $prompt"
 
     override suspend fun generateText(
         prompt: String,
         temperature: Float,
         maxTokens: Int,
-    ): String? = "AI response (temp: $temperature, tokens: $maxTokens) for: $prompt"
+    ): String = "AI response (temp: $temperature, tokens: $maxTokens) for: $prompt"
 
     override suspend fun analyzeContent(content: String): Map<String, Any> =
         mapOf(
