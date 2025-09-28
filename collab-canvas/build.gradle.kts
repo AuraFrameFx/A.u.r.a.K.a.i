@@ -22,17 +22,22 @@ android {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
     }
-
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(24))
         }
+    }
+}
 
-        tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-            compilerOptions {
-                jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
-            }
-        }
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+        freeCompilerArgs.addAll(
+            "-Xjvm-default=all",
+            "-Xopt-in=kotlin.RequiresOptIn",
+        )
+    }
+}
 
 dependencies {
     // Module dependencies
@@ -52,9 +57,4 @@ dependencies {
     }
     androidTestImplementation(libs.hilt.android.testing)
     kspTest(libs.hilt.compiler) // Ensure Hilt annotation processor is present for tests
-}
-    }
-}
-dependencies {
-    implementation(libs.androidx.core.ktx)
 }
