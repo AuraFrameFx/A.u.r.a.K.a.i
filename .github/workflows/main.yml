@@ -2,9 +2,9 @@ name: Build and Package All APKs
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -14,17 +14,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up JDK 21
+    - name: Set up JDK 24
       uses: actions/setup-java@v3
       with:
-        distribution: 'temurin'
-        java-version: '21'
+        distribution: 'azul'
+        java-version: '24'
 
     - name: Download dependencies and build all modules
       run: ./gradlew assembleDebug
 
- - name: Upload Build Artifacts
-  uses: actions/upload-artifact@v4
-  with:
-    name: your-artifact-name
-    path: path/to/artifacts
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: your-artifact-name
+        path: path/to/artifacts
