@@ -64,7 +64,7 @@ class AuraAIServiceImpl
         override fun getAIResponse(
             prompt: String,
             options: Map<String, Any>?,
-        ): String? = "AI response placeholder"
+        ): String = "AI response placeholder"
 
         /**
          * Returns `null` for any memory key, as memory retrieval is not implemented in this stub.
