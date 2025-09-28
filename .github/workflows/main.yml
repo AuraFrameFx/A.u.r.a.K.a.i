@@ -1,4 +1,4 @@
-iname: Build and Package All APKs
+name: Build and Package All APKs
 
 on:
   push:
