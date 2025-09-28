@@ -1,4 +1,4 @@
-name: Build and Package All APKs
+iname: Build and Package All APKs
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Set up JDK 24
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         distribution: 'azul'
         java-version: '24'
