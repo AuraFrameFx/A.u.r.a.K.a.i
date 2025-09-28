@@ -52,7 +52,7 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.kotlin.stdlib.jdk8)
 }
-}
+
 dependencies {
     implementation(libs.androidx.core.ktx)
 }
