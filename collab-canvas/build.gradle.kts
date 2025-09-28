@@ -1,7 +1,6 @@
 // ==== GENESIS PROTOCOL - COLLAB CANVAS MODULE ====
 // Collaborative canvas module for real-time drawing
 
-
 plugins {
     id("plugins.android-base")
     alias(libs.plugins.ksp)
@@ -11,6 +10,27 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.collabcanvas"
+    defaultConfig {
+        minSdk = 33
+    }
+
+    buildFeatures {
+        buildConfig = true
+        resValues = true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
+    }
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+            freeCompilerArgs.addAll(
+                "-Xjvm-default=all",
+                "-Xopt-in=kotlin.RequiresOptIn",
+            )
+        }
+    }
 }
 
 dependencies {

@@ -1,10 +1,7 @@
 // Tests use JUnit4 + AndroidX Compose UI Test (createComposeRule). Adjust if your project differs.
 package dev.aurakai.auraframefx.romtools.ui
 
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.test.assert
+import androidx.compose.ui.semantics.ProgressBarRangeInfo
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasAnyChild
 import androidx.compose.ui.test.hasProgressBarRangeInfo
@@ -12,14 +9,12 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onAllNodes
 import androidx.compose.ui.test.onNode
 import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.performClick
-import androidx.compose.ui.semantics.ProgressBarRangeInfo
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import androidx.test.ext.junit.runners.AndroidJUnit4
 
 // NOTE: Test stack used: JUnit4 + AndroidX Compose UI Test (createComposeRule).
 
@@ -35,11 +30,18 @@ private class FakeRomToolsManager(
     private val _romToolsState = MutableStateFlow(initialState)
     private val _operationProgress = MutableStateFlow(initialProgress)
 
-    override val romToolsState: StateFlow<dev.aurakai.auraframefx.romtools.RomToolsState> = _romToolsState
-    override val operationProgress: StateFlow<dev.aurakai.auraframefx.romtools.OperationProgress?> = _operationProgress
+    override val romToolsState: StateFlow<dev.aurakai.auraframefx.romtools.RomToolsState> =
+        _romToolsState
+    override val operationProgress: StateFlow<dev.aurakai.auraframefx.romtools.OperationProgress?> =
+        _operationProgress
 
-    fun updateState(state: dev.aurakai.auraframefx.romtools.RomToolsState) { _romToolsState.value = state }
-    fun updateProgress(progress: dev.aurakai.auraframefx.romtools.OperationProgress?) { _operationProgress.value = progress }
+    fun updateState(state: dev.aurakai.auraframefx.romtools.RomToolsState) {
+        _romToolsState.value = state
+    }
+
+    fun updateProgress(progress: dev.aurakai.auraframefx.romtools.OperationProgress?) {
+        _operationProgress.value = progress
+    }
 }
 
 @RunWith(AndroidJUnit4::class)
@@ -139,7 +141,15 @@ class RomToolsScreenTest {
 
         // The label should display the operation display name and "42%"
         composeRule.onNodeWithText("42%").assertIsDisplayed()
-        composeRule.onNode(hasProgressBarRangeInfo(ProgressBarRangeInfo(current = 0.42f, range = 0f..1f, steps = 0))).assertIsDisplayed()
+        composeRule.onNode(
+            hasProgressBarRangeInfo(
+                ProgressBarRangeInfo(
+                    current = 0.42f,
+                    range = 0f..1f,
+                    steps = 0
+                )
+            )
+        ).assertIsDisplayed()
     }
 
     @Test
@@ -157,9 +167,11 @@ class RomToolsScreenTest {
 
         // There should be at least one card that shows the "Locked" icon (contentDescription = "Locked").
         // Count locked icons > 0
-        composeRule.onAllNodes(hasAnyChild(hasAnyChild(hasAnyChild(hasAnyChild(hasAnyChild { false }))))).fetchSemanticsNodes() // no-op to force tree init
-        val locked = composeRule.onAllNodes(hasAnyChild(hasAnyChild { false })) // fallback matcher if custom keys missing
+        composeRule.onAllNodes(hasAnyChild(hasAnyChild(hasAnyChild(hasAnyChild(hasAnyChild { false })))))
+            .fetchSemanticsNodes() // no-op to force tree init
+        composeRule.onAllNodes(hasAnyChild(hasAnyChild { false })) // fallback matcher if custom keys missing
         // Simpler: just look for contentDescription "Locked"
-        composeRule.onAllNodes(androidx.compose.ui.test.hasContentDescription("Locked")).assertCountGreaterThan(0)
+        composeRule.onAllNodes(androidx.compose.ui.test.hasContentDescription("Locked"))
+            .assertCountGreaterThan(0)
     }
 }

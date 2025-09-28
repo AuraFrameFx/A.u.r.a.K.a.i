@@ -6,6 +6,13 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.colorblendr"
+    defaultConfig {
+        minSdk = 33
+    }
+    buildFeatures {
+        buildConfig = true
+        resValues = true
+    }
 }
 
 dependencies {

@@ -15,7 +15,7 @@ tasks.register<Delete>("nuclearClean") {
     delete("build")
     delete(fileTree(".") { include("**/build") })
 
-    // Native build artifacts  
+    // Native build artifacts
     delete(fileTree(".") { include("**/.cxx") })
 
     // Gradle system files

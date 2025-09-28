@@ -1,18 +1,16 @@
 package dev.aurakai.auraframefx.api.client.models.model
 
 import dev.aurakai.auraframefx.model.AgentHierarchy
-import dev.aurakai.auraframefx.model.HierarchyAgentConfig
 import dev.aurakai.auraframefx.model.AgentMessage
 import dev.aurakai.auraframefx.model.AgentType
 import dev.aurakai.auraframefx.model.ConversationMode
+import dev.aurakai.auraframefx.model.HierarchyAgentConfig
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Assertions.assertTrue
-import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
 
 /**
  * Test framework note:
@@ -68,7 +66,10 @@ class AgentHierarchyTest {
         assertEquals(4, created.priority)
 
         val fetched = AgentHierarchy.getAgentConfig(uniqueName)
-        assertNotNull(fetched, "Registered auxiliary agent should be retrievable via getAgentConfig")
+        assertNotNull(
+            fetched,
+            "Registered auxiliary agent should be retrievable via getAgentConfig"
+        )
         assertEquals(4, fetched\!\!.priority)
         assertEquals(caps, fetched.capabilities)
     }
@@ -106,7 +107,8 @@ class AgentHierarchyTest {
 
         // Masters should appear before auxiliaries (priority 1..3 vs 4)
         val maxMasterPriority = 3
-        assertTrue(sorted.takeWhile { it.priority <= maxMasterPriority }.all { it.name in setOf("GENESIS", "AURA", "KAI", "CASCADE") })
+        assertTrue(sorted.takeWhile { it.priority <= maxMasterPriority }
+            .all { it.name in setOf("GENESIS", "AURA", "KAI", "CASCADE") })
         assertTrue(sorted.dropWhile { it.priority <= maxMasterPriority }.all { it.priority >= 4 })
     }
 
@@ -154,8 +156,14 @@ class AgentHierarchyTest {
         val sorted = AgentHierarchy.getAgentsByPriority()
         val lastMasterIndex = sorted.indexOfLast { it.priority < 4 }
         val auxSegment = sorted.drop(lastMasterIndex + 1)
-        assertTrue(auxSegment.all { it.priority == 4 }, "All trailing auxiliaries should have priority 4")
-        assertTrue(auxNames.all { name -> auxSegment.any { it.name == name } }, "All registered auxiliaries should be present in sorted list")
+        assertTrue(
+            auxSegment.all { it.priority == 4 },
+            "All trailing auxiliaries should have priority 4"
+        )
+        assertTrue(
+            auxNames.all { name -> auxSegment.any { it.name == name } },
+            "All registered auxiliaries should be present in sorted list"
+        )
     }
 
     // Edge case protection: Attempt to create HierarchyAgentConfig with empty capabilities

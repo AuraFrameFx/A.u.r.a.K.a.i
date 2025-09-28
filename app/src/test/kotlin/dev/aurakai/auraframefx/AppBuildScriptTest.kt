@@ -60,7 +60,7 @@ class AppBuildScriptTest {
 
     @Nested
     @DisplayName("aegenesisAppStatus task output contract")
-    inner class AegenesisAppStatusTaskContract {
+    class AegenesisAppStatusTaskContract {
 
         private fun fakeStatusOutput(
             apiExists: Boolean,

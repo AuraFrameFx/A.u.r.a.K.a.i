@@ -81,7 +81,10 @@ open class GradleTestkitBase {
     protected fun assertTaskSuccess(result: BuildResult, taskPath: String) {
         val t = result.task(taskPath)
         assertNotNull(t, "Expected task $taskPath to be present in the result.")
-        assertTrue(t.outcome == TaskOutcome.SUCCESS || t.outcome == TaskOutcome.UP_TO_DATE, "Task $taskPath should succeed.")
+        assertTrue(
+            t.outcome == TaskOutcome.SUCCESS || t.outcome == TaskOutcome.UP_TO_DATE,
+            "Task $taskPath should succeed."
+        )
     }
 
     /**

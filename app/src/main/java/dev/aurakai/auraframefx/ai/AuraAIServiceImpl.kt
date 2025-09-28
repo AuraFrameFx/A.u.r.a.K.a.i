@@ -376,7 +376,7 @@ class AuraAIServiceImpl @Inject constructor(
         )
     }
 
-    private fun processWithTrinityAI(request: Map<String, Any>): String? {
+    private fun processWithTrinityAI(request: Map<String, Any>): String {
         // Implement Trinity AI processing (Aura + Kai + Genesis)
         return "Trinity AI Response: ${request["prompt"]}"
     }

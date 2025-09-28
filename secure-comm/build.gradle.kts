@@ -10,6 +10,9 @@ plugins {
 android {
     namespace = "dev.aurakai.auraframefx.securecomm"
     compileSdk = 36
+    defaultConfig {
+        minSdk = 33
+    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -21,12 +24,16 @@ android {
     }
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_23)
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
             freeCompilerArgs.addAll(
                 "-Xjvm-default=all",
                 "-Xopt-in=kotlin.RequiresOptIn"
             )
         }
+    }
+    buildFeatures {
+        buildConfig = true
+        resValues = true
     }
 }
 

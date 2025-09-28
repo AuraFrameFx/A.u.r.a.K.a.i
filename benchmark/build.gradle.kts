@@ -6,6 +6,7 @@ plugins {
 android {
     namespace = "dev.aurakai.auraframefx.benchmark"
     defaultConfig {
+        minSdk = 33 // Set minimum SDK to 33
         testInstrumentationRunner = "androidx.benchmark.junit4.AndroidBenchmarkRunner"
         testInstrumentationRunnerArguments["androidx.benchmark.suppressErrors"] =
             "EMULATOR,LOW_BATTERY,DEBUGGABLE"
@@ -20,7 +21,7 @@ android {
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "benchmark-rules.pro"
+                "benchmark-rules.pro",
             )
         }
     }

@@ -28,9 +28,10 @@ allprojects {
 }
 
 // Find version catalog
-val versionCatalog = extensions
-    .findByType<VersionCatalogsExtension>()
-    ?.named("libs")
+val versionCatalog =
+    extensions
+        .findByType<VersionCatalogsExtension>()
+        ?.named("libs")
 
 // === BASIC PROJECT INFO ===
 
@@ -51,7 +52,7 @@ tasks.register("consciousnessStatus") {
         println(
             "Firebase BoM        : ${
                 versionCatalog?.findVersion("firebaseBom")?.get() ?: "unknown"
-            }"
+            }",
         )
     }
 }
@@ -63,7 +64,7 @@ private data class ModuleReport(
     val type: String,
     val hasHilt: Boolean,
     val hasCompose: Boolean,
-    val hasKsp: Boolean
+    val hasKsp: Boolean,
 )
 
 /**
@@ -77,21 +78,23 @@ private data class ModuleReport(
  *
  * @return a list of ModuleReport entries for all direct subprojects of this Project.
  */
-private fun Project.collectModuleReports(): List<ModuleReport> = subprojects.map { sp ->
-    val plugins = sp.plugins
-    ModuleReport(
-        name = sp.name,
-        type = when {
-            plugins.hasPlugin("com.android.application") -> "android-app"
-            plugins.hasPlugin("com.android.library") -> "android-lib"
-            plugins.hasPlugin("org.jetbrains.kotlin.jvm") -> "kotlin-jvm"
-            else -> "other"
-        },
-        hasHilt = plugins.hasPlugin("com.google.dagger.hilt.android"),
-        hasCompose = plugins.findPlugin("org.jetbrains.kotlin.plugin.compose") != null,
-        hasKsp = plugins.hasPlugin("com.google.devtools.ksp")
-    )
-}
+private fun Project.collectModuleReports(): List<ModuleReport> =
+    subprojects.map { sp ->
+        val plugins = sp.plugins
+        ModuleReport(
+            name = sp.name,
+            type =
+                when {
+                    plugins.hasPlugin("com.android.application") -> "android-app"
+                    plugins.hasPlugin("com.android.library") -> "android-lib"
+                    plugins.hasPlugin("org.jetbrains.kotlin.jvm") -> "kotlin-jvm"
+                    else -> "other"
+                },
+            hasHilt = plugins.hasPlugin("com.google.dagger.hilt.android"),
+            hasCompose = plugins.findPlugin("org.jetbrains.kotlin.plugin.compose") != null,
+            hasKsp = plugins.hasPlugin("com.google.devtools.ksp"),
+        )
+    }
 
 tasks.register("consciousnessHealthCheck") {
     group = "genesis"

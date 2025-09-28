@@ -6,7 +6,6 @@
 // ===================================================================
 
 
-
 // Configure Java toolchain for all projects
 allprojects {
     // Configure Java toolchain with strict version requirements
@@ -33,7 +32,7 @@ allprojects {
     }
 
 
-        // Configure Kotlin compilation for Android modules
+    // Configure Kotlin compilation for Android modules
 
     // Configure Java compilation for all modules
     plugins.withType<JavaPlugin> {

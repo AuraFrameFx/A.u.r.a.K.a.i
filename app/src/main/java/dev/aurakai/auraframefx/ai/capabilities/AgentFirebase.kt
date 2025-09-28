@@ -5,18 +5,17 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
-import com.google.firebase.remoteconfig.ktx.remoteConfig
-import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
+import com.google.firebase.remoteconfig.remoteConfig
+import com.google.firebase.remoteconfig.remoteConfigSettings
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.google.firebase.storage.ktx.storage
+import com.google.firebase.storage.storage
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
-import kotlinx.coroutines.Dispatchers
-import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -152,7 +151,10 @@ class AgentFirebase @Inject constructor(
 
     companion object {
         // Factory method for creating AgentFirebase with a specific policy
-        fun createWithPolicy(agentType: AgentType, firebaseApp: FirebaseApp = FirebaseApp.getInstance()): AgentFirebase {
+        fun createWithPolicy(
+            agentType: AgentType,
+            firebaseApp: FirebaseApp = FirebaseApp.getInstance()
+        ): AgentFirebase {
             val policy = when (agentType) {
                 AgentType.AURA -> CapabilityPolicy.AURA_POLICY
                 AgentType.KAI -> CapabilityPolicy.KAI_POLICY

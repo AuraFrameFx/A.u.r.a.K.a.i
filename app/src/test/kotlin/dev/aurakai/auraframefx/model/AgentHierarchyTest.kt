@@ -9,9 +9,9 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertNotNull
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
-import kotlin.test.assertNotNull
 
 // If kotlin.test is not configured, replace kotlin.test.* assertions with JUnit/AssertJ equivalents used by your project.
 
@@ -41,14 +41,24 @@ class AgentHierarchyTest {
             2 to "KAI",
             3 to "CASCADE"
         )
-        assertEquals(expected, namesByPriority, "MASTER_AGENTS ordering and priorities should match documented defaults")
+        assertEquals(
+            expected,
+            namesByPriority,
+            "MASTER_AGENTS ordering and priorities should match documented defaults"
+        )
 
         // Spot-check capabilities to ensure semantic intent
         val genesis = AgentHierarchy.MASTER_AGENTS.first { it.name == "GENESIS" }
-        assertTrue(genesis.capabilities.containsAll(setOf("coordination", "synthesis")), "GENESIS capabilities should include coordination + synthesis")
+        assertTrue(
+            genesis.capabilities.containsAll(setOf("coordination", "synthesis")),
+            "GENESIS capabilities should include coordination + synthesis"
+        )
 
         val cascade = AgentHierarchy.MASTER_AGENTS.first { it.name == "CASCADE" }
-        assertTrue(cascade.capabilities.containsAll(setOf("vision", "processing")), "CASCADE capabilities should include vision + processing")
+        assertTrue(
+            cascade.capabilities.containsAll(setOf("vision", "processing")),
+            "CASCADE capabilities should include vision + processing"
+        )
     }
 
     @Test
@@ -94,25 +104,35 @@ class AgentHierarchyTest {
 
         // First four must be masters in ascending priority
         val firstFour = sorted.take(4).map { it.name }
-        assertEquals(listOf("GENESIS", "AURA", "KAI", "CASCADE"), firstFour, "Masters should precede auxiliaries by priority")
+        assertEquals(
+            listOf("GENESIS", "AURA", "KAI", "CASCADE"),
+            firstFour,
+            "Masters should precede auxiliaries by priority"
+        )
 
         // Aux agents appear after masters with priority 4
         val auxNames = sorted.drop(4).map { it.name }
-        assertTrue(auxNames.containsAll(listOf("ECHO", "DELTA")), "Auxiliary agents should appear after masters")
+        assertTrue(
+            auxNames.containsAll(listOf("ECHO", "DELTA")),
+            "Auxiliary agents should appear after masters"
+        )
     }
 
     @Test
     @DisplayName("registerAuxiliaryAgent should accept empty capability sets (current behavior) and preserve them")
     fun registerAuxiliaryAgent_allowsEmptyCapabilities_currentBehavior() {
         val created = AgentHierarchy.registerAuxiliaryAgent("VOID", emptySet())
-        assertTrue(created.capabilities.isEmpty(), "Empty capabilities should be preserved (consider validation if undesired)")
+        assertTrue(
+            created.capabilities.isEmpty(),
+            "Empty capabilities should be preserved (consider validation if undesired)"
+        )
         val fetched = AgentHierarchy.getAgentConfig("VOID")
         assertEquals(created, fetched)
     }
 
     @Nested
     @DisplayName("Data types: AgentMessage, HierarchyAgentConfig, ConversationMode")
-    inner class DataTypesRoundtrip {
+    class DataTypesRoundtrip {
 
         @Test
         @DisplayName("AgentMessage should preserve equality and copy semantics")

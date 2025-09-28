@@ -1,9 +1,9 @@
 package plugins
 
-import org.gradle.api.Plugin
-import org.gradle.api.Project
 import com.android.build.gradle.LibraryExtension
 import org.gradle.api.JavaVersion
+import org.gradle.api.Plugin
+import org.gradle.api.Project
 
 class AndroidBasePlugin : Plugin<Project> {
     override fun apply(target: Project) {

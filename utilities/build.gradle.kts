@@ -9,6 +9,9 @@ android {
     namespace = "dev.aurakai.auraframefx.utilities"
     compileSdk = 36
     compileSdkPreview = "CANARY"
+    defaultConfig {
+        minSdk = 33
+    }
     buildFeatures {
     }
 
@@ -24,7 +27,7 @@ android {
     }
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_23)
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
             freeCompilerArgs.addAll(
                 "-Xjvm-default=all",
                 "-Xopt-in=kotlin.RequiresOptIn"

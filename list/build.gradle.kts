@@ -6,6 +6,9 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.list"
+    defaultConfig {
+        minSdk = 33
+    }
 }
 
 group = "dev.aurakai.auraframefx.list"

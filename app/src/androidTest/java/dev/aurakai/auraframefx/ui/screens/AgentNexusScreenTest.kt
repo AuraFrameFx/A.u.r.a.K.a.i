@@ -1,36 +1,19 @@
 package dev.aurakai.auraframefx.ui.screens
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.ui.test.assert
-import androidx.compose.ui.test.assertHasClickAction
 import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.assertIsNotEnabled
-import androidx.compose.ui.test.assertIsSelectable
-import androidx.compose.ui.test.assertIsEnabled
-import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.junit4.ComposeTestRule
-import androidx.compose.ui.test.onAllNodesWithText
-import androidx.compose.ui.test.onNode
+import androidx.compose.ui.test.longClick
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTouchInput
-import androidx.compose.ui.test.longClick
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import dev.aurakai.auraframefx.MainActivity
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import androidx.compose.ui.test.onRoot
-import androidx.compose.ui.semantics.SemanticsMatcher
-import androidx.compose.ui.test.hasAnyAncestor
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 
 @RunWith(AndroidJUnit4::class)
 @LargeTest
@@ -42,16 +25,34 @@ class AgentNexusScreenTest {
 
     private fun fakeAgents(): Map<String, FakeAgent> = mapOf(
         "Alpha" to FakeAgent(
-            name = "Alpha", processingPower = 0.9f, knowledgeBase = 0.7f,
-            speed = 0.5f, accuracy = 0.8f, evolutionLevel = 2, specialAbility = "Scan", colorHex = 0xFF00FFFF.toInt()
+            name = "Alpha",
+            processingPower = 0.9f,
+            knowledgeBase = 0.7f,
+            speed = 0.5f,
+            accuracy = 0.8f,
+            evolutionLevel = 2,
+            specialAbility = "Scan",
+            colorHex = 0xFF00FFFF.toInt()
         ),
         "Beta" to FakeAgent(
-            name = "Beta", processingPower = 0.4f, knowledgeBase = 0.6f,
-            speed = 0.9f, accuracy = 0.55f, evolutionLevel = 1, specialAbility = "Analyze", colorHex = 0xFF00FFFF.toInt()
+            name = "Beta",
+            processingPower = 0.4f,
+            knowledgeBase = 0.6f,
+            speed = 0.9f,
+            accuracy = 0.55f,
+            evolutionLevel = 1,
+            specialAbility = "Analyze",
+            colorHex = 0xFF00FFFF.toInt()
         ),
         "Gamma" to FakeAgent(
-            name = "Gamma", processingPower = 0.2f, knowledgeBase = 0.3f,
-            speed = 0.4f, accuracy = 0.45f, evolutionLevel = 3, specialAbility = "Optimize", colorHex = 0xFF00FFFF.toInt()
+            name = "Gamma",
+            processingPower = 0.2f,
+            knowledgeBase = 0.3f,
+            speed = 0.4f,
+            accuracy = 0.45f,
+            evolutionLevel = 3,
+            specialAbility = "Optimize",
+            colorHex = 0xFF00FFFF.toInt()
         )
     )
 
@@ -165,7 +166,9 @@ class AgentNexusScreenTest {
             try {
                 composeTestRule.onNodeWithText(msg).assertIsDisplayed()
                 true
-            } catch (t: Throwable) { false }
+            } catch (t: Throwable) {
+                false
+            }
         }
         assert(anyMessageVisible)
     }
@@ -173,9 +176,30 @@ class AgentNexusScreenTest {
     @Test
     fun nexusCore_rendersThreeAgentNodes_and_centralCore() {
         val agents = listOf(
-            AgentStats("Alpha", 0.9f,0.7f,0.5f,0.8f, color = androidx.compose.ui.graphics.Color.Cyan),
-            AgentStats("Beta", 0.4f,0.6f,0.9f,0.55f, color = androidx.compose.ui.graphics.Color.Cyan),
-            AgentStats("Gamma", 0.2f,0.3f,0.4f,0.45f, color = androidx.compose.ui.graphics.Color.Cyan)
+            AgentStats(
+                "Alpha",
+                0.9f,
+                0.7f,
+                0.5f,
+                0.8f,
+                color = androidx.compose.ui.graphics.Color.Cyan
+            ),
+            AgentStats(
+                "Beta",
+                0.4f,
+                0.6f,
+                0.9f,
+                0.55f,
+                color = androidx.compose.ui.graphics.Color.Cyan
+            ),
+            AgentStats(
+                "Gamma",
+                0.2f,
+                0.3f,
+                0.4f,
+                0.45f,
+                color = androidx.compose.ui.graphics.Color.Cyan
+            )
         )
 
         composeTestRule.setContent {

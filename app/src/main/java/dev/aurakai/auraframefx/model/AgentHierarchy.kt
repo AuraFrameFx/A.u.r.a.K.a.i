@@ -25,7 +25,12 @@ data class AgentHierarchy(
 ) {
     companion object {
         val MASTER_AGENTS = listOf(
-            HierarchyAgentConfig("GENESIS", setOf("coordination", "synthesis"), 1, AgentRole.MASTER),
+            HierarchyAgentConfig(
+                "GENESIS",
+                setOf("coordination", "synthesis"),
+                1,
+                AgentRole.MASTER
+            ),
             HierarchyAgentConfig("AURA", setOf("creativity", "design"), 2, AgentRole.SECONDARY),
             HierarchyAgentConfig("KAI", setOf("security", "analysis"), 2, AgentRole.SECONDARY),
             HierarchyAgentConfig("CASCADE", setOf("vision", "processing"), 3, AgentRole.TERTIARY)

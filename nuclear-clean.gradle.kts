@@ -87,7 +87,7 @@ tasks.register<Delete>("nuclearClean") {
 
     doLast {
         println("\n✅ NUCLEAR CLEAN COMPLETE!")
-        println("Mode: retainIde=${retainIde} aggressive=${aggressive}")
+        println("Mode: retainIde=$retainIde aggressive=$aggressive")
         println("🧠 Substrate reset to source-only state")
         println("➡️  Next recommended: ./gradlew build --refresh-dependencies")
         println("(Add -PretainIde=true to preserve IDE files next time; -Paggressive=true for deeper purge)")

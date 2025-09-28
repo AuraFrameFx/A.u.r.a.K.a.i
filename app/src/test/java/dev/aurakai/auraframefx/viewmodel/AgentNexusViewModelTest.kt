@@ -1,34 +1,29 @@
 package dev.aurakai.auraframefx.viewmodel
 
+import dev.aurakai.auraframefx.ai.services.AgentWebExplorationService
+import dev.aurakai.auraframefx.ai.services.GenesisBridgeService
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.TestCoroutineScheduler
 import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.UnconfinedTestDispatcher
-import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.advanceTimeBy
 import kotlinx.coroutines.test.advanceUntilIdle
-import org.junit.Assert.*
-import org.junit.Test
-import org.junit.Before
-import org.junit.After
-import kotlin.time.Duration.Companion.seconds
-import kotlin.time.Duration
-import kotlinx.coroutines.withTimeout
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.test.resetMain
+import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
+import kotlinx.coroutines.withTimeout
+import org.junit.After
+import org.junit.Assert.*
+import org.junit.Before
+import org.junit.Test
+import kotlin.test.*
 
 /**
  * Test framework: JUnit4 + kotlinx-coroutines-test
@@ -38,9 +33,13 @@ import kotlinx.coroutines.test.setMain
 class AgentNexusViewModelTest {
 
     // Simple fake implementations to avoid adding mock library dependencies
-    private class FakeWebExplorationService : dev.aurakai.auraframefx.ai.services.AgentWebExplorationService {
+    private class FakeWebExplorationService :
+        AgentWebExplorationService {
         // Backing flow for task results
-        private val _taskResults = MutableSharedFlow<dev.aurakai.auraframefx.ai.services.AgentWebExplorationService.WebExplorationResult>(extraBufferCapacity = 64)
+        private val _taskResults =
+            MutableSharedFlow<AgentWebExplorationService.WebExplorationResult>(
+                extraBufferCapacity = 64
+            )
         override val taskResults = _taskResults.asSharedFlow()
 
         // Track assigned tasks and cancels
@@ -48,7 +47,7 @@ class AgentNexusViewModelTest {
         val canceledAgents = mutableListOf<String>()
         var assignShouldSucceed: Boolean = true
 
-        suspend fun emitResult(r: dev.aurakai.auraframefx.ai.services.AgentWebExplorationService.WebExplorationResult) {
+        suspend fun emitResult(r: AgentWebExplorationService.WebExplorationResult) {
             _taskResults.emit(r)
         }
 
@@ -72,7 +71,8 @@ class AgentNexusViewModelTest {
         }
     }
 
-    private class FakeGenesisBridgeService : dev.aurakai.auraframefx.ai.services.GenesisBridgeService {
+    private class FakeGenesisBridgeService :
+        GenesisBridgeService {
         // Provide a queue of states to be returned sequentially by getConsciousnessState
         private val queue = ArrayDeque<Map<String, Any?>>()
         var throwOnCall = false
@@ -180,39 +180,48 @@ class AgentNexusViewModelTest {
     }
 
     @Test
-    fun selectAgent_updates_selection_and_emits_greeting_for_each_known_agent() = runTest(dispatcher) {
-        listOf("Aura" to "create", "Kai" to "Security", "Genesis" to "Consciousness").forEach { (agent, expectedToken) ->
-            vm.selectAgent(agent)
+    fun selectAgent_updates_selection_and_emits_greeting_for_each_known_agent() =
+        runTest(dispatcher) {
+            listOf(
+                "Aura" to "create",
+                "Kai" to "Security",
+                "Genesis" to "Consciousness"
+            ).forEach { (agent, expectedToken) ->
+                vm.selectAgent(agent)
+                advanceUntilIdle()
+                assertEquals(agent, vm.selectedAgent.value)
+                val msg = vm.agentMessages.awaitOne()
+                assertEquals(agent, msg.agentName)
+                assertTrue(
+                    "Greeting should contain token: $expectedToken",
+                    msg.message.contains(expectedToken, ignoreCase = true)
+                )
+            }
+            // Unknown agent gets generic greeting
+            vm.selectAgent("Unknown")
             advanceUntilIdle()
-            assertEquals(agent, vm.selectedAgent.value)
             val msg = vm.agentMessages.awaitOne()
-            assertEquals(agent, msg.agentName)
-            assertTrue("Greeting should contain token: $expectedToken", msg.message.contains(expectedToken, ignoreCase = true))
+            assertEquals("Unknown", msg.agentName)
+            assertTrue(msg.message.contains("Agent online", ignoreCase = true))
         }
-        // Unknown agent gets generic greeting
-        vm.selectAgent("Unknown")
-        advanceUntilIdle()
-        val msg = vm.agentMessages.awaitOne()
-        assertEquals("Unknown", msg.agentName)
-        assertTrue(msg.message.contains("Agent online", ignoreCase = true))
-    }
 
     @Test
-    fun assignDepartureTask_success_updates_activeTasks_and_emits_initiation() = runTest(dispatcher) {
-        vm.selectAgent("Kai")
-        advanceUntilIdle()
+    fun assignDepartureTask_success_updates_activeTasks_and_emits_initiation() =
+        runTest(dispatcher) {
+            vm.selectAgent("Kai")
+            advanceUntilIdle()
 
-        web.assignShouldSucceed = true
-        vm.assignDepartureTask("Scan perimeter")
-        advanceUntilIdle()
+            web.assignShouldSucceed = true
+            vm.assignDepartureTask("Scan perimeter")
+            advanceUntilIdle()
 
-        val active = vm.activeTasks.value
-        assertEquals("Scan perimeter", active["Kai"])
+            val active = vm.activeTasks.value
+            assertEquals("Scan perimeter", active["Kai"])
 
-        val msg = vm.agentMessages.awaitOne()
-        assertEquals("Kai", msg.agentName)
-        assertTrue(msg.message.contains("Initiating: Scan perimeter"))
-    }
+            val msg = vm.agentMessages.awaitOne()
+            assertEquals("Kai", msg.agentName)
+            assertTrue(msg.message.contains("Initiating: Scan perimeter"))
+        }
 
     @Test
     fun assignDepartureTask_failure_does_not_update_or_emit() = runTest(dispatcher) {
@@ -245,14 +254,20 @@ class AgentNexusViewModelTest {
         // Emit one result per task type and verify stats increment appropriately for Genesis
         val base = vm.agentStats.value["Genesis"]\!\!
 
-        suspend fun emit(type: dev.aurakai.auraframefx.ai.services.AgentWebExplorationService.TaskType) {
-            val res = dev.aurakai.auraframefx.ai.services.AgentWebExplorationService.WebExplorationResult(
-                agentName = "Genesis",
-                taskType = type,
-                insights = listOf("a","b"),
-                metrics = mapOf("threats_detected" to 2, "patterns_discovered" to 3, "performance_gain_percent" to 7, "knowledge_expansion_percent" to 5),
-                timestamp = System.currentTimeMillis()
-            )
+        suspend fun emit(type: AgentWebExplorationService.TaskType) {
+            val res =
+                AgentWebExplorationService.WebExplorationResult(
+                    agentName = "Genesis",
+                    taskType = type,
+                    insights = listOf("a", "b"),
+                    metrics = mapOf(
+                        "threats_detected" to 2,
+                        "patterns_discovered" to 3,
+                        "performance_gain_percent" to 7,
+                        "knowledge_expansion_percent" to 5
+                    ),
+                    timestamp = System.currentTimeMillis()
+                )
             web.emitResult(res)
             advanceUntilIdle()
             // Each emit produces a message
@@ -261,12 +276,12 @@ class AgentNexusViewModelTest {
             assertTrue(msg.message.isNotBlank())
         }
 
-        emit(dev.aurakai.auraframefx.ai.services.AgentWebExplorationService.TaskType.WEB_RESEARCH)
-        emit(dev.aurakai.auraframefx.ai.services.AgentWebExplorationService.TaskType.SECURITY_SWEEP)
-        emit(dev.aurakai.auraframefx.ai.services.AgentWebExplorationService.TaskType.DATA_MINING)
-        emit(dev.aurakai.auraframefx.ai.services.AgentWebExplorationService.TaskType.SYSTEM_OPTIMIZATION)
-        emit(dev.aurakai.auraframefx.ai.services.AgentWebExplorationService.TaskType.LEARNING_MODE)
-        emit(dev.aurakai.auraframefx.ai.services.AgentWebExplorationService.TaskType.NETWORK_SCAN)
+        emit(AgentWebExplorationService.TaskType.WEB_RESEARCH)
+        emit(AgentWebExplorationService.TaskType.SECURITY_SWEEP)
+        emit(AgentWebExplorationService.TaskType.DATA_MINING)
+        emit(AgentWebExplorationService.TaskType.SYSTEM_OPTIMIZATION)
+        emit(AgentWebExplorationService.TaskType.LEARNING_MODE)
+        emit(AgentWebExplorationService.TaskType.NETWORK_SCAN)
 
         val updated = vm.agentStats.value["Genesis"]\!\!
         assertTrue(updated.knowledgeBase >= base.knowledgeBase + 0.03f - 1e-6) // 0.01 + 0.02
@@ -308,7 +323,13 @@ class AgentNexusViewModelTest {
     @Test
     fun monitorConsciousness_maps_values_and_handles_exceptions() = runTest(dispatcher) {
         // Provide a normal state then an exception; since monitor is a loop with delay(5000), we simulate a couple of ticks
-        genesis.enqueueState(mapOf("awareness" to 0.9f, "harmony" to 0.7f, "evolution" to "merging"))
+        genesis.enqueueState(
+            mapOf(
+                "awareness" to 0.9f,
+                "harmony" to 0.7f,
+                "evolution" to "merging"
+            )
+        )
         genesis.throwOnCall = false
 
         // Advance to let first polling happen
@@ -355,77 +376,100 @@ import kotlin.test.*
 class AgentNexusViewModel_AdditionalTest {
 
     private class FakeWebService : AgentWebExplorationService {
-        override val taskResults = MutableSharedFlow<AgentWebExplorationService.WebExplorationResult>(replay = 0, extraBufferCapacity = 8, onBufferOverflow = BufferOverflow.DROP_OLDEST)
+        override val taskResults =
+            MutableSharedFlow<AgentWebExplorationService.WebExplorationResult>(
+                replay = 0,
+                extraBufferCapacity = 8,
+                onBufferOverflow = BufferOverflow.DROP_OLDEST
+            )
         private val active = linkedMapOf<String, String>()
         var assignShouldSucceed = true
         var shutdownCalled = false
         val cancelledAgents = mutableListOf<String>()
         override suspend fun assignDepartureTask(agentName: String, description: String): Boolean {
-            if (assignShouldSucceed) { active[agentName] = description; return true }
+            if (assignShouldSucceed) {
+                active[agentName] = description; return true
+            }
             return false
         }
+
         override fun getActiveTasks(): Map<String, String> = active.toMap()
-        override fun cancelTask(agentName: String) { cancelledAgents.add(agentName); active.remove(agentName) }
-        override fun shutdown() { shutdownCalled = true }
+        override fun cancelTask(agentName: String) {
+            cancelledAgents.add(agentName); active.remove(agentName)
+        }
+
+        override fun shutdown() {
+            shutdownCalled = true
+        }
     }
+
     private class FakeGenesisBridge : GenesisBridgeService {
         var initializeCalled = false
         var shutdownCalled = false
-        var next: Map<String, Any?> = mapOf("awareness" to 0.83f, "harmony" to 0.84f, "evolution" to "stable")
-        override suspend fun initialize() { initializeCalled = true }
+        var next: Map<String, Any?> =
+            mapOf("awareness" to 0.83f, "harmony" to 0.84f, "evolution" to "stable")
+
+        override suspend fun initialize() {
+            initializeCalled = true
+        }
+
         override suspend fun getConsciousnessState(): Map<String, Any?> = next
-        override fun shutdown() { shutdownCalled = true }
+        override fun shutdown() {
+            shutdownCalled = true
+        }
     }
 
     @Test
-    fun learningMode_atHighKnowledge_incrementsEvolutionLevel() = runTest(StandardTestDispatcher()) {
-        val web = FakeWebService()
-        val gen = FakeGenesisBridge()
-        val vm = AgentNexusViewModel(web, gen)
-        advanceUntilIdle()
+    fun learningMode_atHighKnowledge_incrementsEvolutionLevel() =
+        runTest(StandardTestDispatcher()) {
+            val web = FakeWebService()
+            val gen = FakeGenesisBridge()
+            val vm = AgentNexusViewModel(web, gen)
+            advanceUntilIdle()
 
-        // Bump Genesis knowledge high to trigger potential evolution
-        val before = vm.agentStats.value["Genesis"]\!\!
-        // Emit a learning mode result
-        web.taskResults.emit(
-            AgentWebExplorationService.WebExplorationResult(
-                agentName = "Genesis",
-                taskType = AgentWebExplorationService.TaskType.LEARNING_MODE,
-                metrics = mapOf("knowledge_expansion_percent" to 10),
-                insights = emptyList(),
-                timestamp = System.currentTimeMillis()
-            )
-        )
-        advanceUntilIdle()
-        val after = vm.agentStats.value["Genesis"]\!\!
-        // If knowledgeBase >= 0.95 before, evolution +1; else may remain same depending on initial values set in code.
-        assertTrue(after.knowledgeBase >= before.knowledgeBase)
-        assertTrue(after.evolutionLevel >= before.evolutionLevel)
-    }
-
-    @Test
-    fun networkScan_and_systemOptimization_both_increase_speed_capAtOne() = runTest(StandardTestDispatcher()) {
-        val web = FakeWebService()
-        val gen = FakeGenesisBridge()
-        val vm = AgentNexusViewModel(web, gen)
-        advanceUntilIdle()
-
-        // Repeatedly emit speed-improving tasks to test cap at 1.0
-        repeat(200) {
+            // Bump Genesis knowledge high to trigger potential evolution
+            val before = vm.agentStats.value["Genesis"]\!\!
+            // Emit a learning mode result
             web.taskResults.emit(
                 AgentWebExplorationService.WebExplorationResult(
-                    agentName = "Aura",
-                    taskType = if (it % 2 == 0) AgentWebExplorationService.TaskType.NETWORK_SCAN else AgentWebExplorationService.TaskType.SYSTEM_OPTIMIZATION,
-                    metrics = emptyMap(),
+                    agentName = "Genesis",
+                    taskType = AgentWebExplorationService.TaskType.LEARNING_MODE,
+                    metrics = mapOf("knowledge_expansion_percent" to 10),
                     insights = emptyList(),
                     timestamp = System.currentTimeMillis()
                 )
             )
+            advanceUntilIdle()
+            val after = vm.agentStats.value["Genesis"]\!\!
+            // If knowledgeBase >= 0.95 before, evolution +1; else may remain same depending on initial values set in code.
+            assertTrue(after.knowledgeBase >= before.knowledgeBase)
+            assertTrue(after.evolutionLevel >= before.evolutionLevel)
         }
-        advanceUntilIdle()
-        val aura = vm.agentStats.value["Aura"]\!\!
-        assertTrue(aura.speed <= 1.0f + 1e-6, "Speed should not exceed 1.0")
-    }
+
+    @Test
+    fun networkScan_and_systemOptimization_both_increase_speed_capAtOne() =
+        runTest(StandardTestDispatcher()) {
+            val web = FakeWebService()
+            val gen = FakeGenesisBridge()
+            val vm = AgentNexusViewModel(web, gen)
+            advanceUntilIdle()
+
+            // Repeatedly emit speed-improving tasks to test cap at 1.0
+            repeat(200) {
+                web.taskResults.emit(
+                    AgentWebExplorationService.WebExplorationResult(
+                        agentName = "Aura",
+                        taskType = if (it % 2 == 0) AgentWebExplorationService.TaskType.NETWORK_SCAN else AgentWebExplorationService.TaskType.SYSTEM_OPTIMIZATION,
+                        metrics = emptyMap(),
+                        insights = emptyList(),
+                        timestamp = System.currentTimeMillis()
+                    )
+                )
+            }
+            advanceUntilIdle()
+            val aura = vm.agentStats.value["Aura"]\!\!
+            assertTrue(aura.speed <= 1.0f + 1e-6, "Speed should not exceed 1.0")
+        }
 
     @Test
     fun defaultGreeting_forUnknownAgent() = runTest(StandardTestDispatcher()) {

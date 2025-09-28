@@ -13,11 +13,13 @@ interface BootloaderManager {
      * @return `true` if bootloader access is available, `false` otherwise.
      */
     fun checkBootloaderAccess(): Boolean
+
     /**
      * Checks if the bootloader is unlocked.
      * @return `true` if the bootloader is unlocked, `false` otherwise.
      */
     fun isBootloaderUnlocked(): Boolean
+
     /**
      * Unlocks the bootloader.
      * @return A [Result] indicating the success or failure of the operation.

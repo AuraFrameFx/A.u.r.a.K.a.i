@@ -6,8 +6,9 @@ subprojects { subproject ->
     }
 
     // Check if this is an Android module
-    val isAndroidModule = subproject.plugins.hasPlugin("com.android.library") ||
-            subproject.plugins.hasPlugin("com.android.application")
+    val isAndroidModule =
+        subproject.plugins.hasPlugin("com.android.library") ||
+                subproject.plugins.hasPlugin("com.android.application")
 
     if (isAndroidModule) {
         // Apply common Android and YukiHook configurations
@@ -35,7 +36,7 @@ subprojects { subproject ->
                         isMinifyEnabled = true
                         proguardFiles(
                             getDefaultProguardFile("proguard-android-optimize.txt"),
-                            "proguard-rules.pro"
+                            "proguard-rules.pro",
                         )
                     }
                 }
@@ -47,10 +48,11 @@ subprojects { subproject ->
 
                 kotlinOptions {
                     jvmTarget = "24"
-                    freeCompilerArgs = freeCompilerArgs + listOf(
-                        "-Xjvm-default=all",
-                        "-opt-in=kotlin.RequiresOptIn"
-                    )
+                    freeCompilerArgs = freeCompilerArgs +
+                            listOf(
+                                "-Xjvm-default=all",
+                                "-opt-in=kotlin.RequiresOptIn",
+                            )
                 }
             }
 

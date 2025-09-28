@@ -14,7 +14,11 @@ object ColorBlendr {
      * @param ratio The ratio of the blend (0.0 to 1.0). 0.0 means all color1, 1.0 means all color2.
      * @return The blended color.
      */
-    fun blendColors(color1: Color, color2: Color, ratio: Float): Color {
+    fun blendColors(
+        color1: Color,
+        color2: Color,
+        ratio: Float,
+    ): Color {
         val clampedRatio = ratio.coerceIn(0f, 1f)
         val invRatio = 1f - clampedRatio
 
@@ -22,7 +26,7 @@ object ColorBlendr {
             red = (color1.red * invRatio + color2.red * clampedRatio).coerceIn(0f, 1f),
             green = (color1.green * invRatio + color2.green * clampedRatio).coerceIn(0f, 1f),
             blue = (color1.blue * invRatio + color2.blue * clampedRatio).coerceIn(0f, 1f),
-            alpha = (color1.alpha * invRatio + color2.alpha * clampedRatio).coerceIn(0f, 1f)
+            alpha = (color1.alpha * invRatio + color2.alpha * clampedRatio).coerceIn(0f, 1f),
         )
     }
 
@@ -32,9 +36,10 @@ object ColorBlendr {
      * @param alpha The alpha value (0.0 to 1.0).
      * @return A new color with the specified alpha.
      */
-    fun withAlpha(color: Color, alpha: Float): Color {
-        return color.copy(alpha = alpha.coerceIn(0f, 1f))
-    }
+    fun withAlpha(
+        color: Color,
+        alpha: Float,
+    ): Color = color.copy(alpha = alpha.coerceIn(0f, 1f))
 
     /**
      * Darkens a color by the specified factor.
@@ -42,13 +47,16 @@ object ColorBlendr {
      * @param factor The darkening factor (0.0 to 1.0).
      * @return The darkened color.
      */
-    fun darken(color: Color, factor: Float): Color {
+    fun darken(
+        color: Color,
+        factor: Float,
+    ): Color {
         val clampedFactor = factor.coerceIn(0f, 1f)
         return Color(
             red = (color.red * (1 - clampedFactor)).coerceIn(0f, 1f),
             green = (color.green * (1 - clampedFactor)).coerceIn(0f, 1f),
             blue = (color.blue * (1 - clampedFactor)).coerceIn(0f, 1f),
-            alpha = color.alpha
+            alpha = color.alpha,
         )
     }
 
@@ -58,13 +66,16 @@ object ColorBlendr {
      * @param factor The lightening factor (0.0 to 1.0).
      * @return The lightened color.
      */
-    fun lighten(color: Color, factor: Float): Color {
+    fun lighten(
+        color: Color,
+        factor: Float,
+    ): Color {
         val clampedFactor = factor.coerceIn(0f, 1f)
         return Color(
             red = (color.red + (1 - color.red) * clampedFactor).coerceIn(0f, 1f),
             green = (color.green + (1 - color.green) * clampedFactor).coerceIn(0f, 1f),
             blue = (color.blue + (1 - color.blue) * clampedFactor).coerceIn(0f, 1f),
-            alpha = color.alpha
+            alpha = color.alpha,
         )
     }
 }

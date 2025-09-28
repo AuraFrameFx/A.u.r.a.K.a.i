@@ -10,6 +10,9 @@ plugins {
 android {
     namespace = "dev.aurakai.auraframefx.module.e"
     compileSdk = 36
+    defaultConfig {
+        minSdk = 33
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_25
@@ -17,7 +20,7 @@ android {
     }
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_23)
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
             freeCompilerArgs.addAll(
                 "-Xjvm-default=all",
                 "-Xopt-in=kotlin.RequiresOptIn"
@@ -35,6 +38,11 @@ android {
         }
     }
     ndkVersion = "28.2.13676358"
+
+    buildFeatures {
+        buildConfig = true
+        resValues = true
+    }
 }
 
 dependencies {

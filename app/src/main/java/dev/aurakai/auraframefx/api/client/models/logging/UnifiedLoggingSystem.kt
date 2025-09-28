@@ -547,7 +547,7 @@ class UnifiedLoggingSystem @Inject constructor(
     /**
      * Custom Timber tree for AuraOS logging.
      */
-    private inner class AuraLoggingTree : Timber.Tree() {
+    private class AuraLoggingTree : Timber.Tree() {
         /**
          * Receives log messages from Timber but performs no action, as logging is handled by the unified logging system.
          *

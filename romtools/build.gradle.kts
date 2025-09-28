@@ -6,6 +6,14 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.romtools"
+    defaultConfig {
+        minSdk = 33
+    }
+
+    buildFeatures {
+        buildConfig = true
+        resValues = true
+    }
 }
 
 dependencies {

@@ -14,5 +14,5 @@ data class PluckablePath(
     val isPlucked: Boolean = false,
     val offset: Offset = Offset.Zero,
     val scale: Float = 1f,
-    val alpha: Float = 1f
+    val alpha: Float = 1f,
 )

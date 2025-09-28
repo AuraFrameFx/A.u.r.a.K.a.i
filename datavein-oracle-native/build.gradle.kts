@@ -6,6 +6,13 @@ plugins {
 android {
     namespace = "dev.aurakai.auraframefx.datavein"
     compileSdk = 36
+    defaultConfig {
+        minSdk = 33
+    }
+    buildFeatures {
+        buildConfig = true
+        resValues = true
+    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -18,10 +25,10 @@ android {
 }
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_23) // JVM_25 not yet supported by Kotlin DSL
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
         freeCompilerArgs.addAll(
             "-Xjvm-default=all",
-            "-Xopt-in=kotlin.RequiresOptIn"
+            "-Xopt-in=kotlin.RequiresOptIn",
         )
     }
 }

@@ -76,7 +76,10 @@ class LinkedList : List<String> {
      * @param previousIt The node immediately before `currentIt`, or null when `currentIt` is the head.
      * @param currentIt The node to unlink from the list.
      */
-    private fun unlink(previousIt: Node?, currentIt: Node) {
+    private fun unlink(
+        previousIt: Node?,
+        currentIt: Node,
+    ) {
         if (currentIt == head) {
             head = currentIt.next
         } else {
@@ -111,15 +114,18 @@ class LinkedList : List<String> {
         return false
     }
 
-    override fun iterator(): Iterator<String> = object : Iterator<String> {
-        private var current = head
-        override fun hasNext() = current != null
-        override fun next(): String {
-            val data = current?.data ?: throw NoSuchElementException()
-            current = current?.next
-            return data
+    override fun iterator(): Iterator<String> =
+        object : Iterator<String> {
+            private var current = head
+
+            override fun hasNext() = current != null
+
+            override fun next(): String {
+                val data = current?.data ?: throw NoSuchElementException()
+                current = current?.next
+                return data
+            }
         }
-    }
 
     override fun containsAll(elements: Collection<String>): Boolean {
         for (e in elements) {
@@ -183,12 +189,14 @@ class LinkedList : List<String> {
 
     override fun subList(
         fromIndex: Int,
-        toIndex: Int
+        toIndex: Int,
     ): List<String> {
         TODO("Not yet implemented")
     }
 
-    private data class Node(val data: String) {
+    private data class Node(
+        val data: String,
+    ) {
         var next: Node? = null
     }
 
@@ -203,9 +211,8 @@ class LinkedList : List<String> {
      * @param element element to search for
      * @return `true` if the element is present in the list, `false` otherwise
      */
-    override fun contains(element: String): Boolean {
+    override fun contains(element: String): Boolean =
         throw UnsupportedOperationException("Not yet implemented")
-    }
 
     /**
      * Returns true if this list contains all elements in the specified collection.
@@ -216,9 +223,8 @@ class LinkedList : List<String> {
      * @param elements Collection of strings to test for membership in this list.
      * @return `true` if every element in `elements` is contained in this list; `false` otherwise.
      */
-    override fun containsAll(elements: Collection<String>): Boolean {
+    override fun containsAll(elements: Collection<String>): Boolean =
         throw UnsupportedOperationException("Not yet implemented")
-    }
 
     /**
      * Returns the element at the specified zero-based index.
@@ -239,18 +245,15 @@ class LinkedList : List<String> {
      *
      * @throws UnsupportedOperationException Always thrown until this method is implemented.
      */
-    override fun indexOf(element: String): Int {
+    override fun indexOf(element: String): Int =
         throw UnsupportedOperationException("Not yet implemented")
-    }
 
     /**
      * Returns true if the list contains no elements.
      *
      * @return `true` when the list is empty (i.e., `head == null`), otherwise `false`.
      */
-    override fun isEmpty(): Boolean {
-        return head == null
-    }
+    override fun isEmpty(): Boolean = head == null
 
     /**
      * Returns an iterator over the elements in this list.
@@ -260,9 +263,8 @@ class LinkedList : List<String> {
      * @return an Iterator over the list's elements
      * @throws UnsupportedOperationException always thrown by this implementation
      */
-    override fun iterator(): Iterator<String> {
+    override fun iterator(): Iterator<String> =
         throw UnsupportedOperationException("Not yet implemented")
-    }
 
     /**
      * Returns the index of the last occurrence of [element] in the list.
@@ -276,18 +278,17 @@ class LinkedList : List<String> {
      * @param element The element to search for (case-sensitive).
      * @throws UnsupportedOperationException Always thrown until this method is implemented.
      */
-    override fun lastIndexOf(element: String): Int {
+    override fun lastIndexOf(element: String): Int =
         throw UnsupportedOperationException("Not yet implemented")
-    }
 
     /**
- * Returns a list iterator over the elements in this list, starting at the beginning.
- *
- * The returned iterator starts at index 0 and iterates over a snapshot of the list's elements.
- *
- * @return a ListIterator positioned before the first element.
- */
-override fun listIterator(): ListIterator<String> = listIterator(0)
+     * Returns a list iterator over the elements in this list, starting at the beginning.
+     *
+     * The returned iterator starts at index 0 and iterates over a snapshot of the list's elements.
+     *
+     * @return a ListIterator positioned before the first element.
+     */
+    override fun listIterator(): ListIterator<String> = listIterator(0)
 
     /**
      * Returns a ListIterator over a snapshot of the list starting at the given index.
@@ -305,12 +306,14 @@ override fun listIterator(): ListIterator<String> = listIterator(0)
         val snapshot = this.toList()
         return object : ListIterator<String> {
             private var pos = index
+
             /**
- * Returns true if the iterator has more elements.
- *
- * @return true when the current position is before the end of the snapshot.
- */
-override fun hasNext(): Boolean = pos < snapshot.size
+             * Returns true if the iterator has more elements.
+             *
+             * @return true when the current position is before the end of the snapshot.
+             */
+            override fun hasNext(): Boolean = pos < snapshot.size
+
             /**
              * Returns the next element in the iterator and advances the position by one.
              *
@@ -321,12 +324,14 @@ override fun hasNext(): Boolean = pos < snapshot.size
                 if (!hasNext()) throw NoSuchElementException()
                 return snapshot[pos++]
             }
+
             /**
- * Returns true if there is a previous element (i.e., the iterator is not at the start).
- *
- * @return true if a call to `previous()` would succeed.
- */
-override fun hasPrevious(): Boolean = pos > 0
+             * Returns true if there is a previous element (i.e., the iterator is not at the start).
+             *
+             * @return true if a call to `previous()` would succeed.
+             */
+            override fun hasPrevious(): Boolean = pos > 0
+
             /**
              * Returns the previous element from the iterator's snapshot and moves the cursor one position toward the start.
              *
@@ -337,20 +342,22 @@ override fun hasPrevious(): Boolean = pos > 0
                 if (!hasPrevious()) throw NoSuchElementException()
                 return snapshot[--pos]
             }
+
             /**
- * Returns the index of the element that would be returned by a subsequent `next()` call.
- *
- * For the snapshot-based list iterator this is the current cursor position (`pos`), in the range `0..size`.
- *
- * @return the next element's index (equal to the cursor position)
- */
-override fun nextIndex(): Int = pos
+             * Returns the index of the element that would be returned by a subsequent `next()` call.
+             *
+             * For the snapshot-based list iterator this is the current cursor position (`pos`), in the range `0..size`.
+             *
+             * @return the next element's index (equal to the cursor position)
+             */
+            override fun nextIndex(): Int = pos
+
             /**
- * Returns the index of the element that would be returned by a subsequent call to `previous()`.
- *
- * @return the previous element's index, or -1 if the iterator is at the beginning of the list.
- */
-override fun previousIndex(): Int = pos - 1
+             * Returns the index of the element that would be returned by a subsequent call to `previous()`.
+             *
+             * @return the previous element's index, or -1 if the iterator is at the beginning of the list.
+             */
+            override fun previousIndex(): Int = pos - 1
         }
     }
 
@@ -365,7 +372,10 @@ override fun previousIndex(): Int = pos - 1
      * @return a new List<String> containing the requested range
      * @throws IndexOutOfBoundsException if fromIndex < 0, toIndex < fromIndex, or toIndex > size
      */
-    override fun subList(fromIndex: Int, toIndex: Int): List<String> {
+    override fun subList(
+        fromIndex: Int,
+        toIndex: Int,
+    ): List<String> {
         if (fromIndex < 0 || toIndex < fromIndex || toIndex > size) {
             throw IndexOutOfBoundsException("fromIndex=$fromIndex, toIndex=$toIndex, size=$size")
         }

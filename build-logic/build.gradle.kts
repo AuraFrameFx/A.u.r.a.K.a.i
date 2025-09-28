@@ -29,3 +29,7 @@ gradlePlugin {
         }
     }
 }
+
+kotlin {
+    jvmToolchain(23)
+}

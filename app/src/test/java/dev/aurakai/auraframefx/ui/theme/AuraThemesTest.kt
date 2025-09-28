@@ -29,7 +29,7 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("AnimationStyle Enum Tests")
-    inner class AnimationStyleTests {
+    class AnimationStyleTests {
 
         @Test
         @DisplayName("Should contain all expected animation style values")
@@ -78,7 +78,7 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("CyberpunkTheme Tests")
-    inner class CyberpunkThemeTests {
+    class CyberpunkThemeTests {
 
         @Test
         @DisplayName("Should have correct basic properties")
@@ -182,7 +182,7 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("SolarFlareTheme Tests")
-    inner class SolarFlareThemeTests {
+    class SolarFlareThemeTests {
 
         @Test
         @DisplayName("Should have correct basic properties")
@@ -249,7 +249,7 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("ForestTheme Tests")
-    inner class ForestThemeTests {
+    class ForestThemeTests {
 
         @Test
         @DisplayName("Should have correct basic properties")
@@ -313,7 +313,7 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("Cross-Theme Comparison Tests")
-    inner class CrossThemeTests {
+    class CrossThemeTests {
 
         @Test
         @DisplayName("All themes should have unique names")
@@ -370,7 +370,7 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("Color Scheme Validation Tests")
-    inner class ColorSchemeValidationTests {
+    class ColorSchemeValidationTests {
 
         @Test
         @DisplayName("All theme light color schemes should be valid ColorScheme objects")
@@ -533,7 +533,7 @@ class AuraThemesTest {
 
     @Nested
     @DisplayName("Edge Case and Robustness Tests")
-    inner class EdgeCaseTests {
+    class EdgeCaseTests {
 
         @Test
         @DisplayName("Theme names should not be empty or blank")

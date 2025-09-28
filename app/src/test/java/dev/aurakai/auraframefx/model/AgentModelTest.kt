@@ -8,7 +8,7 @@ import org.junit.Test
 import java.util.*
 
 class AgentModelTest {
-    private val json = Json { 
+    private val json = Json {
         ignoreUnknownKeys = true
         isLenient = true
     }
@@ -17,7 +17,7 @@ class AgentModelTest {
     fun `AgentType should serialize and deserialize correctly`() {
         // Test all enum values
         AgentType.values().forEach { agentType ->
-            val serialized = json.encodeToString(agentType)
+            json.encodeToString(agentType)
             val deserialized = json.decodeFromString<AgentType>("\"${agentType.value}\"")
             assertEquals(agentType, deserialized)
         }

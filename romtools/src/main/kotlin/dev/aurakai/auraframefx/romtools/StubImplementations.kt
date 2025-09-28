@@ -14,10 +14,12 @@ interface RecoveryManager {
      * Checks if the device has recovery access.
      */
     fun checkRecoveryAccess(): Boolean
+
     /**
      * Checks if a custom recovery is installed.
      */
     fun isCustomRecoveryInstalled(): Boolean
+
     /**
      * Installs a custom recovery.
      */
@@ -40,6 +42,7 @@ interface SystemModificationManager {
      * Checks if the system partition has write access.
      */
     fun checkSystemWriteAccess(): Boolean
+
     /**
      * Installs Genesis AI optimizations.
      * @param progressCallback A callback to report the progress of the operation.
@@ -64,6 +67,7 @@ interface FlashManager {
      * @param progressCallback A callback to report the progress of the operation.
      */
     suspend fun flashRom(romFile: RomFile, progressCallback: (Float) -> Unit): Result<Unit>
+
     /**
      * Downloads a ROM file.
      * @param rom The ROM to download.
@@ -92,6 +96,7 @@ interface RomVerificationManager {
      * @param romFile The ROM file to verify.
      */
     suspend fun verifyRomFile(romFile: RomFile): Result<Unit>
+
     /**
      * Verifies the installation of a ROM.
      */
@@ -115,6 +120,7 @@ interface BackupManager {
      * Creates a full backup of the system.
      */
     suspend fun createFullBackup(): Result<Unit>
+
     /**
      * Creates a NANDroid backup.
      * @param name The name of the backup.

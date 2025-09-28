@@ -7,6 +7,9 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.moduleb"
+    defaultConfig {
+        minSdk = 33
+    }
 }
 
 dependencies {

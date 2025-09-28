@@ -341,24 +341,34 @@ data class OperationProgress(
 enum class RomOperation {
     /** Verifying the integrity of a ROM file. */
     VERIFYING_ROM,
+
     /** Creating a backup of the current system. */
     CREATING_BACKUP,
+
     /** Unlocking the device's bootloader. */
     UNLOCKING_BOOTLOADER,
+
     /** Installing a custom recovery. */
     INSTALLING_RECOVERY,
+
     /** Flashing a ROM to the device. */
     FLASHING_ROM,
+
     /** Verifying the installation of a ROM. */
     VERIFYING_INSTALLATION,
+
     /** Restoring a backup. */
     RESTORING_BACKUP,
+
     /** Applying Genesis AI optimizations. */
     APPLYING_OPTIMIZATIONS,
+
     /** Downloading a ROM file. */
     DOWNLOADING_ROM,
+
     /** The operation has completed successfully. */
     COMPLETED,
+
     /** The operation has failed. */
     FAILED
 }
@@ -386,12 +396,16 @@ data class RomFile(
 enum class RomType {
     /** A stock ROM from the device manufacturer. */
     STOCK,
+
     /** A custom ROM from a third-party developer. */
     CUSTOM,
+
     /** A custom recovery image. */
     RECOVERY,
+
     /** A custom kernel image. */
     KERNEL,
+
     /** A modification package. */
     MODIFICATION
 }

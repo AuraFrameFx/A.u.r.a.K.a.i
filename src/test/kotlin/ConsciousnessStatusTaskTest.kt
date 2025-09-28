@@ -74,6 +74,10 @@ class ConsciousnessStatusTaskTest : GradleTestkitBase() {
         }
         val result = run(root, "tasks", "--all")
         assertTaskSuccess(result, ":tasks")
-        assertOutputContains(result, "Genesis tasks", "consciousnessStatus - Show basic project and version info")
+        assertOutputContains(
+            result,
+            "Genesis tasks",
+            "consciousnessStatus - Show basic project and version info"
+        )
     }
 }

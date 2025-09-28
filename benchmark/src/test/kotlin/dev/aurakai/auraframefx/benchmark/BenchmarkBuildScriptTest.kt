@@ -4,9 +4,6 @@ import org.junit.jupiter.api.*
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.io.TempDir
 import java.io.File
-import org.gradle.testkit.runner.GradleRunner
-import org.gradle.testkit.runner.TaskOutcome
-import org.gradle.testkit.runner.BuildResult
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 class BenchmarkBuildScriptTest {
@@ -40,7 +37,11 @@ class BenchmarkBuildScriptTest {
             val repoBuild = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
                 .map { File(it, "benchmark/build.gradle.kts") }
                 .firstOrNull { it.exists() }
-                ?: error("Could not locate benchmark/build.gradle.kts by walking up from ${System.getProperty("user.dir")}")
+                ?: error("Could not locate benchmark/build.gradle.kts by walking up from ${
+                    System.getProperty(
+                        "user.dir"
+                    )
+                }")
             writeText(repoBuild.readText())
         }
 
@@ -48,15 +49,19 @@ class BenchmarkBuildScriptTest {
         val repoCatalog = generateSequence(File(System.getProperty("user.dir")).absoluteFile) { it.parentFile }
             .map { File(it, "gradle/libs.versions.toml") }
             .firstOrNull { it.exists() }
-            ?: error("Could not locate gradle/libs.versions.toml by walking up from ${System.getProperty("user.dir")}")
+            ?: error("Could not locate gradle/libs.versions.toml by walking up from ${
+                    System.getProperty(
+                        "user.dir"
+                    )
+                }")
         File(testProjectDir, "gradle").mkdirs()
         File(testProjectDir, "gradle/libs.versions.toml").writeText(repoCatalog.readText())
 
         // Provide a minimal gradle.properties to avoid daemon/user env noise
         File(testProjectDir, "gradle.properties").writeText(
             """
-            org.gradle.jvmargs=-Xmx1024m -Dfile.encoding=UTF-8
-            """.trimIndent()
+                        org . gradle . jvmargs = - Xmx1024m - Dfile.encoding = UTF - 8
+                """.trimIndent()
         )
     }
 
@@ -86,7 +91,7 @@ class BenchmarkBuildScriptTest {
     @Order(2)
     fun `tasks listing should succeed to ensure script is syntactically valid`() {
         val content = buildFile.readText()
-        val androidPluginApplied = Regex("""alias\(libs\.plugins\.android\.library\)|id\("com\.android\.library"\)""")
+        val androidPluginApplied = Regex(""" alias \(libs\.plugins\.android\.library\)|id\("com\.android\.library"\)""")
             .containsMatchIn(content)
         Assumptions.assumeTrue(
             System.getenv("ALLOW_PLUGIN_RESOLUTION") == "true" || !androidPluginApplied,
@@ -140,7 +145,8 @@ class BenchmarkBuildScriptTest {
 
         // Check for JUnit Platform usage
         assertTrue(
-            Regex("""tasks\.withType<Test>\s*\{\s*useJUnitPlatform\(\)""").containsMatchIn(content),
+            Regex("""tasks\.withType<Test>\s*\{
+            \s * useJUnitPlatform\(\)""").containsMatchIn(content),
             "Expected useJUnitPlatform() configuration not found in build.gradle.kts"
         )
 
@@ -167,7 +173,8 @@ class BenchmarkBuildScriptTest {
 
         // Validate presence of the custom 'benchmark' build type
         assertTrue(
-            Regex("""buildTypes\s*\{\s*(?s).*create\("benchmark"\)""").containsMatchIn(content),
+            Regex("""buildTypes\s*\{
+            \s * (?s).*create\("benchmark"\)""").containsMatchIn(content),
             "Expected custom 'benchmark' build type declaration."
         )
 

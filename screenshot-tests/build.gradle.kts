@@ -9,6 +9,9 @@ plugins {
 android {
     namespace = "dev.aurakai.screenshottests"
     compileSdk = 36
+    defaultConfig {
+        minSdk = 33
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_25
@@ -16,7 +19,7 @@ android {
     }
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_23)
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
             freeCompilerArgs.addAll(
                 "-Xjvm-default=all",
                 "-Xopt-in=kotlin.RequiresOptIn"
@@ -32,6 +35,11 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+
+    buildFeatures {
+        buildConfig = true
+        resValues = true
     }
 }
 

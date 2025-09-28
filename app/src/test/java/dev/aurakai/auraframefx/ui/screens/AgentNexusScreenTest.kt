@@ -1,6 +1,8 @@
 package dev.aurakai.auraframefx.ui.screens
 
-import org.junit.Assert.*
+import org.junit.Assert.assertArrayEquals
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class AgentNexusScreenUnitTest {
@@ -40,8 +42,13 @@ class AgentNexusScreenUnitTest {
         // but verify we can reason about edge math externally.
         val below = -0.1f
         val above = 1.5f
+
         // Values themselves are floats; we only check that conversion to percent won't crash
-        fun pctSafe(v: Float): String = try { "${(v * 100).toInt()}%" } catch (e: Exception) { "ERR" }
+        fun pctSafe(v: Float): String = try {
+            "${(v * 100).toInt()}%"
+        } catch (e: Exception) {
+            "ERR"
+        }
         assertEquals("-10%", pctSafe(below))
         assertEquals("150%", pctSafe(above))
     }
@@ -70,6 +77,7 @@ class AgentNexusScreenUnitTest {
             val y = (r * kotlin.math.sin(rad)).toFloat()
             return x to y
         }
+
         val p0 = off(-90f)
         val p1 = off(30f)
         val p2 = off(150f)

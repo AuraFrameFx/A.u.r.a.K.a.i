@@ -6,11 +6,11 @@ This suite covers: exact value, formatting, stability across calls/threads, and 
 
 package dev.aurakai.auraframefx.ui.settings
 
-import org.junit.Test
+import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue
-import org.junit.Assert.assertArrayEquals
+import org.junit.Test
 
 class GreetingProviderTest {
 
@@ -42,7 +42,7 @@ class GreetingProviderTest {
     fun getGreeting_hasExpectedDotSeparatedLetters() {
         val parts = provider.getGreeting().split('.')
         assertArrayEquals(
-            arrayOf("A","u","r","a","K","a","i"),
+            arrayOf("A", "u", "r", "a", "K", "a", "i"),
             parts.toTypedArray()
         )
     }
@@ -80,7 +80,8 @@ class GreetingProviderTest {
 
         val ctors = clazz.declaredConstructors
         assertTrue("Expected at least one constructor", ctors.isNotEmpty())
-        val hasInjectOnAnyCtor = ctors.any { it.isAnnotationPresent(javax.inject.Inject::class.java) }
+        val hasInjectOnAnyCtor =
+            ctors.any { it.isAnnotationPresent(javax.inject.Inject::class.java) }
         assertTrue("@Inject missing on constructor", hasInjectOnAnyCtor)
     }
 }

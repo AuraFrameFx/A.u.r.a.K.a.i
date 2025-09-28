@@ -517,7 +517,7 @@ class OracleDriveServiceTest {
 
     @Nested
     @DisplayName("Data Class Tests")
-    inner class DataClassTests {
+    class DataClassTests {
 
         @Test
         @DisplayName("OracleConsciousnessState should have correct properties")

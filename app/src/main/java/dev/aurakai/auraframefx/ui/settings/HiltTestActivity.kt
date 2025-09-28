@@ -8,7 +8,8 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class HiltTestActivity : AppCompatActivity() {
-    @Inject lateinit var greetingProvider: GreetingProvider
+    @Inject
+    lateinit var greetingProvider: GreetingProvider
 
     /**
      * Called when the activity is created; logs a debug message with the greeting provided by the injected GreetingProvider.

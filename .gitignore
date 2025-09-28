@@ -1,33 +1,37 @@
-# .gitignore for Re_Genesis_A.O.S.P multi-module Android/Kotlin project
-
 # Gradle
 .gradle/
-# build/ # <-- Allow generated files by not ignoring build outputs
-!*/src/main/assets/
-!*/src/main/res/
-!*/src/main/so/
-!*/src/main/jniLibs/
+build/
+!app/srv/
 
-# Local configuration
+# Local properties
 local.properties
+
 # IDE files
-.DS_Store
 .idea/
-# Generated files
-*.apk
-*.ap_*
-*.aab
-*.dex
-*.class
-*.jar
-*.war
-*.ear
-*.hprof
-# Native build artifacts
-**/intermediates/**
-**/.cxx/
-**/cxx/**/logs/**
-**/compile_commands.json
-**/CMakeFiles/
-**/CMakeCache.txt
-**/.ninja_log
+*.iml
+*.ipr
+*.iws
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Android Studio
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Keystore files
+*.jks
+
+# Misc
+*.swp
+*.swo
+
+# Do NOT ignore openapi or srv folders
+!**/openapi/
+!app/srv/
+

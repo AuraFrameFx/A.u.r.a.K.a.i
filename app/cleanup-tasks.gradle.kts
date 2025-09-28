@@ -18,14 +18,14 @@ tasks.register<Delete>("cleanAllGeneratedFiles") {
         buildDirProvider.dir("tmp/kotlin-classes"),
         buildDirProvider.dir("kotlin"),
         buildDirProvider.dir("generated/hilt"),
-        buildDirProvider.dir("generated/source/navigation-args")
+        buildDirProvider.dir("generated/source/navigation-args"),
     )
 
     // Clean potential problematic cached files
     delete(
         projectDirProvider.dir(".gradle/8.10.2/kotlin"),
         projectDirProvider.dir(".gradle/kotlin"),
-        projectDirProvider.file(".gradle/kotlin.lock")
+        projectDirProvider.file(".gradle/kotlin.lock"),
     )
 
     doLast {
@@ -55,7 +55,7 @@ tasks.register("aegenesisHealthCheck") {
         val kspMode = project.findProperty("ksp.useKSP2")?.toString() ?: "default"
         println("🧠 KSP Mode: $kspMode ${if (kspMode == "false") "✅ (Fixed NullPointer)" else "⚠️"}")
 
-        // Java Version Consistency  
+        // Java Version Consistency
         println("🎯 Java 21 Toolchain: ✅ Configured")
         println("🔧 Compile Target: Java 21 (JVM_21)")
 

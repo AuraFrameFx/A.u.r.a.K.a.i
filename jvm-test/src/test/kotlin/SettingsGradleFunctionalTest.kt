@@ -77,10 +77,14 @@ class SettingsGradleFunctionalTest {
         val output = run("help").output
         // Not directly surfaced; assert settings file contains the feature flags
         val settingsText = File(testProjectDir, "settings.gradle.kts").readText()
-        assertTrue(settingsText.contains("enableFeaturePreview(\"TYPESAFE_PROJECT_ACCESSORS\")"),
-            "Expected TYPESAFE_PROJECT_ACCESSORS to be enabled in settings.gradle.kts")
-        assertTrue(settingsText.contains("enableFeaturePreview(\"STABLE_CONFIGURATION_CACHE\")"),
-            "Expected STABLE_CONFIGURATION_CACHE to be enabled in settings.gradle.kts")
+        assertTrue(
+            settingsText.contains("enableFeaturePreview(\"TYPESAFE_PROJECT_ACCESSORS\")"),
+            "Expected TYPESAFE_PROJECT_ACCESSORS to be enabled in settings.gradle.kts"
+        )
+        assertTrue(
+            settingsText.contains("enableFeaturePreview(\"STABLE_CONFIGURATION_CACHE\")"),
+            "Expected STABLE_CONFIGURATION_CACHE to be enabled in settings.gradle.kts"
+        )
     }
 
     @Test
@@ -92,17 +96,32 @@ class SettingsGradleFunctionalTest {
             settingsText.indexOf("gradlePluginPortal()"),
             settingsText.indexOf("mavenCentral()")
         )
-        assertTrue(indices.all { it >= 0 }, "Expected google(), gradlePluginPortal(), mavenCentral() to be present")
-        assertTrue(indices[0] < indices[1] && indices[1] < indices[2], "Expected repository order: google -> gradlePluginPortal -> mavenCentral")
+        assertTrue(
+            indices.all { it >= 0 },
+            "Expected google(), gradlePluginPortal(), mavenCentral() to be present"
+        )
+        assertTrue(
+            indices[0] < indices[1] && indices[1] < indices[2],
+            "Expected repository order: google -> gradlePluginPortal -> mavenCentral"
+        )
     }
 
     @Test
     @DisplayName("Includes key external repositories (AndroidX Compose, JetBrains Compose, Sonatype snapshots)")
     fun includesKeyExternalRepos() {
         val settingsText = File(testProjectDir, "settings.gradle.kts").readText()
-        assertTrue(settingsText.contains("androidx.dev/storage/compose-compiler/repository"), "Missing AndroidX Compose repo")
-        assertTrue(settingsText.contains("maven.pkg.jetbrains.space/public/p/compose/dev"), "Missing JetBrains Compose repo")
-        assertTrue(settingsText.contains("oss.sonatype.org/content/repositories/snapshots"), "Missing Sonatype snapshots repo")
+        assertTrue(
+            settingsText.contains("androidx.dev/storage/compose-compiler/repository"),
+            "Missing AndroidX Compose repo"
+        )
+        assertTrue(
+            settingsText.contains("maven.pkg.jetbrains.space/public/p/compose/dev"),
+            "Missing JetBrains Compose repo"
+        )
+        assertTrue(
+            settingsText.contains("oss.sonatype.org/content/repositories/snapshots"),
+            "Missing Sonatype snapshots repo"
+        )
     }
 
     @Test
@@ -161,11 +180,20 @@ class SettingsGradleFunctionalTest {
         @DisplayName("Includes core and feature modules from settings")
         fun includesCoreAndFeatureModules() {
             val settingsText = File(testProjectDir, "settings.gradle.kts").readText()
-            val missing = expectedModules.filterNot { settingsText.contains("include(\"$it\")") || settingsText.contains("include($it)") || settingsText.contains("include($it") }
+            val missing = expectedModules.filterNot {
+                settingsText.contains("include(\"$it\")") || settingsText.contains("include($it)") || settingsText.contains(
+                    "include($it"
+                )
+            }
             // Only assert on core essentials to tolerate optional modules depending on branch
             val essentials = listOf(":app", ":core-module", ":feature-module")
-            val missingEssentials = essentials.filterNot { settingsText.contains("include(\"$it\")") || settingsText.contains("include($it)") }
-            assertTrue(missingEssentials.isEmpty(), "Missing essential includes: $missingEssentials")
+            val missingEssentials = essentials.filterNot {
+                settingsText.contains("include(\"$it\")") || settingsText.contains("include($it)")
+            }
+            assertTrue(
+                missingEssentials.isEmpty(),
+                "Missing essential includes: $missingEssentials"
+            )
         }
 
         @Test
@@ -173,10 +201,14 @@ class SettingsGradleFunctionalTest {
         fun optionalTestingModulesHandled() {
             val settingsText = File(testProjectDir, "settings.gradle.kts").readText()
             // Presence is optional; if present, ensure they are included with correct notation
-            val optional = listOf(":benchmark", ":screenshot-tests", ":jvm-test", ":list", ":utilities")
+            val optional =
+                listOf(":benchmark", ":screenshot-tests", ":jvm-test", ":list", ":utilities")
             optional.forEach { mod ->
                 if (settingsText.contains(mod)) {
-                    assertTrue(settingsText.contains("include(\"$mod\")") || settingsText.contains("include($mod"), "Module $mod referenced but not included properly")
+                    assertTrue(
+                        settingsText.contains("include(\"$mod\")") || settingsText.contains("include($mod"),
+                        "Module $mod referenced but not included properly"
+                    )
                 }
             }
         }
@@ -202,7 +234,10 @@ class SettingsGradleFunctionalTest {
         val result = run("help")
         val help = result.output
         assertNotNull(help)
-        assertTrue(help.contains("Welcome") || help.contains("tasks"), "Gradle help output should be present")
+        assertTrue(
+            help.contains("Welcome") || help.contains("tasks"),
+            "Gradle help output should be present"
+        )
         // We can't assert specific tasks without full project, but ensure command executed
         // And outcome not FAILED (heuristic via absence of 'FAILURE:' marker)
         assertTrue(\!help.contains("FAILURE:"), "Gradle help should not fail")

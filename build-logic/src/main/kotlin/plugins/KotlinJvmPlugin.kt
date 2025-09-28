@@ -2,7 +2,6 @@ package plugins
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class KotlinJvmPlugin : Plugin<Project> {
     override fun apply(target: Project) {

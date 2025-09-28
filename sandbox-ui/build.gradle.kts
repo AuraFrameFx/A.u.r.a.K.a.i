@@ -4,10 +4,17 @@ plugins {
     id("plugins.android-base")
     alias(libs.plugins.ksp)
     id("org.jetbrains.kotlin.plugin.compose")
-
 }
+
 android {
     namespace = "dev.aurakai.auraframefx.sandboxui"
+    defaultConfig {
+        minSdk = 33
+    }
+    buildFeatures {
+        buildConfig = true
+        resValues = true
+    }
 }
 
 dependencies {

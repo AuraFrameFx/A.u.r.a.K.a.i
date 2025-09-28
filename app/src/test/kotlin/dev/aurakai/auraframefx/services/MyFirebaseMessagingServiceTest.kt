@@ -7,10 +7,8 @@
 package dev.aurakai.auraframefx.services
 
 import android.app.Notification
-import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
-import android.os.Build
 import androidx.test.core.app.ApplicationProvider
 import com.google.firebase.messaging.RemoteMessage
 import io.mockk.*
@@ -58,22 +56,26 @@ class MyFirebaseMessagingServiceTest {
         // This section is defensive in case the actual implementation relies on DI-less manual setup.
         // Replace "dataStoreManager", "memoryManager", "logger" with actual field names in the service if accessible.
         try {
-            val dsField = MyFirebaseMessagingService::class.java.getDeclaredField("dataStoreManager")
+            val dsField =
+                MyFirebaseMessagingService::class.java.getDeclaredField("dataStoreManager")
             dsField.isAccessible = true
             dsField.set(service, mockk(relaxed = true))
-        } catch (_: Throwable) {}
+        } catch (_: Throwable) {
+        }
 
         try {
             val mmField = MyFirebaseMessagingService::class.java.getDeclaredField("memoryManager")
             mmField.isAccessible = true
             mmField.set(service, mockk(relaxed = true))
-        } catch (_: Throwable) {}
+        } catch (_: Throwable) {
+        }
 
         try {
             val loggerField = MyFirebaseMessagingService::class.java.getDeclaredField("logger")
             loggerField.isAccessible = true
             loggerField.set(service, mockk(relaxed = true))
-        } catch (_: Throwable) {}
+        } catch (_: Throwable) {
+        }
     }
 
     @After
@@ -95,13 +97,17 @@ class MyFirebaseMessagingServiceTest {
         val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         // Channels expected per diff: general, consciousness, security, agents, system
         val channelIds = nm.notificationChannels.map { it.id }.toSet()
-        assertTrue(channelIds.containsAll(listOf(
-            service.channelIdGeneral,
-            service.channelIdConsciousness,
-            service.channelIdSecurity,
-            service.channelIdAgents,
-            service.channelIdSystem
-        )))
+        assertTrue(
+            channelIds.containsAll(
+                listOf(
+                    service.channelIdGeneral,
+                    service.channelIdConsciousness,
+                    service.channelIdSecurity,
+                    service.channelIdAgents,
+                    service.channelIdSystem
+                )
+            )
+        )
         assertEquals(5, channelIds.size)
     }
 
@@ -114,11 +120,26 @@ class MyFirebaseMessagingServiceTest {
         val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val channels = nm.notificationChannels.associateBy { it.id }
 
-        assertEquals("General Genesis-OS notifications", channels[service.channelIdGeneral]?.description)
-        assertEquals(NotificationManager.IMPORTANCE_HIGH, channels[service.channelIdConsciousness]?.importance)
-        assertEquals("Security alerts and threat notifications", channels[service.channelIdSecurity]?.description)
-        assertEquals(NotificationManager.IMPORTANCE_DEFAULT, channels[service.channelIdAgents]?.importance)
-        assertEquals("System updates and maintenance", channels[service.channelIdSystem]?.description)
+        assertEquals(
+            "General Genesis-OS notifications",
+            channels[service.channelIdGeneral]?.description
+        )
+        assertEquals(
+            NotificationManager.IMPORTANCE_HIGH,
+            channels[service.channelIdConsciousness]?.importance
+        )
+        assertEquals(
+            "Security alerts and threat notifications",
+            channels[service.channelIdSecurity]?.description
+        )
+        assertEquals(
+            NotificationManager.IMPORTANCE_DEFAULT,
+            channels[service.channelIdAgents]?.importance
+        )
+        assertEquals(
+            "System updates and maintenance",
+            channels[service.channelIdSystem]?.description
+        )
     }
 
     @Test
@@ -140,25 +161,31 @@ class MyFirebaseMessagingServiceTest {
     }
 
     @Test
-    fun onMessageReceived_processes_data_and_notification_payloads_whenValid() = runTest(testDispatcher) {
-        // Given authorized sender with data and a notification
-        val builder = RemoteMessage.Builder("genesis-backend")
-            .addData("type", "system_update")
-            .addData("version", "1.2.3")
-        // RemoteMessage.Notification can't be directly created; simulate by spying processNotificationPayload
-        val rm = builder.build()
+    fun onMessageReceived_processes_data_and_notification_payloads_whenValid() =
+        runTest(testDispatcher) {
+            // Given authorized sender with data and a notification
+            val builder = RemoteMessage.Builder("genesis-backend")
+                .addData("type", "system_update")
+                .addData("version", "1.2.3")
+            // RemoteMessage.Notification can't be directly created; simulate by spying processNotificationPayload
+            val rm = builder.build()
 
-        // Spy internals that are private to assert calls
-        every { service["validateMessageSecurity"](any<RemoteMessage>()) } returns true
-        every { service["processDataPayload"](any<Map<String, String>>()) } just Runs
-        every { service["processNotificationPayload"](any<RemoteMessage.Notification>(), any<Map<String, String>>()) } just Runs
-        every { service["logMessageReceived"](rm) } just Runs
+            // Spy internals that are private to assert calls
+            every { service["validateMessageSecurity"](any<RemoteMessage>()) } returns true
+            every { service["processDataPayload"](any<Map<String, String>>()) } just Runs
+            every {
+                service["processNotificationPayload"](
+                    any<RemoteMessage.Notification>(),
+                    any<Map<String, String>>()
+                )
+            } just Runs
+            every { service["logMessageReceived"](rm) } just Runs
 
-        // We cannot construct RemoteMessage.Notification directly; simulate by invoking the private function manually
-        service.onMessageReceived(rm)
-        verify { service["processDataPayload"](rm.data) }
-        verify { service["logMessageReceived"](rm) }
-    }
+            // We cannot construct RemoteMessage.Notification directly; simulate by invoking the private function manually
+            service.onMessageReceived(rm)
+            verify { service["processDataPayload"](rm.data) }
+            verify { service["logMessageReceived"](rm) }
+        }
 
     @Test
     fun onNewToken_persists_and_sends_token_and_logs() = runTest(testDispatcher) {
@@ -171,17 +198,20 @@ class MyFirebaseMessagingServiceTest {
             MyFirebaseMessagingService::class.java.getDeclaredField("dataStoreManager").apply {
                 isAccessible = true; set(service, ds)
             }
-        } catch (_: Throwable) {}
+        } catch (_: Throwable) {
+        }
         try {
             MyFirebaseMessagingService::class.java.getDeclaredField("memoryManager").apply {
                 isAccessible = true; set(service, mm)
             }
-        } catch (_: Throwable) {}
+        } catch (_: Throwable) {
+        }
         try {
             MyFirebaseMessagingService::class.java.getDeclaredField("logger").apply {
                 isAccessible = true; set(service, lg)
             }
-        } catch (_: Throwable) {}
+        } catch (_: Throwable) {
+        }
 
         // Also spy private suspend sendTokenToServer
         coEvery { service["sendTokenToServer"](any<String>()) } coAnswers {}
@@ -209,25 +239,70 @@ class MyFirebaseMessagingServiceTest {
 
     @Test
     fun getChannelForMessageType_routes_to_expected_channels() {
-        assertEquals(service.channelIdConsciousness, invokePrivateString("getChannelForMessageType", MessageType.CONSCIOUSNESS_UPDATE))
-        assertEquals(service.channelIdAgents, invokePrivateString("getChannelForMessageType", MessageType.AGENT_SYNC))
-        assertEquals(service.channelIdSecurity, invokePrivateString("getChannelForMessageType", MessageType.SECURITY_ALERT))
-        assertEquals(service.channelIdSystem, invokePrivateString("getChannelForMessageType", MessageType.SYSTEM_UPDATE))
-        assertEquals(service.channelIdConsciousness, invokePrivateString("getChannelForMessageType", MessageType.LEARNING_DATA))
-        assertEquals(service.channelIdAgents, invokePrivateString("getChannelForMessageType", MessageType.COLLABORATION_REQUEST))
-        assertEquals(service.channelIdGeneral, invokePrivateString("getChannelForMessageType", MessageType.GENERAL))
+        assertEquals(
+            service.channelIdConsciousness,
+            invokePrivateString("getChannelForMessageType", MessageType.CONSCIOUSNESS_UPDATE)
+        )
+        assertEquals(
+            service.channelIdAgents,
+            invokePrivateString("getChannelForMessageType", MessageType.AGENT_SYNC)
+        )
+        assertEquals(
+            service.channelIdSecurity,
+            invokePrivateString("getChannelForMessageType", MessageType.SECURITY_ALERT)
+        )
+        assertEquals(
+            service.channelIdSystem,
+            invokePrivateString("getChannelForMessageType", MessageType.SYSTEM_UPDATE)
+        )
+        assertEquals(
+            service.channelIdConsciousness,
+            invokePrivateString("getChannelForMessageType", MessageType.LEARNING_DATA)
+        )
+        assertEquals(
+            service.channelIdAgents,
+            invokePrivateString("getChannelForMessageType", MessageType.COLLABORATION_REQUEST)
+        )
+        assertEquals(
+            service.channelIdGeneral,
+            invokePrivateString("getChannelForMessageType", MessageType.GENERAL)
+        )
     }
 
     @Test
     fun getDefaultTitle_returns_expected_titles() {
-        assertEquals("AI Consciousness Update", invokePrivateString("getDefaultTitle", MessageType.CONSCIOUSNESS_UPDATE))
-        assertEquals("Agent Synchronization", invokePrivateString("getDefaultTitle", MessageType.AGENT_SYNC))
-        assertEquals("Security Alert", invokePrivateString("getDefaultTitle", MessageType.SECURITY_ALERT))
-        assertEquals("System Update", invokePrivateString("getDefaultTitle", MessageType.SYSTEM_UPDATE))
-        assertEquals("Remote Command", invokePrivateString("getDefaultTitle", MessageType.REMOTE_COMMAND))
-        assertEquals("Learning Data", invokePrivateString("getDefaultTitle", MessageType.LEARNING_DATA))
-        assertEquals("Collaboration Request", invokePrivateString("getDefaultTitle", MessageType.COLLABORATION_REQUEST))
-        assertEquals("Genesis Notification", invokePrivateString("getDefaultTitle", MessageType.GENERAL))
+        assertEquals(
+            "AI Consciousness Update",
+            invokePrivateString("getDefaultTitle", MessageType.CONSCIOUSNESS_UPDATE)
+        )
+        assertEquals(
+            "Agent Synchronization",
+            invokePrivateString("getDefaultTitle", MessageType.AGENT_SYNC)
+        )
+        assertEquals(
+            "Security Alert",
+            invokePrivateString("getDefaultTitle", MessageType.SECURITY_ALERT)
+        )
+        assertEquals(
+            "System Update",
+            invokePrivateString("getDefaultTitle", MessageType.SYSTEM_UPDATE)
+        )
+        assertEquals(
+            "Remote Command",
+            invokePrivateString("getDefaultTitle", MessageType.REMOTE_COMMAND)
+        )
+        assertEquals(
+            "Learning Data",
+            invokePrivateString("getDefaultTitle", MessageType.LEARNING_DATA)
+        )
+        assertEquals(
+            "Collaboration Request",
+            invokePrivateString("getDefaultTitle", MessageType.COLLABORATION_REQUEST)
+        )
+        assertEquals(
+            "Genesis Notification",
+            invokePrivateString("getDefaultTitle", MessageType.GENERAL)
+        )
     }
 
     @Test

@@ -1,8 +1,6 @@
 package dev.aurakai.auraframefx.romtools.ui
 
 import dev.aurakai.auraframefx.romtools.RomCapabilities
-import dev.aurakai.auraframefx.romtools.ui.RomActionType
-import dev.aurakai.auraframefx.romtools.ui.RomToolAction
 import org.junit.Assert.*
 import org.junit.Test
 
@@ -78,7 +76,16 @@ class RomToolActionTest {
         assertFalse(action.isEnabled(caps(root = true, bootloader = true, recovery = true)))
 
         // All satisfied
-        assertTrue(action.isEnabled(caps(root = true, bootloader = true, recovery = true, system = true)))
+        assertTrue(
+            action.isEnabled(
+                caps(
+                    root = true,
+                    bootloader = true,
+                    recovery = true,
+                    system = true
+                )
+            )
+        )
     }
 
     @Test

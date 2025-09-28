@@ -1,12 +1,8 @@
 package dev.aurakai.auraframefx.ui.screens
 
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.*
+import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import dev.aurakai.auraframefx.viewmodel.AgentNexusViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -23,13 +19,20 @@ private class FakeAgent(
 )
 
 private class FakeWebService : AgentWebExplorationService {
-    override val taskResults = MutableSharedFlow<AgentWebExplorationService.WebExplorationResult>(extraBufferCapacity = 16)
+    override val taskResults =
+        MutableSharedFlow<AgentWebExplorationService.WebExplorationResult>(extraBufferCapacity = 16)
     private val tasks = linkedMapOf<String, String>()
-    override suspend fun assignDepartureTask(agent: String, description: String) = true.also { tasks[agent] = description }
+    override suspend fun assignDepartureTask(agent: String, description: String) =
+        true.also { tasks[agent] = description }
+
     override fun getActiveTasks(): Map<String, String> = tasks.toMap()
-    override fun cancelTask(agent: String) { tasks.remove(agent) }
+    override fun cancelTask(agent: String) {
+        tasks.remove(agent)
+    }
+
     override fun shutdown() {}
 }
+
 private class FakeGenesisBridge : GenesisBridgeService {
     override suspend fun initialize() {}
     override suspend fun getConsciousnessState(): Map<String, Any?> = emptyMap()
@@ -54,7 +57,8 @@ class AgentNexusScreenAndroidTest {
         setContent(vm)
 
         composeTestRule.onNodeWithText("Assign Departure Task").assertIsDisplayed().performClick()
-        composeTestRule.onNodeWithText("Assign Departure Task to ${vm.selectedAgent.value}").assertIsDisplayed()
+        composeTestRule.onNodeWithText("Assign Departure Task to ${vm.selectedAgent.value}")
+            .assertIsDisplayed()
         composeTestRule.onNodeWithText("Cancel").assertIsDisplayed()
     }
 

@@ -1,7 +1,6 @@
 // ==== GENESIS PROTOCOL - FEATURE MODULE ====
 // Primary feature module using convention plugins
 
-
 plugins {
     id("plugins.android-base")
     id("com.google.devtools.ksp")
@@ -11,6 +10,13 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.feature"
+    defaultConfig {
+        minSdk = 33
+    }
+    buildFeatures {
+        buildConfig = true
+        resValues = true
+    }
 }
 
 dependencies {
@@ -81,11 +87,10 @@ dependencies {
 
     // Debug tools
     debugImplementation(libs.leakcanary.android)
-
-
 }
 
-tasks.register("featureStatus") { // MOVED to root level and Updated
+tasks.register("featureStatus") {
+    // MOVED to root level and Updated
     group = "aegenesis"
     doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 25, JVM 25)!") }
 }
