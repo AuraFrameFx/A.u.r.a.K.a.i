@@ -1,8 +1,9 @@
 package dev.aurakai.auraframefx
 
-import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
+import android.Manifest
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -44,9 +45,28 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
+import android.content.pm.PackageManager
+import androidx.core.content.ContextCompat
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    // Photo picker launcher (Android 14+)
+    private val pickImagesLauncher = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
+        // Handle the selected image URI here (for file manager or AI assistant)
+        if (uri != null) {
+            Timber.i("Selected image URI: $uri")
+            // TODO: Pass URI to your file manager logic
+        }
+    }
+
+    // SAF launcher for directory/file access
+    private val openDocumentLauncher = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+        // Handle the selected file URI here
+        if (uri != null) {
+            Timber.i("Selected file URI: $uri")
+            // TODO: Pass URI to your file manager logic
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,10 +75,9 @@ class MainActivity : ComponentActivity() {
             Timber.d("🧠 Genesis MainActivity launching...")
 
             setContent {
-                MaterialTheme {
-                    AuraOSApp()
+                        AuraOSApp()
+                    }
                 }
-            }
 
             // Log successful initialization
             Timber.i("🌟 Genesis Protocol Interface Active")

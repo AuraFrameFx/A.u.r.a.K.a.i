@@ -1,3 +1,5 @@
+package dev.aurakai.auraframefx.logging
+
 import android.content.Context
 import android.util.Log
 import kotlinx.coroutines.*
@@ -122,7 +124,6 @@ class UnifiedLoggingSystem @Inject constructor(
             )
 
         } catch (e: Exception) {
-            Log.e("UnifiedLoggingSystem", "Failed to initialize logging system", e)
         }
     }
 
@@ -366,7 +367,6 @@ class UnifiedLoggingSystem @Inject constructor(
                     checkCriticalPatterns(logEntry)
 
                 } catch (e: Exception) {
-                    Log.e("UnifiedLoggingSystem", "Error processing log entry", e)
                 }
             }
         }
@@ -385,7 +385,6 @@ class UnifiedLoggingSystem @Inject constructor(
                     updateSystemHealth(analytics)
                     delay(30000) // Check every 30 seconds
                 } catch (e: Exception) {
-                    Log.e("UnifiedLoggingSystem", "Error in health monitoring", e)
                     delay(60000) // Wait longer on error
                 }
             }
@@ -408,7 +407,6 @@ class UnifiedLoggingSystem @Inject constructor(
             logFile.appendText(formattedEntry + "\n")
 
         } catch (e: Exception) {
-            Log.e("UnifiedLoggingSystem", "Failed to write log to file", e)
         }
     }
 
@@ -437,16 +435,9 @@ class UnifiedLoggingSystem @Inject constructor(
      * The log tag is constructed by combining the log category and tag. If a throwable is present, it is included in the log output.
      */
     private fun logToAndroidLog(logEntry: LogEntry) {
-        val tag = "${logEntry.category}_${logEntry.tag}"
         val message = logEntry.message
 
         when (logEntry.level) {
-            LogLevel.VERBOSE -> Log.v(tag, message, logEntry.throwable)
-            LogLevel.DEBUG -> Log.d(tag, message, logEntry.throwable)
-            LogLevel.INFO -> Log.i(tag, message, logEntry.throwable)
-            LogLevel.WARNING -> Log.w(tag, message, logEntry.throwable)
-            LogLevel.ERROR -> Log.e(tag, message, logEntry.throwable)
-            LogLevel.FATAL -> Log.wtf(tag, message, logEntry.throwable)
         }
     }
 
@@ -464,16 +455,18 @@ class UnifiedLoggingSystem @Inject constructor(
             LogLevel.ERROR -> Timber.e(logEntry.throwable, logEntry.message)
             LogLevel.FATAL -> Timber.wtf(logEntry.throwable, logEntry.message)
         }
-        /**
-         * Updates the system health state based on the severity of the provided log entry.
-         *
-         * @param logEntry The log entry to analyze for health updates.
-         */
-        private fun analyzeLogForHealth(logEntry: LogEntry) {
-            // Immediate health impact from ERROR or FATAL logs
-            if (logEntry.level == LogLevel.ERROR || logEntry.level == LogLevel.FATAL) {
-                _systemHealth.value = SystemHealth.ERROR
-            }
+        }
+
+    /**
+     * Updates the system health state based on the severity of the provided log entry.
+     *
+     * @param logEntry The log entry to analyze for health updates.
+     */
+    private fun analyzeLogForHealth(logEntry: LogEntry) {
+        // Immediate health impact from ERROR or FATAL logs
+        if (logEntry.level == LogLevel.ERROR || logEntry.level == LogLevel.FATAL) {
+            _systemHealth.value = SystemHealth.ERROR
+        }
 
             // Further analysis can be added here for WARNINGS or other criteria
         }
@@ -665,3 +658,4 @@ class UnifiedLoggingSystem @Inject constructor(
             }
         }
     }
+}

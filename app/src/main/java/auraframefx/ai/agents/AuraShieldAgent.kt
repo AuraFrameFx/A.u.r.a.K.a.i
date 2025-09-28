@@ -235,7 +235,6 @@ class AuraShieldAgent @Inject constructor(
         }
     }
 
-    inner class QuarantineManager {
         private val quarantinedItems = mutableMapOf<String, QuarantineItem>()
 
         data class QuarantineItem(

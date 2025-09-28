@@ -8,31 +8,49 @@ plugins {
     id("org.openapi.generator") version "7.15.0"
 }
 
+openApiGenerate {
+    generatorName = "kotlin"
+    inputSpec = "$rootDir/app/api/unified-aegenesis-api.yml"
+    outputDir = "$rootDir/app/src/main/kotlin"
+    apiPackage = "dev.aurakai.auraframefx.api"
+    modelPackage = "dev.aurakai.auraframefx.model"
+    invokerPackage = "dev.aurakai.auraframefx.invoker"
+    configOptions = mapOf(
+        "library" to "jvm-retrofit2",
+        "dateLibrary" to "java8",
+    )
+}
+
 android {
     namespace = "dev.aurakai.auraframefx"
-    compileSdk = 36
     defaultConfig {
         minSdk = 33
         multiDexEnabled = true
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+        targetSdkPreview = "CANARY"
     }
     buildFeatures {
         buildConfig = true
         resValues = true
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
+        java {
+            toolchain {
+                languageVersion.set(JavaLanguageVersion.of(24))
+            }
+        }
+    }
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
-        freeCompilerArgs.addAll(
-            "-Xjvm-default=all",
-            "-Xopt-in=kotlin.RequiresOptIn",
-        )
-    }
+compilerOptions {
+freeCompilerArgs.addAll(
+"-Xjvm-default=all",
+"-Xopt-in=kotlin.RequiresOptIn",
+)
+}
 }
 
 dependencies {
@@ -45,18 +63,14 @@ dependencies {
     implementation(project(":romtools"))
     implementation(project(":oracle-drive-integration"))
 
-    // Firebase (using the BOM and bundle)
-    implementation(platform("com.google.firebase:firebase-bom:34.3.0"))
-    implementation("com.google.firebase:firebase-crashlytics")
+// Firebase (using the BOM and bundle)
 
-    // Kotlin Core
-    implementation(libs.kotlin.reflect)
-    implementation(libs.kotlin.stdlib.jdk8)
-
-    // Hilt (use KSP for the compiler)
-    implementation(libs.hilt.android)
-    implementation(libs.hilt.work)
-    ksp(libs.hilt.compiler)
+// Kotlin Core
+implementation(libs.kotlin.reflect)
+implementation(libs.kotlin.stdlib.jdk8)
+implementation(libs.hilt.android)
+implementation(libs.hilt.work)
+ksp(libs.hilt.compiler)
 
     // Compose (using the BOM and bundle)
     implementation(platform(libs.androidx.compose.bom))
@@ -72,14 +86,11 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation("com.google.android.material:material:1.13.0")
 
-    // Testing
-    testImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(libs.bundles.testing.android)
-    androidTestImplementation(libs.hilt.android.testing)
-    debugImplementation(libs.leakcanary.android)
-
-    // Multidex
-    implementation("androidx.multidex:multidex:2.0.1")
+// Testing
+testImplementation(libs.bundles.testing.unit)
+androidTestImplementation(libs.bundles.testing.android)
+androidTestImplementation(libs.hilt.android.testing)
+debugImplementation(libs.leakcanary.android)
 }
 
 apply(plugin = "com.google.firebase.crashlytics")

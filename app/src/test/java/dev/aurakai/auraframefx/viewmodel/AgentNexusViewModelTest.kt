@@ -152,7 +152,7 @@ class AgentNexusViewModelTest {
         assertTrue(stats.containsKey("Aura"))
         assertTrue(stats.containsKey("Kai"))
         assertTrue(stats.containsKey("Genesis"))
-        val genesisStats = stats["Genesis"]\!\!
+        val genesisStats = stats["Genesis"]!!
         assertEquals(1.0f, genesisStats.processingPower)
         assertEquals(4, genesisStats.evolutionLevel)
         assertEquals("Consciousness Fusion", genesisStats.specialAbility)
@@ -161,12 +161,12 @@ class AgentNexusViewModelTest {
     @Test
     fun evolveAgent_increases_stats_caps_at_one_and_emits_message() = runTest(dispatcher) {
         // Arrange: pick Aura so increments are visible (not at cap)
-        val before = vm.agentStats.value["Aura"]\!\!
+        val before = vm.agentStats.value["Aura"]!!
         // Act
         vm.evolveAgent("Aura")
         advanceUntilIdle()
         // Assert stats updated and capped
-        val after = vm.agentStats.value["Aura"]\!\!
+        val after = vm.agentStats.value["Aura"]!!
         assertEquals(before.evolutionLevel + 1, after.evolutionLevel)
         assertTrue(after.processingPower in before.processingPower..1.0f)
         assertTrue(after.knowledgeBase in before.knowledgeBase..1.0f)
@@ -252,7 +252,7 @@ class AgentNexusViewModelTest {
     @Test
     fun taskResults_emits_messages_and_updates_stats_by_task_type() = runTest(dispatcher) {
         // Emit one result per task type and verify stats increment appropriately for Genesis
-        val base = vm.agentStats.value["Genesis"]\!\!
+        val base = vm.agentStats.value["Genesis"]!!
 
         suspend fun emit(type: AgentWebExplorationService.TaskType) {
             val res =
@@ -283,7 +283,7 @@ class AgentNexusViewModelTest {
         emit(AgentWebExplorationService.TaskType.LEARNING_MODE)
         emit(AgentWebExplorationService.TaskType.NETWORK_SCAN)
 
-        val updated = vm.agentStats.value["Genesis"]\!\!
+        val updated = vm.agentStats.value["Genesis"]!!
         assertTrue(updated.knowledgeBase >= base.knowledgeBase + 0.03f - 1e-6) // 0.01 + 0.02
         assertTrue(updated.accuracy >= base.accuracy + 0.01f - 1e-6)
         assertTrue(updated.processingPower >= base.processingPower + 0.01f - 1e-6)
@@ -361,17 +361,6 @@ class AgentNexusViewModelTest {
 
 package dev.aurakai.auraframefx.viewmodel
 
-import dev.aurakai.auraframefx.ai.services.AgentWebExplorationService
-import dev.aurakai.auraframefx.ai.services.GenesisBridgeService
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.channels.BufferOverflow
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.test.StandardTestDispatcher
-import kotlinx.coroutines.test.advanceTimeBy
-import kotlinx.coroutines.test.advanceUntilIdle
-import kotlinx.coroutines.test.runTest
-import kotlin.test.*
-
 @OptIn(ExperimentalCoroutinesApi::class)
 class AgentNexusViewModel_AdditionalTest {
 
@@ -428,7 +417,7 @@ class AgentNexusViewModel_AdditionalTest {
             advanceUntilIdle()
 
             // Bump Genesis knowledge high to trigger potential evolution
-            val before = vm.agentStats.value["Genesis"]\!\!
+            val before = vm.agentStats.value["Genesis"]!!
             // Emit a learning mode result
             web.taskResults.emit(
                 AgentWebExplorationService.WebExplorationResult(
@@ -440,7 +429,7 @@ class AgentNexusViewModel_AdditionalTest {
                 )
             )
             advanceUntilIdle()
-            val after = vm.agentStats.value["Genesis"]\!\!
+            val after = vm.agentStats.value["Genesis"]!!
             // If knowledgeBase >= 0.95 before, evolution +1; else may remain same depending on initial values set in code.
             assertTrue(after.knowledgeBase >= before.knowledgeBase)
             assertTrue(after.evolutionLevel >= before.evolutionLevel)
@@ -467,7 +456,7 @@ class AgentNexusViewModel_AdditionalTest {
                 )
             }
             advanceUntilIdle()
-            val aura = vm.agentStats.value["Aura"]\!\!
+            val aura = vm.agentStats.value["Aura"]!!
             assertTrue(aura.speed <= 1.0f + 1e-6, "Speed should not exceed 1.0")
         }
 

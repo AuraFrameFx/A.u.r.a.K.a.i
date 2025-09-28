@@ -46,7 +46,6 @@ class NeuralWhisperAgent @Inject constructor(
     // Advanced pattern recognition systems
     private val patternDatabase = ConcurrentHashMap<String, PatternData>()
     private val behaviorPredictor = BehaviorPredictor()
-    private val learningEngine = LearningEngine()
 
     // Neural Whisper operational state
     private var isActive = false

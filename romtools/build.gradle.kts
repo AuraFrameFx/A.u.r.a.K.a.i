@@ -2,6 +2,7 @@ plugins {
     id("plugins.android-base")
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
+    // REMOVED: alias(libs.plugins.kotlin.android) - deprecated with Kotlin 2.0+ Compose
 }
 
 android {
@@ -16,16 +17,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
     }
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+        }
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+        compilerOptions {
+        }
     }
-}
 
 dependencies {
     implementation(project(":core-module"))
@@ -39,4 +36,8 @@ dependencies {
     implementation(libs.kotlin.stdlib.jdk8)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)
+}
+}
+dependencies {
+    implementation(libs.androidx.core.ktx)
 }

@@ -18,20 +18,25 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
-    }
     buildFeatures {
         buildConfig = true
         resValues = true
+
     }
-}
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
     }
-}
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(24))
+        }
+    }
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+        }
+    jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)}
 
 dependencies {
     implementation(project(":core-module"))
@@ -49,4 +54,8 @@ dependencies {
     implementation(libs.kotlin.stdlib.jdk8)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)
+}
+}
+dependencies {
+    implementation(libs.androidx.core.ktx)
 }

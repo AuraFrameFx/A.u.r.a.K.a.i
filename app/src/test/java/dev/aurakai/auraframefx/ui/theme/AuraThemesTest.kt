@@ -94,7 +94,6 @@ class AuraThemesTest {
 
         @Nested
         @DisplayName("Light Color Scheme")
-        inner class LightColorSchemeTests {
 
             @Test
             @DisplayName("Should have correct primary colors")
@@ -139,7 +138,6 @@ class AuraThemesTest {
 
         @Nested
         @DisplayName("Dark Color Scheme")
-        inner class DarkColorSchemeTests {
 
             @Test
             @DisplayName("Should have correct primary colors")
@@ -198,7 +196,6 @@ class AuraThemesTest {
 
         @Nested
         @DisplayName("Light Color Scheme")
-        inner class LightColorSchemeTests {
 
             @Test
             @DisplayName("Should have correct warm primary colors")
@@ -223,7 +220,6 @@ class AuraThemesTest {
 
         @Nested
         @DisplayName("Dark Color Scheme")
-        inner class DarkColorSchemeTests {
 
             @Test
             @DisplayName("Should have correct warm colors")
@@ -262,7 +258,6 @@ class AuraThemesTest {
 
         @Nested
         @DisplayName("Light Color Scheme")
-        inner class LightColorSchemeTests {
 
             @Test
             @DisplayName("Should have correct natural colors")
@@ -287,7 +282,6 @@ class AuraThemesTest {
 
         @Nested
         @DisplayName("Dark Color Scheme")
-        inner class DarkColorSchemeTests {
 
             @Test
             @DisplayName("Should have correct natural colors")

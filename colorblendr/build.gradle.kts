@@ -14,16 +14,12 @@ android {
         resValues = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
     }
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+        }
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+        compilerOptions {
+        }
     }
-}
 
 dependencies {
     // Module dependencies
@@ -55,4 +51,8 @@ dependencies {
     // Utilities
     implementation(libs.timber)
     implementation(libs.kotlin.stdlib.jdk8)
+}
+}
+dependencies {
+    implementation(libs.androidx.core.ktx)
 }

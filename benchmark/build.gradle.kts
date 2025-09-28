@@ -50,3 +50,9 @@ dependencies {
 tasks.withType<JavaCompile> {
     options.compilerArgs.add("-Xlint:-deprecation")
 }
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}

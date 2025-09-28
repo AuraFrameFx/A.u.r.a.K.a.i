@@ -13,6 +13,8 @@ android {
         minSdk = 33
     }
     buildFeatures {
+        buildConfig = true
+        resValues = true
     }
 
     packaging {
@@ -22,12 +24,17 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
     }
-}
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    compilerOptions {
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(24))
+        }
+    }
+
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
         jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
     }
 }
@@ -66,10 +73,12 @@ tasks.register("utilitiesStatus") {
     description = "Checks the status of the Utilities module"
     doLast {
         println("📦 UTILITIES MODULE - Ready (Java 24, JVM 24)") // Updated
+            println("📦 UTILITIES MODULE - Ready (Java 24, JVM 24)")
+        }
     }
-}
 
 // MOVED to root level - Added standard test configuration for JUnit 5
 tasks.withType<Test> {
     useJUnitPlatform()
+}
 }

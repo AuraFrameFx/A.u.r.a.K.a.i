@@ -46,7 +46,6 @@ class AuraShieldAgent @Inject constructor(
     private val threatDatabase = ConcurrentHashMap<String, ThreatSignature>()
     private val behaviorAnalyzer = BehaviorAnalyzer()
     private val adaptiveFirewall = AdaptiveFirewall()
-    private val quarantineManager = QuarantineManager()
 
     // Shield operational state
     private var isShieldActive = false

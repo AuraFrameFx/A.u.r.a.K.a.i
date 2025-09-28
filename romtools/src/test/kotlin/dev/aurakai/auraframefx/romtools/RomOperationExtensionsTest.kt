@@ -78,7 +78,6 @@ class RomOperationExtensionsTest {
         // This will catch missing keys if new constants are added and the mapping isn't updated.
         for (op in RomOperation.values()) {
             val expectedLabel = expected[op]
-            if (expectedLabel \ != null) {
                 assertEquals(expectedLabel, op.getDisplayName(), "Label mismatch for $op")
             }
         }

@@ -16,6 +16,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.platform.LocalTextMeasurer
 import kotlin.math.*
 
 /**
@@ -77,6 +79,7 @@ fun NeonText(
 ) {
     val density = LocalDensity.current
     val glowRadiusPx = with(density) { glowRadius.toPx() }
+    val textMeasurer = LocalTextMeasurer.current
 
     // Animation for the glow effect
     val infiniteTransition = rememberInfiniteTransition(label = "neonGlow")
@@ -96,7 +99,6 @@ fun NeonText(
     )
 
     // Animation for the typing effect
-    var visibleCharCount by remember { mutableStateOf(if (animateTyping) 0 else text.length) }
 
     LaunchedEffect(animateTyping, text) {
         if (animateTyping) {
@@ -129,10 +131,6 @@ fun NeonText(
         )
     )
 
-    // Create a text layout to get the size and position of each character
-    val textLayoutResult = remember(text, textStyle) {
-        TextMeasurer().measure(
-            text = AnnotatedString(text),
             style = textStyle
         )
     }
@@ -215,36 +213,4 @@ fun NeonText(
     }
 }
 
-/**
- * A simple TextMeasurer for measuring text layout
- */
-private class TextMeasurer {
-    /**
-     * Measures the layout of the provided text using the specified style and returns the layout result.
-     *
-     * @param text The text to be measured.
-     * @param style The style applied during measurement.
-     * @return A TextLayoutResult containing size, position, and bounding box information for the measured text.
-     */
-    fun measure(
-        text: AnnotatedString,
-        style: TextStyle,
-    ): TextLayoutResult {
-        val textLayout = TextLayout(
-            text = text,
-            style = style,
-            maxLines = 1,
-            softWrap = false,
-            density = LocalDensity.current,
-            layoutDirection = LayoutDirection.Ltr,
-            fontFamilyResolver = LocalFontFamilyResolver.current
-        )
-        return textLayout
-    }
-}
-
-/**
- * A preview composable for the NeonText
- */
 @Composable
-@Preview "

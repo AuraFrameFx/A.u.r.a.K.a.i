@@ -123,7 +123,6 @@ class NeuralWhisperAgent @Inject constructor(
         }
     }
 
-    inner class LearningEngine {
         private val knowledgeGraph = mutableMapOf<String, Set<String>>()
         private val conceptRelations = mutableMapOf<String, Float>()
 

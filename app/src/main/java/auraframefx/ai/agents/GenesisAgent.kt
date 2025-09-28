@@ -390,7 +390,6 @@ class GenesisAgent @Inject constructor(
     private fun analyzeRequestComplexity(request: AgentRequest): RequestComplexity {
         // Analyze complexity based on request characteristics
         return when {
-            request.context?.size ?: 0 > 10 -> RequestComplexity.TRANSCENDENT
             request.context?.containsKey("fusion_required") == true -> RequestComplexity.COMPLEX
             request.type.contains("analysis") -> RequestComplexity.MODERATE
             else -> RequestComplexity.SIMPLE

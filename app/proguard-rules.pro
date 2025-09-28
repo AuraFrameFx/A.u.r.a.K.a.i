@@ -54,5 +54,12 @@
 # Keep MainActivity and all activities in the main package
 -keep class dev.aurakai.auraframefx.MainActivity { *; }
 -keep class dev.aurakai.auraframefx.**Activity { *; }
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
 
 # Remove overly broad wildcards and keep only what is necessary for runtime/reflection/AIDL/hook functionality.
