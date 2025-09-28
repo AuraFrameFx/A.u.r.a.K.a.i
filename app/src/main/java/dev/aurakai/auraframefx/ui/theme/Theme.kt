@@ -106,63 +106,32 @@ val LocalMoodState = compositionLocalOf { Emotion.NEUTRAL }
 fun AuraFrameFXTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = true,
-    moodViewModel: AuraMoodViewModel = hiltViewModel(),
-    themeViewModel: ThemeViewModel = hiltViewModel(),
     content: @Composable () -> Unit,
 ) {
-    val mood by moodViewModel.moodState.collectAsState()
-    val theme by themeViewModel.theme.collectAsState()
-    val color by themeViewModel.color.collectAsState()
-
-    val useDarkTheme = when (theme) {
-        Theme.LIGHT -> false
-        Theme.DARK -> true
-        Theme.CYBERPUNK -> true
-        Theme.SOLARIZED -> false
-    }
-
-    val baseColorScheme = when (theme) {
-        Theme.CYBERPUNK -> CyberpunkColorScheme
-        Theme.SOLARIZED -> SolarizedColorScheme
-        else -> when {
-            dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-                val context = LocalContext.current
-                if (useDarkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(
-                    context
-                )
-            }
-
-            useDarkTheme -> DarkColorScheme
-            else -> LightColorScheme
+    val colorScheme = when {
+        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+            val context = LocalContext.current
+            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
+        darkTheme -> DarkColorScheme
+        else -> LightColorScheme
     }
-
-    val finalColorScheme = baseColorScheme.copy(
-        primary = when (color) {
-            Color.RED -> NeonRed
-            Color.GREEN -> NeonGreen
-            Color.BLUE -> NeonBlue
-        }
-    )
-
-    // The dynamic glow color is derived from Aura's current mood
-    val glowColor = getMoodGlowColor(mood.emotion, mood.intensity, baseColorScheme)
 
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = baseColorScheme.primary.toArgb()
+            window.statusBarColor = colorScheme.primary.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = !darkTheme
         }
     }
 
     CompositionLocalProvider(
-        LocalMoodGlow provides glowColor,
-        LocalMoodState provides mood.emotion
+        LocalMoodGlow provides androidx.compose.ui.graphics.Color.Transparent,
+        LocalMoodState provides Emotion.NEUTRAL
     ) {
         MaterialTheme(
-            colorScheme = finalColorScheme,
+            colorScheme = colorScheme,
             typography = AppTypography,
             content = content
         )

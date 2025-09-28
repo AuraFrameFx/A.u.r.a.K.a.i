@@ -23,6 +23,7 @@ openApiGenerate {
 
 android {
     namespace = "dev.aurakai.auraframefx"
+    compileSdk = 34
     defaultConfig {
         minSdk = 33
         multiDexEnabled = true
@@ -98,6 +99,10 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.retrofit.core)
     implementation("com.google.android.material:material:1.13.0")
+
+    // ADD THESE MISSING MATERIAL3 DEPENDENCIES!
+    implementation("androidx.compose.material3:material3:1.2.1")
+    implementation("androidx.compose.material3:material3-window-size-class:1.2.1")
 
     // Testing
     testImplementation(libs.bundles.testing.unit)

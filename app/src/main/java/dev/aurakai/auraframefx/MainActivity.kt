@@ -44,6 +44,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import dev.aurakai.auraframefx.ui.theme.AuraFrameFxTheme
 import timber.log.Timber
 import android.content.pm.PackageManager
 import androidx.core.content.ContextCompat
@@ -75,9 +76,10 @@ class MainActivity : ComponentActivity() {
             Timber.d("🧠 Genesis MainActivity launching...")
 
             setContent {
-                        AuraOSApp()
-                    }
+                AuraFrameFxTheme {
+                    AuraOSApp()
                 }
+            }
 
             // Log successful initialization
             Timber.i("🌟 Genesis Protocol Interface Active")

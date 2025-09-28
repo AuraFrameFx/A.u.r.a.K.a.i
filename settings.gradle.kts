@@ -10,7 +10,6 @@ pluginManagement {
         gradlePluginPortal()
     }
     plugins {
-        id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
         // Removed duplicate Foojay resolver
         id("org.jetbrains.kotlin.jvm") apply false
         id("com.android.application") apply false
