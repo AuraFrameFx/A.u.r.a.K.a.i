@@ -7,7 +7,7 @@
 
     <!-- Genesis Protocol AI Framework -->
     <application
-        android:name="androidx.multidex.MultiDexApplication"
+        android:name="dev.aurakai.auraframefx.AuraFrameApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="Genesis Protocol"
         android:theme="@style/AppTheme">
