@@ -93,7 +93,7 @@ class RomToolsModule {
         // @Provides
         // @RomToolsDataDir
         fun provideRomToolsDataDirectory(
-            // @ApplicationContext 
+            // @ApplicationContext
             context: Context
         ): String {
             return "${context.filesDir}/romtools"
@@ -105,7 +105,7 @@ class RomToolsModule {
         // @Provides
         // @RomToolsBackupDir
         fun provideRomToolsBackupDirectory(
-            // @ApplicationContext 
+            // @ApplicationContext
             context: Context
         ): String {
             return "${context.getExternalFilesDir(null)}/backups"
@@ -117,7 +117,7 @@ class RomToolsModule {
         // @Provides
         // @RomToolsDownloadDir
         fun provideRomToolsDownloadDirectory(
-            // @ApplicationContext 
+            // @ApplicationContext
             context: Context
         ): String {
             return "${context.getExternalFilesDir(null)}/downloads"
@@ -129,7 +129,7 @@ class RomToolsModule {
         // @Provides
         // @RomToolsTempDir
         fun provideRomToolsTempDirectory(
-            // @ApplicationContext 
+            // @ApplicationContext
             context: Context
         ): String {
             return "${context.cacheDir}/romtools_temp"
