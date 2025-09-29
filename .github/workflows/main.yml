@@ -1,29 +1,21 @@
-name: build
 on:
   push:
-    branches: [ "AGP UPGRADE" ]
   pull_request:
-    branches: [ "AGP UPGRADE" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      actions: write
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up JDK 24
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'azul'
-        java-version: '24'
+        with:
 
-    - name: Download dependencies
-      run: ./gradlew assembleDebug
 
-    - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: you-application
-        path: path/to/artifacts
+        uses: actions/upload-artifact@v4
+        with:
