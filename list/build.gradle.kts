@@ -23,4 +23,5 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)
+    testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
 }
