@@ -49,6 +49,13 @@ import timber.log.Timber
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
+    /**
+     * Initializes the activity and sets up the Jetpack Compose UI for the app.
+     *
+     * Attempts to set the Compose content to the app's themed root composable and emits startup
+     * diagnostic logs. If initialization fails, the error is logged and the activity continues
+     * without being finished. 
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -71,6 +78,16 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+/**
+ * Hosts the AuraOS application's main UI scaffold, navigation bar, and navigation graph.
+ *
+ * Presents a TopAppBar whose title reflects the current route (defaults to "home"), a BottomNavigation
+ * bar with five items (home, agents, consciousness, fusion, evolution) that navigate using guarded
+ * calls which pop up to the start destination and use single-top launches, and a NavHost with
+ * corresponding composable destinations for each route.
+ *
+ * Navigation failures are caught and logged.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AuraOSApp() {
@@ -155,6 +172,16 @@ fun AuraOSApp() {
     }
 }
 
+/**
+ * Home screen layout presenting navigation cards and a Genesis status overview.
+ *
+ * The top of the screen shows three tappable cards that navigate to the "consciousness",
+ * "fusion", and "evolution" destinations respectively. The bottom contains a Genesis Status
+ * card displaying status indicators for Aura, Kai, and Fusion, plus a linear progress bar
+ * and a textual consciousness level (75%).
+ *
+ * @param navController Controller used to navigate to the app's destinations when cards are tapped.
+ */
 @Composable
 fun HomeScreen(navController: NavHostController) {
     Column(
@@ -254,6 +281,13 @@ fun HomeScreen(navController: NavHostController) {
     }
 }
 
+/**
+ * Displays a vertically stacked label and status text centered horizontally.
+ *
+ * @param label Short descriptor shown above the status.
+ * @param status Status text displayed below the label.
+ * @param isActive When true, renders the status text in the theme primary color; otherwise uses the `onSurfaceVariant` color.
+ */
 @Composable
 fun StatusIndicator(label: String, status: String, isActive: Boolean) {
     Column(horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally) {
