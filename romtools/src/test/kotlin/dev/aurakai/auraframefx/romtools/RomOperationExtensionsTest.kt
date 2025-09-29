@@ -76,9 +76,9 @@ class RomOperationExtensionsTest {
 
         // Secondary check to ensure mapping table stays in sync if enum or code changes.
         // This will catch missing keys if new constants are added and the mapping isn't updated.
-        for (op in RomOperation.values()) {
+        for (op in RomOperation.entries) {
             val expectedLabel = expected[op]
-            if (expectedLabel \ != null) {
+            if (expectedLabel != null) {
                 assertEquals(expectedLabel, op.getDisplayName(), "Label mismatch for $op")
             }
         }
@@ -87,7 +87,7 @@ class RomOperationExtensionsTest {
     @Test
     @DisplayName("getDisplayName never returns blank for any RomOperation")
     fun testNonBlankForAllEnumValues() {
-        for (op in RomOperation.values()) {
+        for (op in RomOperation.entries) {
             val label = op.getDisplayName()
             assertTrue(label.isNotBlank(), "Display label should be non-blank for $op")
         }
