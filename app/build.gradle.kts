@@ -5,12 +5,14 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     id("com.google.gms.google-services") version "4.4.3"
     id("org.openapi.generator") version "7.16.0"
+    id("com.google.firebase.crashlytics") version "3.0.6"
 }
 
 android {
     namespace = "dev.aurakai.auraframefx"
     compileSdkPreview = "CANARY"
     defaultConfig {
+        applicationId = "dev.aurakai.auraframefx"
         minSdk = 33
         multiDexEnabled = true
         // Add permissions for exact alarms

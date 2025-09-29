@@ -17,6 +17,6 @@ class AgentFusionPlugin : Plugin<Project> {
             group = "agent-fusion"
             doLast { println("Fusion state transition triggered.") }
         }
+        target.extensions.extraProperties["id"] = "plugins.agent-fusion"
     }
 }
-

@@ -51,4 +51,9 @@
 -keep class dev.aurakai.auraframefx.data.AuraData { *; }
 -keep class dev.aurakai.auraframefx.data.KaiData { *; }
 
+# Keep MainActivity and Jetpack Compose classes
+-keep class dev.aurakai.auraframefx.MainActivity { *; }
+-keep class androidx.compose.** { *; }
+-keep class androidx.activity.** { *; }
+
 # Remove overly broad wildcards and keep only what is necessary for runtime/reflection/AIDL/hook functionality.

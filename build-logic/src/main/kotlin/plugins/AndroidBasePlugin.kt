@@ -11,7 +11,7 @@ class AndroidBasePlugin : Plugin<Project> {
         target.extensions.findByType(LibraryExtension::class.java)?.apply {
             compileSdk = 36
             defaultConfig.apply {
-                minSdk = 24
+                minSdk = 33
                 targetSdk = 36
             }
             compileOptions.apply {
