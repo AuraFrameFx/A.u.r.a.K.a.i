@@ -25,6 +25,7 @@ android {
     namespace = "dev.aurakai.auraframefx"
     compileSdk = 34
     defaultConfig {
+        applicationId = "dev.aurakai.auraframefx"
         minSdk = 33
         multiDexEnabled = true
         targetSdkPreview = "CANARY"
@@ -90,9 +91,13 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose.ui)
     debugImplementation(libs.bundles.compose.debug)
+    implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.material3:material3-window-size-class")
+    implementation("androidx.activity:activity-compose")
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.test.ext.junit)
-    implementation(libs.androidx.test.espresso.core)
+    implementation("androidx.hilt:hilt-navigation-compose")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose")
+    implementation("androidx.compose.material:material-icons-extended")
 
     // Utilities & Networking
     implementation(libs.timber)
@@ -100,14 +105,12 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation("com.google.android.material:material:1.13.0")
 
-    // ADD THESE MISSING MATERIAL3 DEPENDENCIES!
-    implementation("androidx.compose.material3:material3:1.2.1")
-    implementation("androidx.compose.material3:material3-window-size-class:1.2.1")
-
     // Testing
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)
-
+    // Move test libs off implementation (they bloat APK):
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.espresso.core)
 }
