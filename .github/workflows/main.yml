@@ -1,8 +1,9 @@
+name: build
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "AGP UPGRADE" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "AGP UPGRADE" ]
 
 jobs:
   build:
