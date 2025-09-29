@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    compileSdk = 36
     namespace = "dev.aurakai.auraframefx.colorblendr"
     defaultConfig {
         minSdk = 33

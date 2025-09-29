@@ -4,6 +4,8 @@ plugins {
 }
 
 android {
+    compileSdk = 36
+
     namespace = "dev.aurakai.auraframefx.benchmark"
     defaultConfig {
         minSdk = 33 // Set minimum SDK to 33
