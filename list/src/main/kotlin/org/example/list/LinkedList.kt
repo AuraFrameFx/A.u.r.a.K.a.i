@@ -7,7 +7,9 @@ class LinkedList : List<String> {
     private var head: Node? = null
 
     // Node definition
-    private data class Node(val data: String) {
+    private data class Node(
+        val data: String,
+    ) {
         var next: Node? = null
     }
 
@@ -40,7 +42,10 @@ class LinkedList : List<String> {
         return result
     }
 
-    private fun unlink(previousIt: Node?, currentIt: Node) {
+    private fun unlink(
+        previousIt: Node?,
+        currentIt: Node,
+    ) {
         if (currentIt == head) head = currentIt.next else previousIt?.next = currentIt.next
     }
 
@@ -106,15 +111,18 @@ class LinkedList : List<String> {
         return lastIdx
     }
 
-    override fun iterator(): Iterator<String> = object : Iterator<String> {
-        private var current = head
-        override fun hasNext() = current != null
-        override fun next(): String {
-            val data = current?.data ?: throw NoSuchElementException()
-            current = current?.next
-            return data
+    override fun iterator(): Iterator<String> =
+        object : Iterator<String> {
+            private var current = head
+
+            override fun hasNext() = current != null
+
+            override fun next(): String {
+                val data = current?.data ?: throw NoSuchElementException()
+                current = current?.next
+                return data
+            }
         }
-    }
 
     override fun listIterator(): ListIterator<String> = listIterator(0)
 
@@ -123,22 +131,31 @@ class LinkedList : List<String> {
         val snapshot = this.toList()
         return object : ListIterator<String> {
             private var pos = index
+
             override fun hasNext() = pos < snapshot.size
+
             override fun next(): String {
                 if (!hasNext()) throw NoSuchElementException()
                 return snapshot[pos++]
             }
+
             override fun hasPrevious() = pos > 0
+
             override fun previous(): String {
                 if (!hasPrevious()) throw NoSuchElementException()
                 return snapshot[--pos]
             }
+
             override fun nextIndex() = pos
+
             override fun previousIndex() = pos - 1
         }
     }
 
-    override fun subList(fromIndex: Int, toIndex: Int): List<String> {
+    override fun subList(
+        fromIndex: Int,
+        toIndex: Int,
+    ): List<String> {
         if (fromIndex < 0 || toIndex > size || fromIndex > toIndex) throw IndexOutOfBoundsException()
         val result = mutableListOf<String>()
         var idx = 0
