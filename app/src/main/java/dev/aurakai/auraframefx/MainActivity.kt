@@ -1,6 +1,7 @@
 package dev.aurakai.auraframefx
 
 import android.os.Bundle
+import dev.aurakai.auraframefx.ui.theme.AuraAppTheme
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
@@ -55,7 +56,7 @@ class MainActivity : ComponentActivity() {
             Timber.d("🧠 Genesis MainActivity launching...")
 
             setContent {
-                MaterialTheme {
+                AuraAppTheme {
                     AuraOSApp()
                 }
             }
