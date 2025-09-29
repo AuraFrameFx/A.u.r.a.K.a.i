@@ -9,14 +9,14 @@ class AndroidBasePlugin : Plugin<Project> {
     override fun apply(target: Project) {
         target.plugins.apply("com.android.library")
         target.extensions.findByType(LibraryExtension::class.java)?.apply {
-            compileSdk = 36
+            compileSdk = 35
             defaultConfig.apply {
                 minSdk = 33
-                targetSdk = 36
+                targetSdk = 35
             }
             compileOptions.apply {
-                sourceCompatibility = JavaVersion.VERSION_24
-                targetCompatibility = JavaVersion.VERSION_24
+                sourceCompatibility = JavaVersion.VERSION_21
+                targetCompatibility = JavaVersion.VERSION_21
             }
         }
     }

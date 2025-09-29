@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.google.services) apply false
-    alias(libs.plugins.kotlin.serialization) apply false
+    alias(libs.plugins.kotlinx.serialization) apply false
     alias(libs.plugins.spotless) apply false
 }
 
@@ -152,12 +152,13 @@ if (file("dependency-fix.gradle.kts").exists()) {
 
 buildscript {
     dependencies {
-        classpath("com.android.tools.build:gradle:9.0.0-alpha08")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20")
+        classpath("com.android.tools.build:gradle:8.7.3")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.21")
         classpath("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
         classpath("com.google.gms:google-services:4.4.3")
     }
     repositories {
+        google()
         mavenCentral()
     }
 }

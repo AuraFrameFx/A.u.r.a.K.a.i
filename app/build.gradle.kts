@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlinx.serialization)
     id("com.google.gms.google-services") version "4.4.3"
     id("org.openapi.generator") version "7.16.0"
     id("com.google.firebase.crashlytics") version "3.0.6"
@@ -10,7 +10,7 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx"
-    compileSdkPreview = "CANARY"
+    compileSdk = 35
     defaultConfig {
         applicationId = "dev.aurakai.auraframefx"
         minSdk = 33
@@ -20,22 +20,22 @@ android {
         manifestPlaceholders["USE_EXACT_ALARM"] = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_25
-        targetCompatibility = JavaVersion.VERSION_25
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
     buildFeatures {
         buildConfig = true
         resValues = true
         compose = true
     }
-    packagingOptions {
+    packaging {
         resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
         freeCompilerArgs.addAll(
             "-Xjvm-default=all",
             "-Xopt-in=kotlin.RequiresOptIn",

@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    compileSdk = 36
+    compileSdk = 35
     namespace = "dev.aurakai.auraframefx.collabcanvas"
     defaultConfig {
         minSdk = 33
@@ -20,12 +20,12 @@ android {
         resValues = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_25
-        targetCompatibility = JavaVersion.VERSION_25
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
             freeCompilerArgs.addAll(
                 "-Xjvm-default=all",
                 "-Xopt-in=kotlin.RequiresOptIn",
@@ -71,7 +71,6 @@ dependencies {
         exclude(group = "androidx.test", module = "monitor") // Exclude to avoid conflicts
     }
     androidTestImplementation(libs.hilt.android.testing)
-    kspTest(libs.hilt.compiler) // Ensure Hilt annotation processor is present for tests
 
     // Desugaring
 }

@@ -5,7 +5,7 @@ plugins {
 }
 android {
     namespace = "dev.aurakai.auraframefx.datavein"
-    compileSdk = 36
+    compileSdk = 35
     defaultConfig {
         minSdk = 33
     }
@@ -19,13 +19,13 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_25
-        targetCompatibility = JavaVersion.VERSION_25
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 }
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
         freeCompilerArgs.addAll(
             "-Xjvm-default=all",
             "-Xopt-in=kotlin.RequiresOptIn",

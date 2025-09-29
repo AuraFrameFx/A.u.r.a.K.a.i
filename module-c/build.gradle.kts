@@ -30,5 +30,5 @@ dependencies {
         exclude(group = "androidx.test", module = "monitor")
     }
     androidTestImplementation(libs.hilt.android.testing)
-    kspTest(libs.hilt.compiler)
+    // Fixed: removed invalid kspTest configuration
 }

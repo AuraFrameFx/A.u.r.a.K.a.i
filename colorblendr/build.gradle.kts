@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    compileSdk = 36
+    compileSdk = 35
     namespace = "dev.aurakai.auraframefx.colorblendr"
     defaultConfig {
         minSdk = 33
@@ -39,9 +39,7 @@ dependencies {
     // Removed direct Maven coordinate for Compose test library
     // Hilt Testing
     testImplementation(libs.hilt.android.testing)
-    add("kspTest", libs.hilt.compiler)
     androidTestImplementation(libs.hilt.android.testing)
-    add("kspAndroidTest", libs.hilt.compiler)
 
     // Utilities
     implementation(libs.timber)

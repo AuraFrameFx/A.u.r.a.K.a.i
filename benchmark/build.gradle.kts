@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdk = 36
+    compileSdk = 35
 
     namespace = "dev.aurakai.auraframefx.benchmark"
     defaultConfig {

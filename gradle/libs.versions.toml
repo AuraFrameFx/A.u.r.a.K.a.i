@@ -1,21 +1,21 @@
 [versions]
 # ===== GRADLE & KOTLIN =====
-agp = "8.13.0"
-java = "25"
-ksp = "2.2.20-2.0.3"
-kotlin = "2.2.20"
-composeCompiler = "2.2.20"
+agp = "8.7.3"
+java = "21"
+ksp = "2.0.21-1.0.25"
+kotlin = "2.0.21"
+composeCompiler = "2.0.21"
 desugar_jdk_libs = "2.1.5"
 firebaseBom = "34.3.0"
 firebaseUi = "8.0.2"
-kotlin-compose = "2.2.20"
+kotlin-compose = "2.0.21"
 # AndroidX Core
-coreKtx = "1.17.0"
+coreKtx = "1.13.1"
 appcompat = "1.7.1"
 material = "1.13.0"
 multidex = "2.0.1"
-lifecycle = "2.9.4"
-room = "2.8.1"
+lifecycle = "2.8.7"
+room = "2.6.1"
 runner = "1.7.0"
 workManager = "2.10.5"
 datastore = "1.1.7"
@@ -23,9 +23,9 @@ securityCrypto = "1.1.0"
 junit4 = "4.13.2"
 secrets = "2.0.1"
 # Compose
-composeBom = "2025.09.01"
-compose-compiler-extension = "2.2.20"
-activityCompose = "1.11.0"
+composeBom = "2024.06.00"
+compose-compiler-extension = "2.0.21"
+activityCompose = "1.9.3"
 navigationCompose = "2.9.5"
 composeMaterialIconsExtended = "1.7.8"
 composeRuntime = "1.9.2"
@@ -273,7 +273,7 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version = "2.2.20" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version = "2.0.21" }
 google-services = { id = "com.google.gms.google-services", version = "4.4.3" }
 openapi-generator = { id = "org.openapi.generator", version = "7.16.0" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version = "3.0.6" }
