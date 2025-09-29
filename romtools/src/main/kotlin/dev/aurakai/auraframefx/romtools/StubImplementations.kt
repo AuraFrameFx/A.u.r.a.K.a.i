@@ -27,9 +27,13 @@ interface RecoveryManager {
 }
 
 @Singleton
-class RecoveryManagerImpl @Inject constructor() : RecoveryManager {
+class RecoveryManagerImpl
+@Inject
+constructor() : RecoveryManager {
     override fun checkRecoveryAccess(): Boolean = false
+
     override fun isCustomRecoveryInstalled(): Boolean = false
+
     override suspend fun installCustomRecovery(): Result<Unit> =
         Result.failure(Exception("Not implemented"))
 }
@@ -51,8 +55,11 @@ interface SystemModificationManager {
 }
 
 @Singleton
-class SystemModificationManagerImpl @Inject constructor() : SystemModificationManager {
+class SystemModificationManagerImpl
+@Inject
+constructor() : SystemModificationManager {
     override fun checkSystemWriteAccess(): Boolean = false
+
     override suspend fun installGenesisOptimizations(progressCallback: (Float) -> Unit): Result<Unit> =
         Result.failure(Exception("Not implemented"))
 }
@@ -66,7 +73,10 @@ interface FlashManager {
      * @param romFile The ROM file to flash.
      * @param progressCallback A callback to report the progress of the operation.
      */
-    suspend fun flashRom(romFile: RomFile, progressCallback: (Float) -> Unit): Result<Unit>
+    suspend fun flashRom(
+        romFile: RomFile,
+        progressCallback: (Float) -> Unit,
+    ): Result<Unit>
 
     /**
      * Downloads a ROM file.
@@ -76,12 +86,13 @@ interface FlashManager {
 }
 
 @Singleton
-class FlashManagerImpl @Inject constructor() : FlashManager {
+class FlashManagerImpl
+@Inject
+constructor() : FlashManager {
     override suspend fun flashRom(
         romFile: RomFile,
-        progressCallback: (Float) -> Unit
-    ): Result<Unit> =
-        Result.failure(Exception("Not implemented"))
+        progressCallback: (Float) -> Unit,
+    ): Result<Unit> = Result.failure(Exception("Not implemented"))
 
     override suspend fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> =
         flowOf(DownloadProgress(0, 0, 0f, 0))
@@ -104,7 +115,9 @@ interface RomVerificationManager {
 }
 
 @Singleton
-class RomVerificationManagerImpl @Inject constructor() : RomVerificationManager {
+class RomVerificationManagerImpl
+@Inject
+constructor() : RomVerificationManager {
     override suspend fun verifyRomFile(romFile: RomFile): Result<Unit> =
         Result.failure(Exception("Not implemented"))
 
@@ -128,7 +141,7 @@ interface BackupManager {
      */
     suspend fun createNandroidBackup(
         name: String,
-        progressCallback: (Float) -> Unit
+        progressCallback: (Float) -> Unit,
     ): Result<BackupInfo>
 
     /**
@@ -138,24 +151,24 @@ interface BackupManager {
      */
     suspend fun restoreNandroidBackup(
         backup: BackupInfo,
-        progressCallback: (Float) -> Unit
+        progressCallback: (Float) -> Unit,
     ): Result<Unit>
 }
 
 @Singleton
-class BackupManagerImpl @Inject constructor() : BackupManager {
+class BackupManagerImpl
+@Inject
+constructor() : BackupManager {
     override suspend fun createFullBackup(): Result<Unit> =
         Result.failure(Exception("Not implemented"))
 
     override suspend fun createNandroidBackup(
         name: String,
-        progressCallback: (Float) -> Unit
-    ): Result<BackupInfo> =
-        Result.failure(Exception("Not implemented"))
+        progressCallback: (Float) -> Unit,
+    ): Result<BackupInfo> = Result.failure(Exception("Not implemented"))
 
     override suspend fun restoreNandroidBackup(
         backup: BackupInfo,
-        progressCallback: (Float) -> Unit
-    ): Result<Unit> =
-        Result.failure(Exception("Not implemented"))
+        progressCallback: (Float) -> Unit,
+    ): Result<Unit> = Result.failure(Exception("Not implemented"))
 }

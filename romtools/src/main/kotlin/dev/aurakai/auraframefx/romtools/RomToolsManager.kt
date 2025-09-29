@@ -25,14 +25,16 @@ import javax.inject.Inject
  * @property operationProgress A [StateFlow] that emits the progress of the current operation.
  */
 @HiltViewModel // Changed from @Singleton
-class RomToolsManager @Inject constructor(
+class RomToolsManager
+@Inject
+constructor(
     @param:ApplicationContext private val context: Context,
     private val bootloaderManager: BootloaderManager,
     private val recoveryManager: RecoveryManager,
     private val systemModificationManager: SystemModificationManager,
     private val flashManager: FlashManager,
     private val verificationManager: RomVerificationManager,
-    private val backupManager: BackupManager
+    private val backupManager: BackupManager,
 ) : ViewModel() { // Added : ViewModel()
 
     private val _romToolsState = MutableStateFlow(RomToolsState())
@@ -51,21 +53,23 @@ class RomToolsManager @Inject constructor(
      */
     private fun checkRomToolsCapabilities() {
         val deviceInfo = DeviceInfo.getCurrentDevice()
-        val capabilities = RomCapabilities(
-            hasRootAccess = checkRootAccess(),
-            hasBootloaderAccess = bootloaderManager.checkBootloaderAccess(),
-            hasRecoveryAccess = recoveryManager.checkRecoveryAccess(),
-            hasSystemWriteAccess = systemModificationManager.checkSystemWriteAccess(),
-            supportedArchitectures = getSupportedArchitectures(),
-            deviceModel = deviceInfo.model,
-            androidVersion = deviceInfo.androidVersion,
-            securityPatchLevel = deviceInfo.securityPatchLevel
-        )
+        val capabilities =
+            RomCapabilities(
+                hasRootAccess = checkRootAccess(),
+                hasBootloaderAccess = bootloaderManager.checkBootloaderAccess(),
+                hasRecoveryAccess = recoveryManager.checkRecoveryAccess(),
+                hasSystemWriteAccess = systemModificationManager.checkSystemWriteAccess(),
+                supportedArchitectures = getSupportedArchitectures(),
+                deviceModel = deviceInfo.model,
+                androidVersion = deviceInfo.androidVersion,
+                securityPatchLevel = deviceInfo.securityPatchLevel,
+            )
 
-        _romToolsState.value = _romToolsState.value.copy(
-            capabilities = capabilities,
-            isInitialized = true
-        )
+        _romToolsState.value =
+            _romToolsState.value.copy(
+                capabilities = capabilities,
+                isInitialized = true,
+            )
 
         Timber.i("ROM capabilities checked: $capabilities")
     }
@@ -79,8 +83,8 @@ class RomToolsManager @Inject constructor(
      * @param romFile The ROM file to flash.
      * @return A [Result] indicating the success or failure of the operation.
      */
-    suspend fun flashRom(romFile: RomFile): Result<Unit> {
-        return try {
+    suspend fun flashRom(romFile: RomFile): Result<Unit> =
+        try {
             updateOperationProgress(RomOperation.FLASHING_ROM, 0f)
 
             // Step 1: Verify ROM file integrity
@@ -107,9 +111,10 @@ class RomToolsManager @Inject constructor(
 
             // Step 5: Flash ROM
             updateOperationProgress(RomOperation.FLASHING_ROM, 50f)
-            flashManager.flashRom(romFile) { progress ->
-                updateOperationProgress(RomOperation.FLASHING_ROM, 50f + (progress * 40f))
-            }.getOrThrow()
+            flashManager
+                .flashRom(romFile) { progress ->
+                    updateOperationProgress(RomOperation.FLASHING_ROM, 50f + (progress * 40f))
+                }.getOrThrow()
 
             // Step 6: Verify installation
             updateOperationProgress(RomOperation.VERIFYING_INSTALLATION, 90f)
@@ -120,14 +125,12 @@ class RomToolsManager @Inject constructor(
 
             Timber.i("ROM flashed successfully: ${romFile.name}")
             Result.success(Unit)
-
         } catch (e: Exception) {
             Timber.e(e, "Failed to flash ROM: ${romFile.name}")
             updateOperationProgress(RomOperation.FAILED, 0f)
             clearOperationProgress()
             Result.failure(e)
         }
-    }
 
     /**
      * Creates a NANDroid backup of the current ROM.
@@ -135,27 +138,27 @@ class RomToolsManager @Inject constructor(
      * @param backupName The name for the backup.
      * @return A [Result] containing the [BackupInfo] on success, or an exception on failure.
      */
-    suspend fun createNandroidBackup(backupName: String): Result<BackupInfo> {
-        return try {
+    suspend fun createNandroidBackup(backupName: String): Result<BackupInfo> =
+        try {
             updateOperationProgress(RomOperation.CREATING_BACKUP, 0f)
 
-            val backupInfo = backupManager.createNandroidBackup(backupName) { progress ->
-                updateOperationProgress(RomOperation.CREATING_BACKUP, progress)
-            }.getOrThrow()
+            val backupInfo =
+                backupManager
+                    .createNandroidBackup(backupName) { progress ->
+                        updateOperationProgress(RomOperation.CREATING_BACKUP, progress)
+                    }.getOrThrow()
 
             updateOperationProgress(RomOperation.COMPLETED, 100f)
             clearOperationProgress()
 
             Timber.i("NANDroid backup created: $backupName")
             Result.success(backupInfo)
-
         } catch (e: Exception) {
             Timber.e(e, "Failed to create NANDroid backup: $backupName")
             updateOperationProgress(RomOperation.FAILED, 0f)
             clearOperationProgress()
             Result.failure(e)
         }
-    }
 
     /**
      * Restores from a NANDroid backup.
@@ -163,62 +166,60 @@ class RomToolsManager @Inject constructor(
      * @param backupInfo The backup to restore.
      * @return A [Result] indicating the success or failure of the operation.
      */
-    suspend fun restoreNandroidBackup(backupInfo: BackupInfo): Result<Unit> {
-        return try {
+    suspend fun restoreNandroidBackup(backupInfo: BackupInfo): Result<Unit> =
+        try {
             updateOperationProgress(RomOperation.RESTORING_BACKUP, 0f)
 
-            backupManager.restoreNandroidBackup(backupInfo) { progress ->
-                updateOperationProgress(RomOperation.RESTORING_BACKUP, progress)
-            }.getOrThrow()
+            backupManager
+                .restoreNandroidBackup(backupInfo) { progress ->
+                    updateOperationProgress(RomOperation.RESTORING_BACKUP, progress)
+                }.getOrThrow()
 
             updateOperationProgress(RomOperation.COMPLETED, 100f)
             clearOperationProgress()
 
             Timber.i("NANDroid backup restored: ${backupInfo.name}")
             Result.success(Unit)
-
         } catch (e: Exception) {
             Timber.e(e, "Failed to restore NANDroid backup: ${backupInfo.name}")
             updateOperationProgress(RomOperation.FAILED, 0f)
             clearOperationProgress()
             Result.failure(e)
         }
-    }
 
     /**
      * Installs Genesis AI optimization patches to the system.
      *
      * @return A [Result] indicating the success or failure of the operation.
      */
-    suspend fun installGenesisOptimizations(): Result<Unit> {
-        return try {
+    suspend fun installGenesisOptimizations(): Result<Unit> =
+        try {
             updateOperationProgress(RomOperation.APPLYING_OPTIMIZATIONS, 0f)
 
-            systemModificationManager.installGenesisOptimizations { progress ->
-                updateOperationProgress(RomOperation.APPLYING_OPTIMIZATIONS, progress)
-            }.getOrThrow()
+            systemModificationManager
+                .installGenesisOptimizations { progress ->
+                    updateOperationProgress(RomOperation.APPLYING_OPTIMIZATIONS, progress)
+                }.getOrThrow()
 
             updateOperationProgress(RomOperation.COMPLETED, 100f)
             clearOperationProgress()
 
             Timber.i("Genesis AI optimizations installed successfully")
             Result.success(Unit)
-
         } catch (e: Exception) {
             Timber.e(e, "Failed to install Genesis optimizations")
             updateOperationProgress(RomOperation.FAILED, 0f)
             clearOperationProgress()
             Result.failure(e)
         }
-    }
 
     /**
      * Gets a list of available custom ROMs for the device.
      *
      * @return A [Result] containing a list of [AvailableRom] on success, or an exception on failure.
      */
-    suspend fun getAvailableRoms(): Result<List<AvailableRom>> {
-        return try {
+    suspend fun getAvailableRoms(): Result<List<AvailableRom>> =
+        try {
             // This would typically query online repositories
             val deviceModel = _romToolsState.value.capabilities?.deviceModel ?: "unknown"
             val roms = romRepository.getCompatibleRoms(deviceModel)
@@ -227,7 +228,6 @@ class RomToolsManager @Inject constructor(
             Timber.e(e, "Failed to get available ROMs")
             Result.failure(e)
         }
-    }
 
     /**
      * Downloads a ROM file with progress tracking.
@@ -235,12 +235,14 @@ class RomToolsManager @Inject constructor(
      * @param rom The ROM to download.
      * @return A [Flow] that emits [DownloadProgress] updates.
      */
-    suspend fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> {
-        return flashManager.downloadRom(rom)
-    }
+    suspend fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> =
+        flashManager.downloadRom(rom)
 
     // Private helper methods
-    private fun updateOperationProgress(operation: RomOperation, progress: Float) {
+    private fun updateOperationProgress(
+        operation: RomOperation,
+        progress: Float,
+    ) {
         _operationProgress.value = OperationProgress(operation, progress)
     }
 
@@ -248,18 +250,16 @@ class RomToolsManager @Inject constructor(
         _operationProgress.value = null
     }
 
-    private fun checkRootAccess(): Boolean {
-        return try {
+    private fun checkRootAccess(): Boolean =
+        try {
             val process = Runtime.getRuntime().exec("su -c 'echo test'")
             process.waitFor() == 0
         } catch (e: Exception) {
             false
         }
-    }
 
-    private fun getSupportedArchitectures(): List<String> {
-        return listOf("arm64-v8a", "armeabi-v7a", "x86_64")
-    }
+    private fun getSupportedArchitectures(): List<String> =
+        listOf("arm64-v8a", "armeabi-v7a", "x86_64")
 
     // Companion object for static access
     companion object {
@@ -281,7 +281,7 @@ data class RomToolsState(
     val isInitialized: Boolean = false,
     val settings: RomToolsSettings = RomToolsSettings(),
     val availableRoms: List<AvailableRom> = emptyList(),
-    val backups: List<BackupInfo> = emptyList()
+    val backups: List<BackupInfo> = emptyList(),
 )
 
 /**
@@ -304,7 +304,7 @@ data class RomCapabilities(
     val supportedArchitectures: List<String>,
     val deviceModel: String,
     val androidVersion: String,
-    val securityPatchLevel: String
+    val securityPatchLevel: String,
 )
 
 /**
@@ -321,7 +321,7 @@ data class RomToolsSettings(
     val verifyRomSignatures: Boolean = true,
     val enableGenesisOptimizations: Boolean = true,
     val maxBackupCount: Int = 5,
-    val downloadDirectory: String = "/sdcard/Download/ROMs"
+    val downloadDirectory: String = "/sdcard/Download/ROMs",
 )
 
 /**
@@ -332,7 +332,7 @@ data class RomToolsSettings(
  */
 data class OperationProgress(
     val operation: RomOperation,
-    val progress: Float
+    val progress: Float,
 )
 
 /**
@@ -370,7 +370,7 @@ enum class RomOperation {
     COMPLETED,
 
     /** The operation has failed. */
-    FAILED
+    FAILED,
 }
 
 /**
@@ -387,7 +387,7 @@ data class RomFile(
     val path: String,
     val size: Long,
     val checksum: String,
-    val type: RomType
+    val type: RomType,
 )
 
 /**
@@ -407,7 +407,7 @@ enum class RomType {
     KERNEL,
 
     /** A modification package. */
-    MODIFICATION
+    MODIFICATION,
 }
 
 /**
@@ -424,7 +424,7 @@ data class DeviceInfo(
     val manufacturer: String,
     val androidVersion: String,
     val securityPatchLevel: String,
-    val bootloaderVersion: String
+    val bootloaderVersion: String,
 ) {
     companion object {
         /**
@@ -432,15 +432,14 @@ data class DeviceInfo(
          *
          * @return A [DeviceInfo] object for the current device.
          */
-        fun getCurrentDevice(): DeviceInfo {
-            return DeviceInfo(
+        fun getCurrentDevice(): DeviceInfo =
+            DeviceInfo(
                 model = android.os.Build.MODEL,
                 manufacturer = android.os.Build.MANUFACTURER,
                 androidVersion = android.os.Build.VERSION.RELEASE,
                 securityPatchLevel = android.os.Build.VERSION.SECURITY_PATCH,
-                bootloaderVersion = android.os.Build.BOOTLOADER
+                bootloaderVersion = android.os.Build.BOOTLOADER,
             )
-        }
     }
 }
 
@@ -462,7 +461,7 @@ data class BackupInfo(
     val createdAt: Long,
     val deviceModel: String,
     val androidVersion: String,
-    val partitions: List<String>
+    val partitions: List<String>,
 )
 
 /**
@@ -487,7 +486,7 @@ data class AvailableRom(
     val checksum: String,
     val description: String,
     val maintainer: String,
-    val releaseDate: Long
+    val releaseDate: Long,
 )
 
 /**
@@ -506,7 +505,7 @@ data class DownloadProgress(
     val progress: Float,
     val speed: Long,
     val isCompleted: Boolean = false,
-    val error: String? = null
+    val error: String? = null,
 )
 
 // Placeholder for ROM repository - would be implemented separately

@@ -25,7 +25,7 @@ import org.junit.runner.RunWith
  */
 private class FakeRomToolsManager(
     initialState: dev.aurakai.auraframefx.romtools.RomToolsState,
-    initialProgress: dev.aurakai.auraframefx.romtools.OperationProgress?
+    initialProgress: dev.aurakai.auraframefx.romtools.OperationProgress?,
 ) : dev.aurakai.auraframefx.romtools.RomToolsManager {
     private val _romToolsState = MutableStateFlow(initialState)
     private val _operationProgress = MutableStateFlow(initialProgress)
@@ -46,7 +46,6 @@ private class FakeRomToolsManager(
 
 @RunWith(AndroidJUnit4::class)
 class RomToolsScreenTest {
-
     @get:Rule
     val composeRule = createComposeRule()
 
@@ -54,7 +53,7 @@ class RomToolsScreenTest {
         root: Boolean = false,
         bootloader: Boolean = false,
         recovery: Boolean = false,
-        system: Boolean = false
+        system: Boolean = false,
     ) = dev.aurakai.auraframefx.romtools.RomCapabilities(
         hasRootAccess = root,
         hasBootloaderAccess = bootloader,
@@ -62,27 +61,28 @@ class RomToolsScreenTest {
         hasSystemWriteAccess = system,
         deviceModel = "Pixel X",
         androidVersion = "14",
-        securityPatchLevel = "2025-08-05"
+        securityPatchLevel = "2025-08-05",
     )
 
     private fun defaultState(
         isInitialized: Boolean,
         capabilities: dev.aurakai.auraframefx.romtools.RomCapabilities? = null,
         availableRoms: List<dev.aurakai.auraframefx.romtools.AvailableRom> = emptyList(),
-        backups: List<dev.aurakai.auraframefx.romtools.BackupInfo> = emptyList()
+        backups: List<dev.aurakai.auraframefx.romtools.BackupInfo> = emptyList(),
     ) = dev.aurakai.auraframefx.romtools.RomToolsState(
         isInitialized = isInitialized,
         capabilities = capabilities,
         availableRoms = availableRoms,
-        backups = backups
+        backups = backups,
     )
 
     @Test
     fun showsLoadingState_whenNotInitialized() {
-        val fake = FakeRomToolsManager(
-            initialState = defaultState(isInitialized = false),
-            initialProgress = null
-        )
+        val fake =
+            FakeRomToolsManager(
+                initialState = defaultState(isInitialized = false),
+                initialProgress = null,
+            )
         composeRule.setContent {
             RomToolsScreen(romToolsManager = fake)
         }
@@ -94,10 +94,11 @@ class RomToolsScreenTest {
     @Test
     fun showsCapabilitiesAndSections_whenInitialized() {
         val caps = defaultCaps(root = true, bootloader = true, recovery = false, system = true)
-        val fake = FakeRomToolsManager(
-            initialState = defaultState(isInitialized = true, capabilities = caps),
-            initialProgress = null
-        )
+        val fake =
+            FakeRomToolsManager(
+                initialState = defaultState(isInitialized = true, capabilities = caps),
+                initialProgress = null,
+            )
         composeRule.setContent {
             RomToolsScreen(romToolsManager = fake)
         }
@@ -126,14 +127,16 @@ class RomToolsScreenTest {
     @Test
     fun operationProgressCard_usesProgressFraction_fromPercent() {
         // Focused on the diff: LinearProgressIndicator now uses progress lambda { percent / 100f }
-        val op = dev.aurakai.auraframefx.romtools.OperationProgress(
-            operation = dev.aurakai.auraframefx.romtools.RomOperation.FLASH,
-            progress = 42f
-        )
-        val fake = FakeRomToolsManager(
-            initialState = defaultState(isInitialized = true, capabilities = defaultCaps()),
-            initialProgress = op
-        )
+        val op =
+            dev.aurakai.auraframefx.romtools.OperationProgress(
+                operation = dev.aurakai.auraframefx.romtools.RomOperation.FLASH,
+                progress = 42f,
+            )
+        val fake =
+            FakeRomToolsManager(
+                initialState = defaultState(isInitialized = true, capabilities = defaultCaps()),
+                initialProgress = op,
+            )
 
         composeRule.setContent {
             RomToolsScreen(romToolsManager = fake)
@@ -141,25 +144,27 @@ class RomToolsScreenTest {
 
         // The label should display the operation display name and "42%"
         composeRule.onNodeWithText("42%").assertIsDisplayed()
-        composeRule.onNode(
-            hasProgressBarRangeInfo(
-                ProgressBarRangeInfo(
-                    current = 0.42f,
-                    range = 0f..1f,
-                    steps = 0
-                )
-            )
-        ).assertIsDisplayed()
+        composeRule
+            .onNode(
+                hasProgressBarRangeInfo(
+                    ProgressBarRangeInfo(
+                        current = 0.42f,
+                        range = 0f..1f,
+                        steps = 0,
+                    ),
+                ),
+            ).assertIsDisplayed()
     }
 
     @Test
     fun romToolCards_renderLockedAffordance_whenCapabilitiesInsufficient() {
         // Provide no capabilities; many actions require root/recovery/bootloader/system.
         val caps = defaultCaps(root = false, bootloader = false, recovery = false, system = false)
-        val fake = FakeRomToolsManager(
-            initialState = defaultState(isInitialized = true, capabilities = caps),
-            initialProgress = null
-        )
+        val fake =
+            FakeRomToolsManager(
+                initialState = defaultState(isInitialized = true, capabilities = caps),
+                initialProgress = null,
+            )
 
         composeRule.setContent {
             RomToolsScreen(romToolsManager = fake)
@@ -167,11 +172,15 @@ class RomToolsScreenTest {
 
         // There should be at least one card that shows the "Locked" icon (contentDescription = "Locked").
         // Count locked icons > 0
-        composeRule.onAllNodes(hasAnyChild(hasAnyChild(hasAnyChild(hasAnyChild(hasAnyChild { false })))))
+        composeRule
+            .onAllNodes(hasAnyChild(hasAnyChild(hasAnyChild(hasAnyChild(hasAnyChild { false })))))
             .fetchSemanticsNodes() // no-op to force tree init
         composeRule.onAllNodes(hasAnyChild(hasAnyChild { false })) // fallback matcher if custom keys missing
         // Simpler: just look for contentDescription "Locked"
-        composeRule.onAllNodes(androidx.compose.ui.test.hasContentDescription("Locked"))
-            .assertCountGreaterThan(0)
+        composeRule
+            .onAllNodes(
+                androidx.compose.ui.test
+                    .hasContentDescription("Locked"),
+            ).assertCountGreaterThan(0)
     }
 }

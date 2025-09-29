@@ -31,7 +31,9 @@ interface BootloaderManager {
  * Implementation of bootloader management.
  */
 @Singleton
-class BootloaderManagerImpl @Inject constructor() : BootloaderManager {
+class BootloaderManagerImpl
+@Inject
+constructor() : BootloaderManager {
     override fun checkBootloaderAccess(): Boolean {
         // TODO: Implement bootloader access check
         return false
