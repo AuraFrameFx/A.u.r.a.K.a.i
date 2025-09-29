@@ -16,33 +16,35 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Color(0xFFBB86FC),
-    secondary = Color(0xFF03DAC6),
-    tertiary = Color(0xFF3700B3),
-    background = Color(0xFF121212),
-    surface = Color(0xFF1E1E1E),
-    onPrimary = Color.Black,
-    onSecondary = Color.Black,
-    onTertiary = Color.White,
-    onBackground = Color.White,
-    onSurface = Color.White,
-    error = Color(0xFFCF6679)
-)
+private val DarkColorScheme =
+    darkColorScheme(
+        primary = Color(0xFFBB86FC),
+        secondary = Color(0xFF03DAC6),
+        tertiary = Color(0xFF3700B3),
+        background = Color(0xFF121212),
+        surface = Color(0xFF1E1E1E),
+        onPrimary = Color.Black,
+        onSecondary = Color.Black,
+        onTertiary = Color.White,
+        onBackground = Color.White,
+        onSurface = Color.White,
+        error = Color(0xFFCF6679),
+    )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Color(0xFF6200EE),
-    secondary = Color(0xFF03DAC6),
-    tertiary = Color(0xFF3700B3),
-    background = Color.White,
-    surface = Color(0xFFF5F5F5),
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onTertiary = Color.White,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    error = Color(0xFFB00020)
-)
+private val LightColorScheme =
+    lightColorScheme(
+        primary = Color(0xFF6200EE),
+        secondary = Color(0xFF03DAC6),
+        tertiary = Color(0xFF3700B3),
+        background = Color.White,
+        surface = Color(0xFFF5F5F5),
+        onPrimary = Color.White,
+        onSecondary = Color.Black,
+        onTertiary = Color.White,
+        onBackground = Color.Black,
+        onSurface = Color.Black,
+        error = Color(0xFFB00020),
+    )
 
 /**
  * Applies the app's AuraFrameFX Material theme to [content].
@@ -56,13 +58,13 @@ private val LightColorScheme = lightColorScheme(
 @Composable
 fun auraFrameFXTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography()
+        typography = Typography(),
     ) {
         content()
     }
@@ -75,16 +77,17 @@ fun auraFrameFXTheme(
 @Composable
 fun canvasScreen() {
     Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
-            .padding(16.dp),
-        contentAlignment = Alignment.Center
+        modifier =
+            Modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colorScheme.background)
+                .padding(16.dp),
+        contentAlignment = Alignment.Center,
     ) {
         Text(
             text = "Canvas Screen - Coming Soon",
             style = MaterialTheme.typography.headlineMedium,
-            color = MaterialTheme.colorScheme.onBackground
+            color = MaterialTheme.colorScheme.onBackground,
         )
     }
 }

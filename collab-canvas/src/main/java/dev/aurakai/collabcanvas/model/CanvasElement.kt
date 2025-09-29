@@ -27,19 +27,15 @@ data class CanvasElement(
     val createdAt: Long = System.currentTimeMillis(),
     val updatedAt: Long = System.currentTimeMillis(),
 ) {
-    fun withPath(newPath: PathData): CanvasElement =
-        copy(path = newPath, updatedAt = System.currentTimeMillis())
+    fun withPath(newPath: PathData): CanvasElement = copy(path = newPath, updatedAt = System.currentTimeMillis())
 
     fun withSelected(selected: Boolean): CanvasElement = copy(isSelected = selected)
 
-    fun withZIndex(index: Int): CanvasElement =
-        copy(zIndex = index, updatedAt = System.currentTimeMillis())
+    fun withZIndex(index: Int): CanvasElement = copy(zIndex = index, updatedAt = System.currentTimeMillis())
 
-    fun withColor(newColor: Color): CanvasElement =
-        copy(color = newColor, updatedAt = System.currentTimeMillis())
+    fun withColor(newColor: Color): CanvasElement = copy(color = newColor, updatedAt = System.currentTimeMillis())
 
-    fun withStrokeWidth(width: Float): CanvasElement =
-        copy(strokeWidth = width, updatedAt = System.currentTimeMillis())
+    fun withStrokeWidth(width: Float): CanvasElement = copy(strokeWidth = width, updatedAt = System.currentTimeMillis())
 
     companion object {
         fun createDefault(
