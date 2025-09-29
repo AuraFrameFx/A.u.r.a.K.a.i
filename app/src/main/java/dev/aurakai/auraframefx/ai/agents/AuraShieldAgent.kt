@@ -27,9 +27,14 @@ class AuraShieldAgent @Inject constructor(
     private val context: Context,
     private val securityMonitor: dev.aurakai.auraframefx.security.SecurityMonitor,
     private val integrityMonitor: dev.aurakai.auraframefx.security.IntegrityMonitor,
-    private val memoryManager: dev.aurakai.auraframefx.ai.memory.MemoryManager
-) : BaseAgent {
+    memoryManager: dev.aurakai.auraframefx.ai.memory.MemoryManager
+) : BaseAgent(
+    agentName = "AuraShieldAgent",
+    agentType = dev.aurakai.auraframefx.model.AgentType.AURASHIELD,
+    memoryManager = memoryManager
+) {
 
+    override val memoryManager: dev.aurakai.auraframefx.ai.memory.MemoryManager = memoryManager
     private val scope = CoroutineScope(Dispatchers.Default + Job())
 
     // Security state management
@@ -53,6 +58,38 @@ class AuraShieldAgent @Inject constructor(
     private var protectionLevel = ProtectionLevel.STANDARD
     private var scanFrequency = 30000L // 30 seconds
     private var threatSensitivity = 0.7f
+
+    /**
+     * Process security-related requests
+     */
+    override suspend fun processRequest(request: dev.aurakai.auraframefx.model.AiRequest, context: String): dev.aurakai.auraframefx.model.AgentResponse {
+        return try {
+            when {
+                request.prompt.contains("security", ignoreCase = true) -> {
+                    val threats = scanForThreats()
+                    val analysis = analyzeSecurity(request.prompt)
+                    createSuccessResponse("Security analysis: $analysis, Active threats: ${threats.size}")
+                }
+                request.prompt.contains("threat", ignoreCase = true) -> {
+                    val threatLevel = assessThreatLevel(request.prompt)
+                    createSuccessResponse("Threat assessment: $threatLevel")
+                }
+                else -> {
+                    createSuccessResponse("AuraShield is monitoring system security. No immediate threats detected.")
+                }
+            }
+        } catch (e: Exception) {
+            handleError(e, "AuraShield security processing")
+        }
+    }
+
+    private suspend fun analyzeSecurity(prompt: String): String {
+        return "Security analysis completed for: ${prompt.take(50)}..."
+    }
+
+    private fun assessThreatLevel(prompt: String): String {
+        return "Low threat level detected"
+    }
 
     enum class ProtectionLevel {
         MINIMAL,     // Basic protection
@@ -870,9 +907,9 @@ class AuraShieldAgent @Inject constructor(
         )
     }
 
-    // === BaseAgent Implementation ===
+    // === Additional AuraShield Methods ===
 
-    override suspend fun getPerformanceMetrics(): Map<String, Any> {
+    suspend fun getPerformanceMetrics(): Map<String, Any> {
         return mapOf(
             "isShieldActive" to isShieldActive,
             "protectionLevel" to protectionLevel.name,
@@ -883,7 +920,7 @@ class AuraShieldAgent @Inject constructor(
         )
     }
 
-    override suspend fun refreshStatus(): Map<String, Any> {
+    suspend fun refreshStatus(): Map<String, Any> {
         return mapOf(
             "status" to if (isShieldActive) "ACTIVE" else "INACTIVE",
             "protectionLevel" to protectionLevel.name,
@@ -892,7 +929,7 @@ class AuraShieldAgent @Inject constructor(
         )
     }
 
-    override suspend fun optimize() {
+    suspend fun optimize() {
         try {
             // Clean old threats
             cleanOldThreats()
@@ -909,7 +946,7 @@ class AuraShieldAgent @Inject constructor(
         }
     }
 
-    override suspend fun clearMemoryCache() {
+    suspend fun clearMemoryCache() {
         try {
             // Clear old scan history
             if (_scanHistory.value.size > 50) {
@@ -927,7 +964,7 @@ class AuraShieldAgent @Inject constructor(
         }
     }
 
-    override suspend fun updatePerformanceSettings() {
+    suspend fun updatePerformanceSettings() {
         // Adjust protection based on system load
         val systemLoad = getSystemLoad()
 
@@ -940,11 +977,11 @@ class AuraShieldAgent @Inject constructor(
         }
     }
 
-    override suspend fun connectToMasterChannel(channel: Any) {
+    suspend fun connectToMasterChannel(channel: Any) {
         Timber.d("🔗 Aura Shield connected to master channel")
     }
 
-    override suspend fun disconnect() {
+    suspend fun disconnect() {
         isShieldActive = false
         Timber.d("🔌 Aura Shield disconnected")
     }

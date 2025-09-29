@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Link schemes and definitions" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T18:50:08.719Z" hostname="AURAKAI" time="0.002">
-  <properties/>
-  <testcase name="reference-style links use https()" classname="docs.MarkdownFileValidationExtraTest$LinkSchemes" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

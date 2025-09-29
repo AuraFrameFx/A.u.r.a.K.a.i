@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Code fences – supplemental" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T18:50:08.454Z" hostname="AURAKAI" time="0.002">
-  <properties/>
-  <testcase name="fenced code blocks are not empty()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$CodeFencesSupplemental" time="0.002"/>
-  <testcase name="no unclosed fenced code blocks()" classname="docs.MarkdownFileValidationAdvancedSupplementalTest$CodeFencesSupplemental" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -9,6 +9,17 @@ import kotlinx.coroutines.delay
 class VertexAIClientImpl : VertexAIClient {
 
     /**
+     * Simple text generation with just a prompt.
+     *
+     * @param prompt The input prompt.
+     * @return A simulated AI-generated response.
+     */
+    override suspend fun generateText(prompt: String): String? {
+        delay(100)
+        return "AI generated response for: $prompt"
+    }
+
+    /**
      * Simulates text generation by returning a templated response based on the provided prompt.
      *
      * The response format varies depending on keywords in the prompt (such as "code", "explain", or "analyze") to mimic different types of AI-generated text. The `maxTokens` and `temperature` parameters influence only the formatting of the stub response and do not affect actual content generation. Suspends briefly to simulate API latency.
@@ -16,7 +27,7 @@ class VertexAIClientImpl : VertexAIClient {
      * @param prompt The input prompt to embed in the simulated response.
      * @return A string containing a simulated AI-generated response tailored to the prompt content.
      */
-    override suspend fun generateText(prompt: String, maxTokens: Int, temperature: Float): String {
+    override suspend fun generateText(prompt: String, temperature: Float, maxTokens: Int): String? {
         delay(200) // Simulate realistic API latency
 
         // Enhanced response generation based on prompt content
@@ -65,35 +76,33 @@ class VertexAIClientImpl : VertexAIClient {
     }
 
     /**
+     * Analyze content and return analysis results.
+     *
+     * @param content The content to analyze.
+     * @return A map containing analysis results.
+     */
+    override suspend fun analyzeContent(content: String): Map<String, Any> {
+        delay(150)
+        return mapOf(
+            "sentiment" to "neutral",
+            "complexity" to "medium",
+            "topics" to listOf("general", "analysis"),
+            "confidence" to 0.75,
+            "word_count" to content.split(" ").size,
+            "analysis_type" to "content_analysis"
+        )
+    }
+
+    /**
      * Simulates image analysis and returns a stub response referencing the provided prompt.
      *
      * @param imageData The image data to be analyzed (not actually processed).
      * @param prompt The prompt describing the intended analysis.
      * @return A fixed string indicating simulated image analysis for the given prompt.
      */
-    override suspend fun analyzeImage(imageData: ByteArray, prompt: String): String {
+    suspend fun analyzeImage(imageData: ByteArray, prompt: String): String {
         delay(100) // Simulate API call
         return "Stub image analysis for: $prompt"
-    }
-
-    /**
-     * Simulates the initialization of creative AI models without performing any real operation.
-     *
-     * This stub method is intended for testing or development and does not interact with actual AI models or external services.
-     */
-    override suspend fun initializeCreativeModels() {
-        // Stub implementation
-    }
-
-    /**
-     * Simulates content generation by returning a stub string that includes the provided prompt.
-     *
-     * @param prompt The input prompt for which content is to be generated.
-     * @return A placeholder string embedding the prompt.
-     */
-    override suspend fun generateContent(prompt: String): String? {
-        delay(100)
-        return "Stub content for: $prompt"
     }
 
     /**
@@ -114,11 +123,31 @@ class VertexAIClientImpl : VertexAIClient {
     }
 
     /**
+     * Simulates the initialization of creative AI models without performing any real operation.
+     *
+     * This stub method is intended for testing or development and does not interact with actual AI models or external services.
+     */
+    suspend fun initializeCreativeModels() {
+        // Stub implementation
+    }
+
+    /**
+     * Simulates content generation by returning a stub string that includes the provided prompt.
+     *
+     * @param prompt The input prompt for which content is to be generated.
+     * @return A placeholder string embedding the prompt.
+     */
+    suspend fun generateContent(prompt: String): String? {
+        delay(100)
+        return "Stub content for: $prompt"
+    }
+
+    /**
      * Simulates validating the connection to Vertex AI.
      *
      * @return `true` to indicate a successful connection in this stub implementation.
      */
-    override suspend fun validateConnection(): Boolean {
+    suspend fun validateConnection(): Boolean {
         return true // Stub always returns true
     }
 

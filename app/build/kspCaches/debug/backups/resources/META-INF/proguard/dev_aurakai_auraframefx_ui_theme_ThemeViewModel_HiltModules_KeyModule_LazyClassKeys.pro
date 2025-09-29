@@ -1,0 +1,1 @@
+-keep,allowobfuscation,allowshrinking class dev.aurakai.auraframefx.ui.theme.ThemeViewModel

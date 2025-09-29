@@ -18,7 +18,7 @@ kotlin {
 // Java toolchain configuration at the project level
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(24)) // Correctly sets the toolchain for Java sources
+        languageVersion.set(JavaLanguageVersion.of(24))
     }
 }
 
@@ -54,8 +54,8 @@ android {
     // Core library desugaring without manual source/target
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
         // The toolchain will configure source/target compatibility automatically.
         // Explicitly setting these is generally not needed when using toolchains.
     }

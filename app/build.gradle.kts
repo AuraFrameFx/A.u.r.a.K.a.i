@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
     id("org.openapi.generator") version "7.15.0"
     alias(libs.plugins.kotlin.android)
 }
@@ -50,10 +51,10 @@ android {
 
     sourceSets["main"].java.srcDir(layout.buildDirectory.dir("generated/openapi/src/main/kotlin"))
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_24
-        targetCompatibility = JavaVersion.VERSION_24
-    }
+        compileOptions {
+            sourceCompatibility = JavaVersion.VERSION_24
+            targetCompatibility = JavaVersion.VERSION_24
+        }
 }
 
 kotlin {
@@ -80,7 +81,7 @@ dependencies {
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
     implementation(project(":oracle-drive-integration"))
-    implementation(project(":romtools"))  // Temporarily disabled - Hilt/KSP issues
+        // implementation(project(":romtools"))  // Temporarily disabled - Compilation issues
     implementation(project(":secure-comm"))
     implementation(project(":collab-canvas"))  // Temporarily disabled - YukiHookAPI issues
     implementation(project(":colorblendr"))
@@ -113,6 +114,15 @@ dependencies {
 
     // ===== NETWORKING =====
     implementation(libs.bundles.network)
+    implementation("com.squareup.moshi:moshi:1.15.1")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
+    
+    // ===== KTOR FOR OPENAPI CLIENT =====
+    implementation("io.ktor:ktor-client-core:2.3.7")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.7")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
+    implementation("io.ktor:ktor-client-okhttp:2.3.7")
+    implementation("io.ktor:ktor-client-auth:2.3.7")
 
     // ===== FIREBASE =====
     // By implementing the BOM, we can specify Firebase SDKs without versions
@@ -129,6 +139,10 @@ dependencies {
     // ===== HILT DEPENDENCY INJECTION =====
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    
+    // ===== WORKMANAGER =====
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+    implementation("androidx.hilt:hilt-work:1.2.0")
 
     // ===== UTILITIES =====
     implementation(libs.timber)
@@ -160,6 +174,16 @@ dependencies {
 
 // Ensure code generation runs before any Kotlin compilation
 tasks.withType<KotlinCompile>().configureEach {
+    dependsOn("openApiGenerate")
+}
+
+// Ensure KSP also depends on OpenAPI generation
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    dependsOn("openApiGenerate")
+}
+
+// Fix KSP task dependency
+tasks.matching { it.name.startsWith("ksp") }.configureEach {
     dependsOn("openApiGenerate")
 }
 

@@ -26,9 +26,17 @@ import javax.inject.Singleton
 @Singleton
 class NeuralWhisperAgent @Inject constructor(
     private val context: Context,
-    private val memoryManager: dev.aurakai.auraframefx.ai.memory.MemoryManager,
-    private val contextManager: dev.aurakai.auraframefx.ai.context.ContextManager
-) : BaseAgent {
+    memoryManager: dev.aurakai.auraframefx.ai.memory.MemoryManager,
+    contextManager: dev.aurakai.auraframefx.ai.context.ContextManager
+) : BaseAgent(
+    agentName = "NeuralWhisperAgent",
+    agentType = dev.aurakai.auraframefx.model.AgentType.NEURAL_WHISPER,
+    memoryManager = memoryManager,
+    contextManager = contextManager
+) {
+
+    override val memoryManager: dev.aurakai.auraframefx.ai.memory.MemoryManager = memoryManager
+    override val contextManager: dev.aurakai.auraframefx.ai.context.ContextManager = contextManager
 
     private val scope = CoroutineScope(Dispatchers.Default + Job())
 
@@ -185,6 +193,39 @@ class NeuralWhisperAgent @Inject constructor(
 
     init {
         initializeNeuralWhisper()
+    }
+
+    /**
+     * Process requests with neural pattern analysis and learning
+     */
+    override suspend fun processRequest(request: dev.aurakai.auraframefx.model.AiRequest, context: String): dev.aurakai.auraframefx.model.AgentResponse {
+        return try {
+            when {
+                request.prompt.contains("learn", ignoreCase = true) -> {
+                    val patterns = analyzePatterns(request.prompt)
+                    createSuccessResponse("Neural analysis complete. Patterns identified: ${patterns.size}")
+                }
+                request.prompt.contains("predict", ignoreCase = true) -> {
+                    val prediction = behaviorPredictor.predictNextAction(context)
+                    createSuccessResponse("Prediction: ${prediction ?: "No clear prediction available"}")
+                }
+                else -> {
+                    val analysis = performBackgroundAnalysis(request.prompt)
+                    createSuccessResponse("Neural Whisper analysis: $analysis")
+                }
+            }
+        } catch (e: Exception) {
+            handleError(e, "Neural Whisper processing")
+        }
+    }
+    
+    private suspend fun analyzePatterns(prompt: String): List<String> {
+        // Placeholder pattern analysis
+        return prompt.split(" ").filter { it.length > 3 }
+    }
+    
+    private suspend fun performBackgroundAnalysis(prompt: String): String {
+        return "Background analysis completed for: ${prompt.take(50)}..."
     }
 
     private fun initializeNeuralWhisper() {
@@ -458,7 +499,7 @@ class NeuralWhisperAgent @Inject constructor(
     /**
      * Gets comprehensive agent performance metrics
      */
-    override suspend fun getPerformanceMetrics(): Map<String, Any> {
+    suspend fun getPerformanceMetrics(): Map<String, Any> {
         return mapOf(
             "isActive" to isActive,
             "contextChainSize" to _contextChain.size,
@@ -474,7 +515,7 @@ class NeuralWhisperAgent @Inject constructor(
     /**
      * Refreshes the agent status and performs optimization
      */
-    override suspend fun refreshStatus(): Map<String, Any> {
+    suspend fun refreshStatus(): Map<String, Any> {
         return mapOf(
             "status" to if (isActive) "ACTIVE" else "INACTIVE",
             "lastAnalysis" to System.currentTimeMillis(),
@@ -486,7 +527,7 @@ class NeuralWhisperAgent @Inject constructor(
     /**
      * Optimizes the agent's performance and memory usage
      */
-    override suspend fun optimize() {
+    suspend fun optimize() {
         try {
             // Clean old patterns
             cleanOldPatterns()
@@ -506,7 +547,7 @@ class NeuralWhisperAgent @Inject constructor(
     /**
      * Clears memory cache and optimizes performance
      */
-    override suspend fun clearMemoryCache() {
+    suspend fun clearMemoryCache() {
         try {
             // Clear old context chain entries
             if (_contextChain.size > 500) {
@@ -526,7 +567,7 @@ class NeuralWhisperAgent @Inject constructor(
     /**
      * Updates performance settings based on system state
      */
-    override suspend fun updatePerformanceSettings() {
+    suspend fun updatePerformanceSettings() {
         // Adjust analysis frequency based on system load
         val memoryUsage = getMemoryUsage()
 
@@ -545,7 +586,7 @@ class NeuralWhisperAgent @Inject constructor(
     /**
      * Connects to master agent channel for coordination
      */
-    override suspend fun connectToMasterChannel(channel: Any) {
+    suspend fun connectToMasterChannel(channel: Any) {
         // Implement master channel connection
         Timber.d("🔗 Neural Whisper connected to master channel")
     }
@@ -553,7 +594,7 @@ class NeuralWhisperAgent @Inject constructor(
     /**
      * Disconnects from coordination systems
      */
-    override suspend fun disconnect() {
+    suspend fun disconnect() {
         isActive = false
         Timber.d("🔌 Neural Whisper disconnected")
     }

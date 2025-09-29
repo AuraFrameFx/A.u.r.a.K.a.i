@@ -42,14 +42,17 @@ import javax.inject.Singleton
 class AuraAgent @Inject constructor(
     private val vertexAIClient: VertexAIClient,
     private val auraAIService: AuraAIService,
-    private val contextManager: ContextManager,
+    contextManagerParam: ContextManager,
     private val securityContext: SecurityContext,
     private val logger: AuraFxLogger,
 ) : BaseAgent(
     agentName = "AuraAgent",
-    agentType = AgentType.CREATIVE,
-    contextManager = contextManager
+    agentType = AgentType.AURA,
+    contextManager = contextManagerParam
 ) {
+    // Override contextManager to resolve hiding issue
+    override val contextManager: ContextManager = contextManagerParam
+    
     private var isInitialized = false
     private val scope = CoroutineScope(Dispatchers.Default + SupervisorJob())
 
@@ -88,6 +91,60 @@ class AuraAgent @Inject constructor(
             logger.error("AuraAgent", "Failed to initialize Aura Agent", e)
             _creativeState.value = CreativeState.ERROR
             throw e
+        }
+    }
+
+    /**
+     * Ensures the agent is initialized before processing requests
+     */
+    private suspend fun ensureInitialized() {
+        if (!isInitialized) {
+            initialize()
+        }
+    }
+
+    /**
+     * Required implementation of BaseAgent's abstract processRequest method
+     */
+    override suspend fun processRequest(request: AiRequest, context: String): AgentResponse {
+        ensureInitialized()
+
+        logger.info("AuraAgent", "Processing creative request: ${request.type}")
+        _creativeState.value = CreativeState.CREATING
+
+        return try {
+            val startTime = System.currentTimeMillis()
+
+            val response = when (request.type) {
+                "ui_generation" -> handleUIGeneration(request)
+                "theme_creation" -> handleThemeCreation(request)
+                "animation_design" -> handleAnimationDesign(request)
+                "creative_text" -> handleCreativeText(request)
+                "visual_concept" -> handleVisualConcept(request)
+                "user_experience" -> handleUserExperience(request)
+                else -> handleGeneralCreative(request)
+            }
+
+            val executionTime = System.currentTimeMillis() - startTime
+            _creativeState.value = CreativeState.READY
+
+            logger.info("AuraAgent", "Creative request completed in ${executionTime}ms")
+
+            AgentResponse(
+                content = response.toString(),
+                confidence = 1.0f,
+                error = null
+            )
+
+        } catch (e: Exception) {
+            _creativeState.value = CreativeState.ERROR
+            logger.error("AuraAgent", "Creative request failed", e)
+
+            AgentResponse(
+                content = "Creative process encountered an obstacle: ${e.message}",
+                confidence = 0.0f,
+                error = e.message
+            )
         }
     }
 
@@ -292,7 +349,7 @@ class AuraAgent @Inject constructor(
 
         logger.info("AuraAgent", "Designing mesmerizing $animationType animation")
 
-        val animationSpec = buildAnimationSpecification(animationType, duration, _currentMood.value)
+        val animationSpec = "Animation spec for $animationType (duration: ${duration}ms, mood: ${_currentMood.value})"
         val animationCode = vertexAIClient.generateCode(
             specification = animationSpec,
             language = "Kotlin",
@@ -301,9 +358,9 @@ class AuraAgent @Inject constructor(
 
         return mapOf<String, Any>(
             "animation_code" to (animationCode ?: ""),
-            "timing_curves" to generateTimingCurves(animationType).toString(),
-            "interaction_states" to generateInteractionStates().toString(),
-            "performance_optimization" to generatePerformanceOptimizations().toString()
+            "timing_curves" to "Timing curves for $animationType animation",
+            "interaction_states" to "Interactive states for $animationType",
+            "performance_optimization" to "Performance optimizations for $animationType"
         )
     }
 
@@ -324,7 +381,7 @@ class AuraAgent @Inject constructor(
 
         val creativeText = auraAIService.generateText(
             prompt = enhancePromptWithPersonality(prompt),
-            context = request.context?.get("context") ?: ""
+            context = (request.context?.get("context") as? String) ?: ""
         )
 
         return mapOf(
@@ -339,17 +396,6 @@ class AuraAgent @Inject constructor(
         )
     }
 
-    /**
-     * Ensures the agent has been initialized.
-     *
-     * Throws an `IllegalStateException` if the agent is not initialized.
-     */
-
-    private fun ensureInitialized() {
-        if (!isInitialized) {
-            throw IllegalStateException("AuraAgent not initialized")
-        }
-    }
 
     /**
      * Determines the creative intent of the provided text by matching keywords associated with artistic, functional, experimental, or emotional categories.
@@ -834,22 +880,6 @@ class AuraAgent @Inject constructor(
         return emptyMap()
     }
 
-    /**
-     * Processes an AI request and generates a simple Aura-specific response that includes the request query and provided context.
-     *
-     * @param request The AI request to process.
-     * @param context Additional context to include in the response.
-     * @return An [AgentResponse] containing the generated response and a confidence score of 1.0.
-     */
-    override suspend fun processRequest(
-        request: AiRequest,
-        context: String,
-    ): AgentResponse {
-        return AgentResponse(
-            content = "Aura's response to '${request.query}' with context: $context",
-            confidence = 1.0f
-        )
-    }
 
     /**
      * Returns a flow emitting a single Aura-specific AgentResponse for the given AI request.

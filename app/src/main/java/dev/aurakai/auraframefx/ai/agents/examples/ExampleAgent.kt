@@ -15,7 +15,7 @@ class ExampleAgent(
     memoryManager: MemoryManager? = null
 ) : BaseAgent(
     agentName = "Example Agent",
-    agentType = AgentType.CREATIVE,
+    agentType = AgentType.AURA,
     contextManager = contextManager,
     memoryManager = memoryManager
 ) {

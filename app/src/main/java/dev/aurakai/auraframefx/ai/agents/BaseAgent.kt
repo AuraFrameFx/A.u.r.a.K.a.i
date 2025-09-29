@@ -16,8 +16,8 @@ import kotlinx.coroutines.flow.flow
 abstract class BaseAgent(
     private val agentName: String,
     private val agentType: AgentType,
-    protected val contextManager: ContextManager? = null,
-    protected val memoryManager: MemoryManager? = null
+    protected open val contextManager: ContextManager? = null,
+    protected open val memoryManager: MemoryManager? = null
 ) : Agent {
 
     override fun getName(): String = agentName

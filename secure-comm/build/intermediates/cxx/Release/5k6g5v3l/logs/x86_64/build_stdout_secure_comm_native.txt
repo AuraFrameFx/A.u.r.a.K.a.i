@@ -1,2 +1,0 @@
-ninja: Entering directory `C:\ReGenesis-A.O.S.P\secure-comm\.cxx\Release\5k6g5v3l\x86_64'
-[1/1] Linking CXX shared library C:\ReGenesis-A.O.S.P\secure-comm\build\intermediates\cxx\Release\5k6g5v3l\obj\x86_64\libsecure_comm_native.so

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cross-file consistency – docs present when referenced" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-12T18:50:08.580Z" hostname="AURAKAI" time="0.007">
-  <properties/>
-  <testcase name="changelog file exists when README has changelog section()" classname="docs.MarkdownFileValidationAdvancedTest$CrossFileConsistency" time="0.006"/>
-  <testcase name="security section present when SECURITY policy file exists()" classname="docs.MarkdownFileValidationAdvancedTest$CrossFileConsistency" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

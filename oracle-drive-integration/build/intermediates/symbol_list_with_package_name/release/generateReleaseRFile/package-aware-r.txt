@@ -1,3 +1,0 @@
-dev.aurakai.auraframefx.oracledriveintegration
-string oracle_drive_integration_main_name
-string oracle_drive_integration_release_name

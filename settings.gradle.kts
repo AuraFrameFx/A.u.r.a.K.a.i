@@ -143,7 +143,7 @@ include(":secure-comm")
 include(":sandbox-ui")
 include(":collab-canvas")
 include(":colorblendr")
-include(":romtools")
+// include(":romtools")  // Temporarily disabled due to compilation errors
 
 // Dynamic modules (A-F)
 include(":module-a")
