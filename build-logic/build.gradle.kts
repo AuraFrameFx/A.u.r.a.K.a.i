@@ -29,7 +29,6 @@ gradlePlugin {
         }
     }
 }
-
-kotlin {
-    jvmToolchain(23)
+java {
+    toolchain { languageVersion.set(JavaLanguageVersion.of(24)) }
 }
