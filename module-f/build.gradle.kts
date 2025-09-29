@@ -5,6 +5,12 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization")
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
+
 android {
     namespace = "dev.aurakai.auraframefx.module.f"
     compileSdk = 36
@@ -12,10 +18,6 @@ android {
         minSdk = 33
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_25
-        targetCompatibility = JavaVersion.VERSION_25
-    }
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         compilerOptions {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
@@ -61,6 +63,7 @@ dependencies {
 
     // Utilities
     implementation(libs.kotlin.stdlib.jdk8)
+    implementation(libs.timber)
 
     // Testing
     testImplementation(libs.bundles.testing.unit)
@@ -71,6 +74,6 @@ dependencies {
 tasks.register("moduleFStatus") {
     group = "aegenesis" // Updated for consistency
     doLast {
-        println("📦 MODULE F - ${android.namespace} - Ready (Java 25, JVM 25)") // Updated
+        println("📦 MODULE F - ${android.namespace} - Ready (Java 24, JVM 24)")
     }
 }

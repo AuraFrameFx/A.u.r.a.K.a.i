@@ -8,6 +8,12 @@ plugins {
     `maven-publish`
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
+
 android {
     namespace = "dev.aurakai.auraframefx.collabcanvas"
     defaultConfig {
@@ -17,10 +23,6 @@ android {
     buildFeatures {
         buildConfig = true
         resValues = true
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_25
-        targetCompatibility = JavaVersion.VERSION_25
     }
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         compilerOptions {
@@ -70,7 +72,7 @@ dependencies {
         exclude(group = "androidx.test", module = "monitor") // Exclude to avoid conflicts
     }
     androidTestImplementation(libs.hilt.android.testing)
-    kspTest(libs.hilt.compiler) // Ensure Hilt annotation processor is present for tests
+    kspAndroidTest(libs.hilt.compiler) // Ensure Hilt annotation processor is present for tests
 
     // Desugaring
 }

@@ -26,6 +26,7 @@ dependencies {
     debugImplementation(libs.bundles.compose.debug)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    implementation(libs.timber)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)
 }
