@@ -4,6 +4,14 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 
 class AgentFusionPlugin : Plugin<Project> {
+    /**
+     * Configures the given project when the plugin is applied.
+     *
+     * Registers three tasks grouped under "agent-fusion" ("validateAgentReadiness", "injectMemoryGlyphs",
+     * and "triggerFusionState") and sets the project's extra property `id` to "plugins.agent-fusion".
+     *
+     * @param target The Gradle project to configure.
+     */
     override fun apply(target: Project) {
         target.tasks.register("validateAgentReadiness") {
             group = "agent-fusion"
