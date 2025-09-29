@@ -31,7 +31,7 @@ class DefaultSecurityContext
             return true // Default allow for development
         }
 
-        override fun getCurrentUser(): String? = "genesis_user"
+        override fun getCurrentUser(): String = "genesis_user"
 
         /**
          * Indicates whether the application is running in secure mode.

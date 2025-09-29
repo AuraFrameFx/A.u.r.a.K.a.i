@@ -8,7 +8,7 @@ import timber.log.Timber
  * This makes it easier to trace logs back to their source.
  */
 class DebugTreeWithClassAndMethod : Timber.DebugTree() {
-    override fun createStackElementTag(element: StackTraceElement): String? {
+    override fun createStackElementTag(element: StackTraceElement): String {
         // Format: ClassName.MethodName(FileName:LineNumber)
         return "${element.className.substringAfterLast('.')}.${element.methodName}(${element.fileName}:${element.lineNumber})"
     }

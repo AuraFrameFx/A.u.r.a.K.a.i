@@ -97,7 +97,7 @@ class VertexAIClientImpl : VertexAIClient {
      * @param prompt The input prompt for which content is to be generated.
      * @return A placeholder string embedding the prompt.
      */
-    override suspend fun generateContent(prompt: String): String? {
+    override suspend fun generateContent(prompt: String): String {
         delay(100)
         return "Stub content for: $prompt"
     }
@@ -114,7 +114,7 @@ class VertexAIClientImpl : VertexAIClient {
         specification: String,
         language: String,
         style: String,
-    ): String? {
+    ): String {
         delay(100)
         return "// Stub $language code for: $specification"
     }

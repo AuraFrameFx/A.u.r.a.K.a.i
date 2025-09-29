@@ -93,7 +93,7 @@ class AuraShieldAgent
             EXISTENTIAL,
         }
 
-        inner class BehaviorAnalyzer {
+        class BehaviorAnalyzer {
             private val behaviorPatterns = mutableMapOf<String, BehaviorPattern>()
             private val anomalyThreshold = 0.8f
 
@@ -175,7 +175,7 @@ class AuraShieldAgent
                     .map { "Anomalous behavior detected for user: ${it.userId}" }
         }
 
-        inner class AdaptiveFirewall {
+        class AdaptiveFirewall {
             private val blockedIPs = mutableSetOf<String>()
             private val suspiciousActivities = mutableMapOf<String, Int>()
             private val allowList = mutableSetOf<String>()

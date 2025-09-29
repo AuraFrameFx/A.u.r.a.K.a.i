@@ -32,6 +32,10 @@ tasks.register("benchmarkStatus") {
     doLast { println("\uD83D\uDCE6 BENCHMARK MODULE - Ready (Java 25, JVM 25)") }
 }
 
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
 dependencies {
     implementation(project(":core-module"))
     implementation(libs.androidx.core.ktx)
@@ -45,6 +49,8 @@ dependencies {
     androidTestImplementation(libs.bundles.testing.android)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.ui.tooling.preview)
+    testImplementation("org.junit.platform:junit-platform-launcher")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine")
 }
 
 tasks.withType<JavaCompile> {
