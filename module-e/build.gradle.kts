@@ -7,6 +7,12 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization")
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
+
 android {
     namespace = "dev.aurakai.auraframefx.module.e"
     compileSdk = 36
@@ -14,10 +20,6 @@ android {
         minSdk = 33
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_25
-        targetCompatibility = JavaVersion.VERSION_25
-    }
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         compilerOptions {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
@@ -63,14 +65,10 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.work)
-    implementation("com.google.dagger:hilt-android:2.57.2")
-    implementation("com.google.dagger:hilt-android-compiler:2.57.2")
-    implementation("com.google.dagger:hilt-android-testing:2.57.2")
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.bundles.firebase)
 
     // Utilities
     implementation(libs.kotlin.stdlib.jdk8)
+    implementation(libs.timber)
 
     // Testing
     testImplementation(libs.bundles.testing.unit)
@@ -78,5 +76,5 @@ dependencies {
         exclude(group = "androidx.test", module = "monitor")
     }
     androidTestImplementation(libs.hilt.android.testing)
-    kspTest(libs.hilt.compiler)
+    kspAndroidTest(libs.hilt.compiler)
 }

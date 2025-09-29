@@ -7,6 +7,12 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization")
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
+
 android {
     namespace = "dev.aurakai.auraframefx.securecomm"
     compileSdk = 36
@@ -17,10 +23,6 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_25
-        targetCompatibility = JavaVersion.VERSION_25
     }
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         compilerOptions {
