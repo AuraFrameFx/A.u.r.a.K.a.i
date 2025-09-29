@@ -4,4 +4,9 @@
     <style name="AppTheme" parent="Theme.MaterialComponents">
         <!-- Add customizations here if needed -->
     </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>
