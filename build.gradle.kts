@@ -153,7 +153,7 @@ if (file("dependency-fix.gradle.kts").exists()) {
 buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:8.13.0")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.0")
         classpath("com.google.dagger:hilt-android-gradle-plugin:2.57.1")
         classpath("com.google.gms:google-services:4.4.3")
     }

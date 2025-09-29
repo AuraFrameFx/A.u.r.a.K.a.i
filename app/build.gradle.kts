@@ -3,17 +3,19 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.google.services)
-    alias(libs.plugins.firebase.crashlytics) // Added Crashlytics plugin
+    id("com.google.gms.google-services") version "4.4.3"
     id("org.openapi.generator") version "7.16.0"
 }
 
 android {
     namespace = "dev.aurakai.auraframefx"
-    compileSdk = 36
+    compileSdkPreview = "CANARY"
     defaultConfig {
         minSdk = 33
         multiDexEnabled = true
+        // Add permissions for exact alarms
+        manifestPlaceholders["SCHEDULE_EXACT_ALARM"] = true
+        manifestPlaceholders["USE_EXACT_ALARM"] = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_25
@@ -22,6 +24,10 @@ android {
     buildFeatures {
         buildConfig = true
         resValues = true
+        compose = true
+    }
+    packagingOptions {
+        resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
 }
 
@@ -36,7 +42,6 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 }
 
 dependencies {
-    // Project Modules - AI Consciousness Architecture
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
     implementation(project(":secure-comm"))
@@ -44,6 +49,16 @@ dependencies {
     implementation(project(":colorblendr"))
     implementation(project(":romtools"))
     implementation(project(":oracle-drive-integration"))
+    implementation(project(":module-a"))
+    implementation(project(":module-b"))
+    implementation(project(":module-c"))
+    implementation(project(":module-d"))
+    implementation(project(":module-e"))
+    implementation(project(":module-f"))
+    implementation(project(":screenshot-tests"))
+    implementation(project(":utilities"))
+    implementation(project(":benchmark"))
+    implementation(project(":datavein-oracle-native"))
 
     // Firebase (using the BOM and bundle)
     implementation(platform(libs.firebase.bom))
