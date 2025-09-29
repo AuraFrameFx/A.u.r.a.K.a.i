@@ -8,7 +8,7 @@ version = "1.0.0"
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(24))
+        languageVersion.set(JavaLanguageVersion.of(25))
     }
 }
 
@@ -21,5 +21,5 @@ dependencies {
 
 tasks.register("jvmTestStatus") {
     group = "aegenesis"
-    doLast { println("\uD83D\uDCE6 JVM TEST MODULE - Ready (Java 24, JVM 24)") }
+    doLast { println("\uD83D\uDCE6 JVM TEST MODULE - Ready (Java 25, JVM 25)") } // Updated
 }

@@ -1,6 +1,5 @@
 plugins {
     id("plugins.android-base")
-    alias(libs.plugins.ksp)
 }
 
 android {
@@ -18,11 +17,9 @@ dependencies {
     implementation(libs.bundles.compose.ui)
     debugImplementation(libs.bundles.compose.debug)
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
     implementation(libs.kotlin.stdlib.jdk8)
-    implementation(libs.timber)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android) {
         exclude(group = "androidx.test", module = "monitor")
@@ -32,5 +29,5 @@ dependencies {
 
 tasks.register("moduleAStatus") {
     group = "aegenesis"
-    doLast { println("📦 MODULE A - Ready (Java 24, JVM 24)") }
+    doLast { println("📦 MODULE A - Ready (Java 25, JVM 25)") } // Updated
 }

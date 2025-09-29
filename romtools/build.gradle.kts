@@ -26,7 +26,6 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.kotlin.stdlib.jdk8)
-    implementation(libs.timber)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)
     testImplementation(libs.junit.jupiter)

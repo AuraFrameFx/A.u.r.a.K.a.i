@@ -26,19 +26,21 @@ dependencies {
     // Testing
     testImplementation(libs.junit4)
     testImplementation(libs.mockk)
-    testImplementation(libs.kotlin.test)
+    testImplementation(libs.kotlin.test) // MODIFIED
 
     // Android Testing
     androidTestImplementation(libs.mockk.android)
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.kotlinx.coroutines.test)
 
+    androidTestImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.kotlinx.coroutines.test)
+    // Removed direct Maven coordinate for Compose test library
     // Hilt Testing
     testImplementation(libs.hilt.android.testing)
-    kspTest(libs.hilt.compiler)
+    add("kspTest", libs.hilt.compiler)
     androidTestImplementation(libs.hilt.android.testing)
-    kspAndroidTest(libs.hilt.compiler)
+    add("kspAndroidTest", libs.hilt.compiler)
 
     // Utilities
     implementation(libs.timber)

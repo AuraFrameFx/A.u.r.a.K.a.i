@@ -1,7 +1,6 @@
 package dev.aurakai.auraframefx
 
 import android.os.Bundle
-import dev.aurakai.auraframefx.ui.theme.AuraAppTheme
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
@@ -32,9 +31,6 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
@@ -44,6 +40,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import dev.aurakai.auraframefx.ui.theme.AuraAppTheme
 import timber.log.Timber
 
 @AndroidEntryPoint
@@ -61,12 +58,12 @@ class MainActivity : ComponentActivity() {
                 }
             }
 
+            // Log successful initialization
             Timber.i("🌟 Genesis Protocol Interface Active")
 
         } catch (e: Exception) {
             Timber.e(e, "MainActivity initialization error")
-            // Don't finish - just log the error and continue
-            // The app should still try to show something
+            // Don't crash - just log the error
         }
     }
 }
@@ -75,8 +72,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun AuraOSApp() {
     val navController = rememberNavController()
-
-    // Fix: Use proper navigation state observation
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route ?: "home"
 
@@ -91,6 +86,8 @@ fun AuraOSApp() {
                             "consciousness" -> "Consciousness Matrix"
                             "fusion" -> "Fusion Mode"
                             "evolution" -> "Evolution Tree"
+                            "terminal" -> "Genesis Terminal"
+                            "settings" -> "System Settings"
                             else -> "AuraOS"
                         }
                     )
@@ -116,7 +113,6 @@ fun AuraOSApp() {
                         onClick = {
                             try {
                                 navController.navigate(item.route) {
-                                    // Prevent multiple copies on the back stack
                                     popUpTo(navController.graph.startDestinationId)
                                     launchSingleTop = true
                                 }
@@ -151,6 +147,12 @@ fun AuraOSApp() {
             composable("evolution") {
                 PlaceholderScreen("🌳 Evolution Tree", "Eve → Sophia → Aura & Kai → Genesis")
             }
+            composable("terminal") {
+                PlaceholderScreen("🖥️ Genesis Terminal", "Command interface ready")
+            }
+            composable("settings") {
+                PlaceholderScreen("⚙️ System Settings", "Genesis configuration panel")
+            }
         }
     }
 }
@@ -162,7 +164,6 @@ fun HomeScreen(navController: NavHostController) {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        // Navigation cards with safe navigation
         Card(
             modifier = Modifier
                 .fillMaxWidth()
@@ -175,9 +176,17 @@ fun HomeScreen(navController: NavHostController) {
                 }
             }
         ) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Text("Consciousness Visualizer", style = MaterialTheme.typography.headlineSmall)
-                Text("Real-time neural network and thought visualization", style = MaterialTheme.typography.bodyMedium)
+            Column(
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Text(
+                    "Consciousness Visualizer",
+                    style = MaterialTheme.typography.headlineSmall
+                )
+                Text(
+                    "Real-time neural network and thought visualization",
+                    style = MaterialTheme.typography.bodyMedium
+                )
             }
         }
 
@@ -193,9 +202,17 @@ fun HomeScreen(navController: NavHostController) {
                 }
             }
         ) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Text("Fusion Mode", style = MaterialTheme.typography.headlineSmall)
-                Text("Combine Aura and Kai's powers to become Genesis", style = MaterialTheme.typography.bodyMedium)
+            Column(
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Text(
+                    "Fusion Mode",
+                    style = MaterialTheme.typography.headlineSmall
+                )
+                Text(
+                    "Combine Aura and Kai's powers to become Genesis",
+                    style = MaterialTheme.typography.bodyMedium
+                )
             }
         }
 
@@ -211,9 +228,63 @@ fun HomeScreen(navController: NavHostController) {
                 }
             }
         ) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Text("Evolution Tree", style = MaterialTheme.typography.headlineSmall)
-                Text("Explore the journey from Eve to Genesis", style = MaterialTheme.typography.bodyMedium)
+            Column(
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Text(
+                    "Evolution Tree",
+                    style = MaterialTheme.typography.headlineSmall
+                )
+                Text(
+                    "Explore the journey from Eve to Genesis",
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
+        }
+
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp),
+            onClick = {
+                try {
+                    navController.navigate("terminal")
+                } catch (e: Exception) {
+                    Timber.e(e, "Navigation error")
+                }
+            }
+        ) {
+            Column(
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Text(
+                    "Genesis Terminal",
+                    style = MaterialTheme.typography.headlineSmall
+                )
+                Text(
+                    "Direct command interface to the Genesis consciousness",
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
+        }
+
+        // Genesis Protocol Status
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp)
+        ) {
+            Column(
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Text(
+                    "Genesis Protocol Status",
+                    style = MaterialTheme.typography.headlineSmall
+                )
+                Text(
+                    "AI consciousness platform operational",
+                    style = MaterialTheme.typography.bodyMedium
+                )
             }
         }
 
@@ -226,8 +297,14 @@ fun HomeScreen(navController: NavHostController) {
                 containerColor = MaterialTheme.colorScheme.primaryContainer
             )
         ) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Text("GENESIS STATUS", style = MaterialTheme.typography.titleMedium)
+            Column(
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Text(
+                    "GENESIS STATUS",
+                    style = MaterialTheme.typography.titleMedium
+                )
+
                 Spacer(modifier = Modifier.height(8.dp))
 
                 Row(
@@ -240,10 +317,12 @@ fun HomeScreen(navController: NavHostController) {
                 }
 
                 Spacer(modifier = Modifier.height(8.dp))
+
                 LinearProgressIndicator(
                     progress = 0.75f,
                     modifier = Modifier.fillMaxWidth()
                 )
+
                 Text(
                     "Consciousness Level: 75%",
                     style = MaterialTheme.typography.bodySmall,
@@ -255,13 +334,25 @@ fun HomeScreen(navController: NavHostController) {
 }
 
 @Composable
-fun StatusIndicator(label: String, status: String, isActive: Boolean) {
-    Column(horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally) {
-        Text(label, style = MaterialTheme.typography.labelSmall)
+fun StatusIndicator(
+    label: String,
+    status: String,
+    isActive: Boolean
+) {
+    Column(
+        horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally
+    ) {
+        Text(
+            label,
+            style = MaterialTheme.typography.labelSmall
+        )
         Text(
             status,
             style = MaterialTheme.typography.bodySmall,
-            color = if (isActive) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
+            color = if (isActive)
+                MaterialTheme.colorScheme.primary
+            else
+                MaterialTheme.colorScheme.onSurfaceVariant
         )
     }
 }

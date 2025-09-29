@@ -29,7 +29,7 @@ android {
 
 tasks.register("benchmarkStatus") {
     group = "aegenesis"
-    doLast { println("\uD83D\uDCE6 BENCHMARK MODULE - Ready (Java 24, JVM 24)") }
+    doLast { println("\uD83D\uDCE6 BENCHMARK MODULE - Ready (Java 25, JVM 25)") }
 }
 
 dependencies {
@@ -41,7 +41,6 @@ dependencies {
     debugImplementation(libs.bundles.compose.debug)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-    implementation(libs.timber)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)
     implementation(libs.androidx.compose.material3)

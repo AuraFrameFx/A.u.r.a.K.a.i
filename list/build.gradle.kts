@@ -27,8 +27,6 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.bundles.lifecycle)
-    implementation(libs.timber)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)
     testImplementation(libs.junit.jupiter)

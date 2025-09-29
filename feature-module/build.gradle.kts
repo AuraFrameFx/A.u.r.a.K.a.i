@@ -26,10 +26,13 @@ dependencies {
 
     // Networking
     implementation(libs.bundles.network)
-    implementation(libs.gson)
 
     // UI & Image Loading
     implementation(libs.coil.compose)
+
+    // Unit & Android Testing
+    testImplementation(libs.bundles.testing.unit)
+    androidTestImplementation(libs.bundles.testing.android)
 
     // Core Android
     implementation(libs.androidx.core.ktx)
@@ -52,8 +55,13 @@ dependencies {
     // Coroutines
     implementation(libs.bundles.coroutines)
 
+    // Networking
+    implementation(libs.bundles.network)
+    implementation(libs.gson)
+
     // Room Database
     implementation(libs.bundles.room)
+    // implementation(libs.hilt.android) // Hilt already included above
 
     // Firebase
     implementation(platform(libs.firebase.bom))
@@ -66,6 +74,7 @@ dependencies {
 
     // Utilities
     implementation(libs.timber)
+    implementation(libs.coil.compose)
     implementation(libs.kotlin.stdlib.jdk8)
 
     // External libraries
@@ -83,5 +92,5 @@ dependencies {
 tasks.register("featureStatus") {
     // MOVED to root level and Updated
     group = "aegenesis"
-    doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 24, JVM 24)!") }
+    doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 25, JVM 25)!") }
 }

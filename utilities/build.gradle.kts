@@ -5,12 +5,6 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(24))
-    }
-}
-
 android {
     namespace = "dev.aurakai.auraframefx.utilities"
     compileSdk = 36
@@ -27,6 +21,10 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
+    }
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         compilerOptions {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
@@ -54,7 +52,6 @@ dependencies {
     implementation(libs.commons.io)
     implementation(libs.commons.compress)
     implementation(libs.xz)
-    implementation(libs.timber)
 
     // YukiHook & LSPosed dependencies are now provided by genesis.android.xposed convention plugin
 

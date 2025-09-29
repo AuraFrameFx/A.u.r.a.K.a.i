@@ -3,13 +3,6 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
 }
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(24))
-    }
-}
-
 android {
     namespace = "dev.aurakai.auraframefx.datavein"
     compileSdk = 36
@@ -25,24 +18,24 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
-            freeCompilerArgs.addAll(
-                "-Xjvm-default=all",
-                "-Xopt-in=kotlin.RequiresOptIn",
-            )
-        }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
+    }
+}
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+        freeCompilerArgs.addAll(
+            "-Xjvm-default=all",
+            "-Xopt-in=kotlin.RequiresOptIn",
+        )
     }
 }
 
 dependencies {
     implementation(project(":core-module"))
     implementation(libs.androidx.core.ktx)
-    implementation(libs.bundles.lifecycle)
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    implementation(libs.timber)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)
 }

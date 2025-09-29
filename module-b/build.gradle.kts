@@ -24,7 +24,6 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
     implementation(libs.kotlin.stdlib.jdk8)
-    implementation(libs.timber)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android) {
         exclude(group = "androidx.test", module = "monitor")

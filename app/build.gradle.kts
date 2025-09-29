@@ -8,19 +8,16 @@ plugins {
     id("org.openapi.generator") version "7.16.0"
 }
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(24))
-    }
-}
-
 android {
     namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
     defaultConfig {
-        applicationId = "dev.aurakai.auraframefx"
         minSdk = 33
         multiDexEnabled = true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
     }
     buildFeatures {
         buildConfig = true
@@ -69,6 +66,8 @@ dependencies {
     implementation(libs.bundles.compose.ui)
     debugImplementation(libs.bundles.compose.debug)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.test.ext.junit)
+    implementation(libs.androidx.test.espresso.core)
 
     // Utilities & Networking
     implementation(libs.timber)
@@ -79,8 +78,6 @@ dependencies {
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)
     androidTestImplementation(libs.hilt.android.testing)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.androidx.test.espresso.core)
     debugImplementation(libs.leakcanary.android)
 
     // Multidex

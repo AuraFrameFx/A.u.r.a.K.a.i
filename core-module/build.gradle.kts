@@ -35,9 +35,6 @@ dependencies {
     // Coroutines
     implementation(libs.bundles.coroutines)
 
-    // Logging
-    implementation(libs.timber)
-
     // Testing
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)

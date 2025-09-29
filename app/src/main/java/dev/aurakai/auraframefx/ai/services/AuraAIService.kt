@@ -28,30 +28,3 @@ data class ThemeConfiguration(
     val style: String,
     val animationConfig: Map<String, Any> = emptyMap()
 )
-
-/**
- * Default implementation of AuraAIService
- */
-class DefaultAuraAIService : AuraAIService {
-
-    override suspend fun initialize() {
-        // Initialize AI service
-    }
-
-    override suspend fun generateText(prompt: String, context: String): String {
-        return "Generated creative text for: $prompt (Context: $context)"
-    }
-
-    override suspend fun generateTheme(
-        preferences: ThemePreferences,
-        context: String
-    ): ThemeConfiguration {
-        return ThemeConfiguration(
-            primaryColor = preferences.primaryColor,
-            secondaryColor = "#03DAC6",
-            backgroundColor = "#121212",
-            textColor = "#FFFFFF",
-            style = preferences.style
-        )
-    }
-}
