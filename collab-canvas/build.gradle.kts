@@ -40,6 +40,26 @@ dependencies {
     implementation(libs.bundles.firebase)
     implementation(libs.kotlin.stdlib.jdk8)
 
+    // Jetpack Compose
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.bundles.compose.ui)
+    debugImplementation(libs.bundles.compose.debug)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+
+    // Gson, OkHttp, Timber
+    implementation(libs.gson)
+    implementation(libs.retrofit.core)
+    implementation(libs.okhttp.core)
+    implementation(libs.okhttp.logging.interceptor)
+    implementation(libs.timber)
+
     // Hilt
     implementation(libs.hilt.android)
     implementation(libs.androidx.core.ktx)
