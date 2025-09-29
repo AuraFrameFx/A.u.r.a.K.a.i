@@ -49,6 +49,10 @@ import timber.log.Timber
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
+    /**
+     * Initializes the activity UI, applies the AuraAppTheme, launches the root composable,
+     * logs initialization progress, and finishes the activity gracefully if an error occurs.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
