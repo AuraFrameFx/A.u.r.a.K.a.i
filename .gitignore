@@ -35,3 +35,4 @@ captures/
 !**/openapi/
 !app/srv/
 
+build/reports/problems/problems-report.html
