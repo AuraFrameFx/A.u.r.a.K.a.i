@@ -48,9 +48,9 @@ dependencies {
     // Firebase (using the BOM and bundle)
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
-    implementation(libs.androidx.core.ktx)
-    implementation("com.google.firebase:firebase-analytics:23.0.0")
-    implementation(libs.firebase.crashlytics) // Added Crashlytics dependency
+
+    // Material3 theme support
+    implementation(libs.material)
 
     // Kotlin Core
     implementation(libs.kotlin.reflect)
@@ -81,7 +81,7 @@ dependencies {
     debugImplementation(libs.leakcanary.android)
 
     // Multidex
-    implementation("androidx.multidex:multidex:2.0.1")
+    implementation(libs.androidx.multidex)
 }
 
 openApiGenerate {

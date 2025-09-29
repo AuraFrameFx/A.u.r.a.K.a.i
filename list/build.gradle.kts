@@ -14,6 +14,12 @@ android {
 group = "dev.aurakai.auraframefx.list"
 version = "1.0.0"
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
+
 dependencies {
     implementation(libs.kotlin.stdlib.jdk8)
     implementation(libs.kotlinx.serialization.json)
@@ -23,5 +29,5 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)
-    testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
+    testImplementation(libs.junit.jupiter)
 }
