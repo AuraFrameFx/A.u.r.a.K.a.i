@@ -79,9 +79,7 @@ androidComponents {
     onVariants(selector().all()) { variant ->
         variant.sources.java?.addGeneratedSourceDirectory(
             tasks.named("openApiGenerate")
-        ) { _ ->
-            layout.buildDirectory.dir("generated/openapi/src/main/kotlin")
-        }
+        )
     }
 }
 
