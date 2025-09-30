@@ -1,7 +1,7 @@
 @file:Suppress("UnstableApiUsage", "JCenterRepositoryObsolete")
 
 // ===== AOSP-Re:Genesis - SETTINGS =====
-// AOSP-Re:Genesis - Advanced Android OS Project
+// Re:Genesis - Advanced Android OS Project
 // Version: 2025.09.02-03 - Full Enhancement Suite
 
 // Enable Gradle features
