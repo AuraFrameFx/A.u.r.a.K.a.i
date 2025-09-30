@@ -49,12 +49,10 @@ android {
         }
     }
 
-    sourceSets["main"].java.srcDir(layout.buildDirectory.dir("generated/openapi/src/main/kotlin"))
-
-        compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_24
-            targetCompatibility = JavaVersion.VERSION_24
-        }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
+    }
 }
 
 kotlin {
@@ -74,6 +72,17 @@ openApiGenerate {
             "dateLibrary" to "java8", "library" to "jvm-ktor"
         )
     )
+}
+
+// Register generated OpenAPI sources using Variant API
+androidComponents {
+    onVariants(selector().all()) { variant ->
+        variant.sources.java?.addGeneratedSourceDirectory(
+            tasks.named("openApiGenerate")
+        ) { _ ->
+            layout.buildDirectory.dir("generated/openapi/src/main/kotlin")
+        }
+    }
 }
 
 dependencies {
