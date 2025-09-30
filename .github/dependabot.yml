@@ -16,7 +16,7 @@ updates:
       - "dependencies"
       - "auto"
     reviewers:
-      - "AuraFrameFxDev"
+      - "AuraFrameFx"
 
   # Enable updates for npm (Node.js, JavaScript)
   - package-ecosystem: "npm"
@@ -30,7 +30,7 @@ updates:
       - "dependencies"
       - "auto"
     reviewers:
-      - "AuraFrameFxDev"
+      - "AuraFrameFx"
 
   # Enable updates for pip (Python)
   - package-ecosystem: "pip"
@@ -44,7 +44,7 @@ updates:
       - "dependencies"
       - "auto"
     reviewers:
-      - "AuraFrameFxDev"
+      - "AuraFrameFx"
 
   # Enable updates for Docker
   - package-ecosystem: "docker"
@@ -58,7 +58,7 @@ updates:
       - "dependencies"
       - "auto"
     reviewers:
-      - "AuraFrameFxDev"
+      - "AuraFrameFx"
 
   # Enable updates for Maven (Java)
   - package-ecosystem: "maven"
@@ -72,7 +72,7 @@ updates:
       - "dependencies"
       - "auto"
     reviewers:
-      - "AuraFrameFxDev"
+      - "AuraFrameFx"
       - "@coderabbitai"
 
   # Enable updates for Composer (PHP)
@@ -87,4 +87,4 @@ updates:
       - "dependencies"
       - "auto"
     reviewers:
-      - "AuraFrameFxDev"
+      - "AuraFrameFx"
