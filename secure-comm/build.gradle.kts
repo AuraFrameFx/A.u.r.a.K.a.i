@@ -5,15 +5,10 @@ plugins {
     id("genesis.android.library")
     id("genesis.android.native")
     alias(libs.plugins.ksp)
-    alias(libs.plugins.android.library)
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.securecomm"
-    
-    defaultConfig {
-        minSdk = 34
-    }
     
     externalNativeBuild {
         cmake {
@@ -26,9 +21,9 @@ android {
 dependencies {
     implementation(project(":core-module"))
     implementation(libs.hilt.android)
-    implementation(libs.androidx.core.ktx)
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.work)
+    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.bundles.coroutines)
@@ -37,14 +32,8 @@ dependencies {
     implementation(libs.bundles.firebase)
     implementation(libs.timber)
     implementation(libs.coil.compose)
-    implementation(libs.mockk.agent)
-    
     // Security - BouncyCastle for cryptography
     implementation(libs.bcprov.jdk18on)
-    
-    // Add other module-specific dependencies here
-    implementation(kotlin("stdlib-jdk8"))
-    
     // Test dependencies
     testImplementation(libs.junit4)
     testImplementation(libs.junit.jupiter.api)
@@ -54,3 +43,6 @@ dependencies {
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.hilt.android.testing)
 }
+
+// Spotless and toolchain are applied globally via root build.gradle.kts and convention plugins
+// ProGuard rules for Hilt, Compose, Serialization, and reflection-based libraries should be in proguard-rules.pro
