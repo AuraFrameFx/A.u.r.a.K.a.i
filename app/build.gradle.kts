@@ -4,12 +4,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 // This build script now uses the custom convention plugins for a cleaner setup.
 
 plugins {
-    alias(libs.plugins.android.application)
+    id("com.android.application")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
-    id("org.openapi.generator") version "7.15.0"
-    alias(libs.plugins.kotlin.android)
+    id("org.openapi.generator") version "7.16.0"
 }
 
 android {
@@ -91,7 +89,7 @@ dependencies {
     // ===== MODULE DEPENDENCIES =====
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
-    // implementation(project(":romtools"))  // Temporarily disabled - Module not found
+    implementation(project(":romtools"))  // Temporarily disabled - Module not found
     implementation(project(":secure-comm"))
     implementation(project(":collab-canvas"))  // Temporarily disabled - YukiHookAPI issues
     implementation(project(":colorblendr"))

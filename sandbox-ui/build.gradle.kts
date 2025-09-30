@@ -5,7 +5,6 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
-    id("org.jetbrains.kotlin.android") // Add this line to explicitly apply the Kotlin Android plugin
 
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }

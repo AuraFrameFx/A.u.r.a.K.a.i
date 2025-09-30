@@ -7,7 +7,6 @@ plugins {
     alias(libs.plugins.dokka)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
     alias(libs.plugins.ksp)  // Required for Hilt annotation processing
-    id("org.jetbrains.kotlin.android") // Add this line to explicitly apply the Kotlin Android plugin
 
 }
 

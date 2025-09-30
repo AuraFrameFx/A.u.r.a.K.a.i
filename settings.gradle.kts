@@ -143,7 +143,7 @@ include(":secure-comm")
 include(":sandbox-ui")
 include(":collab-canvas")
 include(":colorblendr")
-// include(":romtools")  // Temporarily disabled due to compilation errors
+include(":romtools") // Enabled so Gradle picks up the module
 
 // Dynamic modules (A-F)
 include(":module-a")

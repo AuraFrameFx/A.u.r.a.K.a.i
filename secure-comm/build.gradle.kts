@@ -6,7 +6,6 @@ plugins {
     id("genesis.android.native")
     alias(libs.plugins.ksp)
     alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
 }
 
 android {
