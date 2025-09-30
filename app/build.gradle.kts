@@ -79,10 +79,10 @@ androidComponents {
     onVariants(selector().all()) { variant ->
         variant.sources.java?.addGeneratedSourceDirectory(
             tasks.named("openApiGenerate")
-        ) { openApiTask ->
-            openApiTask.flatMap { task ->
-                project.layout.dir(project.provider { File(task.outputDir.get(), "src/main/kotlin") })
-            }
+        ) { _ ->
+            val dirProperty = project.objects.directoryProperty()
+            dirProperty.set(layout.buildDirectory.dir("generated/openapi/src/main/kotlin").get())
+            dirProperty
         }
     }
 }
