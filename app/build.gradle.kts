@@ -79,7 +79,11 @@ androidComponents {
     onVariants(selector().all()) { variant ->
         variant.sources.java?.addGeneratedSourceDirectory(
             tasks.named("openApiGenerate")
-        )
+        ) { openApiTask ->
+            openApiTask.flatMap { task ->
+                project.layout.dir(project.provider { File(task.outputDir.get(), "src/main/kotlin") })
+            }
+        }
     }
 }
 
@@ -87,14 +91,25 @@ dependencies {
     // ===== MODULE DEPENDENCIES =====
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
-    implementation(project(":oracle-drive-integration"))
-        // implementation(project(":romtools"))  // Temporarily disabled - Compilation issues
+    // implementation(project(":romtools"))  // Temporarily disabled - Module not found
     implementation(project(":secure-comm"))
     implementation(project(":collab-canvas"))  // Temporarily disabled - YukiHookAPI issues
     implementation(project(":colorblendr"))
     implementation(project(":sandbox-ui"))  // Temporarily disabled - Compose compilation issues
     implementation(project(":datavein-oracle-native"))
+    implementation(project(":module-a"))
+    implementation(project(":module-b"))
+    implementation(project(":module-c"))
+    implementation(project(":module-d"))
+    implementation(project(":module-e"))
+    implementation(project(":module-f"))
+    implementation(
+        project(
+            ":benchmark"
+        )
+    )
 
+    // implementation(project(":snapshots")) // Temporarily disabled - Module not found
     // ===== ANDROIDX & COMPOSE =====
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
@@ -123,7 +138,7 @@ dependencies {
     implementation(libs.bundles.network)
     implementation("com.squareup.moshi:moshi:1.15.1")
     implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
-    
+
     // ===== KTOR FOR OPENAPI CLIENT =====
     implementation("io.ktor:ktor-client-core:2.3.7")
     implementation("io.ktor:ktor-client-content-negotiation:2.3.7")
@@ -146,7 +161,7 @@ dependencies {
     // ===== HILT DEPENDENCY INJECTION =====
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-    
+
     // ===== WORKMANAGER =====
     implementation("androidx.work:work-runtime-ktx:2.9.0")
     implementation("androidx.hilt:hilt-work:1.2.0")
@@ -173,26 +188,23 @@ dependencies {
 
     // --- DEBUGGING ---
     debugImplementation(libs.leakcanary.android)
-    implementation(kotlin("stdlib-jdk8"))
-    implementation(libs.kotlin.reflect)
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-}
-
 
 // Ensure code generation runs before any Kotlin compilation
-tasks.withType<KotlinCompile>().configureEach {
-    dependsOn("openApiGenerate")
-}
+    tasks.withType<KotlinCompile>().configureEach {
+        dependsOn("openApiGenerate")
+    }
 
 // Ensure KSP also depends on OpenAPI generation
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    dependsOn("openApiGenerate")
-}
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+        dependsOn("openApiGenerate")
+    }
 
 // Fix KSP task dependency
-tasks.matching { it.name.startsWith("ksp") }.configureEach {
-    dependsOn("openApiGenerate")
+    tasks.matching { it.name.startsWith("ksp") }.configureEach {
+        dependsOn("openApiGenerate")
+    }
 }
+
 
 
 // Note: Uses Genesis convention plugins (genesis.android.application and genesis.android.hilt)
