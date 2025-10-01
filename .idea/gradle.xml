@@ -26,6 +26,8 @@
             <option value="$PROJECT_DIR$/collab-canvas" />
             <option value="$PROJECT_DIR$/colorblendr" />
             <option value="$PROJECT_DIR$/core-module" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/data/api" />
             <option value="$PROJECT_DIR$/datavein-oracle-native" />
             <option value="$PROJECT_DIR$/feature-module" />
             <option value="$PROJECT_DIR$/jvm-test" />

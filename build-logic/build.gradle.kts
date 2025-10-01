@@ -11,7 +11,7 @@ dependencies {
     implementation("com.android.tools.build:gradle:9.0.0-alpha02")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20")
     implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.1")
-    
+
     // Test dependencies
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.13.4")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.13.4")
@@ -41,7 +41,6 @@ gradlePlugin {
             id = "genesis.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
-        // This is the new registration for the Hilt convention plugin
         register("androidHilt") {
             id = "genesis.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"

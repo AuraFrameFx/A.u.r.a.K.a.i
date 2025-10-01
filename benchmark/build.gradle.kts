@@ -62,7 +62,6 @@ android {
     buildFeatures {
         buildConfig = true
         aidl = false
-        renderScript = false
         shaders = false
     }
 

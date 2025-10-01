@@ -1,0 +1,34 @@
+name: Performance Monitoring
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+jobs:
+  openapi-validation:
+    name: Validate OpenAPI Specs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install swagger-cli
+        run: npm install -g swagger-cli
+      - name: Validate OpenAPI specs
+        run: |
+          set -e
+          swagger-cli validate ./app/api/ai-api.yml
+          swagger-cli validate ./app/api/oracle-drive-api.yml
+          swagger-cli validate ./app/api/genesis-api.yml
+          swagger-cli validate ./app/api/sandbox-api.yml
+          swagger-cli validate ./app/api/customization-api.yml
+          swagger-cli validate ./app/api/romtools-api.yml
+          swagger-cli validate ./app/api/unified-aegenesis-api.yml
+          swagger-cli validate ./app/api/unified-aegenesis-api.legacy.yml
+          swagger-cli validate ./app/api/system-api.yml
+          swagger-cli validate ./app/api/aura-api.yaml
+          swagger-cli validate ./app/api/auraframefx_ai_api.yaml
+          swagger-cli validate ./data/api/api/unified-deliverance-api.yml
+

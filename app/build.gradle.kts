@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.openapitools.generator.gradle.plugin.tasks.OpenApiGenerateTask
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 // This build script now uses the custom convention plugins for a cleaner setup.
@@ -8,7 +7,7 @@ plugins {
     id("com.android.application")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
-    id("org.openapi.generator") version "7.16.0"
+    // id("openapi.generator.convention") // Commented out until plugin is recognized
 }
 
 android {
@@ -58,34 +57,6 @@ kotlin {
     jvmToolchain(24)
 }
 
-openApiGenerate {
-    generatorName.set("kotlin")
-    // Use a valid file URI for Windows (three slashes)
-    inputSpec.set("file:///C:/ReGenesis-A.O.S.P/app/api/system-api.yml")
-    outputDir.set(layout.buildDirectory.dir("generated/openapi").get().asFile.absolutePath)
-    apiPackage.set("dev.aurakai.auraframefx.openapi.api")
-    modelPackage.set("dev.aurakai.auraframefx.openapi.model")
-    invokerPackage.set("dev.aurakai.auraframefx.openapi.invoker")
-    configOptions.set(
-        mapOf(
-            "dateLibrary" to "java8", "library" to "jvm-ktor"
-        )
-    )
-}
-
-// Register generated OpenAPI sources using Variant API
-androidComponents {
-    onVariants(selector().all()) { variant ->
-        variant.sources.java?.addGeneratedSourceDirectory(
-            tasks.named<OpenApiGenerateTask>("openApiGenerate")
-        ) { openApiTask ->
-            openApiTask.outputDir.map { file ->
-                file.resolve("src/main/kotlin")
-            }
-        }
-    }
-}
-
 dependencies {
     // ===== MODULE DEPENDENCIES =====
     implementation(project(":core-module"))
@@ -102,13 +73,9 @@ dependencies {
     implementation(project(":module-d"))
     implementation(project(":module-e"))
     implementation(project(":module-f"))
-    implementation(
-        project(
-            ":benchmark"
-        )
-    )
+    implementation(project(":benchmark"))
+    implementation(project(":data:api")) // Add dependency on new OpenAPI module
 
-    // implementation(project(":snapshots")) // Temporarily disabled - Module not found
     // ===== ANDROIDX & COMPOSE =====
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
@@ -203,6 +170,14 @@ dependencies {
         dependsOn("openApiGenerate")
     }
 }
+
+tasks {
+    // Clean up old generated files before regenerating
+    val cleanOpenApi by registering(Delete::class) {
+        delete(layout.buildDirectory.dir("generated/openapi"))
+    }
+}
+
 
 
 

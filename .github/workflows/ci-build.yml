@@ -1,0 +1,13 @@
+# Placeholder: CI build workflow
+# Please update with your actual workflow steps
+name: CI Build
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run build
+        run: echo "Running CI build..."
+
