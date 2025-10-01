@@ -21,6 +21,8 @@ android {
         // Disable lint due to oversized test files causing StackOverflow
         abortOnError = false
         checkReleaseBuilds = false
+        checkTestSources = false
+        disable.add("lint")
     }
     
     externalNativeBuild {

@@ -9,15 +9,29 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="Refactor: Streamline OpenAPI generator configuration&#10;&#10;- Remove redundant `dependsOn` configurations for `openApiGenerate` in the `app` module.&#10;- Update `data/api` build script to use modern source set configuration.&#10;- Correct the OpenAPI specification filename from `my-api-spec.yaml` to `unified-deliverance-api.yml`.&#10;- Set `validateSpec` to `false` and fix `serializationLibrary` value to `kotlinx_serialization`.&#10;- Remove an unnecessary comment from `gradle.properties`.">
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="feat: Enable core library desugaring&#10;&#10;Enables core library desugaring in the `compileOptions` to allow the use of newer Java language features on older Android versions.">
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes3.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes4.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes5.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes5.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes6.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes6.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes7.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes7.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/external_file_lib_dex_archives/debug/desugarDebugFileDependencies/1_jetified-api-82.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/external_file_lib_dex_archives/debug/desugarDebugFileDependencies/1_jetified-api-82.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/processDebugResources/stableIds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/processDebugResources/stableIds.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -649,7 +663,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759295374042</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="feat: Enable core library desugaring&#10;&#10;Enables core library desugaring in the `compileOptions` to allow the use of newer Java language features on older Android versions.">
+      <option name="closed" value="true" />
+      <created>1759323079637</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1759323079637</updated>
+    </task>
+    <task id="LOCAL-00036" summary="feat: Enable core library desugaring&#10;&#10;Enables core library desugaring in the `compileOptions` to allow the use of newer Java language features on older Android versions.">
+      <option name="closed" value="true" />
+      <created>1759323119857</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1759323119857</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -664,7 +694,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update" />
     <MESSAGE value="Add migration state XML files, update SDK path, and include build logs" />
     <MESSAGE value="update dependencies to latest versions" />
     <MESSAGE value="1" />
@@ -689,7 +718,8 @@
     <MESSAGE value="Refactor: Improve build configuration and add developer warnings&#10;&#10;- Add `.gitattributes` to enforce consistent LF line endings.&#10;- Update `README.md` with a warning about editing generated code.&#10;- Refactor `app/build.gradle.kts` to correctly wire the OpenAPI generated source directory.&#10;- Increase Gradle JVM memory arguments from 8192m to 10000m in `app/gradle.properties`." />
     <MESSAGE value="Refactor: Consolidate CI workflows and introduce OpenAPI generation&#10;&#10;This commit streamlines the project's structure by refactoring CI/CD workflows and introducing a formal OpenAPI specification for API client generation.&#10;&#10;- **CI/CD Workflow Consolidation:**&#10;  - Deletes multiple old and redundant GitHub Actions workflow files (`ci-build.yml`, `genesis-ci.yml`, `consciousness-monitoring.yml`, `performance-monitoring.yml`, `TEST2.yml`).&#10;  - Replaces them with new, placeholder workflows in the `.github/workflows/` directory for CI builds, performance, and consciousness monitoring.&#10;  - Simplifies the `dependabot.yml` configuration.&#10;&#10;- **OpenAPI and API Generation:**&#10;  - Introduces a new `data:api` module dedicated to generating an API client from an OpenAPI specification (`unified-deliverance-api.yml`).&#10;  - Adds new OpenAPI specification files (`unified-deliverance-api.yml`, `auraframefx-api-spec.yaml`) to define the API contracts.&#10;  - Removes the old `openApiGenerate` configuration from the `app/build.gradle.kts` file.&#10;  - Adds a dependency from the `app` module to the new `:data:api` module.&#10;&#10;- **Project Documentation &amp; Cleanup:**&#10;  - Adds `ProjectRefactorPlan.md` detailing the strategy for refactoring APIs and unifying the customization engine.&#10;  - Removes the `qodana.yaml` static analysis configuration file.&#10;  - Deletes unused `main.yml` and `dependabot.yml` from the root directory.&#10;&#10;- **Build Configuration:**&#10;  - Updates `settings.gradle.kts` to include the new `:data:api` module.&#10;  - Minor cleanup in `build-logic/build.gradle.kts` and `benchmark/build.gradle.kts`." />
     <MESSAGE value="Refactor: Streamline OpenAPI generator configuration&#10;&#10;- Remove redundant `dependsOn` configurations for `openApiGenerate` in the `app` module.&#10;- Update `data/api` build script to use modern source set configuration.&#10;- Correct the OpenAPI specification filename from `my-api-spec.yaml` to `unified-deliverance-api.yml`.&#10;- Set `validateSpec` to `false` and fix `serializationLibrary` value to `kotlinx_serialization`.&#10;- Remove an unnecessary comment from `gradle.properties`." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor: Streamline OpenAPI generator configuration&#10;&#10;- Remove redundant `dependsOn` configurations for `openApiGenerate` in the `app` module.&#10;- Update `data/api` build script to use modern source set configuration.&#10;- Correct the OpenAPI specification filename from `my-api-spec.yaml` to `unified-deliverance-api.yml`.&#10;- Set `validateSpec` to `false` and fix `serializationLibrary` value to `kotlinx_serialization`.&#10;- Remove an unnecessary comment from `gradle.properties`." />
+    <MESSAGE value="feat: Enable core library desugaring&#10;&#10;Enables core library desugaring in the `compileOptions` to allow the use of newer Java language features on older Android versions." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Enable core library desugaring&#10;&#10;Enables core library desugaring in the `compileOptions` to allow the use of newer Java language features on older Android versions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
