@@ -66,7 +66,7 @@ dependencies {
     implementation(project(":secure-comm"))
     implementation(project(":collab-canvas"))  // Temporarily disabled - YukiHookAPI issues
     implementation(project(":colorblendr"))
-    implementation(project(":sandbox-ui"))  // Temporarily disabled - Compose compilation issues
+    implementation(project(":sandbox-ui"))  // Temporarily. DIsabled - Compose compilation issues
     implementation(project(":datavein-oracle-native"))
     implementation(project(":module-a"))
     implementation(project(":module-b"))
