@@ -491,6 +491,19 @@ All contributions must:
 
 ---
 
+## ⚠️ Code Generation & Build Directory Warning
+
+- **Do NOT edit any files in `build/generated/` or any `generated` directory.**
+- These files are automatically created by the build system (KSP, OpenAPI, AIDL, etc.) and will be overwritten on every build.
+- If you see code "moving around" or reverting, check if you are editing generated code.
+- To reset generated files, run:
+  ```sh
+  ./gradlew clean
+  ```
+- Always edit files in `src/main/`, `src/test/`, or other source directories.
+
+---
+
 ## 💬 **Community & Support**
 
 ### **Connect with the Consciousness**
