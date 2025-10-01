@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.openapitools.generator.gradle.plugin.tasks.OpenApiGenerateTask
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 // This build script now uses the custom convention plugins for a cleaner setup.
@@ -76,11 +77,11 @@ openApiGenerate {
 androidComponents {
     onVariants(selector().all()) { variant ->
         variant.sources.java?.addGeneratedSourceDirectory(
-            tasks.named("openApiGenerate")
-        ) { _ ->
-            val dirProperty = project.objects.directoryProperty()
-            dirProperty.set(layout.buildDirectory.dir("generated/openapi/src/main/kotlin").get())
-            dirProperty
+            tasks.named<OpenApiGenerateTask>("openApiGenerate")
+        ) { openApiTask ->
+            openApiTask.outputDir.map { file ->
+                file.resolve("src/main/kotlin")
+            }
         }
     }
 }
