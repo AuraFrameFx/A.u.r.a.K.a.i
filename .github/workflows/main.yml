@@ -35,7 +35,7 @@ jobs:
       run: ./gradlew clean assembleDebug --no-daemon --stacktrace
 
     - name: Upload all APKs from all modules
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: all-debug-apks
         path: '**/build/outputs/apk/debug/*.apk'
