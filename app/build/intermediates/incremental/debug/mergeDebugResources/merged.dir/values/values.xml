@@ -2900,6 +2900,18 @@
     <string name="menu_aurashield">AuraShield</string>
     <string name="menu_conference_room">Conference Room</string>
     <string name="menu_ui_engine">UI ENGINE</string>
+    <string name="module_a_debug_name">Module A</string>
+    <string name="module_a_main_name">Module A</string>
+    <string name="module_b_debug_name">Module B</string>
+    <string name="module_b_main_name">Module B</string>
+    <string name="module_c_debug_name">Module C</string>
+    <string name="module_c_main_name">Module C</string>
+    <string name="module_d_debug_name">Module D</string>
+    <string name="module_d_main_name">Module D</string>
+    <string name="module_e_debug_name">Module E</string>
+    <string name="module_e_main_name">Module E</string>
+    <string name="module_f_debug_name">Module F</string>
+    <string name="module_f_main_name">Module F</string>
     <string name="module_package_name">Module package name</string>
     <string description="Content description for new notification (no number count) [CHAR_LIMIT=NONE]" name="mtrl_badge_numberless_content_description">New notification</string>
     <string description="An announcement for the collapsed menu state of the trailing button in split button [CHAR LIMIT=NONE]" name="mtrl_button_collapsed_content_description">Collapsed</string>
@@ -3011,6 +3023,8 @@
     <string name="recording">Recording</string>
     <string name="refresh_status">Refresh Status</string>
     <string name="reset">Reset</string>
+    <string name="romtools_debug_name">Romtools</string>
+    <string name="romtools_main_name">Romtools</string>
     <string name="sandbox_ui_debug_name">Sandbox Ui</string>
     <string name="sandbox_ui_main_name">Sandbox Ui</string>
     <string name="search_menu_title">Search</string>

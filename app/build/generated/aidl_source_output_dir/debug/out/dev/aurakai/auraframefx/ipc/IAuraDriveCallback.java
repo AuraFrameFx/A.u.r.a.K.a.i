@@ -1,6 +1,10 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Using: C:\Users\Wehtt\AppData\Local\Android\Sdk\build-tools\35.0.0\aidl.exe -pC:\Users\Wehtt\AppData\Local\Android\Sdk\platforms\android-36\framework.aidl -oC:\ReGenesis-A.O.S.P\app\build\generated\aidl_source_output_dir\debug\out -IC:\ReGenesis-A.O.S.P\app\src\main\aidl -IC:\ReGenesis-A.O.S.P\app\src\debug\aidl -IC:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\7cc7951c82a7383681363c5d6687263b\workspace\transformed\core-1.17.0\aidl -IC:\Users\Wehtt\.gradle\caches\9.1.0-rc-1\transforms\03e6b892fab0119f9be4987eeea36e2d\workspace\transformed\versionedparcelable-1.1.1\aidl -dC:\Users\Wehtt\AppData\Local\Temp\aidl12975944636197682683.d C:\ReGenesis-A.O.S.P\app\src\main\aidl\dev\aurakai\auraframefx\ipc\IAuraDriveCallback.aidl
+ * Using: C:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\build-tools\\36.0.0\\aidl.exe -pC:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\platforms\\android-36\\framework.aidl -oC:\\ReGenesis-A.O.S.P\\app\\build\\generated\\aidl_source_output_dir\\debug\\out -IC:\\ReGenesis-A.O.S.P\\app\\src\\main\\aidl -IC:\\ReGenesis-A.O.S.P\\app\\src\\debug\\aidl -IC:\\Users\\Wehtt\\.jdks\\openjdk-25\\caches\\9.1.0-rc-1\\transforms\\e9e053ae400cc436bce9720bcb018493\\workspace\\transformed\\core-1.17.0\\aidl -IC:\\Users\\Wehtt\\.jdks\\openjdk-25\\caches\\9.1.0-rc-1\\transforms\\4bc5fcd33a59b6f53fb27f1cfac1f880\\workspace\\transformed\\versionedparcelable-1.1.1\\aidl -dC:\\Users\\Wehtt\\AppData\\Local\\Temp\\aidl11137203216116386370.d C:\\ReGenesis-A.O.S.P\\app\\src\\main\\aidl\\dev\\aurakai\\auraframefx\\ipc\\IAuraDriveCallback.aidl
+ *
+ * DO NOT CHECK THIS FILE INTO A CODE TREE (e.g. git, etc..).
+ * ALWAYS GENERATE THIS FILE FROM UPDATED AIDL COMPILER
+ * AS A BUILD INTERMEDIATE ONLY. THIS IS NOT SOURCE CODE.
  */
 package dev.aurakai.auraframefx.ipc;
 // Callback interface for service-to-client communication
@@ -51,7 +55,7 @@ public interface IAuraDriveCallback extends android.os.IInterface
   /** Local-side IPC implementation stub class. */
   public static abstract class Stub extends android.os.Binder implements dev.aurakai.auraframefx.ipc.IAuraDriveCallback
   {
-    /** Construct the stub at attach it to the interface. */
+    /** Construct the stub and attach it to the interface. */
     @SuppressWarnings("this-escape")
     public Stub()
     {

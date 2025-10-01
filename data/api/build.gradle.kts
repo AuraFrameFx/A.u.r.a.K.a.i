@@ -10,7 +10,8 @@ plugins {
 
 openApiGenerate {
     generatorName = "kotlin"
-    inputSpec = "$rootDir/data/api/api/my-api-spec.yaml"
+    inputSpec = file("$rootDir/data/api/api/unified-deliverance-api.yml").toURI().toString()
+    validateSpec = false
 
     // Modern way to reference the build directory, avoiding deprecation warnings.
     outputDir = layout.buildDirectory.dir("generated/openapi").get().asFile.path
@@ -19,14 +20,18 @@ openApiGenerate {
     modelPackage = "dev.aurakai.auraframefx.model"
     configOptions = mapOf(
         "library" to "jvm-ktor",
-        "serializationLibrary" to "kotlinx-serialization"
+        "serializationLibrary" to "kotlinx_serialization"
     )
 }
 
 // Add the generated sources to the project's main source set.
 // This allows your IDE and the compiler to find the generated code.
-sourceSets.main {
-    java.srcDir(layout.buildDirectory.dir("generated/openapi/src/main/kotlin"))
+sourceSets {
+    named("main") {
+        java {
+            srcDir(layout.buildDirectory.dir("generated/openapi/src/main/kotlin"))
+        }
+    }
 }
 
 // Ensure the openApiGenerate task runs before any Kotlin compilation.

@@ -154,21 +154,6 @@ dependencies {
 
     // --- DEBUGGING ---
     debugImplementation(libs.leakcanary.android)
-
-// Ensure code generation runs before any Kotlin compilation
-    tasks.withType<KotlinCompile>().configureEach {
-        dependsOn("openApiGenerate")
-    }
-
-// Ensure KSP also depends on OpenAPI generation
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-        dependsOn("openApiGenerate")
-    }
-
-// Fix KSP task dependency
-    tasks.matching { it.name.startsWith("ksp") }.configureEach {
-        dependsOn("openApiGenerate")
-    }
 }
 
 tasks {
