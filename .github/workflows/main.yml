@@ -3,12 +3,12 @@ name: Build APK
 on:
   push:
     branches:
-      - main
-      - master
+      - OVERDRIVE
+      - OVERDRIVE
   pull_request:
     branches:
-      - main
-      - master
+      - OVERDRIVE
+      - OVERDRIVE
   workflow_dispatch:
 
 jobs:
