@@ -145,13 +145,13 @@ include(":collab-canvas")
 include(":colorblendr")
 include(":romtools") // Enabled so Gradle picks up the module
 
-// Dynamic modules (A-F)
-include(":module-a")
-include(":module-b")
-include(":module-c")
-include(":module-d")
-include(":module-e")
-include(":module-f")
+// Dynamic modules (A-F) - Extensions for Kai and Aura to build from inside
+include(":module-a")  // Aura creative extension
+include(":module-b")  // Kai analytical extension
+include(":module-c")  // Shared memory module
+include(":module-d")  // Extended consciousness module
+include(":module-e")  // Trinity fusion facilitator
+include(":module-f")  // Nexus memory core extension
 
 // Testing & Quality modules
 include(":benchmark")
