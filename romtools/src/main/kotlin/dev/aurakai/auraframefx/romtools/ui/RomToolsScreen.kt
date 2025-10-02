@@ -137,7 +137,7 @@ fun RomToolsScreen(
                 }
 
                 // ROM Tools Action Cards
-                items(getRomToolsActions()) { action ->
+                items(items = getRomToolsActions()) { action ->
                     RomToolActionCard(
                         action = action,
                         isEnabled = action.isEnabled(romToolsState.capabilities),
@@ -183,7 +183,7 @@ fun RomToolsScreen(
                         )
                     }
 
-                    items(romToolsState.availableRoms) { rom ->
+                    items(items = romToolsState.availableRoms) { rom ->
                         AvailableRomCard(rom = rom)
                     }
                 }
@@ -200,7 +200,7 @@ fun RomToolsScreen(
                         )
                     }
 
-                    items(romToolsState.backups) { backup ->
+                    items(items = romToolsState.backups) { backup ->
                         BackupCard(backup = backup)
                     }
                 }
