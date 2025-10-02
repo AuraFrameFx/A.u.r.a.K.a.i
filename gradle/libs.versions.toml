@@ -57,7 +57,7 @@ xz = "1.10"
 slf4j = "2.0.17"
 
 # Unit Testing
-junitJupiter = "5.13.4"
+junitJupiter = "6.0.0"
 mockk = "1.14.5"
 
 # Android Testing
