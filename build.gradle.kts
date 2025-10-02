@@ -15,6 +15,11 @@ plugins {
     kotlin("jvm") version "2.2.20"
 }
 
+// Helper extension function for JSON generation - fixing "Unexpected symbol" errors
+fun Collection<String>.toJsonArray(): String {
+    return this.joinToString(prefix = "[", postfix = "]") { "\"$it\"" }
+}
+
 // Find version catalog
 val versionCatalog = extensions
     .findByType<VersionCatalogsExtension>()
