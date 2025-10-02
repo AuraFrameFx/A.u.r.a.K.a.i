@@ -2725,16 +2725,26 @@ components:
       type: object
       additionalProperties: false
       properties:
-        name: { type: string, minLength: 3, maxLength: 50 }
-        description: { type: string, maxLength: 500 }
+        name:
+          type: string
+          minLength: 3
+          maxLength: 50
+        description:
+          type: string
+          maxLength: 500
         category:
           type: string
           enum: [modern, retro, minimal, gaming, professional, cyberpunk]
-        primaryColor:   { $ref: '#/components/schemas/HexColor' }
-        secondaryColor: { $ref: '#/components/schemas/HexColor' }
-        accentColor:    { $ref: '#/components/schemas/HexColor' }
-        backgroundColor:{ $ref: '#/components/schemas/HexColor' }
-        textColor:      { $ref: '#/components/schemas/HexColor' }
+        primaryColor:
+          $ref: '#/components/schemas/HexColor'
+        secondaryColor:
+          $ref: '#/components/schemas/HexColor'
+        accentColor:
+          $ref: '#/components/schemas/HexColor'
+        backgroundColor:
+          $ref: '#/components/schemas/HexColor'
+        textColor:
+          $ref: '#/components/schemas/HexColor'
         tags:
           type: array
           items: { type: string }

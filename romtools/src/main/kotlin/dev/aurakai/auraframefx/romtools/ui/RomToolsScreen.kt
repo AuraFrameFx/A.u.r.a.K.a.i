@@ -137,7 +137,9 @@ fun RomToolsScreen(
                 }
 
                 // ROM Tools Action Cards
-                items(items = getRomToolsActions()) { action ->
+                val actionsList = getRomToolsActions()
+                items(actionsList.size) { index ->
+                    val action = actionsList[index]
                     RomToolActionCard(
                         action = action,
                         isEnabled = action.isEnabled(romToolsState.capabilities),
