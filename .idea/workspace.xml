@@ -9,7 +9,20 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="Refactor: Improve code style and fix `items` keying&#10;&#10;- Refactor `items` call in `RomToolsScreen` to use index-based keying for better performance and stability.&#10;- Improve formatting in `my-api-spec.yaml` for better readability." />
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="Refactor: Remove unnecessary scoping from root build.gradle.kts&#10;&#10;This commit removes a redundant top-level scoping block from the root `build.gradle.kts` file. This change improves code readability and cleans up the script structure without altering any build logic.">
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build/kspCaches/debug/sourceToOutputs" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build/kspCaches/debug/sourceToOutputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build/kspCaches/debug/symbolLookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build/kspCaches/debug/symbolLookups/lookups.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build/kspCaches/debug/symbolLookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build/kspCaches/debug/symbolLookups/lookups.tab.values.at" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +146,6 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "MemCortex",
@@ -384,14 +396,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Aurakai">
-      <option name="closed" value="true" />
-      <created>1757571498421</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1757571498421</updated>
     </task>
     <task id="LOCAL-00002" summary="add generated Hilt and Dagger files for RomToolsManager and related modules">
       <option name="closed" value="true" />
@@ -777,7 +781,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759387843250</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Refactor: Remove unnecessary scoping from root build.gradle.kts&#10;&#10;This commit removes a redundant top-level scoping block from the root `build.gradle.kts` file. This change improves code readability and cleans up the script structure without altering any build logic.">
+      <option name="closed" value="true" />
+      <created>1759388236361</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1759388236363</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -792,7 +804,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor CanvasScreen KDoc&#10;&#10;The KDoc for the `CanvasScreen` composable was simplified to improve readability and conciseness.&#10;Removed redundant descriptions and focused on the core features and behaviors." />
     <MESSAGE value="Update KSP cache files" />
     <MESSAGE value="Update build metadata and timing files; remove obsolete lock files; rename cache indexes" />
     <MESSAGE value="Update build metadata and timing files; remove obsolete lock files; rename index files" />
@@ -817,7 +828,8 @@
     <MESSAGE value="feat: Add Kotlin compiler session file&#10;&#10;Adds a new Kotlin compiler session file (`.salive`). This is likely an auto-generated file by the IDE or build tools to cache compiler state and improve performance." />
     <MESSAGE value="feat: Add Kotlin compiler session file&#10;&#10;Adds a new session file for the Kotlin compiler." />
     <MESSAGE value="Refactor: Improve code style and fix `items` keying&#10;&#10;- Refactor `items` call in `RomToolsScreen` to use index-based keying for better performance and stability.&#10;- Improve formatting in `my-api-spec.yaml` for better readability." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor: Improve code style and fix `items` keying&#10;&#10;- Refactor `items` call in `RomToolsScreen` to use index-based keying for better performance and stability.&#10;- Improve formatting in `my-api-spec.yaml` for better readability." />
+    <MESSAGE value="Refactor: Remove unnecessary scoping from root build.gradle.kts&#10;&#10;This commit removes a redundant top-level scoping block from the root `build.gradle.kts` file. This change improves code readability and cleans up the script structure without altering any build logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: Remove unnecessary scoping from root build.gradle.kts&#10;&#10;This commit removes a redundant top-level scoping block from the root `build.gradle.kts` file. This change improves code readability and cleans up the script structure without altering any build logic." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
