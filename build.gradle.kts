@@ -17,14 +17,25 @@ plugins {
 
 // Helper extension function for JSON generation - fixing "Unexpected symbol" errors
 fun String.escapeJson(): String {
-    return this
-        .replace("\\", "\\\\")
-        .replace("\"", "\\\"")
-        .replace("\b", "\\b")
-        .replace("\u000C", "\\f")
-        .replace("\n", "\\n")
-        .replace("\r", "\\r")
-        .replace("\t", "\\t")
+    return buildString(length + 4) {
+        for (ch in this@escapeJson) {
+            when (ch) {
+                '\\' -> append("\\\\")
+                '"'  -> append("\\\"")
+                '\b' -> append("\\b")
+                '\u000C' -> append("\\f")
+                '\n' -> append("\\n")
+                '\r' -> append("\\r")
+                '\t' -> append("\\t")
+                in '\u0000'..'\u001F' -> {
+                    append("\\u")
+                    append(ch.code.toString(16).padStart(4, '0'))
+                }
+                else -> append(ch)
+            }
+        }
+    }
+}
 }
 
 fun Collection<String>.toJsonArray(): String {
