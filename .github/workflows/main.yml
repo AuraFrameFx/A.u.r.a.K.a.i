@@ -1,0 +1,41 @@
+name: Android Build (Azul Zulu JDK 24)
+
+on:
+  push:
+    branches: [ "OVERDRIVE" ]
+  pull_request:
+    branches: [ "OVERDRIVE" ]
+
+permissions:
+  contents: read
+  actions: read
+  checks: write
+  packages: read
+  pull-requests: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Azul Zulu JDK 24
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '24'
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x ./gradlew
+
+    - name: Clean and build all modules (assembleDebug)
+      run: ./gradlew clean assembleDebug --no-daemon --stacktrace
+
+    - name: Upload all APKs from all modules
+      uses: actions/upload-artifact@v4
+      with:
+        name: all-debug-apks
+        path: '**/build/outputs/apk/debug/*.apk'

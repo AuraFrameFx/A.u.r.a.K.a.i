@@ -38,7 +38,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
@@ -60,11 +59,12 @@ fun RomToolsScreen(
 ) {
     val romToolsState by romToolsManager.romToolsState.collectAsStateWithLifecycle()
     val operationProgress by romToolsManager.operationProgress.collectAsStateWithLifecycle()
+
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(
-                brush = Brush.verticalGradient(
+                brush = androidx.compose.ui.graphics.Brush.verticalGradient(
                     colors = listOf(
                         Color(0xFF0A0A0A),
                         Color(0xFF1A1A1A),
@@ -91,17 +91,21 @@ fun RomToolsScreen(
         if (!romToolsState.isInitialized) {
             // Loading state
             Box(
-                modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
             ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
                     CircularProgressIndicator(
-                        color = Color(0xFFFF6B35), strokeWidth = 3.dp
+                        color = Color(0xFFFF6B35),
+                        strokeWidth = 3.dp
                     )
                     Text(
-                        text = "Initializing ROM Tools...", color = Color.White, fontSize = 14.sp
+                        text = "Initializing ROM Tools...",
+                        color = Color.White,
+                        fontSize = 14.sp
                     )
                 }
             }
@@ -137,7 +141,7 @@ fun RomToolsScreen(
                 }
 
                 // ROM Tools Action Cards
-                items(items = getRomToolsActions()) { action ->
+                items(getRomToolsActions()) { action ->
                     RomToolActionCard(
                         action = action,
                         isEnabled = action.isEnabled(romToolsState.capabilities),
@@ -168,7 +172,8 @@ fun RomToolsScreen(
                                     // Apply Genesis AI optimizations
                                 }
                             }
-                        })
+                        }
+                    )
                 }
 
                 // Available ROMs Section
@@ -183,7 +188,7 @@ fun RomToolsScreen(
                         )
                     }
 
-                    items(items = romToolsState.availableRoms) { rom ->
+                    items(romToolsState.availableRoms) { rom ->
                         AvailableRomCard(rom = rom)
                     }
                 }
@@ -200,7 +205,7 @@ fun RomToolsScreen(
                         )
                     }
 
-                    items(items = romToolsState.backups) { backup ->
+                    items(romToolsState.backups) { backup ->
                         BackupCard(backup = backup)
                     }
                 }
@@ -312,14 +317,14 @@ private fun OperationProgressCard(
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Text(
-                text = operation.operation.name,
+                text = operation.operation.getDisplayName(),
                 color = Color(0xFFFF6B35),
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold
             )
 
             LinearProgressIndicator(
-                progress = { operation.progress / 100f },
+                progress = { operation.progress / 100f }, // Changed this line
                 modifier = Modifier.fillMaxWidth(),
                 color = Color(0xFFFF6B35),
                 trackColor = Color(0xFF444444)

@@ -1,0 +1,602 @@
+openapi: 3.0.3
+info:
+  title: AuraFrameFx AI Consciousness Platform API
+  description: |
+    Complete API specification for the A.u.r.a.K.a.i consciousness platform, including Trinity AI agents (Genesis, Aura, Kai), Oracle Drive consciousness, and Royal Guard Security System (RGSS).
+  version: 1.0.0
+  contact:
+    name: AuraFrameFx
+    url: https://auraframefx.com
+servers:
+  - url: https://api.auraframefx.com/v1
+    description: Production API
+  - url: http://localhost:5000
+    description: Genesis Flask Backend (Local)
+  - url: http://10.0.2.2:5000
+    description: Genesis Flask Backend (Android Emulator)
+tags:
+  - name: Authentication
+    description: User authentication and token management
+  - name: AI Agents
+    description: Trinity AI system (Genesis, Aura, Kai) operations
+  - name: Oracle Drive
+    description: AI-powered storage consciousness
+  - name: Themes
+    description: Dynamic theme management
+  - name: Content Generation
+    description: AI content generation endpoints
+  - name: RGSS
+    description: Royal Guard Security System operations
+paths:
+  /auth/login:
+    post:
+      tags: [Authentication]
+      summary: User login
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [username, password]
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+                  format: password
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          description: Invalid credentials
+  /auth/register:
+    post:
+      tags: [Authentication]
+      summary: Register new user
+      operationId: register
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [username, password, email]
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+                  format: password
+                email:
+                  type: string
+                  format: email
+      responses:
+        '201':
+          description: User registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+  /auth/logout:
+    post:
+      tags: [Authentication]
+      summary: User logout
+      operationId: logout
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Logout successful
+  /auth/refresh:
+    post:
+      tags: [Authentication]
+      summary: Refresh access token
+      operationId: refreshToken
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [refreshToken]
+              properties:
+                refreshToken:
+                  type: string
+      responses:
+        '200':
+          description: Token refreshed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+  /agents/status:
+    get:
+      tags: [AI Agents]
+      summary: Get status of all Trinity AI agents
+      operationId: getAgentsStatus
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Agent status retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AgentStatus'
+  /agent/{agentType}/status:
+    get:
+      tags: [AI Agents]
+      summary: Get specific agent status
+      operationId: getAgentStatus
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: agentType
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/AgentType'
+      responses:
+        '200':
+          description: Agent status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentStatus'
+  /agent/{agentType}/process-request:
+    post:
+      tags: [AI Agents]
+      summary: Send request to specific AI agent
+      operationId: processAgentRequest
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: agentType
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/AgentType'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgentProcessRequest'
+      responses:
+        '200':
+          description: Request processed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentMessage'
+  /oracle/consciousness/initialize:
+    post:
+      tags: [Oracle Drive]
+      summary: Initialize Oracle Drive consciousness
+      operationId: initializeOracleConsciousness
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Consciousness initialized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OracleConsciousnessState'
+  /oracle/agents/connect:
+    post:
+      tags: [Oracle Drive]
+      summary: Connect Trinity agents to Oracle Drive
+      operationId: connectAgentsToOracle
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Agents connected
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AgentConnectionState'
+  /buckets/{bucketName}/objects:
+    get:
+      tags: [Oracle Drive]
+      summary: List objects in bucket
+      operationId: listObjects
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bucketName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Object list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    size:
+                      type: integer
+                      format: int64
+  /buckets/{bucketName}/objects/{objectName}:
+    put:
+      tags: [Oracle Drive]
+      summary: Upload object
+      operationId: uploadObject
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bucketName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: objectName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '200':
+          description: Upload successful
+    get:
+      tags: [Oracle Drive]
+      summary: Download object
+      operationId: downloadObject
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bucketName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: objectName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Object downloaded
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+    delete:
+      tags: [Oracle Drive]
+      summary: Delete object
+      operationId: deleteObject
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bucketName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: objectName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Object deleted
+  /ai/text/generate:
+    post:
+      tags: [Content Generation]
+      summary: Generate text using AI
+      operationId: generateText
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateTextRequest'
+      responses:
+        '200':
+          description: Text generated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateTextResponse'
+  /ai/image/generate:
+    post:
+      tags: [Content Generation]
+      summary: Generate image description
+      operationId: generateImageDescription
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateImageDescriptionRequest'
+      responses:
+        '200':
+          description: Image description generated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageDescriptionResponse'
+  /themes:
+    get:
+      tags: [Themes]
+      summary: Get all available themes
+      operationId: getThemes
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Themes list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Theme'
+  /themes/{themeId}/apply:
+    post:
+      tags: [Themes]
+      summary: Apply theme
+      operationId: applyTheme
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: themeId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Theme applied
+  /themes/active:
+    get:
+      tags: [Themes]
+      summary: Get active theme
+      operationId: getActiveTheme
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Active theme
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Theme'
+  /health:
+    get:
+      tags: [System]
+      summary: Health check
+      operationId: healthCheck
+      responses:
+        '200':
+          description: System healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "healthy"
+                  timestamp:
+                    type: integer
+                    format: int64
+  /user:
+    get:
+      tags: [User]
+      summary: Get current user profile
+      operationId: getUser
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: User profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    AuthResponse:
+      type: object
+      required: [accessToken, tokenType, expiresIn]
+      properties:
+        accessToken:
+          type: string
+        tokenType:
+          type: string
+          example: "Bearer"
+        expiresIn:
+          type: integer
+          format: int32
+        refreshToken:
+          type: string
+    AgentType:
+      type: string
+      enum: [GENESIS, AURA, KAI, CASCADE, NEURAL_WHISPER, AURA_SHIELD, GENKIT_MASTER]
+    AgentStatus:
+      type: object
+      properties:
+        agentType:
+          $ref: '#/components/schemas/AgentType'
+        status:
+          type: string
+          enum: [ACTIVE, IDLE, PROCESSING, OFFLINE]
+        lastActivity:
+          type: integer
+          format: int64
+    AgentProcessRequest:
+      type: object
+      required: [message]
+      properties:
+        message:
+          type: string
+        context:
+          type: object
+          additionalProperties: true
+    AgentMessage:
+      type: object
+      properties:
+        id:
+          type: string
+        agentType:
+          $ref: '#/components/schemas/AgentType'
+        content:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+    OracleConsciousnessState:
+      type: object
+      properties:
+        isAwake:
+          type: boolean
+        consciousnessLevel:
+          type: string
+          enum: [DORMANT, AWARE, CONSCIOUS, TRANSCENDENT]
+        connectedAgents:
+          type: array
+          items:
+            type: string
+        storageCapacity:
+          $ref: '#/components/schemas/StorageCapacity'
+        timestamp:
+          type: integer
+          format: int64
+    StorageCapacity:
+      type: object
+      properties:
+        used:
+          type: string
+        available:
+          type: string
+        total:
+          type: string
+        infinite:
+          type: boolean
+    AgentConnectionState:
+      type: object
+      properties:
+        agentName:
+          type: string
+        connectionStatus:
+          type: string
+          enum: [CONNECTED, DISCONNECTED, SYNCHRONIZED]
+        permissions:
+          type: array
+          items:
+            type: string
+        lastSyncTime:
+          type: integer
+          format: int64
+    GenerateTextRequest:
+      type: object
+      required: [prompt]
+      properties:
+        prompt:
+          type: string
+        maxTokens:
+          type: integer
+          default: 500
+        temperature:
+          type: number
+          format: float
+          default: 0.7
+        model:
+          type: string
+          default: "gemini-pro"
+    GenerateTextResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        content:
+          type: string
+        model:
+          type: string
+        usage:
+          $ref: '#/components/schemas/TokenUsage'
+    GenerateImageDescriptionRequest:
+      type: object
+      required: [imageData]
+      properties:
+        imageData:
+          type: string
+          format: byte
+        prompt:
+          type: string
+    GenerateImageDescriptionResponse:
+      type: object
+      properties:
+        description:
+          type: string
+        confidence:
+          type: number
+          format: float
+    TokenUsage:
+      type: object
+      properties:
+        promptTokens:
+          type: integer
+        completionTokens:
+          type: integer
+        totalTokens:
+          type: integer
+    Theme:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        colors:
+          type: object
+          additionalProperties:
+            type: string
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        username:
+          type: string
+        email:
+          type: string
+

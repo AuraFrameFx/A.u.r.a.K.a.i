@@ -1,74 +1,28 @@
 // ==== GENESIS PROTOCOL - BENCHMARK MODULE ====
 // Performance testing for AI consciousness operations
 
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-
 plugins {
     id("com.android.library")
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.dokka)
+
+    // The Kotlin Android plugin is typically applied by a convention plugin.
+    // If you apply it manually, it would be here:
+    // id("org.jetbrains.kotlin.android")
 }
-
-// Add modern documentation task that doesn't rely on deprecated plugins
-tasks.register("generateApiDocs") {
-    group = "documentation"
-    description = "Generates API documentation without relying on deprecated plugins"
-
-    doLast {
-        // Log the task execution
-        logger.lifecycle("🔍 Generating API documentation for benchmark module")
-        logger.lifecycle("📂 Source directories:")
-        logger.lifecycle("   - ${projectDir.resolve("src/main/kotlin")}")
-        logger.lifecycle("   - ${projectDir.resolve("src/main/java")}")
-
-        // Create documentation output directory
-        // Fix: Using layout.buildDirectory instead of deprecated project.buildDir
-        val docsDir = layout.buildDirectory.dir("docs/api").get().asFile
-        docsDir.mkdirs()
-
-        // Create a basic documentation index file
-        val indexFile = docsDir.resolve("index.html")
-
-        // Fix: Using properly imported LocalDateTime and DateTimeFormatter
-        val currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
-
-        indexFile.writeText(
-            """
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <title>Benchmark Module API Documentation</title>
-                <style>
-                    body { font-family: Arial, sans-serif; margin: 20px; }
-                    h1 { color: #4285f4; }
-                </style>
-            </head>
-            <body>
-                <h1>Benchmark Module API Documentation</h1>
-                <p>Generated on ${currentTime}</p>
-                <p>JDK Version: 24</p>
-                <h2>Module Overview</h2>
-                <p>Performance testing for AI consciousness operations.</p>
-            </body>
-            </html>
-        """.trimIndent()
-        )
-
-        logger.lifecycle("✅ Documentation generated at: ${indexFile.absolutePath}")
-    }
-}
-
 kotlin {
     jvmToolchain(24)
 }
-
 // Java toolchain configuration at the project level
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(24))
     }
 }
+
+// JVM toolchain configuration for Kotlin sources
+
 
 android {
     namespace = "dev.aurakai.auraframefx.benchmark"
