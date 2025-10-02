@@ -111,7 +111,7 @@ private fun LoadingScreen() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-                    CircularProgressIndicator(
+            CircularProgressIndicator(
                 color = Color(0xFFFF6B35),
                 strokeWidth = 3.dp
             )
@@ -166,31 +166,6 @@ private fun MainContent(
                 isEnabled = action.isEnabled(romToolsState.capabilities),
                 onClick = {
                     // Handle action clicks - implementation remains unchanged
-                    when (action.type) {
-                        RomActionType.FLASH_ROM -> {
-                            // Open ROM selection dialog
-                        }
-
-                        RomActionType.CREATE_BACKUP -> {
-                            // Start backup process
-                        }
-
-                        RomActionType.RESTORE_BACKUP -> {
-                            // Open backup selection
-                        }
-
-                        RomActionType.UNLOCK_BOOTLOADER -> {
-                            // Unlock bootloader
-                        }
-
-                        RomActionType.INSTALL_RECOVERY -> {
-                            // Install custom recovery
-                        }
-
-                        RomActionType.GENESIS_OPTIMIZATIONS -> {
-                            // Apply Genesis AI optimizations
-                        }
-                    }
                 }
             )
         }
@@ -202,17 +177,34 @@ private fun MainContent(
                     text = "Available ROMs",
                     color = Color(0xFFFF6B35),
                     fontSize = 18.sp,
-                            fontWeight = FontWeight.Bold,
-                            modifier = Modifier.padding(vertical = 8.dp)
-                        )
-                    }
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(vertical = 8.dp)
+                )
+            }
 
-                    val backups = romToolsState.backups
-                    items(backups.size) { index ->
-                        val backup = backups[index]
-                        BackupCard(backup = backup)
-                    }
-                }
+            val availableRoms = romToolsState.availableRoms
+            items(availableRoms.size) { index ->
+                val rom = availableRoms[index]
+                AvailableRomCard(rom = rom)
+            }
+        }
+
+        // Backups Section
+        if (romToolsState.backups.isNotEmpty()) {
+            item {
+                Text(
+                    text = "Backups",
+                    color = Color(0xFFFF6B35),
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(vertical = 8.dp)
+                )
+            }
+
+            val backups = romToolsState.backups
+            items(backups.size) { index ->
+                val backup = backups[index]
+                BackupCard(backup = backup)
             }
         }
     }
@@ -496,9 +488,67 @@ enum class RomActionType {
 @Composable
 private fun AvailableRomCard(rom: dev.aurakai.auraframefx.romtools.AvailableRom) {
     // Implementation for available ROM card
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = Color(0xFF1E1E1E)
+        ),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Text(
+                text = rom.name,
+                color = Color.White,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Medium
+            )
+            Text(
+                text = rom.description,
+                color = Color.White.copy(alpha = 0.7f),
+                fontSize = 12.sp
+            )
+            Text(
+                text = "Version: ${rom.version}",
+                color = Color.White.copy(alpha = 0.7f),
+                fontSize = 12.sp
+            )
+        }
+    }
 }
 
 @Composable
 private fun BackupCard(backup: dev.aurakai.auraframefx.romtools.BackupInfo) {
     // Implementation for backup card
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = Color(0xFF1E1E1E)
+        ),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Text(
+                text = backup.name,
+                color = Color.White,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Medium
+            )
+            Text(
+                text = "Date: ${backup.creationDate}",
+                color = Color.White.copy(alpha = 0.7f),
+                fontSize = 12.sp
+            )
+            Text(
+                text = "Size: ${backup.sizeInMb} MB",
+                color = Color.White.copy(alpha = 0.7f),
+                fontSize = 12.sp
+            )
+        }
+    }
 }
