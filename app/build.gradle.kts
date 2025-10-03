@@ -9,6 +9,7 @@ plugins {
 
     id("org.openapi.generator") version "7.16.0"
 }
+
 openApiGenerate {
     generatorName.set("kotlin") // or "java", "python", etc.
     inputSpec.set("$rootDir/data/api/api/my-api-spec.yaml")
@@ -73,7 +74,7 @@ dependencies {
     implementation(project(":module-f"))
     implementation(project(":benchmark"))
     implementation(project(":data:api")) // Add dependency on new OpenAPI module
-
+    implementation(libs.androidx.appcompat)
     // ===== ANDROIDX & COMPOSE =====
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
@@ -128,8 +129,8 @@ dependencies {
 
 
     // ===== WORKMANAGER =====
-    implementation("androidx.work:work-runtime-ktx:2.10.5")
-    implementation("androidx.hilt:hilt-work:1.3.0")
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.hilt.work)
 
     // ===== UTILITIES =====
     implementation(libs.timber)
