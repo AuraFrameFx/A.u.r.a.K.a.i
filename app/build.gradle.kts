@@ -9,6 +9,10 @@ plugins {
 
     id("org.openapi.generator") version "7.16.0"
 }
+openApiGenerate {
+    generatorName.set("kotlin") // or "java", "python", etc.
+    inputSpec.set("$rootDir/data/api/api/my-api-spec.yaml")
+}
 
 android {
     namespace = "dev.aurakai.auraframefx"

@@ -47,6 +47,10 @@ dependencies {
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.hilt.android.testing)
 }
+tasks.register<Delete>("clearGeneratedSources") {
+    delete("src/generated", "build/generated") // adjust paths as needed
+}
+
 
 // Spotless and toolchain are applied globally via root build.gradle.kts and convention plugins
 // ProGuard rules for Hilt, Compose, Serialization, and reflection-based libraries should be in proguard-rules.pro

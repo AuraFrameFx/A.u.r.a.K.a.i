@@ -50,10 +50,8 @@ tasks.register("fixOpenApiAnnotations") {
     }
 }
 
-// Make the fixOpenApiAnnotations task run after the openApiGenerate task (if it exists)
-tasks.findByName("openApiGenerate")?.let { openApiTask ->
-    tasks.findByName("fixOpenApiAnnotations")?.dependsOn(openApiTask)
-}
+// Make the openApiGenerate task finalized by fixOpenApiAnnotations
+tasks.findByName("openApiGenerate")?.finalizedBy("fixOpenApiAnnotations")
 
 // Make the compileKotlin task depend on the fixOpenApiAnnotations task
 tasks.findByName("compileKotlin")?.dependsOn("fixOpenApiAnnotations")

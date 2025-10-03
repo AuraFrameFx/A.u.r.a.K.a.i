@@ -425,10 +425,10 @@ paths:
           schema:
             type: string
             enum: [popular, newest, name, rating]
-            default: popular
+            default: "popular"
         - name: includePreviews
           in: query
-          schema: { type: boolean, default: false }
+          schema: { type: boolean, default: "false" }
       responses:
         '200':
           description: Themes retrieved successfully

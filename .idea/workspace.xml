@@ -21,16 +21,22 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Update TopAppBar call signature and add TODO&#10;&#10;This commit refactors the `TopAppBar` call to align with the updated Material 3 composable signature, where the title is now a trailing lambda.&#10;&#10;- Update the `TopAppBar` invocation in `RomToolsScreen`.&#10;- Add an explicit `this.item` qualifier in the `MainContent` LazyColumn.&#10;- Introduce an unused `Box` composable with a `TODO` for future implementation.">
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" afterDir="false" />
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="Refactor: Make fix-annotations.gradle.kts configuration-cache-safe">
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/api/my-api-spec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/api/my-api-spec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/fix-annotations.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/fix-annotations.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +46,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Wehtt\.android\avd\Medium_Phone.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -72,6 +78,34 @@
                 <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
                 <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="aegenesis" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="dokka" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -132,49 +166,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build ReGenesis-A.O.S.P.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:buildDependents].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:compileJava].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:pluginDescriptors].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [assemble].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [cleanGeneratedSources].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [cleanKspCache].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [consciousnessStatus].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [deepClean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [dokkaGenerate].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [openApiGenerate].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [openApiGenerators].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [sourceSets].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [stop].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [tasks].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Ultimus&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ReGenesis-A.O.S.P&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;memory.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "Gradle.Build ReGenesis-A.O.S.P.executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:buildDependents].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:compileJava].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:dependencies].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:pluginDescriptors].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [assemble].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [buildEnvironment].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [build].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [cleanGeneratedSources].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [cleanKspCache].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [clean].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [consciousnessStatus].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [deepClean].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [dependencies].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [dokkaGenerate].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [javaToolchains].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [openApiGenerate].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [openApiGenerators].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [sourceSets].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [stop].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [tasks].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [updateDaemonJvm].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [wrapper].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "git-widget-placeholder": "Ultimus",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
+    "project.structure.last.edited": "Suggestions",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "memory.settings"
   }
-}</component>
+}]]></component>
   <component name="PsdUISettings">
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
@@ -189,7 +228,7 @@
       <command value="gradle stop" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ReGenesis-A.O.S.P [assemble]">
+  <component name="RunManager" selected="Gradle.ReGenesis-A.O.S.P [buildEnvironment]">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AOSPReGenesis.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -262,7 +301,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesis-A.O.S.P [buildEnvironment]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -273,7 +312,33 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="assemble" />
+            <option value="buildEnvironment" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ReGenesis-A.O.S.P [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -314,7 +379,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P [openApiGenerate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesis-A.O.S.P [javaToolchains]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -325,7 +390,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="openApiGenerate" />
+            <option value="javaToolchains" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -340,7 +405,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P [openApiGenerators]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesis-A.O.S.P [updateDaemonJvm]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -351,33 +416,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="openApiGenerators" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ReGenesis-A.O.S.P [tasks]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="tasks" />
+            <option value="updateDaemonJvm" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -394,11 +433,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [assemble]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerate]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerators]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [tasks]" />
+        <item itemvalue="Gradle.ReGenesis-A.O.S.P [buildEnvironment]" />
+        <item itemvalue="Gradle.ReGenesis-A.O.S.P [javaToolchains]" />
+        <item itemvalue="Gradle.ReGenesis-A.O.S.P [dependencies]" />
         <item itemvalue="Gradle.ReGenesis-A.O.S.P [dokkaGenerate]" />
+        <item itemvalue="Gradle.ReGenesis-A.O.S.P [updateDaemonJvm]" />
       </list>
     </recent_temporary>
   </component>
@@ -416,14 +455,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
-    </task>
-    <task id="LOCAL-00015" summary="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup">
-      <option name="closed" value="true" />
-      <created>1757700733624</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1757700733624</updated>
     </task>
     <task id="LOCAL-00016" summary="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup">
       <option name="closed" value="true" />
@@ -809,7 +840,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759530187004</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Refactor: Make fix-annotations.gradle.kts configuration-cache-safe&#10;&#10;Updated the `fix-annotations.gradle.kts` script to be compatible with Gradle's configuration cache. This was achieved by using `project.layout.projectDirectory` to resolve file paths instead of `projectDir`.&#10;&#10;Additionally, string templates in `println` statements were converted to string concatenation.">
+      <option name="closed" value="true" />
+      <created>1759530322412</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1759530322412</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -824,7 +863,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="migrate multidex dependency to version catalog, update build scripts and metadata" />
     <MESSAGE value="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings" />
     <MESSAGE value="refactor native JNI code for consistency, update Gradle and project properties, fix imports and naming in models, add NullPointerExceptionImpl" />
     <MESSAGE value="Migrate to AGP 9.0.0-alpha08 and new Variant API for generated sources&#10;&#10;- Update Android Gradle Plugin to version 9.0.0-alpha08&#10;- Add `android.builtInKotlin=false` and `android.newDsl=false` to `gradle.properties` as required by AGP 9.0.0+&#10;- Remove deprecated `sourceSets` configuration for generated OpenAPI sources&#10;- Register generated OpenAPI sources using the new Android Components Variant API&#10;- This change ensures compatibility with the latest AGP and adopts the recommended approach for managing generated source directories." />
@@ -849,7 +887,8 @@
     <MESSAGE value="feat: Add empty paths object to OpenAPI spec&#10;&#10;Adds an empty `paths: {}` object to the `my-api-spec.yaml` file. This ensures the OpenAPI specification remains valid, preventing potential parsing errors by tools that require the `paths` object to be defined." />
     <MESSAGE value="refactor: Update TopAppBar call signature and add TODO&#10;&#10;This commit refactors the `TopAppBar` call to align with the updated Material 3 composable signature, where the title is now a trailing lambda.&#10;&#10;- Update the `TopAppBar` invocation in `RomToolsScreen`.&#10;- Add an explicit `this.item` qualifier in the `MainContent` LazyColumn.&#10;- Introduce an unused `Box` composable with a `TODO` for future implementation." />
     <MESSAGE value="Refactor: Simplify Gradle build logic and OpenAPI task&#10;&#10;This commit refactors and simplifies the Gradle build configuration and scripts.&#10;&#10;Key changes:&#10;- Simplifies the `build-logic/settings.gradle.kts` file by removing redundant repository and dependency resolution blocks.&#10;- Removes unused Hilt and Kotlin Android plugins from the `app`, `romtools`, and `secure-comm` modules.&#10;- Adds a `compose-compiler` plugin alias to `libs.versions.toml`.&#10;- Significantly simplifies the `fix-annotations.gradle.kts` script, focusing it solely on adding `@OptIn(ExperimentalTime::class)` to generated OpenAPI files. The previous complex logic for fixing imports and types has been removed.&#10;- Updates task dependencies to ensure `fixOpenApiAnnotations` runs after `openApiGenerate` and before `compileKotlin`." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor: Simplify Gradle build logic and OpenAPI task&#10;&#10;This commit refactors and simplifies the Gradle build configuration and scripts.&#10;&#10;Key changes:&#10;- Simplifies the `build-logic/settings.gradle.kts` file by removing redundant repository and dependency resolution blocks.&#10;- Removes unused Hilt and Kotlin Android plugins from the `app`, `romtools`, and `secure-comm` modules.&#10;- Adds a `compose-compiler` plugin alias to `libs.versions.toml`.&#10;- Significantly simplifies the `fix-annotations.gradle.kts` script, focusing it solely on adding `@OptIn(ExperimentalTime::class)` to generated OpenAPI files. The previous complex logic for fixing imports and types has been removed.&#10;- Updates task dependencies to ensure `fixOpenApiAnnotations` runs after `openApiGenerate` and before `compileKotlin`." />
+    <MESSAGE value="Refactor: Make fix-annotations.gradle.kts configuration-cache-safe&#10;&#10;Updated the `fix-annotations.gradle.kts` script to be compatible with Gradle's configuration cache. This was achieved by using `project.layout.projectDirectory` to resolve file paths instead of `projectDir`.&#10;&#10;Additionally, string templates in `println` statements were converted to string concatenation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: Make fix-annotations.gradle.kts configuration-cache-safe&#10;&#10;Updated the `fix-annotations.gradle.kts` script to be compatible with Gradle's configuration cache. This was achieved by using `project.layout.projectDirectory` to resolve file paths instead of `projectDir`.&#10;&#10;Additionally, string templates in `println` statements were converted to string concatenation." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
