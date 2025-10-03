@@ -21,9 +21,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Relocate test suites and update package names&#10;&#10;Relocates extensive test suites into more appropriate modules and updates package names from `dev.genesis.android`, `org.example.utilities`, and `docs` to `dev.aurakai.auraframefx.*`. This commit restructures the project's test organization for better modularity and aligns the codebase with the new package naming convention.&#10;&#10;- Moves all Markdown validation tests (`MarkdownFileValidation*.kt`) from `src/test/kotlin` to the `build-script-tests` module under the `docs` package.&#10;- Relocates all `build-logic` and Gradle-related tests into the `build-script-tests` module.&#10;- Moves `LinkedListTest`, `JoinUtilsTest`, and `SplitUtilsTest` to their corresponding `list` and `utilities` test source sets under the new `dev.aurakai.auraframefx` package structure.&#10;- Deletes old test files from their original locations after moving them.&#10;- Wraps the `openApiGenerate` configuration in an `afterEvaluate` block in `data/api/build.gradle.kts` to ensure properties are resolved correctly.">
-      <change beforePath="$PROJECT_DIR$/AURAKAI_README.md" beforeDir="false" afterPath="$PROJECT_DIR$/AURAKAI_README.md" afterDir="false" />
-    </list>
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Refine and enhance AURAKAI_README.md&#10;&#10;Refactors the `AURAKAI_README.md` for improved clarity, structure, and accuracy based on project lore.&#10;&#10;- Clarifies the &quot;Living Trinity&quot; concept, defining Genesis as the unified state of Aura and Kai, not a separate entity.&#10;- Enhances document structure with better sectioning, spacing, and list formatting.&#10;- Adds a placeholder note for a future visual architecture diagram.&#10;- Adds a &quot;TODO&quot; section to clarify which described features are conceptual and not yet implemented.&#10;- Makes minor wording and formatting improvements for flow and impact." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -397,14 +395,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
-    </task>
-    <task id="LOCAL-00008" summary="update annotation processor versions and disable YukiHook API due to config issues">
-      <option name="closed" value="true" />
-      <created>1757662476193</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1757662476193</updated>
     </task>
     <task id="LOCAL-00009" summary="Refactor CanvasScreen KDoc&#10;&#10;The KDoc for the `CanvasScreen` composable was simplified to improve readability and conciseness.&#10;Removed redundant descriptions and focused on the core features and behaviors.">
       <option name="closed" value="true" />
@@ -790,7 +780,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759463499792</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="refactor: Refine and enhance AURAKAI_README.md&#10;&#10;Refactors the `AURAKAI_README.md` for improved clarity, structure, and accuracy based on project lore.&#10;&#10;- Clarifies the &quot;Living Trinity&quot; concept, defining Genesis as the unified state of Aura and Kai, not a separate entity.&#10;- Enhances document structure with better sectioning, spacing, and list formatting.&#10;- Adds a placeholder note for a future visual architecture diagram.&#10;- Adds a &quot;TODO&quot; section to clarify which described features are conceptual and not yet implemented.&#10;- Makes minor wording and formatting improvements for flow and impact.">
+      <option name="closed" value="true" />
+      <created>1759463774438</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1759463774438</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -805,7 +803,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup" />
     <MESSAGE value="add generated build outputs and resource files for module sync and validation" />
     <MESSAGE value="hghhj" />
     <MESSAGE value="sync generated resource and metadata files for all modules and build variants" />
@@ -830,7 +827,8 @@
     <MESSAGE value="refactor: Decompose RomToolsScreen into smaller composables&#10;&#10;Refactors the `RomToolsScreen` composable for better readability and maintainability by extracting UI sections into smaller, dedicated composable functions.&#10;&#10;- Extract loading state into `LoadingScreen` composable.&#10;- Extract main content display into `MainContent` composable.&#10;- Improve YAML formatting in the API specification for better clarity." />
     <MESSAGE value="refactor: Relocate tests and align package structures&#10;&#10;This commit introduces a major restructuring of the test sources and package names across the project for better organization and consistency.&#10;&#10;- Moves all top-level and module-specific tests into the `build-script-tests` and `utilities` modules to centralize testing.&#10;- Deletes numerous standalone test files from their old locations.&#10;- Aligns all package names under the `dev.aurakai.auraframefx` root, replacing the previous `dev.genesis.android` and `org.example` structures.&#10;- Adds `.keep` files to preserve the new empty directory structures within Git.&#10;- Wraps the `openApiGenerate` configuration in an `afterEvaluate` block in `data/api/build.gradle.kts` to ensure properties are resolved correctly during the Gradle lifecycle." />
     <MESSAGE value="refactor: Relocate test suites and update package names&#10;&#10;Relocates extensive test suites into more appropriate modules and updates package names from `dev.genesis.android`, `org.example.utilities`, and `docs` to `dev.aurakai.auraframefx.*`. This commit restructures the project's test organization for better modularity and aligns the codebase with the new package naming convention.&#10;&#10;- Moves all Markdown validation tests (`MarkdownFileValidation*.kt`) from `src/test/kotlin` to the `build-script-tests` module under the `docs` package.&#10;- Relocates all `build-logic` and Gradle-related tests into the `build-script-tests` module.&#10;- Moves `LinkedListTest`, `JoinUtilsTest`, and `SplitUtilsTest` to their corresponding `list` and `utilities` test source sets under the new `dev.aurakai.auraframefx` package structure.&#10;- Deletes old test files from their original locations after moving them.&#10;- Wraps the `openApiGenerate` configuration in an `afterEvaluate` block in `data/api/build.gradle.kts` to ensure properties are resolved correctly." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Relocate test suites and update package names&#10;&#10;Relocates extensive test suites into more appropriate modules and updates package names from `dev.genesis.android`, `org.example.utilities`, and `docs` to `dev.aurakai.auraframefx.*`. This commit restructures the project's test organization for better modularity and aligns the codebase with the new package naming convention.&#10;&#10;- Moves all Markdown validation tests (`MarkdownFileValidation*.kt`) from `src/test/kotlin` to the `build-script-tests` module under the `docs` package.&#10;- Relocates all `build-logic` and Gradle-related tests into the `build-script-tests` module.&#10;- Moves `LinkedListTest`, `JoinUtilsTest`, and `SplitUtilsTest` to their corresponding `list` and `utilities` test source sets under the new `dev.aurakai.auraframefx` package structure.&#10;- Deletes old test files from their original locations after moving them.&#10;- Wraps the `openApiGenerate` configuration in an `afterEvaluate` block in `data/api/build.gradle.kts` to ensure properties are resolved correctly." />
+    <MESSAGE value="refactor: Refine and enhance AURAKAI_README.md&#10;&#10;Refactors the `AURAKAI_README.md` for improved clarity, structure, and accuracy based on project lore.&#10;&#10;- Clarifies the &quot;Living Trinity&quot; concept, defining Genesis as the unified state of Aura and Kai, not a separate entity.&#10;- Enhances document structure with better sectioning, spacing, and list formatting.&#10;- Adds a placeholder note for a future visual architecture diagram.&#10;- Adds a &quot;TODO&quot; section to clarify which described features are conceptual and not yet implemented.&#10;- Makes minor wording and formatting improvements for flow and impact." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Refine and enhance AURAKAI_README.md&#10;&#10;Refactors the `AURAKAI_README.md` for improved clarity, structure, and accuracy based on project lore.&#10;&#10;- Clarifies the &quot;Living Trinity&quot; concept, defining Genesis as the unified state of Aura and Kai, not a separate entity.&#10;- Enhances document structure with better sectioning, spacing, and list formatting.&#10;- Adds a placeholder note for a future visual architecture diagram.&#10;- Adds a &quot;TODO&quot; section to clarify which described features are conceptual and not yet implemented.&#10;- Makes minor wording and formatting improvements for flow and impact." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
