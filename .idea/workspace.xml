@@ -21,9 +21,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Update TopAppBar call signature and add TODO&#10;&#10;This commit refactors the `TopAppBar` call to align with the updated Material 3 composable signature, where the title is now a trailing lambda.&#10;&#10;- Update the `TopAppBar` invocation in `RomToolsScreen`.&#10;- Add an explicit `this.item` qualifier in the `MainContent` LazyColumn.&#10;- Introduce an unused `Box` composable with a `TODO` for future implementation.">
-      <change beforePath="$PROJECT_DIR$/romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/ui/RomToolsScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/ui/RomToolsScreen.kt" afterDir="false" />
-    </list>
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="feat: Configure OpenAPI client generation&#10;&#10;Adds a complete OpenAPI client generation setup for the `data:api` module. This commit introduces the necessary Gradle scripts and configurations to generate a Kotlin client from the `my-api-spec.yaml` definition.&#10;&#10;- Adds `api.gradle.kts` to orchestrate the OpenAPI generation process.&#10;- Adds `openapi-generator.gradle.kts` to configure the `openApiGenerate` task, setting generator options like using coroutines, Java 8 date library, and Jackson serialization.&#10;- Implements `fix-models.gradle.kts`, a temporary workaround to create missing request model data classes that the generator fails to produce.&#10;- Adds `operationId` to webhook paths in `my-api-spec.yaml` to ensure unique function generation.&#10;- Refactors the YAML structure in the API specification for improved readability.&#10;- Updates the `romtools` module to use the new `org.jetbrains.kotlin.plugin.compose` plugin, removing the obsolete `kotlinCompilerExtensionVersion`." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +147,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "#32 on MemCortex",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "git-widget-placeholder": "MemCortex",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
     "project.structure.last.edited": "Suggestions",
@@ -397,14 +396,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Update build metadata and timing files; rename index files; regenerate configuration and metadata records">
-      <option name="closed" value="true" />
-      <created>1757663201705</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1757663201705</updated>
     </task>
     <task id="LOCAL-00015" summary="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup">
       <option name="closed" value="true" />
@@ -790,7 +781,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759474295626</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Refactor: Clean up RomToolsScreen composable&#10;&#10;This commit refactors the `MainContent` composable within `RomToolsScreen.kt` for improved readability and conciseness.&#10;&#10;- Removed a commented-out and unused `Box` function stub.&#10;- Eliminated redundant comments that merely described the code that followed.&#10;- Simplified click handlers in the `RomToolActionCard` to be empty blocks.&#10;- Explicitly defined the `index` type in `items` lambda for better code clarity.">
+      <option name="closed" value="true" />
+      <created>1759474562538</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1759474562538</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -805,7 +804,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sync generated resource and metadata files for all modules and build variants" />
     <MESSAGE value="migrate multidex dependency to version catalog, update build scripts and metadata" />
     <MESSAGE value="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings" />
     <MESSAGE value="refactor native JNI code for consistency, update Gradle and project properties, fix imports and naming in models, add NullPointerExceptionImpl" />
@@ -830,7 +828,8 @@
     <MESSAGE value="refactor: Refine and enhance AURAKAI_README.md&#10;&#10;Refactors the `AURAKAI_README.md` for improved clarity, structure, and accuracy based on project lore.&#10;&#10;- Clarifies the &quot;Living Trinity&quot; concept, defining Genesis as the unified state of Aura and Kai, not a separate entity.&#10;- Enhances document structure with better sectioning, spacing, and list formatting.&#10;- Adds a placeholder note for a future visual architecture diagram.&#10;- Adds a &quot;TODO&quot; section to clarify which described features are conceptual and not yet implemented.&#10;- Makes minor wording and formatting improvements for flow and impact." />
     <MESSAGE value="feat: Add empty paths object to OpenAPI spec&#10;&#10;Adds an empty `paths: {}` object to the `my-api-spec.yaml` file. This ensures the OpenAPI specification remains valid, preventing potential parsing errors by tools that require the `paths` object to be defined." />
     <MESSAGE value="refactor: Update TopAppBar call signature and add TODO&#10;&#10;This commit refactors the `TopAppBar` call to align with the updated Material 3 composable signature, where the title is now a trailing lambda.&#10;&#10;- Update the `TopAppBar` invocation in `RomToolsScreen`.&#10;- Add an explicit `this.item` qualifier in the `MainContent` LazyColumn.&#10;- Introduce an unused `Box` composable with a `TODO` for future implementation." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Update TopAppBar call signature and add TODO&#10;&#10;This commit refactors the `TopAppBar` call to align with the updated Material 3 composable signature, where the title is now a trailing lambda.&#10;&#10;- Update the `TopAppBar` invocation in `RomToolsScreen`.&#10;- Add an explicit `this.item` qualifier in the `MainContent` LazyColumn.&#10;- Introduce an unused `Box` composable with a `TODO` for future implementation." />
+    <MESSAGE value="Refactor: Clean up RomToolsScreen composable&#10;&#10;This commit refactors the `MainContent` composable within `RomToolsScreen.kt` for improved readability and conciseness.&#10;&#10;- Removed a commented-out and unused `Box` function stub.&#10;- Eliminated redundant comments that merely described the code that followed.&#10;- Simplified click handlers in the `RomToolActionCard` to be empty blocks.&#10;- Explicitly defined the `index` type in `items` lambda for better code clarity." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: Clean up RomToolsScreen composable&#10;&#10;This commit refactors the `MainContent` composable within `RomToolsScreen.kt` for improved readability and conciseness.&#10;&#10;- Removed a commented-out and unused `Box` function stub.&#10;- Eliminated redundant comments that merely described the code that followed.&#10;- Simplified click handlers in the `RomToolActionCard` to be empty blocks.&#10;- Explicitly defined the `index` type in `items` lambda for better code clarity." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
