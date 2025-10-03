@@ -123,6 +123,22 @@ abstract class FixOpenApiAnnotationsTask : DefaultTask() {
                         println("Added @OptIn annotation to ${file.name}")
                     }
 
+                    // Fix incorrect import statements with "1" suffix (OpenAPI generator bug)
+                    if (content.contains("Request1")) {
+                        // Remove imports with "1" suffix that are duplicates
+                        content = content.replace(Regex("""import dev\.aurakai\.auraframefx\.model\.\w+Request1\n"""), "")
+                        modified = true
+                        println("Removed incorrect Request1 imports from ${file.name}")
+                    }
+
+                    // Fix incorrect model name references
+                    content = content.replace("CreateThemeRequest", "ThemeCreateRequest")
+                    content = content.replace("UpdateCurrentUserRequest", "UserUpdateRequest")
+
+                    if (content != file.readText()) {
+                        modified = true
+                    }
+
                     // For API files, DON'T replace kotlin.Any in RequestConfig type parameters
                     // This is legitimate usage
 
