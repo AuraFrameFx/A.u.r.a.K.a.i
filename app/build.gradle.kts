@@ -131,7 +131,7 @@ dependencies {
 
     // ===== WORKMANAGER =====
     implementation("androidx.work:work-runtime-ktx:2.9.0")
-    implementation("androidx.hilt:hilt-work:1.2.0")
+    implementation("androidx.hilt:hilt-work:1.3.0")
 
     // ===== UTILITIES =====
     implementation(libs.timber)
