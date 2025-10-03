@@ -123,13 +123,6 @@ private fun LoadingScreen() {
     }
 }
 
-private fun Box(
-    modifier: Modifier,
-    contentAlignment: Alignment,
-    content: () -> Unit
-) {
-    val todo = TODO("Not yet implemented")
-}
 
 @Composable
 private fun MainContent(
@@ -141,19 +134,14 @@ private fun MainContent(
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        // Device Capabilities Card
-        this.item {
+        item {
             DeviceCapabilitiesCard(capabilities = romToolsState.capabilities)
         }
-
-        // Active Operation Progress
         if (operationProgress != null) {
             item {
                 OperationProgressCard(operation = operationProgress)
             }
         }
-
-        // ROM Tools Actions
         item {
             Text(
                 text = "ROM Operations",
@@ -163,63 +151,38 @@ private fun MainContent(
                 modifier = Modifier.padding(vertical = 8.dp)
             )
         }
-
-        // ROM Tools Action Cards
         val actionsList = getRomToolsActions()
-        items(actionsList.size) { index ->
+        items(actionsList.size) { index: Int ->
             val action = actionsList[index]
             RomToolActionCard(
                 action = action,
                 isEnabled = action.isEnabled(romToolsState.capabilities),
                 onClick = {
-                    // Handle action clicks - implementation remains unchanged
                     when (action.type) {
-                        RomActionType.FLASH_ROM -> {
-                            // Open ROM selection dialog
-                        }
-
-                        RomActionType.CREATE_BACKUP -> {
-                            // Start backup process
-                        }
-
-                        RomActionType.RESTORE_BACKUP -> {
-                            // Open backup selection
-                        }
-
-                        RomActionType.UNLOCK_BOOTLOADER -> {
-                            // Unlock bootloader
-                        }
-
-                        RomActionType.INSTALL_RECOVERY -> {
-                            // Install custom recovery
-                        }
-
-                        RomActionType.GENESIS_OPTIMIZATIONS -> {
-                            // Apply Genesis AI optimizations
-                        }
+                        RomActionType.FLASH_ROM -> { }
+                        RomActionType.CREATE_BACKUP -> { }
+                        RomActionType.RESTORE_BACKUP -> { }
+                        RomActionType.UNLOCK_BOOTLOADER -> { }
+                        RomActionType.INSTALL_RECOVERY -> { }
+                        RomActionType.GENESIS_OPTIMIZATIONS -> { }
                     }
                 }
             )
         }
-
-        // Available ROMs Section
         if (romToolsState.availableRoms.isNotEmpty()) {
             item {
                 Text(
                     text = "Available ROMs",
                     color = Color(0xFFFF6B35),
                     fontSize = 18.sp,
-                            fontWeight = FontWeight.Bold,
-                            modifier = Modifier.padding(vertical = 8.dp)
-                        )
-                    }
-
-                    val backups = romToolsState.backups
-                    items(backups.size) { index ->
-                        val backup = backups[index]
-                        BackupCard(backup = backup)
-                    }
-                }
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(vertical = 8.dp)
+                )
+            }
+            val backups = romToolsState.backups
+            items(backups.size) { index: Int ->
+                val backup = backups[index]
+                BackupCard(backup = backup)
             }
         }
     }
