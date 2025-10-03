@@ -77,15 +77,14 @@ fun RomToolsScreen(
     ) {
         // Top App Bar
         TopAppBar(
-            title = {
+            {
                 Text(
                     text = "ROM Tools",
                     color = Color(0xFFFF6B35),
                     fontWeight = FontWeight.Bold,
                     fontSize = 20.sp
                 )
-            },
-            colors = TopAppBarDefaults.topAppBarColors(
+            }, colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = Color.Black.copy(alpha = 0.8f)
             )
         )
@@ -124,6 +123,14 @@ private fun LoadingScreen() {
     }
 }
 
+private fun Box(
+    modifier: Modifier,
+    contentAlignment: Alignment,
+    content: () -> Unit
+) {
+    val todo = TODO("Not yet implemented")
+}
+
 @Composable
 private fun MainContent(
     romToolsState: dev.aurakai.auraframefx.romtools.RomToolsState,
@@ -135,7 +142,7 @@ private fun MainContent(
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         // Device Capabilities Card
-        item {
+        this.item {
             DeviceCapabilitiesCard(capabilities = romToolsState.capabilities)
         }
 
