@@ -1,30 +1,19 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 // This build script now uses the custom convention plugins for a cleaner setup.
 
 plugins {
-    id("com.android.application")
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp)
+    id("genesis.android.application")
+    id("genesis.android.hilt")
     // id("openapi.generator.convention") // Commented out until plugin is recognized
 }
 
 android {
     namespace = "dev.aurakai.auraframefx"
-    compileSdk = 36
 
     defaultConfig {
         applicationId = "dev.aurakai.auraframefx"
-        minSdk = 34
-        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
 
     // Additional build type configuration
@@ -46,16 +35,6 @@ android {
             it.useJUnitPlatform()
         }
     }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_24
-        targetCompatibility = JavaVersion.VERSION_24
-        isCoreLibraryDesugaringEnabled = true
-    }
-}
-
-kotlin {
-    jvmToolchain(24)
 }
 
 dependencies {
@@ -103,15 +82,15 @@ dependencies {
 
     // ===== NETWORKING =====
     implementation(libs.bundles.network)
-    implementation("com.squareup.moshi:moshi:1.15.1")
-    implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
+    implementation("com.squareup.moshi:moshi:1.15.2")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
 
     // ===== KTOR FOR OPENAPI CLIENT =====
-    implementation("io.ktor:ktor-client-core:2.3.7")
-    implementation("io.ktor:ktor-client-content-negotiation:2.3.7")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
-    implementation("io.ktor:ktor-client-okhttp:2.3.7")
-    implementation("io.ktor:ktor-client-auth:2.3.7")
+    implementation("io.ktor:ktor-client-core:3.3.0")
+    implementation("io.ktor:ktor-client-content-negotiation:3.3.0")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.0")
+    implementation("io.ktor:ktor-client-okhttp:3.3.0")
+    implementation("io.ktor:ktor-client-auth:3.3.0")
 
     // ===== FIREBASE =====
     // By implementing the BOM, we can specify Firebase SDKs without versions
@@ -125,13 +104,10 @@ dependencies {
     // implementation(libs.bundles.firebase.database) // Firestore, Realtime Database, Storage
     // implementation(libs.bundles.firebase.messaging) // FCM, Remote Config
 
-    // ===== HILT DEPENDENCY INJECTION =====
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
 
     // ===== WORKMANAGER =====
-    implementation("androidx.work:work-runtime-ktx:2.9.0")
-    implementation("androidx.hilt:hilt-work:1.2.0")
+    implementation("androidx.work:work-runtime-ktx:2.10.5")
+    implementation("androidx.hilt:hilt-work:1.3.0")
 
     // ===== UTILITIES =====
     implementation(libs.timber)

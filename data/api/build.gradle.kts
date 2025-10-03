@@ -51,14 +51,10 @@ tasks.withType<KotlinCompile>().configureEach {
     dependsOn(tasks.named("openApiGenerate"))
 }
 
-val openApiGeneratedDir = layout.buildDirectory.dir("generated/openapi")
-
 // Add a rule to the 'clean' task to delete the generated directory.
 // This prevents stale or old generated files from causing issues.
-tasks.named("clean") {
-    doLast {
-        delete(openApiGeneratedDir)
-    }
+tasks.named<Delete>("clean") {
+    delete(layout.buildDirectory.dir("generated/openapi"))
 }
 
 // Define the dependencies required by the generated Ktor client.

@@ -8,15 +8,16 @@ group = "dev.aurakai.auraframefx.buildlogic"
 
 // Dependencies required for the convention plugins themselves.
 dependencies {
-    implementation("com.android.tools.build:gradle:9.0.0-alpha02")
+    implementation("com.android.tools.build:gradle:9.0.0-alpha09")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20")
-    implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.1")
+    implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
+    implementation("org.gradle:gradle-core:2.2")
 
-    // Test dependencies
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.13.4")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.13.4")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.13.4")
-    testImplementation("org.gradle:gradle-tooling-api:9.0.0")
+            // Test dependencies
+    testImplementation(libs.junit.jupiter.api)
+    testImplementation(libs.junit.jupiter.engine)
+    testImplementation(libs.junit.jupiter.params)
+    testImplementation(libs.gradle.tooling.api)
     testImplementation(gradleTestKit())
 }
 

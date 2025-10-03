@@ -29,7 +29,7 @@
         android:protectionLevel="signature" />
 
     <application
-        android:name=".ReGenesisApplication"
+        android:name=".AuraFrameFxApplication"
         android:enableOnBackInvokedCallback="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Re:Genesis"

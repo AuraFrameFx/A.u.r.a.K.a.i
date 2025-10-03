@@ -10,10 +10,12 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
      * Applies the Android Hilt convention to the given Gradle project.
      *
      * This will:
-     * - Apply the base "genesis.android.library" convention plugin.
-     * - Apply the Dagger Hilt Android plugin.
+     * - Apply the base "genesis.android.library" convention plugin if needed.
      * - Apply the KSP plugin for annotation processing.
      * - Add necessary Hilt dependencies.
+     *
+     * Note: For AGP 9.0 compatibility, the Hilt plugin itself should be applied
+     * directly in the module's build.gradle.kts file, not here.
      *
      * target The Gradle [Project] this plugin is being applied to.
      */
@@ -26,15 +28,15 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
                 pluginManager.apply("genesis.android.library")
             }
 
-            // Apply Hilt-specific plugins
-            with(pluginManager) {
-                apply("dagger.hilt.android.plugin")
-            }
+            // Apply KSP plugin for annotation processing
+            pluginManager.apply("com.google.devtools.ksp")
 
-            // Configure dependencies through version catalog
+
+            // Configure dependencies using hardcoded coordinates
+            // Version matches the hilt-version in libs.versions.toml (2.57.2)
             dependencies {
-                add("implementation", project.dependencies.create("com.google.dagger:hilt-android:2.51.1"))
-                add("annotationProcessor", project.dependencies.create("com.google.dagger:hilt-compiler:2.51.1"))
+                add("implementation", "com.google.dagger:hilt-android:2.57.2")
+                add("ksp", "com.google.dagger:hilt-compiler:2.57.2")
             }
         }
     }

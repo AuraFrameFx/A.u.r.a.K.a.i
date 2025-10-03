@@ -61,6 +61,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 }
 
                 compileOptions {
+                    sourceCompatibility = JavaVersion.VERSION_24
+                    targetCompatibility = JavaVersion.VERSION_24
                     // App module DOES get desugaring dependency
                     isCoreLibraryDesugaringEnabled = true
                 }
@@ -94,23 +96,12 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 }
             }
 
-            extensions.configure<JavaPluginExtension>("java") {
-                sourceCompatibility = JavaVersion.VERSION_24
-                targetCompatibility = JavaVersion.VERSION_24
-            }
-
-            // Kotlin JVM toolchain
-            extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension> {
-                jvmToolchain(24)
-            }
-
-            // Clean tasks for app module
+            // Clean tasks for app module - KSP only (no KAPT)
             tasks.register("cleanKspCache", Delete::class.java) {
                 group = "build setup"
-                description = "Clean KSP caches (fixes NullPointerException)"
+                description = "Clean KSP caches"
                 delete(
                     layout.buildDirectory.dir("generated/ksp"),
-                    layout.buildDirectory.dir("tmp/kapt3"),
                     layout.buildDirectory.dir("tmp/kotlin-classes"),
                     layout.buildDirectory.dir("kotlin"),
                     layout.buildDirectory.dir("generated/source/ksp")
