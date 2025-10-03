@@ -1,6 +1,7 @@
 [versions]
 # ===== GRADLE & KOTLIN =====
 agp = "9.0.0-alpha09"
+gradle = "9.0.0-alpha09"
 junitJupiterParams = "6.0.0"
 gradleToolingApi = "9.1.0"
 hiltAndroidGradlePlugin = "2.57.2"
@@ -11,6 +12,9 @@ ksp = "2.2.20-2.0.3"
 desugar_jdk_libs = "2.1.5"
 hilt = "2.57.2"
 # ===== HOOKING FRAMEWORKS =====
+ktorClientAuth = "3.3.0"
+moshi = "1.15.2"
+moshiKotlin = "1.15.2"
 multidex = "2.0.1"
 xposed = "82"
 api = "82"
@@ -162,11 +166,15 @@ androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "mult
 google-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 
 # ===== YUKIHOOK & XPOSED =====
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePluginVersion" }
 hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
 gradle-tooling-api = { module = "org.gradle:gradle-tooling-api", version.ref = "gradleToolingApi" }
 junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junitJupiterParams" }
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect" }
+ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktorClientAuth" }
+moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 yukihook-api = { group = "com.highcapable.yukihookapi", name = "api", version.ref = "yukihookapi" }
 yukihook-ksp = { group = "com.highcapable.yukihookapi", name = "ksp-xposed", version.ref = "yukihookapi" }
 yukihook-prefs = { group = "com.highcapable.yukihookapi", name = "prefs", version.ref = "yukihookapi" }

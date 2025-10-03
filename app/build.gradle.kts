@@ -2,13 +2,14 @@
 // This build script now uses the custom convention plugins for a cleaner setup.
 
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.compose)
+    id("genesis.android.application")
+    id("com.android.base")
+    id("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp")
+    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
-    id("com.google.dagger.hilt.android") apply false
-    alias(libs.plugins.ksp)
-    id("org.openapi.generator") version "7.16.0"
 
+    id("org.openapi.generator") version "7.16.0"
 }
 
 android {
@@ -44,6 +45,11 @@ android {
         unitTests.all {
             it.useJUnitPlatform()
         }
+    }
+    compileOptions {
+        isCoreLibraryDesugaringEnabled = true
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
 
@@ -92,15 +98,15 @@ dependencies {
 
     // ===== NETWORKING =====
     implementation(libs.bundles.network)
-    implementation("com.squareup.moshi:moshi:1.15.2")
-    implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
+    implementation(libs.moshi)
+    implementation(libs.moshi.kotlin)
 
     // ===== KTOR FOR OPENAPI CLIENT =====
-    implementation("io.ktor:ktor-client-core:3.3.0")
-    implementation("io.ktor:ktor-client-content-negotiation:3.3.0")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.0")
-    implementation("io.ktor:ktor-client-okhttp:3.3.0")
-    implementation("io.ktor:ktor-client-auth:3.3.0")
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.ktor.client.okhttp)
+    implementation(libs.ktor.client.auth)
 
     // ===== HILT DEPENDENCY INJECTION =====
     implementation(libs.hilt.android)
