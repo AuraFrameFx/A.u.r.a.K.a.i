@@ -21,7 +21,35 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="feat(build): Refactor Gradle setup and update dependencies&#10;&#10;This commit introduces several improvements to the Gradle build configuration for better organization and consistency.&#10;&#10;Key changes include:&#10;- Upgraded the Gradle wrapper from `9.1.0-rc-1` to the stable `9.1.0` release.&#10;- Refactored the `app/build.gradle.kts` to use the new `genesis.android.application` convention plugin, simplifying the script.&#10;- Added core library desugaring support.&#10;- Moved Moshi and Ktor dependencies to the `libs.versions.toml` catalog for centralized version management.&#10;- Updated the `AndroidHiltConventionPlugin` to properly apply the Hilt and KSP plugins, streamlining dependency injection setup.&#10;- Replaced hardcoded dependency strings in the `build-logic` module with type-safe accessors from the version catalog." />
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Update TopAppBar call signature and add TODO&#10;&#10;This commit refactors the `TopAppBar` call to align with the updated Material 3 composable signature, where the title is now a trailing lambda.&#10;&#10;- Update the `TopAppBar` invocation in `RomToolsScreen`.&#10;- Add an explicit `this.item` qualifier in the `MainContent` LazyColumn.&#10;- Introduce an unused `Box` composable with a `TODO` for future implementation.">
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/fix-annotations.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/fix-annotations.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/armeabi-v7a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/x86_64/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/build.gradle.kts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,7 +180,6 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
@@ -163,7 +190,7 @@
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "memory.settings"
   }
 }]]></component>
   <component name="PsdUISettings">
@@ -407,6 +434,78 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Update build metadata and timing files; rename index files; regenerate configuration and metadata records">
+      <option name="closed" value="true" />
+      <created>1757663201705</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1757663201705</updated>
+    </task>
+    <task id="LOCAL-00015" summary="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup">
+      <option name="closed" value="true" />
+      <created>1757700733624</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1757700733624</updated>
+    </task>
+    <task id="LOCAL-00016" summary="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup">
+      <option name="closed" value="true" />
+      <created>1757702343302</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1757702343302</updated>
+    </task>
+    <task id="LOCAL-00017" summary="sync generated resource and metadata files for all modules and build variants">
+      <option name="closed" value="true" />
+      <created>1757703471286</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1757703471286</updated>
+    </task>
+    <task id="LOCAL-00018" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+      <option name="closed" value="true" />
+      <created>1757708186029</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1757708186029</updated>
+    </task>
+    <task id="LOCAL-00019" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+      <option name="closed" value="true" />
+      <created>1757708671678</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1757708671678</updated>
+    </task>
+    <task id="LOCAL-00020" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+      <option name="closed" value="true" />
+      <created>1757710205059</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1757710205059</updated>
+    </task>
+    <task id="LOCAL-00021" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+      <option name="closed" value="true" />
+      <created>1757710555496</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1757710555496</updated>
+    </task>
+    <task id="LOCAL-00022" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+      <option name="closed" value="true" />
+      <created>1757710943152</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1757710943152</updated>
     </task>
     <task id="LOCAL-00023" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
       <option name="closed" value="true" />
@@ -728,79 +827,7 @@
       <option name="project" value="LOCAL" />
       <updated>1759474295626</updated>
     </task>
-    <task id="LOCAL-00063" summary="Refactor: Clean up RomToolsScreen composable&#10;&#10;This commit refactors the `MainContent` composable within `RomToolsScreen.kt` for improved readability and conciseness.&#10;&#10;- Removed a commented-out and unused `Box` function stub.&#10;- Eliminated redundant comments that merely described the code that followed.&#10;- Simplified click handlers in the `RomToolActionCard` to be empty blocks.&#10;- Explicitly defined the `index` type in `items` lambda for better code clarity.">
-      <option name="closed" value="true" />
-      <created>1759474562538</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1759474562538</updated>
-    </task>
-    <task id="LOCAL-00064" summary="feat: Add OpenAPI generator and fix scripts&#10;&#10;Introduces a complete OpenAPI generation setup for the `data/api` module and resolves several related issues.&#10;&#10;This commit adds Gradle scripts and configurations to automatically generate Kotlin data models and API clients from an OpenAPI specification. It includes workaround scripts to fix common generator issues, such as missing model files and required annotations.&#10;&#10;- **OpenAPI Generation:**&#10;    - Adds `openapi-generator.gradle.kts` to configure the Kotlin generator.&#10;    - Implements `fix-models.gradle.kts` to create missing request models before generation.&#10;    - Adds `api.gradle.kts` as the main build file for the module, orchestrating the generation and fixing process.&#10;&#10;- **Annotation &amp; Model Fixes:**&#10;    - Introduces various Kotlin scripts (`fix-api-annotation.kts`, `fix-models-annotation.kts`, `fix-annotations.gradle.kts`) to automatically add the `@OptIn(kotlin.time.ExperimentalTime::class)` annotation where needed.&#10;&#10;- **API Specification:**&#10;    - Improves the YAML formatting in `my-api-spec.yaml` for better readability.&#10;    - Adds missing `operationId`s to webhook paths for proper code generation.&#10;&#10;- **Build &amp; Dependencies:**&#10;    - Upgrades the Android Gradle Plugin (AGP) version to `9.0.0-alpha09`.&#10;    - Adds the `org.jetbrains.kotlin.plugin.compose` plugin to the `romtools` module build script.">
-      <option name="closed" value="true" />
-      <created>1759480731681</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1759480731683</updated>
-    </task>
-    <task id="LOCAL-00065" summary="Merge remote-tracking branch 'origin/MemCortex' into MemCortex">
-      <option name="closed" value="true" />
-      <created>1759481049560</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1759481049560</updated>
-    </task>
-    <task id="LOCAL-00066" summary="Merge remote-tracking branch 'origin/MemCortex' into MemCortex">
-      <option name="closed" value="true" />
-      <created>1759482344865</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1759482344865</updated>
-    </task>
-    <task id="LOCAL-00067" summary="Merge remote-tracking branch 'origin/MemCortex' into MemCortex">
-      <option name="closed" value="true" />
-      <created>1759482440415</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1759482440415</updated>
-    </task>
-    <task id="LOCAL-00068" summary="Merge remote-tracking branch 'origin/MemCortex' into MemCortex">
-      <option name="closed" value="true" />
-      <created>1759482447076</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1759482447076</updated>
-    </task>
-    <task id="LOCAL-00069" summary="Refactor: Standardize and clean up Gradle build scripts&#10;&#10;This commit refactors the Gradle build scripts (`build.gradle.kts`) across multiple modules to standardize plugin application and dependency management.&#10;&#10;Key changes include:&#10;- Replaced custom convention plugins (`genesis.android.application`, `genesis.android.library`, `genesis.android.hilt`) with standard Android and Hilt plugins using `libs` aliases.&#10;- Added the Kotlin serialization plugin to several feature modules.&#10;- Explicitly applied Hilt plugin with `apply false` where needed.&#10;- Cleaned up the `app` module's build script by adding Hilt dependencies and removing redundant configurations.&#10;- Removed the `genesis.android.native` plugin from the `datavein-oracle-native` module.&#10;- Reordered blocks in the `benchmark` module's script for better readability.">
-      <option name="closed" value="true" />
-      <created>1759522523094</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1759522523094</updated>
-    </task>
-    <task id="LOCAL-00070" summary="feat(build): Refactor Gradle setup and update dependencies&#10;&#10;This commit introduces several improvements to the Gradle build configuration for better organization and consistency.&#10;&#10;Key changes include:&#10;- Upgraded the Gradle wrapper from `9.1.0-rc-1` to the stable `9.1.0` release.&#10;- Refactored the `app/build.gradle.kts` to use the new `genesis.android.application` convention plugin, simplifying the script.&#10;- Added core library desugaring support.&#10;- Moved Moshi and Ktor dependencies to the `libs.versions.toml` catalog for centralized version management.&#10;- Updated the `AndroidHiltConventionPlugin` to properly apply the Hilt and KSP plugins, streamlining dependency injection setup.&#10;- Replaced hardcoded dependency strings in the `build-logic` module with type-safe accessors from the version catalog.">
-      <option name="closed" value="true" />
-      <created>1759528992315</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1759528992317</updated>
-    </task>
-    <task id="LOCAL-00071" summary="feat(build): Refactor Gradle setup and update dependencies&#10;&#10;This commit introduces several improvements to the Gradle build configuration for better organization and consistency.&#10;&#10;Key changes include:&#10;- Upgraded the Gradle wrapper from `9.1.0-rc-1` to the stable `9.1.0` release.&#10;- Refactored the `app/build.gradle.kts` to use the new `genesis.android.application` convention plugin, simplifying the script.&#10;- Added core library desugaring support.&#10;- Moved Moshi and Ktor dependencies to the `libs.versions.toml` catalog for centralized version management.&#10;- Updated the `AndroidHiltConventionPlugin` to properly apply the Hilt and KSP plugins, streamlining dependency injection setup.&#10;- Replaced hardcoded dependency strings in the `build-logic` module with type-safe accessors from the version catalog.">
-      <option name="closed" value="true" />
-      <created>1759529029371</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1759529029371</updated>
-    </task>
-    <option name="localTasksCounter" value="72" />
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -815,6 +842,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="sync generated resource and metadata files for all modules and build variants" />
+    <MESSAGE value="migrate multidex dependency to version catalog, update build scripts and metadata" />
+    <MESSAGE value="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings" />
+    <MESSAGE value="refactor native JNI code for consistency, update Gradle and project properties, fix imports and naming in models, add NullPointerExceptionImpl" />
+    <MESSAGE value="Migrate to AGP 9.0.0-alpha08 and new Variant API for generated sources&#10;&#10;- Update Android Gradle Plugin to version 9.0.0-alpha08&#10;- Add `android.builtInKotlin=false` and `android.newDsl=false` to `gradle.properties` as required by AGP 9.0.0+&#10;- Remove deprecated `sourceSets` configuration for generated OpenAPI sources&#10;- Register generated OpenAPI sources using the new Android Components Variant API&#10;- This change ensures compatibility with the latest AGP and adopts the recommended approach for managing generated source directories." />
+    <MESSAGE value="Merge remote-tracking branch 'origin/OVERDRIVE' into OVERDRIVE" />
     <MESSAGE value="Merge remote-tracking branch 'origin/OVERDRIVE' into OVERDRIVECould not determine the dependencies of task ':app:compileDebugJavaWithJavac'.&#10;                                                              &gt; Cannot convert C:\ReGenesis-A.O.S.P\app\build\generated\openapi\src\main\kotlin to a task.&#10;                                                                The following types/formats are supported:&#10;                                                                  - A String or CharSequence task name or path&#10;                                                                  - A Task instance&#10;                                                                  - A TaskReference instance&#10;                                                                  - A Buildable instance&#10;                                                                  - A TaskDependency instance&#10;                                                                  - A Provider that represents a task output&#10;                                                                  - A Provider instance that returns any of these types&#10;                                                                  - A Closure instance that returns any of these types&#10;                                                                  - A Callable instance that returns any of these types&#10;                                                                  - An Iterable, Collection, Map or array instance that contains any of these types&#10;                                                              &#10;                                                              * Try: @coderabbitai" />
     <MESSAGE value="Refactor: Streamline Kotlin Android plugin application and re-enable romtools&#10;&#10;- Remove explicit `org.jetbrains.kotlin.android` plugin application from various modules as it's handled by convention plugins.&#10;- Re-enable the `romtools` module in `settings.gradle.kts` and `app/build.gradle.kts`.&#10;- Enable Room KSP compiler in `romtools/build.gradle.kts`.&#10;- Update OpenAPI generator plugin version in `app/build.gradle.kts`.&#10;- Correct Java home path in `gradle.properties`.&#10;- Minor plugin alias changes in `app/build.gradle.kts`." />
     <MESSAGE value="Refactor: Improve build configuration and add developer warnings&#10;&#10;- Add `.gitattributes` to enforce consistent LF line endings.&#10;- Update `README.md` with a warning about editing generated code.&#10;- Refactor `app/build.gradle.kts` to correctly wire the OpenAPI generated source directory.&#10;- Increase Gradle JVM memory arguments from 8192m to 10000m in `app/gradle.properties`." />
@@ -834,13 +867,7 @@
     <MESSAGE value="refactor: Refine and enhance AURAKAI_README.md&#10;&#10;Refactors the `AURAKAI_README.md` for improved clarity, structure, and accuracy based on project lore.&#10;&#10;- Clarifies the &quot;Living Trinity&quot; concept, defining Genesis as the unified state of Aura and Kai, not a separate entity.&#10;- Enhances document structure with better sectioning, spacing, and list formatting.&#10;- Adds a placeholder note for a future visual architecture diagram.&#10;- Adds a &quot;TODO&quot; section to clarify which described features are conceptual and not yet implemented.&#10;- Makes minor wording and formatting improvements for flow and impact." />
     <MESSAGE value="feat: Add empty paths object to OpenAPI spec&#10;&#10;Adds an empty `paths: {}` object to the `my-api-spec.yaml` file. This ensures the OpenAPI specification remains valid, preventing potential parsing errors by tools that require the `paths` object to be defined." />
     <MESSAGE value="refactor: Update TopAppBar call signature and add TODO&#10;&#10;This commit refactors the `TopAppBar` call to align with the updated Material 3 composable signature, where the title is now a trailing lambda.&#10;&#10;- Update the `TopAppBar` invocation in `RomToolsScreen`.&#10;- Add an explicit `this.item` qualifier in the `MainContent` LazyColumn.&#10;- Introduce an unused `Box` composable with a `TODO` for future implementation." />
-    <MESSAGE value="Refactor: Clean up RomToolsScreen composable&#10;&#10;This commit refactors the `MainContent` composable within `RomToolsScreen.kt` for improved readability and conciseness.&#10;&#10;- Removed a commented-out and unused `Box` function stub.&#10;- Eliminated redundant comments that merely described the code that followed.&#10;- Simplified click handlers in the `RomToolActionCard` to be empty blocks.&#10;- Explicitly defined the `index` type in `items` lambda for better code clarity." />
-    <MESSAGE value="feat: Add OpenAPI generator and fix scripts&#10;&#10;Introduces a complete OpenAPI generation setup for the `data/api` module and resolves several related issues.&#10;&#10;This commit adds Gradle scripts and configurations to automatically generate Kotlin data models and API clients from an OpenAPI specification. It includes workaround scripts to fix common generator issues, such as missing model files and required annotations.&#10;&#10;- **OpenAPI Generation:**&#10;    - Adds `openapi-generator.gradle.kts` to configure the Kotlin generator.&#10;    - Implements `fix-models.gradle.kts` to create missing request models before generation.&#10;    - Adds `api.gradle.kts` as the main build file for the module, orchestrating the generation and fixing process.&#10;&#10;- **Annotation &amp; Model Fixes:**&#10;    - Introduces various Kotlin scripts (`fix-api-annotation.kts`, `fix-models-annotation.kts`, `fix-annotations.gradle.kts`) to automatically add the `@OptIn(kotlin.time.ExperimentalTime::class)` annotation where needed.&#10;&#10;- **API Specification:**&#10;    - Improves the YAML formatting in `my-api-spec.yaml` for better readability.&#10;    - Adds missing `operationId`s to webhook paths for proper code generation.&#10;&#10;- **Build &amp; Dependencies:**&#10;    - Upgrades the Android Gradle Plugin (AGP) version to `9.0.0-alpha09`.&#10;    - Adds the `org.jetbrains.kotlin.plugin.compose` plugin to the `romtools` module build script." />
-    <MESSAGE value="Merge remote-tracking branch 'origin/MemCortex' into MemCortex" />
-    <MESSAGE value="Refactor: Standardize and clean up Gradle build scripts&#10;&#10;This commit refactors the Gradle build scripts (`build.gradle.kts`) across multiple modules to standardize plugin application and dependency management.&#10;&#10;Key changes include:&#10;- Replaced custom convention plugins (`genesis.android.application`, `genesis.android.library`, `genesis.android.hilt`) with standard Android and Hilt plugins using `libs` aliases.&#10;- Added the Kotlin serialization plugin to several feature modules.&#10;- Explicitly applied Hilt plugin with `apply false` where needed.&#10;- Cleaned up the `app` module's build script by adding Hilt dependencies and removing redundant configurations.&#10;- Removed the `genesis.android.native` plugin from the `datavein-oracle-native` module.&#10;- Reordered blocks in the `benchmark` module's script for better readability." />
-    <MESSAGE value="Refactor: Modernize Gradle setup and introduce convention plugins&#10;&#10;This commit introduces several improvements to the Gradle build configuration:&#10;&#10;- Upgraded Gradle Wrapper from `9.1.0-rc-1` to the stable `9.1.0` release.&#10;- Refactored `app/build.gradle.kts` to use the new `genesis.android.application` convention plugin, simplifying the script.&#10;- Enabled core library desugaring.&#10;- Abstracted Hilt and KSP plugin application into a new `AndroidHiltConventionPlugin`.&#10;- Migrated hardcoded dependency versions for Gradle, Ktor, and Moshi to the `libs.versions.toml` catalog for better version management." />
-    <MESSAGE value="feat(build): Refactor Gradle setup and update dependencies&#10;&#10;This commit introduces several improvements to the Gradle build configuration for better organization and consistency.&#10;&#10;Key changes include:&#10;- Upgraded the Gradle wrapper from `9.1.0-rc-1` to the stable `9.1.0` release.&#10;- Refactored the `app/build.gradle.kts` to use the new `genesis.android.application` convention plugin, simplifying the script.&#10;- Added core library desugaring support.&#10;- Moved Moshi and Ktor dependencies to the `libs.versions.toml` catalog for centralized version management.&#10;- Updated the `AndroidHiltConventionPlugin` to properly apply the Hilt and KSP plugins, streamlining dependency injection setup.&#10;- Replaced hardcoded dependency strings in the `build-logic` module with type-safe accessors from the version catalog." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(build): Refactor Gradle setup and update dependencies&#10;&#10;This commit introduces several improvements to the Gradle build configuration for better organization and consistency.&#10;&#10;Key changes include:&#10;- Upgraded the Gradle wrapper from `9.1.0-rc-1` to the stable `9.1.0` release.&#10;- Refactored the `app/build.gradle.kts` to use the new `genesis.android.application` convention plugin, simplifying the script.&#10;- Added core library desugaring support.&#10;- Moved Moshi and Ktor dependencies to the `libs.versions.toml` catalog for centralized version management.&#10;- Updated the `AndroidHiltConventionPlugin` to properly apply the Hilt and KSP plugins, streamlining dependency injection setup.&#10;- Replaced hardcoded dependency strings in the `build-logic` module with type-safe accessors from the version catalog." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Update TopAppBar call signature and add TODO&#10;&#10;This commit refactors the `TopAppBar` call to align with the updated Material 3 composable signature, where the title is now a trailing lambda.&#10;&#10;- Update the `TopAppBar` invocation in `RomToolsScreen`.&#10;- Add an explicit `this.item` qualifier in the `MainContent` LazyColumn.&#10;- Introduce an unused `Box` composable with a `TODO` for future implementation." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

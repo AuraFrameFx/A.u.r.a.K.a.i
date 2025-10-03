@@ -3,11 +3,9 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
-    id("genesis.android.library")
-    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
-    id("com.google.dagger.hilt.android")
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -131,3 +129,4 @@ android {
             logger.lifecycle("✅ Documentation generated at: ${indexFile.absolutePath}")
         }
     }
+

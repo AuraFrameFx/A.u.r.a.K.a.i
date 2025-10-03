@@ -4,9 +4,7 @@
 plugins {
     id("genesis.android.application")
     id("com.android.base")
-    id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
 
     id("org.openapi.generator") version "7.16.0"
