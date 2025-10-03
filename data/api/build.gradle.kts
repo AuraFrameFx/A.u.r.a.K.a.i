@@ -9,28 +9,27 @@ plugins {
     `java-library`
 }
 
-openApiGenerate {
-    generatorName = "kotlin"
-    inputSpec = file("$rootDir/data/api/api/my-api-spec.yaml").toURI().toString()
-    validateSpec = false
-
-    // Modern way to reference the build directory, avoiding deprecation warnings.
-    outputDir = layout.buildDirectory.dir("generated/openapi").get().asFile.path
-
-    apiPackage = "dev.aurakai.auraframefx.api"
-    modelPackage = "dev.aurakai.auraframefx.model"
-    configOptions = mapOf(
-        "library" to "jvm-ktor",
-        "serializationLibrary" to "kotlinx_serialization",
-        "enumPropertyNaming" to "UPPERCASE",
-        "collectionType" to "list",
-        "dateLibrary" to "kotlinx-datetime",
-        "useCoroutines" to "true",
-        "omitGradlePluginVersions" to "false",
-        "exceptionOnFailedStatusCodes" to "true",
-        "generateModelDocumentation" to "true",
-        "nonPublicApi" to "false"
-    )
+afterEvaluate {
+    openApiGenerate {
+        generatorName = "kotlin"
+        inputSpec = file("$rootDir/data/api/api/my-api-spec.yaml").toURI().toString()
+        validateSpec = false
+        outputDir = layout.buildDirectory.dir("generated/openapi").get().asFile.path
+        apiPackage = "dev.aurakai.auraframefx.api"
+        modelPackage = "dev.aurakai.auraframefx.model"
+        configOptions = mapOf(
+            "library" to "jvm-ktor",
+            "serializationLibrary" to "kotlinx_serialization",
+            "enumPropertyNaming" to "UPPERCASE",
+            "collectionType" to "list",
+            "dateLibrary" to "kotlinx-datetime",
+            "useCoroutines" to "true",
+            "omitGradlePluginVersions" to "false",
+            "exceptionOnFailedStatusCodes" to "true",
+            "generateModelDocumentation" to "true",
+            "nonPublicApi" to "false"
+        )
+    }
 }
 
 // Add the generated sources to the project's main source set.

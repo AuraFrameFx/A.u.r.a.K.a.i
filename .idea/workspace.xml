@@ -4,16 +4,84 @@
     <shared>
       <config />
     </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/font/inter.xml">
+        <config>
+          <theme>@style/Theme.AuraFrameFX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/font/jetbrains_mono.xml">
+        <config>
+          <theme>@style/Theme.AuraFrameFX</theme>
+        </config>
+      </layout>
+    </layouts>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Decompose RomToolsScreen into smaller composables&#10;&#10;Refactors the `RomToolsScreen` composable for better readability and maintainability by extracting UI sections into smaller, dedicated composable functions.&#10;&#10;- Extract loading state into `LoadingScreen` composable.&#10;- Extract main content display into `MainContent` composable.&#10;- Improve YAML formatting in the API specification for better clarity.">
+      <change afterPath="$PROJECT_DIR$/build-logic/src/test/kotlin/dev/aurakai/auraframefx/buildlogic/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/src/test/kotlin/dev/aurakai/auraframefx/buildlogic/DummyAndroidLibraryConvention.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/src/test/kotlin/dev/aurakai/auraframefx/buildlogic/DummyComposeKotlinPlugin.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-logic/src/test/kotlin/dev/aurakai/auraframefx/buildlogic/FakeLibraryExtension.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-script-tests/src/test/kotlin/dev/aurakai/auraframefx/AndroidLibraryConventionPluginTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-script-tests/src/test/kotlin/dev/aurakai/auraframefx/BuildScriptsFunctionalTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-script-tests/src/test/kotlin/dev/aurakai/auraframefx/BuildScriptsIntegrationTest_Additions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-script-tests/src/test/kotlin/dev/aurakai/auraframefx/BuildScriptsValidationTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-script-tests/src/test/kotlin/dev/aurakai/auraframefx/GradleVersionCatalogTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-script-tests/src/test/kotlin/docs/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-script-tests/src/test/kotlin/docs/MarkdownFileValidationAdvancedSupplementalEdgeCasesTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-script-tests/src/test/kotlin/docs/MarkdownFileValidationAdvancedSupplementalTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-script-tests/src/test/kotlin/docs/MarkdownFileValidationAdvancedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-script-tests/src/test/kotlin/docs/MarkdownFileValidationExtraTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-script-tests/src/test/kotlin/docs/MarkdownFileValidationMoreTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build-script-tests/src/test/kotlin/docs/MarkdownFileValidationTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/src/test/kotlin/dev/aurakai/auraframefx/list/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list/src/test/kotlin/dev/aurakai/auraframefx/list/LinkedListTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sandbox-ui/src/test/kotlin/dev/aurakai/auraframefx/sandboxui/BuildScriptValidationTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/secure-comm/src/test/kotlin/dev/aurakai/auraframefx/securecomm/BuildScriptTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/src/test/kotlin/dev/aurakai/auraframefx/utilities/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/src/test/kotlin/dev/aurakai/auraframefx/utilities/JoinUtilsTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/src/test/kotlin/dev/aurakai/auraframefx/utilities/SplitUtilsAdditionalTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/src/test/kotlin/dev/aurakai/auraframefx/utilities/SplitUtilsTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/src/test/kotlin/dev/aurakai/auraframefx/utilities/StringUtilsTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/dev/aurakai/auraframefx/ColorsResourceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/dev/aurakai/auraframefx/ColorsResourceTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/settings/SettingsConfigurationTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/test/FileUtilsGeneratedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/util/FilePathsXmlValidationTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/util/FileProviderUriTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/test/kotlin/dev/genesis/android/AndroidComposeConventionPluginTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/test/kotlin/dev/genesis/android/test/DummyAndroidLibraryConvention.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/test/kotlin/dev/genesis/android/test/DummyComposeKotlinPlugin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/test/kotlin/dev/genesis/android/test/FakeLibraryExtension.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-script-tests/src/test/kotlin/dev/genesis/android/AndroidComposeConventionPluginTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/list/build/libs/list-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/list/src/test/kotlin/org/example/list/LinkedListTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/GradleVersionCatalogTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/MarkdownFileValidationAdvancedSupplementalEdgeCasesTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/MarkdownFileValidationAdvancedSupplementalTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/MarkdownFileValidationAdvancedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/MarkdownFileValidationMoreTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/MarkdownFileValidationTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/docs/MarkdownFileValidationExtraTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/test/kotlin/org/example/utilities/JoinUtilsTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/test/kotlin/org/example/utilities/SplitUtilsAdditionalTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/test/kotlin/org/example/utilities/SplitUtilsTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/src/test/kotlin/org/example/utilities/StringUtilsTest.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -388,14 +456,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
-    </task>
-    <task id="LOCAL-00005" summary="add generated Hilt and Dagger files for RomToolsManager and related modules">
-      <option name="closed" value="true" />
-      <created>1757661969989</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1757661969989</updated>
     </task>
     <task id="LOCAL-00006" summary="update annotation processor versions and disable YukiHook API due to config issues">
       <option name="closed" value="true" />
@@ -781,7 +841,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759394364446</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="refactor: Decompose RomToolsScreen into smaller composables&#10;&#10;Refactors the `RomToolsScreen` composable for better readability and maintainability by extracting UI sections into smaller, dedicated composable functions.&#10;&#10;- Extract loading state into `LoadingScreen` composable.&#10;- Extract main content display into `MainContent` composable.&#10;- Improve YAML formatting in the API specification for better clarity.">
+      <option name="closed" value="true" />
+      <created>1759409548516</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1759409548516</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
