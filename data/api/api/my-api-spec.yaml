@@ -135,16 +135,16 @@ security:
   - BearerAuth: []
 
 x-tagGroups:
-  - name: Core APIs
-    tags: [Users, Themes]
-  - name: AI Features
-    tags: [AI Content, AI Agents, Conference Room, Tasks]
-  - name: Consciousness Layer
-    tags: [Oracle Drive, RGSS]
-  - name: Customization
-    tags: [System Customization]
-  - name: Platform
-    tags: [Analytics, Security, Plugins]
+    - name: Core APIs
+      tags: [Users, Themes]
+    - name: AI Features
+      tags: [AI Content, AI Agents, Conference Room, Tasks]
+    - name: Consciousness Layer
+      tags: [Oracle Drive, RGSS]
+    - name: Customization
+      tags: [System Customization]
+    - name: Platform
+      tags: [Analytics, Security, Plugins]
 
 paths:
   # ============================================================
@@ -2412,6 +2412,7 @@ paths:
 webhooks:
   taskCompleted:
     post:
+      operationId: receiveTaskCompletedWebhook
       summary: Task Completion Notification
       requestBody:
         required: true
@@ -2424,6 +2425,7 @@ webhooks:
 
   agentMessage:
     post:
+      operationId: receiveAgentMessageWebhook
       summary: Agent Message Notification
       requestBody:
         required: true
@@ -2443,6 +2445,7 @@ webhooks:
 
   systemUpdate:
     post:
+      operationId: receiveSystemUpdateWebhook
       summary: System Update Notification
       requestBody:
         required: true
@@ -2464,6 +2467,7 @@ webhooks:
 
   analyticsSnapshot:
     post:
+      operationId: receiveAnalyticsSnapshotWebhook
       summary: Analytics Snapshot Notification
       requestBody:
         required: true
@@ -2588,31 +2592,58 @@ components:
     User:
       type: object
       properties:
-        id:        { type: string, format: uuid, readOnly: true }
-        username:  { $ref: '#/components/schemas/Username' }
-        email:     { type: string, format: email }
-        displayName: { type: string }
-        avatarUrl: { type: string, format: uri }
-        tier:      { type: string, enum: [free, pro, enterprise] }
-        verified:  { type: boolean }
-        mfaEnabled:{ type: boolean }
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        username:
+          $ref: '#/components/schemas/Username'
+        email:
+          type: string
+          format: email
+        displayName:
+          type: string
+        avatarUrl:
+          type: string
+          format: uri
+        tier:
+          type: string
+          enum: [free, pro, enterprise]
+        verified:
+          type: boolean
+        mfaEnabled:
+          type: boolean
         pluginEntitlements:
           type: object
           additionalProperties: false
           properties:
-            customAgents: { type: boolean }
-            themeExports: { type: boolean }
-            advancedAnalytics: { type: boolean }
-        createdAt: { type: string, format: date-time, readOnly: true }
-        lastLoginAt: { type: string, format: date-time, readOnly: true, nullable: true }
+            customAgents:
+              type: boolean
+            themeExports:
+              type: boolean
+            advancedAnalytics:
+              type: boolean
+        createdAt:
+          type: string
+          format: date-time
+          readOnly: true
+        lastLoginAt:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
         usageStats:
           type: object
           additionalProperties: false
           properties:
-            aiRequestsThisMonth: { type: integer }
-            storageUsedMB:       { type: integer }
-            concurrentStreams:   { type: integer }
-            totalTokensUsed:     { type: integer }
+            aiRequestsThisMonth:
+              type: integer
+            storageUsedMB:
+              type: integer
+            concurrentStreams:
+              type: integer
+            totalTokensUsed:
+              type: integer
       required: [id, username, email, tier, createdAt]
 
     UserUpdateRequest:
@@ -2796,24 +2827,34 @@ components:
     GenerateTextResponse:
       type: object
       properties:
-        id:   { type: string, format: uuid }
-        generatedText: { type: string }
+        id:
+          type: string
+          format: uuid
+        generatedText:
+          type: string
         finishReason:
           type: string
           enum: [stop, length, content_filter, tool_call]
-        model: { type: string }
+        model:
+          type: string
         usage:
           type: object
           properties:
-            promptTokens:    { type: integer }
-            completionTokens:{ type: integer }
-            totalTokens:     { type: integer }
+            promptTokens:
+              type: integer
+            completionTokens:
+              type: integer
+            totalTokens:
+              type: integer
           required: [promptTokens, completionTokens, totalTokens]
         toolCalls:
           type: array
-          items: { $ref: '#/components/schemas/ToolCall' }
+          items:
+            $ref: '#/components/schemas/ToolCall'
           nullable: true
-        generatedAt: { type: string, format: date-time }
+        generatedAt:
+          type: string
+          format: date-time
       required: [id, generatedText, finishReason, model, usage, generatedAt]
 
     GenerateImageRequest:
@@ -3085,9 +3126,14 @@ components:
     AgentMessage:
       type: object
       properties:
-        id: { type: string, format: uuid, readOnly: true }
-        sender: { $ref: '#/components/schemas/AgentType' }
-        message: { type: string }
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        sender:
+          $ref: '#/components/schemas/AgentType'
+        message:
+          type: string
         attachments:
           type: array
           items:
@@ -3096,15 +3142,25 @@ components:
               type:
                 type: string
                 enum: [code, image, document, data, audio, video]
-              url: { type: string, format: uri }
+              url:
+                type: string
+                format: uri
               metadata:
                 type: object
                 additionalProperties: true
                 properties:
-                  size:    { type: integer }
-                  mimeType:{ type: string }
-        timestamp: { type: string, format: date-time, readOnly: true }
-        editedAt: { type: string, format: date-time, nullable: true }
+                  size:
+                    type: integer
+                  mimeType:
+                    type: string
+        timestamp:
+          type: string
+          format: date-time
+          readOnly: true
+        editedAt:
+          type: string
+          format: date-time
+          nullable: true
       required: [id, sender, message, timestamp]
     Conversation:
       type: object
@@ -3306,8 +3362,13 @@ components:
           additionalProperties:
             type: object
             properties:
-              groupBy:  { type: string, enum: [conversation, app, priority] }
-              maxGroups:{ type: integer, minimum: 1, maximum: 10 }
+              groupBy:
+                type: string
+                enum: [conversation, app, priority]
+              maxGroups:
+                type: integer
+                minimum: 1
+                maximum: 10
         headsUpEnabled: { type: boolean, default: true }
 
     PreviewResponse:
@@ -3438,7 +3499,11 @@ components:
         retryCount: { type: integer, minimum: 0, readOnly: true }
         createdAt:  { type: string, format: date-time, readOnly: true }
         startedAt:  { type: string, format: date-time, readOnly: true, nullable: true }
-        completedAt:{ type: string, format: date-time, readOnly: true, nullable: true }
+        completedAt:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
       required: [id, agentType, taskType, status, createdAt]
 
     # Analytics
@@ -3739,7 +3804,7 @@ components:
                 - field: "temperature"
                   message: "Must be between 0.0 and 2.0"
                   code: "OUT_OF_RANGE"
-                  value: 3.0
+                  value: "3.0"
               requestId: "req_123e4567-e89b-12d3-a456-426614174000"
     RateLimitError:
       description: Too Many Requests - Rate limit exceeded
@@ -3789,4 +3854,3 @@ components:
               details:
                 estimatedRecoveryTime: "2025-10-01T12:30:00Z"
               requestId: "req_123e4567-e89b-12d3-a456-426614174000"
-paths: {}

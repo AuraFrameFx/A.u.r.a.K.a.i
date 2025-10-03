@@ -9,6 +9,9 @@ plugins {
     `java-library`
 }
 
+// Apply the fix-annotations script to handle @OptIn annotations
+apply(from = "fix-annotations.gradle.kts")
+
 afterEvaluate {
     openApiGenerate {
         generatorName = "kotlin"
@@ -48,11 +51,13 @@ tasks.withType<KotlinCompile>().configureEach {
     dependsOn(tasks.named("openApiGenerate"))
 }
 
+val openApiGeneratedDir = layout.buildDirectory.dir("generated/openapi")
+
 // Add a rule to the 'clean' task to delete the generated directory.
 // This prevents stale or old generated files from causing issues.
 tasks.named("clean") {
     doLast {
-        delete(layout.buildDirectory.dir("generated/openapi"))
+        delete(openApiGeneratedDir)
     }
 }
 
