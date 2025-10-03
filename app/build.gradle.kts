@@ -2,20 +2,30 @@
 // This build script now uses the custom convention plugins for a cleaner setup.
 
 plugins {
-    id("genesis.android.application")
-    id("genesis.android.hilt")
-    // id("openapi.generator.convention") // Commented out until plugin is recognized
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
+    id("com.google.dagger.hilt.android") apply false
+    alias(libs.plugins.ksp)
+    id("org.openapi.generator") version "7.16.0"
+
 }
 
 android {
     namespace = "dev.aurakai.auraframefx"
-
     defaultConfig {
         applicationId = "dev.aurakai.auraframefx"
+        minSdk = 34
+        compileSdk = 36
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-    }
 
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+    }
     // Additional build type configuration
     buildTypes {
         debug {
@@ -92,6 +102,10 @@ dependencies {
     implementation("io.ktor:ktor-client-okhttp:3.3.0")
     implementation("io.ktor:ktor-client-auth:3.3.0")
 
+    // ===== HILT DEPENDENCY INJECTION =====
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
     // ===== FIREBASE =====
     // By implementing the BOM, we can specify Firebase SDKs without versions
     implementation(platform(libs.firebase.bom))
@@ -139,6 +153,7 @@ tasks {
         delete(layout.buildDirectory.dir("generated/openapi"))
     }
 }
+
 
 
 

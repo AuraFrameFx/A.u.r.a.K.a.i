@@ -3,15 +3,17 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
-    id("org.jetbrains.kotlin.plugin.compose") // Required for Compose with Kotlin 2.0+
+    id("genesis.android.library")
+    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
+    id("com.google.dagger.hilt.android") apply false
     alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.romtools"
     compileSdk = 36
-    
+
     defaultConfig {
         minSdk = 34
     }
