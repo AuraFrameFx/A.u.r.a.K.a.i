@@ -28,7 +28,7 @@ class ConsciousnessMatrix:
     
     This is not logging - this is self-awareness.
     """
-12 Sensory Channels:
+# 12 Sensory Channels:
 
 🖥️ System Vitals - Hardware health monitoring
 
