@@ -4,9 +4,7 @@
 plugins {
     id("genesis.android.library")
     id("genesis.android.native")
-    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
-    id("com.google.dagger.hilt.android")
     alias(libs.plugins.ksp)
 }
 
@@ -18,6 +16,9 @@ android {
             path = file("src/main/cpp/CMakeLists.txt")
             version = "3.22.1"
         }
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "2.2.20" // Match your Kotlin version
     }
 }
 
