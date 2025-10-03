@@ -6,7 +6,7 @@ plugins {
     id("genesis.android.library")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
-    id("com.google.dagger.hilt.android") apply false
+    id("com.google.dagger.hilt.android")
     alias(libs.plugins.ksp)
 }
 
@@ -131,4 +131,3 @@ android {
             logger.lifecycle("✅ Documentation generated at: ${indexFile.absolutePath}")
         }
     }
-

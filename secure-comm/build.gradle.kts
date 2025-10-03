@@ -6,7 +6,7 @@ plugins {
     id("genesis.android.native")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
-    id("com.google.dagger.hilt.android") apply false
+    id("com.google.dagger.hilt.android")
     alias(libs.plugins.ksp)
 }
 
