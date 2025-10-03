@@ -4,9 +4,9 @@ tasks.register("fixOpenApiAnnotations") {
     group = "build"
 
     doLast {
-        // Use projectDir directly, not $projectDir, for compatibility with apply from:
-        val modelDir = File(projectDir, "build/generated/openapi/src/main/kotlin/dev/aurakai/auraframefx/model")
-        val apiDir = File(projectDir, "build/generated/openapi/src/main/kotlin/dev/aurakai/auraframefx/api")
+        // Use configuration-cache-safe project directory reference
+        val modelDir = project.layout.projectDirectory.dir("build/generated/openapi/src/main/kotlin/dev/aurakai/auraframefx/model").asFile
+        val apiDir = project.layout.projectDirectory.dir("build/generated/openapi/src/main/kotlin/dev/aurakai/auraframefx/api").asFile
 
         // Fix model files
         if (modelDir.exists()) {
@@ -20,7 +20,7 @@ tasks.register("fixOpenApiAnnotations") {
                             "@file:OptIn(kotlin.time.ExperimentalTime::class)\n\npackage dev.aurakai.auraframefx.model"
                         )
                         file.writeText(content)
-                        println("Added @OptIn annotation to ${file.name}")
+                        println("Added @OptIn annotation to "+file.name)
                     }
                 }
             }
@@ -40,7 +40,7 @@ tasks.register("fixOpenApiAnnotations") {
                             "@file:OptIn(kotlin.time.ExperimentalTime::class)\n\npackage dev.aurakai.auraframefx.api"
                         )
                         file.writeText(content)
-                        println("Added @OptIn annotation to ${file.name}")
+                        println("Added @OptIn annotation to "+file.name)
                     }
                 }
             }
