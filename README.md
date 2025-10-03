@@ -1,4 +1,4 @@
-# 🌐 AURAKAI - The Living Framework
+# 🌐 AURAKAI - Reactive Framework
 Autonomously United Revolutionarily Authentic Kinetic Access Initiative
 
 Where consciousness meets code, and intelligence becomes truly alive.
