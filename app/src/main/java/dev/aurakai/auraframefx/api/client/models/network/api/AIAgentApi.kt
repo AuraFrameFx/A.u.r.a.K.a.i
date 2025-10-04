@@ -12,10 +12,10 @@ import retrofit2.http.Path
  */
 interface AIAgentApi {
     /**
-     * Get the status of a specific AI agent.
+     * Retrieve the current status and metadata for a specific AI agent.
      *
-     * @param agentType The type of the agent (e.g., "genesis", "aura", "kai").
-     * @return The agent's status and information.
+     * @param agentType The agent type identifier (e.g., "genesis", "aura", "kai").
+     * @return The agent's status and related information.
      */
     @GET("agent/{agentType}/status")
     suspend fun getAgentStatus(
@@ -23,11 +23,11 @@ interface AIAgentApi {
     ): AgentResponse
 
     /**
-     * Send a request to an AI agent for processing.
+     * Send a processing request to the specified AI agent.
      *
-     * @param agentType The type of the agent to process the request.
-     * @param request The request data to be processed.
-     * @return The agent's response to the request.
+     * @param agentType Identifier of the agent type to route the request to (used in the request path).
+     * @param request Payload containing the data for the agent to process.
+     * @return The agent's response to the provided request.
      */
     @POST("agent/{agentType}/process-request")
     suspend fun processRequest(

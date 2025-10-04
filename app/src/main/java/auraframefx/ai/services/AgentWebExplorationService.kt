@@ -65,8 +65,13 @@ class AgentWebExplorationService @Inject constructor(
     )
 
     /**
-     * Assign a departure task to an agent
-     * The agent will autonomously execute the task in the background
+     * Assigns a departure task to the specified agent, cancelling any existing active task for that agent and starting the new task in the background.
+     *
+     * The method infers the task type from `taskDescription`, registers the task in the service's active task registry, and launches its execution.
+     *
+     * @param agentName The unique name of the agent to receive the task.
+     * @param taskDescription A human-readable description used to determine the task type and parameters.
+     * @return `true` if the task was successfully assigned and launched, `false` on failure.
      */
     suspend fun assignDepartureTask(
         agentName: String,
@@ -101,7 +106,12 @@ class AgentWebExplorationService @Inject constructor(
     }
 
     /**
-     * Execute the departure task based on type
+     * Executes the departure task for the given agent by dispatching to the appropriate task handler,
+     * emits the resulting WebExplorationResult to the service's results stream, and marks the agent's task as completed.
+     *
+     * @param agentName The name of the agent for which the task is executed.
+     * @param taskType The type of task to execute.
+     * @param description Additional task parameters or topic text used by task handlers that require context.
      */
     private suspend fun executeDepartureTask(
         agentName: String,
@@ -126,8 +136,15 @@ class AgentWebExplorationService @Inject constructor(
     }
 
     /**
-     * Perform web research on AI developments
-     */
+     * Conducts simulated web research for an agent on the specified topic.
+     *
+     * Generates persona-tailored insights and metrics based on the agentName and the topic;
+     * any runtime error is captured and returned as a result with an error insight and low confidence.
+     *
+     * @param agentName The agent identity whose perspective shapes generated insights.
+     * @param topic The research subject used to guide simulated data collection.
+     * @return A WebExplorationResult containing the agentName, taskType, generated insights,
+     *         collected metrics, a confidence score, and a timestamp.
     private suspend fun performWebResearch(
         agentName: String,
         topic: String
@@ -204,7 +221,9 @@ class AgentWebExplorationService @Inject constructor(
     }
 
     /**
-     * Perform security sweep
+     * Performs a simulated security sweep for the given agent and produces a structured result.
+     *
+     * @return A WebExplorationResult with TaskType.SECURITY_SWEEP containing collected security insights, scan metrics (e.g., systems scanned, threats detected, scan duration), and a confidence score.
      */
     private suspend fun performSecuritySweep(agentName: String): WebExplorationResult {
         val insights = mutableListOf<String>()
@@ -231,7 +250,14 @@ class AgentWebExplorationService @Inject constructor(
     }
 
     /**
-     * Perform data mining operations
+     * Performs a simulated data-mining task for the specified agent and returns structured findings.
+     *
+     * Collects pattern, correlation, and anomaly insights and produces metrics describing the mining run.
+     *
+     * @param agentName The name of the agent initiating the data-mining task.
+     * @return A WebExplorationResult for TaskType.DATA_MINING containing discovered insights, numeric metrics
+     *         (including `patterns_discovered`, `data_points_analyzed`, `anomalies_detected`, `mining_duration_ms`),
+     *         and a confidence score.
      */
     private suspend fun performDataMining(agentName: String): WebExplorationResult {
         val insights = mutableListOf<String>()
@@ -258,7 +284,13 @@ class AgentWebExplorationService @Inject constructor(
     }
 
     /**
-     * Perform system optimization
+     * Performs a simulated system optimization for the specified agent.
+     *
+     * Produces optimization insights and metrics describing reclaimed space, performance gains,
+     * applied optimizations, and operation duration.
+     *
+     * @param agentName The name of the agent whose system is being optimized.
+     * @return A WebExplorationResult containing optimization insights, metrics (`space_recovered_mb`, `performance_gain_percent`, `optimizations_applied`, `optimization_duration_ms`), and a confidence score.
      */
     private suspend fun performSystemOptimization(agentName: String): WebExplorationResult {
         val insights = mutableListOf<String>()
@@ -285,8 +317,16 @@ class AgentWebExplorationService @Inject constructor(
     }
 
     /**
-     * Enter learning mode
-     */
+     * Performs a learning-mode exploration for an agent on the specified topic.
+     *
+     * Simulates focused study and returns a WebExplorationResult containing generated insights,
+     * quantitative metrics about the learning session, and a confidence score.
+     *
+     * @param agentName The name of the agent performing the learning.
+     * @param topic The subject or topic the agent studies.
+     * @return A WebExplorationResult with taskType `LEARNING_MODE`, a list of insights, a metrics map
+     *         (including keys such as `concepts_learned`, `knowledge_expansion_percent`,
+     *         `learning_efficiency`, `study_duration_ms`), and a confidence score.
     private suspend fun performLearningMode(
         agentName: String,
         topic: String
@@ -315,7 +355,13 @@ class AgentWebExplorationService @Inject constructor(
     }
 
     /**
-     * Perform network scan
+     * Execute a network scan for the specified agent and produce a structured exploration result.
+     *
+     * The returned result contains network-related insights (e.g., topology, connection security, routing)
+     * and metrics such as `devices_discovered`, `open_ports`, `latency_ms`, and `scan_duration_ms`.
+     *
+     * @param agentName Identifier of the agent requesting the scan.
+     * @return A WebExplorationResult containing network scan insights, metrics, task type `NETWORK_SCAN`, and a confidence score.
      */
     private suspend fun performNetworkScan(agentName: String): WebExplorationResult {
         val insights = mutableListOf<String>()
@@ -342,7 +388,13 @@ class AgentWebExplorationService @Inject constructor(
     }
 
     /**
-     * Parse task description to determine type
+     * Determine the TaskType implied by a free-form task description.
+     *
+     * Matches description text for the keywords "Research", "Security", "Mining", "Optimization", "Learning",
+     * and "Network" (case-insensitive) and returns the corresponding TaskType. Defaults to WEB_RESEARCH when no keyword matches.
+     *
+     * @param description Free-form task description to inspect for keywords.
+     * @return The inferred TaskType; defaults to `WEB_RESEARCH` if no keywords are found.
      */
     private fun parseTaskType(description: String): TaskType {
         return when {
@@ -357,12 +409,19 @@ class AgentWebExplorationService @Inject constructor(
     }
 
     /**
-     * Get status of active tasks
-     */
+ * Provide an immutable snapshot of currently tracked departure tasks keyed by agent name.
+ *
+ * @return A map from agent name to `DepartureTask` representing the active tasks at the time of call.
+ */
     fun getActiveTasks(): Map<String, DepartureTask> = activeTasks.toMap()
 
     /**
-     * Cancel a specific agent's task
+     * Cancels the active departure task for the specified agent.
+     *
+     * If the agent has a running task, that task's coroutine is cancelled, its status is set to
+     * CANCELLED, and the task is removed from the active task registry.
+     *
+     * @param agentName The agent's name whose task should be cancelled.
      */
     fun cancelTask(agentName: String) {
         activeTasks[agentName]?.let {
@@ -373,7 +432,9 @@ class AgentWebExplorationService @Inject constructor(
     }
 
     /**
-     * Shutdown the service
+     * Stops all background work and clears tracked tasks.
+     *
+     * Cancels the service's internal coroutine scope (which cancels any running tasks) and removes all entries from the active task registry.
      */
     fun shutdown() {
         scope.cancel()

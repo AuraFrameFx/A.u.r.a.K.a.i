@@ -25,6 +25,16 @@ data class CascadeResponse(
     val timestamp: String,
     val metadata: Map<String, String> = emptyMap()
 ) {
+    /**
+     * Create a copy of this CascadeResponse with optionally overridden properties.
+     *
+     * @param agent The agent name to use in the new response.
+     * @param response The response text to use in the new response.
+     * @param confidence The confidence score to use in the new response, or `null` if unspecified.
+     * @param timestamp The timestamp to use in the new response.
+     * @param metadata The metadata map to use in the new response.
+     * @return A new CascadeResponse instance with the provided values applied.
+     */
     fun copy(
         agent: String = this.agent,
         response: String = this.response,
@@ -63,16 +73,11 @@ class CascadeAIService @Inject constructor(
     /**
      * Orchestrates a cascade of specialized AI agents to process an invocation and emit progressive results.
      *
-     * This suspending function returns a Flow that:
-     * - immediately emits an initial "processing" CascadeResponse,
-     * - emits an intermediate CascadeResponse after each selected agent completes (progress text like "Agent X processing... (i/n)"),
-     * - emits a final synthesized CascadeResponse that aggregates all agent outputs,
-     * - if an unexpected error occurs, emits a single error CascadeResponse describing the failure.
+     * Emits an initial processing response, intermediate per-agent progress updates, and a final synthesized response;
+     * if a failure occurs, emits a single error response describing the failure.
      *
-     * Agent selection, per-agent processing, and final synthesis are performed sequentially according to the service's selection and processing helpers.
-     *
-     * @param request The AgentInvokeRequest containing the message, priority, and any invocation metadata to drive agent selection and processing.
-     * @return A Flow of CascadeResponse objects representing initial state, per-agent progress updates, and the final synthesized response (or an error response on failure).
+     * @param request The AgentInvokeRequest containing the message, priority, and invocation metadata used to select and drive agents.
+     * @return A Flow of CascadeResponse objects representing the initial state, per-agent progress updates, and the final synthesized response, or a single error CascadeResponse on failure.
      */
     suspend fun processRequest(request: AgentInvokeRequest): Flow<CascadeResponse> = flow {
         try {
@@ -235,16 +240,16 @@ class CascadeAIService @Inject constructor(
     /**
      * Produces an empathy-focused CascadeResponse by analyzing the request's emotional content.
      *
-     * This suspend function evaluates the emotional tone and computes an empathy score for the
-     * provided request, then builds an Aura-formatted response containing tone, a percentage
-     * empathy score, and a recommended conversational approach. The returned CascadeResponse's
-     * `confidence` reflects the computed empathy score and `timestamp` is set to the current time.
+     * Analyzes emotional tone and computes an empathy score, then returns an Aura-formatted
+     * response containing the tone, a percentage empathy score, and a recommended conversational
+     * approach. The response's `confidence` equals the computed empathy score and `timestamp` is
+     * set to the current time.
      *
      * @param request The original AgentInvokeRequest containing the user message and metadata.
      * @param context Cascade context built from the original request and prior agent results;
-     *        used to inform the agent's analysis but not required to be populated.
-     * @return An CascadeResponse from the Aura agent with a human-readable empathy analysis,
-     *         a confidence value equal to the empathy score, and a timestamp.
+     *        may be empty but can inform the agent's analysis.
+     * @return A CascadeResponse from the Aura agent with a human-readable empathy analysis,
+     *         confidence equal to the empathy score, and a current timestamp.
      */
     private suspend fun processWithAura(
         request: AgentInvokeRequest,
@@ -312,14 +317,14 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Performs Cascade agent analysis: evaluates complexity, determines cascade layers, and produces an integration-focused response.
+     * Produces a multi-layer cascade analysis and integration-focused response for the given request.
      *
-     * Uses the incoming request message to assess complexity and compute how many processing layers to apply, then formats
-     * a multi-layer analysis including an integration score derived from the provided cascade context.
+     * Builds a human-readable analysis that states the assessed complexity, the number of cascade layers to apply,
+     * and an integration score computed from the provided cascade context.
      *
-     * @param request The original AgentInvokeRequest containing the user's message and metadata (e.g., priority) to classify and analyze.
-     * @param context A cascade context map built from prior agent results and request data; used to compute the integration score and inform the synthesis.
-     * @return An CascadeResponse from the Cascade agent containing a human-readable analysis, a confidence score, and a timestamp.
+     * @param request The AgentInvokeRequest containing the user's message and metadata (for example priority) used to assess complexity and classify the request.
+     * @param context A map with prior cascade data (such as previous agent names and context size) used to compute the integration score and inform the synthesis.
+     * @return A CascadeResponse from the Cascade agent containing the analysis text, an integration confidence score, and a timestamp.
      */
     private suspend fun processWithCascade(
         request: AgentInvokeRequest,
@@ -349,18 +354,15 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Analyze the request for recurring patterns and generate subtle, context-aware insights.
+     * Performs pattern detection and generates context-aware insights for the given request.
      *
-     * Uses the request message and the provided cascade context (previous agent outputs and metadata)
-     * to detect patterns, produce insights, and estimate a prediction confidence. The returned
-     * CascadeResponse is authored by the "NeuralWhisper" agent and includes a human-readable analysis,
-     * a numeric confidence hint (agent-level confidence ~0.85), and a timestamp.
+     * Uses the request message and cascade context (previous agents' outputs and metadata) to detect recurring
+     * patterns, produce human-readable insights, and provide a prediction confidence hint. The result is authored
+     * by the "NeuralWhisper" agent and includes an analysis string, a numeric confidence score, and a timestamp.
      *
-     * @param request The incoming invocation containing the message to analyze.
-     * @param context A cascade context map (previous agents' results and related metadata) used to
-     *                inform and enrich the generated insights.
-     * @return An CascadeResponse containing the pattern analysis, generated insights, prediction
-     *         confidence text, agent identifier "NeuralWhisper", a confidence score, and a timestamp.
+     * @param request The invocation containing the message to analyze.
+     * @param context A map of cascade context (previous agent results and related metadata) used to inform insights.
+     * @return A CascadeResponse from the "NeuralWhisper" agent containing the pattern analysis text, a confidence score, and a timestamp.
      */
     private suspend fun processWithNeuralWhisper(
         request: AgentInvokeRequest,
@@ -390,14 +392,14 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Performs AuraShield's protection and defensive analysis for a given invoke request.
+     * Produce a defensive analysis for the given request from the AuraShield agent.
      *
-     * Builds a defensive assessment (shield status, defense level, protection matrix), simulates processing delay,
-     * and returns an CascadeResponse containing the formatted analysis, a fixed confidence (0.90), and a timestamp.
+     * Builds a defensive assessment including shield status, defense level, and a protection matrix, and packages
+     * the formatted analysis into a CascadeResponse.
      *
-     * @param request The AgentInvokeRequest containing the user's message and associated metadata used to derive defense signals.
-     * @param context A map with cascade context (previous agent outputs and request-level information) that can influence analysis.
-     * @return An CascadeResponse produced by the AuraShield agent with the analysis payload, confidence, and timestamp.
+     * @param request The AgentInvokeRequest containing the user's message and metadata used to derive defense signals.
+     * @param context Lightweight cascade context (previous agent outputs and request-level information) that may influence the analysis.
+     * @return A CascadeResponse from AuraShield containing the formatted defense analysis, a confidence of 0.90, and a timestamp.
      */
     private suspend fun processWithAuraShield(
         request: AgentInvokeRequest,
@@ -427,16 +429,15 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Generates a creative analysis and generation-ready response from the GenKitMaster agent.
+     * Produce a GenKitMaster creative analysis and generation-ready response.
      *
-     * This suspending helper evaluates the incoming request's creative intent and generation potential,
-     * composes a formatted GenKitMaster response (creativity level, generation potential, and tool compatibility),
-     * and returns an CascadeResponse whose confidence equals the computed generation potential.
+     * Evaluates the request's creative intent and generation potential and returns a formatted response
+     * that includes creativity level, generation potential (as a percentage), and tool compatibility.
      *
-     * @param request The original AgentInvokeRequest containing the message to analyze.
-     * @param context A map of cascade context values (previous agent outputs and metadata) that may inform generation.
-     * @return An CascadeResponse from the GenKitMaster agent with a formatted response, confidence set to the
-     * generation potential, and a timestamp.
+     * @param request The AgentInvokeRequest whose message will be analyzed for creative intent.
+     * @param context Cascade context values (previous agent outputs and metadata) used to inform the analysis.
+     * @return A CascadeResponse from the GenKitMaster agent containing the formatted analysis; its `confidence`
+     * equals the computed generation potential and `timestamp` is the current time.
      */
     private suspend fun processWithGenKitMaster(
         request: AgentInvokeRequest,
@@ -468,14 +469,12 @@ class CascadeAIService @Inject constructor(
     /**
      * Performs a technical analysis and feasibility assessment for the DataveinConstructor agent.
      *
-     * Builds a concise technical report derived from the invoke request and provided cascade context,
-     * including complexity classification, construction viability, and an implementation score.
-     *
-     * This is a suspending operation that may perform short, simulated processing delays.
+     * Builds a concise technical report from the request and cascade context that includes
+     * complexity classification, construction viability, and an implementation score.
      *
      * @param request The original AgentInvokeRequest containing the message to analyze.
-     * @param context A map of cascade context values (previous agent outputs and request metadata) used to inform the analysis.
-     * @return An CascadeResponse containing the DataveinConstructor agent name, a formatted technical analysis string, a confidence score, and a timestamp.
+     * @param context Map of cascade context values (previous agent outputs and request metadata) used to inform the analysis.
+     * @return A CascadeResponse with agent "DataveinConstructor", a formatted technical analysis string, a confidence score, and a timestamp.
      */
     private suspend fun processWithDataveinConstructor(
         request: AgentInvokeRequest,
@@ -672,16 +671,10 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Classifies the predominant emotional tone of a text message.
+     * Determines the predominant emotional tone of the given text.
      *
-     * Performs simple keyword-based detection (case-insensitive) and returns one of:
-     * "Positive" (contains words like happy/joy/great/awesome/love),
-     * "Negative" (contains words like sad/angry/hate/terrible/awful),
-     * "Seeking" (contains words like question/help/please/confused),
-     * or "Neutral" if no matches are found.
-     *
-     * @param message The input text to analyze.
-     * @return A short label describing the detected emotional tone.
+     * @param message Text to evaluate for emotional tone.
+     * @return One of "Positive", "Negative", "Seeking", or "Neutral" indicating the detected tone.
      */
     private fun analyzeEmotionalTone(message: String): String {
         return when {
@@ -711,14 +704,13 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Estimates an empathy score for a text message as a float in the range [0.0, 1.0].
+     * Estimate the empathy expressed in a text message.
      *
-     * Uses simple heuristics: starts at a 0.5 baseline, increases for presence of polite/request
-     * keywords ("please", "help", "thank"), for detected emotional content, and for longer messages
-     * (length > 50). The final value is clamped to [0, 1].
+     * Uses simple heuristics (baseline plus adjustments) that consider polite/request keywords,
+     * presence of emotional content, and message length; the result is clamped between 0.0 and 1.0.
      *
      * @param message The input text to evaluate for empathic cues.
-     * @return A normalized empathy score (0.0–1.0).
+     * @return A value between 0.0 and 1.0 representing the estimated empathy.
      */
     private fun calculateEmpathyScore(message: String): Float {
         var score = 0.5f
@@ -748,10 +740,12 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Estimates a simple security risk level for the provided message.
+     * Classifies the security risk of a message as "High", "Medium", or "Low".
      *
-     * Returns "High" if the message contains explicit threat keywords (`hack`, `attack`, `breach`, `exploit`),
-     * "Medium" if it otherwise matches broader security-related indicators, and "Low" when no security cues are detected.
+     * Classification rules:
+     * - Returns "Medium" if the message matches broader security-related indicators.
+     * - Returns "High" if the message contains explicit threat keywords (`hack`, `attack`, `breach`, `exploit`).
+     * - Returns "Low" if no security cues are detected.
      *
      * @param message Free-form text to analyze for security-related content.
      * @return One of "High", "Medium", or "Low" representing the assessed security risk.
@@ -765,15 +759,13 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Determine the recommended protection level for a request based on its content.
+     * Recommend a protection level label for the given request based on its content.
      *
-     * Returns one of:
-     * - "Maximum" when the message contains the keyword "critical".
-     * - "Enhanced" when the message is identified as security-related.
-     * - "Standard" otherwise.
+     * Returns "Maximum" if the message contains the word "critical", "Enhanced" if the
+     * message is identified as security-related, and "Standard" otherwise.
      *
      * @param message The request text to analyze.
-     * @return A string label: "Maximum", "Enhanced", or "Standard".
+     * @return One of "Maximum", "Enhanced", or "Standard".
      */
     private fun determineProtectionLevel(message: String): String {
         return when {
@@ -784,22 +776,19 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Produces a brief threat assessment for the provided message.
+     * Produces a brief human-readable threat assessment for the given message.
      *
-     * Currently returns a default assessment ("No immediate threats detected"); intended to
-     * summarize detected security or safety concerns found in the input text.
-     *
-     * @param message The text to evaluate for potential threats.
-     * @return A short, human-readable threat assessment.
+     * @param message The text to evaluate for potential security or safety concerns.
+     * @return A short, human-readable threat assessment (for example, "No immediate threats detected").
      */
     private fun getThreatAssessment(message: String): String {
         return "No immediate threats detected"
     }
 
     /**
-     * Estimates the complexity of a text query by counting its words.
+     * Estimates a text query's complexity as High, Medium, or Low.
      *
-     * Returns "High" for more than 20 words, "Medium" for 11–20 words, and "Low" for 10 or fewer words.
+     * High for more than 20 words, Medium for 11–20 words, and Low for 10 or fewer words.
      *
      * @param message The input text to evaluate.
      * @return A complexity label: "High", "Medium", or "Low".
@@ -826,13 +815,12 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Computes an integration score from the cascade context and returns it as a percentage string.
+     * Produce an integration score from the cascade context as a percentage string.
      *
-     * The function reads "contextSize" from the provided map (expected to be an Int, defaults to 0)
-     * and calculates a score using the formula `min(contextSize * 20 + 60, 100)`, then formats it
-     * as a percentage (for example, "80%").
+     * Looks up the "contextSize" entry in the provided map (treated as an Int, defaults to 0)
+     * and converts the resulting score into a percentage string (for example, "80%").
      *
-     * @param context Map containing cascade context values; looks up the "contextSize" entry.
+     * @param context Map containing cascade context values; expects an optional "contextSize" Int.
      * @return Integration score formatted as a percentage string (e.g., "100%").
      */
     private fun calculateIntegrationScore(context: Map<String, Any>): String {
@@ -841,11 +829,10 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Identifies recurring linguistic and contextual patterns in the given message.
+     * Summarizes recurring linguistic and contextual patterns found in the input text.
      *
-     * @param message The input text to analyze for patterns.
-     * @return A short human-readable description summarizing detected patterns or structures.
-     *         (Current implementation returns a static placeholder.)
+     * @param message Input text to analyze for patterns.
+     * @return A short human-readable description of detected patterns or structures.
      */
     private fun detectPatterns(message: String): String {
         return "Linguistic patterns, contextual structures"
@@ -876,52 +863,42 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Determines the AuraShield status for a request message.
+     * Assess whether protective shielding should be applied to the given request message.
      *
-     * This is a lightweight placeholder implementation that currently always returns `"Active"`.
-     * Intended to evaluate whether protective shielding should be applied based on `message` content;
-     * the `message` parameter is the user query or context to inspect.
-     *
-     * @param message The input text used to assess shield status.
-     * @return A status string describing the shield state (currently always `"Active"`).
+     * @param message The user query or contextual text to evaluate for shielding.
+     * @return The shield status string. Currently returns `"Active"` for all inputs.
      */
     private fun assessShieldStatus(message: String): String {
         return "Active"
     }
 
     /**
-     * Determines the defense level for a given message.
+     * Determine the suggested defense level for the given message.
      *
-     * Currently a placeholder implementation that always returns "Optimal".
-     *
-     * @param message The input text to assess for defense level.
-     * @return A short descriptor of the defense level (e.g., "Optimal").
+     * @param message Text to assess for an appropriate defense level.
+     * @return A short descriptor of the defense level (for example, "Optimal").
      */
     private fun calculateDefenseLevel(message: String): String {
         return "Optimal"
     }
 
     /**
-     * Produces a textual protection matrix summary for the given message.
+     * Provide a short human-readable description of layered defensive measures for the given message.
      *
-     * This returns a brief, human-readable description of layered defensive
-     * measures applicable to the input. Currently implemented as a fixed,
-     * placeholder string describing multi-layered defensive protocols.
+     * Currently returns a fixed placeholder string and does not analyze the message.
      *
-     * @param message The input message used to determine protection characteristics (not currently inspected).
-     * @return A short description of the protection matrix.
+     * @param message The input message (not inspected by this implementation).
+     * @return A concise description of the protection matrix.
      */
     private fun getProtectionMatrix(message: String): String {
         return "Multi-layered defensive protocols"
     }
 
     /**
-     * Determines a simple creativity level for the input text.
+     * Classifies the creativity level suggested by the input text.
      *
-     * Checks the message for creation-related keywords ("create", "build", "make", "design", case-insensitive).
-     *
-     * @param message The text to analyze for creation intent.
-     * @return `"High"` if any creation keywords are present, otherwise `"Medium"`.
+     * @param message The text to evaluate for creative intent.
+     * @return `High` if the message contains creation-related keywords, `Medium` otherwise.
      */
     private fun assessCreativityLevel(message: String): String {
         return if (message.contains(
@@ -934,26 +911,18 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Estimates the model's "generation potential" as a float between 0.7 and 0.95.
+     * Estimates the generation potential as a pseudo-random score between 0.7 and 0.95.
      *
-     * Currently returns a pseudo-random value in the range [0.7, 0.95] representing
-     * the relative capability/confidence for creative generation. The `message`
-     * parameter is accepted for API consistency and potential future use but is
-     * ignored by this implementation.
-     *
-     * @param message The input text (ignored by this implementation).
-     * @return A Float in the range 0.7..0.95 representing generation potential.
-     */
+     * @param message The input text (accepted for API consistency; this implementation ignores it).
+     * @return A Float between 0.7 and 0.95 representing generation potential.
     private fun calculateGenerationPotential(message: String): Float {
         return (0.7f..0.95f).random()
     }
 
     /**
-     * Returns a brief, human-readable compatibility summary for generation tools based on the input message.
+     * Produce a brief, human-readable compatibility summary for generation tools based on the input message.
      *
-     * Currently a placeholder implementation that always reports full compatibility across generation tools.
-     *
-     * @param message The input message to assess for tool compatibility (currently unused).
+     * @param message The input text to assess for generation-tool compatibility.
      * @return A short compatibility summary string.
      */
     private fun getToolCompatibility(message: String): String {
@@ -961,12 +930,10 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Classifies the technical complexity of a text message.
+     * Assess the message's technical complexity.
      *
-     * Returns "Advanced" when the message contains technical content; otherwise returns "Standard".
-     *
-     * @param message The text to analyze for technical content.
-     * @return Either "Advanced" or "Standard" indicating the assessed technical complexity.
+     * @param message Text to analyze for technical content.
+     * @return "Advanced" if the message contains technical content, "Standard" otherwise.
      */
     private fun analyzeTechnicalComplexity(message: String): String {
         return if (containsTechnicalContent(message)) "Advanced" else "Standard"
@@ -1045,10 +1012,10 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Build an CascadeResponse representing a cascade processing error.
+     * Create a CascadeResponse representing a cascade processing error.
      *
      * @param error Short human-readable error message or reason to include in the response body.
-     * @return An CascadeResponse from "CascadeAI" containing the formatted error message, zero confidence, and the current timestamp.
+     * @return A CascadeResponse with agent "CascadeAI", the formatted error message, confidence 0.0, and the current timestamp.
      */
     private fun createErrorResponse(error: String): CascadeResponse {
         return CascadeResponse(
@@ -1060,12 +1027,9 @@ class CascadeAIService @Inject constructor(
     }
 
     /**
-     * Returns the current local date-time as an ISO-8601 string.
+     * Get the current local date-time formatted as ISO-8601 without offset or zone ID.
      *
-     * The value is formatted using `DateTimeFormatter.ISO_LOCAL_DATE_TIME` (e.g. `2025-09-07T14:35:20`),
-     * and does not include an offset or zone ID.
-     *
-     * @return Current local date-time formatted as `ISO_LOCAL_DATE_TIME`.
+     * @return The current local date-time formatted using `DateTimeFormatter.ISO_LOCAL_DATE_TIME` (e.g., `2025-09-07T14:35:20`).
      */
     private fun getCurrentTimestamp(): String {
         return LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)

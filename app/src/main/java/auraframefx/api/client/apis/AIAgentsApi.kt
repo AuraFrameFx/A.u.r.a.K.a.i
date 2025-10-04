@@ -44,15 +44,14 @@ class AIAgentsApi(
     }
 
     /**
-     * GET /agents/status
-     * Get status of all AI agents
+     * Fetches the status of all AI agents.
      *
-     * @return kotlin.collections.List<AgentStatus>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
+     * @return A list of AgentStatus objects representing each agent's status.
+     * @throws IllegalStateException If the request configuration is invalid.
+     * @throws IOException If an I/O error occurs while performing the HTTP request.
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response.
+     * @throws ClientException If the API returns a client error response (4xx).
+     * @throws ServerException If the API returns a server error response (5xx).
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(
@@ -90,12 +89,13 @@ class AIAgentsApi(
     }
 
     /**
-     * GET /agents/status
-     * Get status of all AI agents
+     * Retrieve the status of all AI agents.
      *
-     * @return ApiResponse<kotlin.collections.List<AgentStatus>?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
+     * Makes a request to the /agents/status endpoint and returns the parsed response.
+     *
+     * @return ApiResponse<List<AgentStatus>?> containing the list of agent statuses when available.
+     * @throws IllegalStateException if the request configuration is invalid.
+     * @throws IOException if an I/O error occurs while executing the request.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
@@ -108,9 +108,13 @@ class AIAgentsApi(
     }
 
     /**
-     * To obtain the request config of the operation agentsStatusGet
+     * Build the HTTP request configuration for the GET /agents/status endpoint.
      *
-     * @return RequestConfig
+     * The returned RequestConfig targets the path "/agents/status", uses the GET method,
+     * sets "Accept" to "application/json", includes an empty query map and no request body,
+     * and does not require authentication.
+     *
+     * @return A RequestConfig<Unit> preconfigured for fetching all AI agents' status.
      */
     fun agentsStatusGetRequestConfig(): RequestConfig<Unit> {
         val localVariableBody = null
@@ -129,7 +133,13 @@ class AIAgentsApi(
     }
 
 
-    private fun encodeURIComponent(uriComponent: kotlin.String): kotlin.String =
+    /**
+             * Percent-encodes a single URI path component.
+             *
+             * @param uriComponent The raw path component to encode.
+             * @return The percent-encoded representation of `uriComponent` suitable for use in a URL path segment.
+             */
+            private fun encodeURIComponent(uriComponent: kotlin.String): kotlin.String =
         HttpUrl.Builder().scheme("http").host("localhost").addPathSegment(uriComponent)
             .build().encodedPathSegments[0]
 }

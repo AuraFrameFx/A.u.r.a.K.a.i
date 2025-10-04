@@ -9,13 +9,13 @@ import kotlin.test.assertTrue
 
 open class GradleTestkitBase {
     /**
-     * Creates a temporary Gradle project directory and invokes a caller-provided setup callback to populate it.
+     * Create a temporary Gradle project directory and run the provided setup callback to populate it.
      *
-     * The directory is marked for deletion on JVM exit and is initialized with a minimal
-     * settings.gradle.kts that sets a stable root project name ("testkit-root") to produce deterministic output.
+     * The directory is marked for deletion on JVM exit and contains a minimal settings.gradle.kts
+     * that sets the root project name to "testkit-root" for deterministic output.
      *
-     * @param setup A lambda invoked with the temporary project root where callers should create project files (for example via writeBuildFile). Defaults to a no-op.
-     * @return The temporary project root directory as a File.
+     * @param setup Lambda invoked with the temporary project root where callers should create project files. Defaults to a no-op.
+     * @return The temporary project root directory.
      */
     protected fun withTempProject(setup: (root: File) -> Unit = {}): File {
         val dir = createTempDirectory("gradle-testkit-").toFile()
@@ -48,18 +48,14 @@ open class GradleTestkitBase {
     }
 
     /**
-     * Runs a Gradle build against the given temporary project directory and returns the BuildResult.
+     * Execute a Gradle build in the given project directory using Gradle TestKit and return the resulting BuildResult.
      *
-     * The provided `args` are passed to the Gradle invocation (`, "--stacktrace"` is appended).
-     * If `expectSuccess` is true the method calls `build()`; otherwise it calls `buildAndFail()`.
-     *
-     * @param root The project directory to execute the build in.
+     * @param root The project directory to run the build in.
      * @param args Gradle CLI arguments (tasks and flags) to pass to the runner.
-     * @param expectSuccess When true, expect the build to succeed; when false, expect it to fail.
-     * @return The Gradle TestKit BuildResult produced by the run.
+     * @param expectSuccess When `true`, the build is expected to succeed; when `false`, the build is expected to fail.
+     * @return The Gradle TestKit `BuildResult` produced by the run.
      *
-     * Note: This uses Gradle TestKit's `withPluginClasspath()` and therefore requires `gradle-test-kit` on the test classpath.
-     */
+     * Requires `gradle-test-kit` on the test classpath for plugin classpath resolution. */
     protected fun run(root: File, vararg args: String, expectSuccess: Boolean = true): BuildResult {
         val runner = GradleRunner.create()
             .withProjectDir(root)
@@ -88,11 +84,11 @@ open class GradleTestkitBase {
     }
 
     /**
-     * Asserts that the given Gradle build result's console output contains all provided snippets.
+     * Verifies the build's console output contains each of the specified snippets.
      *
      * Each snippet is checked independently; the assertion fails if any snippet is not found.
      *
-     * @param result The Gradle BuildResult whose output will be searched.
+     * @param result The Gradle BuildResult whose console output will be searched.
      * @param snippets One or more string fragments that must be present in the output.
      */
     protected fun assertOutputContains(result: BuildResult, vararg snippets: String) {

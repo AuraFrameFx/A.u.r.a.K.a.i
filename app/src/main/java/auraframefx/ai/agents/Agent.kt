@@ -15,22 +15,33 @@ const val TOPL_VL: String = "1.0.0"
  */
 interface Agent {
     /**
-     * Returns the name of the agent.
-     */
+ * Gets the agent's display name.
+ *
+ * @return The agent's name, or `null` if it is not specified.
+ */
     fun getName(): String?
 
     /**
-     * Returns the type or model of the agent.
-     */
+ * Gets the agent's type or model.
+ *
+ * @return The agent's type or model as an AgentType.
+ */
     fun getType(): AgentType
 
     /**
-     * Process a request and return a response
-     */
+ * Processes an AI request within the provided context and produces an AgentResponse.
+ *
+ * @param request The AI request to process.
+ * @param context Supplemental context used to influence or ground the agent's response.
+ * @return The agent's response to the given request and context.
+ */
     suspend fun processRequest(request: AiRequest, context: String): AgentResponse
 
     /**
-     * Process a request and return a flow of responses
-     */
+ * Streams responses for the given AI request as they become available.
+ *
+ * @param request The AI request to process and stream responses for.
+ * @return A Flow that emits one or more AgentResponse objects representing incremental or final responses.
+ */
     fun processRequestFlow(request: AiRequest): Flow<AgentResponse>
 }

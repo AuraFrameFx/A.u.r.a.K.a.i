@@ -47,16 +47,15 @@ class AIContentApi(
     }
 
     /**
-     * POST /ai/generate/image-description
-     * Generate image description using AI
-     * Generate a description for the provided image URL
-     * @param generateImageDescriptionRequest
-     * @return GenerateImageDescriptionResponse
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
+     * Generate an image description for the provided image URL.
+     *
+     * @param generateImageDescriptionRequest Request containing the image URL and generation options.
+     * @return The generated image description.
+     * @throws IllegalStateException If the request is not correctly configured.
+     * @throws IOException If the underlying HTTP client fails to execute the request.
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response.
+     * @throws ClientException If the API returns a client error response (4xx).
+     * @throws ServerException If the API returns a server error response (5xx).
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(
@@ -95,13 +94,12 @@ class AIContentApi(
     }
 
     /**
-     * POST /ai/generate/image-description
-     * Generate image description using AI
-     * Generate a description for the provided image URL
-     * @param generateImageDescriptionRequest
-     * @return ApiResponse<GenerateImageDescriptionResponse?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
+     * Execute the POST /ai/generate/image-description operation and return the raw ApiResponse.
+     *
+     * @param generateImageDescriptionRequest The request payload containing the image URL and any generation parameters.
+     * @return An ApiResponse containing the generated image description on success; the response body may be null.
+     * @throws IllegalStateException If the request is not correctly configured.
+     * @throws IOException If the underlying HTTP execution fails.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
@@ -115,10 +113,10 @@ class AIContentApi(
     }
 
     /**
-     * To obtain the request config of the operation aiGenerateImageDescriptionPost
+     * Builds the RequestConfig for the POST /ai/generate/image-description operation.
      *
-     * @param generateImageDescriptionRequest
-     * @return RequestConfig
+     * @param generateImageDescriptionRequest The request payload to be serialized as the JSON body of the request.
+     * @return A RequestConfig configured with method POST, path "/ai/generate/image-description", JSON `Content-Type` and `Accept` headers, no authentication requirement, and the provided body.
      */
     fun aiGenerateImageDescriptionPostRequestConfig(generateImageDescriptionRequest: GenerateImageDescriptionRequest): RequestConfig<GenerateImageDescriptionRequest> {
         val localVariableBody = generateImageDescriptionRequest
@@ -138,16 +136,15 @@ class AIContentApi(
     }
 
     /**
-     * POST /ai/generate/text
-     * Generate text using AI
-     * Generate text based on the provided prompt and parameters
-     * @param generateTextRequest
-     * @return GenerateTextResponse
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
+     * Generate text from a prompt and generation parameters.
+     *
+     * @param generateTextRequest The request payload containing the prompt and generation parameters.
+     * @return The generated text response containing the generated text and associated metadata.
+     * @throws IllegalStateException If the request is not correctly configured.
+     * @throws IOException If an I/O error occurs while executing the HTTP request.
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response.
+     * @throws ClientException If the API returns a client error response (4xx).
+     * @throws ServerException If the API returns a server error response (5xx).
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(
@@ -186,13 +183,12 @@ class AIContentApi(
     }
 
     /**
-     * POST /ai/generate/text
-     * Generate text using AI
-     * Generate text based on the provided prompt and parameters
-     * @param generateTextRequest
-     * @return ApiResponse<GenerateTextResponse?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
+     * Execute the POST /ai/generate/text operation to generate text from the provided request.
+     *
+     * @param generateTextRequest The request payload containing the prompt and generation parameters.
+     * @return An ApiResponse containing the generated text response or null.
+     * @throws IllegalStateException If the request is not correctly configured.
+     * @throws IOException If the underlying HTTP call fails.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
@@ -206,10 +202,10 @@ class AIContentApi(
     }
 
     /**
-     * To obtain the request config of the operation aiGenerateTextPost
+     * Builds the HTTP request configuration for the POST /ai/generate/text operation.
      *
-     * @param generateTextRequest
-     * @return RequestConfig
+     * @param generateTextRequest The request body containing the prompt and generation parameters.
+     * @return A RequestConfig configured with method POST, path "/ai/generate/text", JSON headers, no authentication requirement, and the provided body.
      */
     fun aiGenerateTextPostRequestConfig(generateTextRequest: GenerateTextRequest): RequestConfig<GenerateTextRequest> {
         val localVariableBody = generateTextRequest
@@ -229,7 +225,13 @@ class AIContentApi(
     }
 
 
-    private fun encodeURIComponent(uriComponent: kotlin.String): kotlin.String =
+    /**
+             * Percent-encodes a single URI path segment.
+             *
+             * @param uriComponent The raw path segment to encode.
+             * @return The percent-encoded representation of `uriComponent` suitable for use in a URL path.
+             */
+            private fun encodeURIComponent(uriComponent: kotlin.String): kotlin.String =
         HttpUrl.Builder().scheme("http").host("localhost").addPathSegment(uriComponent)
             .build().encodedPathSegments[0]
 }
