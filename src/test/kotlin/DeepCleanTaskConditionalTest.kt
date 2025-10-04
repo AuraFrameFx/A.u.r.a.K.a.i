@@ -10,7 +10,7 @@ class DeepCleanTaskConditionalTest : GradleTestkitBase() {
     private val script = """
         if (file("nuclear-clean.gradle.kts").exists()) {
             apply(from = "nuclear-clean.gradle.kts")
-            if (tasks.findByName("nuclearClean") \!= null) {
+            if (tasks.findByName("nuclearClean") != null) {
                 tasks.register("deepClean") {
                     group = "build"
                     description = "Nuclear clean + standard clean"
