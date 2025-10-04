@@ -1,12 +1,7 @@
+package dev.aurakai.auraframefx.test
+
 import org.gradle.testkit.runner.GradleRunner
 import org.gradle.testkit.runner.BuildResult
-import org.gradle.testkit.runner.TaskOutcome
-import java.io.File
-import kotlin.io.path.createTempDirectory
-import kotlin.test.assertContains
-import kotlin.test.assertNotNull
-import kotlin.test.assertTrue
-
 open class GradleTestkitBase {
     /**
      * Creates a temporary Gradle project directory and invokes a caller-provided setup callback to populate it.
