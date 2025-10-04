@@ -6,9 +6,8 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.compose)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
-    alias(libs.plugins.ksp)  // Required for Hilt annotation processing
+    alias(libs.plugins.ksp)
 }
 
 // Add modern documentation task that doesn't rely on deprecated plugins

@@ -9,7 +9,6 @@ plugins {
     // Build logic convention plugins
     id("genesis.android.application") apply false
     id("genesis.android.library") apply false
-    id("genesis.android.compose") apply false
     id("genesis.android.native") apply false
     kotlin("jvm") version "2.2.20"
 }

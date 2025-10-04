@@ -4,7 +4,8 @@
 plugins {
     id("com.android.application")
     alias(libs.plugins.ksp)
-    id("org.openapi.generator") version "7.16.0"// Commented out until plugin is recognized
+    id("org.openapi.generator") version "7.16.0"
+    // Commented out until plugin is recognized
 }
 
 android {
