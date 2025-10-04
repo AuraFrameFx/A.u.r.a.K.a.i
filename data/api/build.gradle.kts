@@ -37,7 +37,7 @@ afterEvaluate {
 sourceSets {
     named("main") {
         java {
-            srcDir(layout.buildDirectory.dir("generated/openapi/src/main/kotlin"))
+            srcDir(project.layout.buildDirectory.dir("generated/openapi/src/main/kotlin"))
         }
     }
 }
@@ -48,13 +48,13 @@ tasks.withType<KotlinCompile>().configureEach {
     dependsOn(tasks.named("openApiGenerate"))
 }
 
-val openApiGeneratedDir = layout.buildDirectory.dir("generated/openapi")
+val openApiGeneratedDir = project.layout.buildDirectory.dir("generated/openapi")
 
 // Add a rule to the 'clean' task to delete the generated directory.
 // This prevents stale or old generated files from causing issues.
 tasks.named("clean") {
     doLast {
-        delete(layout.buildDirectory.dir("generated/openapi"))
+        project.delete(project.layout.buildDirectory.dir("generated/openapi"))
     }
 }
 

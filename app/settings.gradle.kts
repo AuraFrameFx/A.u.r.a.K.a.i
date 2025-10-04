@@ -121,7 +121,7 @@ dependencyResolutionManagement {
     }
 } // Close dependencyResolutionManagement block
 // ===== PROJECT IDENTIFICATION =====
-rootProject.name = "AOSP-Re:Genesis"
+rootProject.name = "A.u.r.a.K.a.i"
 // ===== MODULE INCLUSION =====
 include(":app")
 include(":core-module")
