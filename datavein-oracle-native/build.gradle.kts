@@ -38,6 +38,16 @@ android {
     }
 }
 
+kotlin {
+    jvmToolchain(24)
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
+
 dependencies {
     implementation(project(":core-module"))
     implementation(libs.androidx.core.ktx)

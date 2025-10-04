@@ -47,6 +47,15 @@ tasks.register<Delete>("clearGeneratedSources") {
     delete("src/generated", "build/generated") // adjust paths as needed
 }
 
+kotlin {
+    jvmToolchain(24)
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
 
 // Spotless and toolchain are applied globally via root build.gradle.kts and convention plugins
 // ProGuard rules for Hilt, Compose, Serialization, and reflection-based libraries should be in proguard-rules.pro

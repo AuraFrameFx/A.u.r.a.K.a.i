@@ -72,6 +72,12 @@ android {
         jvmToolchain(24)
     }
 
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(24))
+        }
+    }
+
     buildFeatures {
         compose = true
     }

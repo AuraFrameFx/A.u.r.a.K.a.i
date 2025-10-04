@@ -97,9 +97,17 @@ dependencies {
     testRuntimeOnly(libs.junit.platform.launcher)
     implementation(kotlin("stdlib-jdk8"))
 }
+
 kotlin {
     jvmToolchain(24)
 }
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
+
 
 // Configure JUnit 5 for tests
 tasks.withType<Test> {
@@ -127,5 +135,4 @@ if (file("nuclear-clean.gradle.kts").exists()) {
 // Apply dependency fix if available  
 if (file("dependency-fix.gradle.kts").exists()) {
     apply(from = "dependency-fix.gradle.kts")
-
 }
