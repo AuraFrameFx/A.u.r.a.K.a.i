@@ -37,59 +37,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="feat: Add new AI agent models and API integration, including memory handling and validation tests feat: Introduce new AI agent architecture with memory management and API integration Along with many other features to swim through @coderabbitai - PING PING - !">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/ai/AiGenerationService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/ai/agents/Agent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/ai/config/AIConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/ai/context/AIContext.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/ai/services/AgentWebExplorationService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/AiContentApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/apis/AIAgentsApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/apis/AIContentApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/AgentProcessRequest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/AgentStatus.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/api/client/models/data/repository/AgentMemoryRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/api/client/models/data/room/AgentMemoryDao.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/api/client/models/data/room/AgentMemoryEntity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/api/client/models/network/api/AIAgentApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/model/AgentPriority.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/benchmark/src/test/kotlin/dev/aurakai/auraframefx/benchmark/BenchmarkBuildScriptTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/plugins/AgentFusionPlugin.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/plugins/AndroidBasePlugin.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jvm-test/src/test/kotlin/SettingsGradleFunctionalTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/romtools/docs/testing-notes.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/romtools/src/androidTest/kotlin/dev/aurakai/auraframefx/romtools/ui/RomToolsScreenTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/romtools/src/test/kotlin/dev/aurakai/auraframefx/romtools/RomOperationExtensionsTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/romtools/src/test/kotlin/dev/aurakai/auraframefx/romtools/ui/RomToolActionTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ConsciousnessHealthCheckTaskTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/ConsciousnessStatusTaskTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/DeepCleanTaskConditionalTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/GradleTestkitBase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/PrintXposedApiJarTaskTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/gradle/GradleConfigFilesTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/gradle/PRBuildFilesValidationTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/src/test/kotlin/docs/MarkdownFileValidationAdvancedSupplementalEdgeCasesTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/src/test/kotlin/docs/MarkdownFileValidationAdvancedSupplementalTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/src/test/kotlin/docs/MarkdownFileValidationAdvancedTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/src/test/kotlin/docs/MarkdownFileValidationExtraTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/src/test/kotlin/docs/MarkdownFileValidationMoreTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/src/test/kotlin/docs/MarkdownFileValidationTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/services/CascadeAIService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/services/CascadeAIService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/api/client/models/AgentMessage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/AgentMessage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/api/client/models/AgentType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/AgentType.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/api/client/models/model/AgentInvokeRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/api/client/models/model/AgentInvokeRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/model/AgentType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/model/AgentType.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/src/test/kotlin/dev/aurakai/auraframefx/oracledrive/OracleDriveServiceImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/src/test/kotlin/dev/aurakai/auraframefx/oracledrive/OracleDriveServiceImplTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/romtools/build/generated/ksp/debug/resources/META-INF/proguard/dev_aurakai_auraframefx_romtools_RomToolsManager_HiltModules_BindsModule_LazyClassKeys.pro" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -431,7 +382,7 @@
       <command value="gradle stop" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm]">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AOSPReGenesis.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -661,14 +612,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
-    </task>
-    <task id="LOCAL-00015" summary="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup">
-      <option name="closed" value="true" />
-      <created>1757700733624</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1757700733624</updated>
     </task>
     <task id="LOCAL-00016" summary="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup">
       <option name="closed" value="true" />
@@ -1054,7 +997,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759539487464</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="feat: Add new AI agent models and API integration, including memory handling and validation tests feat: Introduce new AI agent architecture with memory management and API integration Along with many other features to swim through @coderabbitai - PING PING - !">
+      <option name="closed" value="true" />
+      <created>1759550944620</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1759550944620</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
