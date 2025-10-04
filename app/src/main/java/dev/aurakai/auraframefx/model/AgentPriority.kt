@@ -1,3 +1,3 @@
-package auraframefx.api.client.models.dev.aurakai.auraframefx.model
+package dev.aurakai.auraframefx.model
 
 annotation class AgentPriority
