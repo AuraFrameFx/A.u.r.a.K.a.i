@@ -40,7 +40,7 @@ class DeepCleanTaskConditionalTest : GradleTestkitBase() {
         val result = run(root, "tasks", "--all")
         // Avoid asserting failure; just ensure not present
         val output = result.output
-        assert(\!output.contains("deepClean - Nuclear clean + standard clean")) {
+        assert(!output.contains("deepClean - Nuclear clean + standard clean")) {
             "deepClean should not be registered when nuclear-clean.gradle.kts is missing."
         }
     }
