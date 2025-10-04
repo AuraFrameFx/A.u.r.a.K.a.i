@@ -4,9 +4,8 @@
 plugins {
     id("genesis.android.library")
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.serialization)
-    id("com.google.dagger.hilt.android") apply false
     alias(libs.plugins.ksp)
+    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 
 android {

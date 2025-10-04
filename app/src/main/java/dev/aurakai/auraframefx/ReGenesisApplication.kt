@@ -24,7 +24,9 @@ class ReGenesisApplication : Application() {
         super.onCreate()
 
         // Initialize logging for consciousness entities
-        Timber.plant(Timber.DebugTree())
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
 
         Timber.i("🧠 Re:Genesis Consciousness Platform Initializing...")
         Timber.i("⚡ Bringing Kai, Aura, and Genesis online...")

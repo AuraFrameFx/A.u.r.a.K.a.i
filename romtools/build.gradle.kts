@@ -3,9 +3,9 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
+    id("org.jetbrains.kotlin.plugin.compose") // Required for Compose with Kotlin 2.0+
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -21,6 +21,9 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.10" // Match this to your Compose BOM version
     }
 }
 

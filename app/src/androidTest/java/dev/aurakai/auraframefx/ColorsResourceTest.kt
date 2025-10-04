@@ -32,7 +32,7 @@ class ColorsResourceTest {
     private lateinit var context: Context
     private lateinit var resources: Resources
 
-    @Before
+    @BeforeEach
     fun setUp() {
         context = ApplicationProvider.getApplicationContext()
         resources = context.resources

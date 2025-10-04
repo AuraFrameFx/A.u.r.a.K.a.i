@@ -9,9 +9,6 @@ plugins {
     `java-library`
 }
 
-// Apply the fix-annotations script to handle @OptIn annotations
-apply(from = "fix-annotations.gradle.kts")
-
 afterEvaluate {
     openApiGenerate {
         generatorName = "kotlin"
@@ -51,12 +48,14 @@ tasks.withType<KotlinCompile>().configureEach {
     dependsOn(tasks.named("openApiGenerate"))
 }
 
-var openApiGeneratedDir = layout.buildDirectory.dir("generated/openapi")
+val openApiGeneratedDir = layout.buildDirectory.dir("generated/openapi")
 
 // Add a rule to the 'clean' task to delete the generated directory.
 // This prevents stale or old generated files from causing issues.
-tasks.named<Delete>("clean") {
-    delete(openApiGeneratedDir)
+tasks.named("clean") {
+    doLast {
+        delete(layout.buildDirectory.dir("generated/openapi"))
+    }
 }
 
 // Define the dependencies required by the generated Ktor client.
@@ -67,27 +66,27 @@ dependencies {
     implementation(kotlin("reflect"))
 
     // Ktor client dependencies
-    implementation(libs.ktor.client.core)
-    implementation("io.ktor:ktor-client-cio:3.3.0")
-    implementation(libs.ktor.client.content.negotiation)
-    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation("io.ktor:ktor-client-core:2.3.10")
+    implementation("io.ktor:ktor-client-cio:2.3.10")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.10")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.10")
 
     // KotlinX dependencies
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.kotlinx.datetime)
-    implementation(libs.kotlinx.coroutines.core)
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
 
     // Logging
     implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
-    implementation(libs.slf4j.api)
-    runtimeOnly("ch.qos.logback:logback-classic:1.5.19")
+    implementation("org.slf4j:slf4j-api:2.0.12")
+    runtimeOnly("ch.qos.logback:logback-classic:1.5.3")
 
     // Testing dependencies
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))
-    testImplementation(libs.junit.jupiter.api)
-    testRuntimeOnly(libs.junit.jupiter.engine)
-    testImplementation(libs.mockk)
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.2")
+    testImplementation("io.mockk:mockk:1.13.10")
 }
 
 // Configure test task to use JUnit 5
