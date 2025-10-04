@@ -3,7 +3,6 @@
 
 plugins {
     id("com.android.application")
-    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     id("org.openapi.generator") version "7.16.0"// Commented out until plugin is recognized
 }
@@ -37,6 +36,10 @@ android {
     // Enable AIDL for the app module
     buildFeatures {
         aidl = true
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.11"
     }
 
     testOptions {

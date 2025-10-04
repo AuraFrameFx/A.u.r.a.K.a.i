@@ -37,10 +37,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Overhaul build configuration and update dependencies&#10;&#10;This commit introduces a major refactoring of the build system, standardizes Java and Kotlin toolchains, updates numerous dependencies, and refines the OpenAPI generation process.&#10;&#10;**Key Changes:**&#10;&#10;*   **Build &amp; Toolchain Configuration:**&#10;    *   **Standardized Java 24:** Explicitly set the Java toolchain to version 24 across all modules (`build.gradle.kts`, `module-a`, `sandbox-ui`, etc.) to ensure consistent builds.&#10;    *   **Removed Foojay Resolver:** The `foojay-resolver-convention` plugin was removed from `settings.gradle.kts` in favor of Gradle's built-in toolchain auto-download functionality.&#10;    *   **Removed Hardcoded Java Home:** Deleted the hardcoded `org.gradle.java.home` path from `gradle.properties` to allow the auto-provisioned toolchain to be used.&#10;    *   **Updated Daemon JVM:** The `gradle-daemon-jvm.properties` file was updated to use toolchain version 25.&#10;    *   **Updated Project Name:** The root project name in `settings.gradle.kts` was changed from &quot;AOSPReGenesis&quot; to &quot;AuraKai&quot;.&#10;&#10;*   **Dependency Updates:**&#10;    *   Upgraded Android Gradle Plugin to `9.0.0-alpha09`.&#10;    *   Updated Dagger Hilt to `2.57.2`.&#10;    *   Bumped JUnit 5 to `6.0.0`.&#10;    *   Upgraded Ktor client libraries to `3.3.0`.&#10;    *   Updated MockK to `1.14.6`.&#10;    *   Upgraded various other libraries including `moshi`, `hilt-work`, and `hilt-navigation-compose`.&#10;&#10;*   **OpenAPI Generation (`data/api`):**&#10;    *   **Refactored `build.gradle.kts`:** The OpenAPI generator configuration was significantly streamlined.&#10;        *   The deprecated `openapi-generator.gradle.kts` script was deleted.&#10;        *   Configuration was moved directly into the `openApiGenerate` block.&#10;        *   Added checks to ensure the API specification file exists and is not empty.&#10;        *   Refined configuration options for better code generation, including sorting parameters and models by their required flag.&#10;        *   Enabled OpenAPI normalizer rules to refactor `allOf` and simplify `oneOf/anyOf`.&#10;    *   **API Spec (`my-api-spec.yaml`):** Corrected the schema for the `includePreviews` query parameter, changing its default value from `false` to `auto`. The empty `paths: {}` was also removed.&#10;&#10;*   **Module-Specific Build Scripts:**&#10;    *   **`romtools`:** Removed a redundant `org.jetbrains.kotlin.plugin.compose` plugin declaration.&#10;    *   **`module-c`:** Changed `implementation(kotlin(&quot;stdlib-jdk8&quot;))` to the more explicit `implementation(&quot;org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20&quot;)`.&#10;    *   **`utilities`:** Added explicit Java source sets for better IDE compatibility.&#10;    *   **`scripts/apply-yukihook-conventions.gradle.kts`:** Updated Java source and target compatibility to version 24.">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +191,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "android.gradle.sync.needed": "true",
     "bazel.project.detector.is.bazel.project": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
@@ -458,14 +460,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
-    </task>
-    <task id="LOCAL-00020" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
-      <option name="closed" value="true" />
-      <created>1757710205059</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1757710205059</updated>
     </task>
     <task id="LOCAL-00021" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
       <option name="closed" value="true" />
@@ -851,7 +845,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759564842925</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="refactor: Overhaul build configuration and update dependencies&#10;&#10;This commit introduces a major refactoring of the build system, standardizes Java and Kotlin toolchains, updates numerous dependencies, and refines the OpenAPI generation process.&#10;&#10;**Key Changes:**&#10;&#10;*   **Build &amp; Toolchain Configuration:**&#10;    *   **Standardized Java 24:** Explicitly set the Java toolchain to version 24 across all modules (`build.gradle.kts`, `module-a`, `sandbox-ui`, etc.) to ensure consistent builds.&#10;    *   **Removed Foojay Resolver:** The `foojay-resolver-convention` plugin was removed from `settings.gradle.kts` in favor of Gradle's built-in toolchain auto-download functionality.&#10;    *   **Removed Hardcoded Java Home:** Deleted the hardcoded `org.gradle.java.home` path from `gradle.properties` to allow the auto-provisioned toolchain to be used.&#10;    *   **Updated Daemon JVM:** The `gradle-daemon-jvm.properties` file was updated to use toolchain version 25.&#10;    *   **Updated Project Name:** The root project name in `settings.gradle.kts` was changed from &quot;AOSPReGenesis&quot; to &quot;AuraKai&quot;.&#10;&#10;*   **Dependency Updates:**&#10;    *   Upgraded Android Gradle Plugin to `9.0.0-alpha09`.&#10;    *   Updated Dagger Hilt to `2.57.2`.&#10;    *   Bumped JUnit 5 to `6.0.0`.&#10;    *   Upgraded Ktor client libraries to `3.3.0`.&#10;    *   Updated MockK to `1.14.6`.&#10;    *   Upgraded various other libraries including `moshi`, `hilt-work`, and `hilt-navigation-compose`.&#10;&#10;*   **OpenAPI Generation (`data/api`):**&#10;    *   **Refactored `build.gradle.kts`:** The OpenAPI generator configuration was significantly streamlined.&#10;        *   The deprecated `openapi-generator.gradle.kts` script was deleted.&#10;        *   Configuration was moved directly into the `openApiGenerate` block.&#10;        *   Added checks to ensure the API specification file exists and is not empty.&#10;        *   Refined configuration options for better code generation, including sorting parameters and models by their required flag.&#10;        *   Enabled OpenAPI normalizer rules to refactor `allOf` and simplify `oneOf/anyOf`.&#10;    *   **API Spec (`my-api-spec.yaml`):** Corrected the schema for the `includePreviews` query parameter, changing its default value from `false` to `auto`. The empty `paths: {}` was also removed.&#10;&#10;*   **Module-Specific Build Scripts:**&#10;    *   **`romtools`:** Removed a redundant `org.jetbrains.kotlin.plugin.compose` plugin declaration.&#10;    *   **`module-c`:** Changed `implementation(kotlin(&quot;stdlib-jdk8&quot;))` to the more explicit `implementation(&quot;org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20&quot;)`.&#10;    *   **`utilities`:** Added explicit Java source sets for better IDE compatibility.&#10;    *   **`scripts/apply-yukihook-conventions.gradle.kts`:** Updated Java source and target compatibility to version 24.">
+      <option name="closed" value="true" />
+      <created>1759564905957</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1759564905957</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
