@@ -64,10 +64,6 @@ pluginManagement {
         }
     }
     
-    plugins {
-        id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-    }
-    
     resolutionStrategy {
         eachPlugin {
             if (requested.id.namespace == "com.google.dagger") {
@@ -76,9 +72,7 @@ pluginManagement {
         }
     }
 }
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-}
+
 
 dependencyResolutionManagement {
     // Enforce consistent dependency resolution
@@ -86,7 +80,7 @@ dependencyResolutionManagement {
 
     // Repository configuration with all necessary sources
     repositories {
-        // Primary repositories
+        gradlePluginPortal()
         google()
         mavenCentral()
 
@@ -128,7 +122,7 @@ dependencyResolutionManagement {
 }
 
 // ===== PROJECT IDENTIFICATION =====
-rootProject.name = "AOSPReGenesis"
+rootProject.name = "AuraKai"
 
 // ===== MODULE INCLUSION =====
 // Core modules

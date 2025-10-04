@@ -18,7 +18,7 @@ dependencies {
     ksp(libs.hilt.compiler)
     
     // Add other module-specific dependencies here
-    implementation(kotlin("stdlib-jdk8"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
 }
 
 tasks.register("moduleCStatus") {
@@ -28,4 +28,10 @@ tasks.register("moduleCStatus") {
 
 kotlin {
     jvmToolchain(24)
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
 }

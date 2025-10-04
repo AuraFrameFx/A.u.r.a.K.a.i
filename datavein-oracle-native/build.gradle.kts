@@ -1,9 +1,8 @@
 plugins {
     id("genesis.android.library")
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.serialization)
-    id("com.google.dagger.hilt.android") apply false
+    id("genesis.android.native")
     alias(libs.plugins.ksp)
+    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 
 android {
@@ -35,6 +34,16 @@ android {
         jniLibs {
             useLegacyPackaging = false
         }
+    }
+}
+
+kotlin {
+    jvmToolchain(24)
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
     }
 }
 

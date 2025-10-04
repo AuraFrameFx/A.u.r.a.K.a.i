@@ -1,20 +1,13 @@
 [versions]
 # ===== GRADLE & KOTLIN =====
 agp = "9.0.0-alpha09"
-gradle = "9.0.0-alpha09"
-junitJupiterParams = "6.0.0"
-gradleToolingApi = "9.1.0"
-hiltAndroidGradlePlugin = "2.57.2"
 kotlin = "2.2.20"
-kotlinGradlePlugin = "2.2.20"
-kotlinGradlePluginVersion = "2.2.20"
 ksp = "2.2.20-2.0.3"
 desugar_jdk_libs = "2.1.5"
-hilt = "2.57.2"
+java = "24"
+
+
 # ===== HOOKING FRAMEWORKS =====
-ktorClientAuth = "3.3.0"
-moshi = "1.15.2"
-moshiKotlin = "1.15.2"
 multidex = "2.0.1"
 xposed = "82"
 api = "82"
@@ -75,7 +68,7 @@ junit = "4.13.2"
 junitJupiter = "6.0.0"
 androidxTestJunit = "1.3.0"
 espressoCore = "3.7.0"
-mockk = "1.14.5"
+mockk = "1.14.6"
 turbine = "1.2.1"
 
 # ===== SECURITY =====
@@ -166,15 +159,7 @@ androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "mult
 google-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 
 # ===== YUKIHOOK & XPOSED =====
-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
-kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePluginVersion" }
-hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
-gradle-tooling-api = { module = "org.gradle:gradle-tooling-api", version.ref = "gradleToolingApi" }
-junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junitJupiterParams" }
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect" }
-ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktorClientAuth" }
-moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }
-moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 yukihook-api = { group = "com.highcapable.yukihookapi", name = "api", version.ref = "yukihookapi" }
 yukihook-ksp = { group = "com.highcapable.yukihookapi", name = "ksp-xposed", version.ref = "yukihookapi" }
 yukihook-prefs = { group = "com.highcapable.yukihookapi", name = "prefs", version.ref = "yukihookapi" }
@@ -276,7 +261,6 @@ mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
 mockk-agent = { module = "io.mockk:mockk-agent-jvm", version.ref = "mockk" }
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiterVersion" }
 junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version = "1.13.4" }
-turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 
 [plugins]
 # Android
@@ -285,7 +269,7 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 # Kotlin
 kotlin-android = { id = "org.jetbrains.kotlin.android", version = "2.2.20" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version = "1.5.11" }
 # Other plugins
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt-version" }

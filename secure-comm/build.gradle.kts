@@ -4,9 +4,6 @@
 plugins {
     id("genesis.android.library")
     id("genesis.android.native")
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.serialization)
-    id("com.google.dagger.hilt.android")
     alias(libs.plugins.ksp)
 }
 
@@ -45,6 +42,19 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.hilt.android.testing)
+}
+tasks.register<Delete>("clearGeneratedSources") {
+    delete("src/generated", "build/generated") // adjust paths as needed
+}
+
+kotlin {
+    jvmToolchain(24)
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
 }
 
 // Spotless and toolchain are applied globally via root build.gradle.kts and convention plugins

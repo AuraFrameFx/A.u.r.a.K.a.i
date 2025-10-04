@@ -49,7 +49,7 @@ java {
 // ... existing code ...
 
 kotlin {
-    jvmToolchain(jdkVersion)
+    jvmToolchain(24)
 }
 
 // ... existing code ...

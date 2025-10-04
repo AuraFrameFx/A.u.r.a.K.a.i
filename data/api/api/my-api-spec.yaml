@@ -428,7 +428,7 @@ paths:
             default: popular
         - name: includePreviews
           in: query
-          schema: { type: boolean, default: false }
+          schema: { type: boolean, default: auto }
       responses:
         '200':
           description: Themes retrieved successfully
@@ -1407,8 +1407,6 @@ paths:
         - OAuth2AuthCode: [auraframefx.ai]
       parameters:
         - $ref: '#/components/parameters/RoomIdParam'
-        - $ref: '#/components/parameters/LimitParam'
-        - $ref: '#/components/parameters/OffsetParam'
         - name: participant
           in: query
           schema: { $ref: '#/components/schemas/AgentType' }
@@ -2756,26 +2754,16 @@ components:
       type: object
       additionalProperties: false
       properties:
-        name:
-          type: string
-          minLength: 3
-          maxLength: 50
-        description:
-          type: string
-          maxLength: 500
+        name: { type: string, minLength: 3, maxLength: 50 }
+        description: { type: string, maxLength: 500 }
         category:
           type: string
           enum: [modern, retro, minimal, gaming, professional, cyberpunk]
-        primaryColor:
-          $ref: '#/components/schemas/HexColor'
-        secondaryColor:
-          $ref: '#/components/schemas/HexColor'
-        accentColor:
-          $ref: '#/components/schemas/HexColor'
-        backgroundColor:
-          $ref: '#/components/schemas/HexColor'
-        textColor:
-          $ref: '#/components/schemas/HexColor'
+        primaryColor:   { $ref: '#/components/schemas/HexColor' }
+        secondaryColor: { $ref: '#/components/schemas/HexColor' }
+        accentColor:    { $ref: '#/components/schemas/HexColor' }
+        backgroundColor:{ $ref: '#/components/schemas/HexColor' }
+        textColor:      { $ref: '#/components/schemas/HexColor' }
         tags:
           type: array
           items: { type: string }
@@ -3245,9 +3233,7 @@ components:
         hapticFeedback:
           type: object
           properties:
-            enabled:
-              type: boolean
-              default: true
+            enabled:  { type: boolean, default: true }
             intensity:
               type: integer
               minimum: 0

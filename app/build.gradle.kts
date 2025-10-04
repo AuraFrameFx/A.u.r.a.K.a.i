@@ -2,22 +2,19 @@
 // This build script now uses the custom convention plugins for a cleaner setup.
 
 plugins {
-    id("genesis.android.application")
-    id("com.android.base")
-    id("com.google.dagger.hilt.android")
-    id("com.google.devtools.ksp")
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.serialization)
-
+    id("com.android.application")
+    alias(libs.plugins.ksp)
     id("org.openapi.generator") version "7.16.0"
+    // Commented out until plugin is recognized
 }
 
 android {
     namespace = "dev.aurakai.auraframefx"
+    compileSdk = 36
+
     defaultConfig {
         applicationId = "dev.aurakai.auraframefx"
         minSdk = 34
-        compileSdk = 36
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -27,6 +24,7 @@ android {
             useSupportLibrary = true
         }
     }
+
     // Additional build type configuration
     buildTypes {
         debug {
@@ -39,6 +37,10 @@ android {
     // Enable AIDL for the app module
     buildFeatures {
         aidl = true
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.11"
     }
 
     testOptions {
@@ -46,11 +48,16 @@ android {
             it.useJUnitPlatform()
         }
     }
+
     compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
         isCoreLibraryDesugaringEnabled = true
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+
+kotlin {
+    jvmToolchain(24)
 }
 
 dependencies {
@@ -98,19 +105,15 @@ dependencies {
 
     // ===== NETWORKING =====
     implementation(libs.bundles.network)
-    implementation(libs.moshi)
-    implementation(libs.moshi.kotlin)
+    implementation("com.squareup.moshi:moshi:1.15.2")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
 
     // ===== KTOR FOR OPENAPI CLIENT =====
-    implementation(libs.ktor.client.core)
-    implementation(libs.ktor.client.content.negotiation)
-    implementation(libs.ktor.serialization.kotlinx.json)
-    implementation(libs.ktor.client.okhttp)
-    implementation(libs.ktor.client.auth)
-
-    // ===== HILT DEPENDENCY INJECTION =====
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    implementation("io.ktor:ktor-client-core:3.3.0")
+    implementation("io.ktor:ktor-client-content-negotiation:3.3.0")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.0")
+    implementation("io.ktor:ktor-client-okhttp:3.3.0")
+    implementation("io.ktor:ktor-client-auth:3.3.0")
 
     // ===== FIREBASE =====
     // By implementing the BOM, we can specify Firebase SDKs without versions
@@ -124,6 +127,9 @@ dependencies {
     // implementation(libs.bundles.firebase.database) // Firestore, Realtime Database, Storage
     // implementation(libs.bundles.firebase.messaging) // FCM, Remote Config
 
+    // ===== HILT DEPENDENCY INJECTION =====
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
     // ===== WORKMANAGER =====
     implementation("androidx.work:work-runtime-ktx:2.10.5")
@@ -159,7 +165,6 @@ tasks {
         delete(layout.buildDirectory.dir("generated/openapi"))
     }
 }
-
 
 
 

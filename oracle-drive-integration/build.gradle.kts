@@ -35,3 +35,9 @@ dependencies {
 kotlin {
     jvmToolchain(24)
 }
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}

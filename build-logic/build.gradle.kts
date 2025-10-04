@@ -1,5 +1,4 @@
 // AOSP-ReGenesis/build-logic/build.gradle.kts
-
 plugins {
     `kotlin-dsl`
 }
@@ -8,16 +7,15 @@ group = "dev.aurakai.auraframefx.buildlogic"
 
 // Dependencies required for the convention plugins themselves.
 dependencies {
-    implementation(libs.gradle)
-    implementation(libs.kotlin.gradle.plugin)
-    implementation(libs.hilt.android.gradle.plugin)
-    implementation("org.gradle:gradle-core:2.2")
+    implementation("com.android.tools.build:gradle:9.0.0-alpha09")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20")
+    implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
 
-            // Test dependencies
-    testImplementation(libs.junit.jupiter.api)
-    testImplementation(libs.junit.jupiter.engine)
-    testImplementation(libs.junit.jupiter.params)
-    testImplementation(libs.gradle.tooling.api)
+    // Test dependencies
+    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:6.0.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.0")
+    testImplementation("org.gradle:gradle-tooling-api:9.1.0")
     testImplementation(gradleTestKit())
 }
 
