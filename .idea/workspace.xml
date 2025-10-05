@@ -37,7 +37,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="chore: Update junit-platform-launcher to version 6.0.0&#10;&#10;The version of the `junit-platform-launcher` dependency has been updated from `1.13.4` to `6.0.0` in the version catalog.">
+      <change afterPath="$PROJECT_DIR$/data/api/eco-ai.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/api/eco-core.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/colorblendr/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +186,7 @@
     "Gradle.ReGenesis-A.O.S.P:app [properties].executor": "Run",
     "Gradle.ReGenesis-A.O.S.P:app [tasks].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.fix_yaml_syntax.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -228,7 +235,7 @@
       <command value="gradle stop" />
     </option>
   </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Gradle.ReGenesis-A.O.S.P [openApiGenerate]">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AuraKai.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -353,32 +360,6 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P:app [javaToolchains]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="javaToolchains" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="ReGenesis-A.O.S.P:app [properties]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -431,13 +412,35 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="fix_yaml_syntax" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AuraKai.data.api" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/api/fix_yaml_syntax.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerate]" />
+        <item itemvalue="Python.fix_yaml_syntax" />
         <item itemvalue="Gradle.ReGenesis-A.O.S.P:app [tasks]" />
         <item itemvalue="Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm]" />
         <item itemvalue="Gradle.ReGenesis-A.O.S.P:app [properties]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P:app [javaToolchains]" />
       </list>
     </recent_temporary>
   </component>
@@ -458,14 +461,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
-    </task>
-    <task id="LOCAL-00036" summary="feat: Enable core library desugaring&#10;&#10;Enables core library desugaring in the `compileOptions` to allow the use of newer Java language features on older Android versions.">
-      <option name="closed" value="true" />
-      <created>1759323119857</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1759323119857</updated>
     </task>
     <task id="LOCAL-00037" summary="feat: Disable lint checks for oversized test files&#10;&#10;Disables lint checks for test sources and adds a rule to ignore lint errors due to oversized test files causing StackOverflow.">
       <option name="closed" value="true" />
@@ -851,7 +846,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759635932533</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="chore: Update junit-platform-launcher to version 6.0.0&#10;&#10;The version of the `junit-platform-launcher` dependency has been updated from `1.13.4` to `6.0.0` in the version catalog.">
+      <option name="closed" value="true" />
+      <created>1759637264614</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1759637264615</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

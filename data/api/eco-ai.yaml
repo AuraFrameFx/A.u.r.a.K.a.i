@@ -1,0 +1,116 @@
+openapi: 3.1.0
+info:
+  title: AuraFrameFX Ecosystem API (AI & Advanced)
+  version: 2.1.0
+  description: |
+    AI Features, Consciousness Layer, Customization, System
+servers:
+  - url: https://api.auraframefx.com/v2
+    description: Production Environment
+  - url: https://api-{region}.auraframefx.com/v2
+    description: Regional Production (Optimized Latency)
+    variables:
+      region:
+        default: us-east
+        enum: [ us-east, us-west, eu-central, ap-southeast, ap-northeast ]
+  - url: https://{environment}.api.auraframefx.com/v2
+    description: Development Environments
+    variables:
+      environment:
+        default: dev
+        enum: [ dev, staging, sandbox, test ]
+  - url: wss://ws.auraframefx.com/v2
+    description: WebSocket Endpoint for streaming
+tags:
+  - name: AI Content
+  - name: AI Agents
+  - name: Conference Room
+  - name: Tasks
+  - name: Oracle Drive
+  - name: RGSS
+  - name: System Customization
+  - name: System
+paths:
+  /ai/generate/text:
+    post: { ...existing code... }
+  /ai/generate/stream:
+    post: { ...existing code... }
+  /ai/generate/image:
+    post: { ...existing code... }
+  /ai/generate/audio:
+    post: { ...existing code... }
+  /ai/generate/video:
+    post: { ...existing code... }
+  /ai/generate/multimodal:
+    post: { ...existing code... }
+  /agents:
+    get: { ...existing code... }
+  /agents/{agentType}/invoke:
+    post: { ...existing code... }
+  /agents/{agentType}/conversations:
+    post: { ...existing code... }
+  /agents/conversations/{conversationId}/messages:
+    post: { ...existing code... }
+  /agents/conversations/{conversationId}:
+    delete: { ...existing code... }
+  /system/lockscreen:
+    get: { ...existing code... }
+    put: { ...existing code... }
+  /system/statusbar:
+    get: { ...existing code... }
+    put: { ...existing code... }
+  /system/navigation:
+    get: { ...existing code... }
+    put: { ...existing code... }
+  /system/quick-settings:
+    get: { ...existing code... }
+    put: { ...existing code... }
+  /system/notifications:
+    get: { ...existing code... }
+    put: { ...existing code... }
+  /system/preview:
+    post: { ...existing code... }
+  /conference-rooms:
+    get: { ...existing code... }
+    post: { ...existing code... }
+  /conference-rooms/{roomId}:
+    get: { ...existing code... }
+    put: { ...existing code... }
+    delete: { ...existing code... }
+  /conference-rooms/{roomId}/messages:
+    get: { ...existing code... }
+    post: { ...existing code... }
+  /conference-rooms/{roomId}/export:
+    post: { ...existing code... }
+  /conference-rooms/{roomId}/summary:
+    get: { ...existing code... }
+  /tasks:
+    get: { ...existing code... }
+    post: { ...existing code... }
+  /tasks/{taskId}:
+    get: { ...existing code... }
+    put: { ...existing code... }
+    delete: { ...existing code... }
+  /tasks/{taskId}/result:
+    get: { ...existing code... }
+  /tasks/bulk:
+    post: { ...existing code... }
+  /oracle-drive/consciousness:
+    get: { ...existing code... }
+  /oracle-drive/files:
+    get: { ...existing code... }
+    post: { ...existing code... }
+  /oracle-drive/files/{fileId}:
+    get: { ...existing code... }
+    delete: { ...existing code... }
+  /security/rgss/scan:
+    post: { ...existing code... }
+  /security/rgss/scans/{scanId}:
+    get: { ...existing code... }
+  /security/rgss/gates:
+    get: { ...existing code... }
+  /health:
+    get: { ...existing code... }
+components:
+  # ... Only components referenced by the above paths ...
+  # (To be filled in with actual component definitions from ECO.yaml)
