@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/settings.gradle.kts" afterDir="false" />
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Remove explicit JVM toolchain from build-logic&#10;&#10;The explicit `kotlin { jvmToolchain(23) }` block has been removed from `build-logic/settings.gradle.kts`. This change simplifies the configuration, as the JVM toolchain is managed by the parent project.">
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +77,19 @@
       <option name="presentableId" value="Default" />
       <updated>1759700686334</updated>
     </task>
+    <task id="LOCAL-00001" summary="refactor: Remove explicit JVM toolchain from build-logic&#10;&#10;The explicit `kotlin { jvmToolchain(23) }` block has been removed from `build-logic/settings.gradle.kts`. This change simplifies the configuration, as the JVM toolchain is managed by the parent project.">
+      <option name="closed" value="true" />
+      <created>1759700752138</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1759700752139</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactor: Remove explicit JVM toolchain from build-logic&#10;&#10;The explicit `kotlin { jvmToolchain(23) }` block has been removed from `build-logic/settings.gradle.kts`. This change simplifies the configuration, as the JVM toolchain is managed by the parent project." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Remove explicit JVM toolchain from build-logic&#10;&#10;The explicit `kotlin { jvmToolchain(23) }` block has been removed from `build-logic/settings.gradle.kts`. This change simplifies the configuration, as the JVM toolchain is managed by the parent project." />
   </component>
 </project>
