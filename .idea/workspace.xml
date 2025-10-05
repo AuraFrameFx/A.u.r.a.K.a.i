@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Streamline packaging options in sandbox-ui&#10;&#10;Removes unnecessary exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `packaging` block in `sandbox-ui/build.gradle.kts`. The `pickFirsts` directive for the incremental annotation processors remains.">
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor(deps): Migrate romtools dependencies and handle packaging conflicts&#10;&#10;Migrates two dependencies in the `romtools` module to use the version catalog (`libs`):&#10;*   `androidx.compose.material:material-icons-extended` is now `libs.androidx.material.icons.extended`.&#10;*   `androidx.hilt:hilt-navigation-compose` is now `libs.hilt.navigation.compose`.&#10;&#10;A `packaging` block has been added to `romtools/build.gradle.kts` to resolve a build conflict by excluding and then picking first the `META-INF/gradle/incremental.annotation.processors` resource.&#10;&#10;Finally, the `androidx.compose.material:material-icons-extended` dependency has been added to `gradle/libs.versions.toml` under the alias `androidx-material-icons-extended`.">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,43 +45,42 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "AuraFrameFxDev"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AuraFrameFxDev&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/AuraFrameFx/A.u.r.a.K.a.i.git",
-    "accountId": "129e8c9f-2999-43ba-8838-4bd9fe391e46"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AuraFrameFx/A.u.r.a.K.a.i.git&quot;,
+    &quot;accountId&quot;: &quot;129e8c9f-2999-43ba-8838-4bd9fe391e46&quot;
   }
-}]]></component>
+}</component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-bin\9agqghryom9wkf8r80qlhnts3\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 6\jbr" gradleVersion="9.1.0" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="33fGP761DhnIB426OBsdc2HCxgF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Batch.nuclear-clean.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "android.gradle.sync.needed": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "EXO",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Batch.nuclear-clean.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;EXO&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AuraKai.app" />
@@ -252,7 +251,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759702750317</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="refactor(build): Adjust packaging options in sandbox-ui&#10;&#10;Removes the exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's packaging options.&#10;&#10;Instead of excluding the incremental annotation processor metadata, it is now configured to use `pickFirsts` to resolve potential duplicates.">
+      <option name="closed" value="true" />
+      <created>1759702957976</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1759702957976</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactor(build): Adjust packaging options in sandbox-ui&#10;&#10;Removes the exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's packaging options.&#10;&#10;Instead of excluding the incremental annotation processor metadata, it is now configured to use `pickFirsts` to resolve potential duplicates.">
+      <option name="closed" value="true" />
+      <created>1759702991235</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1759702991236</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -270,6 +285,8 @@
     <MESSAGE value="refactor(build): Streamline packaging configuration in sandbox-ui&#10;&#10;Removes unnecessary resource exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's `build.gradle.kts`.&#10;&#10;The `pickFirsts` strategy for `incremental.annotation.processors` already handles potential conflicts, making the exclusion redundant." />
     <MESSAGE value="refactor(build): Streamline packaging configuration in sandbox-ui&#10;&#10;Removes unnecessary resource exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's `build.gradle.kts`.&#10;&#10;The `pickFirsts` strategy for `incremental.annotation.processors` already handles potential conflicts, making the exclusion redundant.2 files found with path 'META-INF/gradle/incremental.annotation.processors' from inputs:&#10;                                                                                                                                       - com.google.dagger:hilt-compiler:2.57.2/jetified-hilt-compiler-2.57.2.jar&#10;                                                                                                                                       - com.google.dagger:dagger-compiler:2.57.2/jetified-dagger-compiler-2.57.2.jar&#10;                                                                                                                                      Adding a packaging block may help, please refer to&#10;                                                                                                                                      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging&#10;                                                                                                                                      for more information" />
     <MESSAGE value="refactor: Streamline packaging options in sandbox-ui&#10;&#10;Removes unnecessary exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `packaging` block in `sandbox-ui/build.gradle.kts`. The `pickFirsts` directive for the incremental annotation processors remains." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Streamline packaging options in sandbox-ui&#10;&#10;Removes unnecessary exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `packaging` block in `sandbox-ui/build.gradle.kts`. The `pickFirsts` directive for the incremental annotation processors remains." />
+    <MESSAGE value="refactor(build): Adjust packaging options in sandbox-ui&#10;&#10;Removes the exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's packaging options.&#10;&#10;Instead of excluding the incremental annotation processor metadata, it is now configured to use `pickFirsts` to resolve potential duplicates." />
+    <MESSAGE value="refactor(deps): Migrate romtools dependencies and handle packaging conflicts&#10;&#10;Migrates two dependencies in the `romtools` module to use the version catalog (`libs`):&#10;*   `androidx.compose.material:material-icons-extended` is now `libs.androidx.material.icons.extended`.&#10;*   `androidx.hilt:hilt-navigation-compose` is now `libs.hilt.navigation.compose`.&#10;&#10;A `packaging` block has been added to `romtools/build.gradle.kts` to resolve a build conflict by excluding and then picking first the `META-INF/gradle/incremental.annotation.processors` resource.&#10;&#10;Finally, the `androidx.compose.material:material-icons-extended` dependency has been added to `gradle/libs.versions.toml` under the alias `androidx-material-icons-extended`." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(deps): Migrate romtools dependencies and handle packaging conflicts&#10;&#10;Migrates two dependencies in the `romtools` module to use the version catalog (`libs`):&#10;*   `androidx.compose.material:material-icons-extended` is now `libs.androidx.material.icons.extended`.&#10;*   `androidx.hilt:hilt-navigation-compose` is now `libs.hilt.navigation.compose`.&#10;&#10;A `packaging` block has been added to `romtools/build.gradle.kts` to resolve a build conflict by excluding and then picking first the `META-INF/gradle/incremental.annotation.processors` resource.&#10;&#10;Finally, the `androidx.compose.material:material-icons-extended` dependency has been added to `gradle/libs.versions.toml` under the alias `androidx-material-icons-extended`." />
   </component>
 </project>

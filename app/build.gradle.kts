@@ -54,6 +54,7 @@ android {
         resources {
             excludes += "META-INF/INDEX.LIST"
             excludes += "META-INF/LICENSE.md"
+            excludes += "META-INF/gradle/incremental.annotation.processors"
         }
     }
 }
