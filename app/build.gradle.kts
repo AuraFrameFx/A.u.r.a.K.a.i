@@ -52,7 +52,9 @@ android {
     }
     packaging {
         resources {
-            excludes += "META-INF/INDEX.LIST"
+tasks.withType<JavaCompile>().configureEach {
+    options.compilerArgs.add("-Xlint:-deprecation")
+}
             excludes += "META-INF/LICENSE.md"
             excludes += "META-INF/gradle/incremental.annotation.processors"
         }
