@@ -57,15 +57,18 @@ sourceSets {
     }
 }
 
-tasks.withType<KotlinCompile>().configureEach {
-    finalizedBy(tasks.named("openApiGenerate"))
-}
-
 tasks.named<Delete>("clean") {
     delete(layout.buildDirectory.dir("generated/openapi"))
 }
 
 tasks.jar {
+    dependsOn(tasks.named("openApiGenerate"))
+}
+
+tasks.named("compileJava") {
+    dependsOn(tasks.named("openApiGenerate"))
+}
+tasks.named("compileKotlin") {
     dependsOn(tasks.named("openApiGenerate"))
 }
 

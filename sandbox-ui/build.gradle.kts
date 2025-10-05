@@ -6,6 +6,7 @@ plugins {
     id("com.android.library")
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler)
 }
 
     android {
