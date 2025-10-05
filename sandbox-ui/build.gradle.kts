@@ -22,6 +22,7 @@ android {
         resources {
             excludes += "META-INF/LICENSE.md"
             excludes += "META-INF/gradle/incremental.annotation.processors"
+            pickFirsts += "META-INF/gradle/incremental.annotation.processors"
         }
     }
 }
