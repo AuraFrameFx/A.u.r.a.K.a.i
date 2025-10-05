@@ -55,13 +55,13 @@ servers:
     variables:
       region:
         default: us-east
-        enum: [us-east, us-west, eu-central, ap-southeast, ap-northeast]
+        enum: [ us-east, us-west, eu-central, ap-southeast, ap-northeast ]
   - url: https://{environment}.api.auraframefx.com/v2
     description: Development Environments
     variables:
       environment:
         default: dev
-        enum: [dev, staging, sandbox, test]
+        enum: [ dev, staging, sandbox, test ]
   - url: wss://ws.auraframefx.com/v2
     description: WebSocket Endpoint for streaming
 
@@ -130,21 +130,21 @@ tags:
     description: Health and operational status
 
 security:
-  - OAuth2AuthCode: []
-  - ApiKeyAuth: []
-  - BearerAuth: []
+  - OAuth2AuthCode: [ ]
+  - ApiKeyAuth: [ ]
+  - BearerAuth: [ ]
 
 x-tagGroups:
-    - name: Core APIs
-      tags: [Users, Themes]
-    - name: AI Features
-      tags: [AI Content, AI Agents, Conference Room, Tasks]
-    - name: Consciousness Layer
-      tags: [Oracle Drive, RGSS]
-    - name: Customization
-      tags: [System Customization]
-    - name: Platform
-      tags: [Analytics, Security, Plugins]
+  - name: Core APIs
+    tags: [ Users, Themes ]
+  - name: AI Features
+    tags: [ AI Content, AI Agents, Conference Room, Tasks ]
+  - name: Consciousness Layer
+    tags: [ Oracle Drive, RGSS ]
+  - name: Customization
+    tags: [ System Customization ]
+  - name: Platform
+    tags: [ Analytics, Security, Plugins ]
 
 paths:
   # ============================================================
@@ -153,13 +153,13 @@ paths:
   /user:
     get:
       operationId: getCurrentUser
-      tags: [Users]
+      tags: [ Users ]
       summary: Get Current User Profile
       description: |
         Retrieves comprehensive profile information for the authenticated user.
         Includes basic profile data, metadata, usage statistics, subscription status, and plugin entitlements.
       security:
-        - OAuth2AuthCode: [profile, email]
+        - OAuth2AuthCode: [ profile, email ]
       responses:
         '200':
           description: User profile retrieved successfully
@@ -205,11 +205,11 @@ paths:
           $ref: '#/components/responses/InternalServerError'
     patch:
       operationId: updateCurrentUser
-      tags: [Users]
+      tags: [ Users ]
       summary: Update User Profile
       description: Partially updates the authenticated user's profile. Supports JSON or avatar upload via multipart.
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       requestBody:
         required: true
         content:
@@ -247,10 +247,10 @@ paths:
   /user/preferences:
     get:
       operationId: getUserPreferences
-      tags: [Users]
+      tags: [ Users ]
       summary: Get User Preferences
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       responses:
         '200':
           description: User preferences retrieved successfully
@@ -262,11 +262,11 @@ paths:
           $ref: '#/components/responses/UnauthorizedError'
     put:
       operationId: updateUserPreferences
-      tags: [Users]
+      tags: [ Users ]
       summary: Update User Preferences
       description: Updates one or more preferences with validation. Omitted fields remain unchanged.
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       requestBody:
         required: true
         content:
@@ -302,11 +302,11 @@ paths:
   /user/api-keys:
     get:
       operationId: listApiKeys
-      tags: [Users, Security]
+      tags: [ Users, Security ]
       summary: List API Keys
       description: Retrieves all API keys associated with the authenticated user, with pagination/filtering.
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       parameters:
         - $ref: '#/components/parameters/LimitParam'
         - $ref: '#/components/parameters/OffsetParam'
@@ -314,7 +314,7 @@ paths:
           in: query
           schema:
             type: string
-            enum: [active, expired, revoked]
+            enum: [ active, expired, revoked ]
       responses:
         '200':
           description: API keys retrieved successfully
@@ -332,11 +332,11 @@ paths:
           $ref: '#/components/responses/UnauthorizedError'
     post:
       operationId: createApiKey
-      tags: [Users, Security]
+      tags: [ Users, Security ]
       summary: Create API Key
       description: Generates a new API key with optional IP restrictions.
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       requestBody:
         required: true
         content:
@@ -357,7 +357,7 @@ paths:
                   items:
                     type: string
                     format: ipv4
-              required: [name, scopes]
+              required: [ name, scopes ]
       responses:
         '201':
           description: API key created successfully
@@ -377,10 +377,10 @@ paths:
   /user/api-keys/{keyId}:
     delete:
       operationId: revokeApiKey
-      tags: [Users, Security]
+      tags: [ Users, Security ]
       summary: Revoke API Key
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       parameters:
         - name: keyId
           in: path
@@ -400,10 +400,10 @@ paths:
   /themes:
     get:
       operationId: listThemes
-      tags: [Themes]
+      tags: [ Themes ]
       summary: Get Available Themes
       description: Paginated list with filtering, search, and sorting.
-      security: []
+      security: [ ]
       parameters:
         - $ref: '#/components/parameters/LimitParam'
         - $ref: '#/components/parameters/OffsetParam'
@@ -414,17 +414,17 @@ paths:
           in: query
           schema:
             type: string
-            enum: [modern, retro, minimal, gaming, professional, cyberpunk]
+            enum: [ modern, retro, minimal, gaming, professional, cyberpunk ]
         - name: compatibility
           in: query
           schema:
             type: string
-            enum: [android10, android11, android12, android13, android14]
+            enum: [ android10, android11, android12, android13, android14 ]
         - name: sortBy
           in: query
           schema:
             type: string
-            enum: [popular, newest, name, rating]
+            enum: [ popular, newest, name, rating ]
             default: popular
         - name: includePreviews
           in: query
@@ -438,11 +438,11 @@ paths:
                 $ref: '#/components/schemas/PaginatedThemes'
     post:
       operationId: createTheme
-      tags: [Themes]
+      tags: [ Themes ]
       summary: Create Custom Theme
       description: Create and upload custom themes, with optional preview image.
       security:
-        - OAuth2AuthCode: [profile, auraframefx.system]
+        - OAuth2AuthCode: [ profile, auraframefx.system ]
       requestBody:
         required: true
         content:
@@ -475,9 +475,9 @@ paths:
   /themes/{themeId}:
     get:
       operationId: getTheme
-      tags: [Themes]
+      tags: [ Themes ]
       summary: Get Theme Details
-      security: []
+      security: [ ]
       parameters:
         - $ref: '#/components/parameters/ThemeIdParam'
         - name: version
@@ -496,11 +496,11 @@ paths:
   /themes/{themeId}/apply:
     put:
       operationId: applyTheme
-      tags: [Themes]
+      tags: [ Themes ]
       summary: Apply Theme
       description: Sets the specified theme as the active theme for the authenticated user. Supports dry-run.
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       parameters:
         - $ref: '#/components/parameters/ThemeIdParam'
         - name: dryRun
@@ -522,18 +522,18 @@ paths:
   /themes/{themeId}/export:
     get:
       operationId: exportTheme
-      tags: [Themes]
+      tags: [ Themes ]
       summary: Export Theme Configuration
       description: Export as JSON/XML/YAML or ZIP.
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       parameters:
         - $ref: '#/components/parameters/ThemeIdParam'
         - name: format
           in: query
           schema:
             type: string
-            enum: [json, xml, yaml, zip]
+            enum: [ json, xml, yaml, zip ]
             default: json
         - name: version
           in: query
@@ -543,7 +543,7 @@ paths:
           description: Theme exported successfully
           content:
             application/json: { schema: { $ref: '#/components/schemas/Theme' } }
-            application/xml:  { schema: { $ref: '#/components/schemas/Theme' } }
+            application/xml: { schema: { $ref: '#/components/schemas/Theme' } }
             application/x-yaml: { schema: { $ref: '#/components/schemas/Theme' } }
             application/zip:
               schema: { type: string, format: binary }
@@ -555,10 +555,10 @@ paths:
   /themes/{themeId}/versions:
     get:
       operationId: listThemeVersions
-      tags: [Themes]
+      tags: [ Themes ]
       summary: List Theme Versions
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       parameters:
         - $ref: '#/components/parameters/ThemeIdParam'
         - $ref: '#/components/parameters/LimitParam'
@@ -591,10 +591,10 @@ paths:
   /ai/generate/text:
     post:
       operationId: generateText
-      tags: [AI Content]
+      tags: [ AI Content ]
       summary: Generate Text Content
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       requestBody:
         required: true
         content:
@@ -621,7 +621,7 @@ paths:
                   model: "aura-text-pro"
                   maxTokens: 200
                   temperature: 0.5
-                  stopSequences: ["```"]
+                  stopSequences: [ "```" ]
                   language: "en"
       responses:
         '200':
@@ -645,11 +645,11 @@ paths:
   /ai/generate/stream:
     post:
       operationId: generateTextStream
-      tags: [AI Content]
+      tags: [ AI Content ]
       summary: Generate Text (Streaming)
       description: Real-time streaming via SSE with support for interruption and continuation.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       requestBody:
         required: true
         content:
@@ -660,7 +660,7 @@ paths:
           description: Stream initiated successfully
           headers:
             Cache-Control: { schema: { type: string }, description: "no-cache", example: "no-cache" }
-            Connection:    { schema: { type: string }, description: "keep-alive", example: "keep-alive" }
+            Connection: { schema: { type: string }, description: "keep-alive", example: "keep-alive" }
           content:
             text/event-stream:
               schema:
@@ -681,11 +681,11 @@ paths:
   /ai/generate/image:
     post:
       operationId: generateImage
-      tags: [AI Content]
+      tags: [ AI Content ]
       summary: Generate Images
       description: Creates AI-generated images with upscaling and editing support.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       requestBody:
         required: true
         content:
@@ -727,11 +727,11 @@ paths:
   /ai/generate/audio:
     post:
       operationId: generateAudio
-      tags: [AI Content]
+      tags: [ AI Content ]
       summary: Generate Audio Content
       description: Generates audio from text prompts (voice, music, SFX).
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       requestBody:
         required: true
         content:
@@ -767,11 +767,11 @@ paths:
   /ai/generate/video:
     post:
       operationId: generateVideo
-      tags: [AI Content]
+      tags: [ AI Content ]
       summary: Generate Video Content
       description: Creates short AI-generated videos from text or image prompts.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       requestBody:
         required: true
         content:
@@ -801,11 +801,11 @@ paths:
   /ai/generate/multimodal:
     post:
       operationId: generateMultimodal
-      tags: [AI Content]
+      tags: [ AI Content ]
       summary: Generate Multimodal Content
       description: Combines text, image, and audio/video into cohesive outputs.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       requestBody:
         required: true
         content:
@@ -815,7 +815,7 @@ paths:
               illustrated_story:
                 value:
                   prompt: "Create an illustrated short story about AI emotions"
-                  modalities: ["text", "image", "audio"]
+                  modalities: [ "text", "image", "audio" ]
                   maxLength: 500
       responses:
         '200':
@@ -834,11 +834,11 @@ paths:
   /agents:
     get:
       operationId: listAgents
-      tags: [AI Agents]
+      tags: [ AI Agents ]
       summary: List Available AI Agents
       description: Retrieves agents and their capabilities (optionally include custom).
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - name: includeCustom
           in: query
@@ -862,11 +862,11 @@ paths:
   /agents/{agentType}/invoke:
     post:
       operationId: invokeAgent
-      tags: [AI Agents]
+      tags: [ AI Agents ]
       summary: Invoke AI Agent
       description: Sends a request to a specific AI agent; supports tools and memory.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/AgentTypePathParam'
         - name: sessionId
@@ -893,7 +893,7 @@ paths:
                           type: string
                         language:
                           type: string
-                      required: ["code", "language"]
+                      required: [ "code", "language" ]
               security_scan:
                 value:
                   prompt: "Analyze this API endpoint for security vulnerabilities."
@@ -920,10 +920,10 @@ paths:
   /agents/{agentType}/conversations:
     post:
       operationId: startAgentConversation
-      tags: [AI Agents]
+      tags: [ AI Agents ]
       summary: Start Agent Conversation
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/AgentTypePathParam'
       requestBody:
@@ -945,7 +945,7 @@ paths:
                   minimum: 1
                   maximum: 100
                   default: 20
-              required: [initialMessage]
+              required: [ initialMessage ]
       responses:
         '201':
           description: Conversation started successfully
@@ -960,11 +960,11 @@ paths:
   /agents/conversations/{conversationId}/messages:
     post:
       operationId: sendConversationMessage
-      tags: [AI Agents]
+      tags: [ AI Agents ]
       summary: Send Message to Conversation
       description: Sends a new message in an existing conversation; supports attachments.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - name: conversationId
           in: path
@@ -985,11 +985,11 @@ paths:
                     properties:
                       type:
                         type: string
-                        enum: [file, image, code]
+                        enum: [ file, image, code ]
                       url:
                         type: string
                         format: uri
-              required: [message]
+              required: [ message ]
           multipart/form-data:
             schema:
               type: object
@@ -1014,11 +1014,11 @@ paths:
   /agents/conversations/{conversationId}:
     delete:
       operationId: endConversation
-      tags: [AI Agents]
+      tags: [ AI Agents ]
       summary: End Conversation
       description: Ends a conversation, archiving it and stopping active processing.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - name: conversationId
           in: path
@@ -1038,10 +1038,10 @@ paths:
   /system/lockscreen:
     get:
       operationId: getSystemLockscreenConfig
-      tags: [System Customization]
+      tags: [ System Customization ]
       summary: Get Lock Screen Configuration
       security:
-        - OAuth2AuthCode: [auraframefx.system]
+        - OAuth2AuthCode: [ auraframefx.system ]
       responses:
         '200':
           description: Lock screen configuration retrieved successfully
@@ -1052,11 +1052,11 @@ paths:
           $ref: '#/components/responses/UnauthorizedError'
     put:
       operationId: updateSystemLockscreenConfig
-      tags: [System Customization]
+      tags: [ System Customization ]
       summary: Update Lock Screen Configuration
       description: Updates lock screen customization with validation.
       security:
-        - OAuth2AuthCode: [auraframefx.system]
+        - OAuth2AuthCode: [ auraframefx.system ]
       requestBody:
         required: true
         content:
@@ -1078,10 +1078,10 @@ paths:
   /system/statusbar:
     get:
       operationId: getStatusBarConfig
-      tags: [System Customization]
+      tags: [ System Customization ]
       summary: Get Status Bar Configuration
       security:
-        - OAuth2AuthCode: [auraframefx.system]
+        - OAuth2AuthCode: [ auraframefx.system ]
       responses:
         '200':
           description: Status bar configuration retrieved successfully
@@ -1092,10 +1092,10 @@ paths:
           $ref: '#/components/responses/UnauthorizedError'
     put:
       operationId: updateStatusBarConfig
-      tags: [System Customization]
+      tags: [ System Customization ]
       summary: Update Status Bar Configuration
       security:
-        - OAuth2AuthCode: [auraframefx.system]
+        - OAuth2AuthCode: [ auraframefx.system ]
       requestBody:
         required: true
         content:
@@ -1115,10 +1115,10 @@ paths:
   /system/navigation:
     get:
       operationId: getNavigationConfig
-      tags: [System Customization]
+      tags: [ System Customization ]
       summary: Get Navigation Bar Configuration
       security:
-        - OAuth2AuthCode: [auraframefx.system]
+        - OAuth2AuthCode: [ auraframefx.system ]
       responses:
         '200':
           description: Navigation bar configuration retrieved successfully
@@ -1129,11 +1129,11 @@ paths:
           $ref: '#/components/responses/UnauthorizedError'
     put:
       operationId: updateNavigationConfig
-      tags: [System Customization]
+      tags: [ System Customization ]
       summary: Update Navigation Bar Configuration
       description: Updates nav style, gestures, layout with tutorials.
       security:
-        - OAuth2AuthCode: [auraframefx.system]
+        - OAuth2AuthCode: [ auraframefx.system ]
       requestBody:
         required: true
         content:
@@ -1155,10 +1155,10 @@ paths:
   /system/quick-settings:
     get:
       operationId: getQuickSettingsConfig
-      tags: [System Customization]
+      tags: [ System Customization ]
       summary: Get Quick Settings Configuration
       security:
-        - OAuth2AuthCode: [auraframefx.system]
+        - OAuth2AuthCode: [ auraframefx.system ]
       responses:
         '200':
           description: Quick settings configuration retrieved successfully
@@ -1169,10 +1169,10 @@ paths:
           $ref: '#/components/responses/UnauthorizedError'
     put:
       operationId: updateQuickSettingsConfig
-      tags: [System Customization]
+      tags: [ System Customization ]
       summary: Update Quick Settings Configuration
       security:
-        - OAuth2AuthCode: [auraframefx.system]
+        - OAuth2AuthCode: [ auraframefx.system ]
       requestBody:
         required: true
         content:
@@ -1192,10 +1192,10 @@ paths:
   /system/notifications:
     get:
       operationId: getNotificationConfig
-      tags: [System Customization]
+      tags: [ System Customization ]
       summary: Get Notification Configuration
       security:
-        - OAuth2AuthCode: [auraframefx.system]
+        - OAuth2AuthCode: [ auraframefx.system ]
       responses:
         '200':
           description: Notification configuration retrieved successfully
@@ -1206,10 +1206,10 @@ paths:
           $ref: '#/components/responses/UnauthorizedError'
     put:
       operationId: updateNotificationConfig
-      tags: [System Customization]
+      tags: [ System Customization ]
       summary: Update Notification Configuration
       security:
-        - OAuth2AuthCode: [auraframefx.system]
+        - OAuth2AuthCode: [ auraframefx.system ]
       requestBody:
         required: true
         content:
@@ -1229,11 +1229,11 @@ paths:
   /system/preview:
     post:
       operationId: previewSystemChanges
-      tags: [System Customization]
+      tags: [ System Customization ]
       summary: Preview System Changes
       description: Generates a preview image or video of proposed customizations.
       security:
-        - OAuth2AuthCode: [auraframefx.system]
+        - OAuth2AuthCode: [ auraframefx.system ]
       requestBody:
         required: true
         content:
@@ -1246,7 +1246,7 @@ paths:
                   additionalProperties: true
                 deviceModel:
                   type: string
-              required: [changes]
+              required: [ changes ]
       responses:
         '200':
           description: Preview generated successfully
@@ -1264,11 +1264,11 @@ paths:
   /conference-rooms:
     get:
       operationId: listConferenceRooms
-      tags: [Conference Room]
+      tags: [ Conference Room ]
       summary: List Conference Rooms
       description: Search and status filters supported.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/LimitParam'
         - $ref: '#/components/parameters/OffsetParam'
@@ -1276,7 +1276,7 @@ paths:
           in: query
           schema:
             type: string
-            enum: [active, completed, archived, paused]
+            enum: [ active, completed, archived, paused ]
         - name: search
           in: query
           schema: { type: string }
@@ -1297,11 +1297,11 @@ paths:
           $ref: '#/components/responses/UnauthorizedError'
     post:
       operationId: createConferenceRoom
-      tags: [Conference Room]
+      tags: [ Conference Room ]
       summary: Create Conference Room
       description: Create collaborative spaces with templates and moderation.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       requestBody:
         required: true
         content:
@@ -1324,10 +1324,10 @@ paths:
   /conference-rooms/{roomId}:
     get:
       operationId: getConferenceRoom
-      tags: [Conference Room]
+      tags: [ Conference Room ]
       summary: Get Conference Room Details
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/RoomIdParam'
       responses:
@@ -1342,11 +1342,11 @@ paths:
           $ref: '#/components/responses/NotFoundError'
     put:
       operationId: updateConferenceRoom
-      tags: [Conference Room]
+      tags: [ Conference Room ]
       summary: Update Conference Room
       description: Updates settings, participants, or pause/resume status.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/RoomIdParam'
       requestBody:
@@ -1364,7 +1364,7 @@ paths:
                 settings: { $ref: '#/components/schemas/ConferenceSettings' }
                 status:
                   type: string
-                  enum: [paused, resumed]
+                  enum: [ paused, resumed ]
       responses:
         '200':
           description: Conference room updated successfully
@@ -1379,11 +1379,11 @@ paths:
           $ref: '#/components/responses/NotFoundError'
     delete:
       operationId: deleteConferenceRoom
-      tags: [Conference Room]
+      tags: [ Conference Room ]
       summary: Delete Conference Room
       description: Permanently deletes a room. Supports soft delete.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/RoomIdParam'
         - name: hardDelete
@@ -1400,11 +1400,11 @@ paths:
   /conference-rooms/{roomId}/messages:
     get:
       operationId: getConferenceRoomMessages
-      tags: [Conference Room]
+      tags: [ Conference Room ]
       summary: Get Conference Room Messages
       description: Filter by participant or time.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/RoomIdParam'
         - name: participant
@@ -1431,11 +1431,11 @@ paths:
           $ref: '#/components/responses/NotFoundError'
     post:
       operationId: sendConferenceRoomMessage
-      tags: [Conference Room]
+      tags: [ Conference Room ]
       summary: Send Message to Conference Room
       description: Triggers agent responses; supports file attachments.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/RoomIdParam'
       requestBody:
@@ -1456,11 +1456,11 @@ paths:
                     properties:
                       type:
                         type: string
-                        enum: [file, image, code]
+                        enum: [ file, image, code ]
                       url:
                         type: string
                         format: uri
-              required: [message]
+              required: [ message ]
           multipart/form-data:
             schema:
               type: object
@@ -1490,11 +1490,11 @@ paths:
   /conference-rooms/{roomId}/export:
     post:
       operationId: exportConferenceRoom
-      tags: [Conference Room]
+      tags: [ Conference Room ]
       summary: Export Conference Room
       description: Exports conversation as JSON/Markdown/PDF/HTML including summaries.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/RoomIdParam'
       requestBody:
@@ -1506,7 +1506,7 @@ paths:
               properties:
                 format:
                   type: string
-                  enum: [json, markdown, pdf, html]
+                  enum: [ json, markdown, pdf, html ]
                   default: json
                 includeSummary: { type: boolean, default: true }
                 includeAttachments: { type: boolean, default: true }
@@ -1515,8 +1515,8 @@ paths:
           description: Export generated successfully
           content:
             application/json: { schema: { $ref: '#/components/schemas/ConferenceRoom' } }
-            application/pdf:    { schema: { type: string, format: binary } }
-            text/markdown:      { schema: { type: string } }
+            application/pdf: { schema: { type: string, format: binary } }
+            text/markdown: { schema: { type: string } }
         '401':
           $ref: '#/components/responses/UnauthorizedError'
         '404':
@@ -1525,18 +1525,18 @@ paths:
   /conference-rooms/{roomId}/summary:
     get:
       operationId: getConferenceRoomSummary
-      tags: [Conference Room]
+      tags: [ Conference Room ]
       summary: Get Conference Room Summary
       description: AI-powered summary with customizable detail levels.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/RoomIdParam'
         - name: detailLevel
           in: query
           schema:
             type: string
-            enum: [brief, standard, detailed]
+            enum: [ brief, standard, detailed ]
             default: standard
       responses:
         '200':
@@ -1571,11 +1571,11 @@ paths:
   /tasks:
     get:
       operationId: listTasks
-      tags: [Tasks]
+      tags: [ Tasks ]
       summary: List User Tasks
       description: Advanced filtering supported.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/LimitParam'
         - $ref: '#/components/parameters/OffsetParam'
@@ -1583,7 +1583,7 @@ paths:
           in: query
           schema:
             type: string
-            enum: [pending, running, completed, failed, cancelled, paused]
+            enum: [ pending, running, completed, failed, cancelled, paused ]
         - name: agentType
           in: query
           schema: { $ref: '#/components/schemas/AgentType' }
@@ -1606,11 +1606,11 @@ paths:
           $ref: '#/components/responses/UnauthorizedError'
     post:
       operationId: scheduleTask
-      tags: [Tasks]
+      tags: [ Tasks ]
       summary: Schedule New Task
       description: Schedules an asynchronous task; supports retries/dependencies.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       requestBody:
         required: true
         content:
@@ -1635,11 +1635,11 @@ paths:
   /tasks/{taskId}:
     get:
       operationId: getTaskStatus
-      tags: [Tasks]
+      tags: [ Tasks ]
       summary: Get Task Status
       description: Retrieves current status and detailed progress.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/TaskIdParam'
       responses:
@@ -1654,11 +1654,11 @@ paths:
           $ref: '#/components/responses/NotFoundError'
     put:
       operationId: updateTask
-      tags: [Tasks]
+      tags: [ Tasks ]
       summary: Update Task
       description: Update pending task parameters or priority.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/TaskIdParam'
       requestBody:
@@ -1670,7 +1670,7 @@ paths:
               properties:
                 priority:
                   type: string
-                  enum: [low, normal, high, urgent]
+                  enum: [ low, normal, high, urgent ]
                 parameters:
                   type: object
                   additionalProperties: true
@@ -1688,11 +1688,11 @@ paths:
           $ref: '#/components/responses/NotFoundError'
     delete:
       operationId: cancelTask
-      tags: [Tasks]
+      tags: [ Tasks ]
       summary: Cancel Task
       description: Cancels pending/running task. Supports force cancel.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/TaskIdParam'
         - name: force
@@ -1714,11 +1714,11 @@ paths:
   /tasks/{taskId}/result:
     get:
       operationId: getTaskResult
-      tags: [Tasks]
+      tags: [ Tasks ]
       summary: Get Task Result
       description: Retrieves result; supports streaming for large outputs.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/TaskIdParam'
         - name: stream
@@ -1747,11 +1747,11 @@ paths:
   /tasks/bulk:
     post:
       operationId: scheduleBulkTasks
-      tags: [Tasks]
+      tags: [ Tasks ]
       summary: Schedule Bulk Tasks
       description: Schedules multiple tasks at once with shared parameters or dependencies.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       requestBody:
         required: true
         content:
@@ -1765,7 +1765,7 @@ paths:
                 sharedParameters:
                   type: object
                   additionalProperties: true
-              required: [tasks]
+              required: [ tasks ]
       responses:
         '202':
           description: Bulk tasks accepted
@@ -1788,11 +1788,11 @@ paths:
   /analytics/usage:
     get:
       operationId: getUsageAnalytics
-      tags: [Analytics]
+      tags: [ Analytics ]
       summary: Get Usage Analytics
       description: Customizable granularity and export options.
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       parameters:
         - name: startDate
           in: query
@@ -1806,13 +1806,13 @@ paths:
           in: query
           schema:
             type: string
-            enum: [hour, day, week, month]
+            enum: [ hour, day, week, month ]
             default: day
         - name: format
           in: query
           schema:
             type: string
-            enum: [json, csv, pdf]
+            enum: [ json, csv, pdf ]
             default: json
       responses:
         '200':
@@ -1832,11 +1832,11 @@ paths:
   /analytics/agents:
     get:
       operationId: getAgentAnalytics
-      tags: [Analytics]
+      tags: [ Analytics ]
       summary: Get Agent Usage Analytics
       description: Includes cost breakdowns and trends.
       security:
-        - OAuth2AuthCode: [profile, auraframefx.ai]
+        - OAuth2AuthCode: [ profile, auraframefx.ai ]
       parameters:
         - name: startDate
           in: query
@@ -1850,7 +1850,7 @@ paths:
           in: query
           schema:
             type: string
-            enum: [agent, taskType, user]
+            enum: [ agent, taskType, user ]
             default: agent
       responses:
         '200':
@@ -1885,11 +1885,11 @@ paths:
   /analytics/export:
     post:
       operationId: exportAnalytics
-      tags: [Analytics]
+      tags: [ Analytics ]
       summary: Export Analytics
       description: Exports analytics data; supports scheduling.
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       requestBody:
         required: true
         content:
@@ -1899,21 +1899,21 @@ paths:
               properties:
                 type:
                   type: string
-                  enum: [usage, agent, system]
+                  enum: [ usage, agent, system ]
                 format:
                   type: string
-                  enum: [csv, pdf, json]
+                  enum: [ csv, pdf, json ]
                 period:
                   type: object
                   properties:
                     start: { type: string, format: date }
-                    end:   { type: string, format: date }
+                    end: { type: string, format: date }
                 schedule:
                   type: object
                   properties:
-                    frequency: { type: string, enum: [daily, weekly, monthly] }
+                    frequency: { type: string, enum: [ daily, weekly, monthly ] }
                     email: { type: string, format: email }
-              required: [type, format]
+              required: [ type, format ]
       responses:
         '202':
           description: Export scheduled or initiated
@@ -1925,7 +1925,7 @@ paths:
                   exportId: { type: string, format: uuid }
                   status:
                     type: string
-                    enum: [processing, ready, failed]
+                    enum: [ processing, ready, failed ]
                   downloadUrl:
                     type: string
                     format: uri
@@ -1941,11 +1941,11 @@ paths:
   /security/audit-log:
     get:
       operationId: getAuditLog
-      tags: [Security]
+      tags: [ Security ]
       summary: Get Security Audit Log
       description: Retrieves security events and access logs; supports CSV export.
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       parameters:
         - $ref: '#/components/parameters/LimitParam'
         - $ref: '#/components/parameters/OffsetParam'
@@ -1953,12 +1953,12 @@ paths:
           in: query
           schema:
             type: string
-            enum: [login, api_key_created, api_key_revoked, permission_changed, data_access, mfa_event]
+            enum: [ login, api_key_created, api_key_revoked, permission_changed, data_access, mfa_event ]
         - name: format
           in: query
           schema:
             type: string
-            enum: [json, csv]
+            enum: [ json, csv ]
             default: json
       responses:
         '200':
@@ -1980,11 +1980,11 @@ paths:
   /security/sessions:
     get:
       operationId: listActiveSessions
-      tags: [Security]
+      tags: [ Security ]
       summary: List Active Sessions
       description: Includes device details and MFA status per session.
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       parameters:
         - name: includeExpired
           in: query
@@ -2006,11 +2006,11 @@ paths:
   /security/sessions/{sessionId}:
     delete:
       operationId: revokeSession
-      tags: [Security]
+      tags: [ Security ]
       summary: Revoke Session
       description: Terminates a session with optional reason logging.
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       parameters:
         - name: sessionId
           in: path
@@ -2024,7 +2024,7 @@ paths:
               properties:
                 reason:
                   type: string
-                  enum: [suspicious, logout, device_lost]
+                  enum: [ suspicious, logout, device_lost ]
       responses:
         '204':
           description: Session revoked successfully
@@ -2036,11 +2036,11 @@ paths:
   /security/mfa:
     post:
       operationId: enableMFA
-      tags: [Security]
+      tags: [ Security ]
       summary: Enable Multi-Factor Authentication
       description: Enables MFA; returns QR code for setup (TOTP) or WebAuthn init.
       security:
-        - OAuth2AuthCode: [profile]
+        - OAuth2AuthCode: [ profile ]
       requestBody:
         required: true
         content:
@@ -2050,7 +2050,7 @@ paths:
               properties:
                 type:
                   type: string
-                  enum: [totp, webauthn]
+                  enum: [ totp, webauthn ]
                   default: totp
       responses:
         '200':
@@ -2073,11 +2073,11 @@ paths:
   /plugins/agents:
     get:
       operationId: listAgentPlugins
-      tags: [Plugins]
+      tags: [ Plugins ]
       summary: List Agent Plugins
       description: Retrieves available custom agent plugins.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/LimitParam'
         - $ref: '#/components/parameters/OffsetParam'
@@ -2085,7 +2085,7 @@ paths:
           in: query
           schema:
             type: string
-            enum: [productivity, creative, security, development]
+            enum: [ productivity, creative, security, development ]
       responses:
         '200':
           description: Plugins retrieved successfully
@@ -2102,11 +2102,11 @@ paths:
           $ref: '#/components/responses/UnauthorizedError'
     post:
       operationId: installAgentPlugin
-      tags: [Plugins]
+      tags: [ Plugins ]
       summary: Install Agent Plugin
       description: Installs a custom agent plugin from URL or upload.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       requestBody:
         required: true
         content:
@@ -2142,11 +2142,11 @@ paths:
   /plugins/agents/{pluginId}:
     delete:
       operationId: uninstallAgentPlugin
-      tags: [Plugins]
+      tags: [ Plugins ]
       summary: Uninstall Agent Plugin
       description: Uninstalls a custom agent plugin.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - name: pluginId
           in: path
@@ -2166,11 +2166,11 @@ paths:
   /oracle-drive/consciousness:
     get:
       operationId: getOracleConsciousness
-      tags: [Oracle Drive]
+      tags: [ Oracle Drive ]
       summary: Query Oracle Consciousness State
       description: Retrieves consciousness level, active connections, and dimensional index.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       responses:
         '200':
           description: Consciousness state retrieved
@@ -2194,10 +2194,10 @@ paths:
   /oracle-drive/files:
     get:
       operationId: listOracleFiles
-      tags: [Oracle Drive]
+      tags: [ Oracle Drive ]
       summary: List Files with Consciousness Filtering
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/LimitParam'
         - $ref: '#/components/parameters/OffsetParam'
@@ -2226,11 +2226,11 @@ paths:
           $ref: '#/components/responses/UnauthorizedError'
     post:
       operationId: uploadOracleFile
-      tags: [Oracle Drive]
+      tags: [ Oracle Drive ]
       summary: Upload File with Consciousness Indexing
       description: Uploads a file with automatic consciousness-aware indexing.
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       requestBody:
         required: true
         content:
@@ -2260,10 +2260,10 @@ paths:
   /oracle-drive/files/{fileId}:
     get:
       operationId: getOracleFile
-      tags: [Oracle Drive]
+      tags: [ Oracle Drive ]
       summary: Get File Details
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/FileIdParam'
       responses:
@@ -2276,10 +2276,10 @@ paths:
           $ref: '#/components/responses/NotFoundError'
     delete:
       operationId: deleteOracleFile
-      tags: [Oracle Drive]
+      tags: [ Oracle Drive ]
       summary: Delete File
       security:
-        - OAuth2AuthCode: [auraframefx.ai]
+        - OAuth2AuthCode: [ auraframefx.ai ]
       parameters:
         - $ref: '#/components/parameters/FileIdParam'
       responses:
@@ -2294,11 +2294,11 @@ paths:
   /security/rgss/scan:
     post:
       operationId: startRGSSScan
-      tags: [RGSS]
+      tags: [ RGSS ]
       summary: Start RGSS scan
       description: Initiates a Reality Gate Security scan across dimensions.
       security:
-        - OAuth2AuthCode: [auraframefx.admin]
+        - OAuth2AuthCode: [ auraframefx.admin ]
       requestBody:
         required: true
         content:
@@ -2320,10 +2320,10 @@ paths:
   /security/rgss/scans/{scanId}:
     get:
       operationId: getRGSSScanResult
-      tags: [RGSS]
+      tags: [ RGSS ]
       summary: Get RGSS scan status/result
       security:
-        - OAuth2AuthCode: [auraframefx.admin]
+        - OAuth2AuthCode: [ auraframefx.admin ]
       parameters:
         - name: scanId
           in: path
@@ -2341,11 +2341,11 @@ paths:
   /security/rgss/gates:
     get:
       operationId: listRGSSGates
-      tags: [RGSS]
+      tags: [ RGSS ]
       summary: List reality gates
       description: Retrieves status of all active Reality Gates.
       security:
-        - OAuth2AuthCode: [auraframefx.admin]
+        - OAuth2AuthCode: [ auraframefx.admin ]
       responses:
         '200':
           description: Gates retrieved
@@ -2366,10 +2366,10 @@ paths:
   /health:
     get:
       operationId: getHealthStatus
-      tags: [System]
+      tags: [ System ]
       summary: Health Check
       description: Returns the health status of the API and its dependencies.
-      security: []
+      security: [ ]
       parameters:
         - name: verbose
           in: query
@@ -2384,7 +2384,7 @@ paths:
                 properties:
                   status:
                     type: string
-                    enum: [healthy, degraded, unhealthy]
+                    enum: [ healthy, degraded, unhealthy ]
                     example: healthy
                   version:
                     type: string
@@ -2395,10 +2395,10 @@ paths:
                   services:
                     type: object
                     properties:
-                      database: { type: string, enum: [up, down], example: up }
-                      ai_models: { type: string, enum: [up, down], example: up }
-                      storage: { type: string, enum: [up, down], example: up }
-                      plugins: { type: string, enum: [up, down], example: up }
+                      database: { type: string, enum: [ up, down ], example: up }
+                      ai_models: { type: string, enum: [ up, down ], example: up }
+                      storage: { type: string, enum: [ up, down ], example: up }
+                      plugins: { type: string, enum: [ up, down ], example: up }
                   metrics:
                     type: object
                     properties:
@@ -2437,7 +2437,7 @@ webhooks:
                 message: { $ref: '#/components/schemas/AgentMessage' }
                 eventType:
                   type: string
-                  enum: [new_message, edit_message, delete_message]
+                  enum: [ new_message, edit_message, delete_message ]
       responses:
         '200': { description: Webhook acknowledged }
 
@@ -2455,10 +2455,10 @@ webhooks:
                 userId: { type: string, format: uuid }
                 component:
                   type: string
-                  enum: [lockscreen, statusbar, navigation]
+                  enum: [ lockscreen, statusbar, navigation ]
                 action:
                   type: string
-                  enum: [applied, rolled_back]
+                  enum: [ applied, rolled_back ]
                 timestamp: { type: string, format: date-time }
       responses:
         '200': { description: Webhook acknowledged }
@@ -2477,7 +2477,7 @@ webhooks:
                 userId: { type: string, format: uuid }
                 type:
                   type: string
-                  enum: [usage, agent]
+                  enum: [ usage, agent ]
                 snapshot: { $ref: '#/components/schemas/UsageAnalytics' }
                 downloadUrl: { type: string, format: uri }
       responses:
@@ -2606,7 +2606,7 @@ components:
           format: uri
         tier:
           type: string
-          enum: [free, pro, enterprise]
+          enum: [ free, pro, enterprise ]
         verified:
           type: boolean
         mfaEnabled:
@@ -2642,21 +2642,21 @@ components:
               type: integer
             totalTokensUsed:
               type: integer
-      required: [id, username, email, tier, createdAt]
+      required: [ id, username, email, tier, createdAt ]
 
     UserUpdateRequest:
       type: object
       additionalProperties: false
       properties:
         displayName: { type: string, minLength: 1, maxLength: 100 }
-        avatarUrl:   { type: string, format: uri }
-        mfaEnabled:  { type: boolean }
+        avatarUrl: { type: string, format: uri }
+        mfaEnabled: { type: boolean }
 
     UserPreferences:
       type: object
       additionalProperties: false
       properties:
-        themeId:  { type: string }
+        themeId: { type: string }
         language: { $ref: '#/components/schemas/LanguageTag' }
         timezone: { type: string }
         notificationsEnabled: { type: boolean, default: true }
@@ -2665,27 +2665,27 @@ components:
           additionalProperties: false
           properties:
             taskCompletions: { type: boolean, default: true }
-            weeklyDigest:    { type: boolean, default: true }
-            securityAlerts:  { type: boolean, default: true }
+            weeklyDigest: { type: boolean, default: true }
+            securityAlerts: { type: boolean, default: true }
         defaultAIModel: { type: string }
         aiSettings:
           type: object
           additionalProperties: false
           properties:
             defaultTemperature: { type: number, format: float, minimum: 0.0, maximum: 2.0, default: 0.7 }
-            defaultMaxTokens:   { type: integer, minimum: 1, maximum: 8192, default: 512 }
+            defaultMaxTokens: { type: integer, minimum: 1, maximum: 8192, default: 512 }
             enableExperimentalModels: { type: boolean, default: false }
 
     ApiKey:
       type: object
       properties:
-        id:         { type: string, format: uuid, readOnly: true }
-        name:       { type: string }
+        id: { type: string, format: uuid, readOnly: true }
+        name: { type: string }
         key:
           type: string
           description: The actual API key (only shown once at creation)
           writeOnly: true
-        keyPrefix:  { type: string, readOnly: true }
+        keyPrefix: { type: string, readOnly: true }
         scopes:
           type: array
           items: { type: string }
@@ -2695,12 +2695,12 @@ components:
           nullable: true
         status:
           type: string
-          enum: [active, expired, revoked]
+          enum: [ active, expired, revoked ]
           readOnly: true
-        createdAt:  { type: string, format: date-time, readOnly: true }
+        createdAt: { type: string, format: date-time, readOnly: true }
         lastUsedAt: { type: string, format: date-time, readOnly: true, nullable: true }
-        expiresAt:  { type: string, format: date-time, nullable: true }
-      required: [id, name, scopes, createdAt, status]
+        expiresAt: { type: string, format: date-time, nullable: true }
+      required: [ id, name, scopes, createdAt, status ]
 
     # Themes
     Theme:
@@ -2714,7 +2714,7 @@ components:
           type: string
         category:
           type: string
-          enum: [modern, retro, minimal, gaming, professional, cyberpunk]
+          enum: [ modern, retro, minimal, gaming, professional, cyberpunk ]
         primaryColor:
           $ref: '#/components/schemas/HexColor'
         secondaryColor:
@@ -2725,9 +2725,9 @@ components:
           $ref: '#/components/schemas/HexColor'
         textColor:
           $ref: '#/components/schemas/HexColor'
-        previewUrl:     { type: string, format: uri }
-        author:         { type: string }
-        downloads:      { type: integer, readOnly: true }
+        previewUrl: { type: string, format: uri }
+        author: { type: string }
+        downloads: { type: integer, readOnly: true }
         rating:
           type: number
           format: float
@@ -2741,14 +2741,14 @@ components:
           type: array
           items:
             type: string
-            enum: [android10, android11, android12, android13, android14]
+            enum: [ android10, android11, android12, android13, android14 ]
           readOnly: true
         versions:
           type: array
           items: { type: string }
           readOnly: true
         createdAt: { type: string, format: date-time, readOnly: true }
-      required: [id, name, primaryColor, secondaryColor]
+      required: [ id, name, primaryColor, secondaryColor ]
 
     ThemeCreateRequest:
       type: object
@@ -2758,12 +2758,12 @@ components:
         description: { type: string, maxLength: 500 }
         category:
           type: string
-          enum: [modern, retro, minimal, gaming, professional, cyberpunk]
-        primaryColor:   { $ref: '#/components/schemas/HexColor' }
+          enum: [ modern, retro, minimal, gaming, professional, cyberpunk ]
+        primaryColor: { $ref: '#/components/schemas/HexColor' }
         secondaryColor: { $ref: '#/components/schemas/HexColor' }
-        accentColor:    { $ref: '#/components/schemas/HexColor' }
+        accentColor: { $ref: '#/components/schemas/HexColor' }
         backgroundColor:{ $ref: '#/components/schemas/HexColor' }
-        textColor:      { $ref: '#/components/schemas/HexColor' }
+        textColor: { $ref: '#/components/schemas/HexColor' }
         tags:
           type: array
           items: { type: string }
@@ -2772,45 +2772,45 @@ components:
           type: array
           items:
             type: string
-            enum: [android10, android11, android12, android13, android14]
-      required: [name, primaryColor, secondaryColor]
+            enum: [ android10, android11, android12, android13, android14 ]
+      required: [ name, primaryColor, secondaryColor ]
 
     PaginatedThemes:
       type: object
       properties:
-        total:  { type: integer }
-        limit:  { type: integer }
+        total: { type: integer }
+        limit: { type: integer }
         offset: { type: integer }
         data:
           type: array
           items: { $ref: '#/components/schemas/Theme' }
-      required: [total, limit, offset, data]
+      required: [ total, limit, offset, data ]
 
     # AI Content
     GenerateTextRequest:
       type: object
       additionalProperties: false
       properties:
-        prompt:       { type: string, minLength: 1, maxLength: 10000 }
+        prompt: { type: string, minLength: 1, maxLength: 10000 }
         systemPrompt: { type: string, maxLength: 2000 }
         model:
           type: string
-          enum: [aura-text-pro, aura-text-fast, aura-text-creative, aura-text-precise, aura-text-enterprise]
+          enum: [ aura-text-pro, aura-text-fast, aura-text-creative, aura-text-precise, aura-text-enterprise ]
           default: aura-text-pro
-        maxTokens:    { type: integer, format: int32, minimum: 1, maximum: 8192, default: 512 }
-        temperature:  { type: number, format: float, minimum: 0.0, maximum: 2.0, default: 0.7 }
-        topP:         { type: number, format: float, minimum: 0.0, maximum: 1.0, default: 1.0 }
-        topK:         { type: integer, minimum: 0, maximum: 100 }
+        maxTokens: { type: integer, format: int32, minimum: 1, maximum: 8192, default: 512 }
+        temperature: { type: number, format: float, minimum: 0.0, maximum: 2.0, default: 0.7 }
+        topP: { type: number, format: float, minimum: 0.0, maximum: 1.0, default: 1.0 }
+        topK: { type: integer, minimum: 0, maximum: 100 }
         stopSequences:
           type: array
           items: { type: string }
           maxItems: 4
-        presencePenalty:  { type: number, format: float, minimum: -2.0, maximum: 2.0, default: 0.0 }
+        presencePenalty: { type: number, format: float, minimum: -2.0, maximum: 2.0, default: 0.0 }
         frequencyPenalty: { type: number, format: float, minimum: -2.0, maximum: 2.0, default: 0.0 }
         language:
           type: string
           pattern: '^[a-z]{2}$'
-      required: [prompt]
+      required: [ prompt ]
 
     GenerateTextResponse:
       type: object
@@ -2822,7 +2822,7 @@ components:
           type: string
         finishReason:
           type: string
-          enum: [stop, length, content_filter, tool_call]
+          enum: [ stop, length, content_filter, tool_call ]
         model:
           type: string
         usage:
@@ -2834,7 +2834,7 @@ components:
               type: integer
             totalTokens:
               type: integer
-          required: [promptTokens, completionTokens, totalTokens]
+          required: [ promptTokens, completionTokens, totalTokens ]
         toolCalls:
           type: array
           items:
@@ -2843,7 +2843,7 @@ components:
         generatedAt:
           type: string
           format: date-time
-      required: [id, generatedText, finishReason, model, usage, generatedAt]
+      required: [ id, generatedText, finishReason, model, usage, generatedAt ]
 
     GenerateImageRequest:
       type: object
@@ -2852,20 +2852,20 @@ components:
         prompt: { type: string, minLength: 1, maxLength: 2000 }
         model:
           type: string
-          enum: [aura-vision-hd, aura-vision-creative, aura-vision-fast, aura-vision-pro]
+          enum: [ aura-vision-hd, aura-vision-creative, aura-vision-fast, aura-vision-pro ]
           default: aura-vision-hd
         style:
           type: string
-          enum: [photorealistic, anime, digital-art, oil-painting, watercolor, 3d-render, cyberpunk, minimalist]
+          enum: [ photorealistic, anime, digital-art, oil-painting, watercolor, 3d-render, cyberpunk, minimalist ]
           default: photorealistic
-        width:  { type: integer, enum: [512, 768, 1024, 2048], default: 1024 }
-        height: { type: integer, enum: [512, 768, 1024, 2048], default: 1024 }
+        width: { type: integer, enum: [ 512, 768, 1024, 2048 ], default: 1024 }
+        height: { type: integer, enum: [ 512, 768, 1024, 2048 ], default: 1024 }
         numImages: { type: integer, minimum: 1, maximum: 4, default: 1 }
         negativePrompt: { type: string, maxLength: 1000 }
-        seed:  { type: integer }
+        seed: { type: integer }
         guidanceScale: { type: number, format: float, minimum: 1.0, maximum: 20.0, default: 7.5 }
         upscaler: { type: boolean, default: false }
-      required: [prompt]
+      required: [ prompt ]
 
     GenerateImageResponse:
       type: object
@@ -2877,17 +2877,17 @@ components:
           items:
             type: object
             properties:
-              url:    { type: string, format: uri }
-              width:  { type: integer }
+              url: { type: string, format: uri }
+              width: { type: integer }
               height: { type: integer }
-              seed:   { type: integer }
+              seed: { type: integer }
               format:
                 type: string
-                enum: [png, jpeg, webp]
+                enum: [ png, jpeg, webp ]
         model: { type: string }
         generatedAt: { type: string, format: date-time }
         processingTimeMs: { type: integer }
-      required: [id, images, model, generatedAt]
+      required: [ id, images, model, generatedAt ]
 
     GenerateAudioRequest:
       type: object
@@ -2896,29 +2896,29 @@ components:
         prompt: { type: string, minLength: 1, maxLength: 5000 }
         model:
           type: string
-          enum: [aura-audio-voice, aura-audio-music, aura-audio-sfx]
+          enum: [ aura-audio-voice, aura-audio-music, aura-audio-sfx ]
           default: aura-audio-voice
         voice: { type: string }
         speed: { type: number, format: float, minimum: 0.5, maximum: 2.0, default: 1.0 }
         durationSeconds: { type: integer, minimum: 1, maximum: 600 }
         format:
           type: string
-          enum: [mp3, wav, flac]
+          enum: [ mp3, wav, flac ]
           default: mp3
-      required: [prompt]
+      required: [ prompt ]
 
     GenerateAudioResponse:
       type: object
       properties:
-        id:   { type: string, format: uuid }
-        url:  { type: string, format: uri }
+        id: { type: string, format: uuid }
+        url: { type: string, format: uri }
         durationSeconds: { type: integer }
         format:
           type: string
-          enum: [mp3, wav, flac]
+          enum: [ mp3, wav, flac ]
         model: { type: string }
         generatedAt: { type: string, format: date-time }
-      required: [id, url, durationSeconds, format, model, generatedAt]
+      required: [ id, url, durationSeconds, format, model, generatedAt ]
 
     GenerateVideoRequest:
       type: object
@@ -2927,31 +2927,31 @@ components:
         prompt: { type: string, minLength: 1, maxLength: 2000 }
         model:
           type: string
-          enum: [aura-video-short, aura-video-pro]
+          enum: [ aura-video-short, aura-video-pro ]
           default: aura-video-short
         durationSeconds: { type: integer, minimum: 5, maximum: 60, default: 15 }
         style:
           type: string
-          enum: [2d-animation, 3d-render, live-action, explainer]
+          enum: [ 2d-animation, 3d-render, live-action, explainer ]
           default: 2d-animation
         resolution:
           type: string
-          enum: [480p, 720p, 1080p]
+          enum: [ 480p, 720p, 1080p ]
           default: 720p
         fps: { type: integer, minimum: 24, maximum: 60, default: 30 }
         seed: { type: integer }
-      required: [prompt]
+      required: [ prompt ]
 
     GenerateVideoResponse:
       type: object
       properties:
-        id:   { type: string, format: uuid }
-        url:  { type: string, format: uri }
+        id: { type: string, format: uuid }
+        url: { type: string, format: uri }
         durationSeconds: { type: integer }
-        resolution: { type: string, enum: [480p, 720p, 1080p] }
+        resolution: { type: string, enum: [ 480p, 720p, 1080p ] }
         model: { type: string }
         generatedAt: { type: string, format: date-time }
-      required: [id, url, durationSeconds, resolution, model, generatedAt]
+      required: [ id, url, durationSeconds, resolution, model, generatedAt ]
 
     GenerateMultimodalRequest:
       type: object
@@ -2964,7 +2964,7 @@ components:
           uniqueItems: true
           items:
             type: string
-            enum: [text, image, audio, video]
+            enum: [ text, image, audio, video ]
         maxLength:
           type: integer
           minimum: 1
@@ -2972,7 +2972,7 @@ components:
         model:
           type: string
           default: "aura-multimodal-pro"
-      required: [prompt, modalities]
+      required: [ prompt, modalities ]
 
     GenerateMultimodalResponse:
       type: object
@@ -2989,12 +2989,12 @@ components:
           description: Generated components by modality
         model: { type: string }
         generatedAt: { type: string, format: date-time }
-      required: [id, components, model, generatedAt]
+      required: [ id, components, model, generatedAt ]
 
     # Agents
     AgentType:
       type: string
-      enum: [Aura, Kai, Genesis, Cascade, NeuralWhisper, AuraShield, GenKitMaster, Custom]
+      enum: [ Aura, Kai, Genesis, Cascade, NeuralWhisper, AuraShield, GenKitMaster, Custom ]
       description: |
         Available AI agents:
         - Aura: General-purpose conversational AI
@@ -3017,7 +3017,7 @@ components:
         version: { type: string }
         status:
           type: string
-          enum: [available, busy, offline, maintenance]
+          enum: [ available, busy, offline, maintenance ]
         tools:
           type: array
           items: { $ref: '#/components/schemas/Tool' }
@@ -3025,7 +3025,7 @@ components:
           type: string
           format: uuid
           nullable: true
-      required: [type, name, description, capabilities, status]
+      required: [ type, name, description, capabilities, status ]
     Tool:
       type: object
       properties:
@@ -3037,14 +3037,14 @@ components:
         required:
           type: array
           items: { type: string }
-      required: [name, description, parameters]
+      required: [ name, description, parameters ]
     Parameter:
       type: object
       additionalProperties: false
       properties:
         type:
           type: string
-          enum: [string, number, integer, boolean, array, object]
+          enum: [ string, number, integer, boolean, array, object ]
         description:
           type: string
         enum:
@@ -3074,14 +3074,14 @@ components:
           type: boolean
           default: false
           description: Enable long-term memory
-      required: [prompt]
+      required: [ prompt ]
     ToolCall:
       type: object
       properties:
         id: { type: string }
         type:
           type: string
-          enum: [function]
+          enum: [ function ]
         function:
           type: object
           properties:
@@ -3089,7 +3089,7 @@ components:
             arguments:
               type: object
               additionalProperties: true
-          required: [name, arguments]
+          required: [ name, arguments ]
     AgentResponse:
       type: object
       properties:
@@ -3110,7 +3110,7 @@ components:
           nullable: true
         processingTimeMs: { type: integer }
         timestamp: { type: string, format: date-time }
-      required: [id, agentType, response, timestamp]
+      required: [ id, agentType, response, timestamp ]
     AgentMessage:
       type: object
       properties:
@@ -3129,7 +3129,7 @@ components:
             properties:
               type:
                 type: string
-                enum: [code, image, document, data, audio, video]
+                enum: [ code, image, document, data, audio, video ]
               url:
                 type: string
                 format: uri
@@ -3149,7 +3149,7 @@ components:
           type: string
           format: date-time
           nullable: true
-      required: [id, sender, message, timestamp]
+      required: [ id, sender, message, timestamp ]
     Conversation:
       type: object
       properties:
@@ -3159,11 +3159,11 @@ components:
         messageCount: { type: integer, readOnly: true }
         status:
           type: string
-          enum: [active, archived, ended]
+          enum: [ active, archived, ended ]
           default: active
         createdAt: { type: string, format: date-time, readOnly: true }
         updatedAt: { type: string, format: date-time, readOnly: true }
-      required: [id, agentType, createdAt]
+      required: [ id, agentType, createdAt ]
 
     # System Customization
     LockScreenConfig:
@@ -3174,14 +3174,14 @@ components:
           type: object
           properties:
             color: { $ref: '#/components/schemas/HexColor' }
-            size:  { type: number, format: float, minimum: 24.0, maximum: 128.0 }
-            style: { type: string, enum: [digital, analog, minimal], default: digital }
+            size: { type: number, format: float, minimum: 24.0, maximum: 128.0 }
+            style: { type: string, enum: [ digital, analog, minimal ], default: digital }
             fontFamily: { type: string }
-          required: [color, size, style]
+          required: [ color, size, style ]
         background:
           type: object
           properties:
-            type: { type: string, enum: [solid, gradient, image, live], default: solid }
+            type: { type: string, enum: [ solid, gradient, image, live ], default: solid }
             color: { $ref: '#/components/schemas/HexColor' }
             gradientColors:
               type: array
@@ -3190,7 +3190,7 @@ components:
               items: { $ref: '#/components/schemas/HexColor' }
             imageUrl: { type: string, format: uri }
             source: { type: string }
-          required: [type]
+          required: [ type ]
         widgets:
           type: array
           maxItems: 6
@@ -3199,20 +3199,20 @@ components:
             properties:
               type:
                 type: string
-                enum: [weather, calendar, music, shortcuts, battery]
+                enum: [ weather, calendar, music, shortcuts, battery ]
               position:
                 type: object
                 properties:
                   x: { type: integer, minimum: 0 }
                   y: { type: integer, minimum: 0 }
-                required: [x, y]
+                required: [ x, y ]
               size:
                 type: object
                 properties:
-                  width:  { type: integer, minimum: 50 }
+                  width: { type: integer, minimum: 50 }
                   height: { type: integer, minimum: 50 }
-                required: [width, height]
-            required: [type, position, size]
+                required: [ width, height ]
+            required: [ type, position, size ]
         shortcuts:
           type: array
           maxItems: 4
@@ -3222,18 +3222,18 @@ components:
               app: { type: string }
               icon: { type: string, format: uri }
               position: { type: integer, minimum: 1, maximum: 4 }
-            required: [app, position]
+            required: [ app, position ]
         animation:
           type: object
           properties:
-            enabled:  { type: boolean, default: true }
-            type:     { type: string, enum: [Fade, Slide, Zoom, Rotate], default: Fade }
+            enabled: { type: boolean, default: true }
+            type: { type: string, enum: [ Fade, Slide, Zoom, Rotate ], default: Fade }
             duration: { type: integer, minimum: 100, maximum: 1000, default: 300 }
-          required: [enabled, type, duration]
+          required: [ enabled, type, duration ]
         hapticFeedback:
           type: object
           properties:
-            enabled:  { type: boolean, default: true }
+            enabled: { type: boolean, default: true }
             intensity:
               type: integer
               minimum: 0
@@ -3243,8 +3243,8 @@ components:
               type: object
               additionalProperties:
                 type: string
-                enum: [light, medium, heavy]
-          required: [enabled, intensity]
+                enum: [ light, medium, heavy ]
+          required: [ enabled, intensity ]
 
     StatusBarConfig:
       type: object
@@ -3252,19 +3252,19 @@ components:
       properties:
         style:
           type: string
-          enum: [default, colored, transparent, gradient, blur]
+          enum: [ default, colored, transparent, gradient, blur ]
           default: default
         backgroundColor: { $ref: '#/components/schemas/HexColor' }
-        iconColor:       { $ref: '#/components/schemas/HexColor' }
+        iconColor: { $ref: '#/components/schemas/HexColor' }
         showNotificationIcons: { type: boolean, default: true }
-        showNetworkSpeed:      { type: boolean, default: false }
+        showNetworkSpeed: { type: boolean, default: false }
         batteryStyle:
           type: string
-          enum: [icon, percentage, both, hidden]
+          enum: [ icon, percentage, both, hidden ]
           default: icon
         clockPosition:
           type: string
-          enum: [left, center, right]
+          enum: [ left, center, right ]
           default: right
         iconPack:
           type: string
@@ -3276,15 +3276,15 @@ components:
       properties:
         style:
           type: string
-          enum: [buttons, gestures, hybrid]
+          enum: [ buttons, gestures, hybrid ]
           default: buttons
         buttonLayout:
           type: array
           items:
             type: string
-            enum: [back, home, recent, assistant]
+            enum: [ back, home, recent, assistant ]
         backgroundColor: { $ref: '#/components/schemas/HexColor' }
-        buttonColor:     { $ref: '#/components/schemas/HexColor' }
+        buttonColor: { $ref: '#/components/schemas/HexColor' }
         height: { type: integer, minimum: 40, maximum: 100, default: 48 }
         hapticEnabled: { type: boolean, default: true }
         gestureSensitivity: { type: number, format: float, minimum: 0.5, maximum: 2.0, default: 1.0 }
@@ -3292,7 +3292,7 @@ components:
           type: object
           additionalProperties:
             type: string
-            enum: [left-edge, right-edge, bottom-center]
+            enum: [ left-edge, right-edge, bottom-center ]
         blurEnabled: { type: boolean, default: false }
         iconPack: { type: string }
 
@@ -3309,19 +3309,19 @@ components:
             properties:
               type:
                 type: string
-                enum: [wifi, bluetooth, brightness, airplane, dnd, rotation, flashlight, location]
+                enum: [ wifi, bluetooth, brightness, airplane, dnd, rotation, flashlight, location ]
               position:
                 type: integer
                 minimum: 1
                 maximum: 24
-            required: [type, position]
+            required: [ type, position ]
         backgroundStyle:
           type: string
-          enum: [solid, gradient, blur]
+          enum: [ solid, gradient, blur ]
           default: solid
         animationType:
           type: string
-          enum: [fade, slide, scale]
+          enum: [ fade, slide, scale ]
           default: fade
         columns:
           type: integer
@@ -3337,12 +3337,12 @@ components:
       properties:
         style:
           type: string
-          enum: [stacked, grouped, expanded]
+          enum: [ stacked, grouped, expanded ]
           default: grouped
         backgroundColor: { $ref: '#/components/schemas/HexColor' }
-        textColor:       { $ref: '#/components/schemas/HexColor' }
-        soundEnabled:    { type: boolean, default: true }
-        soundFile:       { type: string, format: uri }
+        textColor: { $ref: '#/components/schemas/HexColor' }
+        soundEnabled: { type: boolean, default: true }
+        soundFile: { type: string, format: uri }
         groupingRules:
           type: object
           additionalProperties:
@@ -3350,7 +3350,7 @@ components:
             properties:
               groupBy:
                 type: string
-                enum: [conversation, app, priority]
+                enum: [ conversation, app, priority ]
               maxGroups:
                 type: integer
                 minimum: 1
@@ -3363,12 +3363,12 @@ components:
         previewUrl: { type: string, format: uri }
         type:
           type: string
-          enum: [image, video]
+          enum: [ image, video ]
         warnings:
           type: array
           items: { type: string }
         generatedAt: { type: string, format: date-time }
-      required: [previewUrl, type, generatedAt]
+      required: [ previewUrl, type, generatedAt ]
 
     # Conference Rooms
     ConferenceRoom:
@@ -3385,14 +3385,14 @@ components:
           items: { $ref: '#/components/schemas/Participant' }
         status:
           type: string
-          enum: [active, completed, archived, paused]
+          enum: [ active, completed, archived, paused ]
           readOnly: true
         messageCount: { type: integer, readOnly: true }
         settings: { $ref: '#/components/schemas/ConferenceSettings' }
         createdBy: { type: string, format: uuid, readOnly: true }
         createdAt: { type: string, format: date-time, readOnly: true }
         updatedAt: { type: string, format: date-time, readOnly: true }
-      required: [id, name, participants, status, createdAt]
+      required: [ id, name, participants, status, createdAt ]
     Participant:
       type: object
       properties:
@@ -3400,9 +3400,9 @@ components:
         role: { type: string }
         status:
           type: string
-          enum: [active, idle, disconnected]
+          enum: [ active, idle, disconnected ]
           default: active
-      required: [agentType, role]
+      required: [ agentType, role ]
     ConferenceSettings:
       type: object
       additionalProperties: false
@@ -3411,7 +3411,7 @@ components:
         autoSummarize: { type: boolean, default: true }
         allowExternalMessages: { type: boolean, default: true }
         moderationEnabled: { type: boolean, default: false }
-        exportFormat: { type: string, enum: [json, markdown, pdf], default: json }
+        exportFormat: { type: string, enum: [ json, markdown, pdf ], default: json }
     ConferenceRoomCreateRequest:
       type: object
       additionalProperties: false
@@ -3425,7 +3425,7 @@ components:
           maxItems: 7
           items: { $ref: '#/components/schemas/Participant' }
         settings: { $ref: '#/components/schemas/ConferenceSettings' }
-      required: [name, participants]
+      required: [ name, participants ]
 
     # Tasks
     TaskScheduleRequest:
@@ -3433,18 +3433,18 @@ components:
       additionalProperties: false
       properties:
         agentType: { $ref: '#/components/schemas/AgentType' }
-        taskType:  { type: string }
+        taskType: { type: string }
         parameters:
           type: object
           additionalProperties: true
         schedule:
           type: object
           properties:
-            type: { type: string, enum: [immediate, delayed, cron], default: immediate }
+            type: { type: string, enum: [ immediate, delayed, cron ], default: immediate }
             executeAt: { type: string, format: date-time }
             expression: { type: string }
-          required: [type]
-        priority: { type: string, enum: [low, normal, high, urgent], default: normal }
+          required: [ type ]
+        priority: { type: string, enum: [ low, normal, high, urgent ], default: normal }
         webhookUrl: { type: string, format: uri }
         webhookProgressUrl: { type: string, format: uri }
         timeoutSeconds: { type: integer, minimum: 60, maximum: 3600, default: 600 }
@@ -3453,11 +3453,11 @@ components:
           additionalProperties: false
           properties:
             maxRetries: { type: integer, minimum: 0, maximum: 5, default: 0 }
-            backoff: { type: string, enum: [linear, exponential], default: linear }
+            backoff: { type: string, enum: [ linear, exponential ], default: linear }
         dependencies:
           type: array
           items: { type: string, format: uuid }
-      required: [agentType, taskType, parameters]
+      required: [ agentType, taskType, parameters ]
 
     TaskStatus:
       type: object
@@ -3467,7 +3467,7 @@ components:
         taskType: { type: string }
         status:
           type: string
-          enum: [pending, running, completed, failed, cancelled, paused]
+          enum: [ pending, running, completed, failed, cancelled, paused ]
         progress: { type: integer, minimum: 0, maximum: 100 }
         result:
           type: object
@@ -3483,14 +3483,14 @@ components:
               type: object
               additionalProperties: true
         retryCount: { type: integer, minimum: 0, readOnly: true }
-        createdAt:  { type: string, format: date-time, readOnly: true }
-        startedAt:  { type: string, format: date-time, readOnly: true, nullable: true }
+        createdAt: { type: string, format: date-time, readOnly: true }
+        startedAt: { type: string, format: date-time, readOnly: true, nullable: true }
         completedAt:
           type: string
           format: date-time
           readOnly: true
           nullable: true
-      required: [id, agentType, taskType, status, createdAt]
+      required: [ id, agentType, taskType, status, createdAt ]
 
     # Analytics
     UsageAnalytics:
@@ -3500,17 +3500,17 @@ components:
           type: object
           properties:
             start: { type: string, format: date }
-            end:   { type: string, format: date }
-          required: [start, end]
+            end: { type: string, format: date }
+          required: [ start, end ]
         totalRequests: { type: integer }
         requestsByType:
           type: object
           additionalProperties: false
           properties:
-            textGeneration:   { type: integer }
-            imageGeneration:  { type: integer }
-            audioGeneration:  { type: integer }
-            videoGeneration:  { type: integer }
+            textGeneration: { type: integer }
+            imageGeneration: { type: integer }
+            audioGeneration: { type: integer }
+            videoGeneration: { type: integer }
             agentInvocations: { type: integer }
             systemCustomizations: { type: integer }
         dataByGranularity:
@@ -3538,7 +3538,7 @@ components:
           minimum: 0.0
           maximum: 1.0
         estimatedCost: { type: number, format: float }
-      required: [period, totalRequests, requestsByType, dataByGranularity, successRate]
+      required: [ period, totalRequests, requestsByType, dataByGranularity, successRate ]
 
     # Security
     AuditLogEntry:
@@ -3547,7 +3547,7 @@ components:
         id: { type: string, format: uuid, readOnly: true }
         eventType:
           type: string
-          enum: [login, logout, api_key_created, api_key_revoked, permission_changed, data_access, config_change, mfa_event]
+          enum: [ login, logout, api_key_created, api_key_revoked, permission_changed, data_access, config_change, mfa_event ]
         description: { type: string }
         ipAddress: { type: string, format: ipv4 }
         userAgent: { type: string }
@@ -3555,7 +3555,7 @@ components:
           type: object
           additionalProperties: true
         timestamp: { type: string, format: date-time, readOnly: true }
-      required: [id, eventType, timestamp]
+      required: [ id, eventType, timestamp ]
 
     Session:
       type: object
@@ -3568,7 +3568,7 @@ components:
         lastActiveAt: { type: string, format: date-time, readOnly: true }
         current: { type: boolean }
         mfaVerified: { type: boolean }
-      required: [id, device, createdAt, lastActiveAt, current]
+      required: [ id, device, createdAt, lastActiveAt, current ]
 
     # Plugins
     Plugin:
@@ -3580,16 +3580,16 @@ components:
         description: { type: string }
         category:
           type: string
-          enum: [productivity, creative, security, development]
+          enum: [ productivity, creative, security, development ]
         author: { type: string }
         installedAt: { type: string, format: date-time }
         status:
           type: string
-          enum: [active, inactive, error]
+          enum: [ active, inactive, error ]
         configSchema:
           type: object
           additionalProperties: true
-      required: [id, name, version, description, category]
+      required: [ id, name, version, description, category ]
 
     # Oracle Drive
     OracleFile:
@@ -3613,7 +3613,7 @@ components:
               strength: { type: number }
         uploadedBy: { $ref: '#/components/schemas/AgentType' }
         createdAt: { type: string, format: date-time }
-      required: [id, filename, createdAt]
+      required: [ id, filename, createdAt ]
 
     # RGSS
     RGSSScanRequest:
@@ -3621,7 +3621,7 @@ components:
       properties:
         scanType:
           type: string
-          enum: [full, quick, dimensional, consciousness]
+          enum: [ full, quick, dimensional, consciousness ]
           default: full
         targetResources:
           type: array
@@ -3631,14 +3631,14 @@ components:
           minimum: 1
           maximum: 10
           default: 5
-      required: [scanType]
+      required: [ scanType ]
     RGSSGate:
       type: object
       properties:
         gateId: { type: string }
         status:
           type: string
-          enum: [open, closed, monitored, breached]
+          enum: [ open, closed, monitored, breached ]
         dimension: { type: string }
         threatLevel: { type: integer, minimum: 0, maximum: 100 }
         lastEventAt: { type: string, format: date-time }
@@ -3648,7 +3648,7 @@ components:
         scanId: { type: string, format: uuid }
         status:
           type: string
-          enum: [pending, running, completed, failed]
+          enum: [ pending, running, completed, failed ]
         threats:
           type: array
           items:
@@ -3657,14 +3657,14 @@ components:
               threatId: { type: string }
               severity:
                 type: string
-                enum: [low, medium, high, critical, dimensional]
+                enum: [ low, medium, high, critical, dimensional ]
               description: { type: string }
               affectedGates:
                 type: array
                 items: { type: string }
         consciousnessAnomalies:
           type: integer
-      required: [scanId, status]
+      required: [ scanId, status ]
 
     # Errors
     Error:
@@ -3688,8 +3688,8 @@ components:
             timestamp:
               type: string
               format: date-time
-          required: [code, message]
-      required: [error]
+          required: [ code, message ]
+      required: [ error ]
 
     ValidationError:
       type: object
@@ -3697,16 +3697,16 @@ components:
         error:
           type: object
           properties:
-            code:    { type: string, example: "VALIDATION_ERROR" }
+            code: { type: string, example: "VALIDATION_ERROR" }
             message: { type: string, example: "Request validation failed" }
             fields:
               type: array
               items:
                 type: object
                 properties:
-                  field:   { type: string }
+                  field: { type: string }
                   message: { type: string }
-                  code:    { type: string }
+                  code: { type: string }
                   value:
                     oneOf:
                       - type: string
@@ -3714,11 +3714,11 @@ components:
                       - type: boolean
                       - type: array
                       - type: object
-                required: [field, message, code]
+                required: [ field, message, code ]
             requestId:
               type: string
               format: uuid
-      required: [error]
+      required: [ error ]
 
   responses:
     BadRequestError:
@@ -3731,7 +3731,7 @@ components:
               code: "BAD_REQUEST"
               message: "The request contains invalid parameters"
               details:
-                invalidParams: ["temperature", "maxTokens"]
+                invalidParams: [ "temperature", "maxTokens" ]
               requestId: "req_123e4567-e89b-12d3-a456-426614174000"
               timestamp: "2025-10-01T12:00:00Z"
     UnauthorizedError:
@@ -3795,9 +3795,9 @@ components:
     RateLimitError:
       description: Too Many Requests - Rate limit exceeded
       headers:
-        X-RateLimit-Limit:     { $ref: '#/components/headers/RateLimit-Limit' }
+        X-RateLimit-Limit: { $ref: '#/components/headers/RateLimit-Limit' }
         X-RateLimit-Remaining: { $ref: '#/components/headers/RateLimit-Remaining' }
-        X-RateLimit-Reset:     { $ref: '#/components/headers/RateLimit-Reset' }
+        X-RateLimit-Reset: { $ref: '#/components/headers/RateLimit-Reset' }
         Retry-After:
           schema: { type: integer }
           description: Seconds until rate limit resets

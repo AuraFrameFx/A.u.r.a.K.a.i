@@ -7,28 +7,20 @@ plugins {
     `java-library`
 }
 
-val specPath = file("$rootDir/data/api/api/my-api-spec.yaml")
+val specPath = file("my-api-spec-FULL.yaml")
 
 require(specPath.exists()) {
     "OpenAPI spec not found at: ${specPath.absolutePath}"
 }
-require(specPath.length() > 1024) {
-    "OpenAPI spec at ${specPath.absolutePath} is too small or empty. Please check the file."
-}
 
 openApiGenerate {
     generatorName = "kotlin"
-    inputSpec = specPath.toURI().toString()
+    inputSpec = specPath.absolutePath
     validateSpec = false
     outputDir = layout.buildDirectory.dir("generated/openapi").get().asFile.path
     apiPackage = "dev.aurakai.auraframefx.api"
     modelPackage = "dev.aurakai.auraframefx.model"
-
-    additionalProperties = mapOf(
-        "skipValidateSpec" to "true",
-        "legacyDiscriminatorBehavior" to "false"
-    )
-
+    
     configOptions = mapOf(
         "library" to "jvm-ktor",
         "serializationLibrary" to "kotlinx_serialization",
@@ -40,14 +32,7 @@ openApiGenerate {
         "exceptionOnFailedStatusCodes" to "true",
         "generateModelDocumentation" to "false",
         "nonPublicApi" to "false",
-        "hideGenerationTimestamp" to "true",
-        "sortParamsByRequiredFlag" to "true",
-        "sortModelPropertiesByRequiredFlag" to "true"
-    )
-
-    openapiNormalizer = mapOf(
-        "REFACTOR_ALLOF_WITH_PROPERTIES_ONLY" to "true",
-        "SIMPLIFY_ONEOF_ANYOF" to "true"
+        "hideGenerationTimestamp" to "true"
     )
 }
 
@@ -57,13 +42,14 @@ sourceSets {
     }
 }
 
-// ✅ CHANGED: finalizedBy → dependsOn (this is the ONLY change)
 tasks.withType<KotlinCompile>().configureEach {
-    dependsOn(tasks.named("openApiGenerate"))  // ✅ FIXED - was finalizedBy
+    dependsOn(tasks.named("openApiGenerate"))
 }
 
-tasks.named<Delete>("clean") {
-    delete(layout.buildDirectory.dir("generated/openapi"))
+tasks.named("clean") {
+    doLast {
+        delete(layout.buildDirectory.dir("generated/openapi"))
+    }
 }
 
 tasks.jar {
@@ -73,25 +59,25 @@ tasks.jar {
 dependencies {
     implementation(kotlin("stdlib"))
     implementation(kotlin("reflect"))
-
-    implementation("io.ktor:ktor-client-core:3.3.0")
-    implementation("io.ktor:ktor-client-cio:3.3.0")
-    implementation("io.ktor:ktor-client-content-negotiation:3.3.0")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.0")
-
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.7.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
-
+    
+    implementation("io.ktor:ktor-client-core:2.3.10")
+    implementation("io.ktor:ktor-client-cio:2.3.10")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.10")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.10")
+    
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
+    
     implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
-    implementation("org.slf4j:slf4j-api:2.0.17")
-    runtimeOnly("ch.qos.logback:logback-classic:1.5.19")
-
+    implementation("org.slf4j:slf4j-api:2.0.12")
+    runtimeOnly("ch.qos.logback:logback-classic:1.5.3")
+    
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.0")
-    testImplementation("io.mockk:mockk:1.14.6")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.2")
+    testImplementation("io.mockk:mockk:1.13.10")
 }
 
 tasks.withType<Test> {

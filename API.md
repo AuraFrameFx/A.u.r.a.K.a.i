@@ -10,6 +10,7 @@
 - [🧠 Core Module API](#core-module-api)
 - [📊 Data Layer API](#data-layer-api)
 - [🔧 Utilities API](#utilities-api)
+- [⚙️ Build & Validation Options](#build--validation-options)
 
 ## 🏗️ Architecture Overview
 
@@ -722,6 +723,15 @@ fun LoginScreen() {
     }
 }
 ```
+
+## ⚙️ Build & Validation Options
+
+To disable OpenAPI spec validation during build or code generation:
+
+- **Maven/Gradle**: Set the `validateSpec` option to `false` in your plugin configuration.
+- **CLI**: Use the `--skip-validate-spec` flag when running the CLI tool.
+
+This allows you to bypass strict spec validation if needed for custom workflows or rapid prototyping.
 
 **This API documentation provides comprehensive coverage of all major components in the AOSP
 ReGenesis project. Each API is designed with type safety, testability, and maintainability in mind.

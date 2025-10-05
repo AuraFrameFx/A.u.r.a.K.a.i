@@ -4,7 +4,6 @@
 plugins {
     id("com.android.application")
     alias(libs.plugins.ksp)
-    id("org.openapi.generator") version "7.16.0"
     alias(libs.plugins.compose.compiler)
 }
 
