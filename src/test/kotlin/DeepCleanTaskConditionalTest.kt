@@ -10,7 +10,7 @@ class DeepCleanTaskConditionalTest : GradleTestkitBase() {
     private val script = """
         if (file("nuclear-clean.gradle.kts").exists()) {
             apply(from = "nuclear-clean.gradle.kts")
-            if (tasks.findByName("nuclearClean") \!= null) {
+            if (tasks.findByName("nuclearClean") != null) {
                 tasks.register("deepClean") {
                     group = "build"
                     description = "Nuclear clean + standard clean"
@@ -40,7 +40,7 @@ class DeepCleanTaskConditionalTest : GradleTestkitBase() {
         val result = run(root, "tasks", "--all")
         // Avoid asserting failure; just ensure not present
         val output = result.output
-        assert(\!output.contains("deepClean - Nuclear clean + standard clean")) {
+        assert(!output.contains("deepClean - Nuclear clean + standard clean")) {
             "deepClean should not be registered when nuclear-clean.gradle.kts is missing."
         }
     }

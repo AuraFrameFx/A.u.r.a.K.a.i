@@ -110,9 +110,9 @@ class PRBuildFilesValidationExtendedTest {
                 val isValidProp = outcome::class.members.firstOrNull { it.name == "isValid" }
                 val violationsProp =
                     outcome::class.members.firstOrNull { it.name == "violations" || it.name == "messages" }
-                if (isValidProp \ != null) {
+                if (isValidProp != null) {
                     assertEquals(false, isValidProp.call(outcome) as? Boolean)
-                } else if (violationsProp \ != null) {
+                } else if (violationsProp != null) {
                     val v = violationsProp.call(outcome)?.toString() ?: ""
                     assertTrue(v.contains("forbidden", ignoreCase = true))
                 } else {
