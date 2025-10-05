@@ -159,8 +159,11 @@ class JoinUtilsExtendedTest {
         fun `whitespace-only elements are preserved`() {
             val list = linkedListOf("", " ", "  ")
             val result = JoinUtils.join(list)
-            // Expected length: 1 (space between e0 and e1) + 1 (e1) + 1 (space between e1 and e2) + 2 (e2) = 5
-            org.junit.jupiter.api.Assertions.assertEquals(5, result.length)
+            // Expected length: sum of element lengths + number of spaces between elements
+            val elementLengths = list.sumOf { it.length }
+            val numSpaces = list.size - 1
+            val expectedLength = elementLengths + numSpaces
+            org.junit.jupiter.api.Assertions.assertEquals(expectedLength, result.length)
             org.junit.jupiter.api.Assertions.assertTrue(result.all { it == ' ' })
         }
 

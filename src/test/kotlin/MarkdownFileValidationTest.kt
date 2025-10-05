@@ -658,10 +658,14 @@ class MarkdownFileValidationTest {
 
             @Test
             fun `docker artifacts exist when README mentions Docker`() {
-                val mentions = readme.contains("docker", ignoreCase = true) ||
-                        readme.contains("compose", ignoreCase = true) ||
-                        readme.contains("docker-compose", ignoreCase = true)
-                if (!mentions) return
+-                val mentions = readme.contains("docker", ignoreCase = true) ||
+-                        readme.contains("compose", ignoreCase = true) ||
+-                        readme.contains("docker-compose", ignoreCase = true)
+                val mentionsDocker = Regex("\\bdocker\\b", RegexOption.IGNORE_CASE)
+                    .containsMatchIn(readme)
+                val mentionsDockerCompose = Regex("\\bdocker[-\\s]?compose\\b", RegexOption.IGNORE_CASE)
+                    .containsMatchIn(readme)
+                if (!(mentionsDocker || mentionsDockerCompose)) return
 
                 val candidates = listOf(
                     "Dockerfile",
@@ -676,6 +680,7 @@ class MarkdownFileValidationTest {
                     exists,
                     "README mentions Docker/Compose but no Docker artifacts found: $candidates"
                 )
+            }
             }
 
             @Test
