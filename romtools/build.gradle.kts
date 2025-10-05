@@ -131,10 +131,4 @@ android {
             logger.lifecycle("✅ Documentation generated at: ${indexFile.absolutePath}")
         }
     }
-
-    packaging {
-        resources {
-            excludes += "META-INF/LICENSE.md"
-        }
-    }
 }
