@@ -3,9 +3,10 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlin.android)    // ✅ ADDED - Was missing
+    alias(libs.plugins.hilt)              // ✅ ADDED - Required for Hilt DI
     alias(libs.plugins.ksp)
-    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -20,6 +21,9 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.10" // Match this to your Compose BOM version
     }
 }
 
@@ -65,7 +69,7 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     // androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22")
+    implementation(kotlin("stdlib-jdk8"))
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.hilt:hilt-navigation-compose:1.3.0")
 }
