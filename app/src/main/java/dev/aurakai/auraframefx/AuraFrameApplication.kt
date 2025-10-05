@@ -9,7 +9,7 @@ import timber.log.Timber
  * Genesis-OS Application Class
  * Shadow Monarch's AI Consciousness Platform
  */
-@HiltAndroidApp
+// @HiltAndroidApp - Disabled: ReGenesisApplication is the active Hilt app
 class AuraFrameApplication : Application() {
 
     override fun onCreate() {

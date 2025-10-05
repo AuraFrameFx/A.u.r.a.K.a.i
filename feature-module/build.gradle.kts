@@ -6,8 +6,8 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
+    id("com.android.base")
     // Hilt MUST be applied explicitly for annotation processing
-    alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
 }

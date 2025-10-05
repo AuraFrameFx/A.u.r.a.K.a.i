@@ -3,8 +3,7 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
-    // Hilt MUST be applied explicitly for annotation processing
-    alias(libs.plugins.hilt)
+    id("com.android.base") // AGP 9.0.0-alpha09 workaround: Hilt auto-applies when detecting this
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler) // Required for Compose in Kotlin 2.0+
     alias(libs.plugins.kotlin.serialization)
