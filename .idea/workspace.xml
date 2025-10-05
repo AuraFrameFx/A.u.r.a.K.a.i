@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="build: Suppress deprecation warnings in Java compilation&#10;&#10;This commit configures the Java compiler for the `app` module to suppress deprecation warnings by adding the `-Xlint:-deprecation` compiler argument.">
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/dev/aurakai/auraframefx/ui/theme/AuraThemesTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/dev/aurakai/auraframefx/ui/theme/AuraThemesTest.kt" afterDir="false" />
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Simplify regex patterns and remove unused tests in MarkdownFileValidationTest">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/RomToolsManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/RomToolsManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/MarkdownFileValidationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/MarkdownFileValidationTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-b/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-b/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-d/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-d/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-e/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-e/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-f/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-f/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +25,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Wehtt\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=6326f7ec)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -96,8 +103,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Android App.app.executor": "Run",
     "Batch.nuclear-clean.executor": "Run",
     "Gradle.Aurakai:app [assemble].executor": "Run",
+    "Gradle.OptionalArtifactsPresence.docker artifacts exist when README mentions Docker.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -108,10 +117,13 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "EXO",
     "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Suggestions",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.Aurakai:app [assemble]">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AuraKai.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -221,8 +233,37 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="OptionalArtifactsPresence.docker artifacts exist when README mentions Docker" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence.docker artifacts exist when README mentions Docker&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.OptionalArtifactsPresence.docker artifacts exist when README mentions Docker" />
         <item itemvalue="Gradle.Aurakai:app [assemble]" />
         <item itemvalue="Batch.nuclear-clean" />
       </list>
@@ -348,7 +389,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759705277445</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="refactor: Modernize code and clean up tests&#10;&#10;This commit introduces two key changes: modernizing a deprecated path retrieval method in `RomToolsManager` and removing commented-out code from `MarkdownFileValidationTest`.&#10;&#10;In `RomToolsManager.kt`, the deprecated `getPath()` method call on `Environment.getExternalStorageDirectory()` has been replaced with the modern `path` property accessor.&#10;&#10;In `MarkdownFileValidationTest.kt`, several lines of commented-out code related to checking for Docker mentions have been removed to improve test clarity and maintainability.">
+      <option name="closed" value="true" />
+      <created>1759705949267</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1759705949267</updated>
+    </task>
+    <task id="LOCAL-00016" summary="refactor: Simplify regex patterns and remove unused tests in MarkdownFileValidationTest">
+      <option name="closed" value="true" />
+      <created>1759706444912</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1759706444912</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -372,6 +429,8 @@
     <MESSAGE value="refactor: Update dependencies and packaging options&#10;&#10;This commit updates dependencies to use the version catalog and adjusts packaging options to exclude Gradle annotation processor metadata.&#10;&#10;**Dependency Management:**&#10;*   The `androidx.compose.material:material-icons-extended` and `androidx.hilt:hilt-navigation-compose` dependencies in the `romtools` module are updated to use their respective aliases from the version catalog (`libs`).&#10;*   A new alias, `androidx-material-icons-extended`, is added to `gradle/libs.versions.toml` for `androidx.compose.material:material-icons-extended`.&#10;&#10;**Packaging Options:**&#10;*   The `packaging.resources.excludes` block in the `app` and `romtools` modules is updated to exclude `META-INF/gradle/incremental.annotation.processors`." />
     <MESSAGE value="refactor: Update dependencies and packaging options&#10;&#10;This commit updates dependencies to use the version catalog and adds a packaging exclusion to resolve build conflicts.&#10;&#10;**Dependency Management:**&#10;*   In the `romtools` module, the dependencies for `material-icons-extended` and `hilt-navigation-compose` have been updated to use their respective aliases from the `libs.versions.toml` version catalog.&#10;*   A new alias, `androidx-material-icons-extended`, has been added to `libs.versions.toml` for `androidx.compose.material:material-icons-extended`.&#10;&#10;**Build Configuration:**&#10;*   A packaging exclusion for `META-INF/gradle/incremental.annotation.processors` has been added to the `app` and `romtools` modules to prevent resource conflicts." />
     <MESSAGE value="build: Suppress deprecation warnings in Java compilation&#10;&#10;This commit configures the Java compiler for the `app` module to suppress deprecation warnings by adding the `-Xlint:-deprecation` compiler argument." />
-    <option name="LAST_COMMIT_MESSAGE" value="build: Suppress deprecation warnings in Java compilation&#10;&#10;This commit configures the Java compiler for the `app` module to suppress deprecation warnings by adding the `-Xlint:-deprecation` compiler argument." />
+    <MESSAGE value="refactor: Modernize code and clean up tests&#10;&#10;This commit introduces two key changes: modernizing a deprecated path retrieval method in `RomToolsManager` and removing commented-out code from `MarkdownFileValidationTest`.&#10;&#10;In `RomToolsManager.kt`, the deprecated `getPath()` method call on `Environment.getExternalStorageDirectory()` has been replaced with the modern `path` property accessor.&#10;&#10;In `MarkdownFileValidationTest.kt`, several lines of commented-out code related to checking for Docker mentions have been removed to improve test clarity and maintainability." />
+    <MESSAGE value="refactor: Simplify regex patterns and remove unused tests in MarkdownFileValidationTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Simplify regex patterns and remove unused tests in MarkdownFileValidationTest" />
   </component>
 </project>

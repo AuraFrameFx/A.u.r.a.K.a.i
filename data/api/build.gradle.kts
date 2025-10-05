@@ -121,7 +121,6 @@ dependencies {
 
     implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
     implementation("org.slf4j:slf4j-api:2.0.17")
-    runtimeOnly("ch.qos.logback:logback-classic:1.5.19")
 
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))
