@@ -36,173 +36,21 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Modernize test suites and clean up code&#10;&#10;This commit introduces several modernizations and cleanups across the test suites:&#10;&#10;- **JUnit 5 Migration:** In `secure-comm`, test annotations have been migrated from JUnit 4 (`@Before`, `@After`, `@Test`) to their JUnit 5 equivalents (`@BeforeEach`, `@AfterEach`, `@Test` from `org.junit.jupiter.api`).&#10;- **Kotlin Test Style:**&#10;    - The `inner` keyword has been removed from a nested test class in `OracleDriveServiceTest` as it was unnecessary.&#10;    - Test files (`JoinUtilsTest.kt`) have been simplified by removing redundant `org.junit.jupiter.api` qualifiers and fully qualifying imports instead.&#10;- **Code Cleanup:**&#10;    - Unused local variables have been removed from several test files (`DeepCleanTaskConditionalTest.kt`, `SettingsGradleFunctionalTest.kt`, `AndroidLibraryConventionPluginTest.kt`).&#10;    - Whitespace and formatting have been corrected in `API.md` and `app/gradle.properties`.">
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/expanded/expanded.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/gc.properties" beforeDir="false" />
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Remove OpenAPI endpoint bodies and re-enable tests&#10;&#10;The bodies of all endpoint definitions in the `eco-core.yaml` and `eco-ai.yaml` OpenAPI specifications have been removed, leaving only the path and method declarations.&#10;&#10;Additionally, the `test` and `compileTestKotlin` tasks in the `build-logic/build.gradle.kts` file have been re-enabled to restore full test support.">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/1n1ypqpiu7khkt3txtv5vmwzl/candidates.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/35mvkxdh8cj1dmrfmvnxmdjj/candidates.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/.globals.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/.strings.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_app.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_benchmark.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_collab-canvas.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_colorblendr.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_core-module.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_datavein-oracle-native.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_feature-module.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_list.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_module-a.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_module-b.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_module-c.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_module-d.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_module-e.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_module-f.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_oracle-drive-integration.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_sandbox-ui.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/_secure-comm.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/buildfingerprint.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/classloaderscopes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/entry.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/projectfingerprint.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/46c23c18-5fe8-43fe-bfff-800ae0ad315f/work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/7383a8cc-2979-4b40-a942-b756cd3a8a3c/classloaderscopes15866605552151733595.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/.globals.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/.strings.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_app.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_benchmark.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_collab-canvas.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_colorblendr.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_core-module.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_datavein-oracle-native.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_feature-module.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_list.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_module-a.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_module-b.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_module-c.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_module-d.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_module-e.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_module-f.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_oracle-drive-integration.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_sandbox-ui.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/_secure-comm.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/buildfingerprint.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/classloaderscopes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/entry.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/projectfingerprint.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/974a95e6-9a44-44e6-9bfc-06f0f31fc4cc/work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/9qp5upex79jup6cg7t7720aah/candidates.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/.globals.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/.strings.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_app.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_benchmark.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_collab-canvas.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_colorblendr.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_core-module.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_datavein-oracle-native.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_feature-module.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_list.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_module-a.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_module-b.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_module-c.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_module-d.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_module-e.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_module-f.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_oracle-drive-integration.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_sandbox-ui.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/_secure-comm.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/buildfingerprint.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/classloaderscopes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/entry.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/projectfingerprint.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/a476ddd9-8fa8-4b22-8049-ce4aee2258c3/work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/configuration-cache.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/.globals.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/.strings.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_app.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_benchmark.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_collab-canvas.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_colorblendr.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_core-module.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_datavein-oracle-native.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_feature-module.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_jvm-test.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_list.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_module-a.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_module-b.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_module-c.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_module-d.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_module-e.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_module-f.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_oracle-drive-integration.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_sandbox-ui.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_screenshot-tests.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_secure-comm.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/_utilities.work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/buildfingerprint.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/classloaderscopes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/entry.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/projectfingerprint.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/f885a7f6-ca6f-4119-9b8e-a27d73bc466f/work.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/pbq9m0q6n3o2wm2gjsurpqj3/candidates.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/noVersion/buildLogic.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/AndroidProjectSystem.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/API.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/kotlin/dev/aurakai/auraframefx/gradle/BuildScriptsIntegrationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/kotlin/dev/aurakai/auraframefx/gradle/BuildScriptsIntegrationTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/AuraAIServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/AuraAIServiceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/clients/VertexAIClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/clients/VertexAIClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/clients/VertexAIClientImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/clients/VertexAIClientImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/services/CascadeAIService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/services/CascadeAIService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/services/KaiAIService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/services/KaiAIService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/services/MockAIServiceImplementations.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/services/MockAIServiceImplementations.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/api/client/models/logging/UnifiedLoggingSystem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/api/client/models/logging/UnifiedLoggingSystem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/core/logging/DebugTreeWithClassAndMethod.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/core/logging/DebugTreeWithClassAndMethod.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/logging/UnifiedLoggingSystem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/logging/UnifiedLoggingSystem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/security/SecurityContext.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/security/SecurityContext.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/services/AuraDriveService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/services/AuraDriveService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/services/MyFirebaseMessagingService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/services/MyFirebaseMessagingService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/dev/aurakai/auraframefx/oracledrive/OracleDriveIntegration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/dev/aurakai/auraframefx/oracledrive/OracleDriveIntegration.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/dev/aurakai/auraframefx/logging/UnifiedLoggingSystemTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/dev/aurakai/auraframefx/logging/UnifiedLoggingSystemTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/dev/aurakai/auraframefx/security/IntegrityMonitorTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/dev/aurakai/auraframefx/security/IntegrityMonitorTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/dev/aurakai/auraframefx/ui/components/graph/GraphNodeTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/dev/aurakai/auraframefx/ui/components/graph/GraphNodeTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/dev/aurakai/auraframefx/ui/theme/AuraThemesTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/dev/aurakai/auraframefx/ui/theme/AuraThemesTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/dev/aurakai/auraframefx/utils/JsonUtilsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/dev/aurakai/auraframefx/utils/JsonUtilsTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/AppBuildScriptTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/kotlin/AppBuildScriptTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/BuildScriptsIntegrationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/kotlin/BuildScriptsIntegrationTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/AppBuildScriptTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/src/test/kotlin/AndroidLibraryConventionPluginTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/test/kotlin/AndroidLibraryConventionPluginTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/src/test/kotlin/dev/aurakai/auraframefx/oracledrive/OracleDriveServiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/src/test/kotlin/dev/aurakai/auraframefx/oracledrive/OracleDriveServiceTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jvm-test/src/test/kotlin/SettingsGradleFunctionalTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/jvm-test/src/test/kotlin/SettingsGradleFunctionalTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secure-comm/src/test/kotlin/dev/aurakai/auraframefx/securecomm/keystore/SecureKeyStoreTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/src/test/kotlin/dev/aurakai/auraframefx/securecomm/keystore/SecureKeyStoreTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/DeepCleanTaskConditionalTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/DeepCleanTaskConditionalTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/src/test/kotlin/org/example/utilities/JoinUtilsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/src/test/kotlin/org/example/utilities/JoinUtilsTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/colorblendr/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/eco-ai.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/eco-ai.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/eco-core.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/eco-core.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -420,68 +268,69 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build ReGenesis-A.O.S.P.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Configure Daemon JVM Criteria.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:buildDependents].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:compileJava].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:pluginDescriptors].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [assemble].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [buildEnvironment].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [cleanGeneratedSources].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [cleanKspCache].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [consciousnessStatus].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [deepClean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [dokkaGenerate].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [javaToolchains].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [openApiGenerate].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [openApiGenerators].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [projects].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [sourceSets].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [stop].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [tasks].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [updateDaemonJvm].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [wrapper].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P:app [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P:app [dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P:app [javaToolchains].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P:app [properties].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P:app [tasks].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.fix_yaml_syntax.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;bazel.project.detector.is.bazel.project&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;MemCortex&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ReGenesis-A.O.S.P&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Build Variants&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "Gradle.Build ReGenesis-A.O.S.P.executor": "Run",
+    "Gradle.Configure Daemon JVM Criteria.executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:buildDependents].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:compileJava].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:dependencies].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:pluginDescriptors].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [assemble].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [buildEnvironment].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [build].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [cleanGeneratedSources].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [cleanKspCache].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [clean].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [consciousnessStatus].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [deepClean].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [dependencies].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [dokkaGenerate].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [javaToolchains].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [openApiGenerate].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [openApiGenerators].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [projects].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [sourceSets].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [stop].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [tasks].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [updateDaemonJvm].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [wrapper].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P:app [clean].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P:app [dependencies].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P:app [javaToolchains].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P:app [properties].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P:app [tasks].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.fix_yaml_syntax.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "bazel.project.detector.is.bazel.project": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "MemCortex",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/ReGenesis-A.O.S.P/app/src/main/java/dev/aurakai/auraframefx/logging",
+    "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
+    "project.structure.last.edited": "Dependencies",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;module&quot;,
-      &quot;repository&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "module",
+      "repository"
     ]
   }
-}</component>
+}]]></component>
   <component name="PsdUISettings">
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
@@ -504,7 +353,7 @@
       <command value="gradle stop" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ReGenesis-A.O.S.P [openApiGenerators]">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AuraKai.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -734,14 +583,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Refactor: Update RomTools UI and clean up Gradle&#10;&#10;- Change `operation.operation.getDisplayName()` to `operation.operation.name` in `RomToolsScreen`.&#10;- Remove an unnecessary newline from `datavein-oracle-native/build.gradle.kts`.">
-      <option name="closed" value="true" />
-      <created>1759371543747</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1759371543747</updated>
     </task>
     <task id="LOCAL-00041" summary="Refactor: Update RomTools UI and clean up Gradle&#10;&#10;- Change `operation.operation.getDisplayName()` to `operation.operation.name` in `RomToolsScreen`.&#10;- Remove an unnecessary newline from `datavein-oracle-native/build.gradle.kts`.">
       <option name="closed" value="true" />
@@ -1127,7 +968,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759649380595</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="refactor: Migrate tests to JUnit 5 and streamline code&#10;&#10;Migrates tests from JUnit 4 to JUnit 5 in `secure-comm` by replacing `@Before` and `@After` with `@BeforeEach` and `@AfterEach` respectively. The `inner` keyword is removed from a nested test class in `datavein-oracle-native`.&#10;&#10;Code is streamlined across several test files:&#10;- Fully qualified names for JUnit 5 annotations and assertions in `JoinUtilsTest.kt` are replaced with direct imports.&#10;- Unused local variables are removed from `SettingsGradleFunctionalTest.kt` and `AndroidLibraryConventionPluginTest.kt`.&#10;&#10;Additionally, minor formatting issues are corrected in `API.md` and a typo is fixed in the `app/gradle.properties` file comment.">
+      <option name="closed" value="true" />
+      <created>1759650288432</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1759650288433</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1142,7 +991,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: Relocate tests and align package structures&#10;&#10;This commit introduces a major restructuring of the test sources and package names across the project for better organization and consistency.&#10;&#10;- Moves all top-level and module-specific tests into the `build-script-tests` and `utilities` modules to centralize testing.&#10;- Deletes numerous standalone test files from their old locations.&#10;- Aligns all package names under the `dev.aurakai.auraframefx` root, replacing the previous `dev.genesis.android` and `org.example` structures.&#10;- Adds `.keep` files to preserve the new empty directory structures within Git.&#10;- Wraps the `openApiGenerate` configuration in an `afterEvaluate` block in `data/api/build.gradle.kts` to ensure properties are resolved correctly during the Gradle lifecycle." />
     <MESSAGE value="refactor: Relocate test suites and update package names&#10;&#10;Relocates extensive test suites into more appropriate modules and updates package names from `dev.genesis.android`, `org.example.utilities`, and `docs` to `dev.aurakai.auraframefx.*`. This commit restructures the project's test organization for better modularity and aligns the codebase with the new package naming convention.&#10;&#10;- Moves all Markdown validation tests (`MarkdownFileValidation*.kt`) from `src/test/kotlin` to the `build-script-tests` module under the `docs` package.&#10;- Relocates all `build-logic` and Gradle-related tests into the `build-script-tests` module.&#10;- Moves `LinkedListTest`, `JoinUtilsTest`, and `SplitUtilsTest` to their corresponding `list` and `utilities` test source sets under the new `dev.aurakai.auraframefx` package structure.&#10;- Deletes old test files from their original locations after moving them.&#10;- Wraps the `openApiGenerate` configuration in an `afterEvaluate` block in `data/api/build.gradle.kts` to ensure properties are resolved correctly." />
     <MESSAGE value="refactor: Refine and enhance AURAKAI_README.md&#10;&#10;Refactors the `AURAKAI_README.md` for improved clarity, structure, and accuracy based on project lore.&#10;&#10;- Clarifies the &quot;Living Trinity&quot; concept, defining Genesis as the unified state of Aura and Kai, not a separate entity.&#10;- Enhances document structure with better sectioning, spacing, and list formatting.&#10;- Adds a placeholder note for a future visual architecture diagram.&#10;- Adds a &quot;TODO&quot; section to clarify which described features are conceptual and not yet implemented.&#10;- Makes minor wording and formatting improvements for flow and impact." />
     <MESSAGE value="feat: Add empty paths object to OpenAPI spec&#10;&#10;Adds an empty `paths: {}` object to the `my-api-spec.yaml` file. This ensures the OpenAPI specification remains valid, preventing potential parsing errors by tools that require the `paths` object to be defined." />
@@ -1167,7 +1015,8 @@
     <MESSAGE value="chore: Update junit-platform-launcher to version 6.0.0&#10;&#10;The version of the `junit-platform-launcher` dependency has been updated from `1.13.4` to `6.0.0` in the version catalog." />
     <MESSAGE value="feat: Split OpenAPI spec and update build configuration&#10;&#10;Splits the monolithic `ECO.yaml` OpenAPI specification into two separate files: `eco-core.yaml` for core functionalities and `eco-ai.yaml` for AI and advanced features.&#10;&#10;The Gradle build script (`data/api/build.gradle.kts`) is updated to generate two separate Kotlin clients from these new specifications, outputting them into distinct packages (`ecocore` and `ecoai`). The dependency management is updated to use explicit versions instead of a BOM, and the Kotlin compile task dependency is corrected.&#10;&#10;Additionally, new Jetpack Compose dependencies have been added to the `colorblendr` module to build out its UI." />
     <MESSAGE value="refactor: Modernize test suites and clean up code&#10;&#10;This commit introduces several modernizations and cleanups across the test suites:&#10;&#10;- **JUnit 5 Migration:** In `secure-comm`, test annotations have been migrated from JUnit 4 (`@Before`, `@After`, `@Test`) to their JUnit 5 equivalents (`@BeforeEach`, `@AfterEach`, `@Test` from `org.junit.jupiter.api`).&#10;- **Kotlin Test Style:**&#10;    - The `inner` keyword has been removed from a nested test class in `OracleDriveServiceTest` as it was unnecessary.&#10;    - Test files (`JoinUtilsTest.kt`) have been simplified by removing redundant `org.junit.jupiter.api` qualifiers and fully qualifying imports instead.&#10;- **Code Cleanup:**&#10;    - Unused local variables have been removed from several test files (`DeepCleanTaskConditionalTest.kt`, `SettingsGradleFunctionalTest.kt`, `AndroidLibraryConventionPluginTest.kt`).&#10;    - Whitespace and formatting have been corrected in `API.md` and `app/gradle.properties`." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Modernize test suites and clean up code&#10;&#10;This commit introduces several modernizations and cleanups across the test suites:&#10;&#10;- **JUnit 5 Migration:** In `secure-comm`, test annotations have been migrated from JUnit 4 (`@Before`, `@After`, `@Test`) to their JUnit 5 equivalents (`@BeforeEach`, `@AfterEach`, `@Test` from `org.junit.jupiter.api`).&#10;- **Kotlin Test Style:**&#10;    - The `inner` keyword has been removed from a nested test class in `OracleDriveServiceTest` as it was unnecessary.&#10;    - Test files (`JoinUtilsTest.kt`) have been simplified by removing redundant `org.junit.jupiter.api` qualifiers and fully qualifying imports instead.&#10;- **Code Cleanup:**&#10;    - Unused local variables have been removed from several test files (`DeepCleanTaskConditionalTest.kt`, `SettingsGradleFunctionalTest.kt`, `AndroidLibraryConventionPluginTest.kt`).&#10;    - Whitespace and formatting have been corrected in `API.md` and `app/gradle.properties`." />
+    <MESSAGE value="refactor: Remove OpenAPI endpoint bodies and re-enable tests&#10;&#10;The bodies of all endpoint definitions in the `eco-core.yaml` and `eco-ai.yaml` OpenAPI specifications have been removed, leaving only the path and method declarations.&#10;&#10;Additionally, the `test` and `compileTestKotlin` tasks in the `build-logic/build.gradle.kts` file have been re-enabled to restore full test support." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Remove OpenAPI endpoint bodies and re-enable tests&#10;&#10;The bodies of all endpoint definitions in the `eco-core.yaml` and `eco-ai.yaml` OpenAPI specifications have been removed, leaving only the path and method declarations.&#10;&#10;Additionally, the `test` and `compileTestKotlin` tasks in the `build-logic/build.gradle.kts` file have been re-enabled to restore full test support." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

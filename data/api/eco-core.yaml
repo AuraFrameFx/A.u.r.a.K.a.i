@@ -29,46 +29,46 @@ tags:
   - name: Plugins
 paths:
   /user:
-    get: { ...existing code... }
-    patch: { ...existing code... }
+    get:
+    patch:
   /user/preferences:
-    get: { ...existing code... }
-    put: { ...existing code... }
+    get:
+    put:
   /user/api-keys:
-    get: { ...existing code... }
-    post: { ...existing code... }
+    get:
+    post:
   /user/api-keys/{keyId}:
-    delete: { ...existing code... }
+    delete:
   /themes:
-    get: { ...existing code... }
-    post: { ...existing code... }
+    get:
+    post:
   /themes/{themeId}:
-    get: { ...existing code... }
+    get:
   /themes/{themeId}/apply:
-    put: { ...existing code... }
+    put:
   /themes/{themeId}/export:
-    get: { ...existing code... }
+    get:
   /themes/{themeId}/versions:
-    get: { ...existing code... }
+    get:
   /analytics/usage:
-    get: { ...existing code... }
+    get:
   /analytics/agents:
-    get: { ...existing code... }
+    get:
   /analytics/export:
-    post: { ...existing code... }
+    post:
   /security/audit-log:
-    get: { ...existing code... }
+    get:
   /security/sessions:
-    get: { ...existing code... }
+    get:
   /security/sessions/{sessionId}:
-    delete: { ...existing code... }
+    delete:
   /security/mfa:
-    post: { ...existing code... }
+    post:
   /plugins/agents:
-    get: { ...existing code... }
-    post: { ...existing code... }
+    get:
+    post:
   /plugins/agents/{pluginId}:
-    delete: { ...existing code... }
+    delete:
 components:
   securitySchemes:
     OAuth2AuthCode:
