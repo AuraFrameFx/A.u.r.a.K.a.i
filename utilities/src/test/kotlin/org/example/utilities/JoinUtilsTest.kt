@@ -127,35 +127,35 @@ class JoinUtilsExtendedTest {
         return list
     }
 
-    @org.junit.jupiter.api.Nested
-    @org.junit.jupiter.api.DisplayName("Additional happy paths")
+    @Nested
+    @DisplayName("Additional happy paths")
     inner class AdditionalHappyPaths {
-        @org.junit.jupiter.api.Test
+        @Test
         fun `three elements with punctuation`() {
             val list = linkedListOf("hello,", "world!", ":-)")
             val result = JoinUtils.join(list)
-            org.junit.jupiter.api.Assertions.assertEquals("hello, world! :-)", result)
+            assertEquals("hello, world! :-)", result)
         }
 
-        @org.junit.jupiter.api.Test
+        @Test
         fun `elements containing internal spaces are preserved`() {
             val list = linkedListOf("foo bar", "baz qux")
             val result = JoinUtils.join(list)
-            org.junit.jupiter.api.Assertions.assertEquals("foo bar baz qux", result)
+            assertEquals("foo bar baz qux", result)
         }
     }
 
-    @org.junit.jupiter.api.Nested
-    @org.junit.jupiter.api.DisplayName("Additional edge cases")
+    @Nested
+    @DisplayName("Additional edge cases")
     inner class AdditionalEdgeCases {
-        @org.junit.jupiter.api.Test
+        @Test
         fun `elements with tabs and newlines are preserved verbatim`() {
             val list = linkedListOf("line1\nline2", "tab\there", "end")
             val result = JoinUtils.join(list)
-            org.junit.jupiter.api.Assertions.assertEquals("line1\nline2 tab\there end", result)
+            assertEquals("line1\nline2 tab\there end", result)
         }
 
-        @org.junit.jupiter.api.Test
+        @Test
         fun `whitespace-only elements are preserved`() {
             val list = linkedListOf("", " ", "  ")
             val result = JoinUtils.join(list)
@@ -167,25 +167,25 @@ class JoinUtilsExtendedTest {
             org.junit.jupiter.api.Assertions.assertTrue(result.all { it == ' ' })
         }
 
-        @org.junit.jupiter.api.Test
+        @Test
         fun `leading and trailing empty elements are preserved`() {
             val list = linkedListOf("", "a", "")
             val result = JoinUtils.join(list)
-            org.junit.jupiter.api.Assertions.assertEquals(" a ", result)
+            assertEquals(" a ", result)
         }
 
-        @org.junit.jupiter.api.Test
+        @Test
         fun `zero-width characters are preserved`() {
             val list = linkedListOf("a\u200B", "b\u200C", "c\u200D")
             val result = JoinUtils.join(list)
-            org.junit.jupiter.api.Assertions.assertEquals("a\u200B b\u200C c\u200D", result)
+            assertEquals("a\u200B b\u200C c\u200D", result)
         }
     }
 
-    @org.junit.jupiter.api.Nested
-    @org.junit.jupiter.api.DisplayName("Stress and concurrency")
+    @Nested
+    @DisplayName("Stress and concurrency")
     inner class StressAndConcurrency {
-        @org.junit.jupiter.api.Test
+        @Test
         fun `joins 5000 elements under timeout`() {
             val items = (1..5000).map { "x$it" }.toTypedArray()
             val list = linkedListOf(*items)
@@ -195,18 +195,18 @@ class JoinUtilsExtendedTest {
                 }
             val parts = (out as String).split(" ")
             org.junit.jupiter.api.Assertions.assertEquals(5000, parts.size)
-            org.junit.jupiter.api.Assertions.assertEquals("x1", parts.first())
-            org.junit.jupiter.api.Assertions.assertEquals("x5000", parts.last())
+            assertEquals("x1", parts.first())
+            assertEquals("x5000", parts.last())
         }
 
-        @org.junit.jupiter.api.Test
+        @Test
         fun `repeated joins produce consistent results`() {
             val list = linkedListOf("a", "b", "c")
             val results = (1..100).map { JoinUtils.join(list) }
-            org.junit.jupiter.api.Assertions.assertEquals(setOf("a b c"), results.toSet())
+            assertEquals(setOf("a b c"), results.toSet())
         }
 
-        @org.junit.jupiter.api.Test
+        @Test
         fun `concurrent calls produce consistent results`() {
             val pool = java.util.concurrent.Executors.newFixedThreadPool(4)
             try {
@@ -218,28 +218,28 @@ class JoinUtilsExtendedTest {
                 }
                 val results = pool.invokeAll(tasks).map { it.get() }
                 val expected = (1..12).map { i -> "thread$i value$i" }.toSet()
-                org.junit.jupiter.api.Assertions.assertEquals(expected, results.toSet())
+                assertEquals(expected, results.toSet())
             } finally {
                 pool.shutdownNow()
             }
         }
     }
 
-    @org.junit.jupiter.api.Nested
-    @org.junit.jupiter.api.DisplayName("Special content handling")
+    @Nested
+    @DisplayName("Special content handling")
     inner class SpecialContent {
-        @org.junit.jupiter.api.Test
+        @Test
         fun `HTML-like fragments`() {
             val list = linkedListOf("<div>", "content", "</div>")
             val result = JoinUtils.join(list)
-            org.junit.jupiter.api.Assertions.assertEquals("<div> content </div>", result)
+            assertEquals("<div> content </div>", result)
         }
 
-        @org.junit.jupiter.api.Test
+        @Test
         fun `JSON-like fragments`() {
             val list = linkedListOf("{\"key\":", "\"value\"}")
             val result = JoinUtils.join(list)
-            org.junit.jupiter.api.Assertions.assertEquals("{\"key\": \"value\"}", result)
+            assertEquals("{\"key\": \"value\"}", result)
         }
     }
 }

@@ -329,8 +329,7 @@ class AndroidLibraryConventionPluginTest {
         // During TestKit runs, a file 'plugin-under-test-metadata.properties' is placed on classpath
         // containing implemented plugin ids. We'll try to read it.
         return try {
-            val res =
-                javaClass.classLoader.getResourceAsStream("META-INF/gradle-plugins/") // directory listing not available
+            javaClass.classLoader.getResourceAsStream("META-INF/gradle-plugins/") // directory listing not available
             // If directory listing is not possible, rely on a curated default used in this repository.
             // Replace the below default with your actual convention plugin id if different.
             "genesis.android.library"

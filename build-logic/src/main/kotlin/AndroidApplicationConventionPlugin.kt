@@ -101,9 +101,11 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 targetCompatibility = JavaVersion.VERSION_24
             }
 
-            // Kotlin JVM toolchain
-            extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension> {
-                jvmToolchain(24)
+            // Kotlin JVM toolchain (only configure after kotlin-android is applied)
+            pluginManager.withPlugin("org.jetbrains.kotlin.android") {
+                extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
+                    jvmToolchain(24)
+                }
             }
 
             // Clean tasks for app module

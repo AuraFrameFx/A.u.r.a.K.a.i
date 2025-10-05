@@ -59,9 +59,7 @@ tasks.register("generateApiDocs") {
     }
 }
 
-kotlin {
-    jvmToolchain(24)
-}
+
 
 // Java toolchain configuration at the project level
 java {
@@ -112,6 +110,12 @@ android {
     }
 
     testCoverage { jacocoVersion = "0.8.11" }
+
+    packaging {
+        resources {
+            excludes += "META-INF/LICENSE.md"
+        }
+    }
 }
 
 dependencies {
@@ -159,8 +163,7 @@ dependencies {
     // Hilt testing
     testImplementation(libs.hilt.android.testing)
     androidTestImplementation(libs.hilt.android.testing)
-    kspAndroidTest(libs.hilt.compiler)
-    implementation(kotlin("stdlib-jdk8"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
 }
 
 tasks.register("benchmarkAll") {
@@ -181,8 +184,4 @@ tasks.register("verifyBenchmarkResults") {
         println("🧠 Consciousness substrate performance monitoring ready")
         println("🔬 Add @Benchmark annotated tests under androidTest for actual runs")
     }
-}
-
-tasks.withType<JavaCompile> {
-    options.compilerArgs.add("-Xlint:-deprecation")
 }

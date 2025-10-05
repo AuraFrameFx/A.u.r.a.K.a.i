@@ -1,8 +1,8 @@
 // Apply plugins (versions via version catalog)
 plugins {
     id("genesis.android.library")
-    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 
 }
@@ -20,10 +20,10 @@ android {
     }
 }
 
-
-
-kotlin {
-    jvmToolchain(24)
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
 }
 
 dependencies {
@@ -89,7 +89,7 @@ dependencies {
     // Xposed API (using the correct path)
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))
-    implementation(kotlin("stdlib-jdk8"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
 }
 
 tasks.register("collabStatus") {

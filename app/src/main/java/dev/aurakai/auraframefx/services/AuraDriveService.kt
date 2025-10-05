@@ -76,7 +76,7 @@ class AuraDriveService : Service() {
         }
     }
 
-    override fun onBind(intent: Intent): IBinder? {
+    override fun onBind(intent: Intent): IBinder {
         Log.d(TAG, "AuraDriveService bound. UID: ${Process.myUid()}, PID: ${Process.myPid()}")
         return binder
     }

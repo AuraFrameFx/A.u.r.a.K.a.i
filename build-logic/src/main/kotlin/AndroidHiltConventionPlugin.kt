@@ -19,22 +19,37 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
      */
     override fun apply(target: Project) {
         with(target) {
-            // Apply the base Android plugin if not present
+            // Ensure Android plugin is applied FIRST
             val hasApp = plugins.hasPlugin("com.android.application")
             val hasLib = plugins.hasPlugin("com.android.library")
+
             if (!hasApp && !hasLib) {
                 pluginManager.apply("genesis.android.library")
             }
 
-            // Apply Hilt-specific plugins
-            with(pluginManager) {
-                apply("dagger.hilt.android.plugin")
+            // Apply KSP first for annotation processing
+            pluginManager.apply("com.google.devtools.ksp")
+
+            // Use pluginManager.withPlugin to ensure Android is fully configured
+            // This waits for the Android plugin to be applied and configured
+            val androidPluginId = if (hasApp || plugins.hasPlugin("com.android.application")) {
+                "com.android.application"
+            } else {
+                "com.android.library"
             }
 
-            // Configure dependencies through version catalog
-            dependencies {
-                add("implementation", project.dependencies.create("com.google.dagger:hilt-android:2.51.1"))
-                add("annotationProcessor", project.dependencies.create("com.google.dagger:hilt-compiler:2.51.1"))
+            pluginManager.withPlugin(androidPluginId) {
+                // AGP 9 alpha: ensure BaseExtension shim is available for Hilt
+                pluginManager.apply("com.android.base")
+                // Apply Hilt after Android is ready
+                pluginManager.apply("com.google.dagger.hilt.android")
+
+                // Configure dependencies through version catalog
+                val libs = extensions.getByType(org.gradle.api.artifacts.VersionCatalogsExtension::class.java).named("libs")
+                dependencies {
+                    add("implementation", libs.findLibrary("hilt-android").get())
+                    add("ksp", libs.findLibrary("hilt-compiler").get())
+                }
             }
         }
     }

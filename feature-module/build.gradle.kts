@@ -6,9 +6,10 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.compose)
-    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
-    alias(libs.plugins.ksp)  // Required for Hilt annotation processing
+    id("com.android.base")
+    // Hilt MUST be applied explicitly for annotation processing
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler)
 }
 
 // Add modern documentation task that doesn't rely on deprecated plugins
@@ -68,12 +69,21 @@ android {
         targetCompatibility = JavaVersion.VERSION_24
     }
 
-    kotlin {
-        jvmToolchain(24)
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(24))
+        }
     }
 
     buildFeatures {
         compose = true
+    }
+
+    packaging {
+        resources {
+            excludes += "META-INF/LICENSE.md"
+        }
     }
 }
 
@@ -111,8 +121,7 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation(kotlin("stdlib-jdk8"))
 }
-
 tasks.register("featureStatus") {
     group = "aegenesis"
-    doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 17)!") }
+    doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 24)!") }
 }

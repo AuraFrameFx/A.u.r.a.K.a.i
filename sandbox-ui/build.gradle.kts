@@ -4,9 +4,9 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -18,10 +18,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
     }
-}
-
-kotlin {
-    jvmToolchain(24)
+    packaging {
+        resources {
+            pickFirsts += "META-INF/gradle/incremental.annotation.processors"
+        }
+    }
 }
 
 dependencies {
@@ -42,12 +43,17 @@ dependencies {
     implementation(libs.timber); implementation(libs.coil.compose)
     testImplementation(libs.bundles.testing.unit); testImplementation(libs.mockk.android)
     androidTestImplementation(libs.mockk.android)
-    testImplementation(libs.hilt.android.testing); kspTest(libs.hilt.compiler)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
-    implementation(kotlin("stdlib-jdk8"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
+}
+
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
 }
 
 // Add modern documentation task that doesn't rely on deprecated plugins
@@ -68,7 +74,8 @@ tasks.register("generateApiDocs") {
         val indexFile = docsDir.resolve("index.html")
 
         // Using properly formatted date with DateTimeFormatter
-        val currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
+        val currentTime =
+            LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
 
         indexFile.writeText(
             """
@@ -95,7 +102,6 @@ tasks.register("generateApiDocs") {
         logger.lifecycle("✅ Documentation generated at: ${indexFile.absolutePath}")
     }
 }
-
 tasks.register("sandboxStatus") {
     group = "aegenesis"; doLast { println("🧪 SANDBOX UI - Ready (Java 24)") }
 }

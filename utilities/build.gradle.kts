@@ -20,7 +20,17 @@ java {
 }
 
 kotlin {
-    jvmToolchain(jdkVersion)
+    jvmToolchain(24)
+}
+
+// Explicit source sets configuration for IntelliJ IDEA compatibility
+sourceSets {
+    main {
+        java.srcDirs("src/main/java", "src/main/kotlin")
+    }
+    test {
+        java.srcDirs("src/test/java", "src/test/kotlin")
+    }
 }
 
 dependencies {
@@ -42,7 +52,7 @@ dependencies {
     // Testing (JUnit 5)
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testRuntimeOnly(libs.junit.platform.launcher)
     testImplementation(libs.mockk)
     testImplementation(kotlin("stdlib"))
     // Bind a simple logger only during tests

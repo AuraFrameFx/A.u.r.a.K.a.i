@@ -14,7 +14,7 @@ subprojects { subproject ->
         with(subproject) {
             // Apply common plugins if not already applied
             pluginManager.apply("com.android.library")
-            pluginManager.apply("org.jetbrains.kotlin.android")
+            // org.jetbrains.kotlin.android removed - AGP 9.0 has built-in Kotlin support
             pluginManager.apply("com.google.devtools.ksp")
             pluginManager.apply("org.lsposed.lsparanoid")
 
@@ -41,18 +41,22 @@ subprojects { subproject ->
                 }
 
                 compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_21
-                    targetCompatibility = JavaVersion.VERSION_21
+                    sourceCompatibility = JavaVersion.VERSION_24
+                    targetCompatibility = JavaVersion.VERSION_24
                 }
+            }
 
-                kotlinOptions {
-                    jvmTarget = "24"
-                    freeCompilerArgs = freeCompilerArgs + listOf(
+            // Configure Kotlin compiler options (AGP 9.0 built-in Kotlin)
+            extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
+                compilerOptions {
+                    jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+                    freeCompilerArgs.addAll(
                         "-Xjvm-default=all",
                         "-opt-in=kotlin.RequiresOptIn"
                     )
                 }
             }
+
 
             // Add YukiHook dependencies
             dependencies {

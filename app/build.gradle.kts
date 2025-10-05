@@ -1,13 +1,10 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
-// This build script now uses the custom convention plugins for a cleaner setup.
 
 plugins {
-    id("com.android.application")
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp)
-    // id("openapi.generator.convention") // Commented out until plugin is recognized
+    id("genesis.android.application")
+
 }
 
 android {
@@ -39,6 +36,7 @@ android {
     // Enable AIDL for the app module
     buildFeatures {
         aidl = true
+        compose = true
     }
 
     testOptions {
@@ -48,25 +46,29 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_24
-        targetCompatibility = JavaVersion.VERSION_24
+        sourceCompatibility = JavaVersion.toVersion("24")
+        targetCompatibility = JavaVersion.toVersion("24")
         isCoreLibraryDesugaringEnabled = true
+    }
+    packaging {
+        resources {
+            excludes += "META-INF/INDEX.LIST"
+            excludes += "META-INF/LICENSE.md"
+        }
     }
 }
 
-kotlin {
-    jvmToolchain(24)
-}
+
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
-    implementation(project(":romtools"))  // Temporarily disabled - Module not found
+    implementation(project(":romtools"))
     implementation(project(":secure-comm"))
-    implementation(project(":collab-canvas"))  // Temporarily disabled - YukiHookAPI issues
+    implementation(project(":collab-canvas"))
     implementation(project(":colorblendr"))
-    implementation(project(":sandbox-ui"))  // Temporarily. DIsabled - Compose compilation issues
+    implementation(project(":sandbox-ui"))
     implementation(project(":datavein-oracle-native"))
     implementation(project(":module-a"))
     implementation(project(":module-b"))
@@ -103,15 +105,15 @@ dependencies {
 
     // ===== NETWORKING =====
     implementation(libs.bundles.network)
-    implementation("com.squareup.moshi:moshi:1.15.1")
-    implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
+    implementation(libs.moshi)
+    implementation(libs.moshi.kotlin)
 
     // ===== KTOR FOR OPENAPI CLIENT =====
-    implementation("io.ktor:ktor-client-core:2.3.7")
-    implementation("io.ktor:ktor-client-content-negotiation:2.3.7")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
-    implementation("io.ktor:ktor-client-okhttp:2.3.7")
-    implementation("io.ktor:ktor-client-auth:2.3.7")
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.ktor.client.okhttp)
+    implementation(libs.ktor.client.auth)
 
     // ===== FIREBASE =====
     // By implementing the BOM, we can specify Firebase SDKs without versions
@@ -119,19 +121,13 @@ dependencies {
     // This bundle includes Analytics, Crashlytics, Performance, Auth, Firestore, Messaging, and Config
     implementation(libs.bundles.firebase)
 
-    // Alternative: Use specific Firebase bundles for modular approach
-    // implementation(libs.bundles.firebase.core)     // Analytics, Crashlytics, Performance only
-    // implementation(libs.bundles.firebase.auth)     // Authentication
-    // implementation(libs.bundles.firebase.database) // Firestore, Realtime Database, Storage
-    // implementation(libs.bundles.firebase.messaging) // FCM, Remote Config
-
     // ===== HILT DEPENDENCY INJECTION =====
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.compiler)
 
     // ===== WORKMANAGER =====
-    implementation("androidx.work:work-runtime-ktx:2.9.0")
-    implementation("androidx.hilt:hilt-work:1.2.0")
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.hilt.work)
 
     // ===== UTILITIES =====
     implementation(libs.timber)
@@ -156,15 +152,3 @@ dependencies {
     // --- DEBUGGING ---
     debugImplementation(libs.leakcanary.android)
 }
-
-tasks {
-    // Clean up old generated files before regenerating
-    val cleanOpenApi by registering(Delete::class) {
-        delete(layout.buildDirectory.dir("generated/openapi"))
-    }
-}
-
-
-
-
-// Note: Uses Genesis convention plugins (genesis.android.application and genesis.android.hilt)

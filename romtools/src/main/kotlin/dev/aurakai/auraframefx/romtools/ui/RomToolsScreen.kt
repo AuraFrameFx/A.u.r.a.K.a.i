@@ -41,10 +41,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
+import dev.aurakai.auraframefx.romtools.BackupInfo
+import dev.aurakai.auraframefx.romtools.FakeRomToolsManager
+import dev.aurakai.auraframefx.romtools.RomCapabilities
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dev.aurakai.auraframefx.romtools.RomToolsManager
 
@@ -100,6 +104,12 @@ fun RomToolsScreen(
     }
 }
 
+@Preview(showBackground = true)
+@Composable
+fun RomToolsScreenPreview() {
+    RomToolsScreen(romToolsManager = FakeRomToolsManager())
+}
+
 @Composable
 private fun LoadingScreen() {
     Box(
@@ -123,6 +133,11 @@ private fun LoadingScreen() {
     }
 }
 
+@Preview
+@Composable
+private fun LoadingScreenPreview() {
+    LoadingScreen()
+}
 
 @Composable
 private fun MainContent(
@@ -216,10 +231,77 @@ private fun MainContent(
             }
         }
 
+@Preview
+@Composable
+private fun MainContentPreview() {
+    val capabilities = RomCapabilities(
+        hasRootAccess = true,
+        hasBootloaderAccess = true,
+        hasRecoveryAccess = false,
+        hasSystemWriteAccess = true,
+        supportedArchitectures = listOf("arm64-v8a"),
+        deviceModel = "Pixel 8 Pro",
+        androidVersion = "14",
+        securityPatchLevel = "2023-10-01"
+    )
+    val romToolsState = dev.aurakai.auraframefx.romtools.RomToolsState(
+        capabilities = capabilities,
+        isInitialized = true,
+        availableRoms = listOf(
+            dev.aurakai.auraframefx.romtools.AvailableRom(
+                name = "AuraOS",
+                version = "1.0",
+                androidVersion = "14",
+                downloadUrl = "",
+                size = 2147483648L,
+                checksum = "abc",
+                description = "The best ROM",
+                maintainer = "AuraKai",
+                releaseDate = System.currentTimeMillis()
+            )
+        ),
+        backups = listOf(
+            BackupInfo(
+                name = "MyBackup",
+                path = $$"/sdcard/backups",
+                size = 1073741824L,
+                createdAt = System.currentTimeMillis(),
+                deviceModel = "Pixel 8 Pro",
+                androidVersion = "14",
+                partitions = listOf("system", "boot", "data")
+            )
+        )
+    )
+    val operationProgress = dev.aurakai.auraframefx.romtools.OperationProgress(
+        operation = dev.aurakai.auraframefx.romtools.RomOperation.FLASHING_ROM,
+        progress = 75f
+    )
+    MainContent(romToolsState = romToolsState, operationProgress = operationProgress)
+}
+
+@Preview
+@Composable
+private fun MainContentNoProgressPreview() {
+    val capabilities = RomCapabilities(
+        hasRootAccess = false,
+        hasBootloaderAccess = false,
+        hasRecoveryAccess = false,
+        hasSystemWriteAccess = false,
+        supportedArchitectures = listOf(),
+        deviceModel = "Pixel 8 Pro",
+        androidVersion = "14",
+        securityPatchLevel = "2023-10-01"
+    )
+    val romToolsState = dev.aurakai.auraframefx.romtools.RomToolsState(
+        capabilities = capabilities,
+        isInitialized = true
+    )
+    MainContent(romToolsState = romToolsState, operationProgress = null)
+}
 
 @Composable
 private fun DeviceCapabilitiesCard(
-    capabilities: dev.aurakai.auraframefx.romtools.RomCapabilities?,
+    capabilities: RomCapabilities?,
     modifier: Modifier = Modifier
 ) {
     Card(
@@ -262,6 +344,33 @@ private fun DeviceCapabilitiesCard(
     }
 }
 
+@Preview
+@Composable
+private fun DeviceCapabilitiesCardPreview() {
+    val capabilities = RomCapabilities(
+        hasRootAccess = true,
+        hasBootloaderAccess = true,
+        hasRecoveryAccess = false,
+        hasSystemWriteAccess = true,
+        supportedArchitectures = listOf("arm64-v8a"),
+        deviceModel = "Pixel 8 Pro",
+        androidVersion = "14",
+        securityPatchLevel = "2023-10-01"
+    )
+    DeviceCapabilitiesCard(capabilities = capabilities)
+}
+
+@Preview
+@Composable
+private fun DeviceCapabilitiesCardLoadingPreview() {
+    DeviceCapabilitiesCard(capabilities = null)
+}
+
+@Preview
+@Composable
+private fun CapabilityRowPreview() {
+    CapabilityRow(label = "Root Access", hasCapability = true)
+}
 @Composable
 private fun CapabilityRow(label: String, hasCapability: Boolean) {
     Row(
@@ -281,6 +390,12 @@ private fun CapabilityRow(label: String, hasCapability: Boolean) {
             modifier = Modifier.size(20.dp)
         )
     }
+}
+
+@Preview
+@Composable
+private fun InfoRowPreview() {
+    InfoRow(label = "Device", value = "Pixel 8 Pro")
 }
 
 @Composable
@@ -343,6 +458,16 @@ private fun OperationProgressCard(
     }
 }
 
+@Preview
+@Composable
+private fun OperationProgressCardPreview() {
+    val operationProgress = dev.aurakai.auraframefx.romtools.OperationProgress(
+        operation = dev.aurakai.auraframefx.romtools.RomOperation.FLASHING_ROM,
+        progress = 75f
+    )
+    OperationProgressCard(operation = operationProgress)
+}
+
 @Composable
 private fun RomToolActionCard(
     action: RomToolAction,
@@ -400,6 +525,28 @@ private fun RomToolActionCard(
             }
         }
     }
+}
+
+@Preview
+@Composable
+private fun RomToolActionCardEnabledPreview() {
+    val action = getRomToolsActions().first()
+    RomToolActionCard(
+        action = action,
+        isEnabled = true,
+        onClick = {}
+    )
+}
+
+@Preview
+@Composable
+private fun RomToolActionCardDisabledPreview() {
+    val action = getRomToolsActions().first { it.type == RomActionType.CREATE_BACKUP }
+    RomToolActionCard(
+        action = action,
+        isEnabled = false,
+        onClick = {}
+    )
 }
 
 // Helper functions and data classes
@@ -473,7 +620,7 @@ data class RomToolAction(
     val requiresRecovery: Boolean = false,
     val requiresSystem: Boolean = false
 ) {
-    fun isEnabled(capabilities: dev.aurakai.auraframefx.romtools.RomCapabilities?): Boolean {
+    fun isEnabled(capabilities: RomCapabilities?): Boolean {
         if (capabilities == null) return false
 
         return (!requiresRoot || capabilities.hasRootAccess) &&
@@ -497,7 +644,32 @@ private fun AvailableRomCard(rom: dev.aurakai.auraframefx.romtools.AvailableRom)
     // Implementation for available ROM card
 }
 
+@Preview
 @Composable
-private fun BackupCard(backup: dev.aurakai.auraframefx.romtools.BackupInfo) {
+private fun AvailableRomCardPreview() {
+    AvailableRomCard(
+        rom = dev.aurakai.auraframefx.romtools.AvailableRom(
+            name = "AuraOS",
+            version = "2.1",
+            androidVersion = "14",
+            downloadUrl = "",
+            size = 2147483648L,
+            checksum = "abcdef123456",
+            description = "Latest stable build with AI enhancements.",
+            maintainer = "AuraKai Team",
+            releaseDate = System.currentTimeMillis()
+        )
+    )
+}
+
+@Composable
+private fun BackupCard(backup: BackupInfo) {
     // Implementation for backup card
+}
+
+@Preview
+@Composable
+private fun BackupCardPreview() {
+    val backupInfo = BackupInfo("FullBackup-20231026", "/sdcard/TWRP/BACKUPS/device_id/FullBackup-20231026", 8589934592L, System.currentTimeMillis(), "Pixel 8 Pro", "14.0", listOf("boot", "system", "data", "vendor"))
+    BackupCard(backup = backupInfo)
 }

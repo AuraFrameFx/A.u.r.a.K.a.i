@@ -3,15 +3,16 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.compose) // Required for Compose with Kotlin 2.0+
-    alias(libs.plugins.kotlin.serialization)
+
+    id("com.android.base") // AGP 9.0.0-alpha09 workaround: Hilt auto-applies when detecting this
     alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler) // Required for Compose in Kotlin 2.0+
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.romtools"
     compileSdk = 36
-
     defaultConfig {
         minSdk = 34
     }
@@ -22,13 +23,12 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.10" // Match this to your Compose BOM version
-    }
-}
 
-    kotlin {
-        jvmToolchain(24)
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(24))
+        }
     }
 
     val romToolsOutputDirectory: DirectoryProperty =
@@ -65,7 +65,7 @@ android {
         // androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
         implementation(kotlin("stdlib-jdk8"))
         implementation("androidx.compose.material:material-icons-extended")
-        implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+        implementation("androidx.hilt:hilt-navigation-compose:1.3.0")
     }
 
 // Copy task
@@ -107,29 +107,29 @@ android {
             val indexFile = docsDir.resolve("index.html")
             indexFile.writeText(
                 """
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <title>ROM Tools API Documentation</title>
-                <style>
-                    body { font-family: Arial, sans-serif; margin: 20px; }
-                    h1 { color: #4285f4; }
-                </style>
-            </head>
-            <body>
-                <h1>ROM Tools API Documentation</h1>
-                <p>Generated on ${
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>ROM Tools API Documentation</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                h1 { color: #4285f4; }
+            </style>
+        </head>
+        <body>
+            <h1>ROM Tools API Documentation</h1>
+            <p>Generated on ${
                     LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
                 }</p>
-                <p>JDK Version: 24</p>
-                <h2>Module Overview</h2>
-                <p>System modification and ROM tools for the A.U.R.A.K.A.I. platform.</p>
-            </body>
-            </html>
-        """.trimIndent()
+            <p>JDK Version: 24</p>
+            <h2>Module Overview</h2>
+            <p>System modification and ROM tools for the A.U.R.A.K.A.I. platform.</p>
+        </body>
+        </html>
+    """.trimIndent()
             )
 
             logger.lifecycle("✅ Documentation generated at: ${indexFile.absolutePath}")
         }
     }
-
+}
