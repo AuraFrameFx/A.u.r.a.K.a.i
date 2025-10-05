@@ -133,7 +133,7 @@ class CascadeAIService @Inject constructor(
      */
     private fun selectAgentsForRequest(request: AgentInvokeRequest): List<AgentType> {
         val message = request.message.lowercase()
-        val context = request.context
+        request.context
         val priority = request.priority
 
         val selectedAgents = mutableSetOf<AgentType>()

@@ -738,7 +738,7 @@ class IntegrityMonitorTest {
 
     @Nested
     @DisplayName("Data Class Tests")
-    inner class DataClassTests {
+    class DataClassTests {
 
         @Test
         @DisplayName("IntegrityViolation data class should have correct properties")

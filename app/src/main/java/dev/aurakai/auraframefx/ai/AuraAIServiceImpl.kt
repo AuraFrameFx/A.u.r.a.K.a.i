@@ -265,7 +265,7 @@ class AuraAIServiceImpl @Inject constructor(
             Timber.d("📡 Publishing to topic: $topic")
 
             // Use Genesis event system
-            val pubSubMessage = buildPubSubMessage(topic, message)
+            buildPubSubMessage(topic, message)
             // TODO: Implement PubSub message publishing (async operation)
 
             logPubSubEvent("pubsub", topic, "message_published", true)
@@ -378,7 +378,7 @@ class AuraAIServiceImpl @Inject constructor(
         )
     }
 
-    private fun processWithTrinityAI(request: Map<String, Any>): String? {
+    private fun processWithTrinityAI(request: Map<String, Any>): String {
         // Implement Trinity AI processing (Aura + Kai + Genesis)
         return "Trinity AI Response: ${request["prompt"]}"
     }

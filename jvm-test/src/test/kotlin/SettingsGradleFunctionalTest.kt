@@ -74,7 +74,7 @@ class SettingsGradleFunctionalTest {
     @Test
     @DisplayName("Enables required Gradle feature previews (TYPESAFE_PROJECT_ACCESSORS, STABLE_CONFIGURATION_CACHE)")
     fun featurePreviewsEnabled() {
-        val output = run("help").output
+        run("help").output
         // Not directly surfaced; assert settings file contains the feature flags
         val settingsText = File(testProjectDir, "settings.gradle.kts").readText()
         assertTrue(
@@ -180,7 +180,7 @@ class SettingsGradleFunctionalTest {
         @DisplayName("Includes core and feature modules from settings")
         fun includesCoreAndFeatureModules() {
             val settingsText = File(testProjectDir, "settings.gradle.kts").readText()
-            val missing = expectedModules.filterNot {
+            expectedModules.filterNot {
                 settingsText.contains("include(\"$it\")") || settingsText.contains("include($it)") || settingsText.contains(
                     "include($it"
                 )
