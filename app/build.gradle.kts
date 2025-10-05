@@ -6,7 +6,7 @@ plugins {
     // kotlin("android") removed - AGP 9.0 has built-in Kotlin support
     // See: https://issuetracker.google.com/issues/438678642
     alias(libs.plugins.ksp)
-    id("org.google.dagger.hilt.android") version "2.57.1"
+    alias(libs.plugins.hilt)
     alias(libs.plugins.compose.compiler)
 }
 
