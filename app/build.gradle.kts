@@ -1,10 +1,8 @@
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
-// This build script now uses the custom convention plugins for a cleaner setup.
+
 plugins {
-    id("com.android.application")
-    alias(libs.plugins.hilt)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.compose.compiler)
+    id("genesis.android.application")
+    id("genesis.android.hilt")
 }
 
 android {
@@ -46,14 +44,14 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.toVersion("24")
+        targetCompatibility = JavaVersion.toVersion("24")
         isCoreLibraryDesugaringEnabled = true
     }
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(24)
 }
 
 dependencies {

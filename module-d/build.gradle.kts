@@ -9,10 +9,6 @@ android {
     namespace = "dev.aurakai.auraframefx.module.d"
 }
 
-kotlin {
-    jvmToolchain(24)
-}
-
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(24))

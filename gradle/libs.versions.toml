@@ -1,7 +1,8 @@
 [versions]
 # ===== GRADLE & KOTLIN =====
-agp = "9.0.0-alpha09"
+agp = "9.0.0-alpha02"
 kotlin = "2.2.20"
+kotlinGradlePlugin = "2.2.20"
 kotlinLoggingJvm = "3.0.5"
 ksp = "2.2.20-2.0.3"
 desugar_jdk_libs = "2.1.5"
@@ -165,6 +166,7 @@ androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "mult
 google-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 
 # ===== YUKIHOOK & XPOSED =====
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
 kotlin-logging-jvm = { module = "io.github.microutils:kotlin-logging-jvm", version.ref = "kotlinLoggingJvm" }
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect" }
 ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktorClientAuth" }

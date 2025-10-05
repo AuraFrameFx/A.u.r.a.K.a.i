@@ -19,9 +19,6 @@ plugins {
             targetCompatibility = JavaVersion.VERSION_24
         }
     }
-    kotlin {
-        jvmToolchain(24)
-    }
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(24))
@@ -45,11 +42,9 @@ plugins {
         implementation(libs.timber); implementation(libs.coil.compose)
         testImplementation(libs.bundles.testing.unit); testImplementation(libs.mockk.android)
         androidTestImplementation(libs.mockk.android)
-        testImplementation(libs.hilt.android.testing); kspTest(libs.hilt.compiler)
         androidTestImplementation(libs.androidx.test.ext.junit)
         androidTestImplementation(libs.androidx.test.espresso.core)
         androidTestImplementation(platform(libs.androidx.compose.bom))
-        androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
     }
 

@@ -67,6 +67,9 @@ pluginManagement {
     
     resolutionStrategy {
         eachPlugin {
+            if (requested.id.id.startsWith("com.android.")) {
+                useModule("com.android.tools.build:gradle:${requested.version}")
+            }
             if (requested.id.namespace == "com.google.dagger") {
                 useModule("com.google.dagger:hilt-android-gradle-plugin:${requested.version}")
             }
@@ -74,7 +77,12 @@ pluginManagement {
     }
 }
 
-// Note: foojay-resolver-convention plugin not needed - using org.gradle.java.installations.auto-download=true in gradle.properties
+// Auto-provision JDKs via Foojay resolver (works with Gradle toolchains)
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
+
+// Note: foojay-resolver-convention plugin complements org.gradle.java.installations.auto-download=true in gradle.properties
 
 dependencyResolutionManagement {
     // Enforce consistent dependency resolution

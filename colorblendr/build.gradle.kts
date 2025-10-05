@@ -21,9 +21,7 @@ android {
     }
 }
 
-kotlin {
-    jvmToolchain(24)
-}
+
 
 java {
     toolchain {

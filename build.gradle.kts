@@ -14,14 +14,14 @@
 // ReGenesis A.O.S.P - Advanced Open Source Platform
 // © 2025 ReGenesis A.O.S.P. All rights reserved.
 // ═══════════════════════════════════════════════════════════════════════════
-
 // Apply plugins to the root project to avoid multiple loading warnings
 plugins {
     alias(libs.plugins.kotlin.serialization) apply false
-    alias(libs.plugins.hilt) apply false
+    id("com.google.dagger.hilt.android") version "2.57.2" apply false
+    alias(libs.plugins.kotlin.android) apply false
+    id("com.android.application") version "9.0.0-alpha09" apply false
+    id("com.android.library") version "9.0.0-alpha09" apply false
     alias(libs.plugins.ksp) apply false
-    alias(libs.plugins.android.library) apply false
-    alias(libs.plugins.android.application) apply false
     alias(libs.plugins.compose.compiler) apply false
     id("genesis.android.application") apply false
     id("genesis.android.library") apply false
@@ -148,15 +148,22 @@ dependencies {
 }
 
 subprojects {
-    plugins.withType<org.jetbrains.kotlin.gradle.plugin.KotlinBasePluginWrapper> {
-        extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension>("kotlin") {
-            jvmToolchain(17)
+    // Configure Kotlin toolchains via plugin IDs to avoid classloader issues with wrapper types
+    plugins.withId("org.jetbrains.kotlin.android") {
+        extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
+            jvmToolchain(24)
         }
     }
+    plugins.withId("org.jetbrains.kotlin.jvm") {
+        extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
+            jvmToolchain(24)
+        }
+    }
+
     plugins.withType<JavaPlugin> {
         extensions.configure<JavaPluginExtension>("java") {
             toolchain {
-                languageVersion.set(JavaLanguageVersion.of(17))
+                languageVersion.set(JavaLanguageVersion.of(24))
             }
         }
     }

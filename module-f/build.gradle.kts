@@ -26,10 +26,6 @@ tasks.register("moduleFStatus") {
     doLast { println("📦 MODULE F - Ready (Java 24)") }
 }
 
-kotlin {
-    jvmToolchain(24)
-}
-
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(24))

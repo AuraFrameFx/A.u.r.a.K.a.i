@@ -26,9 +26,7 @@ tasks.register("moduleCStatus") {
     doLast { println("📦 MODULE C - Ready (Java 24)") }
 }
 
-kotlin {
-    jvmToolchain(24)
-}
+
 
 java {
     toolchain {
