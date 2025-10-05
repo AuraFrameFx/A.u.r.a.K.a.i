@@ -36,14 +36,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="chore: Update junit-platform-launcher to version 6.0.0&#10;&#10;The version of the `junit-platform-launcher` dependency has been updated from `1.13.4` to `6.0.0` in the version catalog.">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-    </list>
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="chore: Update junit-platform-launcher to version 6.0.0&#10;&#10;The version of the `junit-platform-launcher` dependency has been updated from `1.13.4` to `6.0.0` in the version catalog." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -464,14 +457,6 @@
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
     </task>
-    <task id="LOCAL-00033" summary="Refactor: Consolidate CI workflows and introduce OpenAPI generation&#10;&#10;This commit streamlines the project's structure by refactoring CI/CD workflows and introducing a formal OpenAPI specification for API client generation.&#10;&#10;- **CI/CD Workflow Consolidation:**&#10;  - Deletes multiple old and redundant GitHub Actions workflow files (`ci-build.yml`, `genesis-ci.yml`, `consciousness-monitoring.yml`, `performance-monitoring.yml`, `TEST2.yml`).&#10;  - Replaces them with new, placeholder workflows in the `.github/workflows/` directory for CI builds, performance, and consciousness monitoring.&#10;  - Simplifies the `dependabot.yml` configuration.&#10;&#10;- **OpenAPI and API Generation:**&#10;  - Introduces a new `data:api` module dedicated to generating an API client from an OpenAPI specification (`unified-deliverance-api.yml`).&#10;  - Adds new OpenAPI specification files (`unified-deliverance-api.yml`, `auraframefx-api-spec.yaml`) to define the API contracts.&#10;  - Removes the old `openApiGenerate` configuration from the `app/build.gradle.kts` file.&#10;  - Adds a dependency from the `app` module to the new `:data:api` module.&#10;&#10;- **Project Documentation &amp; Cleanup:**&#10;  - Adds `ProjectRefactorPlan.md` detailing the strategy for refactoring APIs and unifying the customization engine.&#10;  - Removes the `qodana.yaml` static analysis configuration file.&#10;  - Deletes unused `main.yml` and `dependabot.yml` from the root directory.&#10;&#10;- **Build Configuration:**&#10;  - Updates `settings.gradle.kts` to include the new `:data:api` module.&#10;  - Minor cleanup in `build-logic/build.gradle.kts` and `benchmark/build.gradle.kts`.">
-      <option name="closed" value="true" />
-      <created>1759294212484</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1759294212484</updated>
-    </task>
     <task id="LOCAL-00034" summary="Refactor: Update Gradle properties and improve OpenAPI generation configuration">
       <option name="closed" value="true" />
       <created>1759295374042</created>
@@ -856,7 +841,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759632813089</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="chore: Update junit-platform-launcher to version 6.0.0&#10;&#10;The version of the `junit-platform-launcher` dependency has been updated from `1.13.4` to `6.0.0` in the version catalog.">
+      <option name="closed" value="true" />
+      <created>1759633399683</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1759633399683</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
