@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="feat: Update dependencies and streamline packaging&#10;&#10;Updates the `kotlin-stdlib-jdk8` dependency from version `1.8.0` to `2.2.20` across the following modules:&#10;*   `module-b`&#10;*   `module-d`&#10;*   `module-e`&#10;*   `module-f`&#10;&#10;In the `app` module, the packaging options are refined by adding an exclusion for `META-INF/INDEX.LIST` and removing a `JavaCompile` configuration that set the `-Xlint:-deprecation` compiler argument.&#10;&#10;Additionally, the `logback-classic` runtime dependency is removed from the `data/api` module.">
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-    </list>
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Remove unused KotlinCompile import in app module&#10;&#10;Removes the unused `org.jetbrains.kotlin.gradle.tasks.KotlinCompile` import from the `app/build.gradle.kts` file, cleaning up the build script." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -403,7 +401,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759706812281</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="refactor: Remove unused KotlinCompile import in app module&#10;&#10;Removes the unused `org.jetbrains.kotlin.gradle.tasks.KotlinCompile` import from the `app/build.gradle.kts` file, cleaning up the build script.">
+      <option name="closed" value="true" />
+      <created>1759706885915</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1759706885915</updated>
+    </task>
+    <task id="LOCAL-00019" summary="refactor: Remove unused KotlinCompile import in app module&#10;&#10;Removes the unused `org.jetbrains.kotlin.gradle.tasks.KotlinCompile` import from the `app/build.gradle.kts` file, cleaning up the build script.">
+      <option name="closed" value="true" />
+      <created>1759706989861</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1759706989861</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -430,6 +444,7 @@
     <MESSAGE value="refactor: Modernize code and clean up tests&#10;&#10;This commit introduces two key changes: modernizing a deprecated path retrieval method in `RomToolsManager` and removing commented-out code from `MarkdownFileValidationTest`.&#10;&#10;In `RomToolsManager.kt`, the deprecated `getPath()` method call on `Environment.getExternalStorageDirectory()` has been replaced with the modern `path` property accessor.&#10;&#10;In `MarkdownFileValidationTest.kt`, several lines of commented-out code related to checking for Docker mentions have been removed to improve test clarity and maintainability." />
     <MESSAGE value="refactor: Simplify regex patterns and remove unused tests in MarkdownFileValidationTest" />
     <MESSAGE value="feat: Update dependencies and streamline packaging&#10;&#10;Updates the `kotlin-stdlib-jdk8` dependency from version `1.8.0` to `2.2.20` across the following modules:&#10;*   `module-b`&#10;*   `module-d`&#10;*   `module-e`&#10;*   `module-f`&#10;&#10;In the `app` module, the packaging options are refined by adding an exclusion for `META-INF/INDEX.LIST` and removing a `JavaCompile` configuration that set the `-Xlint:-deprecation` compiler argument.&#10;&#10;Additionally, the `logback-classic` runtime dependency is removed from the `data/api` module." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Update dependencies and streamline packaging&#10;&#10;Updates the `kotlin-stdlib-jdk8` dependency from version `1.8.0` to `2.2.20` across the following modules:&#10;*   `module-b`&#10;*   `module-d`&#10;*   `module-e`&#10;*   `module-f`&#10;&#10;In the `app` module, the packaging options are refined by adding an exclusion for `META-INF/INDEX.LIST` and removing a `JavaCompile` configuration that set the `-Xlint:-deprecation` compiler argument.&#10;&#10;Additionally, the `logback-classic` runtime dependency is removed from the `data/api` module." />
+    <MESSAGE value="refactor: Remove unused KotlinCompile import in app module&#10;&#10;Removes the unused `org.jetbrains.kotlin.gradle.tasks.KotlinCompile` import from the `app/build.gradle.kts` file, cleaning up the build script." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Remove unused KotlinCompile import in app module&#10;&#10;Removes the unused `org.jetbrains.kotlin.gradle.tasks.KotlinCompile` import from the `app/build.gradle.kts` file, cleaning up the build script." />
   </component>
 </project>
