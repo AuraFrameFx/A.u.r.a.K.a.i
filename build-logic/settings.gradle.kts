@@ -36,3 +36,6 @@ rootProject.name = "build-logic"
 
 // Build-logic only contains convention plugins, no app modules
 // Note: foojay-resolver not needed - parent project has auto-download enabled
+kotlin {
+    jvmToolchain(23)
+}
