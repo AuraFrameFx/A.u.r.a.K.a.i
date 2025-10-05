@@ -3,7 +3,8 @@
 
 plugins {
     id("com.android.application")
-    // Kotlin plugin not needed - AGP 9.0 has built-in Kotlin support
+    // Kotlin plugin required for Hilt 2.52 compatibility with AGP 9.0
+    kotlin("android")
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
     alias(libs.plugins.compose.compiler)
