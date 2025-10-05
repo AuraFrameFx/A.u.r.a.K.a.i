@@ -110,6 +110,12 @@ android {
     }
 
     testCoverage { jacocoVersion = "0.8.11" }
+
+    packaging {
+        resources {
+            excludes += "META-INF/LICENSE.md"
+        }
+    }
 }
 
 dependencies {
@@ -179,5 +185,3 @@ tasks.register("verifyBenchmarkResults") {
         println("🔬 Add @Benchmark annotated tests under androidTest for actual runs")
     }
 }
-
-

@@ -18,6 +18,11 @@ plugins {
             sourceCompatibility = JavaVersion.VERSION_24
             targetCompatibility = JavaVersion.VERSION_24
         }
+        packaging {
+            resources {
+                excludes += "META-INF/LICENSE.md"
+            }
+        }
     }
     java {
         toolchain {
