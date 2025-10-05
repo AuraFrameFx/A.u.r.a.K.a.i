@@ -1,12 +1,12 @@
 // Apply plugins to the root project to avoid multiple loading warnings
 plugins {
-    alias(libs.plugins.kotlin.android) apply false
+    // kotlin.android plugin removed - AGP 9.0 has built-in Kotlin support
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.android.application) apply false
-    // Build logic convention plugins
+    // ...existing code...
     id("genesis.android.application") apply false
     id("genesis.android.library") apply false
     id("genesis.android.native") apply false
@@ -103,13 +103,13 @@ plugins {
 subprojects {
     plugins.withType<org.jetbrains.kotlin.gradle.plugin.KotlinBasePluginWrapper> {
         extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension>("kotlin") {
-            jvmToolchain(17)
+            jvmToolchain(24)
         }
     }
     plugins.withType<JavaPlugin> {
         extensions.configure<JavaPluginExtension>("java") {
             toolchain {
-                languageVersion.set(JavaLanguageVersion.of(17))
+                languageVersion.set(JavaLanguageVersion.of(24))
             }
         }
     }

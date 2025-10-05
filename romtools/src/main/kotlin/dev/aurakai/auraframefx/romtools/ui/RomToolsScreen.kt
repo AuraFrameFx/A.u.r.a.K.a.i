@@ -46,6 +46,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.aurakai.auraframefx.romtools.BackupInfo
+import dev.aurakai.auraframefx.romtools.FakeRomToolsManager
 import dev.aurakai.auraframefx.romtools.RomCapabilities
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -106,7 +107,7 @@ fun RomToolsScreen(
 @Preview(showBackground = true)
 @Composable
 fun RomToolsScreenPreview() {
-    RomToolsScreen(romToolsManager = RomToolsManager())
+    RomToolsScreen(romToolsManager = FakeRomToolsManager())
 }
 
 @Composable

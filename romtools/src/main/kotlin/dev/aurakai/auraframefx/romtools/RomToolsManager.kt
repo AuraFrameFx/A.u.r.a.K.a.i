@@ -6,6 +6,7 @@ import android.os.Environment
 import androidx.lifecycle.ViewModel // Added import
 import dagger.hilt.android.lifecycle.HiltViewModel // Added import
 import dagger.hilt.android.qualifiers.ApplicationContext
+import dev.aurakai.auraframefx.romtools.bootloader.BootloaderManager
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -27,8 +28,8 @@ import javax.inject.Inject
  */
 @HiltViewModel // Changed from @Singleton
 open class RomToolsManager @Inject constructor(
-    @param:ApplicationContext private val context: Context,
-    private val bootloaderManager: FakeBootloaderManager,
+    @param:ApplicationContext private val context: Context?,
+    private val bootloaderManager: BootloaderManager,
     private val recoveryManager: RecoveryManager,
     private val systemModificationManager: SystemModificationManager,
     private val flashManager: FlashManager,

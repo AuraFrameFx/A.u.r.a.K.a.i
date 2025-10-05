@@ -3,7 +3,9 @@
 
 plugins {
     id("com.android.application")
+    // Kotlin plugin not needed - AGP 9.0 has built-in Kotlin support
     alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
     alias(libs.plugins.compose.compiler)
 }
 
@@ -64,7 +66,7 @@ android {
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(24)
 }
 
 dependencies {

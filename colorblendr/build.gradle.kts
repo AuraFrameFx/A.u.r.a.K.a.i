@@ -55,9 +55,9 @@ dependencies {
     // Optional - Integration with ViewModels
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.4")
     // Optional - Integration with LiveData
-    implementation("androidx.compose.runtime:runtime-livedata")
+    implementation("androidx.compose.runtime:runtime-livedata:1.9.2")
     // Optional - Integration with RxJava
-    implementation("androidx.compose.runtime:runtime-rxjava2")
+    implementation("androidx.compose.runtime:runtime-rxjava2:1.9.2")
 
     // Core
     implementation(project(":core-module"))
@@ -83,5 +83,5 @@ dependencies {
     testImplementation(libs.junit4)
     testImplementation(libs.mockk)
     androidTestImplementation(libs.bundles.testing.android)
-    implementation(kotlin("stdlib-jdk8"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
 }
