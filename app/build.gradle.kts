@@ -3,11 +3,9 @@
 
 plugins {
     id("com.android.application")
-    // kotlin("android") removed - AGP 9.0 has built-in Kotlin support
-    // See: https://issuetracker.google.com/issues/438678642
+    alias(libs.plugins.hilt)              // ✅ ADDED - Required for Hilt DI
     alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
-    alias(libs.plugins.compose.compiler)
+    id("org.openapi.generator") version "7.16.0"
 }
 
 android {
@@ -27,17 +25,6 @@ android {
         }
     }
 
-    // Fix JUnit Jupiter META-INF duplicate resource conflicts
-    packaging {
-        resources {
-            excludes += setOf(
-                "META-INF/LICENSE.md",
-                "META-INF/LICENSE-notice.md",
-                "META-INF/NOTICE.md"
-            )
-        }
-    }
-
     // Additional build type configuration
     buildTypes {
         debug {
@@ -51,6 +38,9 @@ android {
     buildFeatures {
         aidl = true
         compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.11"
     }
 
     testOptions {
@@ -115,15 +105,15 @@ dependencies {
 
     // ===== NETWORKING =====
     implementation(libs.bundles.network)
-    implementation(libs.moshi)
-    implementation(libs.moshi.kotlin)
+    implementation("com.squareup.moshi:moshi:1.15.2")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
 
     // ===== KTOR FOR OPENAPI CLIENT =====
-    implementation(libs.ktor.client.core)
-    implementation(libs.ktor.client.content.negotiation)
-    implementation(libs.ktor.serialization.kotlinx.json)
-    implementation(libs.ktor.client.okhttp)
-    implementation(libs.ktor.client.auth)
+    implementation("io.ktor:ktor-client-core:3.3.0")
+    implementation("io.ktor:ktor-client-content-negotiation:3.3.0")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.0")
+    implementation("io.ktor:ktor-client-okhttp:3.3.0")
+    implementation("io.ktor:ktor-client-auth:3.3.0")
 
     // ===== FIREBASE =====
     // By implementing the BOM, we can specify Firebase SDKs without versions
@@ -142,8 +132,8 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     // ===== WORKMANAGER =====
-    implementation(libs.androidx.work.runtime.ktx)
-    implementation(libs.hilt.work)
+    implementation("androidx.work:work-runtime-ktx:2.10.5")
+    implementation("androidx.hilt:hilt-work:1.3.0")
 
     // ===== UTILITIES =====
     implementation(libs.timber)
