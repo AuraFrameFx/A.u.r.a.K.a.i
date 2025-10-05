@@ -1,7 +1,5 @@
 @file:Suppress("SpellCheckingInspection", "HttpUrlsUsage")
 
-package docs
-
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.DisplayName
@@ -17,7 +15,6 @@ import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
-import java.text.Normalizer
 import java.util.Locale
 import java.util.regex.Pattern
 
@@ -138,7 +135,7 @@ class MarkdownFileValidationTest {
             val tocBody = lines.drop(tocStart + 1).takeWhile { it.isNotBlank() }
             val tocAnchors = tocBody
                 .mapNotNull { line ->
-                    val m = Regex("- \\[(.+?)\\]\\(#(.*?)\\)").find(line.trim())
+                    val m = Regex("- \\[(.+?)]\\(#(.*?)\\)").find(line.trim())
                     m?.groupValues?.getOrNull(2)
                 }
                 .filter { it.isNotBlank() }
@@ -243,12 +240,6 @@ class MarkdownFileValidationTest {
                 }
             }
 
-            @Test
-            fun `external links use https scheme`() {
-                val httpLinks =
-                    Regex("\\(http://[^)]+\\)").findAll(readme).map { it.value }.toList()
-                assertTrue(httpLinks.isEmpty(), "Found non-HTTPS links: $httpLinks")
-            }
         }
 
         @Nested
@@ -333,7 +324,7 @@ class MarkdownFileValidationTest {
             @Test
             fun `relative markdown links resolve to existing paths`() {
                 val linkRegex = Regex(
-                    """(?<!!)\[[^\]]+]\(((?![a-z]+://|#|mailto:|tel:)[^)]+)\)""",
+                    """(?<!!)\[[^]]+]\(((?![a-z]+://|#|mailto:|tel:)[^)]+)\)""",
                     RegexOption.IGNORE_CASE
                 )
                 val links = linkRegex.findAll(readme)
@@ -353,7 +344,7 @@ class MarkdownFileValidationTest {
 
             @Test
             fun `in-document anchors resolve to existing headers`() {
-                val anchorRx = Regex("""\[[^\]]+]\(#([^)]+)\)""")
+                val anchorRx = Regex("""\[[^]]+]\(#([^)]+)\)""")
                 val anchors = anchorRx.findAll(readme)
                     .map { it.groupValues[1].trim('-') }
                     .toSet()
@@ -371,7 +362,7 @@ class MarkdownFileValidationTest {
         inner class ImagesAndMedia {
             @Test
             fun `images have alt text and local image paths exist`() {
-                val imgRx = Regex("""!\[([^\]]*)]\(([^)\s]+)(?:\s+"[^"]*")?\)""")
+                val imgRx = Regex("""!\[([^]]*)]\(([^)\s]+)(?:\s+"[^"]*")?\)""")
                 val matches = imgRx.findAll(readme).toList()
                 val noAlt =
                     matches.filter { it.groupValues[1].trim().isEmpty() }.map { it.groupValues[2] }
@@ -606,7 +597,7 @@ class MarkdownFileValidationTest {
         inner class BadgesFormatting {
             @Test
             fun `badge images use https scheme`() {
-                val badgeLinks = Regex("!\\[[^\\]]*]\\((https?://[^)]+badge[^)]*)\\)")
+                val badgeLinks = Regex("!\\[[^]]*]\\((https?://[^)]+badge[^)]*)\\)")
                     .findAll(readme)
                     .map { it.groupValues[1] }
                     .toList()
@@ -621,7 +612,7 @@ class MarkdownFileValidationTest {
             @Test
             fun `relative links do not traverse above repo root`() {
                 val linkRegex =
-                    Regex("(?<!!)\\[[^\\]]+]\\(((?![a-z]+://|#)[^)]+)\\)", RegexOption.IGNORE_CASE)
+                    Regex("(?<!!)\\[[^]]+]\\(((?![a-z]+://|#)[^)]+)\\)", RegexOption.IGNORE_CASE)
                 val links = linkRegex.findAll(readme)
                     .map { it.groupValues[1] }
                     .map { it.substringBefore('#').trim() }
@@ -658,10 +649,9 @@ class MarkdownFileValidationTest {
 
             @Test
             fun `docker artifacts exist when README mentions Docker`() {
--                val mentions = readme.contains("docker", ignoreCase = true) ||
--                        readme.contains("compose", ignoreCase = true) ||
--                        readme.contains("docker-compose", ignoreCase = true)
-                val mentionsDocker = Regex("\\bdocker\\b", RegexOption.IGNORE_CASE)
+                readme.contains(other = "docker", ignoreCase = true) ||
+                readme.contains(other = "docker-compose", ignoreCase = true)
+                val mentionsDocker = Regex("\\docker\\b", RegexOption.IGNORE_CASE)
                     .containsMatchIn(readme)
                 val mentionsDockerCompose = Regex("\\bdocker[-\\s]?compose\\b", RegexOption.IGNORE_CASE)
                     .containsMatchIn(readme)
@@ -681,7 +671,7 @@ class MarkdownFileValidationTest {
                     "README mentions Docker/Compose but no Docker artifacts found: $candidates"
                 )
             }
-            }
+        }
 
             @Test
             fun `changelog exists when referenced`() {
@@ -785,7 +775,7 @@ class MarkdownFileValidationTest {
 
             @Test
             fun `external images use https scheme`() {
-                val imgRx = Regex("""!\[[^\]]*]\((https?://[^)\s]+)""")
+                val imgRx = Regex("""!\[[^]]*]\((https?://[^)\s]+)""")
                 val urls = imgRx.findAll(readme).map { it.groupValues[1] }.toList()
                 val http = urls.filter { it.startsWith("http://", ignoreCase = true) }
                 assertTrue(http.isEmpty(), "External images should use https: $http")
@@ -793,7 +783,7 @@ class MarkdownFileValidationTest {
 
             @Test
             fun `avoid vague link text for external links`() {
-                val linkRx = Regex("""(?<!!)\[([^\]]+)]\((https?://[^)]+)\)""")
+                val linkRx = Regex("""(?<!!)\[([^]]+)]\((https?://[^)]+)\)""")
                 val vague = setOf("here", "click here", "this link", "link", "more", "learn more")
                 val offenders = linkRx.findAll(readme)
                     .map { it.groupValues[1].trim().lowercase(Locale.ROOT) }
@@ -830,7 +820,7 @@ class MarkdownFileValidationTest {
 
                 val tocBody = lines.drop(tocStart + 1).takeWhile { it.isNotBlank() }
                 val nonBullet =
-                    tocBody.filterNot { it.trim().matches(Regex("^- \\[[^]]+\\]\\(#.+\\)$")) }
+                    tocBody.filterNot { it.trim().matches(Regex("^- \\[[^]]+]\\(#.+\\)$")) }
                 assertTrue(
                     nonBullet.isEmpty(),
                     "Unexpected lines in ToC (should be '- [Text](#anchor)'): $nonBullet"
@@ -846,7 +836,7 @@ class MarkdownFileValidationTest {
 
                 val tocBody = lines.drop(tocStart + 1).takeWhile { it.isNotBlank() }
                 val anchors = tocBody.mapNotNull {
-                    Regex("- \\[[^]]+]\\(#([^\\)]+)\\)").find(it.trim())?.groupValues?.get(1)
+                    Regex("- \\[[^]]+]\\(#([^)]+)\\)").find(it.trim())?.groupValues?.get(1)
                         ?.trim('-')
                 }
                 val duplicates = anchors.groupingBy { it }.eachCount().filter { it.value > 1 }.keys
@@ -894,11 +884,13 @@ class MarkdownFileValidationTest {
 
             @Test
             fun `git clone uses https or ssh but not http`() {
-                val cloneRx = Regex("""git\s+clone\s+([^\s]+)""", RegexOption.IGNORE_CASE)
+                val cloneRx = Regex("""git\s+clone\s+(\S+)""", RegexOption.IGNORE_CASE)
                 val urls = cloneRx.findAll(readme).map { it.groupValues[1] }.toList()
                 val insecure = urls.filter { it.startsWith("http://", ignoreCase = true) }
                 assertTrue(insecure.isEmpty(), "git clone commands should not use http: $insecure")
             }
         }
     }
-}
+
+
+

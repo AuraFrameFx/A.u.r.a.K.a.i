@@ -275,7 +275,7 @@ data class RomToolsSettings(
     val verifyRomSignatures: Boolean = true,
     val enableGenesisOptimizations: Boolean = true,
     val maxBackupCount: Int = 5,
-    val downloadDirectory: String = Environment.getExternalStorageDirectory().getPath() + "/Download/ROMs"
+    val downloadDirectory: String = Environment.getExternalStorageDirectory().path + "/Download/ROMs"
 )
 
 data class OperationProgress(
