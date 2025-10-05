@@ -8,6 +8,7 @@ plugins {
     id("com.android.library")
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
     alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler)
 }
 
 // Add modern documentation task that doesn't rely on deprecated plugins

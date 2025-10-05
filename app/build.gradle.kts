@@ -5,7 +5,7 @@ plugins {
     id("com.android.application")
     alias(libs.plugins.ksp)
     id("org.openapi.generator") version "7.16.0"
-    // Commented out until plugin is recognized
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -38,9 +38,6 @@ android {
     buildFeatures {
         aidl = true
         compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.11"
     }
 
     testOptions {

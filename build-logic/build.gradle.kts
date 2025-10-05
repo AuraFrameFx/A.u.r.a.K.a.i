@@ -3,6 +3,7 @@ plugins {
     `kotlin-dsl`
 }
 
+
 group = "dev.aurakai.auraframefx.buildlogic"
 
 // Dependencies required for the convention plugins themselves.
