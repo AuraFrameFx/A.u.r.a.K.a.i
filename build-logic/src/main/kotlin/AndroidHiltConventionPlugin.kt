@@ -39,7 +39,9 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
             }
 
             pluginManager.withPlugin(androidPluginId) {
-                // Apply Hilt after Android is ready (no BaseExtension shim needed on AGP 8.7.x)
+                // AGP 9 alpha: ensure BaseExtension shim is available for Hilt
+                pluginManager.apply("com.android.base")
+                // Apply Hilt after Android is ready
                 pluginManager.apply("com.google.dagger.hilt.android")
 
                 // Configure dependencies through version catalog
