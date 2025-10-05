@@ -1,8 +1,10 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 
 plugins {
     id("genesis.android.application")
-    id("genesis.android.hilt")
+
 }
 
 android {
@@ -48,7 +50,14 @@ android {
         targetCompatibility = JavaVersion.toVersion("24")
         isCoreLibraryDesugaringEnabled = true
     }
+    packaging {
+        resources {
+            excludes += "META-INF/INDEX.LIST"
+            excludes += "META-INF/LICENSE.md"
+        }
+    }
 }
+
 
 
 dependencies {
@@ -114,7 +123,7 @@ dependencies {
 
     // ===== HILT DEPENDENCY INJECTION =====
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.compiler)
 
     // ===== WORKMANAGER =====
     implementation(libs.androidx.work.runtime.ktx)
