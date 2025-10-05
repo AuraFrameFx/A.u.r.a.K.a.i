@@ -50,9 +50,6 @@ android {
     }
 }
 
-kotlin {
-    jvmToolchain(24)
-}
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====
