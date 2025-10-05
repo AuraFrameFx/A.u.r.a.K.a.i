@@ -1,6 +1,6 @@
 [versions]
 # ===== GRADLE & KOTLIN =====
-agp = "9.0.0-alpha02"
+agp = "9.0.0-alpha09"
 kotlin = "2.2.20"
 kotlinGradlePlugin = "2.2.20"
 kotlinLoggingJvm = "3.0.5"
