@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Remove explicit JVM toolchain from build-logic&#10;&#10;The explicit `kotlin { jvmToolchain(23) }` block has been removed from `build-logic/settings.gradle.kts`. This change simplifies the configuration, as the JVM toolchain is managed by the parent project.">
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +15,11 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -47,6 +53,7 @@
     "accountId": "129e8c9f-2999-43ba-8838-4bd9fe391e46"
   }
 }]]></component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-bin\9agqghryom9wkf8r80qlhnts3\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 6\jbr" gradleVersion="9.1.0" />
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 4
 }]]></component>
@@ -85,11 +92,21 @@
       <option name="project" value="LOCAL" />
       <updated>1759700752139</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.">
+      <option name="closed" value="true" />
+      <created>1759700809780</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1759700809780</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactor: Remove explicit JVM toolchain from build-logic&#10;&#10;The explicit `kotlin { jvmToolchain(23) }` block has been removed from `build-logic/settings.gradle.kts`. This change simplifies the configuration, as the JVM toolchain is managed by the parent project." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Remove explicit JVM toolchain from build-logic&#10;&#10;The explicit `kotlin { jvmToolchain(23) }` block has been removed from `build-logic/settings.gradle.kts`. This change simplifies the configuration, as the JVM toolchain is managed by the parent project." />
+    <MESSAGE value="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration." />
+    <MESSAGE value="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration." />
   </component>
 </project>
