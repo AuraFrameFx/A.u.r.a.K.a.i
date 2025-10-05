@@ -9,8 +9,11 @@ java = "24"
 
 
 # ===== HOOKING FRAMEWORKS =====
+ktorClientAuth = "3.3.0"
 ktorClientCio = "3.3.0"
 logbackClassic = "1.5.19"
+moshi = "1.15.2"
+moshiKotlin = "1.15.2"
 multidex = "2.0.1"
 xposed = "82"
 api = "82"
@@ -164,8 +167,11 @@ google-generativeai = { module = "com.google.ai.client.generativeai:generativeai
 # ===== YUKIHOOK & XPOSED =====
 kotlin-logging-jvm = { module = "io.github.microutils:kotlin-logging-jvm", version.ref = "kotlinLoggingJvm" }
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect" }
+ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktorClientAuth" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorClientCio" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logbackClassic" }
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }
 yukihook-api = { group = "com.highcapable.yukihookapi", name = "api", version.ref = "yukihookapi" }
 yukihook-ksp = { group = "com.highcapable.yukihookapi", name = "ksp-xposed", version.ref = "yukihookapi" }
 yukihook-prefs = { group = "com.highcapable.yukihookapi", name = "prefs", version.ref = "yukihookapi" }

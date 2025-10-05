@@ -100,16 +100,20 @@ plugins {
         implementation(kotlin("stdlib-jdk8"))
     }
 
-    kotlin {
-        jvmToolchain(24)
-    }
-
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(24))
+subprojects {
+    plugins.withType<org.jetbrains.kotlin.gradle.plugin.KotlinBasePluginWrapper> {
+        extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension>("kotlin") {
+            jvmToolchain(24)
         }
     }
-
+    plugins.withType<JavaPlugin> {
+        extensions.configure<JavaPluginExtension>("java") {
+            toolchain {
+                languageVersion.set(JavaLanguageVersion.of(24))
+            }
+        }
+    }
+}
 
 // Configure JUnit 5 for tests
     tasks.withType<Test> {
@@ -139,4 +143,3 @@ plugins {
         apply(from = "dependency-fix.gradle.kts")
 
     }
-
