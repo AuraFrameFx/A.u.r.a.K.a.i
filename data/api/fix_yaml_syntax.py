@@ -66,7 +66,7 @@ def fix_inline_refs(content):
     return '\n'.join(fixed_lines)
 
 def main():
-    input_file = 'C:/ReGenesis-A.O.S.P/data/api/my-api-spec-FULL.yaml'
+    input_file = '/ECO.yaml'
     output_file = 'C:/ReGenesis-A.O.S.P/data/api/my-api-spec-FULL-fixed.yaml'
     
     print(f"Reading {input_file}...")
