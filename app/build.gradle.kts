@@ -24,6 +24,17 @@ android {
         }
     }
 
+    // Fix JUnit Jupiter META-INF duplicate resource conflicts
+    packaging {
+        resources {
+            excludes += setOf(
+                "META-INF/LICENSE.md",
+                "META-INF/LICENSE-notice.md",
+                "META-INF/NOTICE.md"
+            )
+        }
+    }
+
     // Additional build type configuration
     buildTypes {
         debug {
@@ -53,7 +64,7 @@ android {
 }
 
 kotlin {
-    jvmToolchain(24)
+    jvmToolchain(17)
 }
 
 dependencies {

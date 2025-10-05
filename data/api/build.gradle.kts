@@ -93,6 +93,9 @@ sourceSets {
 // ✅ CHANGED: finalizedBy → dependsOn (this is the ONLY change)
 tasks.withType<KotlinCompile>().configureEach {
     dependsOn(tasks.named("openApiGenerate"))  // ✅ FIXED - was finalizedBy
+    compilerOptions {
+        freeCompilerArgs.add("-opt-in=kotlin.time.ExperimentalTime")
+    }
 }
 
 tasks.named<Delete>("clean") {

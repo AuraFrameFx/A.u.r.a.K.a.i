@@ -240,7 +240,7 @@ class SettingsGradleFunctionalTest {
         )
         // We can't assert specific tasks without full project, but ensure command executed
         // And outcome not FAILED (heuristic via absence of 'FAILURE:' marker)
-        assertTrue(\!help.contains("FAILURE:"), "Gradle help should not fail")
+        assertTrue(!help.contains("FAILURE:"), "Gradle help should not fail")
     }
 
     @Test

@@ -13,6 +13,7 @@ dependencies {
     implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
 
     // Test dependencies
+    testImplementation(kotlin("test"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.0")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:6.0.0")
     testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.0")
