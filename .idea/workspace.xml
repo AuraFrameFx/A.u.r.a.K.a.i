@@ -36,14 +36,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="chore: Update junit-platform-launcher to version 6.0.0&#10;&#10;The version of the `junit-platform-launcher` dependency has been updated from `1.13.4` to `6.0.0` in the version catalog.">
-      <change afterPath="$PROJECT_DIR$/data/api/eco-ai.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/api/eco-core.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="feat: Split OpenAPI spec and update build configuration&#10;&#10;Splits the monolithic `ECO.yaml` OpenAPI specification into two separate files: `eco-core.yaml` for core functionalities and `eco-ai.yaml` for AI and advanced features.&#10;&#10;The Gradle build script (`data/api/build.gradle.kts`) is updated to generate two separate Kotlin clients from these new specifications, outputting them into distinct packages (`ecocore` and `ecoai`). The dependency management is updated to use explicit versions instead of a BOM, and the Kotlin compile task dependency is corrected.&#10;&#10;Additionally, new Jetpack Compose dependencies have been added to the `colorblendr` module to build out its UI.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/colorblendr/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +84,74 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="AuraKai" type="f1a62948:ProjectNode" />
                 <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="aegenesis" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="android" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="benchmark" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="consciousness" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="genesis" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="openapi tools" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
                 <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
               <path>
@@ -111,7 +173,48 @@
                 <item name="AuraKai" type="2d1252cf:ModuleNode" />
                 <item name="app" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="android" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="help" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="install" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="build-logic" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="build-logic" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="build-logic" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
             </expand>
             <select />
@@ -181,6 +284,7 @@
     "Gradle.ReGenesis-A.O.S.P [tasks].executor": "Run",
     "Gradle.ReGenesis-A.O.S.P [updateDaemonJvm].executor": "Run",
     "Gradle.ReGenesis-A.O.S.P [wrapper].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P:app [clean].executor": "Run",
     "Gradle.ReGenesis-A.O.S.P:app [dependencies].executor": "Run",
     "Gradle.ReGenesis-A.O.S.P:app [javaToolchains].executor": "Run",
     "Gradle.ReGenesis-A.O.S.P:app [properties].executor": "Run",
@@ -235,7 +339,7 @@
       <command value="gradle stop" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ReGenesis-A.O.S.P [openApiGenerate]">
+  <component name="RunManager" selected="Gradle.ReGenesis-A.O.S.P [openApiGenerators]">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AuraKai.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -308,7 +412,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesis-A.O.S.P [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -319,7 +423,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":build-logic:updateDaemonJvm" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -334,7 +438,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P [openApiGenerate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesis-A.O.S.P [openApiGenerators]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -345,7 +449,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="openApiGenerate" />
+            <option value="openApiGenerators" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -360,7 +464,59 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P:app [properties]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesis-A.O.S.P [updateDaemonJvm]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="updateDaemonJvm" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ReGenesis-A.O.S.P [wrapper]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="wrapper" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ReGenesis-A.O.S.P:app [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
@@ -371,7 +527,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="properties" />
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -384,63 +540,15 @@
       </EXTENSION>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ReGenesis-A.O.S.P:app [tasks]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="tasks" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="fix_yaml_syntax" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="AuraKai.data.api" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/api" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/api/fix_yaml_syntax.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerate]" />
-        <item itemvalue="Python.fix_yaml_syntax" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P:app [tasks]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P:app [properties]" />
+        <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerators]" />
+        <item itemvalue="Gradle.ReGenesis-A.O.S.P [wrapper]" />
+        <item itemvalue="Gradle.ReGenesis-A.O.S.P [updateDaemonJvm]" />
+        <item itemvalue="Gradle.ReGenesis-A.O.S.P [build]" />
+        <item itemvalue="Gradle.ReGenesis-A.O.S.P:app [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -461,22 +569,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
-    </task>
-    <task id="LOCAL-00037" summary="feat: Disable lint checks for oversized test files&#10;&#10;Disables lint checks for test sources and adds a rule to ignore lint errors due to oversized test files causing StackOverflow.">
-      <option name="closed" value="true" />
-      <created>1759323507883</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1759323507883</updated>
-    </task>
-    <task id="LOCAL-00038" summary="feat: Enable core library desugaring&#10;&#10;Enables core library desugaring in the `compileOptions` to allow the use of newer Java language features on older Android versions.">
-      <option name="closed" value="true" />
-      <created>1759323524695</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1759323524695</updated>
     </task>
     <task id="LOCAL-00039" summary="feat: Enable core library desugaring&#10;&#10;Enables core library desugaring in the `compileOptions` to allow the use of newer Java language features on older Android versions.">
       <option name="closed" value="true" />
@@ -854,7 +946,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759637264615</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="feat: Split OpenAPI spec and update build configuration&#10;&#10;Splits the monolithic `ECO.yaml` OpenAPI specification into two separate files: `eco-core.yaml` for core functionalities and `eco-ai.yaml` for AI and advanced features.&#10;&#10;The Gradle build script (`data/api/build.gradle.kts`) is updated to generate two separate Kotlin clients from these new specifications, outputting them into distinct packages (`ecocore` and `ecoai`). The dependency management is updated to use explicit versions instead of a BOM, and the Kotlin compile task dependency is corrected.&#10;&#10;Additionally, new Jetpack Compose dependencies have been added to the `colorblendr` module to build out its UI.">
+      <option name="closed" value="true" />
+      <created>1759641792666</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1759641792666</updated>
+    </task>
+    <task id="LOCAL-00087" summary="feat: Split OpenAPI spec and update build configuration&#10;&#10;Splits the monolithic `ECO.yaml` OpenAPI specification into two separate files: `eco-core.yaml` for core functionalities and `eco-ai.yaml` for AI and advanced features.&#10;&#10;The Gradle build script (`data/api/build.gradle.kts`) is updated to generate two separate Kotlin clients from these new specifications, outputting them into distinct packages (`ecocore` and `ecoai`). The dependency management is updated to use explicit versions instead of a BOM, and the Kotlin compile task dependency is corrected.&#10;&#10;Additionally, new Jetpack Compose dependencies have been added to the `colorblendr` module to build out its UI.">
+      <option name="closed" value="true" />
+      <created>1759641987322</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1759641987323</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -869,7 +977,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor: Remove unnecessary scoping from root build.gradle.kts&#10;&#10;This commit removes a redundant top-level scoping block from the root `build.gradle.kts` file. This change improves code readability and cleans up the script structure without altering any build logic." />
     <MESSAGE value="refactor: Decompose RomToolsScreen into smaller composables&#10;&#10;Refactors the `RomToolsScreen` composable for better readability and maintainability by extracting UI sections into smaller, dedicated composable functions.&#10;&#10;- Extract loading state into `LoadingScreen` composable.&#10;- Extract main content display into `MainContent` composable.&#10;- Improve YAML formatting in the API specification for better clarity." />
     <MESSAGE value="refactor: Relocate tests and align package structures&#10;&#10;This commit introduces a major restructuring of the test sources and package names across the project for better organization and consistency.&#10;&#10;- Moves all top-level and module-specific tests into the `build-script-tests` and `utilities` modules to centralize testing.&#10;- Deletes numerous standalone test files from their old locations.&#10;- Aligns all package names under the `dev.aurakai.auraframefx` root, replacing the previous `dev.genesis.android` and `org.example` structures.&#10;- Adds `.keep` files to preserve the new empty directory structures within Git.&#10;- Wraps the `openApiGenerate` configuration in an `afterEvaluate` block in `data/api/build.gradle.kts` to ensure properties are resolved correctly during the Gradle lifecycle." />
     <MESSAGE value="refactor: Relocate test suites and update package names&#10;&#10;Relocates extensive test suites into more appropriate modules and updates package names from `dev.genesis.android`, `org.example.utilities`, and `docs` to `dev.aurakai.auraframefx.*`. This commit restructures the project's test organization for better modularity and aligns the codebase with the new package naming convention.&#10;&#10;- Moves all Markdown validation tests (`MarkdownFileValidation*.kt`) from `src/test/kotlin` to the `build-script-tests` module under the `docs` package.&#10;- Relocates all `build-logic` and Gradle-related tests into the `build-script-tests` module.&#10;- Moves `LinkedListTest`, `JoinUtilsTest`, and `SplitUtilsTest` to their corresponding `list` and `utilities` test source sets under the new `dev.aurakai.auraframefx` package structure.&#10;- Deletes old test files from their original locations after moving them.&#10;- Wraps the `openApiGenerate` configuration in an `afterEvaluate` block in `data/api/build.gradle.kts` to ensure properties are resolved correctly." />
@@ -894,7 +1001,8 @@
     <MESSAGE value="refactor: Overhaul OpenAPI generation and build configuration&#10;&#10;This commit introduces a comprehensive refactor of the OpenAPI client generation process and related Gradle build configurations.&#10;&#10;Key changes include:&#10;*   **Gradle Build (`build.gradle.kts`):**&#10;    *   Replaced hardcoded dependency versions with version catalog aliases (`libs.*`).&#10;    *   Wrapped `openApiGenerate` task in `afterEvaluate` to ensure proper project evaluation order.&#10;    *   Standardized the input spec file to `ECO.yaml` and made the path root-project-relative.&#10;    *   Applied a new `fix-annotations.gradle.kts` script.&#10;    *   Refined the `clean` task implementation.&#10;    *   Set up JVM and Java toolchains to version 24.&#10;    *   Enabled generation of model documentation.&#10;&#10;*   **File Renaming:**&#10;    *   Renamed the OpenAPI specification file from `my-api-spec-FULL.yaml` to `ECO.yaml` for clarity.&#10;&#10;*   **Dependency Management (`libs.versions.toml`):**&#10;    *   Added new versions and aliases for `ktor`, `logback`, and `kotlin-logging`.&#10;&#10;*   **Configuration (`gradle.properties`):**&#10;    *   Commented out and added explanatory notes for experimental Android Gradle Plugin properties.&#10;&#10;*   **Tooling (`fix_yaml_syntax.py`):**&#10;    *   Updated the hardcoded input file path to reflect the new `ECO.yaml` filename." />
     <MESSAGE value="feat: Centralize JVM toolchain configuration and update dependencies&#10;&#10;The JVM toolchain version (24) is now centrally configured in the root `build.gradle.kts` for all subprojects, removing redundant declarations from `build-logic/build.gradle.kts`.&#10;&#10;Additionally, this commit updates several dependencies and migrates them to use the version catalog (`libs.versions.toml`):&#10;*   Adds `moshi`, `moshi-kotlin`, and `ktor-client-auth` to the catalog.&#10;*   Updates Ktor and Moshi versions.&#10;*   Converts direct dependency declarations in `app/build.gradle.kts` to use type-safe accessors for Moshi, Ktor, and WorkManager libraries." />
     <MESSAGE value="chore: Update junit-platform-launcher to version 6.0.0&#10;&#10;The version of the `junit-platform-launcher` dependency has been updated from `1.13.4` to `6.0.0` in the version catalog." />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: Update junit-platform-launcher to version 6.0.0&#10;&#10;The version of the `junit-platform-launcher` dependency has been updated from `1.13.4` to `6.0.0` in the version catalog." />
+    <MESSAGE value="feat: Split OpenAPI spec and update build configuration&#10;&#10;Splits the monolithic `ECO.yaml` OpenAPI specification into two separate files: `eco-core.yaml` for core functionalities and `eco-ai.yaml` for AI and advanced features.&#10;&#10;The Gradle build script (`data/api/build.gradle.kts`) is updated to generate two separate Kotlin clients from these new specifications, outputting them into distinct packages (`ecocore` and `ecoai`). The dependency management is updated to use explicit versions instead of a BOM, and the Kotlin compile task dependency is corrected.&#10;&#10;Additionally, new Jetpack Compose dependencies have been added to the `colorblendr` module to build out its UI." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Split OpenAPI spec and update build configuration&#10;&#10;Splits the monolithic `ECO.yaml` OpenAPI specification into two separate files: `eco-core.yaml` for core functionalities and `eco-ai.yaml` for AI and advanced features.&#10;&#10;The Gradle build script (`data/api/build.gradle.kts`) is updated to generate two separate Kotlin clients from these new specifications, outputting them into distinct packages (`ecocore` and `ecoai`). The dependency management is updated to use explicit versions instead of a BOM, and the Kotlin compile task dependency is corrected.&#10;&#10;Additionally, new Jetpack Compose dependencies have been added to the `colorblendr` module to build out its UI." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
