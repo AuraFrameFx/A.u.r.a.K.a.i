@@ -120,5 +120,5 @@ dependencies {
 
 tasks.register("featureStatus") {
     group = "aegenesis"
-    doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 17)!") }
+    doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 24)!") }
 }
