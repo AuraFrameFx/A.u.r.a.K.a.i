@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 
 plugins {
@@ -48,7 +50,13 @@ android {
         targetCompatibility = JavaVersion.toVersion("24")
         isCoreLibraryDesugaringEnabled = true
     }
+    packaging {
+        resources {
+            excludes += "META-INF/INDEX.LIST"
+        }
+    }
 }
+
 
 
 dependencies {
