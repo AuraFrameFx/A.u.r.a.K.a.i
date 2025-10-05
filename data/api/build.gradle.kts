@@ -7,6 +7,9 @@ plugins {
     `java-library`
 }
 
+kotlin {
+    jvmToolchain(24)
+}
 val ecoCoreSpec = file("${rootDir}/data/api/eco-core.yaml")
 val ecoAiSpec = file("${rootDir}/data/api/eco-ai.yaml")
 
