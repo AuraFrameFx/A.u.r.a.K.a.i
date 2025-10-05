@@ -14,8 +14,8 @@ dependencies {
 
     // Test dependencies
     testImplementation(kotlin("test"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:6.0.0")
+    testImplementation(libs.junit.jupiter.api)
+    testImplementation(libs.junit.jupiter.engine)
     testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.0")
     testImplementation("org.gradle:gradle-tooling-api:9.1.0")
     testImplementation(gradleTestKit())
@@ -52,6 +52,14 @@ gradlePlugin {
         register("androidNative") {
             id = "genesis.android.native"
             implementationClass = "AndroidNativeConventionPlugin"
+        }
+        register("androidBase") {
+            id = "android.base"
+            implementationClass = "plugins.AndroidBasePlugin"
+        }
+        register("agentFusion") {
+            id = "agent.fusion"
+            implementationClass = "plugins.AgentFusionPlugin"
         }
     }
 }

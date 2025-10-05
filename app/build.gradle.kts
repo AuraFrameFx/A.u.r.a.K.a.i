@@ -1,12 +1,16 @@
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 // This build script now uses the custom convention plugins for a cleaner setup.
-
 plugins {
     id("com.android.application")
-    alias(libs.plugins.hilt)              // ✅ ADDED - Required for Hilt DI
+    // Hilt MUST be applied explicitly for annotation processing
+    alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler)
     id("org.openapi.generator") version "7.16.0"
+    id("com.google.firebase.crashlytics")
+    id("com.google.firebase.firebase-perf")
 }
+
 
 android {
     namespace = "dev.aurakai.auraframefx"
@@ -59,6 +63,7 @@ android {
 kotlin {
     jvmToolchain(24)
 }
+
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====
@@ -165,8 +170,6 @@ tasks {
         delete(layout.buildDirectory.dir("generated/openapi"))
     }
 }
-
-
 
 
 // Note: Uses Genesis convention plugins (genesis.android.application and genesis.android.hilt)

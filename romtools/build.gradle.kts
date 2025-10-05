@@ -3,9 +3,10 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.android)    // ✅ ADDED - Was missing
-    alias(libs.plugins.hilt)              // ✅ ADDED - Required for Hilt DI
+    // Hilt MUST be applied explicitly for annotation processing
+    alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler) // Required for Compose in Kotlin 2.0+
     alias(libs.plugins.kotlin.serialization)
 }
 
@@ -21,9 +22,6 @@ android {
     }
     buildFeatures {
         compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.10" // Match this to your Compose BOM version
     }
 }
 

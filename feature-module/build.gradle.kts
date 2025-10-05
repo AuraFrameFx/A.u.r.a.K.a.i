@@ -6,9 +6,10 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.android)    // ✅ ADDED - Was missing
-    alias(libs.plugins.hilt)              // ✅ ADDED - Required for Hilt DI
+    // Hilt MUST be applied explicitly for annotation processing
+    alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler)
 }
 
 // Add modern documentation task that doesn't rely on deprecated plugins
@@ -117,7 +118,6 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation(kotlin("stdlib-jdk8"))
 }
-
 tasks.register("featureStatus") {
     group = "aegenesis"
     doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 24)!") }

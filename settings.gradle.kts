@@ -1,6 +1,3 @@
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-}
 
 @file:Suppress("UnstableApiUsage", "JCenterRepositoryObsolete")
 
@@ -77,6 +74,7 @@ pluginManagement {
     }
 }
 
+// Note: foojay-resolver-convention plugin not needed - using org.gradle.java.installations.auto-download=true in gradle.properties
 
 dependencyResolutionManagement {
     // Enforce consistent dependency resolution
