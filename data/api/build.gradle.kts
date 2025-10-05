@@ -23,12 +23,12 @@ openApiGenerate {
     outputDir = layout.buildDirectory.dir("generated/openapi").get().asFile.path
     apiPackage = "dev.aurakai.auraframefx.api"
     modelPackage = "dev.aurakai.auraframefx.model"
-    
+
     additionalProperties = mapOf(
         "skipValidateSpec" to "true",
         "legacyDiscriminatorBehavior" to "false"
     )
-    
+
     configOptions = mapOf(
         "library" to "jvm-ktor",
         "serializationLibrary" to "kotlinx_serialization",
@@ -44,7 +44,7 @@ openApiGenerate {
         "sortParamsByRequiredFlag" to "true",
         "sortModelPropertiesByRequiredFlag" to "true"
     )
-    
+
     openapiNormalizer = mapOf(
         "REFACTOR_ALLOF_WITH_PROPERTIES_ONLY" to "true",
         "SIMPLIFY_ONEOF_ANYOF" to "true"
@@ -57,6 +57,11 @@ sourceSets {
     }
 }
 
+// ✅ CHANGED: finalizedBy → dependsOn (this is the ONLY change)
+tasks.withType<KotlinCompile>().configureEach {
+    dependsOn(tasks.named("openApiGenerate"))  // ✅ FIXED - was finalizedBy
+}
+
 tasks.named<Delete>("clean") {
     delete(layout.buildDirectory.dir("generated/openapi"))
 }
@@ -65,30 +70,23 @@ tasks.jar {
     dependsOn(tasks.named("openApiGenerate"))
 }
 
-tasks.named("compileJava") {
-    dependsOn(tasks.named("openApiGenerate"))
-}
-tasks.named("compileKotlin") {
-    dependsOn(tasks.named("openApiGenerate"))
-}
-
 dependencies {
     implementation(kotlin("stdlib"))
     implementation(kotlin("reflect"))
-    
+
     implementation("io.ktor:ktor-client-core:3.3.0")
     implementation("io.ktor:ktor-client-cio:3.3.0")
     implementation("io.ktor:ktor-client-content-negotiation:3.3.0")
     implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.0")
-    
+
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.7.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
-    
+
     implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
     implementation("org.slf4j:slf4j-api:2.0.17")
     runtimeOnly("ch.qos.logback:logback-classic:1.5.19")
-    
+
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.0")
@@ -98,8 +96,4 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
-}
-
-tasks.withType<KotlinCompile>().configureEach {
-    dependsOn(tasks.named("openApiGenerate")) // ✅ CORRECT: ensures codegen runs before compilation
 }
