@@ -192,8 +192,8 @@ tasks.withType<JavaCompile>().configureEach {
 
 // Configure Kotlin compilation
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions {
-        freeCompilerArgs = listOf("-Xopt-in=kotlin.time.ExperimentalTime")
-        jvmTarget = "17"
+    compilerOptions {
+        freeCompilerArgs.addAll("-Xopt-in=kotlin.time.ExperimentalTime")
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 }

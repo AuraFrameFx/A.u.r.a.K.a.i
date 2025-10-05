@@ -3,10 +3,10 @@
 
 plugins {
     id("com.android.application")
-    // Kotlin plugin required for Hilt 2.52 compatibility with AGP 9.0
-    kotlin("android")
+    // kotlin("android") removed - AGP 9.0 has built-in Kotlin support
+    // See: https://issuetracker.google.com/issues/438678642
     alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
+    id("org.google.dagger.hilt.android") version "2.57.1"
     alias(libs.plugins.compose.compiler)
 }
 
