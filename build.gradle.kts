@@ -76,6 +76,13 @@ private data class ModuleReport(
     val hasKsp: Boolean
 )
 
+/**
+ * Collects a ModuleReport for every subproject, summarizing each module's type and presence of key plugins.
+ *
+ * Each report's `type` is one of: "android-app", "android-lib", "kotlin-jvm", or "other". Flags indicate whether
+ * Hilt, Compose, and KSP plugins are applied in the corresponding subproject.
+ *
+ * @return A list of ModuleReport objects, one per subproject.
 private fun Project.collectModuleReports(): List<ModuleReport> = subprojects.map { sp ->
     val plugins = sp.plugins
     ModuleReport(
