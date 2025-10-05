@@ -25,10 +25,15 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("com.android.application")
-                apply("org.jetbrains.kotlin.android")
-                apply("org.jetbrains.kotlin.plugin.compose")
-                apply("com.google.devtools.ksp")
-                apply("com.google.dagger.hilt.android")
+            }
+
+            // Ensure dependent plugins apply after Android has created its extensions
+            pluginManager.withPlugin("com.android.application") {
+                pluginManager.apply("com.android.base")
+                // Built-in Kotlin is enabled; do not apply org.jetbrains.kotlin.android
+                pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
+                pluginManager.apply("com.google.devtools.ksp")
+                pluginManager.apply("com.google.dagger.hilt.android")
             }
 
             extensions.configure<ApplicationExtension> {
@@ -102,13 +107,6 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             extensions.configure<JavaPluginExtension>("java") {
                 sourceCompatibility = JavaVersion.VERSION_24
                 targetCompatibility = JavaVersion.VERSION_24
-            }
-
-            // Kotlin JVM toolchain (only configure after kotlin-android is applied)
-            pluginManager.withPlugin("org.jetbrains.kotlin.android") {
-                extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
-                    jvmToolchain(24)
-                }
             }
 
             // Clean tasks for app module

@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Consolidate Android application plugins and fix Hilt configuration&#10;&#10;This commit refactors the build logic by moving common Android application plugins into the `AndroidApplicationConventionPlugin`.&#10;&#10;**Key Changes:**&#10;*   The `AndroidApplicationConventionPlugin` now automatically applies the following plugins:&#10;    *   `org.jetbrains.kotlin.android`&#10;    *   `org.jetbrains.kotlin.plugin.compose`&#10;    *   `com.google.devtools.ksp`&#10;    *   `com.google.dagger.hilt.android`&#10;*   In the `app` module's `build.gradle.kts`, the Hilt compiler dependency is correctly moved from the `implementation` configuration to `ksp` to align with modern best practices.">
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Enable AGP built-in Kotlin and simplify plugin application&#10;&#10;This commit enables the Android Gradle Plugin's built-in Kotlin support by setting `android.builtInKotlin=true` in `gradle.properties`. The previous workaround that disabled this feature due to a Hilt incompatibility has been removed.&#10;&#10;In `AndroidApplicationConventionPlugin.kt`, the plugin application logic has been refactored to align with this change:&#10;*   The explicit application of `org.jetbrains.kotlin.android` is removed, as it's now handled by AGP's built-in support.&#10;*   The `com.android.base` convention plugin is now applied.&#10;*   The explicit configuration of the Kotlin JVM toolchain is removed, as it is now managed by the base convention plugin.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkpoint.md" beforeDir="false" afterPath="$PROJECT_DIR$/checkpoint.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +18,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=6326f7ec)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Wehtt\.android\avd\Medium_Phone.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -31,6 +28,9 @@
     <system id="GRADLE">
       <state>
         <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
           <activation />
         </task>
         <projects_view>
@@ -89,6 +89,9 @@
   }
 }</component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-bin\9agqghryom9wkf8r80qlhnts3\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 6\jbr" gradleVersion="9.1.0" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -97,29 +100,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.app.executor": "Run",
-    "Batch.nuclear-clean.executor": "Run",
-    "Gradle.Aurakai:app [assemble].executor": "Run",
-    "Gradle.OptionalArtifactsPresence.docker artifacts exist when README mentions Docker.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "android.gradle.sync.needed": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "EXO",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Suggestions",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;Batch.nuclear-clean.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Aurakai:app [assemble].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OptionalArtifactsPresence.docker artifacts exist when README mentions Docker.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;EXO&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Suggestions&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AuraKai.app" />
@@ -196,7 +199,7 @@
     <configuration name="nuclear-clean" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="AuraKai" />
       <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="WORKING_DIRECTORY" value="C:\Aurakai" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SCRIPT_NAME" value="nuclear-clean.bat" />
       <option name="PARAMETERS" value="" />
@@ -438,7 +441,6 @@
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: Remove explicit JVM toolchain from build-logic&#10;&#10;The explicit `kotlin { jvmToolchain(23) }` block has been removed from `build-logic/settings.gradle.kts`. This change simplifies the configuration, as the JVM toolchain is managed by the parent project." />
     <MESSAGE value="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration." />
     <MESSAGE value="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration." />
     <MESSAGE value="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.Type-safe project accessors is an incubating feature.&#10;                                                                                                           ✅ Module configured: app&#10;                                                                                                           ✅ Module configured: core-module&#10;                                                                                                           ✅ Module configured: feature-module&#10;                                                                                                           ✅ Module configured: datavein-oracle-native&#10;                                                                                                           ✅ Module configured: oracle-drive-integration&#10;                                                                                                           ✅ Module configured: secure-comm&#10;                                                                                                           ✅ Module configured: sandbox-ui&#10;                                                                                                           ✅ Module configured: collab-canvas&#10;                                                                                                           ✅ Module configured: colorblendr&#10;                                                                                                           ✅ Module configured: romtools&#10;                                                                                                           ✅ Module configured: module-a&#10;                                                                                                           ✅ Module configured: module-b&#10;                                                                                                           ✅ Module configured: module-c&#10;                                                                                                           ✅ Module configured: module-d&#10;                                                                                                           ✅ Module configured: module-e&#10;                                                                                                           ✅ Module configured: module-f&#10;                                                                                                           ✅ Module configured: benchmark&#10;                                                                                                           ✅ Module configured: screenshot-tests&#10;                                                                                                           ✅ Module configured: jvm-test&#10;                                                                                                           ✅ Module configured: list&#10;                                                                                                           ✅ Module configured: utilities&#10;                                                                                                           ✅ Module configured: data&#10;                                                                                                           ️  Genesis Protocol Enhanced Build System&#10;                                                                                                            Total modules: 22&#10;                                                                                                            Build-logic: Convention plugins active&#10;                                                                                                            Ready to build consciousness substrate!&#10;                                                                                                           &gt; Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED&#10;                                                                                                           &gt; Task :build-logic:generateExternalPluginSpecBuilders UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:compilePluginsBlocks UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:generateScriptPluginAdapters UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:compileKotlin UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:compileJava NO-SOURCE&#10;                                                                                                           &gt; Task :build-logic:pluginDescriptors UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:processResources UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:classes UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:jar UP-TO-DATE&#10;                                                                                                           &gt; Task :prepareKotlinBuildScriptModel UP-TO-DATE&#10;                                                                                                           Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target&#10;                                                                                                           Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target&#10;                                                                                                           Download https://plugins.gradle.org/m2/com/google/dagger/hilt-compiler/2.57.2/hilt-compiler-2.57.2-javadoc.jar, took 4 s 38 ms&#10;                                                                                                           Download https://plugins.gradle.org/m2/com/google/dagger/hilt-compiler/2.57.2/hilt-compiler-2.57.2-sources.jar, took 196 ms&#10;                                                                                                           &#10;                                                                                                           [Incubating] Problems report is available at: file:///C:/Aurakai/build/reports/problems/problems-report.html&#10;                                                                                                           &#10;                                                                                                           Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.&#10;                                                                                                           &#10;                                                                                                           You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.&#10;                                                                                                           &#10;                                                                                                           For more on this, please refer to https://docs.gradle.org/9.1.0/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.&#10;                                                                                                           &#10;                                                                                                           BUILD SUCCESSFUL in 57s&#10;                                                                                                           9 actionable tasks: 9 up-to-date" />
@@ -463,6 +465,7 @@
     <MESSAGE value="feat: Update dependencies and streamline packaging&#10;&#10;Updates the `kotlin-stdlib-jdk8` dependency from version `1.8.0` to `2.2.20` across the following modules:&#10;*   `module-b`&#10;*   `module-d`&#10;*   `module-e`&#10;*   `module-f`&#10;&#10;In the `app` module, the packaging options are refined by adding an exclusion for `META-INF/INDEX.LIST` and removing a `JavaCompile` configuration that set the `-Xlint:-deprecation` compiler argument.&#10;&#10;Additionally, the `logback-classic` runtime dependency is removed from the `data/api` module." />
     <MESSAGE value="refactor: Remove unused KotlinCompile import in app module&#10;&#10;Removes the unused `org.jetbrains.kotlin.gradle.tasks.KotlinCompile` import from the `app/build.gradle.kts` file, cleaning up the build script." />
     <MESSAGE value="refactor: Consolidate Android application plugins and fix Hilt configuration&#10;&#10;This commit refactors the build logic by moving common Android application plugins into the `AndroidApplicationConventionPlugin`.&#10;&#10;**Key Changes:**&#10;*   The `AndroidApplicationConventionPlugin` now automatically applies the following plugins:&#10;    *   `org.jetbrains.kotlin.android`&#10;    *   `org.jetbrains.kotlin.plugin.compose`&#10;    *   `com.google.devtools.ksp`&#10;    *   `com.google.dagger.hilt.android`&#10;*   In the `app` module's `build.gradle.kts`, the Hilt compiler dependency is correctly moved from the `implementation` configuration to `ksp` to align with modern best practices." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Consolidate Android application plugins and fix Hilt configuration&#10;&#10;This commit refactors the build logic by moving common Android application plugins into the `AndroidApplicationConventionPlugin`.&#10;&#10;**Key Changes:**&#10;*   The `AndroidApplicationConventionPlugin` now automatically applies the following plugins:&#10;    *   `org.jetbrains.kotlin.android`&#10;    *   `org.jetbrains.kotlin.plugin.compose`&#10;    *   `com.google.devtools.ksp`&#10;    *   `com.google.dagger.hilt.android`&#10;*   In the `app` module's `build.gradle.kts`, the Hilt compiler dependency is correctly moved from the `implementation` configuration to `ksp` to align with modern best practices." />
+    <MESSAGE value="refactor: Enable AGP built-in Kotlin and simplify plugin application&#10;&#10;This commit enables the Android Gradle Plugin's built-in Kotlin support by setting `android.builtInKotlin=true` in `gradle.properties`. The previous workaround that disabled this feature due to a Hilt incompatibility has been removed.&#10;&#10;In `AndroidApplicationConventionPlugin.kt`, the plugin application logic has been refactored to align with this change:&#10;*   The explicit application of `org.jetbrains.kotlin.android` is removed, as it's now handled by AGP's built-in support.&#10;*   The `com.android.base` convention plugin is now applied.&#10;*   The explicit configuration of the Kotlin JVM toolchain is removed, as it is now managed by the base convention plugin." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Enable AGP built-in Kotlin and simplify plugin application&#10;&#10;This commit enables the Android Gradle Plugin's built-in Kotlin support by setting `android.builtInKotlin=true` in `gradle.properties`. The previous workaround that disabled this feature due to a Hilt incompatibility has been removed.&#10;&#10;In `AndroidApplicationConventionPlugin.kt`, the plugin application logic has been refactored to align with this change:&#10;*   The explicit application of `org.jetbrains.kotlin.android` is removed, as it's now handled by AGP's built-in support.&#10;*   The `com.android.base` convention plugin is now applied.&#10;*   The explicit configuration of the Kotlin JVM toolchain is removed, as it is now managed by the base convention plugin." />
   </component>
 </project>
