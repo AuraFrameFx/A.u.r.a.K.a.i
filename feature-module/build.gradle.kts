@@ -6,9 +6,9 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
-    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
+    alias(libs.plugins.kotlin.android)    // ✅ ADDED - Was missing
+    alias(libs.plugins.hilt)              // ✅ ADDED - Required for Hilt DI
     alias(libs.plugins.ksp)
-    alias(libs.plugins.compose.compiler)
 }
 
 // Add modern documentation task that doesn't rely on deprecated plugins
@@ -63,17 +63,6 @@ android {
         minSdk = 34
     }
 
-    // Fix JUnit Jupiter META-INF duplicate resource conflicts
-    packaging {
-        resources {
-            excludes += setOf(
-                "META-INF/LICENSE.md",
-                "META-INF/LICENSE-notice.md",
-                "META-INF/NOTICE.md"
-            )
-        }
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
@@ -126,7 +115,7 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.androidx.compose.ui.tooling)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.register("featureStatus") {
