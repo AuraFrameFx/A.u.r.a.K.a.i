@@ -37,7 +37,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="chore: Update junit-platform-launcher to version 6.0.0&#10;&#10;The version of the `junit-platform-launcher` dependency has been updated from `1.13.4` to `6.0.0` in the version catalog.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +193,7 @@
     "git-widget-placeholder": "MemCortex",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
-    "project.structure.last.edited": "Suggestions",
+    "project.structure.last.edited": "Build Variants",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "aDefault",
@@ -458,14 +458,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
-    </task>
-    <task id="LOCAL-00035" summary="feat: Enable core library desugaring&#10;&#10;Enables core library desugaring in the `compileOptions` to allow the use of newer Java language features on older Android versions.">
-      <option name="closed" value="true" />
-      <created>1759323079637</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1759323079637</updated>
     </task>
     <task id="LOCAL-00036" summary="feat: Enable core library desugaring&#10;&#10;Enables core library desugaring in the `compileOptions` to allow the use of newer Java language features on older Android versions.">
       <option name="closed" value="true" />
@@ -851,7 +843,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759634032434</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="chore: Update junit-platform-launcher to version 6.0.0&#10;&#10;The version of the `junit-platform-launcher` dependency has been updated from `1.13.4` to `6.0.0` in the version catalog.">
+      <option name="closed" value="true" />
+      <created>1759635932533</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1759635932533</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

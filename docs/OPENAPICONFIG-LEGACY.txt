@@ -1,0 +1,971 @@
+openapi: 3.0.3
+info:
+  title: AuraFrameFX Ecosystem API
+  description: |
+    # AuraFrameFX AI Super Dimensional Ecosystem API
+    
+    A comprehensive, production-grade API powering the AuraFrameFX Lsposed module and its interconnected AI services.
+    
+    ## Core Capabilities
+    - **AI Content Generation**: Advanced text, image, and multimodal content creation
+    - **Intelligent Agents**: Specialized AI agents for diverse tasks (Aura, Kai, Genesis, and more)
+    - **System Customization**: Deep Android system UI/UX personalization
+    - **Collaborative Intelligence**: Multi-agent conference rooms for complex problem-solving
+    - **Real-time Processing**: WebSocket support for streaming responses
+    - **Enterprise Security**: OAuth 2.0, API keys, and comprehensive access controls
+    
+    ## Rate Limits
+    - **Free Tier**: 100 requests/hour
+    - **Pro Tier**: 1,000 requests/hour
+    - **Enterprise**: Custom limits
+    
+    ## Support
+    - Documentation: https://docs.auraframefx.com
+    - Status Page: https://status.auraframefx.com
+    - Community: https://community.auraframefx.com
+    
+  version: 2.0.0
+  termsOfService: https://auraframefx.com/terms
+  contact:
+    name: AuraFrameFX Support Team
+    url: https://auraframefx.com/support
+    email: support@auraframefx.com
+  license:
+    name: Proprietary License
+    url: https://auraframefx.com/license
+  x-logo:
+    url: https://auraframefx.com/assets/logo.png
+    altText: AuraFrameFX Logo
+
+servers:
+  - url: https://api.auraframefx.com/v2
+    description: Production Environment
+  - url: https://api-{region}.auraframefx.com/v2
+    description: Regional Production (Optimized Latency)
+    variables:
+      region:
+        default: us-east
+        enum:
+          - us-east
+          - us-west
+          - eu-central
+          - ap-southeast
+  - url: https://{environment}.api.auraframefx.com/v2
+    description: Development Environments
+    variables:
+      environment:
+        default: dev
+        enum:
+          - dev
+          - staging
+          - sandbox
+
+tags:
+  - name: Users
+    description: User profile, preferences, and authentication management
+    externalDocs:
+      description: User API Documentation
+      url: https://docs.auraframefx.com/api/users
+  - name: Themes
+    description: UI theme management and customization
+    externalDocs:
+      description: Theme System Guide
+      url: https://docs.auraframefx.com/api/themes
+  - name: AI Content
+    description: AI-powered content generation (text, images, audio, video)
+    externalDocs:
+      description: AI Content Generation Guide
+      url: https://docs.auraframefx.com/api/ai-content
+  - name: AI Agents
+    description: Specialized AI agents for domain-specific tasks
+    externalDocs:
+      description: AI Agents Overview
+      url: https://docs.auraframefx.com/api/agents
+  - name: System Customization
+    description: Android system UI/UX customization and behavior modification
+    externalDocs:
+      description: System Customization Guide
+      url: https://docs.auraframefx.com/api/system
+  - name: Conference Room
+    description: Collaborative multi-agent spaces for complex problem-solving
+    externalDocs:
+      description: Conference Room Guide
+      url: https://docs.auraframefx.com/api/conference
+  - name: Tasks
+    description: Asynchronous task scheduling and management
+    externalDocs:
+      description: Task Management Guide
+      url: https://docs.auraframefx.com/api/tasks
+  - name: Analytics
+    description: Usage analytics and insights
+  - name: Security
+    description: Security, authentication, and access control endpoints
+
+security:
+  - OAuth2AuthCode: []
+
+paths:
+  # ============================================================
+  # USER MANAGEMENT ENDPOINTS
+  # ============================================================
+  /user:
+    get:
+      operationId: getCurrentUser
+      tags: [Users]
+      summary: Get Current User Profile
+      description: |
+        Retrieves comprehensive profile information for the authenticated user.
+        
+        **Includes:**
+        - Basic profile data (username, email)
+        - Account metadata (creation date, tier)
+        - Usage statistics
+        - Subscription status
+      security:
+        - OAuth2AuthCode: [profile, email]
+      responses:
+        '200':
+          description: User profile retrieved successfully
+          headers:
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/RateLimit-Remaining'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                standard_user:
+                  summary: Standard User Profile
+                  value:
+                    id: "123e4567-e89b-12d3-a456-426614174000"
+                    username: "aurafan"
+                    email: "user@example.com"
+                    displayName: "Aura Fan"
+                    avatarUrl: "https://cdn.auraframefx.com/avatars/123.jpg"
+                    tier: "pro"
+                    createdAt: "2024-01-15T10:30:00Z"
+                    lastLoginAt: "2025-10-01T08:15:00Z"
+                    verified: true
+                    usageStats:
+                      aiRequestsThisMonth: 450
+                      storageUsedMB: 128
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '429':
+          $ref: '#/components/responses/RateLimitError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    
+    patch:
+      operationId: updateCurrentUser
+      tags: [Users]
+      summary: Update User Profile
+      description: Partially updates the authenticated user's profile with provided fields.
+      security:
+        - OAuth2AuthCode: [profile]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserUpdateRequest'
+            examples:
+              update_display_name:
+                summary: Update Display Name
+                value:
+                  displayName: "Aura Master"
+              update_avatar:
+                summary: Update Avatar
+                value:
+                  avatarUrl: "https://cdn.auraframefx.com/avatars/456.jpg"
+      responses:
+        '200':
+          description: Profile updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  /user/preferences:
+    get:
+      operationId: getUserPreferences
+      tags: [Users]
+      summary: Get User Preferences
+      description: Retrieves all preferences for the authenticated user, including UI, notification, and AI behavior settings.
+      security:
+        - OAuth2AuthCode: [profile]
+      responses:
+        '200':
+          description: User preferences retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserPreferences'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+    
+    put:
+      operationId: updateUserPreferences
+      tags: [Users]
+      summary: Update User Preferences
+      description: |
+        Updates one or more preferences for the authenticated user.
+        Only provided fields will be updated; omitted fields remain unchanged.
+      security:
+        - OAuth2AuthCode: [profile]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserPreferences'
+            examples:
+              theme_and_language:
+                summary: Update Theme and Language
+                value:
+                  themeId: "cyberpunk-neon"
+                  language: "en-US"
+                  notificationsEnabled: true
+      responses:
+        '200':
+          description: Preferences updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserPreferences'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  /user/api-keys:
+    get:
+      operationId: listApiKeys
+      tags: [Users, Security]
+      summary: List API Keys
+      description: Retrieves all API keys associated with the authenticated user.
+      security:
+        - OAuth2AuthCode: [profile]
+      responses:
+        '200':
+          description: API keys retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ApiKey'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+    
+    post:
+      operationId: createApiKey
+      tags: [Users, Security]
+      summary: Create API Key
+      description: Generates a new API key for programmatic access.
+      security:
+        - OAuth2AuthCode: [profile]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: A descriptive name for the API key
+                  example: "Production Server Key"
+                scopes:
+                  type: array
+                  items:
+                    type: string
+                  description: List of scopes to grant this key
+                  example: ["auraframefx.ai", "auraframefx.system"]
+                expiresAt:
+                  type: string
+                  format: date-time
+                  description: Optional expiration timestamp
+              required: [name, scopes]
+      responses:
+        '201':
+          description: API key created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiKey'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+
+  # ============================================================
+  # THEME MANAGEMENT ENDPOINTS
+  # ============================================================
+  /themes:
+    get:
+      operationId: listThemes
+      tags: [Themes]
+      summary: Get Available Themes
+      description: |
+        Retrieves a paginated list of available UI themes with filtering and search capabilities.
+        
+        **Features:**
+        - Search by name or tags
+        - Filter by category or style
+        - Sort by popularity or creation date
+      parameters:
+        - $ref: '#/components/parameters/LimitParam'
+        - $ref: '#/components/parameters/OffsetParam'
+        - name: search
+          in: query
+          description: Search query for theme names or tags
+          schema:
+            type: string
+          example: "dark"
+        - name: category
+          in: query
+          description: Filter by theme category
+          schema:
+            type: string
+            enum: [modern, retro, minimal, gaming, professional]
+        - name: sortBy
+          in: query
+          description: Sort order for results
+          schema:
+            type: string
+            enum: [popular, newest, name]
+            default: popular
+      security: []
+      responses:
+        '200':
+          description: Themes retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedThemes'
+              examples:
+                theme_list:
+                  summary: Sample Theme List
+                  value:
+                    total: 47
+                    limit: 20
+                    offset: 0
+                    data:
+                      - id: "aurora-dark"
+                        name: "Aurora Dark"
+                        description: "A sleek dark theme with aurora-inspired gradients"
+                        category: "modern"
+                        primaryColor: "#6200EE"
+                        secondaryColor: "#03DAC6"
+                        accentColor: "#BB86FC"
+                        previewUrl: "https://cdn.auraframefx.com/themes/aurora-dark-preview.jpg"
+                        author: "AuraFrameFX"
+                        downloads: 15420
+                        rating: 4.8
+                        tags: ["dark", "modern", "gradient"]
+                        createdAt: "2024-08-15T10:00:00Z"
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+    
+    post:
+      operationId: createTheme
+      tags: [Themes]
+      summary: Create Custom Theme
+      description: Allows users to create and upload custom themes.
+      security:
+        - OAuth2AuthCode: [profile, auraframefx.system]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ThemeCreateRequest'
+      responses:
+        '201':
+          description: Theme created successfully
+          headers:
+            Location:
+              description: URL of the created theme
+              schema:
+                type: string
+                format: uri
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Theme'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  /themes/{themeId}:
+    get:
+      operationId: getTheme
+      tags: [Themes]
+      summary: Get Theme Details
+      description: Retrieves detailed information about a specific theme.
+      parameters:
+        - $ref: '#/components/parameters/ThemeIdParam'
+      security: []
+      responses:
+        '200':
+          description: Theme retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Theme'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+
+  /themes/{themeId}/apply:
+    put:
+      operationId: applyTheme
+      tags: [Themes]
+      summary: Apply Theme
+      description: Sets the specified theme as the active theme for the authenticated user.
+      security:
+        - OAuth2AuthCode: [profile]
+      parameters:
+        - $ref: '#/components/parameters/ThemeIdParam'
+      responses:
+        '204':
+          description: Theme applied successfully
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+
+  /themes/{themeId}/export:
+    get:
+      operationId: exportTheme
+      tags: [Themes]
+      summary: Export Theme Configuration
+      description: Exports the theme configuration in various formats for sharing or backup.
+      security:
+        - OAuth2AuthCode: [profile]
+      parameters:
+        - $ref: '#/components/parameters/ThemeIdParam'
+        - name: format
+          in: query
+          description: Export format
+          schema:
+            type: string
+            enum: [json, xml, yaml]
+            default: json
+      responses:
+        '200':
+          description: Theme exported successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Theme'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Theme'
+            application/yaml:
+              schema:
+                $ref: '#/components/schemas/Theme'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+
+  # ============================================================
+  # AI CONTENT GENERATION ENDPOINTS
+  # ============================================================
+  /ai/generate/text:
+    post:
+      operationId: generateText
+      tags: [AI Content]
+      summary: Generate Text Content
+      description: |
+        Generates text based on prompts using advanced language models.
+        
+        **Supported Models:**
+        - `aura-text-pro`: High-quality, balanced (default)
+        - `aura-text-fast`: Lower latency, good quality
+        - `aura-text-creative`: Enhanced creativity, storytelling
+        - `aura-text-precise`: Technical accuracy, factual content
+        
+        **Use Cases:**
+        - Creative writing and storytelling
+        - Code generation and documentation
+        - Content summarization
+        - Translation and paraphrasing
+        - Q&A and knowledge retrieval
+      security:
+        - OAuth2AuthCode: [auraframefx.ai]
+      requestBody:
+        description: Text generation parameters
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateTextRequest'
+            examples:
+              creative_story:
+                summary: Creative Story Generation
+                value:
+                  prompt: "Write a short story about an AI that learns to feel emotions for the first time."
+                  model: "aura-text-creative"
+                  maxTokens: 512
+                  temperature: 0.9
+                  topP: 0.95
+              technical_summary:
+                summary: Technical Documentation
+                value:
+                  prompt: "Explain how OAuth 2.0 authorization code flow works."
+                  model: "aura-text-precise"
+                  maxTokens: 300
+                  temperature: 0.3
+              code_generation:
+                summary: Code Generation
+                value:
+                  prompt: "Write a Python function to calculate Fibonacci numbers using memoization."
+                  model: "aura-text-pro"
+                  maxTokens: 200
+                  temperature: 0.5
+                  stopSequences: ["```"]
+      responses:
+        '200':
+          description: Text generated successfully
+          headers:
+            X-Generation-Time-Ms:
+              description: Time taken to generate the response in milliseconds
+              schema:
+                type: integer
+            X-Tokens-Used:
+              description: Total tokens consumed (prompt + completion)
+              schema:
+                type: integer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateTextResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '429':
+          $ref: '#/components/responses/RateLimitError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailableError'
+
+  /ai/generate/image:
+    post:
+      operationId: generateImage
+      tags: [AI Content]
+      summary: Generate Images
+      description: |
+        Creates AI-generated images from text descriptions.
+        
+        **Models:**
+        - `aura-vision-hd`: High detail, photorealistic (1024x1024)
+        - `aura-vision-creative`: Artistic, stylized (1024x1024)
+        - `aura-vision-fast`: Quick generation (512x512)
+        
+        **Styles:**
+        - photorealistic, anime, digital-art, oil-painting, watercolor, 3d-render
+      security:
+        - OAuth2AuthCode: [auraframefx.ai]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateImageRequest'
+            examples:
+              photorealistic:
+                summary: Photorealistic Portrait
+                value:
+                  prompt: "Professional portrait of a software engineer, modern office background, natural lighting"
+                  model: "aura-vision-hd"
+                  style: "photorealistic"
+                  width: 1024
+                  height: 1024
+                  numImages: 1
+              artistic:
+                summary: Artistic Landscape
+                value:
+                  prompt: "Sunset over futuristic cyberpunk city, neon lights, flying cars"
+                  model: "aura-vision-creative"
+                  style: "digital-art"
+                  width: 1024
+                  height: 768
+                  numImages: 2
+      responses:
+        '200':
+          description: Image(s) generated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '429':
+          $ref: '#/components/responses/RateLimitError'
+
+  /ai/generate/stream:
+    post:
+      operationId: generateTextStream
+      tags: [AI Content]
+      summary: Generate Text (Streaming)
+      description: |
+        Generates text with real-time streaming for immediate feedback.
+        Uses Server-Sent Events (SSE) for progressive content delivery.
+      security:
+        - OAuth2AuthCode: [auraframefx.ai]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateTextRequest'
+      responses:
+        '200':
+          description: Stream initiated successfully
+          content:
+            text/event-stream:
+              schema:
+                type: string
+                description: Server-Sent Events stream
+              examples:
+                streaming_response:
+                  summary: Streaming Response Format
+                  value: |
+                    data: {"chunk":"Hello","finishReason":null}
+                    
+                    data: {"chunk":" world","finishReason":null}
+                    
+                    data: {"chunk":"!","finishReason":"stop"}
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+
+  # ============================================================
+  # AI AGENTS ENDPOINTS
+  # ============================================================
+  /agents:
+    get:
+      operationId: listAgents
+      tags: [AI Agents]
+      summary: List Available AI Agents
+      description: |
+        Retrieves information about all available AI agents and their capabilities.
+      security:
+        - OAuth2AuthCode: [auraframefx.ai]
+      responses:
+        '200':
+          description: Agents retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AgentInfo'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+
+  /agents/{agentType}/invoke:
+    post:
+      operationId: invokeAgent
+      tags: [AI Agents]
+      summary: Invoke AI Agent
+      description: |
+        Sends a request to a specific AI agent for processing.
+        
+        **Available Agents:**
+        - **Aura**: General-purpose conversational AI
+        - **Kai**: Code generation and technical assistance
+        - **Genesis**: Creative content and storytelling
+        - **Cascade**: Data analysis and insights
+        - **NeuralWhisper**: Audio transcription and analysis
+        - **AuraShield**: Security analysis and threat detection
+        - **GenKitMaster**: SDK and toolkit generation
+      security:
+        - OAuth2AuthCode: [auraframefx.ai]
+      parameters:
+        - $ref: '#/components/parameters/AgentTypePathParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgentInvokeRequest'
+            examples:
+              code_review:
+                summary: Code Review (Kai)
+                value:
+                  agentType: "Kai"
+                  prompt: "Review this Python function for bugs and optimization opportunities."
+                  context:
+                    code: "def fibonacci(n):\n    if n <= 1:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)"
+                    language: "python"
+              security_scan:
+                summary: Security Analysis (AuraShield)
+                value:
+                  agentType: "AuraShield"
+                  prompt: "Analyze this API endpoint for security vulnerabilities."
+                  context:
+                    endpoint: "/user/data"
+                    method: "GET"
+                    authentication: "none"
+      responses:
+        '200':
+          description: Agent processed request successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+        '429':
+          $ref: '#/components/responses/RateLimitError'
+
+  /agents/{agentType}/conversations:
+    post:
+      operationId: startAgentConversation
+      tags: [AI Agents]
+      summary: Start Agent Conversation
+      description: Initiates a multi-turn conversation with an AI agent, maintaining context across messages.
+      security:
+        - OAuth2AuthCode: [auraframefx.ai]
+      parameters:
+        - $ref: '#/components/parameters/AgentTypePathParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                initialMessage:
+                  type: string
+                  description: The first message to send to the agent
+                metadata:
+                  type: object
+                  description: Optional metadata for the conversation
+                  additionalProperties: true
+              required: [initialMessage]
+      responses:
+        '201':
+          description: Conversation started successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Conversation'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+
+  /agents/conversations/{conversationId}/messages:
+    post:
+      operationId: sendConversationMessage
+      tags: [AI Agents]
+      summary: Send Message to Conversation
+      description: Sends a new message in an existing agent conversation.
+      security:
+        - OAuth2AuthCode: [auraframefx.ai]
+      parameters:
+        - name: conversationId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: The unique identifier of the conversation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: The message content
+              required: [message]
+      responses:
+        '200':
+          description: Message sent and response received
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentMessage'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+
+  # ============================================================
+  # SYSTEM CUSTOMIZATION ENDPOINTS
+  # ============================================================
+  /system/lockscreen:
+    get:
+      operationId: getSystemLockscreenConfig
+      tags: [System Customization]
+      summary: Get Lock Screen Configuration
+      description: Retrieves the current lock screen customization settings.
+      security:
+        - OAuth2AuthCode: [auraframefx.system]
+      responses:
+        '200':
+          description: Lock screen configuration retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LockScreenConfig'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+    
+    put:
+      operationId: updateSystemLockscreenConfig
+      tags: [System Customization]
+      summary: Update Lock Screen Configuration
+      description: |
+        Updates lock screen customization with provided settings.
+        
+        **Customizable Elements:**
+        - Clock style, size, and color
+        - Background image or live wallpaper
+        - Quick action shortcuts
+        - Widget placement
+        - Animation effects
+        - Haptic feedback settings
+      security:
+        - OAuth2AuthCode: [auraframefx.system]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LockScreenConfig'
+            examples:
+              minimal_setup:
+                summary: Minimal Lock Screen
+                value:
+                  clock:
+                    color: "#FFFFFF"
+                    size: 64.0
+                    style: "digital"
+                  background:
+                    type: "solid"
+                    color: "#000000"
+                  animation:
+                    enabled: false
+                  hapticFeedback:
+                    enabled: true
+                    intensity: 128
+              dynamic_setup:
+                summary: Dynamic Lock Screen
+                value:
+                  clock:
+                    color: "#00FF00"
+                    size: 56.0
+                    style: "analog"
+                  background:
+                    type: "live"
+                    source: "particle-wave"
+                  widgets:
+                    - type: "weather"
+                      position: { x: 10, y: 200 }
+                    - type: "calendar"
+                      position: { x: 10, y: 400 }
+                  animation:
+                    enabled: true
+                    type: "Slide"
+                    duration: 300
+                  hapticFeedback:
+                    enabled: true
+                    intensity: 200
+      responses:
+        '200':
+          description: Lock screen configuration updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LockScreenConfig'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  /system/statusbar:
+    get:
+      operationId: getStatusBarConfig
+      tags: [System Customization]
+      summary: Get Status Bar Configuration
+      description: Retrieves current status bar customization settings.
+      security:
+        - OAuth2AuthCode: [auraframefx.system]
+      responses:
+        '200':
+          description: Status bar configuration retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusBarConfig'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+    
+    put:
+      operationId: updateStatusBarConfig
+      tags: [System Customization]
+      summary: Update Status Bar Configuration
+      description: Updates status bar appearance and behavior.
+      security:
+        - OAuth2AuthCode: [auraframefx.system]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StatusBarConfig'
+      responses:
+        '200':
+          description: Status bar configuration updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusBarConfig'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+
+  /system/navigation:
+    get:
+      operationId: getNavigationConfig
+      tags: [System Customization]
+      summary: Get Navigation Bar
