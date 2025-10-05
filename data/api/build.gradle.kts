@@ -99,3 +99,7 @@ dependencies {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.withType<KotlinCompile>().configureEach {
+    dependsOn(tasks.named("openApiGenerate")) // ✅ CORRECT: ensures codegen runs before compilation
+}
