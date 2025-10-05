@@ -103,13 +103,13 @@ plugins {
 subprojects {
     plugins.withType<org.jetbrains.kotlin.gradle.plugin.KotlinBasePluginWrapper> {
         extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension>("kotlin") {
-            jvmToolchain(24)
+            jvmToolchain(17)
         }
     }
     plugins.withType<JavaPlugin> {
         extensions.configure<JavaPluginExtension>("java") {
             toolchain {
-                languageVersion.set(JavaLanguageVersion.of(24))
+                languageVersion.set(JavaLanguageVersion.of(17))
             }
         }
     }

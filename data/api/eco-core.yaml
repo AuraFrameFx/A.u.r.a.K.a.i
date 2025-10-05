@@ -30,45 +30,166 @@ tags:
 paths:
   /user:
     get:
+      summary: Get user
+      responses:
+        '200':
+          description: Success
     patch:
+      summary: Update user
+      responses:
+        '200':
+          description: Success
   /user/preferences:
     get:
+      summary: Get user preferences
+      responses:
+        '200':
+          description: Success
     put:
+      summary: Update user preferences
+      responses:
+        '200':
+          description: Success
   /user/api-keys:
     get:
+      summary: Get user API keys
+      responses:
+        '200':
+          description: Success
     post:
+      summary: Create user API key
+      responses:
+        '200':
+          description: Success
   /user/api-keys/{keyId}:
+    parameters:
+      - name: keyId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Unique identifier of the API key
     delete:
+      summary: Delete user API key
+      responses:
+        '200':
+          description: Success
   /themes:
     get:
+      summary: Get themes
+      responses:
+        '200':
+          description: Success
     post:
+      summary: Create theme
+      responses:
+        '200':
+          description: Success
   /themes/{themeId}:
+    parameters:
+      - $ref: '#/components/parameters/ThemeIdParam'
     get:
+      summary: Get theme by ID
+      responses:
+        '200':
+          description: Success
   /themes/{themeId}/apply:
+    parameters:
+      - $ref: '#/components/parameters/ThemeIdParam'
     put:
+      summary: Apply theme
+      responses:
+        '200':
+          description: Success
   /themes/{themeId}/export:
+    parameters:
+      - $ref: '#/components/parameters/ThemeIdParam'
     get:
+      summary: Export theme
+      responses:
+        '200':
+          description: Success
   /themes/{themeId}/versions:
+    parameters:
+      - $ref: '#/components/parameters/ThemeIdParam'
     get:
+      summary: Get theme versions
+      responses:
+        '200':
+          description: Success
   /analytics/usage:
     get:
+      summary: Get analytics usage
+      responses:
+        '200':
+          description: Success
   /analytics/agents:
     get:
+      summary: Get analytics agents
+      responses:
+        '200':
+          description: Success
   /analytics/export:
     post:
+      summary: Export analytics
+      responses:
+        '200':
+          description: Success
   /security/audit-log:
     get:
+      summary: Get security audit log
+      responses:
+        '200':
+          description: Success
   /security/sessions:
     get:
+      summary: Get security sessions
+      responses:
+        '200':
+          description: Success
   /security/sessions/{sessionId}:
+    parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Unique identifier of the session
     delete:
+      summary: Delete security session
+      responses:
+        '200':
+          description: Success
   /security/mfa:
     post:
+      summary: Post security MFA
+      responses:
+        '200':
+          description: Success
   /plugins/agents:
     get:
+      summary: Get plugin agents
+      responses:
+        '200':
+          description: Success
     post:
+      summary: Create plugin agent
+      responses:
+        '200':
+          description: Success
   /plugins/agents/{pluginId}:
+    parameters:
+      - name: pluginId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Unique identifier of the plugin agent
     delete:
+      summary: Delete plugin agent
+      responses:
+        '200':
+          description: Success
 components:
   securitySchemes:
     OAuth2AuthCode:
@@ -304,19 +425,30 @@ components:
       type: object
       additionalProperties: false
       properties:
-        name: { type: string, minLength: 3, maxLength: 50 }
-        description: { type: string, maxLength: 500 }
+        name:
+          type: string
+          minLength: 3
+          maxLength: 50
+        description:
+          type: string
+          maxLength: 500
         category:
           type: string
           enum: [ modern, retro, minimal, gaming, professional, cyberpunk ]
-        primaryColor: { $ref: '#/components/schemas/HexColor' }
-        secondaryColor: { $ref: '#/components/schemas/HexColor' }
-        accentColor: { $ref: '#/components/schemas/HexColor' }
-        backgroundColor:{ $ref: '#/components/schemas/HexColor' }
-        textColor: { $ref: '#/components/schemas/HexColor' }
+        primaryColor:
+          $ref: '#/components/schemas/HexColor'
+        secondaryColor:
+          $ref: '#/components/schemas/HexColor'
+        accentColor:
+          $ref: '#/components/schemas/HexColor'
+        backgroundColor:
+          $ref: '#/components/schemas/HexColor'
+        textColor:
+          $ref: '#/components/schemas/HexColor'
         tags:
           type: array
-          items: { type: string }
+          items:
+            type: string
           maxItems: 10
         compatibility:
           type: array

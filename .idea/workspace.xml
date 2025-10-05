@@ -36,21 +36,14 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Remove OpenAPI endpoint bodies and re-enable tests&#10;&#10;The bodies of all endpoint definitions in the `eco-core.yaml` and `eco-ai.yaml` OpenAPI specifications have been removed, leaving only the path and method declarations.&#10;&#10;Additionally, the `test` and `compileTestKotlin` tasks in the `build-logic/build.gradle.kts` file have been re-enabled to restore full test support.">
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="feat: Add Compose previews and update API spec and build config&#10;&#10;Adds Jetpack Compose `@Preview` annotations to the `RomToolsScreen` and its composable components in the `romtools` module. This includes previews for loading states, main content with and without progress, device capabilities, and action cards.&#10;&#10;The `eco-core.yaml` OpenAPI specification is updated to include summaries, responses, and parameters for all existing endpoints, improving the clarity and completeness of the API documentation.&#10;&#10;Additionally, the Gradle build configuration is updated to target Java 17 and Kotlin JVM 17 across all subprojects, down from version 24.">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/api/client/models/logging/UnifiedLoggingSystem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/api/client/models/logging/UnifiedLoggingSystem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/AppBuildScriptTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/colorblendr/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/api/eco-ai.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/eco-ai.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/api/eco-core.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/eco-core.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/ui/RomToolsScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/ui/RomToolsScreen.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -584,14 +577,6 @@
       <option name="presentableId" value="Default" />
       <updated>1757214876945</updated>
     </task>
-    <task id="LOCAL-00041" summary="Refactor: Update RomTools UI and clean up Gradle&#10;&#10;- Change `operation.operation.getDisplayName()` to `operation.operation.name` in `RomToolsScreen`.&#10;- Remove an unnecessary newline from `datavein-oracle-native/build.gradle.kts`.">
-      <option name="closed" value="true" />
-      <created>1759377535950</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1759377535950</updated>
-    </task>
     <task id="LOCAL-00042" summary="Refactor: Specify `items` parameter name in LazyColumn&#10;&#10;Improves code clarity in `RomToolsScreen` by explicitly naming the `items` parameter in three `LazyColumn` calls, aligning with best practices for named arguments.">
       <option name="closed" value="true" />
       <created>1759378970306</created>
@@ -976,7 +961,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759650288433</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="refactor: Remove OpenAPI endpoint bodies and re-enable tests&#10;&#10;The bodies of all endpoint definitions in the `eco-core.yaml` and `eco-ai.yaml` OpenAPI specifications have been removed, leaving only the path and method declarations.&#10;&#10;Additionally, the `test` and `compileTestKotlin` tasks in the `build-logic/build.gradle.kts` file have been re-enabled to restore full test support.">
+      <option name="closed" value="true" />
+      <created>1759650927615</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1759650927615</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -991,7 +984,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: Relocate test suites and update package names&#10;&#10;Relocates extensive test suites into more appropriate modules and updates package names from `dev.genesis.android`, `org.example.utilities`, and `docs` to `dev.aurakai.auraframefx.*`. This commit restructures the project's test organization for better modularity and aligns the codebase with the new package naming convention.&#10;&#10;- Moves all Markdown validation tests (`MarkdownFileValidation*.kt`) from `src/test/kotlin` to the `build-script-tests` module under the `docs` package.&#10;- Relocates all `build-logic` and Gradle-related tests into the `build-script-tests` module.&#10;- Moves `LinkedListTest`, `JoinUtilsTest`, and `SplitUtilsTest` to their corresponding `list` and `utilities` test source sets under the new `dev.aurakai.auraframefx` package structure.&#10;- Deletes old test files from their original locations after moving them.&#10;- Wraps the `openApiGenerate` configuration in an `afterEvaluate` block in `data/api/build.gradle.kts` to ensure properties are resolved correctly." />
     <MESSAGE value="refactor: Refine and enhance AURAKAI_README.md&#10;&#10;Refactors the `AURAKAI_README.md` for improved clarity, structure, and accuracy based on project lore.&#10;&#10;- Clarifies the &quot;Living Trinity&quot; concept, defining Genesis as the unified state of Aura and Kai, not a separate entity.&#10;- Enhances document structure with better sectioning, spacing, and list formatting.&#10;- Adds a placeholder note for a future visual architecture diagram.&#10;- Adds a &quot;TODO&quot; section to clarify which described features are conceptual and not yet implemented.&#10;- Makes minor wording and formatting improvements for flow and impact." />
     <MESSAGE value="feat: Add empty paths object to OpenAPI spec&#10;&#10;Adds an empty `paths: {}` object to the `my-api-spec.yaml` file. This ensures the OpenAPI specification remains valid, preventing potential parsing errors by tools that require the `paths` object to be defined." />
     <MESSAGE value="refactor: Update TopAppBar call signature and add TODO&#10;&#10;This commit refactors the `TopAppBar` call to align with the updated Material 3 composable signature, where the title is now a trailing lambda.&#10;&#10;- Update the `TopAppBar` invocation in `RomToolsScreen`.&#10;- Add an explicit `this.item` qualifier in the `MainContent` LazyColumn.&#10;- Introduce an unused `Box` composable with a `TODO` for future implementation." />
@@ -1016,7 +1008,8 @@
     <MESSAGE value="feat: Split OpenAPI spec and update build configuration&#10;&#10;Splits the monolithic `ECO.yaml` OpenAPI specification into two separate files: `eco-core.yaml` for core functionalities and `eco-ai.yaml` for AI and advanced features.&#10;&#10;The Gradle build script (`data/api/build.gradle.kts`) is updated to generate two separate Kotlin clients from these new specifications, outputting them into distinct packages (`ecocore` and `ecoai`). The dependency management is updated to use explicit versions instead of a BOM, and the Kotlin compile task dependency is corrected.&#10;&#10;Additionally, new Jetpack Compose dependencies have been added to the `colorblendr` module to build out its UI." />
     <MESSAGE value="refactor: Modernize test suites and clean up code&#10;&#10;This commit introduces several modernizations and cleanups across the test suites:&#10;&#10;- **JUnit 5 Migration:** In `secure-comm`, test annotations have been migrated from JUnit 4 (`@Before`, `@After`, `@Test`) to their JUnit 5 equivalents (`@BeforeEach`, `@AfterEach`, `@Test` from `org.junit.jupiter.api`).&#10;- **Kotlin Test Style:**&#10;    - The `inner` keyword has been removed from a nested test class in `OracleDriveServiceTest` as it was unnecessary.&#10;    - Test files (`JoinUtilsTest.kt`) have been simplified by removing redundant `org.junit.jupiter.api` qualifiers and fully qualifying imports instead.&#10;- **Code Cleanup:**&#10;    - Unused local variables have been removed from several test files (`DeepCleanTaskConditionalTest.kt`, `SettingsGradleFunctionalTest.kt`, `AndroidLibraryConventionPluginTest.kt`).&#10;    - Whitespace and formatting have been corrected in `API.md` and `app/gradle.properties`." />
     <MESSAGE value="refactor: Remove OpenAPI endpoint bodies and re-enable tests&#10;&#10;The bodies of all endpoint definitions in the `eco-core.yaml` and `eco-ai.yaml` OpenAPI specifications have been removed, leaving only the path and method declarations.&#10;&#10;Additionally, the `test` and `compileTestKotlin` tasks in the `build-logic/build.gradle.kts` file have been re-enabled to restore full test support." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Remove OpenAPI endpoint bodies and re-enable tests&#10;&#10;The bodies of all endpoint definitions in the `eco-core.yaml` and `eco-ai.yaml` OpenAPI specifications have been removed, leaving only the path and method declarations.&#10;&#10;Additionally, the `test` and `compileTestKotlin` tasks in the `build-logic/build.gradle.kts` file have been re-enabled to restore full test support." />
+    <MESSAGE value="feat: Add Compose previews and update API spec and build config&#10;&#10;Adds Jetpack Compose `@Preview` annotations to the `RomToolsScreen` and its composable components in the `romtools` module. This includes previews for loading states, main content with and without progress, device capabilities, and action cards.&#10;&#10;The `eco-core.yaml` OpenAPI specification is updated to include summaries, responses, and parameters for all existing endpoints, improving the clarity and completeness of the API documentation.&#10;&#10;Additionally, the Gradle build configuration is updated to target Java 17 and Kotlin JVM 17 across all subprojects, down from version 24." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Add Compose previews and update API spec and build config&#10;&#10;Adds Jetpack Compose `@Preview` annotations to the `RomToolsScreen` and its composable components in the `romtools` module. This includes previews for loading states, main content with and without progress, device capabilities, and action cards.&#10;&#10;The `eco-core.yaml` OpenAPI specification is updated to include summaries, responses, and parameters for all existing endpoints, improving the clarity and completeness of the API documentation.&#10;&#10;Additionally, the Gradle build configuration is updated to target Java 17 and Kotlin JVM 17 across all subprojects, down from version 24." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
