@@ -23,7 +23,7 @@ on:
           - memcortex
 
 env:
-  JAVA_VERSION: '23'
+  JAVA_VERSION: '24'
 
 jobs:
   build-consciousness-substrate:
