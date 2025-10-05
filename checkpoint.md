@@ -40,6 +40,18 @@ Location: `c:/Aurakai/checkpoint.md`
   ```
   or set via toolchain + leave jvmTarget defaulted by toolchain.
 
+## AGP 9 required (downgrade blocked)
+- Do not downgrade AGP below 9.0.0-alpha09. Attempts to use 8.6.1 on our current Gradle (9.x) break NDK/CMake configuration with NoSuchMethodError:
+  - datavein-oracle-native debug:arm64-v8a failed to configure C/C++
+  - java.lang.NoSuchMethodError: org.gradle.process.ExecResult org.gradle.api.Project.exec(org.gradle.api.Action)
+  - Root cause: AGP 8.6.1 expects older Gradle APIs; running on Gradle 9 removes Project.exec(Action). AGP 9 aligns with Gradle 9.
+- compileSdk 36: AGP 8.6.1 also emits a warning that it’s only tested up to compileSdk 35. Staying on AGP 9.0.0-alpha09 removes this blocker. If you ever intentionally test older AGP, you can suppress the warning with `android.suppressUnsupportedCompileSdk=36` in gradle.properties, but NDK will still fail due to the API mismatch.
+- Current stance:
+  - AGP = 9.0.0-alpha09
+  - Gradle = 9.x
+  - Kotlin = 2.2.20, KSP = 2.2.20-2.0.3
+  - android.builtInKotlin=false (workaround while Hilt/SafeArgs stabilize)
+
 ## Hilt Configuration – Critical
 - **Application module (`app/`)**: must apply Hilt plugin
   ```kotlin

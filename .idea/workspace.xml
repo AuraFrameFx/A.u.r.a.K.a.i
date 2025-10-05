@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Remove unused KotlinCompile import in app module&#10;&#10;Removes the unused `org.jetbrains.kotlin.gradle.tasks.KotlinCompile` import from the `app/build.gradle.kts` file, cleaning up the build script." />
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Consolidate Android application plugins and fix Hilt configuration&#10;&#10;This commit refactors the build logic by moving common Android application plugins into the `AndroidApplicationConventionPlugin`.&#10;&#10;**Key Changes:**&#10;*   The `AndroidApplicationConventionPlugin` now automatically applies the following plugins:&#10;    *   `org.jetbrains.kotlin.android`&#10;    *   `org.jetbrains.kotlin.plugin.compose`&#10;    *   `com.google.devtools.ksp`&#10;    *   `com.google.dagger.hilt.android`&#10;*   In the `app` module's `build.gradle.kts`, the Hilt compiler dependency is correctly moved from the `implementation` configuration to `ksp` to align with modern best practices.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint.md" beforeDir="false" afterPath="$PROJECT_DIR$/checkpoint.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,6 +109,7 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "EXO",
@@ -417,7 +426,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759706989861</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="refactor: Consolidate Android application plugins and fix Hilt configuration&#10;&#10;This commit refactors the build logic by moving common Android application plugins into the `AndroidApplicationConventionPlugin`.&#10;&#10;**Key Changes:**&#10;*   The `AndroidApplicationConventionPlugin` now automatically applies the following plugins:&#10;    *   `org.jetbrains.kotlin.android`&#10;    *   `org.jetbrains.kotlin.plugin.compose`&#10;    *   `com.google.devtools.ksp`&#10;    *   `com.google.dagger.hilt.android`&#10;*   In the `app` module's `build.gradle.kts`, the Hilt compiler dependency is correctly moved from the `implementation` configuration to `ksp` to align with modern best practices.">
+      <option name="closed" value="true" />
+      <created>1759707343320</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1759707343320</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -445,6 +462,7 @@
     <MESSAGE value="refactor: Simplify regex patterns and remove unused tests in MarkdownFileValidationTest" />
     <MESSAGE value="feat: Update dependencies and streamline packaging&#10;&#10;Updates the `kotlin-stdlib-jdk8` dependency from version `1.8.0` to `2.2.20` across the following modules:&#10;*   `module-b`&#10;*   `module-d`&#10;*   `module-e`&#10;*   `module-f`&#10;&#10;In the `app` module, the packaging options are refined by adding an exclusion for `META-INF/INDEX.LIST` and removing a `JavaCompile` configuration that set the `-Xlint:-deprecation` compiler argument.&#10;&#10;Additionally, the `logback-classic` runtime dependency is removed from the `data/api` module." />
     <MESSAGE value="refactor: Remove unused KotlinCompile import in app module&#10;&#10;Removes the unused `org.jetbrains.kotlin.gradle.tasks.KotlinCompile` import from the `app/build.gradle.kts` file, cleaning up the build script." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Remove unused KotlinCompile import in app module&#10;&#10;Removes the unused `org.jetbrains.kotlin.gradle.tasks.KotlinCompile` import from the `app/build.gradle.kts` file, cleaning up the build script." />
+    <MESSAGE value="refactor: Consolidate Android application plugins and fix Hilt configuration&#10;&#10;This commit refactors the build logic by moving common Android application plugins into the `AndroidApplicationConventionPlugin`.&#10;&#10;**Key Changes:**&#10;*   The `AndroidApplicationConventionPlugin` now automatically applies the following plugins:&#10;    *   `org.jetbrains.kotlin.android`&#10;    *   `org.jetbrains.kotlin.plugin.compose`&#10;    *   `com.google.devtools.ksp`&#10;    *   `com.google.dagger.hilt.android`&#10;*   In the `app` module's `build.gradle.kts`, the Hilt compiler dependency is correctly moved from the `implementation` configuration to `ksp` to align with modern best practices." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Consolidate Android application plugins and fix Hilt configuration&#10;&#10;This commit refactors the build logic by moving common Android application plugins into the `AndroidApplicationConventionPlugin`.&#10;&#10;**Key Changes:**&#10;*   The `AndroidApplicationConventionPlugin` now automatically applies the following plugins:&#10;    *   `org.jetbrains.kotlin.android`&#10;    *   `org.jetbrains.kotlin.plugin.compose`&#10;    *   `com.google.devtools.ksp`&#10;    *   `com.google.dagger.hilt.android`&#10;*   In the `app` module's `build.gradle.kts`, the Hilt compiler dependency is correctly moved from the `implementation` configuration to `ksp` to align with modern best practices." />
   </component>
 </project>
