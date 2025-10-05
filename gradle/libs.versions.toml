@@ -162,6 +162,7 @@ testing-android = [
 
 [libraries]
 # ===== GENERATIVE AI =====
+androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
 androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
 google-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 

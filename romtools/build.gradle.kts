@@ -64,8 +64,8 @@ android {
         androidTestImplementation(platform(libs.androidx.compose.bom))
         // androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
         implementation(kotlin("stdlib-jdk8"))
-        implementation("androidx.compose.material:material-icons-extended")
-        implementation("androidx.hilt:hilt-navigation-compose:1.3.0")
+        implementation(libs.androidx.material.icons.extended)
+        implementation(libs.hilt.navigation.compose)
     }
 
 // Copy task
@@ -130,6 +130,12 @@ android {
             )
 
             logger.lifecycle("✅ Documentation generated at: ${indexFile.absolutePath}")
+        }
+    }
+
+    packaging {
+        resources {
+            excludes += "META-INF/gradle/incremental.annotation.processors"
         }
     }
 }
