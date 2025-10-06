@@ -122,6 +122,9 @@ dependencies {
 
     // ===== WORKMANAGER =====
     implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.hilt.work)
+
+    // ===== UTILITIES =====
     implementation(libs.timber)
     implementation(libs.coil.compose)
 
