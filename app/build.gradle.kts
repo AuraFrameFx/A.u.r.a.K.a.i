@@ -1,7 +1,6 @@
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 plugins {
     id("genesis.android.application")
-    id("com.android.base")  // AGP 9 alpha: expose BaseExtension before Hilt
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
 }
@@ -45,8 +44,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.toVersion("24")
+        targetCompatibility = JavaVersion.toVersion("24")
         isCoreLibraryDesugaringEnabled = true
     }
     packaging {

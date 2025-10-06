@@ -34,21 +34,23 @@ class BuildGradleKtsTest {
     @Test
     @DisplayName("Plugins: required plugins are applied")
     fun pluginsAreApplied() {
-        val ids = listOf(
-            "com.android.application",
-            "org.jetbrains.kotlin.android",
-            "org.jetbrains.kotlin.plugin.compose",
-            "org.jetbrains.kotlin.plugin.serialization",
-            "com.google.devtools.ksp",
-            "com.google.dagger.hilt.android",
-            "com.google.gms.google-services"
+        // Check for genesis.android.application convention plugin
+        assertTrue(
+            Regex("""id\("genesis\.android\.application"\)""").containsMatchIn(script),
+            "Expected plugin id(\"genesis.android.application\") in app/build.gradle.kts"
         )
-        ids.forEach { id ->
-            assertTrue(
-                Regex("""id\("$id"\)""").containsMatchIn(script),
-                "Expected plugin id(\"$id\") in app/build.gradle.kts"
-            )
-        }
+        
+        // Check for Hilt plugin alias
+        assertTrue(
+            Regex("""alias\(libs\.plugins\.hilt\)""").containsMatchIn(script),
+            "Expected alias(libs.plugins.hilt) in app/build.gradle.kts"
+        )
+        
+        // Check for KSP plugin alias
+        assertTrue(
+            Regex("""alias\(libs\.plugins\.ksp\)""").containsMatchIn(script),
+            "Expected alias(libs.plugins.ksp) in app/build.gradle.kts"
+        )
     }
 
     @Test

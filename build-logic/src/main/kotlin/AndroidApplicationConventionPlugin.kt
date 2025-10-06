@@ -68,8 +68,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                         }
 
                         compileOptions {
-                            sourceCompatibility = JavaVersion.VERSION_17
-                            targetCompatibility = JavaVersion.VERSION_17
+                            sourceCompatibility = JavaVersion.VERSION_24
+                            targetCompatibility = JavaVersion.VERSION_24
                             isCoreLibraryDesugaringEnabled = true
                         }
 
@@ -104,8 +104,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                     }
 
                     extensions.configure<JavaPluginExtension>("java") {
-                        sourceCompatibility = JavaVersion.VERSION_17
-                        targetCompatibility = JavaVersion.VERSION_17
+                        sourceCompatibility = JavaVersion.VERSION_24
+                        targetCompatibility = JavaVersion.VERSION_24
                     }
 
                     // Clean tasks for app module (per AGENT_INSTRUCTIONS.md section 4)
@@ -145,7 +145,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             pluginManager.withPlugin("org.jetbrains.kotlin.android") {
                 try {
                     extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
-                        jvmToolchain(17)
+                        jvmToolchain(24)
                     }
                 } catch (e: Exception) {
                     throw GradleException(
