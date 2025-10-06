@@ -48,10 +48,9 @@ class BuildScriptTest {
             // The build uses genesis.android.application convention plugin instead of raw plugins
             assertTrue(content.contains("""id("genesis.android.application")"""), 
                 "Missing convention plugin: genesis.android.application")
-            assertTrue(content.contains("""alias(libs.plugins.hilt)"""), 
-                "Missing Hilt plugin")
-            assertTrue(content.contains("""alias(libs.plugins.ksp)"""),
-                "Missing KSP plugin")
+            // Hilt is now applied via the genesis.android.hilt convention plugin
+            assertTrue(content.contains("""id("genesis.android.hilt")"""), 
+                "Missing Hilt convention plugin")
         }
     }
 

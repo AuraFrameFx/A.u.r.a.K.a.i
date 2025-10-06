@@ -1,8 +1,6 @@
 plugins {
     id("genesis.android.application")
-    alias(libs.plugins.hilt)
-
-    alias(libs.plugins.ksp)
+    id("genesis.android.hilt")
 }
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
