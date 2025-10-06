@@ -1,6 +1,8 @@
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 plugins {
     id("genesis.android.application")
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -118,7 +120,8 @@ dependencies {
     implementation(libs.bundles.firebase)
 
     // ===== HILT DEPENDENCY INJECTION =====
-    // Hilt dependencies auto-added by genesis.android.application convention plugin
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
     // ===== WORKMANAGER =====
     implementation(libs.androidx.work.runtime.ktx)
