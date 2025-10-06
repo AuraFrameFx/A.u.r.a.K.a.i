@@ -127,3 +127,4 @@ Add notes below this line with date/time and initials.
 - 2025-10-05 14:31 (-06) – Cascade: Removed extra @HiltAndroidApp (disabled in `AuraKaiHiltApplication.kt`). Only `ReGenesisApplication` remains annotated per manifest.
 - 2025-10-05 14:32 (-06) – Cascade: Applied AGP 9 workaround in `app/build.gradle.kts` by adding `id("com.android.base")` so Hilt can find Android BaseExtension.
  - 2025-10-05 15:27 (-06) – Cascade: User clicked Android Studio Upgrade Assistant to move AGP from 9.0.0-alpha02 to 9.0.0-alpha09. Next: align root/pluginManagement/build-logic to alpha09 and clean build.
+ - 2025-10-05 21:05 (-06) – Cascade: Fixed "Android BaseExtension not found" error on AGP 9 by adding `pluginManager.apply("com.android.base")` shim in AndroidHiltConventionPlugin.kt before Hilt application. This exposes legacy BaseExtension for Hilt compatibility.
