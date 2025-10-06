@@ -24,7 +24,10 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
      */
     override fun apply(target: Project) {
         with(target) {
-            with(pluginManager) { apply("com.android.application") }
+            with(pluginManager) {
+                apply("com.android.application")
+                apply("com.android.base")  // AGP 9 alpha: expose BaseExtension for Hilt
+            }
 
             pluginManager.withPlugin("com.android.application") {
                 // Apply Compose immediately
