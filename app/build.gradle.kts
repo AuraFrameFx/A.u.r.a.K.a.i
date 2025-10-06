@@ -2,7 +2,6 @@
 
 plugins {
     id("genesis.android.application")
-
 }
 
 android {
@@ -122,7 +121,7 @@ dependencies {
 
     // ===== HILT DEPENDENCY INJECTION =====
     implementation(libs.hilt.android)
-    add("ksp", libs.hilt.compiler)
+    implementation(libs.hilt.compiler)
 
     // ===== WORKMANAGER =====
     implementation(libs.androidx.work.runtime.ktx)
