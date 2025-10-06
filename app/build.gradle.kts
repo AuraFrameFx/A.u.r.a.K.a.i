@@ -1,6 +1,9 @@
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 plugins {
-    id("genesis.android.application")  // Handles com.android.base, Hilt, KSP internally
+    id("genesis.android.application")
+    id("com.android.base")  // AGP 9 alpha: expose BaseExtension before Hilt
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {

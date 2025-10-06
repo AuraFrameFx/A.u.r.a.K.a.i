@@ -9,8 +9,20 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor(build): Simplify app plugins and update Hilt dependency&#10;&#10;This commit streamlines the `app/build.gradle.kts` file by consolidating plugin management and adjusting the Hilt compiler dependency.&#10;&#10;The `genesis.android.application` plugin now internally handles the application of `com.android.base`, Hilt, and KSP, removing the need for their explicit declaration in the `plugins` block.&#10;&#10;Additionally, the Hilt compiler dependency has been changed from `ksp` to `implementation`.">
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor(build-logic): Defer Hilt plugin application&#10;&#10;This commit updates the `AndroidApplicationConventionPlugin` to ensure the Android base plugin (`com.android.base`) is applied before applying the Hilt, KSP, and Compose plugins.&#10;&#10;This is achieved by wrapping the plugin applications and Hilt dependency configuration within a `pluginManager.withPlugin(&quot;com.android.base&quot;)` block. This change improves build reliability, particularly with alpha versions of the Android Gradle Plugin.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLEANUP.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/CLEANUP.TXT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidHiltConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidHiltConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint.md" beforeDir="false" afterPath="$PROJECT_DIR$/checkpoint.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -725,7 +737,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759720624931</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="refactor(build): Simplify app plugins and update Hilt dependency&#10;&#10;This commit streamlines the `app/build.gradle.kts` file by consolidating plugin management and adjusting the Hilt compiler dependency.&#10;&#10;The `genesis.android.application` plugin now internally handles the application of `com.android.base`, Hilt, and KSP, removing the need for their explicit declaration in the `plugins` block.&#10;&#10;Additionally, the Hilt compiler dependency has been changed from `ksp` to `implementation`.">
+      <option name="closed" value="true" />
+      <created>1759720656800</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1759720656800</updated>
+    </task>
+    <task id="LOCAL-00048" summary="refactor(build-logic): Defer Hilt plugin application&#10;&#10;This commit updates the `AndroidApplicationConventionPlugin` to ensure the Android base plugin (`com.android.base`) is applied before applying the Hilt, KSP, and Compose plugins.&#10;&#10;This is achieved by wrapping the plugin applications and Hilt dependency configuration within a `pluginManager.withPlugin(&quot;com.android.base&quot;)` block. This change improves build reliability, particularly with alpha versions of the Android Gradle Plugin.">
+      <option name="closed" value="true" />
+      <created>1759720801163</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1759720801163</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -752,7 +780,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="build: Suppress deprecation warnings in Java compilation&#10;&#10;This commit configures the Java compiler for the `app` module to suppress deprecation warnings by adding the `-Xlint:-deprecation` compiler argument." />
     <MESSAGE value="refactor: Modernize code and clean up tests&#10;&#10;This commit introduces two key changes: modernizing a deprecated path retrieval method in `RomToolsManager` and removing commented-out code from `MarkdownFileValidationTest`.&#10;&#10;In `RomToolsManager.kt`, the deprecated `getPath()` method call on `Environment.getExternalStorageDirectory()` has been replaced with the modern `path` property accessor.&#10;&#10;In `MarkdownFileValidationTest.kt`, several lines of commented-out code related to checking for Docker mentions have been removed to improve test clarity and maintainability." />
     <MESSAGE value="refactor: Simplify regex patterns and remove unused tests in MarkdownFileValidationTest" />
     <MESSAGE value="feat: Update dependencies and streamline packaging&#10;&#10;Updates the `kotlin-stdlib-jdk8` dependency from version `1.8.0` to `2.2.20` across the following modules:&#10;*   `module-b`&#10;*   `module-d`&#10;*   `module-e`&#10;*   `module-f`&#10;&#10;In the `app` module, the packaging options are refined by adding an exclusion for `META-INF/INDEX.LIST` and removing a `JavaCompile` configuration that set the `-Xlint:-deprecation` compiler argument.&#10;&#10;Additionally, the `logback-classic` runtime dependency is removed from the `data/api` module." />
@@ -777,7 +804,8 @@
     <MESSAGE value="feat(build): Add Hilt and KSP to app module&#10;&#10;This commit configures Hilt for dependency injection in the `app` module.&#10;&#10;The following changes were made in `app/build.gradle.kts`:&#10;*   The `hilt` and `ksp` Gradle plugins were added.&#10;*   The `hilt-android` and `hilt-compiler` dependencies were explicitly defined, replacing the previous convention plugin setup." />
     <MESSAGE value="fix(build): Add AGP 9 workaround for Hilt plugin&#10;&#10;Adds the `com.android.base` plugin before the Hilt plugin in `app/build.gradle.kts`. This is a necessary workaround for a known issue with the Android Gradle Plugin version 9 to ensure the build process completes successfully." />
     <MESSAGE value="refactor(build): Simplify app plugins and update Hilt dependency&#10;&#10;This commit streamlines the `app/build.gradle.kts` file by consolidating plugin management and adjusting the Hilt compiler dependency.&#10;&#10;The `genesis.android.application` plugin now internally handles the application of `com.android.base`, Hilt, and KSP, removing the need for their explicit declaration in the `plugins` block.&#10;&#10;Additionally, the Hilt compiler dependency has been changed from `ksp` to `implementation`." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(build): Simplify app plugins and update Hilt dependency&#10;&#10;This commit streamlines the `app/build.gradle.kts` file by consolidating plugin management and adjusting the Hilt compiler dependency.&#10;&#10;The `genesis.android.application` plugin now internally handles the application of `com.android.base`, Hilt, and KSP, removing the need for their explicit declaration in the `plugins` block.&#10;&#10;Additionally, the Hilt compiler dependency has been changed from `ksp` to `implementation`." />
+    <MESSAGE value="refactor(build-logic): Defer Hilt plugin application&#10;&#10;This commit updates the `AndroidApplicationConventionPlugin` to ensure the Android base plugin (`com.android.base`) is applied before applying the Hilt, KSP, and Compose plugins.&#10;&#10;This is achieved by wrapping the plugin applications and Hilt dependency configuration within a `pluginManager.withPlugin(&quot;com.android.base&quot;)` block. This change improves build reliability, particularly with alpha versions of the Android Gradle Plugin." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(build-logic): Defer Hilt plugin application&#10;&#10;This commit updates the `AndroidApplicationConventionPlugin` to ensure the Android base plugin (`com.android.base`) is applied before applying the Hilt, KSP, and Compose plugins.&#10;&#10;This is achieved by wrapping the plugin applications and Hilt dependency configuration within a `pluginManager.withPlugin(&quot;com.android.base&quot;)` block. This change improves build reliability, particularly with alpha versions of the Android Gradle Plugin." />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">

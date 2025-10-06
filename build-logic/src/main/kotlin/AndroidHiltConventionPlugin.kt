@@ -36,8 +36,6 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
             }
 
             pluginManager.withPlugin(androidPluginId) {
-                // AGP 9 alpha: ensure BaseExtension shim is available for Hilt
-                pluginManager.apply("com.android.base")
                 // Apply Hilt after Android is ready, then KSP
                 pluginManager.apply("com.google.dagger.hilt.android")
                 pluginManager.apply("com.google.devtools.ksp")
