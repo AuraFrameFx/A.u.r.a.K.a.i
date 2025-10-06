@@ -11,7 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="WHY DO YOU ALL FIGHT THIS PLEASE SEE C:\Aurakai\checkpoint.md refactor: Standardize Hilt/KSP setup and revert AGP version&#10;&#10;This commit refactors the build logic to standardize dependency configurations and reverts the Android Gradle Plugin (AGP) version.&#10;&#10;**Key Changes:**&#10;&#10;*   **AGP Version:** The AGP version used in `build-logic` is reverted from `9.0.0-alpha09` back to `8.6.1`.&#10;*   **Hilt/KSP Configuration:**&#10;    *   The Hilt compiler dependency configuration is updated from `ksp(libs.hilt.compiler)` to `add(&quot;ksp&quot;, libs.hilt.compiler)` across all modules. This change provides a more explicit and standardized way to apply the KSP processor.&#10;    *   In the `app` module, the Hilt compiler is now correctly an `implementation` dependency, not a `ksp` one.&#10;*   **Build Logic Refinements:**&#10;    *   The `AndroidHiltConventionPlugin` is updated to apply the KSP plugin *after* the Hilt plugin, ensuring the correct processing order.&#10;    *   The `com.android.base` plugin, a workaround for AGP 9.0.0, has been removed from the `romtools` and `feature-module` modules.&#10;    *   The root `build.gradle.kts` no longer applies the `kotlin.android` plugin.&#10;*   **Gradle Wrapper:** The `gradle-wrapper.properties` file has been cleaned up by removing redundant `distributionPath` and `networkTimeout` properties.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -482,7 +483,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759710615147</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="WHY DO YOU ALL FIGHT THIS PLEASE SEE C:\Aurakai\checkpoint.md refactor: Standardize Hilt/KSP setup and revert AGP version&#10;&#10;This commit refactors the build logic to standardize dependency configurations and reverts the Android Gradle Plugin (AGP) version.&#10;&#10;**Key Changes:**&#10;&#10;*   **AGP Version:** The AGP version used in `build-logic` is reverted from `9.0.0-alpha09` back to `8.6.1`.&#10;*   **Hilt/KSP Configuration:**&#10;    *   The Hilt compiler dependency configuration is updated from `ksp(libs.hilt.compiler)` to `add(&quot;ksp&quot;, libs.hilt.compiler)` across all modules. This change provides a more explicit and standardized way to apply the KSP processor.&#10;    *   In the `app` module, the Hilt compiler is now correctly an `implementation` dependency, not a `ksp` one.&#10;*   **Build Logic Refinements:**&#10;    *   The `AndroidHiltConventionPlugin` is updated to apply the KSP plugin *after* the Hilt plugin, ensuring the correct processing order.&#10;    *   The `com.android.base` plugin, a workaround for AGP 9.0.0, has been removed from the `romtools` and `feature-module` modules.&#10;    *   The root `build.gradle.kts` no longer applies the `kotlin.android` plugin.&#10;*   **Gradle Wrapper:** The `gradle-wrapper.properties` file has been cleaned up by removing redundant `distributionPath` and `networkTimeout` properties.">
+      <option name="closed" value="true" />
+      <created>1759710664879</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1759710664879</updated>
+    </task>
+    <task id="LOCAL-00027" summary="WHY DO YOU ALL FIGHT THIS PLEASE SEE C:\Aurakai\checkpoint.md refactor: Standardize Hilt/KSP setup and revert AGP version&#10;&#10;This commit refactors the build logic to standardize dependency configurations and reverts the Android Gradle Plugin (AGP) version.&#10;&#10;**Key Changes:**&#10;&#10;*   **AGP Version:** The AGP version used in `build-logic` is reverted from `9.0.0-alpha09` back to `8.6.1`.&#10;*   **Hilt/KSP Configuration:**&#10;    *   The Hilt compiler dependency configuration is updated from `ksp(libs.hilt.compiler)` to `add(&quot;ksp&quot;, libs.hilt.compiler)` across all modules. This change provides a more explicit and standardized way to apply the KSP processor.&#10;    *   In the `app` module, the Hilt compiler is now correctly an `implementation` dependency, not a `ksp` one.&#10;*   **Build Logic Refinements:**&#10;    *   The `AndroidHiltConventionPlugin` is updated to apply the KSP plugin *after* the Hilt plugin, ensuring the correct processing order.&#10;    *   The `com.android.base` plugin, a workaround for AGP 9.0.0, has been removed from the `romtools` and `feature-module` modules.&#10;    *   The root `build.gradle.kts` no longer applies the `kotlin.android` plugin.&#10;*   **Gradle Wrapper:** The `gradle-wrapper.properties` file has been cleaned up by removing redundant `distributionPath` and `networkTimeout` properties.">
+      <option name="closed" value="true" />
+      <created>1759710694310</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1759710694310</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
