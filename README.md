@@ -306,6 +306,10 @@ Beneficial Intelligence - AI serves human wellbeing.
 
 Comprehensive documentation is available at [https://regenesis.yourdomain.com/docs](https://regenesis.yourdomain.com/docs)
 
+## 🤖 Agent Instructions
+
+For agents and automated systems working on this project, please refer to [AGENT_INSTRUCTIONS.md](AGENT_INSTRUCTIONS.md) for best practices and task success guidelines.
+
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for more information.
