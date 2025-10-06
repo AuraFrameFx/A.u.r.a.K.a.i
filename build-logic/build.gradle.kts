@@ -21,7 +21,7 @@ dependencies {
     testImplementation(libs.junit.jupiter.api)
     testImplementation(libs.junit.jupiter.engine)
     testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.0")
-    testImplementation("org.gradle:gradle-tooling-api:9.0.0")
+    testImplementation("org.gradle:gradle-tooling-api:9.1.0")
     testImplementation(gradleTestKit())
 }
 
