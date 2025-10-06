@@ -2,6 +2,7 @@
 // Main application module configuration
 
 import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.gradle.api.AndroidBasePlugin
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -23,17 +24,21 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
      */
     override fun apply(target: Project) {
         with(target) {
-            with(pluginManager) {
-                apply("com.android.application")
-            }
+            with(pluginManager) { apply("com.android.application") }
 
-            // Ensure dependent plugins apply after Android has created its extensions
-            pluginManager.withPlugin("genesis.android.application") {
-                // Hilt must be after Android and before KSP
-                pluginManager.apply("com.google.dagger.hilt.android")
+            pluginManager.withPlugin("com.android.application") {
+                // Apply Compose immediately
                 pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
-                pluginManager.apply("com.google.devtools.ksp")
 
+                // Defer Hilt and KSP until the Android base plugin is present
+                plugins.withType(AndroidBasePlugin::class.java) {
+                    if (!plugins.hasPlugin("com.google.dagger.hilt.android")) {
+                        pluginManager.apply("com.google.dagger.hilt.android")
+                    }
+                    if (!plugins.hasPlugin("com.google.devtools.ksp")) {
+                        pluginManager.apply("com.google.devtools.ksp")
+                    }
+                }
             }
 
             extensions.configure<ApplicationExtension> {
