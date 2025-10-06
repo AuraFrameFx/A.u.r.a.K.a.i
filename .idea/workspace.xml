@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="feat(deps): Add hilt-work dependency&#10;&#10;This commit adds the `hilt-work` library as a dependency to the `app` module. This integration allows for dependency injection in WorkManager workers using Hilt.&#10;&#10;A new comment `// ===== UTILITIES =====` was also added for better organization of the dependencies block.">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="feat(build): Add Hilt and KSP to app module&#10;&#10;This commit configures Hilt for dependency injection in the `app` module.&#10;&#10;The following changes were made in `app/build.gradle.kts`:&#10;*   The `hilt` and `ksp` Gradle plugins were added.&#10;*   The `hilt-android` and `hilt-compiler` dependencies were explicitly defined, replacing the previous convention plugin setup.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -695,7 +695,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759720421490</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="refactor(build-logic): Remove Hilt and KSP from AndroidApplicationConventionPlugin&#10;&#10;This commit removes the automatic application of the Hilt and KSP plugins, along with their associated dependencies, from the `AndroidApplicationConventionPlugin`.&#10;&#10;This change decouples Hilt from the base application convention, allowing for more granular control over which modules use dependency injection. Modules will now need to apply these plugins and dependencies explicitly.">
+      <option name="closed" value="true" />
+      <created>1759720452037</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1759720452037</updated>
+    </task>
+    <task id="LOCAL-00044" summary="feat(build): Add Hilt and KSP to app module&#10;&#10;This commit configures Hilt for dependency injection in the `app` module.&#10;&#10;The following changes were made in `app/build.gradle.kts`:&#10;*   The `hilt` and `ksp` Gradle plugins were added.&#10;*   The `hilt-android` and `hilt-compiler` dependencies were explicitly defined, replacing the previous convention plugin setup.">
+      <option name="closed" value="true" />
+      <created>1759720463546</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1759720463546</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -722,8 +738,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor(deps): Migrate romtools dependencies and handle packaging conflicts&#10;&#10;Migrates two dependencies in the `romtools` module to use the version catalog (`libs`):&#10;*   `androidx.compose.material:material-icons-extended` is now `libs.androidx.material.icons.extended`.&#10;*   `androidx.hilt:hilt-navigation-compose` is now `libs.hilt.navigation.compose`.&#10;&#10;A `packaging` block has been added to `romtools/build.gradle.kts` to resolve a build conflict by excluding and then picking first the `META-INF/gradle/incremental.annotation.processors` resource.&#10;&#10;Finally, the `androidx.compose.material:material-icons-extended` dependency has been added to `gradle/libs.versions.toml` under the alias `androidx-material-icons-extended`." />
-    <MESSAGE value="refactor(deps): Migrate romtools dependencies and add packaging rules&#10;&#10;This commit refactors the `romtools` module to improve dependency management and resolve packaging conflicts.&#10;&#10;Key changes include:&#10;*   The dependencies for `material-icons-extended` and `hilt-navigation-compose` are now sourced from the version catalog for better consistency.&#10;*   A new packaging rule has been added to exclude and then pick the first instance of `META-INF/gradle/incremental.annotation.processors` to prevent build failures from duplicate files.&#10;&#10;Additionally, the `androidx-material-icons-extended` alias has been added to the `libs.versions.toml` file." />
     <MESSAGE value="refactor: Update dependencies and packaging options&#10;&#10;This commit updates dependencies to use the version catalog and adjusts packaging options to exclude Gradle annotation processor metadata.&#10;&#10;**Dependency Management:**&#10;*   The `androidx.compose.material:material-icons-extended` and `androidx.hilt:hilt-navigation-compose` dependencies in the `romtools` module are updated to use their respective aliases from the version catalog (`libs`).&#10;*   A new alias, `androidx-material-icons-extended`, is added to `gradle/libs.versions.toml` for `androidx.compose.material:material-icons-extended`.&#10;&#10;**Packaging Options:**&#10;*   The `packaging.resources.excludes` block in the `app` and `romtools` modules is updated to exclude `META-INF/gradle/incremental.annotation.processors`." />
     <MESSAGE value="refactor: Update dependencies and packaging options&#10;&#10;This commit updates dependencies to use the version catalog and adds a packaging exclusion to resolve build conflicts.&#10;&#10;**Dependency Management:**&#10;*   In the `romtools` module, the dependencies for `material-icons-extended` and `hilt-navigation-compose` have been updated to use their respective aliases from the `libs.versions.toml` version catalog.&#10;*   A new alias, `androidx-material-icons-extended`, has been added to `libs.versions.toml` for `androidx.compose.material:material-icons-extended`.&#10;&#10;**Build Configuration:**&#10;*   A packaging exclusion for `META-INF/gradle/incremental.annotation.processors` has been added to the `app` and `romtools` modules to prevent resource conflicts." />
     <MESSAGE value="build: Suppress deprecation warnings in Java compilation&#10;&#10;This commit configures the Java compiler for the `app` module to suppress deprecation warnings by adding the `-Xlint:-deprecation` compiler argument." />
@@ -747,7 +761,9 @@
     <MESSAGE value="chore: Add `com.android.base` plugin to app build script&#10;&#10;Adds the `com.android.base` plugin to the `app/build.gradle.kts` file. This is a workaround for an issue where the Hilt plugin cannot find the Android `BaseExtension` when using Android Gradle Plugin (AGP) 9 alpha builds.&#10;&#10;The `checkpoint.md` log file indicates this change is part of an effort to resolve this specific AGP 9 and Hilt compatibility error." />
     <MESSAGE value="refactor(build): Centralize Hilt &amp; KSP plugin application in convention plugin&#10;&#10;This commit refactors the build logic to simplify the `app/build.gradle.kts` file by moving Hilt and KSP plugin application into the `AndroidApplicationConventionPlugin`.&#10;&#10;Key changes:&#10;*   **`AndroidApplicationConventionPlugin.kt`**:&#10;    *   Applies `com.google.dagger.hilt.android` and `com.google.devtools.ksp` plugins directly.&#10;    *   Adds the `hilt-android` and `hilt-compiler` dependencies, making them part of the convention.&#10;    *   Removes the `afterEvaluate` block, applying plugins eagerly instead.&#10;*   **`app/build.gradle.kts`**:&#10;    *   Removes explicit Hilt and KSP plugin declarations as they are now handled by the `genesis.android.application` convention plugin.&#10;    *   Changes the Hilt compiler dependency from `ksp` to `implementation`." />
     <MESSAGE value="feat(deps): Add hilt-work dependency&#10;&#10;This commit adds the `hilt-work` library as a dependency to the `app` module. This integration allows for dependency injection in WorkManager workers using Hilt.&#10;&#10;A new comment `// ===== UTILITIES =====` was also added for better organization of the dependencies block." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(deps): Add hilt-work dependency&#10;&#10;This commit adds the `hilt-work` library as a dependency to the `app` module. This integration allows for dependency injection in WorkManager workers using Hilt.&#10;&#10;A new comment `// ===== UTILITIES =====` was also added for better organization of the dependencies block." />
+    <MESSAGE value="refactor(build-logic): Remove Hilt and KSP from AndroidApplicationConventionPlugin&#10;&#10;This commit removes the automatic application of the Hilt and KSP plugins, along with their associated dependencies, from the `AndroidApplicationConventionPlugin`.&#10;&#10;This change decouples Hilt from the base application convention, allowing for more granular control over which modules use dependency injection. Modules will now need to apply these plugins and dependencies explicitly." />
+    <MESSAGE value="feat(build): Add Hilt and KSP to app module&#10;&#10;This commit configures Hilt for dependency injection in the `app` module.&#10;&#10;The following changes were made in `app/build.gradle.kts`:&#10;*   The `hilt` and `ksp` Gradle plugins were added.&#10;*   The `hilt-android` and `hilt-compiler` dependencies were explicitly defined, replacing the previous convention plugin setup." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(build): Add Hilt and KSP to app module&#10;&#10;This commit configures Hilt for dependency injection in the `app` module.&#10;&#10;The following changes were made in `app/build.gradle.kts`:&#10;*   The `hilt` and `ksp` Gradle plugins were added.&#10;*   The `hilt-android` and `hilt-compiler` dependencies were explicitly defined, replacing the previous convention plugin setup." />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
