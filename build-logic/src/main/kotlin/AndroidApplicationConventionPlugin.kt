@@ -28,12 +28,12 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             }
 
             // Ensure dependent plugins apply after Android has created its extensions
-            pluginManager.withPlugin("com.android.application") {
-                pluginManager.apply("com.android.base")
-                // Built-in Kotlin is enabled; do not apply org.jetbrains.kotlin.android
+            pluginManager.withPlugin("genesis.android.application") {
+                // Hilt must be after Android and before KSP
+                pluginManager.apply("com.google.dagger.hilt.android")
                 pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
                 pluginManager.apply("com.google.devtools.ksp")
-                pluginManager.apply("com.google.dagger.hilt.android")
+
             }
 
             extensions.configure<ApplicationExtension> {

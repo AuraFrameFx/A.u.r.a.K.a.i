@@ -15,8 +15,8 @@ dependencies {
     
     // Hilt
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    
+    add("ksp", libs.hilt.compiler)
+
     // Add other module-specific dependencies here
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
 }
