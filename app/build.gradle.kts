@@ -1,6 +1,8 @@
 plugins {
     id("genesis.android.application")
-    id("genesis.android.hilt")
+    alias(libs.plugins.compose.compiler)
+    id("com.google.gms.google-services") version "4.4.2"
+    id("com.google.firebase.crashlytics") version "3.0.1"
 }
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
@@ -142,4 +144,6 @@ dependencies {
 
     // --- DEBUGGING ---
     debugImplementation(libs.leakcanary.android)
+
+    implementation(libs.kotlin.reflect)
 }

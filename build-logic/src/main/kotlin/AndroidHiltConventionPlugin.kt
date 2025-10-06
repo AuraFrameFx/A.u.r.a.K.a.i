@@ -1,54 +1,38 @@
-// ==== GENESIS PROTOCOL - ANDROID HILT CONVENTION ====
-// Hilt dependency injection configuration for Android modules
-
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.dependencies
+import org.gradle.kotlin.dsl.getByType
 
 class AndroidHiltConventionPlugin : Plugin<Project> {
-    /**
-     * Applies the Android Hilt convention to the given Gradle project.
-     *
-     * This will:
-     * - Apply the base "genesis.android.library" convention plugin.
-     * - Apply the Dagger Hilt Android plugin.
-     * - Apply the KSP plugin for annotation processing.
-     * - Add necessary Hilt dependencies.
-     *
-     * target The Gradle [Project] this plugin is being applied to.
-     */
     override fun apply(target: Project) {
         with(target) {
-            // Ensure Android plugin is applied FIRST
-            val hasApp = plugins.hasPlugin("com.android.application")
-            val hasLib = plugins.hasPlugin("com.android.library")
-
-            if (!hasApp && !hasLib) {
-                pluginManager.apply("genesis.android.library")
+            // Defer applying Hilt until the Android Application or Library plugin is ready
+            pluginManager.withPlugin("com.android.application") {
+                applyHilt()
             }
-
-            // Apply KSP later, after Hilt
-            // Use pluginManager.withPlugin to ensure Android is fully configured
-            val androidPluginId = if (hasApp || plugins.hasPlugin("com.android.application")) {
-                "com.android.application"
-            } else {
-                "com.android.library"
-            }
-
-            pluginManager.withPlugin(androidPluginId) {
-                // AGP 9 alpha: ensure BaseExtension shim is available for Hilt
-                pluginManager.apply("com.android.base")
-                // Apply Hilt after Android is ready, then KSP
-                pluginManager.apply("com.google.dagger.hilt.android")
-                pluginManager.apply("com.google.devtools.ksp")
-
-                // Configure dependencies through version catalog
-                val libs = extensions.getByType(org.gradle.api.artifacts.VersionCatalogsExtension::class.java).named("libs")
-                dependencies {
-                    add("implementation", libs.findLibrary("hilt-android").get())
-                    add("ksp", libs.findLibrary("hilt-compiler").get())
-                }
+            pluginManager.withPlugin("com.android.library") {
+                applyHilt()
             }
         }
+    }
+}
+
+private fun Project.applyHilt() {
+    // Apply the necessary plugins
+    with(pluginManager) {
+        apply("com.google.dagger.hilt.android")
+        apply("com.google.devtools.ksp")
+    }
+
+    // Access the version catalog correctly
+    val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
+    // Add Hilt dependencies from the version catalog
+    dependencies {
+        "implementation"(libs.findLibrary("hilt.android").get())
+        "ksp"(libs.findLibrary("hilt.compiler").get())
+        "androidTestImplementation"(libs.findLibrary("hilt.android.testing").get())
+        "kspAndroidTest"(libs.findLibrary("hilt.compiler").get())
     }
 }

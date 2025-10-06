@@ -14,6 +14,10 @@
 // ReGenesis A.O.S.P - Advanced Open Source Platform
 // © 2025 ReGenesis A.O.S.P. All rights reserved.
 // ═══════════════════════════════════════════════════════════════════════════
+
+// Apply YukiHook conventions script
+apply(from = "scripts/apply-yukihook-conventions.gradle.kts")
+
 // Apply plugins to the root project to avoid multiple loading warnings
 plugins {
     alias(libs.plugins.kotlin.serialization) apply false
