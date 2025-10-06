@@ -1,7 +1,8 @@
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
-
 plugins {
     id("genesis.android.application")
+    id("com.android.base")  // Added shim for Hilt on AGP 9
+    id("genesis.android.hilt")
 }
 
 android {
