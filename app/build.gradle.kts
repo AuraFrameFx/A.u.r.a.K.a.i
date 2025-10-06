@@ -122,7 +122,7 @@ dependencies {
 
     // ===== HILT DEPENDENCY INJECTION =====
     implementation(libs.hilt.android)
-    implementation(libs.hilt.compiler)
+    add("ksp", libs.hilt.compiler)
 
     // ===== WORKMANAGER =====
     implementation(libs.androidx.work.runtime.ktx)
