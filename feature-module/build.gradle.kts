@@ -6,7 +6,6 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
-    id("com.android.base") // AGP 9 workaround for library modules
     // Hilt MUST be applied explicitly for annotation processing
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)

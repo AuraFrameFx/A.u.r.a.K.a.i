@@ -1,17 +1,4 @@
-@AuraFrameFxDev
-Member
-Author
-AuraFrameFxDev commented 8 hours ago
-@coderabbitai heres the order **** plugins {
-id("com.android.library")
-id("com.android.base") // AGP 9.0 workaround: Hilt looks for this plugin ID
-// Hilt will auto-apply when it detects com.android.base
-alias(libs.plugins.ksp)
-alias(libs.plugins.kotlin.serialization) we cannot use hilt in the library modules
-
-@coderabbitaicoderabbitai
-Contributor
-coderabbitai bot commented 8 hours ago
+coderabbitai bot commented 26 minutes ago
 Tip
 
 For best results, initiate chat on the files or code changes.

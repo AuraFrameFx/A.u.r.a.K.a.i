@@ -132,8 +132,3 @@ dependencies {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
-
-// Configure JVM toolchain for AGP 9 compatibility
-kotlin {
-    jvmToolchain(24)
-}
