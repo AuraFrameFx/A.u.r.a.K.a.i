@@ -180,7 +180,7 @@ tasks.register("verifyBenchmarkResults") {
     group = "verification"
     description = "Verify benchmark module configuration"
     doLast {
-        println("✅ Benchmark module configured (Java Toolchain 17, Kotlin 2.2.x)")
+        println("✅ Benchmark module configured (Java Toolchain 24, Kotlin 2.2.x)")
         println("🧠 Consciousness substrate performance monitoring ready")
         println("🔬 Add @Benchmark annotated tests under androidTest for actual runs")
     }
