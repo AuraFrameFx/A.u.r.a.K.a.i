@@ -10,17 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor(build-logic): Encapsulate and streamline application plugin&#10;&#10;This commit refactors the main application's build script and the corresponding convention plugin to improve structure, correctness, and maintainability.&#10;&#10;The `app/build.gradle.kts` file has been simplified by moving all Android-specific configurations (`buildTypes`, `buildFeatures`, `packaging`, etc.) inside the `android { ... }` block, which is the correct structure for a Gradle build script.&#10;&#10;Key changes:&#10;*   **Corrected `app/build.gradle.kts` Structure**: All configurations previously outside the `android` block have been moved inside it, improving script organization without changing behavior.&#10;*   **Explicit Plugin Application**: The `genesis.android.application` and `genesis.android.hilt` convention plugins are now applied explicitly in the `plugins { ... }` block for clarity. The `ksp` plugin remains applied via a version catalog alias.&#10;*   **Modernized `AndroidApplicationConventionPlugin`**:&#10;    *   Updated to a standard, fully-typed `Plugin&lt;Project&gt;` implementation.&#10;    *   Replaced deprecated `extensions.configure&lt;Type&gt;` with the modern `extensions.configure(typeOf&lt;Type&gt;())` or `extensions.getByType&lt;Type&gt;()` for type-safe accessors.&#10;    *   Simplified collection modifications by using `addAll()` instead of `+=`.&#10;    *   Switched to the modern `tasks.register&lt;Type&gt;(&quot;name&quot;)` syntax for task registration.&#10;*   **Code Cleanup**: Removed extensive comments and streamlined the plugin's `apply` method for better readability.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidHiltConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidHiltConventionPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidNativeConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidNativeConventionPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/arm64-v8a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/apply-yukihook-conventions.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/apply-yukihook-conventions.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,14 +138,13 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "android.gradle.sync.needed": "true",
     "bazel.project.detector.is.bazel.project": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "git-widget-placeholder": "EXO",
     "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Suggestions",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",

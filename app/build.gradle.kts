@@ -147,3 +147,6 @@ dependencies {
 
     implementation(libs.kotlin.reflect)
 }
+
+// Avoid failing clean tasks when the native staging directory doesn't exist yet
+// This block is not needed in app module, only in native modules like secure-comm
