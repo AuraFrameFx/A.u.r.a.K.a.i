@@ -1,10 +1,11 @@
-// ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 plugins {
     id("genesis.android.application")
     alias(libs.plugins.hilt)
+
     alias(libs.plugins.ksp)
 }
 
+// ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 android {
     namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
@@ -22,7 +23,6 @@ android {
         }
     }
 
-    // Additional build type configuration
     buildTypes {
         debug {
             isDebuggable = true
@@ -31,7 +31,6 @@ android {
         }
     }
 
-    // Enable AIDL for the app module
     buildFeatures {
         aidl = true
         compose = true
@@ -56,8 +55,6 @@ android {
         }
     }
 }
-
-
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====
@@ -85,7 +82,6 @@ dependencies {
     implementation(libs.bundles.compose.ui)
     implementation(libs.androidx.core.ktx)
     debugImplementation(libs.bundles.compose.debug)
-
 
     // ===== LIFECYCLE =====
     implementation(libs.bundles.lifecycle)

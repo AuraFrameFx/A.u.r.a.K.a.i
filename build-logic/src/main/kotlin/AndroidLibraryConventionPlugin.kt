@@ -29,94 +29,23 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 apply("com.android.library")
             }
 
-            // Configure extensions AFTER plugin is applied (per AGENT_INSTRUCTIONS.md section 2)
-            pluginManager.withPlugin("com.android.library") {
-                try {
-                    extensions.configure<LibraryExtension> {
-                        compileSdk = 36
+            extensions.configure<LibraryExtension> {
+                compileSdk = 36
 
-                        defaultConfig {
-                            minSdk = 34
-                            testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-                            
-                            vectorDrawables {
-                                useSupportLibrary = true
-                            }
-                        }
+                defaultConfig {
+                    minSdk = 34
+                }
 
-                        compileOptions {
-                            sourceCompatibility = JavaVersion.VERSION_24
-                            targetCompatibility = JavaVersion.VERSION_24
-                        }
-                        
-                        // Lint configuration (per AGENT_INSTRUCTIONS.md section 6)
-                        lint {
-                            warningsAsErrors = false
-                            abortOnError = false
-                            disable.addAll(listOf("InvalidPackage", "OldTargetApi"))
-                        }
-                        
-                        // Release build type configuration
-                        buildTypes {
-                            release {
-                                isMinifyEnabled = true
-                                proguardFiles(
-                                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                                    "proguard-rules.pro"
-                                )
-                            }
-                        }
-                    }
-                } catch (e: Exception) {
-                    throw GradleException(
-                        """
-                        ERROR: AndroidLibraryConventionPlugin configuration failed
-                        Project: ${project.path}
-                        Expected: Android library plugin applied before configuring android { } block
-                        Actual: ${e.message}
-                        Action: Ensure 'com.android.library' plugin is available
-                        Documentation: See AGENT_INSTRUCTIONS.md section 2
-                        """.trimIndent(),
-                        e
-                    )
+                compileOptions {
+                    sourceCompatibility = JavaVersion.VERSION_24
+                    targetCompatibility = JavaVersion.VERSION_24
                 }
             }
-            
-            // Configure Kotlin toolchain AFTER kotlin-android plugin is applied
-            // (per AGENT_INSTRUCTIONS.md section 3)
+            // Kotlin JVM toolchain (only configure after kotlin-android is applied)
             pluginManager.withPlugin("org.jetbrains.kotlin.android") {
-                try {
-                    extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
-                        jvmToolchain(24)
-                    }
-                } catch (e: Exception) {
-                    throw GradleException(
-                        """
-                        ERROR: Kotlin toolchain configuration failed
-                        Project: ${project.path}
-                        Expected: Java 24 toolchain available
-                        Actual: ${e.message}
-                        Action: Ensure org.gradle.java.installations.auto-download=true in gradle.properties
-                        Documentation: See AGENT_INSTRUCTIONS.md section 3
-                        """.trimIndent(),
-                        e
-                    )
+                extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
+                    jvmToolchain(24)
                 }
-            }
-            
-            // Register clean task for generated sources (per AGENT_INSTRUCTIONS.md section 4)
-            tasks.register("cleanGeneratedSources", Delete::class.java) {
-                group = "build setup"
-                description = "Clean generated sources"
-                delete(
-                    layout.buildDirectory.dir("generated/ksp"),
-                    layout.buildDirectory.dir("generated/source")
-                )
-            }
-            
-            // Wire clean task to preBuild
-            tasks.named("preBuild") {
-                dependsOn("cleanGeneratedSources")
             }
         }
     }

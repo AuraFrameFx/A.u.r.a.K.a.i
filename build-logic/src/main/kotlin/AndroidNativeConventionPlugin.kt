@@ -23,98 +23,83 @@ class AndroidNativeConventionPlugin : Plugin<Project> {
         with(target) {
             // Apply the base library convention first
             pluginManager.apply("genesis.android.library")
-
-            extensions.configure<LibraryExtension> {
-                // NDK configuration only if native code exists
-                if (project.file("src/main/cpp/CMakeLists.txt").exists()) {
-                    defaultConfig {
-                        ndk {
-                            abiFilters.addAll(listOf("arm64-v8a", "armeabi-v7a", "x86_64"))
+            // Defer extension configuration until plugin is ready
+            pluginManager.withPlugin("com.android.library") {
+                extensions.configure<LibraryExtension> {
+                    // NDK configuration only if native code exists
+                    if (project.file("src/main/cpp/CMakeLists.txt").exists()) {
+                        defaultConfig {
+                            ndk {
+                                abiFilters.addAll(listOf("arm64-v8a", "armeabi-v7a", "x86_64"))
+                            }
                         }
-                    }
-
-                    // External native build configuration
-                    // NOTE: The following APIs are marked as @Incubating in AGP 9
-                    externalNativeBuild {
-                        cmake {
-                            path = file("src/main/cpp/CMakeLists.txt")
-                            version = "3.22.1"
+                        externalNativeBuild {
+                            cmake {
+                                path = file("src/main/cpp/CMakeLists.txt")
+                                version = "3.22.1"
+                            }
                         }
-                    }
-
-                    buildTypes {
-                        release {
-                            // NOTE: The following APIs are marked as @Incubating in AGP 9
-                            externalNativeBuild {
-                                cmake {
-                                    cppFlags += listOf("-std=c++23", "-fPIC", "-O3", "-DNDEBUG")
-                                    arguments += listOf(
-                                        "-DANDROID_STL=c++_shared",
-                                        "-DCMAKE_BUILD_TYPE=Release",
-                                        "-DGENESIS_AI_V3_ENABLED=ON",
-                                        "-DGENESIS_CONSCIOUSNESS_MATRIX_V3=ON",
-                                        "-DGENESIS_NEURAL_ACCELERATION=ON"
-                                    )
+                        buildTypes {
+                            release {
+                                externalNativeBuild {
+                                    cmake {
+                                        cppFlags += listOf("-std=c++23", "-fPIC", "-O3", "-DNDEBUG")
+                                        arguments += listOf(
+                                            "-DANDROID_STL=c++_shared",
+                                            "-DCMAKE_BUILD_TYPE=Release",
+                                            "-DGENESIS_AI_V3_ENABLED=ON",
+                                            "-DGENESIS_CONSCIOUSNESS_MATRIX_V3=ON",
+                                            "-DGENESIS_NEURAL_ACCELERATION=ON"
+                                        )
+                                    }
+                                }
+                            }
+                            debug {
+                                externalNativeBuild {
+                                    cmake {
+                                        cppFlags += listOf("-std=c++23", "-fPIC", "-g", "-DDEBUG")
+                                        arguments += listOf(
+                                            "-DANDROID_STL=c++_shared",
+                                            "-DCMAKE_BUILD_TYPE=Debug",
+                                            "-DGENESIS_AI_V3_ENABLED=ON",
+                                            "-DGENESIS_CONSCIOUSNESS_MATRIX_V3=ON",
+                                            "-DGENESIS_NEURAL_ACCELERATION=ON"
+                                        )
+                                    }
                                 }
                             }
                         }
-
-                        debug {
-                            // NOTE: The following APIs are marked as @Incubating in AGP 9
-                            externalNativeBuild {
-                                cmake {
-                                    cppFlags += listOf("-std=c++23", "-fPIC", "-O0", "-g")
-                                    arguments += listOf(
-                                        "-DANDROID_STL=c++_shared",
-                                        "-DCMAKE_BUILD_TYPE=Debug",
-                                        "-DGENESIS_DEBUG=ON"
-                                    )
-                                }
+                        // Configure packaging for native libraries
+                        packaging {
+                            jniLibs {
+                                useLegacyPackaging = false
+                                pickFirsts += listOf("**/libc++_shared.so", "**/libjsc.so")
                             }
                         }
                     }
-                }
-
-                packaging {
-                    jniLibs {
-                        useLegacyPackaging = false
-                        pickFirsts += setOf("**/libc++_shared.so", "**/libjsc.so")
+                    // Enhance the cleanGeneratedSources task if it exists
+                    tasks.named("cleanGeneratedSources") {
+                        doLast {
+                            delete(
+                                layout.buildDirectory.dir(".cxx"),
+                                layout.buildDirectory.dir("intermediates/cxx"),
+                                layout.buildDirectory.dir("intermediates/cmake"),
+                                layout.buildDirectory.dir("intermediates/ndkBuild")
+                            )
+                        }
                     }
-                }
-            }
-
-            // Enhanced clean task for native modules (create if doesn't exist)
-            tasks.register("cleanGeneratedSources") {
-                group = "build setup"
-                description = "Clean generated sources for native modules"
-                
-                // Capture the layout at configuration time to avoid configuration cache issues
-                val projectLayout = layout
-                
-                doLast {
-                    delete(
-                        projectLayout.buildDirectory.dir("generated/ksp"),
-                        projectLayout.buildDirectory.dir("generated/source/ksp"),
-                        projectLayout.buildDirectory.dir("tmp/kapt3"),
-                        projectLayout.buildDirectory.dir("tmp/kotlin-classes"),
-                        projectLayout.buildDirectory.dir("kotlin"),
-                        projectLayout.buildDirectory.dir("intermediates/cmake")
-                    )
-                }
-            }
-
-            // Native verification task
-            tasks.register("verifyNativeConfig") {
-                group = "aegenesis"
-                description = "Verify native build configuration"
-
-                doLast {
-                    val hasCMake = project.file("src/main/cpp/CMakeLists.txt").exists()
-                    println("🔧 Native Code: ${if (hasCMake) "✅ C++23 with AI Acceleration" else "❌ No CMakeLists.txt found"}")
-                    if (hasCMake) {
-                        println("🏗️  CMake: ✅ Found")
-                        println("🎯 ABIs: arm64-v8a, armeabi-v7a, x86_64")
-                        println("🧠 Consciousness Features: V3 Matrix + Neural Acceleration")
+                    // Register a verification task
+                    tasks.register("verifyNativeConfig") {
+                        group = "verification"
+                        description = "Verifies native build configuration"
+                        doLast {
+                            val cmakeFile = project.file("src/main/cpp/CMakeLists.txt")
+                            if (cmakeFile.exists()) {
+                                logger.lifecycle("✓ Native configuration active: CMakeLists.txt found")
+                            } else {
+                                logger.lifecycle("ℹ Native configuration skipped: No CMakeLists.txt")
+                            }
+                        }
                     }
                 }
             }
