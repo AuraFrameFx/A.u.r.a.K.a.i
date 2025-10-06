@@ -21,37 +21,20 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("com.android.application")
+                apply("org.jetbrains.kotlin.plugin.compose")
             }
-
-            // Wait for base plugin to be ready, then apply Hilt
-            pluginManager.withPlugin("com.android.base") {
-                pluginManager.apply("com.google.dagger.hilt.android")
-                pluginManager.apply("com.google.devtools.ksp")
-                pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
-
-                // Configure Hilt dependencies
-                val libs =
-                    extensions.getByType(org.gradle.api.artifacts.VersionCatalogsExtension::class.java)
-                        .named("libs")
-                dependencies {
-                    add("implementation", libs.findLibrary("hilt-android").get())
-                    add("ksp", libs.findLibrary("hilt-compiler").get())
-                }
-
+            // Defer extension configuration until plugin is ready
+            pluginManager.withPlugin("com.android.application") {
                 extensions.configure<ApplicationExtension> {
                     compileSdk = 36
-
                     defaultConfig {
                         targetSdk = 36
                         minSdk = 34
-
                         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
                         vectorDrawables {
                             useSupportLibrary = true
                         }
                     }
-
                     buildTypes {
                         release {
                             isMinifyEnabled = true
@@ -62,21 +45,17 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                             )
                         }
                     }
-
                     buildFeatures {
                         compose = true
                         buildConfig = true
                         viewBinding = false
                         dataBinding = false
                     }
-
                     compileOptions {
                         sourceCompatibility = JavaVersion.VERSION_24
                         targetCompatibility = JavaVersion.VERSION_24
-                        // App module DOES get desugaring dependency
                         isCoreLibraryDesugaringEnabled = true
                     }
-
                     packaging {
                         resources {
                             excludes += setOf(
@@ -98,20 +77,16 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                             pickFirsts += listOf("**/libc++_shared.so", "**/libjsc.so")
                         }
                     }
-
                     lint {
                         warningsAsErrors = false
                         abortOnError = false
                         disable.addAll(listOf("InvalidPackage", "OldTargetApi"))
                     }
                 }
-
                 extensions.configure<JavaPluginExtension>("java") {
                     sourceCompatibility = JavaVersion.VERSION_24
                     targetCompatibility = JavaVersion.VERSION_24
                 }
-
-                // Clean tasks for app module
                 tasks.register("cleanKspCache", Delete::class.java) {
                     group = "build setup"
                     description = "Clean KSP caches (fixes NullPointerException)"
@@ -123,9 +98,14 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                         layout.buildDirectory.dir("generated/source/ksp")
                     )
                 }
-
                 tasks.named("preBuild") {
                     dependsOn("cleanKspCache")
+                }
+            }
+            // Kotlin JVM toolchain (only configure after kotlin-android is applied)
+            pluginManager.withPlugin("org.jetbrains.kotlin.android") {
+                extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
+                    jvmToolchain(24)
                 }
             }
         }

@@ -11,7 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor(build-logic): Remove AGP 9 workaround for Hilt&#10;&#10;This commit removes the `com.android.base` plugin workaround previously required for Hilt compatibility with AGP 9.0 alpha versions. The core issue was resolved, making the explicit plugin application obsolete.&#10;&#10;Specific changes:&#10;*   The `com.android.base` plugin has been removed from the `app`, `sandbox-ui`, `benchmark`, `feature-module`, and `romtools` build scripts.&#10;*   The `AndroidHiltConventionPlugin` no longer applies `com.android.base`.&#10;*   The `AndroidApplicationConventionPlugin` was simplified by removing internal plugin management for Hilt and KSP, which are now applied directly in the `app/build.gradle.kts` file.&#10;*   The JVM toolchain configuration was removed from `data/api/build.gradle.kts` as it is handled centrally.&#10;*   The `android.builtInKotlin=false` property in `gradle.properties` has been commented out.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidComposeConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidComposeConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidLibraryConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidLibraryConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidNativeConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidNativeConventionPlugin.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -742,7 +746,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759720801163</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="refactor(build-logic): Remove AGP 9 workaround for Hilt&#10;&#10;This commit removes the `com.android.base` plugin workaround previously required for Hilt compatibility with AGP 9.0 alpha versions. The core issue was resolved, making the explicit plugin application obsolete.&#10;&#10;Specific changes:&#10;*   The `com.android.base` plugin has been removed from the `app`, `sandbox-ui`, `benchmark`, `feature-module`, and `romtools` build scripts.&#10;*   The `AndroidHiltConventionPlugin` no longer applies `com.android.base`.&#10;*   The `AndroidApplicationConventionPlugin` was simplified by removing internal plugin management for Hilt and KSP, which are now applied directly in the `app/build.gradle.kts` file.&#10;*   The JVM toolchain configuration was removed from `data/api/build.gradle.kts` as it is handled centrally.&#10;*   The `android.builtInKotlin=false` property in `gradle.properties` has been commented out.">
+      <option name="closed" value="true" />
+      <created>1759724471659</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1759724471659</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

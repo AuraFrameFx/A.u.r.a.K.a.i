@@ -21,15 +21,14 @@ class AndroidComposeConventionPlugin : Plugin<Project> {
         with(target) {
             // Apply the base library convention first
             pluginManager.apply("genesis.android.library")
-
-            // Note: Kotlin Compose plugin not available for Kotlin 2.2.20-RC
-            // Instead, AGP 9.0+ handles Compose configuration automatically
-
-            extensions.configure<LibraryExtension> {
-                // Note: Compose disabled due to Kotlin 2.2.20-RC compatibility issues
-                // buildFeatures {
-                //     compose = true
-                // }
+            // Defer extension configuration until plugin is ready
+            pluginManager.withPlugin("com.android.library") {
+                extensions.configure<LibraryExtension> {
+                    // Note: Compose disabled due to Kotlin 2.2.20-RC compatibility issues
+                    // buildFeatures {
+                    //     compose = true
+                    // }
+                }
             }
         }
     }

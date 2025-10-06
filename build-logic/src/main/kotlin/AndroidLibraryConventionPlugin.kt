@@ -24,17 +24,23 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.library")
             }
-
-            extensions.configure<LibraryExtension> {
-                compileSdk = 36
-
-                defaultConfig {
-                    minSdk = 34
+            // Defer extension configuration until plugin is ready
+            pluginManager.withPlugin("com.android.library") {
+                extensions.configure<LibraryExtension> {
+                    compileSdk = 36
+                    defaultConfig {
+                        minSdk = 34
+                    }
+                    compileOptions {
+                        sourceCompatibility = JavaVersion.VERSION_24
+                        targetCompatibility = JavaVersion.VERSION_24
+                    }
                 }
-
-                compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_24
-                    targetCompatibility = JavaVersion.VERSION_24
+            }
+            // Kotlin JVM toolchain (only configure after kotlin-android is applied)
+            pluginManager.withPlugin("org.jetbrains.kotlin.android") {
+                extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
+                    jvmToolchain(24)
                 }
             }
         }
