@@ -10,8 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor(build): Simplify app plugins and update Hilt dependency&#10;&#10;This commit streamlines the `app/build.gradle.kts` file by consolidating plugin management and adjusting the Hilt compiler dependency.&#10;&#10;The `genesis.android.application` plugin now internally handles the application of `com.android.base`, Hilt, and KSP, removing the need for their explicit declaration in the `plugins` block.&#10;&#10;Additionally, the Hilt compiler dependency has been changed from `ksp` to `implementation`.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -719,7 +717,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759720516621</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="feat(build-logic): Encapsulate plugins in application convention&#10;&#10;This commit refactors the `AndroidApplicationConventionPlugin` to internally manage and apply a common set of plugins, simplifying module-level Gradle scripts.&#10;&#10;The convention plugin now handles the application of:&#10;*   `com.android.base`&#10;*   `com.android.application`&#10;*   `com.google.dagger.hilt.android`&#10;*   `com.google.devtools.ksp`&#10;*   `org.jetbrains.kotlin.plugin.compose`&#10;&#10;As a result, the `app/build.gradle.kts` file has been cleaned up to only require the `genesis.android.application` plugin. Hilt dependencies (`hilt-android` and `hilt-compiler`) are now automatically added by the convention plugin, removing the need for explicit declaration in the app module.">
+      <option name="closed" value="true" />
+      <created>1759720624931</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1759720624931</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
