@@ -150,19 +150,19 @@ subprojects {
     // Configure Kotlin toolchains via plugin IDs to avoid classloader issues with wrapper types
     plugins.withId("org.jetbrains.kotlin.android") {
         extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
-            jvmToolchain(24)
+            jvmToolchain(17)
         }
     }
     plugins.withId("org.jetbrains.kotlin.jvm") {
         extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
-            jvmToolchain(24)
+            jvmToolchain(17)
         }
     }
 
     plugins.withType<JavaPlugin> {
         extensions.configure<JavaPluginExtension>("java") {
             toolchain {
-                languageVersion.set(JavaLanguageVersion.of(24))
+                languageVersion.set(JavaLanguageVersion.of(17))
             }
         }
     }

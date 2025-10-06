@@ -45,8 +45,8 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                         }
 
                         compileOptions {
-                            sourceCompatibility = JavaVersion.VERSION_24
-                            targetCompatibility = JavaVersion.VERSION_24
+                            sourceCompatibility = JavaVersion.VERSION_17
+                            targetCompatibility = JavaVersion.VERSION_17
                         }
                         
                         // Lint configuration (per AGENT_INSTRUCTIONS.md section 6)
@@ -87,7 +87,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             pluginManager.withPlugin("org.jetbrains.kotlin.android") {
                 try {
                     extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
-                        jvmToolchain(24)
+                        jvmToolchain(17)
                     }
                 } catch (e: Exception) {
                     throw GradleException(
