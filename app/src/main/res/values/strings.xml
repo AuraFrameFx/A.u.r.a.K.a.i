@@ -1,6 +1,8 @@
 <resources>
     <!-- App Information -->
     <string name="app_title">AURAFRAMEFX</string>
+    <!-- Added: canonical app name for launcher label -->
+    <string name="app_name">Re:Genesis</string>
 
     <!-- Common UI Elements -->
     <string name="oracle_drive_connected">Connected to OracleDrive</string>
