@@ -27,11 +27,8 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
                 pluginManager.apply("genesis.android.library")
             }
 
-            // Apply KSP first for annotation processing
-            pluginManager.apply("com.google.devtools.ksp")
-
+            // Apply KSP later, after Hilt
             // Use pluginManager.withPlugin to ensure Android is fully configured
-            // This waits for the Android plugin to be applied and configured
             val androidPluginId = if (hasApp || plugins.hasPlugin("com.android.application")) {
                 "com.android.application"
             } else {
@@ -39,10 +36,9 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
             }
 
             pluginManager.withPlugin(androidPluginId) {
-                // AGP 9 alpha: ensure BaseExtension shim is available for Hilt
-                pluginManager.apply("com.android.base")
-                // Apply Hilt after Android is ready
+                // Apply Hilt after Android is ready, then KSP
                 pluginManager.apply("com.google.dagger.hilt.android")
+                pluginManager.apply("com.google.devtools.ksp")
 
                 // Configure dependencies through version catalog
                 val libs = extensions.getByType(org.gradle.api.artifacts.VersionCatalogsExtension::class.java).named("libs")

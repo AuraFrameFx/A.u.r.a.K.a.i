@@ -4,7 +4,6 @@ import java.time.format.DateTimeFormatter
 plugins {
     id("com.android.library")
 
-    id("com.android.base") // AGP 9.0.0-alpha09 workaround: Hilt auto-applies when detecting this
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler) // Required for Compose in Kotlin 2.0+
     alias(libs.plugins.kotlin.serialization)
@@ -44,13 +43,12 @@ android {
         implementation(libs.androidx.navigation.compose)
         implementation(libs.bundles.androidx.core)
         implementation(libs.hilt.android)
-        ksp(libs.hilt.compiler)
+        add("ksp", libs.hilt.compiler)
         implementation(libs.bundles.coroutines)
         implementation(libs.bundles.network)
         implementation(libs.androidx.room.runtime)
         implementation(libs.androidx.room.ktx)
-        // Room compiler temporarily disabled
-        ksp(libs.androidx.room.compiler)
+        add("ksp", libs.androidx.room.compiler)
         implementation(libs.bundles.firebase)
         implementation(libs.timber)
         implementation(libs.coil.compose)

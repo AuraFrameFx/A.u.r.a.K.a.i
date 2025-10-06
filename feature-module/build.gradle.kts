@@ -6,7 +6,6 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
-    id("com.android.base")
     // Hilt MUST be applied explicitly for annotation processing
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
@@ -98,12 +97,12 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    add("ksp", libs.hilt.compiler)
     implementation(libs.bundles.coroutines)
     implementation(libs.bundles.network)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler)
+    add("ksp", libs.androidx.room.compiler)
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
     implementation(libs.timber)

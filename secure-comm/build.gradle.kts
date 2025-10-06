@@ -24,7 +24,7 @@ android {
 dependencies {
     implementation(project(":core-module"))
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    add("ksp", libs.hilt.compiler)
     implementation(libs.hilt.work)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.work.runtime.ktx)
