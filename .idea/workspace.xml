@@ -9,8 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="feat(build-logic): Add com.android.base plugin for AGP 9&#10;&#10;This commit applies the `com.android.base` plugin in the `AndroidApplicationConventionPlugin`.&#10;&#10;This change is necessary to expose the `BaseExtension` for Hilt when using Android Gradle Plugin (AGP) version 9 alpha.">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor(build): Remove redundant `com.android.base` plugin&#10;&#10;This commit removes the `com.android.base` plugin from the `app` module's `build.gradle.kts` file. This plugin was a temporary shim and is no longer needed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
@@ -648,7 +647,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759720082881</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="refactor(build): Remove redundant `com.android.base` plugin&#10;&#10;This commit removes the `com.android.base` plugin from the `app` module's `build.gradle.kts` file. This plugin was a temporary shim and is no longer needed.">
+      <option name="closed" value="true" />
+      <created>1759720115443</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1759720115443</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -675,7 +682,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix(build): Resolve packaging conflict for incremental annotation processors&#10;&#10;In the `sandbox-ui` module, a `pickFirsts` strategy is added for the `META-INF/gradle/incremental.annotation.processors` file. This resolves a packaging conflict that occurs when multiple dependencies provide the same file, ensuring the build completes successfully." />
     <MESSAGE value="refactor(build): Streamline packaging configuration in sandbox-ui&#10;&#10;Removes unnecessary resource exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's `build.gradle.kts`.&#10;&#10;The `pickFirsts` strategy for `incremental.annotation.processors` already handles potential conflicts, making the exclusion redundant." />
     <MESSAGE value="refactor(build): Streamline packaging configuration in sandbox-ui&#10;&#10;Removes unnecessary resource exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's `build.gradle.kts`.&#10;&#10;The `pickFirsts` strategy for `incremental.annotation.processors` already handles potential conflicts, making the exclusion redundant.2 files found with path 'META-INF/gradle/incremental.annotation.processors' from inputs:&#10;                                                                                                                                       - com.google.dagger:hilt-compiler:2.57.2/jetified-hilt-compiler-2.57.2.jar&#10;                                                                                                                                       - com.google.dagger:dagger-compiler:2.57.2/jetified-dagger-compiler-2.57.2.jar&#10;                                                                                                                                      Adding a packaging block may help, please refer to&#10;                                                                                                                                      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging&#10;                                                                                                                                      for more information" />
     <MESSAGE value="refactor: Streamline packaging options in sandbox-ui&#10;&#10;Removes unnecessary exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `packaging` block in `sandbox-ui/build.gradle.kts`. The `pickFirsts` directive for the incremental annotation processors remains." />
@@ -700,7 +706,8 @@
     <MESSAGE value="fix(build): Apply AGP 9.0 Hilt workaround and configure toolchain&#10;&#10;This commit introduces several build configuration changes to ensure compatibility with Android Gradle Plugin (AGP) 9.0 and stabilize the build environment.&#10;&#10;The key changes include:&#10;*   **AGP 9.0 Hilt Workaround**: The `com.android.base` plugin is now applied to the `sandbox-ui`, `benchmark`, `romtools`, and `feature-module` library modules. This is a necessary workaround for Hilt's annotation processor to correctly identify Android library modules in AGP 9.0.&#10;*   **JVM Toolchain**: The JVM toolchain is explicitly set to version 24 in the `data/api` module to ensure consistent Java versioning across the project.&#10;*   **Built-in Kotlin Opt-out**: The `android.builtInKotlin` flag has been set to `false` in `gradle.properties` as a temporary measure to avoid potential migration issues with other plugins." />
     <MESSAGE value="fix(hilt): Resolve ClassNotFoundException crash&#10;&#10;This commit resolves a `ClassNotFoundException` crash on launch caused by conflicting `@HiltAndroidApp` annotations.&#10;&#10;The root cause was multiple `Application` classes being annotated with `@HiltAndroidApp`, which prevented Hilt's annotation processor from generating the necessary Dagger components.&#10;&#10;Key changes:&#10;*   **Removed duplicate `@HiltAndroidApp` annotation** from `AuraKaiHiltApplication` to ensure only the primary `ReGenesisApplication` (declared in the manifest) is annotated.&#10;*   **Added `com.android.base` plugin** to the `app` module and `AndroidHiltConventionPlugin` to serve as a shim for Hilt compatibility with AGP 9.&#10;*   Added two new files, `FIX_SUMMARY.md` and `fix-hilt-crash.ps1`, to document the problem, the applied fixes, and provide a script for automating the recovery process." />
     <MESSAGE value="feat(build-logic): Add com.android.base plugin for AGP 9&#10;&#10;This commit applies the `com.android.base` plugin in the `AndroidApplicationConventionPlugin`.&#10;&#10;This change is necessary to expose the `BaseExtension` for Hilt when using Android Gradle Plugin (AGP) version 9 alpha." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(build-logic): Add com.android.base plugin for AGP 9&#10;&#10;This commit applies the `com.android.base` plugin in the `AndroidApplicationConventionPlugin`.&#10;&#10;This change is necessary to expose the `BaseExtension` for Hilt when using Android Gradle Plugin (AGP) version 9 alpha." />
+    <MESSAGE value="refactor(build): Remove redundant `com.android.base` plugin&#10;&#10;This commit removes the `com.android.base` plugin from the `app` module's `build.gradle.kts` file. This plugin was a temporary shim and is no longer needed." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(build): Remove redundant `com.android.base` plugin&#10;&#10;This commit removes the `com.android.base` plugin from the `app` module's `build.gradle.kts` file. This plugin was a temporary shim and is no longer needed." />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">

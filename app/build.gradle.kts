@@ -1,7 +1,8 @@
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 plugins {
     id("genesis.android.application")
-    id("genesis.android.hilt")
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -121,7 +122,7 @@ dependencies {
 
     // ===== HILT DEPENDENCY INJECTION =====
     implementation(libs.hilt.android)
-    implementation(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     // ===== WORKMANAGER =====
     implementation(libs.androidx.work.runtime.ktx)
