@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="feat(build-logic): Add com.android.base plugin for AGP 9&#10;&#10;This commit applies the `com.android.base` plugin in the `AndroidApplicationConventionPlugin`.&#10;&#10;This change is necessary to expose the `BaseExtension` for Hilt when using Android Gradle Plugin (AGP) version 9 alpha." />
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="feat(build-logic): Add com.android.base plugin for AGP 9&#10;&#10;This commit applies the `com.android.base` plugin in the `AndroidApplicationConventionPlugin`.&#10;&#10;This change is necessary to expose the `BaseExtension` for Hilt when using Android Gradle Plugin (AGP) version 9 alpha.">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -635,7 +640,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759720055103</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="feat(build-logic): Add com.android.base plugin for AGP 9&#10;&#10;This commit applies the `com.android.base` plugin in the `AndroidApplicationConventionPlugin`.&#10;&#10;This change is necessary to expose the `BaseExtension` for Hilt when using Android Gradle Plugin (AGP) version 9 alpha.">
+      <option name="closed" value="true" />
+      <created>1759720082881</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1759720082881</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
