@@ -9,12 +9,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor(testing): Migrate benchmark ProGuard rules from JUnit 4 to JUnit 5&#10;&#10;This commit updates the ProGuard rules for benchmarks to keep JUnit 5 annotations instead of JUnit 4.&#10;&#10;The following annotation paths have been changed in `benchmark-rules.pro`:&#10;*   `org.junit.Before` is now `org.junit.jupiter.api.BeforeEach`&#10;*   `org.junit.After` is now `org.junit.jupiter.api.AfterEach`&#10;*   `org.junit.Test` is now `org.junit.jupiter.api.Test`">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="build: Remove `android.builtInKotlin=true` from gradle.properties&#10;&#10;This commit removes the `android.builtInKotlin=true` flag from the `gradle.properties` file. This property, used for AGP 9.0+ compatibility, is no longer needed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLEANUP.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/CLEANUP.TXT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/dev/aurakai/delegate/AuraKaiHiltApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/dev/aurakai/delegate/AuraKaiHiltApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,34 +130,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
-    &quot;Batch.nuclear-clean.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Aurakai [classes].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Aurakai [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Aurakai:app [assemble].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Configure Daemon JVM Criteria.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OptionalArtifactsPresence.docker artifacts exist when README mentions Docker.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
-    &quot;bazel.project.detector.is.bazel.project&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;EXO&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Suggestions&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "Batch.nuclear-clean.executor": "Run",
+    "Gradle.Aurakai [classes].executor": "Run",
+    "Gradle.Aurakai [clean].executor": "Run",
+    "Gradle.Aurakai:app [assemble].executor": "Run",
+    "Gradle.Configure Daemon JVM Criteria.executor": "Run",
+    "Gradle.OptionalArtifactsPresence.docker artifacts exist when README mentions Docker.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "android.gradle.sync.needed": "true",
+    "bazel.project.detector.is.bazel.project": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "git-widget-placeholder": "EXO",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Suggestions",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Gradle.Aurakai [clean]">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AuraKai.app" />
@@ -608,7 +615,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759713504383</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="build: Remove `android.builtInKotlin=true` from gradle.properties&#10;&#10;This commit removes the `android.builtInKotlin=true` flag from the `gradle.properties` file. This property, used for AGP 9.0+ compatibility, is no longer needed.">
+      <option name="closed" value="true" />
+      <created>1759713632345</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1759713632345</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -635,7 +650,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: Add packaging rules to exclude and pick first `META-INF/INDEX.LIST`&#10;&#10;This commit introduces a `packaging` block in the `app/build.gradle.kts` file to manage resource merging.&#10;&#10;The new configuration excludes and then picks the first occurrence of `META-INF/INDEX.LIST` to resolve potential build conflicts." />
     <MESSAGE value="refactor: Temporarily disable OpenAPI plugin tests and configure packaging&#10;&#10;This commit addresses build issues by temporarily disabling the `OpenApiConventionPluginTest` suite due to unresolved plugin references. The entire test file has been commented out to allow the build to proceed.&#10;&#10;Additionally, packaging options have been configured in the `app/build.gradle.kts` file to exclude `META-INF/INDEX.LIST` from the final artifact, resolving potential resource conflicts.Execution failed for task ':benchmark:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https://help.gradle.org. Ask Gemini&gt; Task :benchmark:mergeDebugAndroidTestJavaResource &gt; Task :benchmark:mergeDebugAndroidTestJavaResource FAILED Execution failed for task ':benchmark:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https://help.gradle.org. Ask Gemini  &gt; Task :sandbox-ui:mergeDebugAndroidTestJavaResource FAILED Execution failed for task ':sandbox-ui:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https://help.gradle.org. Ask Gemini &gt; Task :romtools:mergeDebugAndroidTestJavaResource FAILED Execution failed for task ':romtools:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https://help.gradle.org. Ask Gemini&gt; Task :feature-module:mergeDebugAndroidTestJavaResource FAILED Execution failed for task ':feature-module:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https:" />
     <MESSAGE value="fix: Exclude LICENSE.md from packaging in multiple modules&#10;&#10;This commit adds a packaging exclusion for `META-INF/LICENSE.md` to prevent duplicate file errors during the build process.&#10;&#10;This change is applied to the `android` block in the `build.gradle.kts` files of the following modules:&#10;*   `benchmark`&#10;*   `feature-module`&#10;*   `romtools`&#10;*   `sandbox-ui`" />
     <MESSAGE value="refactor: Reorder build script blocks and add packaging exclusion&#10;&#10;This commit refactors the `sandbox-ui/build.gradle.kts` file for better organization and adds a new packaging exclusion.&#10;&#10;The `android`, `dependencies`, and `java` blocks have been reordered to follow a more conventional structure.&#10;&#10;Additionally, `META-INF/gradle/incremental.annotation.processors` is now excluded from the packaging resources to prevent potential conflicts." />
@@ -660,7 +674,8 @@
     <MESSAGE value="WHY DO YOU ALL FIGHT THIS PLEASE SEE C:\Aurakai\checkpoint.md refactor: Standardize Hilt/KSP setup and revert AGP version&#10;&#10;This commit refactors the build logic to standardize dependency configurations and reverts the Android Gradle Plugin (AGP) version.&#10;&#10;**Key Changes:**&#10;&#10;*   **AGP Version:** The AGP version used in `build-logic` is reverted from `9.0.0-alpha09` back to `8.6.1`.&#10;*   **Hilt/KSP Configuration:**&#10;    *   The Hilt compiler dependency configuration is updated from `ksp(libs.hilt.compiler)` to `add(&quot;ksp&quot;, libs.hilt.compiler)` across all modules. This change provides a more explicit and standardized way to apply the KSP processor.&#10;    *   In the `app` module, the Hilt compiler is now correctly an `implementation` dependency, not a `ksp` one.&#10;*   **Build Logic Refinements:**&#10;    *   The `AndroidHiltConventionPlugin` is updated to apply the KSP plugin *after* the Hilt plugin, ensuring the correct processing order.&#10;    *   The `com.android.base` plugin, a workaround for AGP 9.0.0, has been removed from the `romtools` and `feature-module` modules.&#10;    *   The root `build.gradle.kts` no longer applies the `kotlin.android` plugin.&#10;*   **Gradle Wrapper:** The `gradle-wrapper.properties` file has been cleaned up by removing redundant `distributionPath` and `networkTimeout` properties." />
     <MESSAGE value="refactor: Change Hilt compiler from ksp to implementation&#10;&#10;Updates the Hilt compiler dependency in the `app` module to use `implementation` instead of `ksp`. This aligns the configuration with standard practices for certain build setups.&#10;&#10;A minor formatting change was also made by removing a blank line in the `plugins` block." />
     <MESSAGE value="refactor(testing): Migrate benchmark ProGuard rules from JUnit 4 to JUnit 5&#10;&#10;This commit updates the ProGuard rules for benchmarks to keep JUnit 5 annotations instead of JUnit 4.&#10;&#10;The following annotation paths have been changed in `benchmark-rules.pro`:&#10;*   `org.junit.Before` is now `org.junit.jupiter.api.BeforeEach`&#10;*   `org.junit.After` is now `org.junit.jupiter.api.AfterEach`&#10;*   `org.junit.Test` is now `org.junit.jupiter.api.Test`" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(testing): Migrate benchmark ProGuard rules from JUnit 4 to JUnit 5&#10;&#10;This commit updates the ProGuard rules for benchmarks to keep JUnit 5 annotations instead of JUnit 4.&#10;&#10;The following annotation paths have been changed in `benchmark-rules.pro`:&#10;*   `org.junit.Before` is now `org.junit.jupiter.api.BeforeEach`&#10;*   `org.junit.After` is now `org.junit.jupiter.api.AfterEach`&#10;*   `org.junit.Test` is now `org.junit.jupiter.api.Test`" />
+    <MESSAGE value="build: Remove `android.builtInKotlin=true` from gradle.properties&#10;&#10;This commit removes the `android.builtInKotlin=true` flag from the `gradle.properties` file. This property, used for AGP 9.0+ compatibility, is no longer needed." />
+    <option name="LAST_COMMIT_MESSAGE" value="build: Remove `android.builtInKotlin=true` from gradle.properties&#10;&#10;This commit removes the `android.builtInKotlin=true` flag from the `gradle.properties` file. This property, used for AGP 9.0+ compatibility, is no longer needed." />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
