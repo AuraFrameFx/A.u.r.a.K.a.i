@@ -1,45 +1,14 @@
-import com.android.build.api.dsl.ApplicationExtension
-import com.android.build.gradle.api.AndroidBasePlugin
-import org.gradle.api.JavaVersion
-import org.gradle.api.Plugin
-import org.gradle.api.Project
-import org.gradle.api.plugins.JavaPluginExtension
-import org.gradle.api.tasks.Delete
-import org.gradle.kotlin.dsl.*
+override fun apply(target: Project) {
+    with(target) {
+        with(pluginManager) {
+            apply("com.android.application")
+            apply("org.jetbrains.kotlin.plugin.compose")
+        }
 
-class AndroidApplicationConventionPlugin : Plugin<Project> {
-    /**
-     * Applies core plugins (Android application, Kotlin Compose), and configures the Android
-     * ApplicationExtension with sensible defaults for compile/target/min SDKs, build types,
-     * Compose, packaging, lint, and desugaring. Also sets Java/Kotlin JVM toolchains to Java 24,
-     * registers a `cleanKspCache` task to remove KSP/KAPT generated caches, and makes `preBuild`
-     * depend on that clean task.
-     *
-     * @param target The Gradle project the plugin is being applied to.
-     */
-    override fun apply(target: Project) {
-        with(target) {
-            with(pluginManager) {
-                apply("com.android.application")
-            }
-
-            // Wait for base plugin to be ready, then apply Hilt
-            pluginManager.withPlugin("com.android.base") {
-                pluginManager.apply("com.google.dagger.hilt.android")
-                pluginManager.apply("com.google.devtools.ksp")
-                pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
-
-                // Configure Hilt dependencies
-                val libs =
-                    extensions.getByType(org.gradle.api.artifacts.VersionCatalogsExtension::class.java)
-                        .named("libs")
-                dependencies {
-                    add("implementation", libs.findLibrary("hilt-android").get())
-                    add("ksp", libs.findLibrary("hilt-compiler").get())
-                }
-
-                extensions.configure<ApplicationExtension> {
-                    compileSdk = 36
+        // Wait for Android plugin to be fully ready before configuring
+        pluginManager.withPlugin("com.android.application") {
+            extensions.configure<ApplicationExtension> {
+                compileSdk = 36
 
                     defaultConfig {
                         targetSdk = 36
@@ -99,7 +68,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                         }
                     }
 
-                    lint {
+                    // Lint configuration (per AGENT_INSTRUCTIONS.md section 6)lint {
                         warningsAsErrors = false
                         abortOnError = false
                         disable.addAll(listOf("InvalidPackage", "OldTargetApi"))
@@ -111,7 +80,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                     targetCompatibility = JavaVersion.VERSION_24
                 }
 
-                // Clean tasks for app module
+                // Clean tasks for app module(per AGENT_INSTRUCTIONS.md section 4)
                 tasks.register("cleanKspCache", Delete::class.java) {
                     group = "build setup"
                     description = "Clean KSP caches (fixes NullPointerException)"
@@ -124,15 +93,15 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                     )
                 }
 
-                tasks.named("preBuild") {
-                    dependsOn("cleanKspCache")
-                }
+            tasks.named("preBuild") {
+                dependsOn("cleanKspCache")
             }
-            // Kotlin JVM toolchain (only configure after kotlin-android is applied)
-            pluginManager.withPlugin("org.jetbrains.kotlin.android") {
-                extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
-                    jvmToolchain(24)
-                }
+        }
+
+        // Kotlin JVM toolchain (only configure after kotlin-android is applied)
+        pluginManager.withPlugin("org.jetbrains.kotlin.android") {
+            extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
+                jvmToolchain(24)
             }
         }
     }

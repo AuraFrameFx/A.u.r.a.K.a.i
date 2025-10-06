@@ -1,10 +1,13 @@
 // ==== GENESIS PROTOCOL - ANDROID LIBRARY CONVENTION ====
 // Standard Android library configuration for all modules
+// Follows best practices from AGENT_INSTRUCTIONS.md
 
 import com.android.build.api.dsl.LibraryExtension
+import org.gradle.api.GradleException
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.tasks.Delete
 import org.gradle.kotlin.dsl.configure
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
@@ -21,20 +24,21 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
      */
     override fun apply(target: Project) {
         with(target) {
+            // Apply plugins in correct order (per AGENT_INSTRUCTIONS.md section 2)
             with(pluginManager) {
                 apply("com.android.library")
             }
-            // Defer extension configuration until plugin is ready
-            pluginManager.withPlugin("com.android.library") {
-                extensions.configure<LibraryExtension> {
-                    compileSdk = 36
-                    defaultConfig {
-                        minSdk = 34
-                    }
-                    compileOptions {
-                        sourceCompatibility = JavaVersion.VERSION_24
-                        targetCompatibility = JavaVersion.VERSION_24
-                    }
+
+            extensions.configure<LibraryExtension> {
+                compileSdk = 36
+
+                defaultConfig {
+                    minSdk = 34
+                }
+
+                compileOptions {
+                    sourceCompatibility = JavaVersion.VERSION_24
+                    targetCompatibility = JavaVersion.VERSION_24
                 }
             }
             // Kotlin JVM toolchain (only configure after kotlin-android is applied)
