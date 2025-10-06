@@ -1,9 +1,6 @@
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 plugins {
-    id("com.android.base")  // AGP 9 workaround: MUST BE FIRST
-    id("genesis.android.application")
-    alias(libs.plugins.hilt)
-    alias(libs.plugins.ksp)
+    id("genesis.android.application")  // Handles com.android.base, Hilt, KSP internally
 }
 
 android {
@@ -121,8 +118,7 @@ dependencies {
     implementation(libs.bundles.firebase)
 
     // ===== HILT DEPENDENCY INJECTION =====
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    // Auto-added by genesis.android.application convention plugin
 
     // ===== WORKMANAGER =====
     implementation(libs.androidx.work.runtime.ktx)
