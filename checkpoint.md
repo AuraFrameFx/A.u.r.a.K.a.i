@@ -53,14 +53,16 @@ Location: `c:/Aurakai/checkpoint.md`
   - android.builtInKotlin=false (workaround while Hilt/SafeArgs stabilize)
 
 ## Hilt Configuration – Critical
-- **Application module (`app/`)**: must apply Hilt plugin
+- **Application module (`app/`)**: must apply Hilt plugin via alias
   ```kotlin
   plugins {
-    id("com.android.application")
+    id("genesis.android.application")  // Applies com.android.application internally
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
   }
   ```
+  **Important:** Do NOT add `id("com.android.base")` to application modules - this causes "Android BaseExtension not found" errors.
+  
 - **Library modules**: do NOT apply Hilt plugin; for AGP 9.0 alpha workaround add
   ```kotlin
   plugins {
@@ -125,5 +127,5 @@ Add notes below this line with date/time and initials.
 - 2025-10-05 14:26 (-06) – Cascade: Initialized checkpoint, defined Java 24 baseline and Hilt/AGP actions.
 - 2025-10-05 14:27 (-06) – Cascade: Patched project to Java 24: root toolchain updated, app compileOptions/toolchain set to 24, data/api toolchain added, KSP language/api set to 2.2 in gradle.properties. Next: consolidate @HiltAndroidApp to `ReGenesisApplication` and tidy cosmetic logs.
 - 2025-10-05 14:31 (-06) – Cascade: Removed extra @HiltAndroidApp (disabled in `AuraKaiHiltApplication.kt`). Only `ReGenesisApplication` remains annotated per manifest.
-- 2025-10-05 14:32 (-06) – Cascade: Applied AGP 9 workaround in `app/build.gradle.kts` by adding `id("com.android.base")` so Hilt can find Android BaseExtension.
+- 2025-10-05 14:32 (-06) – Cascade: [CORRECTED] Previously incorrectly applied AGP 9 workaround `id("com.android.base")` to app/build.gradle.kts. This workaround is ONLY for library modules, not application modules. Removed in subsequent fix.
  - 2025-10-05 15:27 (-06) – Cascade: User clicked Android Studio Upgrade Assistant to move AGP from 9.0.0-alpha02 to 9.0.0-alpha09. Next: align root/pluginManagement/build-logic to alpha09 and clean build.

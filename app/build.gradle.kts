@@ -1,6 +1,7 @@
 plugins {
     id("genesis.android.application")
-    id("genesis.android.hilt")
+    alias(libs.plugins.hilt)
+
     alias(libs.plugins.ksp)
 }
 
