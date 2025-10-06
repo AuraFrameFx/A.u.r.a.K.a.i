@@ -30,13 +30,15 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 // Apply Compose immediately
                 pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
 
-                // Defer Hilt and KSP until the Android base plugin is present
+                // Wait for Android base plugin, then defer Hilt/KSP to after evaluation
                 plugins.withType(AndroidBasePlugin::class.java) {
-                    if (!plugins.hasPlugin("com.google.dagger.hilt.android")) {
-                        pluginManager.apply("com.google.dagger.hilt.android")
-                    }
-                    if (!plugins.hasPlugin("com.google.devtools.ksp")) {
-                        pluginManager.apply("com.google.devtools.ksp")
+                    afterEvaluate {
+                        if (!plugins.hasPlugin("com.google.dagger.hilt.android")) {
+                            pluginManager.apply("com.google.dagger.hilt.android")
+                        }
+                        if (!plugins.hasPlugin("com.google.devtools.ksp")) {
+                            pluginManager.apply("com.google.devtools.ksp")
+                        }
                     }
                 }
             }
