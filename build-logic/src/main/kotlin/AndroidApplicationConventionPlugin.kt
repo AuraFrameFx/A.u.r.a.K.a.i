@@ -25,26 +25,21 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
+                apply("com.android.base")  // AGP 9 alpha: expose BaseExtension FIRST
                 apply("com.android.application")
-                apply("com.android.base")  // AGP 9 alpha: expose BaseExtension for Hilt
+                apply("com.google.dagger.hilt.android")  // Apply Hilt immediately after
+                apply("com.google.devtools.ksp")
             }
 
             pluginManager.withPlugin("com.android.application") {
                 // Apply Compose immediately
                 pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
-
-                // Wait for Android base plugin, then defer Hilt/KSP to after evaluation
-                plugins.withType(AndroidBasePlugin::class.java) {
-                    afterEvaluate {
-                        if (!plugins.hasPlugin("com.google.dagger.hilt.android")) {
-                            pluginManager.apply("com.google.dagger.hilt.android")
-                        }
-                        if (!plugins.hasPlugin("com.google.devtools.ksp")) {
-                            pluginManager.apply("com.google.devtools.ksp")
-                        }
-                    }
-                }
             }
+
+            // Configure Hilt dependencies
+            val libs = extensions.getByType(org.gradle.api.artifacts.VersionCatalogsExtension::class.java).named("libs")
+            dependencies.add("implementation", libs.findLibrary("hilt-android").get())
+            dependencies.add("ksp", libs.findLibrary("hilt-compiler").get())
 
             extensions.configure<ApplicationExtension> {
                 compileSdk = 36

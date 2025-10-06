@@ -1,8 +1,6 @@
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 plugins {
     id("genesis.android.application")
-    alias(libs.plugins.hilt)
-    alias(libs.plugins.ksp)
 }
 
 android {
@@ -115,20 +113,15 @@ dependencies {
     implementation(libs.ktor.client.auth)
 
     // ===== FIREBASE =====
-    // By implementing the BOM, we can specify Firebase SDKs without versions
     implementation(platform(libs.firebase.bom))
     // This bundle includes Analytics, Crashlytics, Performance, Auth, Firestore, Messaging, and Config
     implementation(libs.bundles.firebase)
 
     // ===== HILT DEPENDENCY INJECTION =====
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    // Hilt dependencies auto-added by genesis.android.application convention plugin
 
     // ===== WORKMANAGER =====
     implementation(libs.androidx.work.runtime.ktx)
-    implementation(libs.hilt.work)
-
-    // ===== UTILITIES =====
     implementation(libs.timber)
     implementation(libs.coil.compose)
 
