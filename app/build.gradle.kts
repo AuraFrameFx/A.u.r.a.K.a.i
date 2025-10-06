@@ -1,5 +1,6 @@
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 plugins {
+    id("com.android.base")  // AGP 9 workaround: MUST BE FIRST
     id("genesis.android.application")
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
