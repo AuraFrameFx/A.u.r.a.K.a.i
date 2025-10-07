@@ -22,8 +22,8 @@ apply(from = "scripts/apply-yukihook-conventions.gradle.kts")
 plugins {
     alias(libs.plugins.kotlin.serialization) apply false
     id("com.google.dagger.hilt.android") version "2.57.2" apply false
-    id("com.android.application") version "9.0.0-alpha09" apply false
-    id("com.android.library") version "9.0.0-alpha09" apply false
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.library) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.compose.compiler) apply false
     id("genesis.android.application") apply false
@@ -154,19 +154,19 @@ subprojects {
     // Configure Kotlin toolchains via plugin IDs to avoid classloader issues with wrapper types
     plugins.withId("org.jetbrains.kotlin.android") {
         extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
-            jvmToolchain(24)
+            jvmToolchain(25)
         }
     }
     plugins.withId("org.jetbrains.kotlin.jvm") {
         extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
-            jvmToolchain(24)
+            jvmToolchain(25)
         }
     }
 
     plugins.withType<JavaPlugin> {
         extensions.configure<JavaPluginExtension>("java") {
             toolchain {
-                languageVersion.set(JavaLanguageVersion.of(24))
+                languageVersion.set(JavaLanguageVersion.of(25))
             }
         }
     }
