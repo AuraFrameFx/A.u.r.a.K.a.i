@@ -3,6 +3,7 @@
 
 plugins {
     id("genesis.android.library")
+    id("genesis.android.native")
     alias(libs.plugins.ksp)
 
 }

@@ -1,6 +1,7 @@
 // Apply plugins (versions via version catalog)
 plugins {
     id("genesis.android.library")
+    id("genesis.android.native")
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead

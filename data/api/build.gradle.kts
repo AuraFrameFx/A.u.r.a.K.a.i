@@ -11,19 +11,17 @@ kotlin {
     jvmToolchain(24)
 }
 
-val ecoCoreSpec = file("${rootDir}/data/api/eco-core.yaml")
-val ecoAiSpec = file("${rootDir}/data/api/eco-ai.yaml")
+val ecoSpec = file("${rootDir}/data/api/ECO.yaml")
 
-require(ecoCoreSpec.exists()) { "OpenAPI spec not found at: ${ecoCoreSpec.absolutePath}" }
-require(ecoAiSpec.exists()) { "OpenAPI spec not found at: ${ecoAiSpec.absolutePath}" }
+require(ecoSpec.exists()) { "OpenAPI spec not found at: ${ecoSpec.absolutePath}" }
 
 openApiGenerate {
     generatorName = "kotlin"
-    inputSpec = ecoCoreSpec.toURI().toString()
+    inputSpec = ecoSpec.toURI().toString()
     validateSpec = false
-    outputDir = layout.buildDirectory.dir("generated/openapi/ecocore").get().asFile.path
-    apiPackage = "dev.aurakai.auraframefx.api.ecocore"
-    modelPackage = "dev.aurakai.auraframefx.model.ecocore"
+    outputDir = layout.buildDirectory.dir("generated/openapi/eco").get().asFile.path
+    apiPackage = "dev.aurakai.auraframefx.api.eco"
+    modelPackage = "dev.aurakai.auraframefx.model.eco"
 
     additionalProperties = mapOf(
         "skipValidateSpec" to "true",
@@ -54,7 +52,7 @@ openApiGenerate {
 
 tasks.register("openApiGenerateEcoAi", org.openapitools.generator.gradle.plugin.tasks.GenerateTask::class) {
     generatorName = "kotlin"
-    inputSpec = ecoAiSpec.toURI().toString()
+    inputSpec = ecoSpec.toURI().toString()
     validateSpec = false
     outputDir = layout.buildDirectory.dir("generated/openapi/ecoai").get().asFile.path
     apiPackage = "dev.aurakai.auraframefx.api.ecoai"
@@ -89,7 +87,7 @@ tasks.register("openApiGenerateEcoAi", org.openapitools.generator.gradle.plugin.
 
 sourceSets {
     named("main") {
-        // java.srcDir(layout.buildDirectory.dir("generated/openapi/ecocore/src/main/kotlin"))
+        java.srcDir(layout.buildDirectory.dir("generated/openapi/eco/src/main/kotlin"))
         java.srcDir(layout.buildDirectory.dir("generated/openapi/ecoai/src/main/kotlin"))
     }
 }
