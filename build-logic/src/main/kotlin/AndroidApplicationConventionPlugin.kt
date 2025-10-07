@@ -14,6 +14,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.application")
                 apply("org.jetbrains.kotlin.plugin.compose")
+                // Removed apply("genesis.android.hilt") to avoid premature Hilt application
             }
 
             pluginManager.withPlugin("com.android.application") {
