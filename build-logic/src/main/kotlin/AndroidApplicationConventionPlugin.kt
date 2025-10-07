@@ -8,7 +8,6 @@ import org.gradle.kotlin.dsl.register
 import org.gradle.kotlin.dsl.typeOf
 import org.gradle.api.JavaVersion
 
-@Suppress("UnstableApiUsage")
 class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {

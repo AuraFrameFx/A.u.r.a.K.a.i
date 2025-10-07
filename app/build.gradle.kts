@@ -1,8 +1,8 @@
 plugins {
     id("genesis.android.application")
     alias(libs.plugins.compose.compiler)
-    id("com.google.gms.google-services") version "4.4.2"
-    id("com.google.firebase.crashlytics") version "3.0.1"
+    id("com.google.gms.google-services") version "4.4.3"
+    id("com.google.firebase.crashlytics") version "3.0.6"
 }
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
