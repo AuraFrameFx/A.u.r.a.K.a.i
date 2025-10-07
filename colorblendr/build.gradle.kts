@@ -1,6 +1,7 @@
 // ==== GENESIS PROTOCOL - COLORBLENDR MODULE ====
 // Color utility and theming module
 
+
 plugins {
     id("genesis.android.library")
     alias(libs.plugins.ksp)

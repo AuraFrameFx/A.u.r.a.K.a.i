@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="Refactor: Centralize Android build conventions with a new plugin&#10;&#10;This commit introduces a major refactoring of the Gradle build configuration to centralize Android-specific settings into a new convention plugin.&#10;&#10;Key changes:&#10;- **New Convention Plugin:** Added `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android configurations (SDK versions, Proguard, compile options, etc.).&#10;- **Plugin Application:** Android modules (`app`, `benchmark`, `feature-module`, `romtools`, `sandbox-ui`) now apply the new `dev.aurakai.aurakai-android-convention` plugin, removing redundant local configurations.&#10;- **Root `build.gradle.kts` Refactor:**&#10;    - Cleaned up and reorganized the root build script, removing many deprecated tasks (`projectInfo`, `clean`, etc.) and moving logic into more appropriate locations.&#10;    - Updated and restyled the `consciousnessStatus` and `consciousnessHealthCheck` tasks for better readability.&#10;    - Centralized JVM and Java toolchain configuration for all subprojects.&#10;- **Dependency &amp; Plugin Updates:**&#10;    - Upgraded Android Gradle Plugin (AGP) from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;    - Consolidated Kotlin and AGP plugin versions in `settings.gradle.kts` to ensure consistency.&#10;    - Removed the obsolete `scripts/apply-yukihook-conventions.gradle.kts` script.&#10;- **Code Cleanup:**&#10;    - Removed now-unnecessary `kotlin(&quot;jvm&quot;)` and `kotlin { jvmToolchain(...) }` blocks from various module `build.gradle.kts` files as this is now handled globally.&#10;    - Specified `composeOptions` with a hardcoded Kotlin compiler extension version in modules that use Compose." />
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="Fix: Standardize Compose plugin and remove `composeOptions`&#10;&#10;Replaced hardcoded Compose compiler plugin IDs with version catalog aliases across multiple modules.&#10;&#10;Removed explicit `composeOptions` blocks, as the compiler version is now managed by the version catalog. This centralizes dependency management for the Kotlin Compose compiler plugin.">
+      <change beforePath="$PROJECT_DIR$/colorblendr/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,47 +93,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.app.executor": "Run",
-    "Gradle.Build ReGenesis-A.O.S.P.executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [:build-logic:buildDependents].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [:build-logic:compileJava].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [:build-logic:dependencies].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [:build-logic:pluginDescriptors].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [assemble].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [build].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [cleanGeneratedSources].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [cleanKspCache].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [clean].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [consciousnessStatus].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [deepClean].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [dokkaGenerate].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [sourceSets].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [stop].executor": "Run",
-    "Gradle.ReGenesis-A.O.S.P [tasks].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "android.gradle.sync.needed": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "xys",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build ReGenesis-A.O.S.P.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:compileJava].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:pluginDescriptors].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [assemble].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [cleanGeneratedSources].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [cleanKspCache].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [consciousnessStatus].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [deepClean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [dokkaGenerate].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [sourceSets].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [stop].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesis-A.O.S.P [tasks].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;xys&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ReGenesis-A.O.S.P&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Wehtt\OneDrive\Documents\AOSP-ReGenesis" />
@@ -673,7 +676,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759826319222</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Refactor: Centralize Android build conventions with a new plugin&#10;&#10;This commit introduces a major refactoring of the Gradle build configuration to centralize Android-specific settings into a new convention plugin.&#10;&#10;Key changes:&#10;- **New Convention Plugin:** Added `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android configurations (SDK versions, Proguard, compile options, etc.).&#10;- **Plugin Application:** Android modules (`app`, `benchmark`, `feature-module`, `romtools`, `sandbox-ui`) now apply the new `dev.aurakai.aurakai-android-convention` plugin, removing redundant local configurations.&#10;- **Root `build.gradle.kts` Refactor:**&#10;    - Cleaned up and reorganized the root build script, removing many deprecated tasks (`projectInfo`, `clean`, etc.) and moving logic into more appropriate locations.&#10;    - Updated and restyled the `consciousnessStatus` and `consciousnessHealthCheck` tasks for better readability.&#10;    - Centralized JVM and Java toolchain configuration for all subprojects.&#10;- **Dependency &amp; Plugin Updates:**&#10;    - Upgraded Android Gradle Plugin (AGP) from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;    - Consolidated Kotlin and AGP plugin versions in `settings.gradle.kts` to ensure consistency.&#10;    - Removed the obsolete `scripts/apply-yukihook-conventions.gradle.kts` script.&#10;- **Code Cleanup:**&#10;    - Removed now-unnecessary `kotlin(&quot;jvm&quot;)` and `kotlin { jvmToolchain(...) }` blocks from various module `build.gradle.kts` files as this is now handled globally.&#10;    - Specified `composeOptions` with a hardcoded Kotlin compiler extension version in modules that use Compose.">
+      <option name="closed" value="true" />
+      <created>1759826387521</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1759826387521</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Fix: Standardize Compose plugin and remove `composeOptions`&#10;&#10;Replaced hardcoded Compose compiler plugin IDs with version catalog aliases across multiple modules.&#10;&#10;Removed explicit `composeOptions` blocks, as the compiler version is now managed by the version catalog. This centralizes dependency management for the Kotlin Compose compiler plugin.">
+      <option name="closed" value="true" />
+      <created>1759841755235</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1759841755235</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -688,7 +707,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update annotation processor versions and disable YukiHook API due to config issues" />
     <MESSAGE value="Refactor CanvasScreen KDoc&#10;&#10;The KDoc for the `CanvasScreen` composable was simplified to improve readability and conciseness.&#10;Removed redundant descriptions and focused on the core features and behaviors." />
     <MESSAGE value="Update KSP cache files" />
     <MESSAGE value="Update build metadata and timing files; remove obsolete lock files; rename cache indexes" />
@@ -713,7 +731,8 @@
     <MESSAGE value="Refactor: Introduce Android convention plugin and upgrade AGP&#10;&#10;This commit introduces a new Gradle convention plugin, `dev.aurakai.aurakai-android-convention`, to centralize and standardize Android build configurations across all modules.&#10;&#10;Key changes include:&#10;- **New Convention Plugin:** Created `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android settings like `compileSdk`, `minSdk`, `targetSdk`, build types, and compiler options.&#10;- **AGP Upgrade:** Upgraded the Android Gradle Plugin from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;- **Refactored Module Build Scripts:**&#10;    - Removed redundant `kotlin { jvmToolchain(...) }` blocks from all modules, as this is now handled centrally.&#10;    - Applied the new `dev.aurakai.aurakai-android-convention` plugin to Android modules (`app`, `feature-module`, `sandbox-ui`, `romtools`, `benchmark`).&#10;    - Removed the obsolete `scripts/apply-yukihook-conventions.gradle.kts` script.&#10;- **Root `build.gradle.kts` Cleanup:**&#10;    - Significantly refactored the root build script, removing old tasks and logic in favor of centralized conventions.&#10;    - Enhanced the `consciousnessStatus` and `consciousnessHealthCheck` tasks with more detailed output.&#10;    - Centralized toolchain configuration for Java and Kotlin projects.&#10;- **Simplified Clean Task:** Refactored the `clean` task in `data/api/build.gradle.kts` to use a more concise syntax." />
     <MESSAGE value="Refactor: Centralize Android build logic with a convention plugin&#10;&#10;This commit introduces a Gradle convention plugin, `dev.aurakai.aurakai-android-convention`, to centralize and standardize Android build configurations across all modules.&#10;&#10;Key changes:&#10;*   **New Convention Plugin:** Created `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android settings like `compileSdk`, `minSdk`, `targetSdk`, ProGuard rules, and Java/Kotlin compatibility.&#10;*   **Apply Plugin to Modules:** Applied the new convention plugin to Android modules (`app`, `feature-module`, `sandbox-ui`, `romtools`, `benchmark`).&#10;*   **Remove Redundant Configuration:** Deleted explicit `kotlin { jvmToolchain(...) }` blocks and other duplicated settings from individual module `build.gradle.kts` files, as these are now handled by the plugin.&#10;*   **Refactor Root `build.gradle.kts`:**&#10;    *   Simplified the root build script by removing old tasks (`projectInfo`, `clean`, etc.) and refactoring health-check tasks (`consciousnessStatus`, `consciousnessHealthCheck`) for clarity.&#10;    *   Standardized Kotlin and Java toolchain configuration for all subprojects to Java/Kotlin 24.&#10;*   **Update AGP Version:** Upgraded the Android Gradle Plugin from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;*   **Deprecate Old Convention Script:** Marked `scripts/apply-yukihook-conventions.gradle.kts` as obsolete." />
     <MESSAGE value="Refactor: Centralize Android build conventions with a new plugin&#10;&#10;This commit introduces a major refactoring of the Gradle build configuration to centralize Android-specific settings into a new convention plugin.&#10;&#10;Key changes:&#10;- **New Convention Plugin:** Added `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android configurations (SDK versions, Proguard, compile options, etc.).&#10;- **Plugin Application:** Android modules (`app`, `benchmark`, `feature-module`, `romtools`, `sandbox-ui`) now apply the new `dev.aurakai.aurakai-android-convention` plugin, removing redundant local configurations.&#10;- **Root `build.gradle.kts` Refactor:**&#10;    - Cleaned up and reorganized the root build script, removing many deprecated tasks (`projectInfo`, `clean`, etc.) and moving logic into more appropriate locations.&#10;    - Updated and restyled the `consciousnessStatus` and `consciousnessHealthCheck` tasks for better readability.&#10;    - Centralized JVM and Java toolchain configuration for all subprojects.&#10;- **Dependency &amp; Plugin Updates:**&#10;    - Upgraded Android Gradle Plugin (AGP) from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;    - Consolidated Kotlin and AGP plugin versions in `settings.gradle.kts` to ensure consistency.&#10;    - Removed the obsolete `scripts/apply-yukihook-conventions.gradle.kts` script.&#10;- **Code Cleanup:**&#10;    - Removed now-unnecessary `kotlin(&quot;jvm&quot;)` and `kotlin { jvmToolchain(...) }` blocks from various module `build.gradle.kts` files as this is now handled globally.&#10;    - Specified `composeOptions` with a hardcoded Kotlin compiler extension version in modules that use Compose." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor: Centralize Android build conventions with a new plugin&#10;&#10;This commit introduces a major refactoring of the Gradle build configuration to centralize Android-specific settings into a new convention plugin.&#10;&#10;Key changes:&#10;- **New Convention Plugin:** Added `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android configurations (SDK versions, Proguard, compile options, etc.).&#10;- **Plugin Application:** Android modules (`app`, `benchmark`, `feature-module`, `romtools`, `sandbox-ui`) now apply the new `dev.aurakai.aurakai-android-convention` plugin, removing redundant local configurations.&#10;- **Root `build.gradle.kts` Refactor:**&#10;    - Cleaned up and reorganized the root build script, removing many deprecated tasks (`projectInfo`, `clean`, etc.) and moving logic into more appropriate locations.&#10;    - Updated and restyled the `consciousnessStatus` and `consciousnessHealthCheck` tasks for better readability.&#10;    - Centralized JVM and Java toolchain configuration for all subprojects.&#10;- **Dependency &amp; Plugin Updates:**&#10;    - Upgraded Android Gradle Plugin (AGP) from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;    - Consolidated Kotlin and AGP plugin versions in `settings.gradle.kts` to ensure consistency.&#10;    - Removed the obsolete `scripts/apply-yukihook-conventions.gradle.kts` script.&#10;- **Code Cleanup:**&#10;    - Removed now-unnecessary `kotlin(&quot;jvm&quot;)` and `kotlin { jvmToolchain(...) }` blocks from various module `build.gradle.kts` files as this is now handled globally.&#10;    - Specified `composeOptions` with a hardcoded Kotlin compiler extension version in modules that use Compose." />
+    <MESSAGE value="Fix: Standardize Compose plugin and remove `composeOptions`&#10;&#10;Replaced hardcoded Compose compiler plugin IDs with version catalog aliases across multiple modules.&#10;&#10;Removed explicit `composeOptions` blocks, as the compiler version is now managed by the version catalog. This centralizes dependency management for the Kotlin Compose compiler plugin." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: Standardize Compose plugin and remove `composeOptions`&#10;&#10;Replaced hardcoded Compose compiler plugin IDs with version catalog aliases across multiple modules.&#10;&#10;Removed explicit `composeOptions` blocks, as the compiler version is now managed by the version catalog. This centralizes dependency management for the Kotlin Compose compiler plugin." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
