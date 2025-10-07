@@ -71,14 +71,14 @@
         </activity>
 
         <service
-            android:name="com.auraframefx.regenesis.services.VertexSyncService"
+            android:name=".VertexSyncService"
             android:exported="false" />
         <service
-            android:name="com.auraframefx.regenesis.security.IntegrityMonitorService"
+            android:name=".security.IntegrityMonitorService"
             android:exported="false" />
 
         <receiver
-            android:name="com.auraframefx.regenesis.receivers.BootCompletedReceiver"
+            android:name=".receivers.BootCompletedReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -86,11 +86,11 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.auraframefx.regenesis.security.IntegrityViolationReceiver"
+            android:name=".security.IntegrityViolationReceiver"
             android:exported="false"
             android:permission="dev.aurakai.auraframefx.permission.RECEIVE_INTEGRITY_VIOLATION">
             <intent-filter>
-                <action android:name="com.auraframefx.regenesis.INTEGRITY_VIOLATION" />
+                <action android:name="dev.aurakai.auraframefx.ACTION_INTEGRITY_VIOLATION" />
             </intent-filter>
         </receiver>
     </application>
