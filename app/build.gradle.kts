@@ -55,20 +55,6 @@ android {
     }
 }
 
-// Configure Android Components to add generated OpenAPI sources
-androidComponents {
-    onVariants { variant ->
-        val openApiGenTask = tasks.named("openApiGenerate")
-        variant.sources.java?.addGeneratedSourceDirectory(
-            openApiGenTask,
-            openApiGenTask.map {
-                project.objects.directoryProperty().apply {
-                    set(layout.buildDirectory.dir("generated/openapi/src/main/kotlin"))
-                }
-            }
-        )
-    }
-}
 
 // OpenAPI Generator Configuration for Eco.yml
 openApiGenerate {
@@ -83,6 +69,10 @@ openApiGenerate {
     ))
 }
 
+// Add generated OpenAPI sources to Kotlin compilation
+kotlin.sourceSets.getByName("main") {
+    kotlin.srcDir(layout.buildDirectory.dir("generated/openapi/src/main/kotlin"))
+}
 
 // Ensure OpenAPI generation runs before Kotlin compilation
 tasks.withType<KotlinCompile>().configureEach {
