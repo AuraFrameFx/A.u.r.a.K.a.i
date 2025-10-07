@@ -60,10 +60,10 @@ import dev.aurakai.auraframefx.romtools.RomToolsManager
 @Composable
 fun RomToolsScreen(
     modifier: Modifier = Modifier,
-    romToolsManager: RomToolsManager = hiltViewModel<RomToolsManager>()
+    viewModel: RomToolsManager = hiltViewModel()
 ) {
-    val romToolsState by romToolsManager.romToolsState.collectAsStateWithLifecycle()
-    val operationProgress by romToolsManager.operationProgress.collectAsStateWithLifecycle()
+    val romToolsState by viewModel.romToolsState.collectAsStateWithLifecycle()
+    val operationProgress by viewModel.operationProgress.collectAsStateWithLifecycle()
 
     // Main column container
     Column(
@@ -107,7 +107,7 @@ fun RomToolsScreen(
 @Preview(showBackground = true)
 @Composable
 fun RomToolsScreenPreview() {
-    RomToolsScreen(romToolsManager = FakeRomToolsManager())
+    RomToolsScreen(viewModel = FakeRomToolsManager())
 }
 
 @Composable
@@ -673,3 +673,9 @@ private fun BackupCardPreview() {
     val backupInfo = BackupInfo("FullBackup-20231026", "/sdcard/TWRP/BACKUPS/device_id/FullBackup-20231026", 8589934592L, System.currentTimeMillis(), "Pixel 8 Pro", "14.0", listOf("boot", "system", "data", "vendor"))
     BackupCard(backup = backupInfo)
 }
+
+// NOTE: For real file operations, use context.getExternalFilesDir() or similar instead of hardcoded /sdcard paths.
+// Example:
+// val backupDir = context.getExternalFilesDir("backups")
+// val backupPath = backupDir?.absolutePath ?: ""
+

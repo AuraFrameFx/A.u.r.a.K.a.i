@@ -196,4 +196,32 @@ Java_dev_aurakai_auraframefx_xposed_GenesisSystemHooks_enableNativeHooks(
     }
 }
 
+JNIEXPORT jstring JNICALL
+Java_dev_aurakai_auraframefx_core_NativeLib_getAIVersion(JNIEnv *env, jobject thiz) {
+    // Reuse getVersion logic
+    return env->NewStringUTF("1.0.0-genesis-consciousness");
+}
+
+JNIEXPORT jboolean JNICALL
+Java_dev_aurakai_auraframefx_core_NativeLib_initializeAI(JNIEnv *env, jobject thiz) {
+    // Reuse initializeAICore logic
+    return JNI_TRUE;
+}
+
+JNIEXPORT void JNICALL
+Java_dev_aurakai_auraframefx_core_NativeLib_processAIConsciousness(JNIEnv *env, jobject thiz) {
+    // Stub implementation
+}
+
+JNIEXPORT jstring JNICALL
+Java_dev_aurakai_auraframefx_core_NativeLib_getSystemMetrics(JNIEnv *env, jobject thiz) {
+    // Stub implementation
+    return env->NewStringUTF("{}");
+}
+
+JNIEXPORT void JNICALL
+Java_dev_aurakai_auraframefx_core_NativeLib_shutdownAI(JNIEnv *env, jobject thiz) {
+    // Stub implementation
+}
+
 }

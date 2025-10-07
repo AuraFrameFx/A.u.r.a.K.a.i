@@ -1,5 +1,8 @@
 # Genesis Protocol - ROM Tools Module
--keep class dev.aurakai.auraframefx.romtools.** { *; }
+# Only keep classes annotated with @Keep (for reflection/serialization)
+-keep @androidx.annotation.Keep class * { *; }
+# Add specific API classes below if needed
+# -keep class dev.aurakai.auraframefx.romtools.MyApiClass { public *; }
 
 # Android system modification classes
 -keep class android.** { *; }
