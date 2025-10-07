@@ -27,7 +27,7 @@ import kotlin.test.assertTrue
  *   - coreLibraryDesugaring enabled
  *   - packaging excludes
  *   - lint configuration
- *   - Java toolchain to 21, Kotlin jvmToolchain(24)
+ *   - Java toolchain to 21, Kotlin jvmToolchain(25)
  *   - cleanGeneratedSources task registered and wired to preBuild
  *
  * These tests assume the repository's settings/pluginManagement can resolve com.android.library from Google Maven.
@@ -290,12 +290,12 @@ class AndroidLibraryConventionPluginTest {
 
         val output = runGradle("printJvmToolchains")
         assertTrue(
-            output.contains("java.sourceCompatibility=VERSION_24"),
-            "Expected Java sourceCompatibility 24.\n$output"
+            output.contains("java.sourceCompatibility=VERSION_25"),
+            "Expected Java sourceCompatibility 25.\n$output"
         )
         assertTrue(
-            output.contains("java.targetCompatibility=VERSION_24"),
-            "Expected Java targetCompatibility 24.\n$output"
+            output.contains("java.targetCompatibility=VERSION_25"),
+            "Expected Java targetCompatibility 25.\n$output"
         )
         assertTrue(
             output.contains("kotlin.jvmToolchain.configured=YES"),

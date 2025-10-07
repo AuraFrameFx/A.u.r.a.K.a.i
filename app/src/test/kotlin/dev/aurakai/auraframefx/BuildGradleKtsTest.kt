@@ -151,15 +151,15 @@ class BuildGradleKtsTest {
     }
 
     @Test
-    @DisplayName("Compile options: Java 24 source and target compatibility")
+    @DisplayName("Compile options: Java 25 source and target compatibility")
     fun compileOptionsConfigured() {
         assertTrue(
-            Regex("""sourceCompatibility\s*=\s*JavaVersion\.(VERSION_24|toVersion\("24"\))""").containsMatchIn(script),
-            "Expected sourceCompatibility = JavaVersion.VERSION_24"
+            Regex("""sourceCompatibility\s*=\s*JavaVersion\.(VERSION_25|toVersion\("25"\))""").containsMatchIn(script),
+            "Expected sourceCompatibility = JavaVersion.VERSION_25"
         )
         assertTrue(
-            Regex("""targetCompatibility\s*=\s*JavaVersion\.(VERSION_24|toVersion\("24"\))""").containsMatchIn(script),
-            "Expected targetCompatibility = JavaVersion.VERSION_24"
+            Regex("""targetCompatibility\s*=\s*JavaVersion\.(VERSION_25|toVersion\("25"\))""").containsMatchIn(script),
+            "Expected targetCompatibility = JavaVersion.VERSION_25"
         )
     }
 
