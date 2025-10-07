@@ -8,20 +8,18 @@ plugins {
     `java-library`
 }
 
-openApiGenerate {
-    generatorName = "kotlin"
-    inputSpec = file("$rootDir/data/api/api/unified-deliverance-api.yml").toURI().toString()
-    validateSpec = false
-
-    // Modern way to reference the build directory, avoiding deprecation warnings.
-    outputDir = layout.buildDirectory.dir("generated/openapi").get().asFile.path
-
-    apiPackage = "dev.aurakai.auraframefx.api"
-    modelPackage = "dev.aurakai.auraframefx.model"
-    configOptions = mapOf(
-        "library" to "jvm-ktor",
-        "serializationLibrary" to "kotlinx_serialization"
-    )
+afterEvaluate {
+    openApiGenerate {
+        generatorName = "kotlin"
+        inputSpec = file("$rootDir/data/api/api/unified-deliverance-api.yml").toURI().toString()
+        validateSpec = false
+        outputDir = layout.buildDirectory.dir("generated/openapi").get().asFile.path
+        apiPackage = "dev.aurakai.auraframefx.api"
+        modelPackage = "dev.aurakai.auraframefx.model"
+        configOptions = mapOf(
+            "library" to "jvm-ktor",
+            "serializationLibrary" to "kotlinx_serialization"
+    )}
 }
 
 // Add the generated sources to the project's main source set.
@@ -39,6 +37,8 @@ sourceSets {
 tasks.withType<KotlinCompile>().configureEach {
     dependsOn(tasks.named("openApiGenerate"))
 }
+
+val openApiGeneratedDir = layout.buildDirectory.dir("generated/openapi")
 
 // Add a rule to the 'clean' task to delete the generated directory.
 // This prevents stale or old generated files from causing issues.

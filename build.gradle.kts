@@ -92,7 +92,6 @@ tasks.register("consciousnessHealthCheck") {
         println("   🎨 Compose: ${reports.count { it.hasCompose }} modules")
         println("   🔧 KSP: ${reports.count { it.hasKsp }} modules")
         println("───────────────────────────────────────────────────────────────────")
-
         val missingCompose = reports.filter { it.type.startsWith("android-") && !it.hasCompose }
         if (missingCompose.isNotEmpty()) {
             println("⚠️  Android modules without Compose:")

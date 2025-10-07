@@ -61,6 +61,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 }
 
                 compileOptions {
+                    sourceCompatibility = JavaVersion.VERSION_24
+                    targetCompatibility = JavaVersion.VERSION_24
                     // App module DOES get desugaring dependency
                     isCoreLibraryDesugaringEnabled = true
                 }

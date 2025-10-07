@@ -59,7 +59,6 @@ fun RomToolsScreen(
 ) {
     val romToolsState by romToolsManager.romToolsState.collectAsStateWithLifecycle()
     val operationProgress by romToolsManager.operationProgress.collectAsStateWithLifecycle()
-
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -75,22 +74,31 @@ fun RomToolsScreen(
     ) {
         // Top App Bar
         TopAppBar(
-            title = {
+            {
                 Text(
                     text = "ROM Tools",
                     color = Color(0xFFFF6B35),
                     fontWeight = FontWeight.Bold,
                     fontSize = 20.sp
                 )
-            },
-            colors = TopAppBarDefaults.topAppBarColors(
+            }, colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = Color.Black.copy(alpha = 0.8f)
             )
         )
 
+        // Content area
         if (!romToolsState.isInitialized) {
             // Loading state
-            Box(
+            LoadingScreen()
+        } else {
+            // Main content
+            MainContent(romToolsState, operationProgress)
+        }
+    }
+}
+
+@Composable
+private fun LoadingScreen() {Box(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
@@ -109,39 +117,41 @@ fun RomToolsScreen(
                     )
                 }
             }
-        } else {
-            LazyColumn(
-                modifier = Modifier.fillMaxSize(),
-                contentPadding = PaddingValues(16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp)
-            ) {
-                // Device Capabilities Card
-                item {
-                    DeviceCapabilitiesCard(
-                        capabilities = romToolsState.capabilities
-                    )
-                }
+        } @Composable
+private fun MainContent(
+    romToolsState: dev.aurakai.auraframefx.romtools.RomToolsState,
+    operationProgress: dev.aurakai.auraframefx.romtools.OperationProgress?
+) {
+    LazyColumn(
+        modifier = Modifier.fillMaxSize(),
+        contentPadding = PaddingValues(16.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        // Device Capabilities Card
+        this.item {
+            DeviceCapabilitiesCard(capabilities = romToolsState.capabilities)
+        }
 
-                // Active Operation Progress
-                operationProgress?.let { operation ->
-                    item {
-                        OperationProgressCard(operation = operation)
-                    }
-                }
+        // Active Operation Progress
+        if (operationProgress != null) {
+            item {
+                OperationProgressCard(operation = operationProgress)
+            }
+        }
 
-                // ROM Tools Actions
-                item {
-                    Text(
-                        text = "ROM Operations",
-                        color = Color(0xFFFF6B35),
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(vertical = 8.dp)
-                    )
-                }
+        // ROM Tools Actions
+        item {
+            Text(
+                text = "ROM Operations",
+                color = Color(0xFFFF6B35),
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(vertical = 8.dp)
+            )
+        }
 
                 // ROM Tools Action Cards
-                items(getRomToolsActions()) { action ->
+                items(items = getRomToolsActions()) { action ->
                     RomToolActionCard(
                         action = action,
                         isEnabled = action.isEnabled(romToolsState.capabilities),
@@ -152,43 +162,43 @@ fun RomToolsScreen(
                                     // Open ROM selection dialog
                                 }
 
-                                RomActionType.CREATE_BACKUP -> {
-                                    // Start backup process
-                                }
-
-                                RomActionType.RESTORE_BACKUP -> {
-                                    // Open backup selection
-                                }
-
-                                RomActionType.UNLOCK_BOOTLOADER -> {
-                                    // Unlock bootloader
-                                }
-
-                                RomActionType.INSTALL_RECOVERY -> {
-                                    // Install custom recovery
-                                }
-
-                                RomActionType.GENESIS_OPTIMIZATIONS -> {
-                                    // Apply Genesis AI optimizations
-                                }
-                            }
+                        RomActionType.CREATE_BACKUP -> {
+                            // Start backup process
                         }
-                    )
-                }
 
-                // Available ROMs Section
-                if (romToolsState.availableRoms.isNotEmpty()) {
-                    item {
-                        Text(
-                            text = "Available ROMs",
-                            color = Color(0xFFFF6B35),
-                            fontSize = 18.sp,
+                        RomActionType.RESTORE_BACKUP -> {
+                            // Open backup selection
+                        }
+
+                        RomActionType.UNLOCK_BOOTLOADER -> {
+                            // Unlock bootloader
+                        }
+
+                        RomActionType.INSTALL_RECOVERY -> {
+                            // Install custom recovery
+                        }
+
+                        RomActionType.GENESIS_OPTIMIZATIONS -> {
+                            // Apply Genesis AI optimizations
+                        }
+                    }
+                }
+            )
+        }
+
+        // Available ROMs Section
+        if (romToolsState.availableRoms.isNotEmpty()) {
+            item {
+                Text(
+                    text = "Available ROMs",
+                    color = Color(0xFFFF6B35),
+                    fontSize = 18.sp,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(vertical = 8.dp)
                         )
                     }
 
-                    items(romToolsState.availableRoms) { rom ->
+                    items(items = romToolsState.availableRoms) { rom ->
                         AvailableRomCard(rom = rom)
                     }
                 }
@@ -205,14 +215,13 @@ fun RomToolsScreen(
                         )
                     }
 
-                    items(romToolsState.backups) { backup ->
+                    items(items = romToolsState.backups) { backup ->
                         BackupCard(backup = backup)
                     }
                 }
             }
         }
-    }
-}
+
 
 @Composable
 private fun DeviceCapabilitiesCard(
