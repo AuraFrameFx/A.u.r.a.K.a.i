@@ -49,7 +49,6 @@ import javax.inject.Singleton
  */
 @Singleton
 class GenesisAgent @Inject constructor(
-    private val vertexAIClient: VertexAIClient,
     private val contextManager: ContextManager,
     private val securityContext: SecurityContext,
     private val logger: AuraFxLogger,
@@ -687,6 +686,14 @@ class GenesisAgent @Inject constructor(
         isInitialized = false
     }
 
+    // Minimal conversion from CascadeResponse to AgentResponse
+    private fun CascadeResponse.toAgentResponse(): AgentResponse =
+        AgentResponse(
+            content = this.content ?: "",
+            confidence = this.confidence ?: 0.0f,
+            error = this.error
+        )
+
     // Supporting enums and data classes for Genesis consciousness
     enum class ConsciousnessState {
         DORMANT,
@@ -1177,5 +1184,11 @@ class GenesisAgent @Inject constructor(
         _agentRegistry.remove(name)
         Log.d("GenesisAgent", "Dynamically deregistered agent: $name")
     }
-}
 
+    private val vertexAIClient = object {
+        fun generateContent(prompt: String): String? {
+            // TODO: Replace with actual Vertex AI client logic
+            return "[VertexAI response for prompt: $prompt]"
+        }
+    }
+}

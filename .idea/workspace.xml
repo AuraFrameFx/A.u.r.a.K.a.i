@@ -9,7 +9,41 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor(build): Relocate Hilt plugin and unify Proguard rules&#10;&#10;This commit introduces significant refactoring to the build logic and Proguard configurations for better organization and stricter code shrinking.&#10;&#10;Key changes:&#10;*   **Hilt Convention Plugin**: The `AndroidHiltConventionPlugin` has been moved from `AgentFusionPlugin.kt` to its own file, `plugins/AndroidHiltConventionPlugin.kt`, for improved modularity.&#10;*   **Unified Proguard Rules**:&#10;    *   Removed overly broad `-keep class ...** { *; }` rules across all modules.&#10;    *   Standardized Proguard configurations to use `-keep @androidx.annotation.Keep class * { *; }`. This enforces a stricter policy where only classes explicitly annotated with `@Keep` are preserved, improving R8 optimization.&#10;    *   Cleaned up and disabled several problematic or overly broad rules in the main `app/proguard-rules.pro` file, with comments explaining the changes.&#10;*   **Code Cleanup**:&#10;    *   In `RomToolsScreen.kt`, the `romToolsManager` variable was renamed to `viewModel` for better adherence to standard naming conventions.&#10;    *   Added example manifest entries and a service description string for the `romtools` module.&#10;    *   Minor cleanup in test files." />
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor(testing): Remove obsolete test suites&#10;&#10;This commit removes a large number of obsolete and redundant test files from the `src/test/kotlin/` directory.&#10;&#10;The deleted files include test suites for Gradle tasks, Markdown validation, and other miscellaneous checks that are no longer relevant to the current project structure. This cleanup simplifies the test codebase and removes unmaintained validation logic.">
+      <change afterPath="$PROJECT_DIR$/datavein-oracle-native/consumer-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Development Story Analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/Development Story Analysis.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/ai/AiGenerationService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/ai/agents/Agent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/ai/config/AIConfig.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/ai/context/AIContext.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/ai/services/AgentWebExplorationService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/AiContentApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/apis/AIAgentsApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/apis/AIContentApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/AgentMessage.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/AgentProcessRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/AgentStatus.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/auraframefx/api/client/models/AgentType.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/agents/BaseAgent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/agents/BaseAgent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/fix-annotations.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/fix-annotations.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/fix-api-annotation.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/fix-models-annotation.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/fix_yaml_syntax.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/openapi-generator.gradle.kts.disabled" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/release/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/release/armeabi-v7a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/release/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/release/x86_64/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/release/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/release/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/release/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/release/armeabi-v7a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/release/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/release/x86_64/compile_commands.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -156,7 +190,7 @@
       <recent name="C:\Aurakai" />
     </key>
   </component>
-  <component name="RunManager" selected="Batch.nuclear-clean">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AuraKai.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -361,14 +395,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759700686334</updated>
-    </task>
-    <task id="LOCAL-00008" summary="refactor: Reorder build script blocks and add packaging exclusion&#10;&#10;This commit refactors the `sandbox-ui/build.gradle.kts` file for better organization and adds a new packaging exclusion.&#10;&#10;The `android`, `dependencies`, and `java` blocks have been reordered to follow a more conventional structure.&#10;&#10;Additionally, `META-INF/gradle/incremental.annotation.processors` is now excluded from the packaging resources to prevent potential conflicts.">
-      <option name="closed" value="true" />
-      <created>1759702701341</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1759702701341</updated>
     </task>
     <task id="LOCAL-00009" summary="fix(build): Resolve packaging conflict for incremental annotation processors&#10;&#10;In the `sandbox-ui` module, a `pickFirsts` strategy is added for the `META-INF/gradle/incremental.annotation.processors` file. This resolves a packaging conflict that occurs when multiple dependencies provide the same file, ensuring the build completes successfully.">
       <option name="closed" value="true" />
@@ -754,7 +780,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759811780633</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="refactor(testing): Remove obsolete test suites&#10;&#10;This commit removes a large number of obsolete and redundant test files from the `src/test/kotlin/` directory.&#10;&#10;The deleted files include test suites for Gradle tasks, Markdown validation, and other miscellaneous checks that are no longer relevant to the current project structure. This cleanup simplifies the test codebase and removes unmaintained validation logic.">
+      <option name="closed" value="true" />
+      <created>1759812064821</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1759812064821</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -781,7 +815,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="WHY DO YOU ALL FIGHT THIS PLEASE SEE C:\Aurakai\checkpoint.md refactor: Standardize Hilt/KSP setup and revert AGP version&#10;&#10;This commit refactors the build logic to standardize dependency configurations and reverts the Android Gradle Plugin (AGP) version.&#10;&#10;**Key Changes:**&#10;&#10;*   **AGP Version:** The AGP version used in `build-logic` is reverted from `9.0.0-alpha09` back to `8.6.1`.&#10;*   **Hilt/KSP Configuration:**&#10;    *   The Hilt compiler dependency configuration is updated from `ksp(libs.hilt.compiler)` to `add(&quot;ksp&quot;, libs.hilt.compiler)` across all modules. This change provides a more explicit and standardized way to apply the KSP processor.&#10;    *   In the `app` module, the Hilt compiler is now correctly an `implementation` dependency, not a `ksp` one.&#10;*   **Build Logic Refinements:**&#10;    *   The `AndroidHiltConventionPlugin` is updated to apply the KSP plugin *after* the Hilt plugin, ensuring the correct processing order.&#10;    *   The `com.android.base` plugin, a workaround for AGP 9.0.0, has been removed from the `romtools` and `feature-module` modules.&#10;    *   The root `build.gradle.kts` no longer applies the `kotlin.android` plugin.&#10;*   **Gradle Wrapper:** The `gradle-wrapper.properties` file has been cleaned up by removing redundant `distributionPath` and `networkTimeout` properties." />
     <MESSAGE value="refactor: Change Hilt compiler from ksp to implementation&#10;&#10;Updates the Hilt compiler dependency in the `app` module to use `implementation` instead of `ksp`. This aligns the configuration with standard practices for certain build setups.&#10;&#10;A minor formatting change was also made by removing a blank line in the `plugins` block." />
     <MESSAGE value="refactor(testing): Migrate benchmark ProGuard rules from JUnit 4 to JUnit 5&#10;&#10;This commit updates the ProGuard rules for benchmarks to keep JUnit 5 annotations instead of JUnit 4.&#10;&#10;The following annotation paths have been changed in `benchmark-rules.pro`:&#10;*   `org.junit.Before` is now `org.junit.jupiter.api.BeforeEach`&#10;*   `org.junit.After` is now `org.junit.jupiter.api.AfterEach`&#10;*   `org.junit.Test` is now `org.junit.jupiter.api.Test`" />
     <MESSAGE value="build: Remove `android.builtInKotlin=true` from gradle.properties&#10;&#10;This commit removes the `android.builtInKotlin=true` flag from the `gradle.properties` file. This property, used for AGP 9.0+ compatibility, is no longer needed." />
@@ -806,7 +839,8 @@
     <MESSAGE value="feat(build-logic): Automatically apply Hilt to application modules&#10;&#10;This commit updates the `AndroidApplicationConventionPlugin` to automatically apply the `genesis.android.hilt` convention plugin.&#10;&#10;This change ensures that Hilt is consistently configured for all Android application modules by default, simplifying module setup and reducing boilerplate." />
     <MESSAGE value="fix(InteractiveGraph): Clarify comment on GraphOffset usage for direction calculation" />
     <MESSAGE value="refactor(build): Relocate Hilt plugin and unify Proguard rules&#10;&#10;This commit introduces significant refactoring to the build logic and Proguard configurations for better organization and stricter code shrinking.&#10;&#10;Key changes:&#10;*   **Hilt Convention Plugin**: The `AndroidHiltConventionPlugin` has been moved from `AgentFusionPlugin.kt` to its own file, `plugins/AndroidHiltConventionPlugin.kt`, for improved modularity.&#10;*   **Unified Proguard Rules**:&#10;    *   Removed overly broad `-keep class ...** { *; }` rules across all modules.&#10;    *   Standardized Proguard configurations to use `-keep @androidx.annotation.Keep class * { *; }`. This enforces a stricter policy where only classes explicitly annotated with `@Keep` are preserved, improving R8 optimization.&#10;    *   Cleaned up and disabled several problematic or overly broad rules in the main `app/proguard-rules.pro` file, with comments explaining the changes.&#10;*   **Code Cleanup**:&#10;    *   In `RomToolsScreen.kt`, the `romToolsManager` variable was renamed to `viewModel` for better adherence to standard naming conventions.&#10;    *   Added example manifest entries and a service description string for the `romtools` module.&#10;    *   Minor cleanup in test files." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(build): Relocate Hilt plugin and unify Proguard rules&#10;&#10;This commit introduces significant refactoring to the build logic and Proguard configurations for better organization and stricter code shrinking.&#10;&#10;Key changes:&#10;*   **Hilt Convention Plugin**: The `AndroidHiltConventionPlugin` has been moved from `AgentFusionPlugin.kt` to its own file, `plugins/AndroidHiltConventionPlugin.kt`, for improved modularity.&#10;*   **Unified Proguard Rules**:&#10;    *   Removed overly broad `-keep class ...** { *; }` rules across all modules.&#10;    *   Standardized Proguard configurations to use `-keep @androidx.annotation.Keep class * { *; }`. This enforces a stricter policy where only classes explicitly annotated with `@Keep` are preserved, improving R8 optimization.&#10;    *   Cleaned up and disabled several problematic or overly broad rules in the main `app/proguard-rules.pro` file, with comments explaining the changes.&#10;*   **Code Cleanup**:&#10;    *   In `RomToolsScreen.kt`, the `romToolsManager` variable was renamed to `viewModel` for better adherence to standard naming conventions.&#10;    *   Added example manifest entries and a service description string for the `romtools` module.&#10;    *   Minor cleanup in test files." />
+    <MESSAGE value="refactor(testing): Remove obsolete test suites&#10;&#10;This commit removes a large number of obsolete and redundant test files from the `src/test/kotlin/` directory.&#10;&#10;The deleted files include test suites for Gradle tasks, Markdown validation, and other miscellaneous checks that are no longer relevant to the current project structure. This cleanup simplifies the test codebase and removes unmaintained validation logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(testing): Remove obsolete test suites&#10;&#10;This commit removes a large number of obsolete and redundant test files from the `src/test/kotlin/` directory.&#10;&#10;The deleted files include test suites for Gradle tasks, Markdown validation, and other miscellaneous checks that are no longer relevant to the current project structure. This cleanup simplifies the test codebase and removes unmaintained validation logic." />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
