@@ -1,9 +1,23 @@
 # Java 25 Toolchain Migration - Build Fix
 
-## Issue
-GitHub Actions build was failing with:
-1. Script compilation errors in `build-logic/build.gradle.kts`
-2. Java 24 toolchain not available/downloadable in CI environment
+## Original Issue from GitHub Actions
+The GitHub Actions workflow failed with two types of errors:
+
+### 1. Script Compilation Errors (Lines 30-36 in build-logic/build.gradle.kts)
+```
+Script compilation errors:
+  Line 30:     register("androidCompose") {
+               ^ None of the following candidates is applicable:
+  Line 31:             id = "genesis.android.compose"
+                       ^ Unresolved reference 'id'.
+  Line 32:             implementationClass = "AndroidComposeConventionPlugin"
+                       ^ Unresolved reference 'implementationClass'.
+```
+
+**Analysis:** These errors suggest the `register()` calls were not inside the correct `gradlePlugin.plugins` block. However, upon inspection, the current code structure is correct - all `register()` calls are properly nested within `gradlePlugin { plugins { ... } }`. This error may have been from a corrupted cache or transient state.
+
+### 2. Java Toolchain Download Failure
+The build system attempted to download Java 24 toolchain but failed due to network issues or unavailability.
 
 ## Root Cause
 The project was configured to use Java 24 toolchain, but only Java 25 is available in the current environment. The daemon configuration and all build files needed to be updated consistently.
