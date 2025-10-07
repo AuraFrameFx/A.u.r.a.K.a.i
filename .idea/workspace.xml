@@ -174,7 +174,7 @@
       <command value="gradle stop" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ReGenesis-A.O.S.P [assemble]">
+  <component name="RunManager" selected="Batch.run-spotless">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AOSPReGenesis.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -247,6 +247,17 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="run-spotless" type="BatchConfigurationType" factoryName="Batch" temporary="true">
+      <module name="AOSPReGenesis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\ReGenesi" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="run-spotless.bat" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -311,32 +322,6 @@
         <option name="taskNames">
           <list>
             <option value="dokkaGenerate" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ReGenesis-A.O.S.P [stop]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="stop" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -458,11 +443,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Batch.run-spotless" />
         <item itemvalue="Gradle.ReGenesis-A.O.S.P [assemble]" />
         <item itemvalue="Gradle.ReGenesis-A.O.S.P [dokkaGenerate]" />
         <item itemvalue="Gradle.ReGenesis-A.O.S.P [tasks]" />
         <item itemvalue="Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [stop]" />
       </list>
     </recent_temporary>
   </component>

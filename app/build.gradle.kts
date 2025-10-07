@@ -8,6 +8,7 @@ plugins {
     id("dev.aurakai.aurakai-android-convention")
     alias(libs.plugins.ksp)
     id("org.openapi.generator") version "7.16.0"
+    kotlin("plugin.compose") version "2.2.20"
 }
 
 android {
@@ -68,10 +69,12 @@ openApiGenerate {
         "serializationLibrary" to "kotlinx_serialization"
     ))
 }
-
-// Add generated OpenAPI sources to Kotlin compilation
-kotlin.sourceSets.getByName("main") {
-    kotlin.srcDir(layout.buildDirectory.dir("generated/openapi/src/main/kotlin"))
+// Add generated OpenAPI sources after project evaluation (using file path instead of Provider)
+// Add generated OpenAPI sources after project evaluation
+    android.sourceSets.getByName("main").java.srcDir(
+        File(layout.buildDirectory.asFile.get(), "generated/openapi/src/main/kotlin")
+        layout.buildDirectory.dir("generated/openapi/src/main/kotlin")
+    )
 }
 
 // Ensure OpenAPI generation runs before Kotlin compilation
