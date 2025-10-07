@@ -1,4 +1,4 @@
-# Install script for directory: C:/ReGenesis-A.O.S.P/secure-comm/src/main/cpp
+# Install script for directory: C:/ReGenesi/secure-comm/src/main/cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/ReGenesis-A.O.S.P/secure-comm/.cxx/Release/5k6g5v3l/x86_64/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/ReGenesi/secure-comm/.cxx/Release/5k6g5v3l/x86_64/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

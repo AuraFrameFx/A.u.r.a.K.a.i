@@ -1,10 +1,8 @@
 plugins {
     // JVM library setup
     id("java-library")
-    kotlin("jvm")
 
     // Additional tooling
-    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
 }
@@ -17,10 +15,6 @@ val jdkVersion = 24
 
 java {
     toolchain { languageVersion.set(JavaLanguageVersion.of(jdkVersion)) }
-}
-
-kotlin {
-    jvmToolchain(jdkVersion)
 }
 
 dependencies {

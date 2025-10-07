@@ -1,6 +1,6 @@
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.serialization)
+    id("dev.aurakai.aurakai-android-convention")
     alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
 }
@@ -16,10 +16,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
     }
-}
-
-kotlin {
-    jvmToolchain(24)
 }
 
 val romToolsOutputDirectory: DirectoryProperty =

@@ -70,8 +70,14 @@ pluginManagement {
     
     resolutionStrategy {
         eachPlugin {
+            if (requested.id.id.startsWith("org.jetbrains.kotlin")) {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20")
+            }
             if (requested.id.namespace == "com.google.dagger") {
                 useModule("com.google.dagger:hilt-android-gradle-plugin:${requested.version}")
+            }
+            if (requested.id.id.startsWith("com.android.")) {
+                useModule("com.android.tools.build:gradle:9.0.0-alpha09")
             }
         }
     }

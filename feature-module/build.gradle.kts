@@ -3,11 +3,10 @@
 
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.compose)
+    id("dev.aurakai.aurakai-android-convention")
     alias(libs.plugins.dokka)
-    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
-    alias(libs.plugins.ksp)  // Required for Hilt annotation processing
-
+    alias(libs.plugins.ksp)
+    id("org.jetbrains.kotlin.plugin.compose") version "1.5.11" // Compose Compiler Gradle plugin for Kotlin 2.0+
 }
 
 
@@ -24,12 +23,12 @@ android {
         targetCompatibility = JavaVersion.VERSION_24
     }
 
-    kotlin {
-        jvmToolchain(24)
-    }
-
     buildFeatures {
         compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.11" // Hardcoded: update as needed
     }
 }
 

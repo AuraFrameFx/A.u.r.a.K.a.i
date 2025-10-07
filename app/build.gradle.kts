@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("com.android.application")
-    alias(libs.plugins.kotlin.compose)
+    id("dev.aurakai.aurakai-android-convention")
     alias(libs.plugins.ksp)
     // id("openapi.generator.convention") // Commented out until plugin is recognized
 }
@@ -54,9 +54,7 @@ android {
     }
 }
 
-kotlin {
-    jvmToolchain(24)
-}
+
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====

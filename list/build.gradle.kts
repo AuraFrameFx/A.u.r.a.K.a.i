@@ -2,8 +2,6 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
-    kotlin("jvm")
-    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
     `maven-publish`
@@ -17,14 +15,6 @@ java {
     toolchain { languageVersion = JavaLanguageVersion.of(24) }
 }
 
-kotlin {
-    jvmToolchain(24)
-    compilerOptions {
-        jvmTarget = JvmTarget.JVM_24
-        languageVersion = KotlinVersion.KOTLIN_2_2
-        apiVersion = KotlinVersion.KOTLIN_2_2
-    }
-}
 
 dependencies {
     // Pure Kotlin JVM module - no Android dependencies

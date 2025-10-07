@@ -1,14 +1,3 @@
 # ninja log v6
-9	6483	7793634662390205	CMakeFiles/datavein_oracle_native.dir/oracle_drive_jni.cpp.o	6d66c4567181aeeb
-6527	7213	7793634727580262	C:/ReGenesis-A.O.S.P/datavein-oracle-native/build/intermediates/cxx/Release/4t456344/obj/arm64-v8a/libdatavein_oracle_native.so	9f03d770f7a17e93
-34	949	7794064205991665	C:/ReGenesis-A.O.S.P/datavein-oracle-native/build/intermediates/cxx/Release/4t456344/obj/arm64-v8a/libdatavein_oracle_native.so	9f03d770f7a17e93
-44	85	7794217097737020	clean	b1098cec5f836f2a
-15	36	7794249570757919	clean	b1098cec5f836f2a
-7	16	7795183519630100	clean	b1098cec5f836f2a
-7	16	7795200331870331	clean	b1098cec5f836f2a
-6	38	7808347042043577	clean	b1098cec5f836f2a
-28	54	7808361278735955	clean	b1098cec5f836f2a
-16	57	7808364274411883	clean	b1098cec5f836f2a
-23	72	7808366583516299	clean	b1098cec5f836f2a
-15	32	7808368184339807	clean	b1098cec5f836f2a
-17	41	7808537299704440	clean	b1098cec5f836f2a
+268	12828	7815266954501242	CMakeFiles/datavein_oracle_native.dir/oracle_drive_jni.cpp.o	27ffc7c590d1dbf6
+12841	13922	7815267079764175	C:/ReGenesi/datavein-oracle-native/build/intermediates/cxx/Release/4t456344/obj/arm64-v8a/libdatavein_oracle_native.so	feb5b040ca5a1626

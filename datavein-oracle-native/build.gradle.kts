@@ -1,8 +1,8 @@
 plugins {
     id("genesis.android.library")
     id("genesis.android.native")
-    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
+    id("org.jetbrains.kotlin.plugin.compose") version "1.5.11" // Compose Compiler Gradle plugin for Kotlin 2.0+
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 
@@ -15,6 +15,10 @@ android {
     
     buildFeatures {
         compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.11" // Hardcoded: update as needed
     }
     
     lint {

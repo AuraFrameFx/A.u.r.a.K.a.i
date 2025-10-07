@@ -8,7 +8,7 @@ group = "dev.aurakai.auraframefx.buildlogic"
 
 // Dependencies required for the convention plugins themselves.
 dependencies {
-    implementation("com.android.tools.build:gradle:9.0.0-alpha02")
+    compileOnly("com.android.tools.build:gradle:9.0.0-alpha09")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20")
     implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.1")
 
@@ -53,5 +53,13 @@ gradlePlugin {
             id = "genesis.android.native"
             implementationClass = "AndroidNativeConventionPlugin"
         }
+        register("aurakaiAndroidConvention") {
+            id = "dev.aurakai.aurakai-android-convention"
+            implementationClass = "AurakaiAndroidConventionPlugin"
+        }
     }
+}
+
+tasks.named<ProcessResources>("processResources") {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

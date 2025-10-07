@@ -42,10 +42,8 @@ tasks.withType<KotlinCompile>().configureEach {
 
 // Add a rule to the 'clean' task to delete the generated directory.
 // This prevents stale or old generated files from causing issues.
-tasks.named("clean") {
-    doLast {
-        delete(layout.buildDirectory.dir("generated/openapi"))
-    }
+tasks.named<Delete>("clean") {
+    delete(layout.buildDirectory.dir("generated/openapi"))
 }
 
 // Define the dependencies required by the generated Ktor client.

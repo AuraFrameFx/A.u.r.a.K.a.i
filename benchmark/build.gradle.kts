@@ -3,7 +3,7 @@
 
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.serialization)
+    id("dev.aurakai.aurakai-android-convention")
     alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
 
@@ -11,9 +11,7 @@ plugins {
     // If you apply it manually, it would be here:
     // id("org.jetbrains.kotlin.android")
 }
-kotlin {
-    jvmToolchain(24)
-}
+
 // Java toolchain configuration at the project level
 java {
     toolchain {

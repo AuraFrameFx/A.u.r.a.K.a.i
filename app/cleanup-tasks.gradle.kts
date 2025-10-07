@@ -31,7 +31,7 @@ tasks.register<Delete>("cleanAllGeneratedFiles") {
     doLast {
         println("🧹 Comprehensive cleanup completed!")
         println("✅ All generated files cleaned")
-        println("🔄 Ready for fresh build with Java 21 + AGP 9.0.0-alpha02")
+        println("🔄 Ready for fresh build with Java 21 + AGP 9.0.0-alpha09")
     }
 }
 
@@ -44,7 +44,7 @@ tasks.register("aegenesisHealthCheck") {
         println("=".repeat(70))
 
         // AGP Version
-        println("⚡ AGP Version: 9.0.0-alpha02")
+        println("⚡ AGP Version: 9.0.0-alpha09")
 
         // Java Version Check
         val javaVersion = System.getProperty("java.version")

@@ -1,10 +1,10 @@
 // ==== GENESIS PROTOCOL - SANDBOX UI ====
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.serialization)
+    id("dev.aurakai.aurakai-android-convention")
     alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
+    id("org.jetbrains.kotlin.plugin.compose") version "1.5.11" // Compose Compiler Gradle plugin for Kotlin 2.0+
 
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
@@ -18,10 +18,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
     }
-}
-
-kotlin {
-    jvmToolchain(24)
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.11" // Use compose.compiler version compatible with your Compose BOM
+    }
 }
 
 dependencies {
