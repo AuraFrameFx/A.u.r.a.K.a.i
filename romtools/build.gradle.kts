@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
+    alias(libs.plugins.kotlin.compose) // Compose Compiler Gradle plugin for Kotlin 2.0+
 }
 
 android {
@@ -18,9 +19,6 @@ android {
     }
     buildFeatures {
         compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.10" // Match this to your Compose BOM version
     }
 }
 

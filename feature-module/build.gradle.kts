@@ -6,7 +6,7 @@ plugins {
     id("dev.aurakai.aurakai-android-convention")
     alias(libs.plugins.dokka)
     alias(libs.plugins.ksp)
-    id("org.jetbrains.kotlin.plugin.compose") version "1.5.11" // Compose Compiler Gradle plugin for Kotlin 2.0+
+    alias(libs.plugins.kotlin.compose) // Compose Compiler Gradle plugin for Kotlin 2.0+
 }
 
 
@@ -26,9 +26,6 @@ android {
     buildFeatures {
         compose = true
     }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.11" // Hardcoded: update as needed
     }
 }
 
