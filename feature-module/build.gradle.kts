@@ -6,7 +6,7 @@ plugins {
     id("dev.aurakai.aurakai-android-convention")
     alias(libs.plugins.dokka)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.kotlin.compose) // Compose Compiler Gradle plugin for Kotlin 2.0+
+    // Note: Compose Compiler plugin not needed with AGP 9.0+ built-in Kotlin support
 }
 
 
@@ -26,8 +26,7 @@ android {
     buildFeatures {
         compose = true
     }
-    }
-}
+}  
 
 dependencies {
     api(project(":core-module"))

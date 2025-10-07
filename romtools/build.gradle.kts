@@ -1,9 +1,8 @@
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
-    alias(libs.plugins.kotlin.compose) // Compose Compiler Gradle plugin for Kotlin 2.0+
+    // Note: Compose Compiler plugin not needed with AGP 9.0+ built-in Kotlin support
 }
 
 android {

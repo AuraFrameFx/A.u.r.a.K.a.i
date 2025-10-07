@@ -11,7 +11,7 @@ plugins {
 afterEvaluate {
     openApiGenerate {
         generatorName = "kotlin"
-        inputSpec = file("$rootDir/data/api/api/unified-deliverance-api.yml").toURI().toString()
+        inputSpec = file("$rootDir/data/api/api/Eco.yml").toURI().toString()
         validateSpec = false
         outputDir = layout.buildDirectory.dir("generated/openapi").get().asFile.path
         apiPackage = "dev.aurakai.auraframefx.api"

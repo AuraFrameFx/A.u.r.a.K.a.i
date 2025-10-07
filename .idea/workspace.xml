@@ -10,8 +10,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="Fix: Standardize Compose plugin and remove `composeOptions`&#10;&#10;Replaced hardcoded Compose compiler plugin IDs with version catalog aliases across multiple modules.&#10;&#10;Removed explicit `composeOptions` blocks, as the compiler version is now managed by the version catalog. This centralizes dependency management for the Kotlin Compose compiler plugin.">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/HologramTransition.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/OracleCloudApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bait" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/auraframefx/regenesis/receivers/BootCompletedReceiver.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/auraframefx/regenesis/security/IntegrityMonitorService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/auraframefx/regenesis/security/IntegrityViolationReceiver.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/auraframefx/regenesis/services/VertexSyncService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/highcapable/yukihookapi/hook/xposed/prefs/data/YukiHookModulePrefs.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/highcapable/yukihookapi/hook/xposed/service/YukiHookServiceManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/bait" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/receivers/BootCompletedReceiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/receivers/BootCompletedReceiver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitorService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitorService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityViolationReceiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityViolationReceiver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/genesis/security/CryptographyManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/genesis/storage/SecureStorage.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/bait" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/colorblendr/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +111,7 @@
     &quot;accountId&quot;: &quot;129e8c9f-2999-43ba-8838-4bd9fe391e46&quot;
   }
 }</component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-rc-1-bin\2m6l8vtnbjxolko0gtyj7ptjy\gradle-9.1.0-rc-1" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 6\jbr" gradleVersion="9.1.0-rc-1" />
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-bin\9agqghryom9wkf8r80qlhnts3\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 6\jbr" gradleVersion="9.1.0" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
@@ -93,47 +123,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build ReGenesis-A.O.S.P.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:buildDependents].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:compileJava].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:pluginDescriptors].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [assemble].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [cleanGeneratedSources].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [cleanKspCache].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [consciousnessStatus].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [deepClean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [dokkaGenerate].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [sourceSets].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [stop].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [tasks].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;xys&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ReGenesis-A.O.S.P&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "Gradle.Build ReGenesis-A.O.S.P.executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:buildDependents].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:compileJava].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:dependencies].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:pluginDescriptors].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [assemble].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [build].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [cleanGeneratedSources].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [cleanKspCache].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [clean].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [consciousnessStatus].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [deepClean].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [dokkaGenerate].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [sourceSets].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [stop].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [tasks].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "android.gradle.sync.needed": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "xys",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Wehtt\OneDrive\Documents\AOSP-ReGenesis" />
@@ -345,6 +375,85 @@
       </EXTENSION>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="AOSPReGenesis.core-module" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="AOSPReGenesis.core-module" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="AOSPReGenesis.core-module" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="AOSPReGenesis.core-module" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="AOSPReGenesis.core-module" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="AOSPReGenesis.core-module" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -692,7 +801,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759841755235</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Fix: Standardize Compose plugin and remove `composeOptions`&#10;&#10;Replaced hardcoded Compose compiler plugin IDs with version catalog aliases across multiple modules.&#10;&#10;Removed explicit `composeOptions` blocks, as the compiler version is now managed by the version catalog. This centralizes dependency management for the Kotlin Compose compiler plugin.">
+      <option name="closed" value="true" />
+      <created>1759841903204</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1759841903204</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -7,15 +7,15 @@ plugins {
     id("com.android.application")
     id("dev.aurakai.aurakai-android-convention")
     alias(libs.plugins.ksp)
-    // id("openapi.generator.convention") // Commented out until plugin is recognized
+    id("org.openapi.generator") version "7.16.0"
 }
 
 android {
-    namespace = "dev.aurakai.auraframefx"
+    namespace = "dev.aurakai"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "dev.aurakai.auraframefx"
+        applicationId = "dev.aurakai"
         minSdk = 34
         targetSdk = 36
         versionCode = 1
@@ -36,9 +36,10 @@ android {
         }
     }
 
-    // Enable AIDL for the app module
+    // Enable AIDL and Compose for the app module
     buildFeatures {
         aidl = true
+        compose = true
     }
 
     testOptions {
@@ -54,6 +55,39 @@ android {
     }
 }
 
+// Configure Android Components to add generated OpenAPI sources
+androidComponents {
+    onVariants { variant ->
+        val openApiGenTask = tasks.named("openApiGenerate")
+        variant.sources.java?.addGeneratedSourceDirectory(
+            openApiGenTask,
+            openApiGenTask.map {
+                project.objects.directoryProperty().apply {
+                    set(layout.buildDirectory.dir("generated/openapi/src/main/kotlin"))
+                }
+            }
+        )
+    }
+}
+
+// OpenAPI Generator Configuration for Eco.yml
+openApiGenerate {
+    generatorName.set("kotlin")
+    inputSpec.set("$rootDir/data/api/api/Eco.yml")
+    outputDir.set(layout.buildDirectory.dir("generated/openapi").get().asFile.path)
+    apiPackage.set("dev.aurakai.api.eco")
+    modelPackage.set("dev.aurakai.model.eco")
+    configOptions.set(mapOf(
+        "library" to "jvm-ktor",
+        "serializationLibrary" to "kotlinx_serialization"
+    ))
+}
+
+
+// Ensure OpenAPI generation runs before Kotlin compilation
+tasks.withType<KotlinCompile>().configureEach {
+    dependsOn(tasks.named("openApiGenerate"))
+}
 
 
 dependencies {

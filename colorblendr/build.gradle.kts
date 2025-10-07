@@ -1,11 +1,10 @@
 // ==== GENESIS PROTOCOL - COLORBLENDR MODULE ====
 // Color utility and theming module
 
-
 plugins {
     id("genesis.android.library")
     alias(libs.plugins.ksp)
-    alias(libs.plugins.kotlin.compose) // Compose Compiler Gradle plugin for Kotlin 2.0+
+    // Note: Compose Compiler plugin not needed with AGP 9.0+ built-in Kotlin support
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 
