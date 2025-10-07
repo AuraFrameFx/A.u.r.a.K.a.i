@@ -40,16 +40,10 @@ class BuildGradleKtsTest {
             "Expected plugin id(\"genesis.android.application\") in app/build.gradle.kts"
         )
         
-        // Check for Hilt plugin alias
+        // Check for Hilt convention plugin (replaces direct alias)
         assertTrue(
-            Regex("""alias\(libs\.plugins\.hilt\)""").containsMatchIn(script),
-            "Expected alias(libs.plugins.hilt) in app/build.gradle.kts"
-        )
-        
-        // Check for KSP plugin alias
-        assertTrue(
-            Regex("""alias\(libs\.plugins\.ksp\)""").containsMatchIn(script),
-            "Expected alias(libs.plugins.ksp) in app/build.gradle.kts"
+            Regex("""id\("genesis\.android\.hilt"\)""").containsMatchIn(script),
+            "Expected id(\"genesis.android.hilt\") convention plugin in app/build.gradle.kts"
         )
     }
 
