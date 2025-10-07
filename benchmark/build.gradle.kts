@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter
 
 plugins {
     id("com.android.library")
+    id("com.android.base")  // AGP 9 alpha workaround
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
 }
