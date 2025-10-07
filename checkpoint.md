@@ -121,11 +121,11 @@ Location: `c:/Aurakai/checkpoint.md`
 - IssueTracker: Built-in Kotlin migration (AGP 9.0), SafeArgs and KSP notes
 
 ---
-
 Add notes below this line with date/time and initials.
 
-- 2025-10-05 14:26 (-06) – Cascade: Initialized checkpoint, defined Java 24 baseline and Hilt/AGP actions.
-- 2025-10-05 14:27 (-06) – Cascade: Patched project to Java 24: root toolchain updated, app compileOptions/toolchain set to 24, data/api toolchain added, KSP language/api set to 2.2 in gradle.properties. Next: consolidate @HiltAndroidApp to `ReGenesisApplication` and tidy cosmetic logs.
-- 2025-10-05 14:31 (-06) – Cascade: Removed extra @HiltAndroidApp (disabled in `AuraKaiHiltApplication.kt`). Only `ReGenesisApplication` remains annotated per manifest.
-- 2025-10-05 14:32 (-06) – Cascade: [CORRECTED] Previously incorrectly applied AGP 9 workaround `id("com.android.base")` to app/build.gradle.kts. This workaround is ONLY for library modules, not application modules. Removed in subsequent fix.
- - 2025-10-05 15:27 (-06) – Cascade: User clicked Android Studio Upgrade Assistant to move AGP from 9.0.0-alpha02 to 9.0.0-alpha09. Next: align root/pluginManagement/build-logic to alpha09 and clean build.
+- 2025-10-05 14:26 (-06) – Cascade: initialized checkpoint, defined Java 24 baseline and Hilt/AGP actions.
+- 2025-10-05 14:27 (-06) – Cascade: Patched project to Java 24: root toolchain updated, app compileOptions/toolchain set to 24, data/api toolchain added, KSP language/api set to 2.2 in gradle.properties. Next: consolidate @HiltAndroidApp to `RegenesisApplication` and tidy cosmetic logs.
+- 2025-10-05 14:31 (-06) – Cascade: Removed extra @HiltAndroidApp (disabled in `AuraKaiHiltApplication.kt`). Only `RegenesisApplication` remains annotated per manifest.
+- 2025-10-05 21:16 (-06) – Cascade: Refactored AndroidApplicationConventionPlugin to internally handle com.android.base, Hilt, KSP, and Compose plugins. App modules now only need `id("genesis.android.application")`. Hilt dependencies auto-added by convention plugin. Build order: base → application → hilt → ksp → compose.
+- 2025-10-06 23:28 (-06) – Cascade: Beginning autonomous structural improvements based on comprehensive checkpoint. Priority: LSParanoid plugin resolution, OpenAPI cleanup, unresolved references in agents/services, CascadeAIService refactor, type mismatches, Firebase integration fixes.
+- 2025-10-05 15:27 (-06) – Cascade: User clicked Android Studio Upgrade Assistant to move AGP from 9.0.0-alpha02 to 9.0.0-alpha09. Next: align root/pluginManagement/build-logic to alpha09 and clean build.
