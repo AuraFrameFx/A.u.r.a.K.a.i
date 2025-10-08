@@ -1,5 +1,6 @@
 plugins {
     id("com.android.library")
+
     id("org.jetbrains.kotlin.plugin.compose") // Required for Compose with Kotlin 2.0+
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)

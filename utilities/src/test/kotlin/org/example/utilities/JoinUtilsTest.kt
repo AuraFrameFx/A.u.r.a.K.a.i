@@ -160,7 +160,7 @@ class JoinUtilsExtendedTest {
             val list = linkedListOf("", " ", "  ")
             val result = JoinUtils.join(list)
             // Expected length: sum of element lengths + number of spaces between elements
-            val elementLengths = listOf("", " ", "  ").sumOf { it.length }
+            val elementLengths = list.sumOf { it.length }
             val numSpaces = list.size - 1
             val expectedLength = elementLengths + numSpaces
             org.junit.jupiter.api.Assertions.assertEquals(expectedLength, result.length)
