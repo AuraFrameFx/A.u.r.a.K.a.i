@@ -35,13 +35,14 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     
-    // Compose & Navigation
+    // Compose (BOM manages versions)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.material.icons.extended)
+    
+    // Navigation
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.hilt.navigation.compose)
-    
-    // Material Icons (needed for RomToolsScreen UI)
-    implementation(libs.androidx.compose.material.icons.extended)
     
     // Room
     implementation(libs.androidx.room.runtime)
