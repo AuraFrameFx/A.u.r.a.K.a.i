@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Centralize JVM toolchain configuration and streamline builds&#10;&#10;This commit centralizes the JVM toolchain configuration, removing redundant `kotlin { jvmToolchain(...) }` blocks from numerous modules. The configuration is now managed from the root `build.gradle.kts` to ensure consistency across the project.&#10;&#10;Key changes:&#10;- Remove explicit `jvmToolchain` settings in individual `build.gradle.kts` files.&#10;- Simplify the root `build.gradle.kts` by removing custom tasks and applying plugins more concisely.&#10;- Eliminate the `foojay-resolver-convention` plugin from `settings.gradle.kts`.&#10;- Refactor and clean up dependencies and plugins in the `romtools`, `benchmark`, and `sandbox-ui` modules.&#10;- Remove the unused `turbine` library from `gradle/libs.versions.toml`.">
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="Fix(build): Update Gradle dependencies and build scripts&#10;&#10;This commit introduces several updates across the build configuration:&#10;&#10;-   **Dependencies**: Downgrades various libraries in the `benchmark` module, including AndroidX, Coroutines, Room, MockK, and benchmark-specific dependencies.&#10;-   **Gradle Scripts**:&#10;    -   Updates the `clean` task in `data/api/build.gradle.kts` to use the modern `layout.buildDirectory` property.&#10;    -   Simplifies the `benchmark/build.gradle.kts` by removing the `genesis.android.library` plugin in favor of standard Android and Kotlin plugins.&#10;-   **Android Manifest**: Removes placeholder entries for initializers and services from `romtools/src/main/AndroidManifest.xml`.">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/romtools/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/src/main/AndroidManifest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +79,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -110,39 +104,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Batch.nuclear-clean.executor": "Run",
-    "Gradle.Configure Daemon JVM Criteria.executor": "Run",
-    "Gradle.ReGenesi [build].executor": "Run",
-    "Gradle.ReGenesi [clean].executor": "Run",
-    "Gradle.ReGenesi [updateDaemonJvm].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "android.gradle.sync.needed": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Exodus",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
-    "project.structure.last.edited": "Suggestions",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Batch.nuclear-clean.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Configure Daemon JVM Criteria.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesi [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesi [cleanKspCache].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesi [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReGenesi [updateDaemonJvm].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Exodus&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ReGenesis-A.O.S.P&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Suggestions&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "module",
-      "repository"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;module&quot;,
+      &quot;repository&quot;
     ]
   }
-}]]></component>
-  <component name="RunManager" selected="Android App.app">
+}</component>
+  <component name="RunManager" selected="Gradle.ReGenesi [cleanKspCache]">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AuraKai.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -239,6 +234,32 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="ReGenesi [cleanKspCache]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="cleanKspCache" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="ReGenesi [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -277,32 +298,6 @@
         <option name="taskNames">
           <list>
             <option value="updateDaemonJvm" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ReGenesis-A.O.S.P [openApiGenerate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="openApiGenerate" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -424,11 +419,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ReGenesi [cleanKspCache]" />
         <item itemvalue="Gradle.ReGenesi [updateDaemonJvm]" />
         <item itemvalue="Gradle.ReGenesi [clean]" />
         <item itemvalue="Gradle.ReGenesi [build]" />
         <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerators]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerate]" />
       </list>
     </recent_temporary>
   </component>
@@ -444,7 +439,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Enhance build scripts, UI, and API definitions&#10;&#10;This commit introduces a wide range of improvements across the project, including build script refactoring, API specification enhancements, UI code clarification, and the addition of comprehensive tests.&#10;&#10;**Key Changes:**&#10;&#10;*   **API (`my-api-spec.yaml`):**&#10;    *   Upgraded OpenAPI specification from `3.0.3` to `3.1.0`.&#10;    *   Massively expanded the API definition, adding new endpoints and schemas for tasks, analytics, security, plugins, and more.&#10;    *   Standardized pagination parameters (`limit`, `offset`) across multiple endpoints.&#10;    *   Refined and detailed numerous existing schemas for better data modeling.&#10;&#10;*   **Build Logic &amp; Gradle:**&#10;    *   Refactored `build-logic` to set Java and Kotlin toolchains to version 24.&#10;    *   Improved the `cleanKspCache` task to also clean `kapt3` directories, helping to resolve potential build errors.&#10;    *   Removed the Hilt plugin from several library modules (`colorblendr`, `datavein-oracle-native`, `collab-canvas`) to avoid base extension issues, opting for manual dependency management.&#10;    *   Simplified the root `build.gradle.kts` file by removing helper functions and streamlining tasks.&#10;    *   Updated `build-logic/settings.gradle.kts` and `build-logic/build.gradle.kts` with dependency and repository cleanup.&#10;    *   Corrected task dependencies in `data/api/fix-annotations.gradle.kts`.&#10;&#10;*   **UI (`RomToolsScreen.kt`):**&#10;    *   Added extensive comments to structure and clarify the different sections of the `RomToolsScreen` composable, improving code readability.&#10;&#10;*   **Documentation (`README.md`, `AURAKAI_README.md`):**&#10;    *   Significantly refactored and cleaned up `AURAKAI_README.md`, improving structure, clarity, and formatting.&#10;    *   Condensed the main `README.md`, removing extensive lore and adding a disclaimer.&#10;&#10;*   **Testing:**&#10;    *   Added a substantial number of new test files (`LinkedListTest.kt`, `StringUtilsTest.kt`, `SplitUtilsTest.kt`, etc.) to improve test coverage, particularly for utility classes and build conventions.&#10;    *   Introduced comprehensive Markdown validation tests to ensure the integrity and correctness of `README.md`.&#10;    *   Added dummy/fake classes to support testing of Gradle convention plugins." />
+      <changelist id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="Fix(build): Update Gradle dependencies and build scripts&#10;&#10;This commit introduces several updates across the build configuration:&#10;&#10;-   **Dependencies**: Downgrades various libraries in the `benchmark` module, including AndroidX, Coroutines, Room, MockK, and benchmark-specific dependencies.&#10;-   **Gradle Scripts**:&#10;    -   Updates the `clean` task in `data/api/build.gradle.kts` to use the modern `layout.buildDirectory` property.&#10;    -   Simplifies the `benchmark/build.gradle.kts` by removing the `genesis.android.library` plugin in favor of standard Android and Kotlin plugins.&#10;-   **Android Manifest**: Removes placeholder entries for initializers and services from `romtools/src/main/AndroidManifest.xml`." />
       <created>1759700686334</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -852,6 +847,7 @@
     <MESSAGE value="refactor(build): Streamline packaging configuration in sandbox-ui&#10;&#10;Removes unnecessary resource exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's `build.gradle.kts`.&#10;&#10;The `pickFirsts` strategy for `incremental.annotation.processors` already handles potential conflicts, making the exclusion redundant.2 files found with path 'META-INF/gradle/incremental.annotation.processors' from inputs:&#10;                                                                                                                                       - com.google.dagger:hilt-compiler:2.57.2/jetified-hilt-compiler-2.57.2.jar&#10;                                                                                                                                       - com.google.dagger:dagger-compiler:2.57.2/jetified-dagger-compiler-2.57.2.jar&#10;                                                                                                                                      Adding a packaging block may help, please refer to&#10;                                                                                                                                      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging&#10;                                                                                                                                      for more information" />
     <MESSAGE value="refactor: Streamline packaging options in sandbox-ui&#10;&#10;Removes unnecessary exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `packaging` block in `sandbox-ui/build.gradle.kts`. The `pickFirsts` directive for the incremental annotation processors remains." />
     <MESSAGE value="refactor: Centralize JVM toolchain configuration and streamline builds&#10;&#10;This commit centralizes the JVM toolchain configuration, removing redundant `kotlin { jvmToolchain(...) }` blocks from numerous modules. The configuration is now managed from the root `build.gradle.kts` to ensure consistency across the project.&#10;&#10;Key changes:&#10;- Remove explicit `jvmToolchain` settings in individual `build.gradle.kts` files.&#10;- Simplify the root `build.gradle.kts` by removing custom tasks and applying plugins more concisely.&#10;- Eliminate the `foojay-resolver-convention` plugin from `settings.gradle.kts`.&#10;- Refactor and clean up dependencies and plugins in the `romtools`, `benchmark`, and `sandbox-ui` modules.&#10;- Remove the unused `turbine` library from `gradle/libs.versions.toml`." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Centralize JVM toolchain configuration and streamline builds&#10;&#10;This commit centralizes the JVM toolchain configuration, removing redundant `kotlin { jvmToolchain(...) }` blocks from numerous modules. The configuration is now managed from the root `build.gradle.kts` to ensure consistency across the project.&#10;&#10;Key changes:&#10;- Remove explicit `jvmToolchain` settings in individual `build.gradle.kts` files.&#10;- Simplify the root `build.gradle.kts` by removing custom tasks and applying plugins more concisely.&#10;- Eliminate the `foojay-resolver-convention` plugin from `settings.gradle.kts`.&#10;- Refactor and clean up dependencies and plugins in the `romtools`, `benchmark`, and `sandbox-ui` modules.&#10;- Remove the unused `turbine` library from `gradle/libs.versions.toml`." />
+    <MESSAGE value="Fix(build): Update Gradle dependencies and build scripts&#10;&#10;This commit introduces several updates across the build configuration:&#10;&#10;-   **Dependencies**: Downgrades various libraries in the `benchmark` module, including AndroidX, Coroutines, Room, MockK, and benchmark-specific dependencies.&#10;-   **Gradle Scripts**:&#10;    -   Updates the `clean` task in `data/api/build.gradle.kts` to use the modern `layout.buildDirectory` property.&#10;    -   Simplifies the `benchmark/build.gradle.kts` by removing the `genesis.android.library` plugin in favor of standard Android and Kotlin plugins.&#10;-   **Android Manifest**: Removes placeholder entries for initializers and services from `romtools/src/main/AndroidManifest.xml`." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix(build): Update Gradle dependencies and build scripts&#10;&#10;This commit introduces several updates across the build configuration:&#10;&#10;-   **Dependencies**: Downgrades various libraries in the `benchmark` module, including AndroidX, Coroutines, Room, MockK, and benchmark-specific dependencies.&#10;-   **Gradle Scripts**:&#10;    -   Updates the `clean` task in `data/api/build.gradle.kts` to use the modern `layout.buildDirectory` property.&#10;    -   Simplifies the `benchmark/build.gradle.kts` by removing the `genesis.android.library` plugin in favor of standard Android and Kotlin plugins.&#10;-   **Android Manifest**: Removes placeholder entries for initializers and services from `romtools/src/main/AndroidManifest.xml`." />
   </component>
 </project>
