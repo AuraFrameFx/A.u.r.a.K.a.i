@@ -7,6 +7,18 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.module.c"
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
+    }
+
+    kotlin {
+        jvmToolchain(24)
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+        }
+    }
 }
 
 dependencies {
@@ -24,8 +36,4 @@ dependencies {
 tasks.register("moduleCStatus") {
     group = "aegenesis"
     doLast { println("📦 MODULE C - Ready (Java 24)") }
-}
-
-kotlin {
-    jvmToolchain(24)
 }

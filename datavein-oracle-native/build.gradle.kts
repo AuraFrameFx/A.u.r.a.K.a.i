@@ -1,6 +1,5 @@
 plugins {
     id("genesis.android.compose")
-    alias(libs.plugins.compose.compiler)
     id("genesis.android.native")
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
@@ -12,7 +11,7 @@ android {
     ndkVersion = "28.2.13676358"
 
     defaultConfig {
-        minSdk = 34
+        minSdk = 33
     }
     lint {
         // Disable lint due to oversized test files causing StackOverflow

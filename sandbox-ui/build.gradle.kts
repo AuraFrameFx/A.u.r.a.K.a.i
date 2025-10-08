@@ -5,10 +5,15 @@ plugins {
     alias(libs.plugins.ksp)
 }
 
+// --- Imports for build script logic ---
+@file:Suppress("unused", "UNUSED_VARIABLE")
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
 android {
     namespace = "dev.aurakai.auraframefx.sandboxui"
     compileSdk = 36
-    defaultConfig { minSdk = 34 }
+    defaultConfig { minSdk = 33 }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
@@ -93,14 +98,4 @@ tasks.register("generateApiDocs") {
 }
 tasks.register("sandboxStatus") {
     group = "aegenesis"; doLast { println("🧪 SANDBOX UI - Ready (Java 24)") }
-}
-
-tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
-    dokkaSourceSets {
-        named("main") {
-            sourceRoots.from(file("src/main/java"))
-            sourceRoots.from(file("src/main/kotlin"))
-            sourceRoots.from(file("src/main/res"))
-        }
-    }
 }

@@ -45,8 +45,5 @@ java {
 
 // ... existing code ...
 
-kotlin {
-    jvmToolchain(jdkVersion)
-}
 
 // ... existing code ...

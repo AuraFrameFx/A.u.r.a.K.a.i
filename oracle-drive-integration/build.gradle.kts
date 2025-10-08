@@ -12,7 +12,7 @@ android {
     namespace = "dev.aurakai.auraframefx.oracledriveintegration"
     
     defaultConfig {
-        minSdk = 34
+        minSdk = 33
     }
 }
 
@@ -35,4 +35,7 @@ dependencies {
 
 kotlin {
     jvmToolchain(24)
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+    }
 }

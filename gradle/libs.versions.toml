@@ -273,10 +273,7 @@ turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiterVersion" }
 junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version = "1.13.4" }
 
-[libraries.turbine]
-group = "app.cash.turbine"
-name = "turbine"
-version.ref = "turbine"
+
 
 [plugins]
 # Android
