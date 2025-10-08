@@ -17,6 +17,10 @@ java {
     toolchain { languageVersion.set(JavaLanguageVersion.of(jdkVersion)) }
 }
 
+kotlin {
+    jvmToolchain(jdkVersion)
+}
+
 dependencies {
     // Module dependency (utilities depends on list)
     api(project(":list"))
@@ -36,7 +40,7 @@ dependencies {
     // Testing (JUnit 5)
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testRuntimeOnly(libs.junit.platform.launcher)
     testImplementation(libs.mockk)
     testImplementation(kotlin("stdlib"))
     // Bind a simple logger only during tests

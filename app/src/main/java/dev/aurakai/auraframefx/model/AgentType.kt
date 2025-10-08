@@ -1,6 +1,6 @@
 package dev.aurakai.auraframefx.model
 
-import kotlinx.serialization.Serializable
+import kotlinx.serialization.Serializable // Added import
 
 /**
  * Enum representing different types of AI agents in the system.

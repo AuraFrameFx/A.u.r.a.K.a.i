@@ -9,6 +9,12 @@ android {
     namespace = "dev.aurakai.auraframefx.module.d"
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
+
 dependencies {
     implementation(project(":core-module"))
     implementation(libs.androidx.core.ktx)
@@ -16,6 +22,9 @@ dependencies {
     // Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    
+    // Add other module-specific dependencies here
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.register("moduleDStatus") {

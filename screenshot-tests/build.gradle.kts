@@ -32,3 +32,4 @@ tasks.register("verifyScreenshots") {
         println("🎨 Screenshot testing infrastructure configured")
     }
 }
+

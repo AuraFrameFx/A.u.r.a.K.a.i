@@ -16,6 +16,16 @@ java {
 }
 
 
+// Explicit source sets configuration for IntelliJ IDEA compatibility
+sourceSets {
+    main {
+        java.srcDirs("src/main/java", "src/main/kotlin")
+    }
+    test {
+        java.srcDirs("src/test/java", "src/test/kotlin")
+    }
+}
+
 dependencies {
     // Pure Kotlin JVM module - no Android dependencies
     implementation(kotlin("stdlib"))

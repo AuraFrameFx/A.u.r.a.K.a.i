@@ -1,3 +1,4 @@
+
 @file:Suppress("UnstableApiUsage", "JCenterRepositoryObsolete")
 
 // ===== AOSP-Re:Genesis - SETTINGS =====
@@ -63,16 +64,9 @@ pluginManagement {
             }
         }
     }
-    
-    plugins {
-        id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-    }
-    
+
     resolutionStrategy {
         eachPlugin {
-            if (requested.id.id.startsWith("org.jetbrains.kotlin")) {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20")
-            }
             if (requested.id.namespace == "com.google.dagger") {
                 useModule("com.google.dagger:hilt-android-gradle-plugin:${requested.version}")
             }
@@ -82,9 +76,13 @@ pluginManagement {
         }
     }
 }
+
+// Auto-provision JDKs via Foojay resolver (works with Gradle toolchains)
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
+
+// Note: foojay-resolver-convention plugin complements org.gradle.java.installations.auto-download=true in gradle.properties
 
 dependencyResolutionManagement {
     // Enforce consistent dependency resolution
@@ -92,7 +90,7 @@ dependencyResolutionManagement {
 
     // Repository configuration with all necessary sources
     repositories {
-        // Primary repositories
+        gradlePluginPortal()
         google()
         mavenCentral()
 
@@ -134,7 +132,7 @@ dependencyResolutionManagement {
 }
 
 // ===== PROJECT IDENTIFICATION =====
-rootProject.name = "AOSPReGenesis"
+rootProject.name = "AuraKai"
 
 // ===== MODULE INCLUSION =====
 // Core modules

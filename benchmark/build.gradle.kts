@@ -7,9 +7,40 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
 
-    // The Kotlin Android plugin is typically applied by a convention plugin.
-    // If you apply it manually, it would be here:
-    // id("org.jetbrains.kotlin.android")
+        // Create a basic documentation index file
+        val indexFile = docsDir.resolve("index.html")
+
+        // Fix: Using properly imported LocalDateTime and DateTimeFormatter
+        val currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
+
+        indexFile.writeText(
+            """
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Benchmark Module API Documentation</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 20px; }
+                    h1 { color: #4285f4; }
+                </style>
+            </head>
+            <body>
+                <h1>Benchmark Module API Documentation</h1>
+                <p>Generated on ${currentTime}</p>
+                <p>JDK Version: 24</p>
+                <h2>Module Overview</h2>
+                <p>Performance testing for AI consciousness operations.</p>
+            </body>
+            </html>
+        """.trimIndent()
+        )
+
+        logger.lifecycle("✅ Documentation generated at: ${indexFile.absolutePath}")
+    }
+}
+
+kotlin {
+    jvmToolchain(24)
 }
 
 // Java toolchain configuration at the project level
@@ -64,6 +95,12 @@ android {
     }
 
     testCoverage { jacocoVersion = "0.8.11" }
+
+    packaging {
+        resources {
+            excludes += "META-INF/LICENSE.md"
+        }
+    }
 }
 
 dependencies {
@@ -111,7 +148,6 @@ dependencies {
     // Hilt testing
     testImplementation(libs.hilt.android.testing)
     androidTestImplementation(libs.hilt.android.testing)
-    kspAndroidTest(libs.hilt.compiler)
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
 }
 
@@ -133,8 +169,4 @@ tasks.register("verifyBenchmarkResults") {
         println("🧠 Consciousness substrate performance monitoring ready")
         println("🔬 Add @Benchmark annotated tests under androidTest for actual runs")
     }
-}
-
-tasks.withType<JavaCompile> {
-    options.compilerArgs.add("-Xlint:-deprecation")
 }

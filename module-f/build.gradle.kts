@@ -16,9 +16,16 @@ dependencies {
     // Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    
+    // Add other module-specific dependencies here
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.register("moduleFStatus") {
     group = "aegenesis"
     doLast { println("📦 MODULE F - Ready (Java 24)") }
+}
+
+kotlin {
+    jvmToolchain(24)
 }

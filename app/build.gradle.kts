@@ -1,15 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
-// This build script now uses the custom convention plugins for a cleaner setup.
 
 plugins {
     id("com.android.application")
-    id("dev.aurakai.aurakai-android-convention")
+    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.compose.compiler)
-    //id("org.openapi.generator") version "7.16.0"
-
+    // id("openapi.generator.convention") // Commented out until plugin is recognized
 }
 
 android {
@@ -51,53 +48,25 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_24
-        targetCompatibility = JavaVersion.VERSION_24
+        sourceCompatibility = JavaVersion.toVersion("24")
+        targetCompatibility = JavaVersion.toVersion("24")
         isCoreLibraryDesugaringEnabled = true
     }
 }
 
-composeCompiler {
-    reportsDestination = layout.buildDirectory.dir("compose_compiler")
-    stabilityConfigurationFiles.set(listOf(rootProject.layout.projectDirectory.file("stability_config.conf")))
+kotlin {
+    jvmToolchain(24)
 }
-
-// OpenAPI Generator Configuration
-openApiGenerate {
-    generatorName.set("kotlin")
-    inputSpec.set("$rootDir/data/api/api/unified-deliverance-api.yml")
-    outputDir.set(layout.buildDirectory.dir("generated/openapi").get().asFile.path)
-    apiPackage.set("dev.aurakai.api.eco")
-    modelPackage.set("dev.aurakai.model.eco")
-    configOptions.set(
-        mapOf(
-            "library" to "jvm-ktor",
-            "serializationLibrary" to "kotlinx_serialization"
-        )
-    )
-}
-// Add generated OpenAPI sources after project evaluation (using File instead of Provider)
-afterEvaluate {
-    android.sourceSets.getByName("main").java.srcDir(
-        File(layout.buildDirectory.asFile.get(), "generated/openapi/src/main/kotlin")
-    )
-}
-
-// Ensure OpenAPI generation runs before Kotlin compilation
-tasks.withType<KotlinCompile>().configureEach {
-    dependsOn(tasks.named("openApiGenerate"))
-}
-
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
-    implementation(project(":romtools"))  // Temporarily disabled - Module not found
+    implementation(project(":romtools"))
     implementation(project(":secure-comm"))
-    implementation(project(":collab-canvas"))  // Temporarily disabled - YukiHookAPI issues
+    implementation(project(":collab-canvas"))
     implementation(project(":colorblendr"))
-    implementation(project(":sandbox-ui"))  // Temporarily. DIsabled - Compose compilation issues
+    implementation(project(":sandbox-ui"))
     implementation(project(":datavein-oracle-native"))
     implementation(project(":module-a"))
     implementation(project(":module-b"))
@@ -134,15 +103,15 @@ dependencies {
 
     // ===== NETWORKING =====
     implementation(libs.bundles.network)
-    implementation("com.squareup.moshi:moshi:1.15.2")
-    implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
+    implementation("com.squareup.moshi:moshi:1.15.1")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
 
     // ===== KTOR FOR OPENAPI CLIENT =====
-    implementation("io.ktor:ktor-client-core:3.3.0")
-    implementation("io.ktor:ktor-client-content-negotiation:3.3.0")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.0")
-    implementation("io.ktor:ktor-client-okhttp:3.3.0")
-    implementation("io.ktor:ktor-client-auth:3.3.0")
+    implementation("io.ktor:ktor-client-core:2.3.7")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.7")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
+    implementation("io.ktor:ktor-client-okhttp:2.3.7")
+    implementation("io.ktor:ktor-client-auth:2.3.7")
 
     // ===== FIREBASE =====
     // By implementing the BOM, we can specify Firebase SDKs without versions
@@ -150,19 +119,13 @@ dependencies {
     // This bundle includes Analytics, Crashlytics, Performance, Auth, Firestore, Messaging, and Config
     implementation(libs.bundles.firebase)
 
-    // Alternative: Use specific Firebase bundles for modular approach
-    // implementation(libs.bundles.firebase.core)     // Analytics, Crashlytics, Performance only
-    // implementation(libs.bundles.firebase.auth)     // Authentication
-    // implementation(libs.bundles.firebase.database) // Firestore, Realtime Database, Storage
-    // implementation(libs.bundles.firebase.messaging) // FCM, Remote Config
-
     // ===== HILT DEPENDENCY INJECTION =====
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.compiler)
 
     // ===== WORKMANAGER =====
-    implementation("androidx.work:work-runtime-ktx:2.10.5")
-    implementation("androidx.hilt:hilt-work:1.3.0")
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+    implementation("androidx.hilt:hilt-work:1.2.0")
 
     // ===== UTILITIES =====
     implementation(libs.timber)
@@ -194,6 +157,8 @@ tasks {
         delete(layout.buildDirectory.dir("generated/openapi"))
     }
 }
+
+
 
 
 // Note: Uses Genesis convention plugins (genesis.android.application and genesis.android.hilt)

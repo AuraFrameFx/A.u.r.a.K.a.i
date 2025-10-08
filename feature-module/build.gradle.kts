@@ -2,10 +2,10 @@
 // Primary feature module using convention plugins
 
 plugins {
-    id("genesis.android.compose")
-    alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.dokka)
-    alias(libs.plugins.ksp)
+    id("com.android.library")
+    alias(libs.plugins.kotlin.compose)
+    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
+    alias(libs.plugins.ksp)  // Required for Hilt annotation processing
 }
 
 
@@ -20,6 +20,14 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
+    }
+
+    kotlin {
+        jvmToolchain(24)
+    }
+
+    buildFeatures {
+        compose = true
     }
 }
 
@@ -56,18 +64,7 @@ dependencies {
     debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.androidx.compose.ui.tooling)
 }
-
 tasks.register("featureStatus") {
     group = "aegenesis"
-    doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 17)!") }
-}
-
-tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
-    dokkaSourceSets {
-        named("main") {
-            sourceRoots.from(file("src/main/java"))
-            sourceRoots.from(file("src/main/kotlin"))
-            sourceRoots.from(file("src/main/res"))
-        }
-    }
+    doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 24)!") }
 }

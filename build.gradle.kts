@@ -1,12 +1,12 @@
-apply(from = "scripts/apply-yukihook-conventions.gradle.kts")
-
 // Apply plugins to the root project to avoid multiple loading warnings
 plugins {
     alias(libs.plugins.kotlin.serialization) apply false
-    id("com.google.dagger.hilt.android") version "2.57.2" apply false
-    id("com.android.application") version "9.0.0-alpha09" apply false
-    id("com.android.library") version "9.0.0-alpha09" apply false
+    alias(libs.plugins.kotlin.compose) apply false
+    alias(libs.plugins.hilt) apply false
     alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.android.application) apply false
+    // Build logic convention plugins
     id("genesis.android.application") apply false
     id("genesis.android.library") apply false
     id("genesis.android.native") apply false
@@ -181,3 +181,4 @@ if (file("nuclear-clean.gradle.kts").exists()) {
 if (file("dependency-fix.gradle.kts").exists()) {
     apply(from = "dependency-fix.gradle.kts")
 }
+

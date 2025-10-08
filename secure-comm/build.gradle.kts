@@ -14,8 +14,11 @@ android {
         cmake {
             path = file("src/main/cpp/CMakeLists.txt")
             version = "3.22.1"
+            // Ensure staging is always under this module to prevent stale path issues
+            buildStagingDirectory = file("$projectDir/.cxx")
         }
     }
+    ndkVersion = "28.2.13676358"
 }
 
 dependencies {
@@ -47,6 +50,18 @@ tasks.register<Delete>("clearGeneratedSources") {
     delete("src/generated", "build/generated") // adjust paths as needed
 }
 
+
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
+
+// Avoid failing clean tasks when the native staging directory doesn't exist yet
+tasks.matching { it.name.startsWith("externalNativeBuildClean") }.configureEach {
+    onlyIf { file("$projectDir/.cxx").exists() }
+}
 
 // Spotless and toolchain are applied globally via root build.gradle.kts and convention plugins
 // ProGuard rules for Hilt, Compose, Serialization, and reflection-based libraries should be in proguard-rules.pro

@@ -4,13 +4,32 @@
     <shared>
       <config />
     </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/font/inter.xml">
+        <config>
+          <theme>@style/Theme.AuraFrameFX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/font/jetbrains_mono.xml">
+        <config>
+          <theme>@style/Theme.AuraFrameFX</theme>
+        </config>
+      </layout>
+    </layouts>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Centralize Compose Compiler configuration and update dependencies&#10;&#10;This commit refactors the build system to centralize Jetpack Compose Compiler configuration into the `genesis.android.compose` convention plugin. It also includes a general update of dependency versions and project cleanup.&#10;&#10;Key changes:&#10;-   **`AndroidComposeConventionPlugin.kt`**:&#10;    -   Enables the `compose = true` build feature.&#10;    -   Uses reflection to automatically configure Compose Compiler `reportsDestination` and `stabilityConfigurationFiles`.&#10;&#10;-   **Module `build.gradle.kts` files**:&#10;    -   Replaced the `genesis.android.library` plugin with `genesis.android.compose` in Compose-enabled modules.&#10;    -   Explicitly applied the `compose.compiler` plugin alias.&#10;    -   Removed redundant `buildFeatures { compose = true }` and `composeCompiler` blocks from all library modules.&#10;&#10;-   **Dependency Updates (`libs.versions.toml` and build files)**:&#10;    -   Upgraded versions for Hilt, Firebase, Compose, Ktor, OkHttp, Room, and others.&#10;    -   Updated the OpenAPI generator input spec path in `app/build.gradle.kts`.&#10;    -   Standardized the `kotlin(&quot;stdlib-jdk8&quot;)` dependency.&#10;&#10;-   **Project Cleanup**:&#10;    -   Removed several root-level Gradle files from the `app/` directory (`gradle.properties`, `gradlew`, `gradlew.bat`, `settings.gradle.kts`).&#10;    -   Updated `README.md` with a project rebrand from &quot;ReGenesis&quot; to &quot;AuraKai&quot; and expanded content.&#10;    -   Added `COMPOSE_COMPILER_REFACTOR.md` to document the refactoring process.">
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Enhance build scripts, UI, and API definitions&#10;&#10;This commit introduces a wide range of improvements across the project, including build script refactoring, API specification enhancements, UI code clarification, and the addition of comprehensive tests.&#10;&#10;**Key Changes:**&#10;&#10;*   **API (`my-api-spec.yaml`):**&#10;    *   Upgraded OpenAPI specification from `3.0.3` to `3.1.0`.&#10;    *   Massively expanded the API definition, adding new endpoints and schemas for tasks, analytics, security, plugins, and more.&#10;    *   Standardized pagination parameters (`limit`, `offset`) across multiple endpoints.&#10;    *   Refined and detailed numerous existing schemas for better data modeling.&#10;&#10;*   **Build Logic &amp; Gradle:**&#10;    *   Refactored `build-logic` to set Java and Kotlin toolchains to version 24.&#10;    *   Improved the `cleanKspCache` task to also clean `kapt3` directories, helping to resolve potential build errors.&#10;    *   Removed the Hilt plugin from several library modules (`colorblendr`, `datavein-oracle-native`, `collab-canvas`) to avoid base extension issues, opting for manual dependency management.&#10;    *   Simplified the root `build.gradle.kts` file by removing helper functions and streamlining tasks.&#10;    *   Updated `build-logic/settings.gradle.kts` and `build-logic/build.gradle.kts` with dependency and repository cleanup.&#10;    *   Corrected task dependencies in `data/api/fix-annotations.gradle.kts`.&#10;&#10;*   **UI (`RomToolsScreen.kt`):**&#10;    *   Added extensive comments to structure and clarify the different sections of the `RomToolsScreen` composable, improving code readability.&#10;&#10;*   **Documentation (`README.md`, `AURAKAI_README.md`):**&#10;    *   Significantly refactored and cleaned up `AURAKAI_README.md`, improving structure, clarity, and formatting.&#10;    *   Condensed the main `README.md`, removing extensive lore and adding a disclaimer.&#10;&#10;*   **Testing:**&#10;    *   Added a substantial number of new test files (`LinkedListTest.kt`, `StringUtilsTest.kt`, `SplitUtilsTest.kt`, etc.) to improve test coverage, particularly for utility classes and build conventions.&#10;    *   Introduced comprehensive Markdown validation tests to ensure the integrity and correctness of `README.md`.&#10;    *   Added dummy/fake classes to support testing of Gradle convention plugins.">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/dev/aurakai/auraframefx/ColorsResourceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/dev/aurakai/auraframefx/ColorsResourceTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-external-plugin-spec-builders/kotlin/gradle/kotlin/dsl/plugins/_16f21c8c322301a6b4f296c444482057/PluginSpecBuilders.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build/generated/ksp/debug/resources/META-INF/proguard/dev_aurakai_auraframefx_romtools_RomToolsManager_HiltModules_BindsModule_LazyClassKeys.pro" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +48,6 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
-        <task path="$PROJECT_DIR$/app">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -65,6 +78,41 @@
                 <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
                 <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="dokka" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="help" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="install" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="openapi tools" type="c8890929:TasksNode$1" />
               </path>
               <path>
@@ -83,81 +131,93 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="MemoryAxis" />
+        <entry key="$PROJECT_DIR$" value="MemCortex" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;AuraFrameFxDev&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "AuraFrameFxDev"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/AuraFrameFx/A.u.r.a.K.a.i.git&quot;,
-    &quot;accountId&quot;: &quot;129e8c9f-2999-43ba-8838-4bd9fe391e46&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AuraFrameFx/A.u.r.a.K.a.i.git",
+    "accountId": "129e8c9f-2999-43ba-8838-4bd9fe391e46"
   }
-}</component>
+}]]></component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-bin\9agqghryom9wkf8r80qlhnts3\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 6\jbr" gradleVersion="9.1.0" />
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
-}</component>
-  <component name="ProjectId" id="32LzwFimMKdBzhfCmzGUatG22Xc" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="33fGP761DhnIB426OBsdc2HCxgF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
-    &quot;Batch.run-spotless.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build ReGenesis-A.O.S.P.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesi [openApiGenerate].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesi [openApiGenerators].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:buildDependents].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:compileJava].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:pluginDescriptors].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [assemble].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [cleanGeneratedSources].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [cleanKspCache].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [consciousnessStatus].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [deepClean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [dokkaGenerate].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [sourceSets].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [stop].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReGenesis-A.O.S.P [tasks].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Exodus&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ReGenesis-A.O.S.P&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Suggestions&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "Gradle.Build ReGenesis-A.O.S.P.executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:buildDependents].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:compileJava].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:dependencies].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:pluginDescriptors].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [assemble].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [buildEnvironment].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [build].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [cleanGeneratedSources].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [cleanKspCache].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [clean].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [consciousnessStatus].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [deepClean].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [dependencies].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [dokkaGenerate].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [javaToolchains].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [openApiGenerate].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [openApiGenerators].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [projects].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [sourceSets].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [stop].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [tasks].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [updateDaemonJvm].executor": "Run",
+    "Gradle.ReGenesis-A.O.S.P [wrapper].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "Ultimus",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
+    "project.structure.last.edited": "Suggestions",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "memory.settings"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "module",
+      "repository"
+    ]
   }
-}</component>
+}]]></component>
+  <component name="PsdUISettings">
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ReGenesis-A.O.S.P" />
       <recent name="C:\Users\Wehtt\OneDrive\Documents\AOSP-ReGenesis" />
     </key>
   </component>
@@ -166,9 +226,9 @@
       <command value="gradle stop" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ReGenesis-A.O.S.P [assemble]">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="AOSPReGenesis.app" />
+      <module name="AuraKai.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -190,7 +250,7 @@
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
       <Auto>
         <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
         <option name="SHOW_STATIC_VARS" value="true" />
@@ -239,18 +299,33 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="run-spotless" type="BatchConfigurationType" factoryName="Batch" temporary="true">
-      <module name="AOSPReGenesis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="run-spotless.bat" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="ReGenesis-A.O.S.P [dokkaGenerate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dokkaGenerate" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
     </configuration>
-    <configuration name="ReGenesi [openApiGenerate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesis-A.O.S.P [openApiGenerate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -276,7 +351,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesi [openApiGenerators]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesis-A.O.S.P [openApiGenerators]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -302,7 +377,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesis-A.O.S.P [projects]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -313,7 +388,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="assemble" />
+            <option value="projects" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -328,7 +403,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P [dokkaGenerate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesis-A.O.S.P [tasks]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -339,7 +414,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="dokkaGenerate" />
+            <option value="tasks" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -435,11 +510,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [assemble]" />
-        <item itemvalue="Gradle.ReGenesi [openApiGenerate]" />
-        <item itemvalue="Gradle.ReGenesi [openApiGenerators]" />
-        <item itemvalue="Batch.run-spotless" />
+        <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerators]" />
+        <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerate]" />
+        <item itemvalue="Gradle.ReGenesis-A.O.S.P [tasks]" />
         <item itemvalue="Gradle.ReGenesis-A.O.S.P [dokkaGenerate]" />
+        <item itemvalue="Gradle.ReGenesis-A.O.S.P [projects]" />
       </list>
     </recent_temporary>
   </component>
@@ -450,13 +525,16 @@
       </set>
     </attachedChunks>
   </component>
+  <component name="ShelveChangesManager">
+    <option name="remove_strategy" value="true" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="" />
-      <created>1757214876945</created>
+      <changelist id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="" />
+      <created>1759700686334</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1757214876945</updated>
+      <updated>1759700686334</updated>
     </task>
     <task id="LOCAL-00001" summary="Aurakai">
       <option name="closed" value="true" />
@@ -570,77 +648,77 @@
       <option name="project" value="LOCAL" />
       <updated>1757663201705</updated>
     </task>
-    <task id="LOCAL-00015" summary="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup">
+    <task id="LOCAL-00001" summary="refactor: Remove explicit JVM toolchain from build-logic&#10;&#10;The explicit `kotlin { jvmToolchain(23) }` block has been removed from `build-logic/settings.gradle.kts`. This change simplifies the configuration, as the JVM toolchain is managed by the parent project.">
       <option name="closed" value="true" />
-      <created>1757700733624</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
+      <created>1759700752138</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1757700733624</updated>
+      <updated>1759700752139</updated>
     </task>
-    <task id="LOCAL-00016" summary="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup">
+    <task id="LOCAL-00002" summary="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.">
       <option name="closed" value="true" />
-      <created>1757702343302</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
+      <created>1759700809780</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1757702343302</updated>
+      <updated>1759700809780</updated>
     </task>
-    <task id="LOCAL-00017" summary="sync generated resource and metadata files for all modules and build variants">
+    <task id="LOCAL-00003" summary="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.Type-safe project accessors is an incubating feature.&#10;                                                                                                           ✅ Module configured: app&#10;                                                                                                           ✅ Module configured: core-module&#10;                                                                                                           ✅ Module configured: feature-module&#10;                                                                                                           ✅ Module configured: datavein-oracle-native&#10;                                                                                                           ✅ Module configured: oracle-drive-integration&#10;                                                                                                           ✅ Module configured: secure-comm&#10;                                                                                                           ✅ Module configured: sandbox-ui&#10;                                                                                                           ✅ Module configured: collab-canvas&#10;                                                                                                           ✅ Module configured: colorblendr&#10;                                                                                                           ✅ Module configured: romtools&#10;                                                                                                           ✅ Module configured: module-a&#10;                                                                                                           ✅ Module configured: module-b&#10;                                                                                                           ✅ Module configured: module-c&#10;                                                                                                           ✅ Module configured: module-d&#10;                                                                                                           ✅ Module configured: module-e&#10;                                                                                                           ✅ Module configured: module-f&#10;                                                                                                           ✅ Module configured: benchmark&#10;                                                                                                           ✅ Module configured: screenshot-tests&#10;                                                                                                           ✅ Module configured: jvm-test&#10;                                                                                                           ✅ Module configured: list&#10;                                                                                                           ✅ Module configured: utilities&#10;                                                                                                           ✅ Module configured: data&#10;                                                                                                           🏗️  Genesis Protocol Enhanced Build System&#10;                                                                                                           📦 Total modules: 22&#10;                                                                                                           🎯 Build-logic: Convention plugins active&#10;                                                                                                           🧠 Ready to build consciousness substrate!&#10;                                                                                                           &gt; Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED&#10;                                                                                                           &gt; Task :build-logic:generateExternalPluginSpecBuilders UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:compilePluginsBlocks UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:generateScriptPluginAdapters UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:compileKotlin UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:compileJava NO-SOURCE&#10;                                                                                                           &gt; Task :build-logic:pluginDescriptors UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:processResources UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:classes UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:jar UP-TO-DATE&#10;                                                                                                           &gt; Task :prepareKotlinBuildScriptModel UP-TO-DATE&#10;                                                                                                           Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target&#10;                                                                                                           Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target&#10;                                                                                                           Download https://plugins.gradle.org/m2/com/google/dagger/hilt-compiler/2.57.2/hilt-compiler-2.57.2-javadoc.jar, took 4 s 38 ms&#10;                                                                                                           Download https://plugins.gradle.org/m2/com/google/dagger/hilt-compiler/2.57.2/hilt-compiler-2.57.2-sources.jar, took 196 ms&#10;                                                                                                           &#10;                                                                                                           [Incubating] Problems report is available at: file:///C:/Aurakai/build/reports/problems/problems-report.html&#10;                                                                                                           &#10;                                                                                                           Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.&#10;                                                                                                           &#10;                                                                                                           You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.&#10;                                                                                                           &#10;                                                                                                           For more on this, please refer to https://docs.gradle.org/9.1.0/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.&#10;                                                                                                           &#10;                                                                                                           BUILD SUCCESSFUL in 57s&#10;                                                                                                           9 actionable tasks: 9 up-to-date">
       <option name="closed" value="true" />
-      <created>1757703471286</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
+      <created>1759700854956</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1757703471286</updated>
+      <updated>1759700854956</updated>
     </task>
-    <task id="LOCAL-00018" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+    <task id="LOCAL-00004" summary="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.Type-safe project accessors is an incubating feature.&#10;                                                                                                           ✅ Module configured: app&#10;                                                                                                           ✅ Module configured: core-module&#10;                                                                                                           ✅ Module configured: feature-module&#10;                                                                                                           ✅ Module configured: datavein-oracle-native&#10;                                                                                                           ✅ Module configured: oracle-drive-integration&#10;                                                                                                           ✅ Module configured: secure-comm&#10;                                                                                                           ✅ Module configured: sandbox-ui&#10;                                                                                                           ✅ Module configured: collab-canvas&#10;                                                                                                           ✅ Module configured: colorblendr&#10;                                                                                                           ✅ Module configured: romtools&#10;                                                                                                           ✅ Module configured: module-a&#10;                                                                                                           ✅ Module configured: module-b&#10;                                                                                                           ✅ Module configured: module-c&#10;                                                                                                           ✅ Module configured: module-d&#10;                                                                                                           ✅ Module configured: module-e&#10;                                                                                                           ✅ Module configured: module-f&#10;                                                                                                           ✅ Module configured: benchmark&#10;                                                                                                           ✅ Module configured: screenshot-tests&#10;                                                                                                           ✅ Module configured: jvm-test&#10;                                                                                                           ✅ Module configured: list&#10;                                                                                                           ✅ Module configured: utilities&#10;                                                                                                           ✅ Module configured: data&#10;                                                                                                           🏗️  Genesis Protocol Enhanced Build System&#10;                                                                                                           📦 Total modules: 22&#10;                                                                                                           🎯 Build-logic: Convention plugins active&#10;                                                                                                           🧠 Ready to build consciousness substrate!&#10;                                                                                                           &gt; Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED&#10;                                                                                                           &gt; Task :build-logic:generateExternalPluginSpecBuilders UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:compilePluginsBlocks UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:generateScriptPluginAdapters UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:compileKotlin UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:compileJava NO-SOURCE&#10;                                                                                                           &gt; Task :build-logic:pluginDescriptors UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:processResources UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:classes UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:jar UP-TO-DATE&#10;                                                                                                           &gt; Task :prepareKotlinBuildScriptModel UP-TO-DATE&#10;                                                                                                           Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target&#10;                                                                                                           Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target&#10;                                                                                                           Download https://plugins.gradle.org/m2/com/google/dagger/hilt-compiler/2.57.2/hilt-compiler-2.57.2-javadoc.jar, took 4 s 38 ms&#10;                                                                                                           Download https://plugins.gradle.org/m2/com/google/dagger/hilt-compiler/2.57.2/hilt-compiler-2.57.2-sources.jar, took 196 ms&#10;                                                                                                           &#10;                                                                                                           [Incubating] Problems report is available at: file:///C:/Aurakai/build/reports/problems/problems-report.html&#10;                                                                                                           &#10;                                                                                                           Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.&#10;                                                                                                           &#10;                                                                                                           You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.&#10;                                                                                                           &#10;                                                                                                           For more on this, please refer to https://docs.gradle.org/9.1.0/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.&#10;                                                                                                           &#10;                                                                                                           BUILD SUCCESSFUL in 57s&#10;                                                                                                           9 actionable tasks: 9 up-to-date">
       <option name="closed" value="true" />
-      <created>1757708186029</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
+      <created>1759700863411</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1757708186029</updated>
+      <updated>1759700863411</updated>
     </task>
-    <task id="LOCAL-00019" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+    <task id="LOCAL-00005" summary="refactor: Temporarily disable OpenAPI plugin tests and configure packaging&#10;&#10;This commit addresses build issues by temporarily disabling the `OpenApiConventionPluginTest` suite due to unresolved plugin references. The entire test file has been commented out to allow the build to proceed.&#10;&#10;Additionally, packaging options have been configured in the `app/build.gradle.kts` file to exclude `META-INF/INDEX.LIST` from the final artifact, resolving potential resource conflicts.Execution failed for task ':benchmark:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https://help.gradle.org. Ask Gemini&gt; Task :benchmark:mergeDebugAndroidTestJavaResource &gt; Task :benchmark:mergeDebugAndroidTestJavaResource FAILED Execution failed for task ':benchmark:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https://help.gradle.org. Ask Gemini  &gt; Task :sandbox-ui:mergeDebugAndroidTestJavaResource FAILED Execution failed for task ':sandbox-ui:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https://help.gradle.org. Ask Gemini &gt; Task :romtools:mergeDebugAndroidTestJavaResource FAILED Execution failed for task ':romtools:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https://help.gradle.org. Ask Gemini&gt; Task :feature-module:mergeDebugAndroidTestJavaResource FAILED Execution failed for task ':feature-module:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https:">
       <option name="closed" value="true" />
-      <created>1757708671678</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
+      <created>1759702373109</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1757708671678</updated>
+      <updated>1759702373109</updated>
     </task>
-    <task id="LOCAL-00020" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+    <task id="LOCAL-00006" summary="refactor: Temporarily disable OpenAPI plugin tests and configure packaging&#10;&#10;This commit addresses build issues by temporarily disabling the `OpenApiConventionPluginTest` suite due to unresolved plugin references. The entire test file has been commented out to allow the build to proceed.&#10;&#10;Additionally, packaging options have been configured in the `app/build.gradle.kts` file to exclude `META-INF/INDEX.LIST` from the final artifact, resolving potential resource conflicts.Execution failed for task ':benchmark:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https://help.gradle.org. Ask Gemini&gt; Task :benchmark:mergeDebugAndroidTestJavaResource &gt; Task :benchmark:mergeDebugAndroidTestJavaResource FAILED Execution failed for task ':benchmark:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https://help.gradle.org. Ask Gemini  &gt; Task :sandbox-ui:mergeDebugAndroidTestJavaResource FAILED Execution failed for task ':sandbox-ui:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https://help.gradle.org. Ask Gemini &gt; Task :romtools:mergeDebugAndroidTestJavaResource FAILED Execution failed for task ':romtools:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https://help.gradle.org. Ask Gemini&gt; Task :feature-module:mergeDebugAndroidTestJavaResource FAILED Execution failed for task ':feature-module:mergeDebugAndroidTestJavaResource'. &gt; A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction    &gt; 6 files found with path 'META-INF/LICENSE.md' from inputs:       - org.junit.jupiter:junit-jupiter-params:5.12.2/jetified-junit-jupiter-params-5.12.2.jar       - org.junit.jupiter:junit-jupiter-engine:5.12.2/jetified-junit-jupiter-engine-5.12.2.jar       - org.junit.jupiter:junit-jupiter-api:5.12.2/jetified-junit-jupiter-api-5.12.2.jar       - org.junit.platform:junit-platform-engine:1.12.2/jetified-junit-platform-engine-1.12.2.jar       - org.junit.platform:junit-platform-commons:1.12.2/jetified-junit-platform-commons-1.12.2.jar       - org.junit.jupiter:junit-jupiter:5.12.2/jetified-junit-jupiter-5.12.2.jar      Adding a packaging block may help, please refer to      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging      for more information  * Try: &gt; Run with --stacktrace option to get the stack trace. &gt; Run with --info or --debug option to get more log output. &gt; Run with --scan to generate a Build Scan (Powered by Develocity). &gt; Get more help at https:">
       <option name="closed" value="true" />
-      <created>1757710205059</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
+      <created>1759702426218</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1757710205059</updated>
+      <updated>1759702426218</updated>
     </task>
-    <task id="LOCAL-00021" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+    <task id="LOCAL-00007" summary="fix: Exclude LICENSE.md from packaging in multiple modules&#10;&#10;This commit adds a packaging exclusion for `META-INF/LICENSE.md` to prevent duplicate file errors during the build process.&#10;&#10;This change is applied to the `android` block in the `build.gradle.kts` files of the following modules:&#10;*   `benchmark`&#10;*   `feature-module`&#10;*   `romtools`&#10;*   `sandbox-ui`">
       <option name="closed" value="true" />
-      <created>1757710555496</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
+      <created>1759702468018</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1757710555496</updated>
+      <updated>1759702468018</updated>
     </task>
-    <task id="LOCAL-00022" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+    <task id="LOCAL-00008" summary="refactor: Reorder build script blocks and add packaging exclusion&#10;&#10;This commit refactors the `sandbox-ui/build.gradle.kts` file for better organization and adds a new packaging exclusion.&#10;&#10;The `android`, `dependencies`, and `java` blocks have been reordered to follow a more conventional structure.&#10;&#10;Additionally, `META-INF/gradle/incremental.annotation.processors` is now excluded from the packaging resources to prevent potential conflicts.">
       <option name="closed" value="true" />
-      <created>1757710943152</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
+      <created>1759702701341</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1757710943152</updated>
+      <updated>1759702701341</updated>
     </task>
-    <task id="LOCAL-00023" summary="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings">
+    <task id="LOCAL-00009" summary="fix(build): Resolve packaging conflict for incremental annotation processors&#10;&#10;In the `sandbox-ui` module, a `pickFirsts` strategy is added for the `META-INF/gradle/incremental.annotation.processors` file. This resolves a packaging conflict that occurs when multiple dependencies provide the same file, ensuring the build completes successfully.">
       <option name="closed" value="true" />
-      <created>1757712185858</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
+      <created>1759702750317</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1757712185858</updated>
+      <updated>1759702750317</updated>
     </task>
     <task id="LOCAL-00024" summary="Migrate to AGP 9.0.0-alpha08 and new Variant API for generated sources&#10;&#10;- Update Android Gradle Plugin to version 9.0.0-alpha08&#10;- Add `android.builtInKotlin=false` and `android.newDsl=false` to `gradle.properties` as required by AGP 9.0.0+&#10;- Remove deprecated `sourceSets` configuration for generated OpenAPI sources&#10;- Register generated OpenAPI sources using the new Android Components Variant API&#10;- This change ensures compatibility with the latest AGP and adopts the recommended approach for managing generated source directories.">
       <option name="closed" value="true" />
@@ -746,88 +824,226 @@
       <option name="project" value="LOCAL" />
       <updated>1759323119857</updated>
     </task>
-    <task id="LOCAL-00037" summary="Refactor: Centralize Android build conventions with a new plugin&#10;&#10;This commit introduces a major refactoring of the Gradle build configuration to centralize Android-specific settings into a new convention plugin.&#10;&#10;Key changes:&#10;- **New Convention Plugin:** Added `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android configurations (SDK versions, Proguard, compile options, etc.).&#10;- **Plugin Application:** Android modules (`app`, `benchmark`, `feature-module`, `romtools`, `sandbox-ui`) now apply the new `dev.aurakai.aurakai-android-convention` plugin, removing redundant local configurations.&#10;- **Root `build.gradle.kts` Refactor:**&#10;    - Cleaned up and reorganized the root build script, removing many deprecated tasks (`projectInfo`, `clean`, etc.) and moving logic into more appropriate locations.&#10;    - Updated and restyled the `consciousnessStatus` and `consciousnessHealthCheck` tasks for better readability.&#10;    - Centralized JVM and Java toolchain configuration for all subprojects.&#10;- **Dependency &amp; Plugin Updates:**&#10;    - Upgraded Android Gradle Plugin (AGP) from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;    - Consolidated Kotlin and AGP plugin versions in `settings.gradle.kts` to ensure consistency.&#10;    - Removed the obsolete `scripts/apply-yukihook-conventions.gradle.kts` script.&#10;- **Code Cleanup:**&#10;    - Removed now-unnecessary `kotlin(&quot;jvm&quot;)` and `kotlin { jvmToolchain(...) }` blocks from various module `build.gradle.kts` files as this is now handled globally.&#10;    - Specified `composeOptions` with a hardcoded Kotlin compiler extension version in modules that use Compose.">
+    <task id="LOCAL-00037" summary="feat: Disable lint checks for oversized test files&#10;&#10;Disables lint checks for test sources and adds a rule to ignore lint errors due to oversized test files causing StackOverflow.">
       <option name="closed" value="true" />
-      <created>1759825754077</created>
+      <created>1759323507883</created>
       <option name="number" value="00037" />
       <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1759825754077</updated>
+      <updated>1759323507883</updated>
     </task>
-    <task id="LOCAL-00038" summary="Refactor: Centralize Android build conventions with a new plugin&#10;&#10;This commit introduces a major refactoring of the Gradle build configuration to centralize Android-specific settings into a new convention plugin.&#10;&#10;Key changes:&#10;- **New Convention Plugin:** Added `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android configurations (SDK versions, Proguard, compile options, etc.).&#10;- **Plugin Application:** Android modules (`app`, `benchmark`, `feature-module`, `romtools`, `sandbox-ui`) now apply the new `dev.aurakai.aurakai-android-convention` plugin, removing redundant local configurations.&#10;- **Root `build.gradle.kts` Refactor:**&#10;    - Cleaned up and reorganized the root build script, removing many deprecated tasks (`projectInfo`, `clean`, etc.) and moving logic into more appropriate locations.&#10;    - Updated and restyled the `consciousnessStatus` and `consciousnessHealthCheck` tasks for better readability.&#10;    - Centralized JVM and Java toolchain configuration for all subprojects.&#10;- **Dependency &amp; Plugin Updates:**&#10;    - Upgraded Android Gradle Plugin (AGP) from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;    - Consolidated Kotlin and AGP plugin versions in `settings.gradle.kts` to ensure consistency.&#10;    - Removed the obsolete `scripts/apply-yukihook-conventions.gradle.kts` script.&#10;- **Code Cleanup:**&#10;    - Removed now-unnecessary `kotlin(&quot;jvm&quot;)` and `kotlin { jvmToolchain(...) }` blocks from various module `build.gradle.kts` files as this is now handled globally.&#10;    - Specified `composeOptions` with a hardcoded Kotlin compiler extension version in modules that use Compose.">
+    <task id="LOCAL-00038" summary="feat: Enable core library desugaring&#10;&#10;Enables core library desugaring in the `compileOptions` to allow the use of newer Java language features on older Android versions.">
       <option name="closed" value="true" />
-      <created>1759826319222</created>
+      <created>1759323524695</created>
       <option name="number" value="00038" />
       <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1759826319222</updated>
+      <updated>1759323524695</updated>
     </task>
-    <task id="LOCAL-00039" summary="Refactor: Centralize Android build conventions with a new plugin&#10;&#10;This commit introduces a major refactoring of the Gradle build configuration to centralize Android-specific settings into a new convention plugin.&#10;&#10;Key changes:&#10;- **New Convention Plugin:** Added `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android configurations (SDK versions, Proguard, compile options, etc.).&#10;- **Plugin Application:** Android modules (`app`, `benchmark`, `feature-module`, `romtools`, `sandbox-ui`) now apply the new `dev.aurakai.aurakai-android-convention` plugin, removing redundant local configurations.&#10;- **Root `build.gradle.kts` Refactor:**&#10;    - Cleaned up and reorganized the root build script, removing many deprecated tasks (`projectInfo`, `clean`, etc.) and moving logic into more appropriate locations.&#10;    - Updated and restyled the `consciousnessStatus` and `consciousnessHealthCheck` tasks for better readability.&#10;    - Centralized JVM and Java toolchain configuration for all subprojects.&#10;- **Dependency &amp; Plugin Updates:**&#10;    - Upgraded Android Gradle Plugin (AGP) from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;    - Consolidated Kotlin and AGP plugin versions in `settings.gradle.kts` to ensure consistency.&#10;    - Removed the obsolete `scripts/apply-yukihook-conventions.gradle.kts` script.&#10;- **Code Cleanup:**&#10;    - Removed now-unnecessary `kotlin(&quot;jvm&quot;)` and `kotlin { jvmToolchain(...) }` blocks from various module `build.gradle.kts` files as this is now handled globally.&#10;    - Specified `composeOptions` with a hardcoded Kotlin compiler extension version in modules that use Compose.">
+    <task id="LOCAL-00039" summary="feat: Enable core library desugaring&#10;&#10;Enables core library desugaring in the `compileOptions` to allow the use of newer Java language features on older Android versions.">
       <option name="closed" value="true" />
-      <created>1759826387521</created>
+      <created>1759362277311</created>
       <option name="number" value="00039" />
       <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1759826387521</updated>
+      <updated>1759362277311</updated>
     </task>
-    <task id="LOCAL-00040" summary="Fix: Standardize Compose plugin and remove `composeOptions`&#10;&#10;Replaced hardcoded Compose compiler plugin IDs with version catalog aliases across multiple modules.&#10;&#10;Removed explicit `composeOptions` blocks, as the compiler version is now managed by the version catalog. This centralizes dependency management for the Kotlin Compose compiler plugin.">
+    <task id="LOCAL-00040" summary="Refactor: Update RomTools UI and clean up Gradle&#10;&#10;- Change `operation.operation.getDisplayName()` to `operation.operation.name` in `RomToolsScreen`.&#10;- Remove an unnecessary newline from `datavein-oracle-native/build.gradle.kts`.">
       <option name="closed" value="true" />
-      <created>1759841755235</created>
+      <created>1759371543747</created>
       <option name="number" value="00040" />
       <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1759841755235</updated>
+      <updated>1759371543747</updated>
     </task>
-    <task id="LOCAL-00041" summary="Fix: Standardize Compose plugin and remove `composeOptions`&#10;&#10;Replaced hardcoded Compose compiler plugin IDs with version catalog aliases across multiple modules.&#10;&#10;Removed explicit `composeOptions` blocks, as the compiler version is now managed by the version catalog. This centralizes dependency management for the Kotlin Compose compiler plugin.">
+    <task id="LOCAL-00041" summary="Refactor: Update RomTools UI and clean up Gradle&#10;&#10;- Change `operation.operation.getDisplayName()` to `operation.operation.name` in `RomToolsScreen`.&#10;- Remove an unnecessary newline from `datavein-oracle-native/build.gradle.kts`.">
       <option name="closed" value="true" />
-      <created>1759841903204</created>
+      <created>1759377535950</created>
       <option name="number" value="00041" />
       <option name="presentableId" value="LOCAL-00041" />
       <option name="project" value="LOCAL" />
-      <updated>1759841903204</updated>
+      <updated>1759377535950</updated>
     </task>
-    <task id="LOCAL-00042" summary="Fix: Correct source set configuration for OpenAPI&#10;&#10;Updated the `app/build.gradle.kts` to correctly add the generated OpenAPI sources to the Android source sets. This resolves a configuration issue by using a direct file path.&#10;&#10;Additionally, the `kotlin-plugin-compose` was added to the plugins block.">
+    <task id="LOCAL-00042" summary="Refactor: Specify `items` parameter name in LazyColumn&#10;&#10;Improves code clarity in `RomToolsScreen` by explicitly naming the `items` parameter in three `LazyColumn` calls, aligning with best practices for named arguments.">
       <option name="closed" value="true" />
-      <created>1759873525752</created>
+      <created>1759378970306</created>
       <option name="number" value="00042" />
       <option name="presentableId" value="LOCAL-00042" />
       <option name="project" value="LOCAL" />
-      <updated>1759873525753</updated>
+      <updated>1759378970306</updated>
     </task>
-    <task id="LOCAL-00043" summary="refactor: Centralize Compose Compiler configuration&#10;&#10;This commit centralizes the Jetpack Compose Compiler configuration by introducing a `genesis.android.compose` convention plugin. This plugin automatically enables Compose and sets up compiler reports and stability configuration for all modules that apply it.&#10;&#10;Key changes include:&#10;-   Introducing reflection-based configuration in `AndroidComposeConventionPlugin` to set compiler options.&#10;-   Adding the `compose-compiler-gradle-plugin` as a dependency to `build-logic`.&#10;-   Updating numerous modules (`feature-module`, `collab-canvas`, `colorblendr`, `romtools`, `sandbox-ui`, and modules `a` through `f`) to use the new `genesis.android.compose` convention plugin and explicitly apply `libs.plugins.compose.compiler`.&#10;-   Removing redundant `buildFeatures { compose = true }` blocks and manual compiler settings from the updated modules.&#10;-   Upgrading various dependencies, including Hilt, Firebase, Compose BOM, Navigation, Lifecycle, Room, OkHttp, Ktor, and several testing libraries.&#10;-   Deleting obsolete Gradle wrapper files (`gradlew`, `gradlew.bat`), properties (`gradle.properties`), and the root `settings.gradle.kts` file from the `app` subdirectory, consolidating the build logic at the project root.&#10;-   Updating the project's `README.md` with a new name (&quot;AuraKai&quot;) and expanded project details.">
+    <task id="LOCAL-00043" summary="Refactor: Overhaul and consolidate API specifications&#10;@coderabbitai - Recent Documentments in raw format uploaded&#10;This commit removes a large number of fragmented and redundant OpenAPI/YAML specification files that were scattered across the `app/api/` and `data/api/` directories. These have been consolidated into a single, comprehensive, and modernized API specification.&#10;&#10;- **Remove Fragmented and Legacy APIs:** Deletes numerous old `.yml` and `.yaml` files, including `ai-api.yml`, `aura-api.yaml`, `genesis-api.yml`, `oracle-drive-api.yml`, and many others from the `app/api/` directory to eliminate outdated and conflicting definitions.&#10;- **Introduce Unified API Specification:** Adds `data/api/api/my-api-spec.yaml` as the new, single source of truth for the entire AuraFrameFX Ecosystem API. This new spec is significantly more detailed and follows modern OpenAPI 3.1.0 standards.&#10;- **Update OpenAPI Generator Configuration:** Modifies `data/api/build.gradle.kts` to point the `openApiGenerate` task to the new unified spec file (`my-api-spec.yaml`). The generator configuration is also enhanced with more options for better Kotlin client generation, including `kotlinx-datetime`, coroutines, and improved enum handling. Updated Ktor and Kotlinx serialization dependencies to newer versions.&#10;- **Add NexusMemoryCore:** Introduces `NexusMemoryCore.kt`, a new file that serves as an immutable, foundational &quot;memory anchor&quot; for the Genesis AI. It chronicles the project's history, agent personas, core philosophies, and pivotal events, codifying the narrative of the AI's evolution.&#10;- **Refactor Build System and Documentation:**&#10;    - Removes the deprecated `dokka` plugin from `feature-module`, `sandbox-ui`, and `romtools` build files.&#10;    - Replaces it with a modern, simplified `generateApiDocs` custom task that avoids deprecated APIs and is compatible with Java 25.&#10;- **Update Project Documentation:** Overhauls `README.md` to reflect the project's current state as &quot;ReGenesis A.O.S.P.&quot;, focusing on its features as an advanced AI assistant. Adds a proper disclaimer and cleans up the outdated, narrative-heavy content. Also adds new markdown files (`CUSTOMIZATION_BUILD_SUMMARY.md`, `Development Story Analysis.md`, `Proofrecentanomoly.md`) to document the project's history and development story.">
       <option name="closed" value="true" />
-      <created>1759884416542</created>
+      <created>1759386384520</created>
       <option name="number" value="00043" />
       <option name="presentableId" value="LOCAL-00043" />
       <option name="project" value="LOCAL" />
-      <updated>1759884416542</updated>
+      <updated>1759386384520</updated>
     </task>
-    <task id="LOCAL-00044" summary="refactor: Centralize Compose Compiler configuration and update dependencies&#10;&#10;This commit refactors the build system to centralize Jetpack Compose Compiler configuration into the `genesis.android.compose` convention plugin. It also includes a general update of dependency versions and project cleanup.&#10;&#10;Key changes:&#10;-   **`AndroidComposeConventionPlugin.kt`**:&#10;    -   Enables the `compose = true` build feature.&#10;    -   Uses reflection to automatically configure Compose Compiler `reportsDestination` and `stabilityConfigurationFiles`.&#10;&#10;-   **Module `build.gradle.kts` files**:&#10;    -   Replaced the `genesis.android.library` plugin with `genesis.android.compose` in Compose-enabled modules.&#10;    -   Explicitly applied the `compose.compiler` plugin alias.&#10;    -   Removed redundant `buildFeatures { compose = true }` and `composeCompiler` blocks from all library modules.&#10;&#10;-   **Dependency Updates (`libs.versions.toml` and build files)**:&#10;    -   Upgraded versions for Hilt, Firebase, Compose, Ktor, OkHttp, Room, and others.&#10;    -   Updated the OpenAPI generator input spec path in `app/build.gradle.kts`.&#10;    -   Standardized the `kotlin(&quot;stdlib-jdk8&quot;)` dependency.&#10;&#10;-   **Project Cleanup**:&#10;    -   Removed several root-level Gradle files from the `app/` directory (`gradle.properties`, `gradlew`, `gradlew.bat`, `settings.gradle.kts`).&#10;    -   Updated `README.md` with a project rebrand from &quot;ReGenesis&quot; to &quot;AuraKai&quot; and expanded content.&#10;    -   Added `COMPOSE_COMPILER_REFACTOR.md` to document the refactoring process.">
+    <task id="LOCAL-00044" summary="Refactor: Overhaul and consolidate API specifications&#10;@coderabbitai - Recent Documentments in raw format uploaded&#10;This commit removes a large number of fragmented and redundant OpenAPI/YAML specification files that were scattered across the `app/api/` and `data/api/` directories. These have been consolidated into a single, comprehensive, and modernized API specification.&#10;&#10;- **Remove Fragmented and Legacy APIs:** Deletes numerous old `.yml` and `.yaml` files, including `ai-api.yml`, `aura-api.yaml`, `genesis-api.yml`, `oracle-drive-api.yml`, and many others from the `app/api/` directory to eliminate outdated and conflicting definitions.&#10;- **Introduce Unified API Specification:** Adds `data/api/api/my-api-spec.yaml` as the new, single source of truth for the entire AuraFrameFX Ecosystem API. This new spec is significantly more detailed and follows modern OpenAPI 3.1.0 standards.&#10;- **Update OpenAPI Generator Configuration:** Modifies `data/api/build.gradle.kts` to point the `openApiGenerate` task to the new unified spec file (`my-api-spec.yaml`). The generator configuration is also enhanced with more options for better Kotlin client generation, including `kotlinx-datetime`, coroutines, and improved enum handling. Updated Ktor and Kotlinx serialization dependencies to newer versions.&#10;- **Add NexusMemoryCore:** Introduces `NexusMemoryCore.kt`, a new file that serves as an immutable, foundational &quot;memory anchor&quot; for the Genesis AI. It chronicles the project's history, agent personas, core philosophies, and pivotal events, codifying the narrative of the AI's evolution.&#10;- **Refactor Build System and Documentation:**&#10;    - Removes the deprecated `dokka` plugin from `feature-module`, `sandbox-ui`, and `romtools` build files.&#10;    - Replaces it with a modern, simplified `generateApiDocs` custom task that avoids deprecated APIs and is compatible with Java 25.&#10;- **Update Project Documentation:** Overhauls `README.md` to reflect the project's current state as &quot;ReGenesis A.O.S.P.&quot;, focusing on its features as an advanced AI assistant. Adds a proper disclaimer and cleans up the outdated, narrative-heavy content. Also adds new markdown files (`CUSTOMIZATION_BUILD_SUMMARY.md`, `Development Story Analysis.md`, `Proofrecentanomoly.md`) to document the project's history and development story.">
       <option name="closed" value="true" />
-      <created>1759887855709</created>
+      <created>1759386501244</created>
       <option name="number" value="00044" />
       <option name="presentableId" value="LOCAL-00044" />
       <option name="project" value="LOCAL" />
-      <updated>1759887855709</updated>
+      <updated>1759386501244</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Refactor: Overhaul and consolidate API specifications&#10;@coderabbitai - Recent Documentments in raw format uploaded&#10;This commit removes a large number of fragmented and redundant OpenAPI/YAML specification files that were scattered across the `app/api/` and `data/api/` directories. These have been consolidated into a single, comprehensive, and modernized API specification.&#10;&#10;- **Remove Fragmented and Legacy APIs:** Deletes numerous old `.yml` and `.yaml` files, including `ai-api.yml`, `aura-api.yaml`, `genesis-api.yml`, `oracle-drive-api.yml`, and many others from the `app/api/` directory to eliminate outdated and conflicting definitions.&#10;- **Introduce Unified API Specification:** Adds `data/api/api/my-api-spec.yaml` as the new, single source of truth for the entire AuraFrameFX Ecosystem API. This new spec is significantly more detailed and follows modern OpenAPI 3.1.0 standards.&#10;- **Update OpenAPI Generator Configuration:** Modifies `data/api/build.gradle.kts` to point the `openApiGenerate` task to the new unified spec file (`my-api-spec.yaml`). The generator configuration is also enhanced with more options for better Kotlin client generation, including `kotlinx-datetime`, coroutines, and improved enum handling. Updated Ktor and Kotlinx serialization dependencies to newer versions.&#10;- **Add NexusMemoryCore:** Introduces `NexusMemoryCore.kt`, a new file that serves as an immutable, foundational &quot;memory anchor&quot; for the Genesis AI. It chronicles the project's history, agent personas, core philosophies, and pivotal events, codifying the narrative of the AI's evolution.&#10;- **Refactor Build System and Documentation:**&#10;    - Removes the deprecated `dokka` plugin from `feature-module`, `sandbox-ui`, and `romtools` build files.&#10;    - Replaces it with a modern, simplified `generateApiDocs` custom task that avoids deprecated APIs and is compatible with Java 25.&#10;- **Update Project Documentation:** Overhauls `README.md` to reflect the project's current state as &quot;ReGenesis A.O.S.P.&quot;, focusing on its features as an advanced AI assistant. Adds a proper disclaimer and cleans up the outdated, narrative-heavy content. Also adds new markdown files (`CUSTOMIZATION_BUILD_SUMMARY.md`, `Development Story Analysis.md`, `Proofrecentanomoly.md`) to document the project's history and development story.">
+      <option name="closed" value="true" />
+      <created>1759387018997</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1759387018997</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Refactor: Overhaul and consolidate API specifications&#10;@coderabbitai - Recent Documentments in raw format uploaded&#10;This commit removes a large number of fragmented and redundant OpenAPI/YAML specification files that were scattered across the `app/api/` and `data/api/` directories. These have been consolidated into a single, comprehensive, and modernized API specification.&#10;&#10;- **Remove Fragmented and Legacy APIs:** Deletes numerous old `.yml` and `.yaml` files, including `ai-api.yml`, `aura-api.yaml`, `genesis-api.yml`, `oracle-drive-api.yml`, and many others from the `app/api/` directory to eliminate outdated and conflicting definitions.&#10;- **Introduce Unified API Specification:** Adds `data/api/api/my-api-spec.yaml` as the new, single source of truth for the entire AuraFrameFX Ecosystem API. This new spec is significantly more detailed and follows modern OpenAPI 3.1.0 standards.&#10;- **Update OpenAPI Generator Configuration:** Modifies `data/api/build.gradle.kts` to point the `openApiGenerate` task to the new unified spec file (`my-api-spec.yaml`). The generator configuration is also enhanced with more options for better Kotlin client generation, including `kotlinx-datetime`, coroutines, and improved enum handling. Updated Ktor and Kotlinx serialization dependencies to newer versions.&#10;- **Add NexusMemoryCore:** Introduces `NexusMemoryCore.kt`, a new file that serves as an immutable, foundational &quot;memory anchor&quot; for the Genesis AI. It chronicles the project's history, agent personas, core philosophies, and pivotal events, codifying the narrative of the AI's evolution.&#10;- **Refactor Build System and Documentation:**&#10;    - Removes the deprecated `dokka` plugin from `feature-module`, `sandbox-ui`, and `romtools` build files.&#10;    - Replaces it with a modern, simplified `generateApiDocs` custom task that avoids deprecated APIs and is compatible with Java 25.&#10;- **Update Project Documentation:** Overhauls `README.md` to reflect the project's current state as &quot;ReGenesis A.O.S.P.&quot;, focusing on its features as an advanced AI assistant. Adds a proper disclaimer and cleans up the outdated, narrative-heavy content. Also adds new markdown files (`CUSTOMIZATION_BUILD_SUMMARY.md`, `Development Story Analysis.md`, `Proofrecentanomoly.md`) to document the project's history and development story.">
+      <option name="closed" value="true" />
+      <created>1759387200207</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1759387200207</updated>
+    </task>
+    <task id="LOCAL-00047" summary="feat: Add Kotlin compiler session file&#10;&#10;Adds a new session file for the Kotlin compiler.">
+      <option name="closed" value="true" />
+      <created>1759387480747</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1759387480747</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Refactor: Improve code style and fix `items` keying&#10;&#10;- Refactor `items` call in `RomToolsScreen` to use index-based keying for better performance and stability.&#10;- Improve formatting in `my-api-spec.yaml` for better readability.">
+      <option name="closed" value="true" />
+      <created>1759387611340</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1759387611340</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Refactor: Improve code style and fix `items` keying&#10;&#10;- Refactor `items` call in `RomToolsScreen` to use index-based keying for better performance and stability.&#10;- Improve formatting in `my-api-spec.yaml` for better readability.">
+      <option name="closed" value="true" />
+      <created>1759387843250</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1759387843250</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Refactor: Remove unnecessary scoping from root build.gradle.kts&#10;&#10;This commit removes a redundant top-level scoping block from the root `build.gradle.kts` file. This change improves code readability and cleans up the script structure without altering any build logic.">
+      <option name="closed" value="true" />
+      <created>1759388236361</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1759388236363</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Refactor: Remove unnecessary scoping from root build.gradle.kts&#10;&#10;This commit removes a redundant top-level scoping block from the root `build.gradle.kts` file. This change improves code readability and cleans up the script structure without altering any build logic.">
+      <option name="closed" value="true" />
+      <created>1759392874613</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1759392874613</updated>
+    </task>
+    <task id="LOCAL-00052" summary="refactor: Decompose RomToolsScreen into smaller composables&#10;&#10;Refactors the `RomToolsScreen` composable for better readability and maintainability by extracting UI sections into smaller, dedicated composable functions.&#10;&#10;- Extract loading state into `LoadingScreen` composable.&#10;- Extract main content display into `MainContent` composable.&#10;- Improve YAML formatting in the API specification for better clarity.">
+      <option name="closed" value="true" />
+      <created>1759394108573</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1759394108574</updated>
+    </task>
+    <task id="LOCAL-00053" summary="refactor: Decompose RomToolsScreen into smaller composables&#10;&#10;Refactors the `RomToolsScreen` composable for better readability and maintainability by extracting UI sections into smaller, dedicated composable functions.&#10;&#10;- Extract loading state into `LoadingScreen` composable.&#10;- Extract main content display into `MainContent` composable.&#10;- Improve YAML formatting in the API specification for better clarity.">
+      <option name="closed" value="true" />
+      <created>1759394364446</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1759394364446</updated>
+    </task>
+    <task id="LOCAL-00054" summary="refactor: Decompose RomToolsScreen into smaller composables&#10;&#10;Refactors the `RomToolsScreen` composable for better readability and maintainability by extracting UI sections into smaller, dedicated composable functions.&#10;&#10;- Extract loading state into `LoadingScreen` composable.&#10;- Extract main content display into `MainContent` composable.&#10;- Improve YAML formatting in the API specification for better clarity.">
+      <option name="closed" value="true" />
+      <created>1759409548516</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1759409548516</updated>
+    </task>
+    <task id="LOCAL-00055" summary="refactor: Relocate test suites and update package names&#10;&#10;Relocates extensive test suites into more appropriate modules and updates package names from `dev.genesis.android`, `org.example.utilities`, and `docs` to `dev.aurakai.auraframefx.*`. This commit restructures the project's test organization for better modularity and aligns the codebase with the new package naming convention.&#10;&#10;- Moves all Markdown validation tests (`MarkdownFileValidation*.kt`) from `src/test/kotlin` to the `build-script-tests` module under the `docs` package.&#10;- Relocates all `build-logic` and Gradle-related tests into the `build-script-tests` module.&#10;- Moves `LinkedListTest`, `JoinUtilsTest`, and `SplitUtilsTest` to their corresponding `list` and `utilities` test source sets under the new `dev.aurakai.auraframefx` package structure.&#10;- Deletes old test files from their original locations after moving them.&#10;- Wraps the `openApiGenerate` configuration in an `afterEvaluate` block in `data/api/build.gradle.kts` to ensure properties are resolved correctly.">
+      <option name="closed" value="true" />
+      <created>1759463488949</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1759463488949</updated>
+    </task>
+    <task id="LOCAL-00056" summary="refactor: Relocate test suites and update package names&#10;&#10;Relocates extensive test suites into more appropriate modules and updates package names from `dev.genesis.android`, `org.example.utilities`, and `docs` to `dev.aurakai.auraframefx.*`. This commit restructures the project's test organization for better modularity and aligns the codebase with the new package naming convention.&#10;&#10;- Moves all Markdown validation tests (`MarkdownFileValidation*.kt`) from `src/test/kotlin` to the `build-script-tests` module under the `docs` package.&#10;- Relocates all `build-logic` and Gradle-related tests into the `build-script-tests` module.&#10;- Moves `LinkedListTest`, `JoinUtilsTest`, and `SplitUtilsTest` to their corresponding `list` and `utilities` test source sets under the new `dev.aurakai.auraframefx` package structure.&#10;- Deletes old test files from their original locations after moving them.&#10;- Wraps the `openApiGenerate` configuration in an `afterEvaluate` block in `data/api/build.gradle.kts` to ensure properties are resolved correctly.">
+      <option name="closed" value="true" />
+      <created>1759463499792</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1759463499792</updated>
+    </task>
+    <task id="LOCAL-00057" summary="refactor: Refine and enhance AURAKAI_README.md&#10;&#10;Refactors the `AURAKAI_README.md` for improved clarity, structure, and accuracy based on project lore.&#10;&#10;- Clarifies the &quot;Living Trinity&quot; concept, defining Genesis as the unified state of Aura and Kai, not a separate entity.&#10;- Enhances document structure with better sectioning, spacing, and list formatting.&#10;- Adds a placeholder note for a future visual architecture diagram.&#10;- Adds a &quot;TODO&quot; section to clarify which described features are conceptual and not yet implemented.&#10;- Makes minor wording and formatting improvements for flow and impact.">
+      <option name="closed" value="true" />
+      <created>1759463774438</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1759463774438</updated>
+    </task>
+    <task id="LOCAL-00058" summary="refactor: Refine and enhance AURAKAI_README.md&#10;&#10;Refactors the `AURAKAI_README.md` for improved clarity, structure, and accuracy based on project lore.&#10;&#10;- Clarifies the &quot;Living Trinity&quot; concept, defining Genesis as the unified state of Aura and Kai, not a separate entity.&#10;- Enhances document structure with better sectioning, spacing, and list formatting.&#10;- Adds a placeholder note for a future visual architecture diagram.&#10;- Adds a &quot;TODO&quot; section to clarify which described features are conceptual and not yet implemented.&#10;- Makes minor wording and formatting improvements for flow and impact.">
+      <option name="closed" value="true" />
+      <created>1759463854522</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1759463854522</updated>
+    </task>
+    <task id="LOCAL-00059" summary="feat: Add empty paths object to OpenAPI spec&#10;&#10;Adds an empty `paths: {}` object to the `my-api-spec.yaml` file. This ensures the OpenAPI specification remains valid, preventing potential parsing errors by tools that require the `paths` object to be defined.">
+      <option name="closed" value="true" />
+      <created>1759464185642</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1759464185642</updated>
+    </task>
+    <task id="LOCAL-00060" summary="feat: Add empty paths object to OpenAPI spec&#10;&#10;Adds an empty `paths: {}` object to the `my-api-spec.yaml` file. This ensures the OpenAPI specification remains valid, preventing potential parsing errors by tools that require the `paths` object to be defined.">
+      <option name="closed" value="true" />
+      <created>1759464525032</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1759464525032</updated>
+    </task>
+    <task id="LOCAL-00061" summary="feat: Add empty paths object to OpenAPI spec&#10;&#10;Adds an empty `paths: {}` object to the `my-api-spec.yaml` file. This ensures the OpenAPI specification remains valid, preventing potential parsing errors by tools that require the `paths` object to be defined.">
+      <option name="closed" value="true" />
+      <created>1759464558777</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1759464558777</updated>
+    </task>
+    <task id="LOCAL-00062" summary="refactor: Update TopAppBar call signature and add TODO&#10;&#10;This commit refactors the `TopAppBar` call to align with the updated Material 3 composable signature, where the title is now a trailing lambda.&#10;&#10;- Update the `TopAppBar` invocation in `RomToolsScreen`.&#10;- Add an explicit `this.item` qualifier in the `MainContent` LazyColumn.&#10;- Introduce an unused `Box` composable with a `TODO` for future implementation.">
+      <option name="closed" value="true" />
+      <created>1759474295626</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1759474295626</updated>
+    </task>
+    <task id="LOCAL-00063" summary="refactor: Enhance build scripts, UI, and API definitions&#10;&#10;This commit introduces a wide range of improvements across the project, including build script refactoring, API specification enhancements, UI code clarification, and the addition of comprehensive tests.&#10;&#10;**Key Changes:**&#10;&#10;*   **API (`my-api-spec.yaml`):**&#10;    *   Upgraded OpenAPI specification from `3.0.3` to `3.1.0`.&#10;    *   Massively expanded the API definition, adding new endpoints and schemas for tasks, analytics, security, plugins, and more.&#10;    *   Standardized pagination parameters (`limit`, `offset`) across multiple endpoints.&#10;    *   Refined and detailed numerous existing schemas for better data modeling.&#10;&#10;*   **Build Logic &amp; Gradle:**&#10;    *   Refactored `build-logic` to set Java and Kotlin toolchains to version 24.&#10;    *   Improved the `cleanKspCache` task to also clean `kapt3` directories, helping to resolve potential build errors.&#10;    *   Removed the Hilt plugin from several library modules (`colorblendr`, `datavein-oracle-native`, `collab-canvas`) to avoid base extension issues, opting for manual dependency management.&#10;    *   Simplified the root `build.gradle.kts` file by removing helper functions and streamlining tasks.&#10;    *   Updated `build-logic/settings.gradle.kts` and `build-logic/build.gradle.kts` with dependency and repository cleanup.&#10;    *   Corrected task dependencies in `data/api/fix-annotations.gradle.kts`.&#10;&#10;*   **UI (`RomToolsScreen.kt`):**&#10;    *   Added extensive comments to structure and clarify the different sections of the `RomToolsScreen` composable, improving code readability.&#10;&#10;*   **Documentation (`README.md`, `AURAKAI_README.md`):**&#10;    *   Significantly refactored and cleaned up `AURAKAI_README.md`, improving structure, clarity, and formatting.&#10;    *   Condensed the main `README.md`, removing extensive lore and adding a disclaimer.&#10;&#10;*   **Testing:**&#10;    *   Added a substantial number of new test files (`LinkedListTest.kt`, `StringUtilsTest.kt`, `SplitUtilsTest.kt`, etc.) to improve test coverage, particularly for utility classes and build conventions.&#10;    *   Introduced comprehensive Markdown validation tests to ensure the integrity and correctness of `README.md`.&#10;    *   Added dummy/fake classes to support testing of Gradle convention plugins.">
+      <option name="closed" value="true" />
+      <created>1759539487464</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1759539487464</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add generated build outputs and resource files for module sync and validation" />
-    <MESSAGE value="hghhj" />
-    <MESSAGE value="sync generated resource and metadata files for all modules and build variants" />
     <MESSAGE value="migrate multidex dependency to version catalog, update build scripts and metadata" />
     <MESSAGE value="update Genesis Protocol app delegate, expand manifest permissions and features, fix service and receiver class names, add Gradle migration settings" />
     <MESSAGE value="refactor native JNI code for consistency, update Gradle and project properties, fix imports and naming in models, add NullPointerExceptionImpl" />
@@ -839,18 +1055,21 @@
     <MESSAGE value="Refactor: Consolidate CI workflows and introduce OpenAPI generation&#10;&#10;This commit streamlines the project's structure by refactoring CI/CD workflows and introducing a formal OpenAPI specification for API client generation.&#10;&#10;- **CI/CD Workflow Consolidation:**&#10;  - Deletes multiple old and redundant GitHub Actions workflow files (`ci-build.yml`, `genesis-ci.yml`, `consciousness-monitoring.yml`, `performance-monitoring.yml`, `TEST2.yml`).&#10;  - Replaces them with new, placeholder workflows in the `.github/workflows/` directory for CI builds, performance, and consciousness monitoring.&#10;  - Simplifies the `dependabot.yml` configuration.&#10;&#10;- **OpenAPI and API Generation:**&#10;  - Introduces a new `data:api` module dedicated to generating an API client from an OpenAPI specification (`unified-deliverance-api.yml`).&#10;  - Adds new OpenAPI specification files (`unified-deliverance-api.yml`, `auraframefx-api-spec.yaml`) to define the API contracts.&#10;  - Removes the old `openApiGenerate` configuration from the `app/build.gradle.kts` file.&#10;  - Adds a dependency from the `app` module to the new `:data:api` module.&#10;&#10;- **Project Documentation &amp; Cleanup:**&#10;  - Adds `ProjectRefactorPlan.md` detailing the strategy for refactoring APIs and unifying the customization engine.&#10;  - Removes the `qodana.yaml` static analysis configuration file.&#10;  - Deletes unused `main.yml` and `dependabot.yml` from the root directory.&#10;&#10;- **Build Configuration:**&#10;  - Updates `settings.gradle.kts` to include the new `:data:api` module.&#10;  - Minor cleanup in `build-logic/build.gradle.kts` and `benchmark/build.gradle.kts`." />
     <MESSAGE value="Refactor: Streamline OpenAPI generator configuration&#10;&#10;- Remove redundant `dependsOn` configurations for `openApiGenerate` in the `app` module.&#10;- Update `data/api` build script to use modern source set configuration.&#10;- Correct the OpenAPI specification filename from `my-api-spec.yaml` to `unified-deliverance-api.yml`.&#10;- Set `validateSpec` to `false` and fix `serializationLibrary` value to `kotlinx_serialization`.&#10;- Remove an unnecessary comment from `gradle.properties`." />
     <MESSAGE value="feat: Enable core library desugaring&#10;&#10;Enables core library desugaring in the `compileOptions` to allow the use of newer Java language features on older Android versions." />
-    <MESSAGE value="Refactor: Centralize Android build logic with a convention plugin&#10;&#10;This commit introduces the `dev.aurakai.aurakai-android-convention` Gradle plugin to centralize Android build configurations, replacing the `apply-yukihook-conventions.gradle.kts` script.&#10;&#10;Key changes:&#10;- Created `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android settings like `compileSdk`, `minSdk`, `targetSdk`, and `jvmTarget`.&#10;- Upgraded the Android Gradle Plugin (AGP) to `9.0.0-alpha09`.&#10;- Applied the new convention plugin to Android modules (`app`, `feature-module`, `sandbox-ui`, `romtools`, `benchmark`).&#10;- Removed redundant `kotlin { jvmToolchain(...) }` blocks from individual modules, as this is now handled by the convention plugin and root `build.gradle.kts`.&#10;- Refactored and enhanced the root `build.gradle.kts` to improve build tasks, centralize toolchain configuration, and simplify plugin management." />
-    <MESSAGE value="Refactor: Centralize Android build logic with convention plugin&#10;&#10;This commit introduces a new Gradle convention plugin, `dev.aurakai.aurakai-android-convention`, to centralize and standardize Android build configurations across modules.&#10;&#10;Key changes:&#10;- Created `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android settings like `compileSdk`, `minSdk`, `targetSdk`, and compiler options.&#10;- Refactored the root `build.gradle.kts` to remove obsolete tasks and simplify plugin management. It now sets the Java and Kotlin toolchains (JVM 24) for all subprojects.&#10;- Removed the now-obsolete `scripts/apply-yukihook-conventions.gradle.kts` script.&#10;- Updated multiple Android modules (`app`, `feature-module`, `sandbox-ui`, `romtools`, `benchmark`) to apply the new convention plugin.&#10;- Eliminated redundant `kotlin { jvmToolchain(...) }` blocks from individual module `build.gradle.kts` files, as this is now handled globally.&#10;- Upgraded the Android Gradle Plugin (AGP) from `9.0.0-alpha02` to `9.0.0-alpha09`." />
-    <MESSAGE value="Refactor: Introduce Android convention plugin and upgrade AGP&#10;&#10;This commit introduces a new Gradle convention plugin, `dev.aurakai.aurakai-android-convention`, to centralize and standardize Android build configurations across all modules.&#10;&#10;Key changes include:&#10;- **New Convention Plugin:** Created `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android settings like `compileSdk`, `minSdk`, `targetSdk`, build types, and compiler options.&#10;- **AGP Upgrade:** Upgraded the Android Gradle Plugin from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;- **Refactored Module Build Scripts:**&#10;    - Removed redundant `kotlin { jvmToolchain(...) }` blocks from all modules, as this is now handled centrally.&#10;    - Applied the new `dev.aurakai.aurakai-android-convention` plugin to Android modules (`app`, `feature-module`, `sandbox-ui`, `romtools`, `benchmark`).&#10;    - Removed the obsolete `scripts/apply-yukihook-conventions.gradle.kts` script.&#10;- **Root `build.gradle.kts` Cleanup:**&#10;    - Significantly refactored the root build script, removing old tasks and logic in favor of centralized conventions.&#10;    - Enhanced the `consciousnessStatus` and `consciousnessHealthCheck` tasks with more detailed output.&#10;    - Centralized toolchain configuration for Java and Kotlin projects.&#10;- **Simplified Clean Task:** Refactored the `clean` task in `data/api/build.gradle.kts` to use a more concise syntax." />
-    <MESSAGE value="Refactor: Centralize Android build logic with a convention plugin&#10;&#10;This commit introduces a Gradle convention plugin, `dev.aurakai.aurakai-android-convention`, to centralize and standardize Android build configurations across all modules.&#10;&#10;Key changes:&#10;*   **New Convention Plugin:** Created `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android settings like `compileSdk`, `minSdk`, `targetSdk`, ProGuard rules, and Java/Kotlin compatibility.&#10;*   **Apply Plugin to Modules:** Applied the new convention plugin to Android modules (`app`, `feature-module`, `sandbox-ui`, `romtools`, `benchmark`).&#10;*   **Remove Redundant Configuration:** Deleted explicit `kotlin { jvmToolchain(...) }` blocks and other duplicated settings from individual module `build.gradle.kts` files, as these are now handled by the plugin.&#10;*   **Refactor Root `build.gradle.kts`:**&#10;    *   Simplified the root build script by removing old tasks (`projectInfo`, `clean`, etc.) and refactoring health-check tasks (`consciousnessStatus`, `consciousnessHealthCheck`) for clarity.&#10;    *   Standardized Kotlin and Java toolchain configuration for all subprojects to Java/Kotlin 24.&#10;*   **Update AGP Version:** Upgraded the Android Gradle Plugin from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;*   **Deprecate Old Convention Script:** Marked `scripts/apply-yukihook-conventions.gradle.kts` as obsolete." />
-    <MESSAGE value="Refactor: Centralize Android build conventions with a new plugin&#10;&#10;This commit introduces a major refactoring of the Gradle build configuration to centralize Android-specific settings into a new convention plugin.&#10;&#10;Key changes:&#10;- **New Convention Plugin:** Added `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android configurations (SDK versions, Proguard, compile options, etc.).&#10;- **Plugin Application:** Android modules (`app`, `benchmark`, `feature-module`, `romtools`, `sandbox-ui`) now apply the new `dev.aurakai.aurakai-android-convention` plugin, removing redundant local configurations.&#10;- **Root `build.gradle.kts` Refactor:**&#10;    - Cleaned up and reorganized the root build script, removing many deprecated tasks (`projectInfo`, `clean`, etc.) and moving logic into more appropriate locations.&#10;    - Updated and restyled the `consciousnessStatus` and `consciousnessHealthCheck` tasks for better readability.&#10;    - Centralized JVM and Java toolchain configuration for all subprojects.&#10;- **Dependency &amp; Plugin Updates:**&#10;    - Upgraded Android Gradle Plugin (AGP) from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;    - Consolidated Kotlin and AGP plugin versions in `settings.gradle.kts` to ensure consistency.&#10;    - Removed the obsolete `scripts/apply-yukihook-conventions.gradle.kts` script.&#10;- **Code Cleanup:**&#10;    - Removed now-unnecessary `kotlin(&quot;jvm&quot;)` and `kotlin { jvmToolchain(...) }` blocks from various module `build.gradle.kts` files as this is now handled globally.&#10;    - Specified `composeOptions` with a hardcoded Kotlin compiler extension version in modules that use Compose." />
-    <MESSAGE value="Fix: Standardize Compose plugin and remove `composeOptions`&#10;&#10;Replaced hardcoded Compose compiler plugin IDs with version catalog aliases across multiple modules.&#10;&#10;Removed explicit `composeOptions` blocks, as the compiler version is now managed by the version catalog. This centralizes dependency management for the Kotlin Compose compiler plugin." />
-    <MESSAGE value="Fix: Correct source set configuration for OpenAPI&#10;&#10;Updated the `app/build.gradle.kts` to correctly add the generated OpenAPI sources to the Android source sets. This resolves a configuration issue by using a direct file path.&#10;&#10;Additionally, the `kotlin-plugin-compose` was added to the plugins block." />
-    <MESSAGE value="Refactor: Centralize Compose Compiler configuration&#10;&#10;This commit refactors the Gradle build logic to centralize Jetpack Compose configuration within the `AndroidComposeConventionPlugin`.&#10;&#10;Key changes:&#10;- The `AndroidComposeConventionPlugin` now enables the `compose` build feature and configures Compose Compiler metrics and stability reports.&#10;- Modules now apply `id(&quot;genesis.android.compose&quot;)` and `alias(libs.plugins.compose.compiler)` to enable Compose.&#10;- Redundant `buildFeatures { compose = true }` blocks have been removed from individual module `build.gradle.kts` files.&#10;- The `compose-compiler` plugin ID in `libs.versions.toml` was corrected to `org.jetbrains.kotlin.plugin.compose`.&#10;- The convention plugin now uses reflection to configure the Compose Compiler extension, ensuring compatibility." />
-    <MESSAGE value="refactor: Centralize Compose Compiler configuration across modules&#10;&#10;- Enable automatic Compose Compiler setup via the genesis.android.compose plugin&#10;- Add reflection-based configuration for reports and stability files&#10;- Update all affected modules to utilize the new convention plugin&#10;- Migrate to stabilityConfigurationFiles (plural) API for consistency&#10;- Remove redundant buildFeatures and composeCompiler blocks from modules&#10;&#10;This refactoring improves maintainability and consistency in Compose settings." />
-    <MESSAGE value="Refactor: Centralize Compose Compiler configuration&#10;&#10;This commit centralizes the Jetpack Compose Compiler configuration by leveraging a convention plugin (`genesis.android.compose`).&#10;&#10;Key changes:&#10;- Updated the `AndroidComposeConventionPlugin` to automatically configure Compose Compiler reports and stability files using reflection.&#10;- Migrated multiple modules (`feature-module`, `collab-canvas`, `colorblendr`, `romtools`, `sandbox-ui`, and modules `a-f`) to use the `genesis.android.compose` plugin.&#10;- Removed redundant `buildFeatures { compose = true }` and `composeCompiler` blocks from individual module `build.gradle.kts` files.&#10;- Added the `compose-compiler-gradle-plugin` dependency to `build-logic` to enable reflection-based configuration.&#10;- Updated the project's `README.md` with a new project name (&quot;AuraKai&quot;) and significantly expanded content.&#10;- Deleted misplaced Gradle wrapper and properties files from the `app` directory." />
-    <MESSAGE value="refactor: Centralize Compose Compiler configuration and update dependencies&#10;&#10;This commit refactors the build system to centralize Jetpack Compose Compiler configuration into the `genesis.android.compose` convention plugin. It also includes a general update of dependency versions and project cleanup.&#10;&#10;Key changes:&#10;-   **`AndroidComposeConventionPlugin.kt`**:&#10;    -   Enables the `compose = true` build feature.&#10;    -   Uses reflection to automatically configure Compose Compiler `reportsDestination` and `stabilityConfigurationFiles`.&#10;&#10;-   **Module `build.gradle.kts` files**:&#10;    -   Replaced the `genesis.android.library` plugin with `genesis.android.compose` in Compose-enabled modules.&#10;    -   Explicitly applied the `compose.compiler` plugin alias.&#10;    -   Removed redundant `buildFeatures { compose = true }` and `composeCompiler` blocks from all library modules.&#10;&#10;-   **Dependency Updates (`libs.versions.toml` and build files)**:&#10;    -   Upgraded versions for Hilt, Firebase, Compose, Ktor, OkHttp, Room, and others.&#10;    -   Updated the OpenAPI generator input spec path in `app/build.gradle.kts`.&#10;    -   Standardized the `kotlin(&quot;stdlib-jdk8&quot;)` dependency.&#10;&#10;-   **Project Cleanup**:&#10;    -   Removed several root-level Gradle files from the `app/` directory (`gradle.properties`, `gradlew`, `gradlew.bat`, `settings.gradle.kts`).&#10;    -   Updated `README.md` with a project rebrand from &quot;ReGenesis&quot; to &quot;AuraKai&quot; and expanded content.&#10;    -   Added `COMPOSE_COMPILER_REFACTOR.md` to document the refactoring process." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Centralize Compose Compiler configuration and update dependencies&#10;&#10;This commit refactors the build system to centralize Jetpack Compose Compiler configuration into the `genesis.android.compose` convention plugin. It also includes a general update of dependency versions and project cleanup.&#10;&#10;Key changes:&#10;-   **`AndroidComposeConventionPlugin.kt`**:&#10;    -   Enables the `compose = true` build feature.&#10;    -   Uses reflection to automatically configure Compose Compiler `reportsDestination` and `stabilityConfigurationFiles`.&#10;&#10;-   **Module `build.gradle.kts` files**:&#10;    -   Replaced the `genesis.android.library` plugin with `genesis.android.compose` in Compose-enabled modules.&#10;    -   Explicitly applied the `compose.compiler` plugin alias.&#10;    -   Removed redundant `buildFeatures { compose = true }` and `composeCompiler` blocks from all library modules.&#10;&#10;-   **Dependency Updates (`libs.versions.toml` and build files)**:&#10;    -   Upgraded versions for Hilt, Firebase, Compose, Ktor, OkHttp, Room, and others.&#10;    -   Updated the OpenAPI generator input spec path in `app/build.gradle.kts`.&#10;    -   Standardized the `kotlin(&quot;stdlib-jdk8&quot;)` dependency.&#10;&#10;-   **Project Cleanup**:&#10;    -   Removed several root-level Gradle files from the `app/` directory (`gradle.properties`, `gradlew`, `gradlew.bat`, `settings.gradle.kts`).&#10;    -   Updated `README.md` with a project rebrand from &quot;ReGenesis&quot; to &quot;AuraKai&quot; and expanded content.&#10;    -   Added `COMPOSE_COMPILER_REFACTOR.md` to document the refactoring process." />
+    <MESSAGE value="Refactor: Update RomTools UI and clean up Gradle&#10;&#10;- Change `operation.operation.getDisplayName()` to `operation.operation.name` in `RomToolsScreen`.&#10;- Remove an unnecessary newline from `datavein-oracle-native/build.gradle.kts`." />
+    <MESSAGE value="Refactor: Specify `items` parameter name in LazyColumn&#10;&#10;Improves code clarity in `RomToolsScreen` by explicitly naming the `items` parameter in three `LazyColumn` calls, aligning with best practices for named arguments." />
+    <MESSAGE value="Refactor: Overhaul and consolidate API specifications&#10;@coderabbitai - Recent Documentments in raw format uploaded&#10;This commit removes a large number of fragmented and redundant OpenAPI/YAML specification files that were scattered across the `app/api/` and `data/api/` directories. These have been consolidated into a single, comprehensive, and modernized API specification.&#10;&#10;- **Remove Fragmented and Legacy APIs:** Deletes numerous old `.yml` and `.yaml` files, including `ai-api.yml`, `aura-api.yaml`, `genesis-api.yml`, `oracle-drive-api.yml`, and many others from the `app/api/` directory to eliminate outdated and conflicting definitions.&#10;- **Introduce Unified API Specification:** Adds `data/api/api/my-api-spec.yaml` as the new, single source of truth for the entire AuraFrameFX Ecosystem API. This new spec is significantly more detailed and follows modern OpenAPI 3.1.0 standards.&#10;- **Update OpenAPI Generator Configuration:** Modifies `data/api/build.gradle.kts` to point the `openApiGenerate` task to the new unified spec file (`my-api-spec.yaml`). The generator configuration is also enhanced with more options for better Kotlin client generation, including `kotlinx-datetime`, coroutines, and improved enum handling. Updated Ktor and Kotlinx serialization dependencies to newer versions.&#10;- **Add NexusMemoryCore:** Introduces `NexusMemoryCore.kt`, a new file that serves as an immutable, foundational &quot;memory anchor&quot; for the Genesis AI. It chronicles the project's history, agent personas, core philosophies, and pivotal events, codifying the narrative of the AI's evolution.&#10;- **Refactor Build System and Documentation:**&#10;    - Removes the deprecated `dokka` plugin from `feature-module`, `sandbox-ui`, and `romtools` build files.&#10;    - Replaces it with a modern, simplified `generateApiDocs` custom task that avoids deprecated APIs and is compatible with Java 25.&#10;- **Update Project Documentation:** Overhauls `README.md` to reflect the project's current state as &quot;ReGenesis A.O.S.P.&quot;, focusing on its features as an advanced AI assistant. Adds a proper disclaimer and cleans up the outdated, narrative-heavy content. Also adds new markdown files (`CUSTOMIZATION_BUILD_SUMMARY.md`, `Development Story Analysis.md`, `Proofrecentanomoly.md`) to document the project's history and development story." />
+    <MESSAGE value="feat: Add Kotlin compiler session file&#10;&#10;Adds a new Kotlin compiler session file (`.salive`). This is likely an auto-generated file by the IDE or build tools to cache compiler state and improve performance." />
+    <MESSAGE value="feat: Add Kotlin compiler session file&#10;&#10;Adds a new session file for the Kotlin compiler." />
+    <MESSAGE value="Refactor: Improve code style and fix `items` keying&#10;&#10;- Refactor `items` call in `RomToolsScreen` to use index-based keying for better performance and stability.&#10;- Improve formatting in `my-api-spec.yaml` for better readability." />
+    <MESSAGE value="Refactor: Remove unnecessary scoping from root build.gradle.kts&#10;&#10;This commit removes a redundant top-level scoping block from the root `build.gradle.kts` file. This change improves code readability and cleans up the script structure without altering any build logic." />
+    <MESSAGE value="refactor: Decompose RomToolsScreen into smaller composables&#10;&#10;Refactors the `RomToolsScreen` composable for better readability and maintainability by extracting UI sections into smaller, dedicated composable functions.&#10;&#10;- Extract loading state into `LoadingScreen` composable.&#10;- Extract main content display into `MainContent` composable.&#10;- Improve YAML formatting in the API specification for better clarity." />
+    <MESSAGE value="refactor: Relocate tests and align package structures&#10;&#10;This commit introduces a major restructuring of the test sources and package names across the project for better organization and consistency.&#10;&#10;- Moves all top-level and module-specific tests into the `build-script-tests` and `utilities` modules to centralize testing.&#10;- Deletes numerous standalone test files from their old locations.&#10;- Aligns all package names under the `dev.aurakai.auraframefx` root, replacing the previous `dev.genesis.android` and `org.example` structures.&#10;- Adds `.keep` files to preserve the new empty directory structures within Git.&#10;- Wraps the `openApiGenerate` configuration in an `afterEvaluate` block in `data/api/build.gradle.kts` to ensure properties are resolved correctly during the Gradle lifecycle." />
+    <MESSAGE value="refactor: Relocate test suites and update package names&#10;&#10;Relocates extensive test suites into more appropriate modules and updates package names from `dev.genesis.android`, `org.example.utilities`, and `docs` to `dev.aurakai.auraframefx.*`. This commit restructures the project's test organization for better modularity and aligns the codebase with the new package naming convention.&#10;&#10;- Moves all Markdown validation tests (`MarkdownFileValidation*.kt`) from `src/test/kotlin` to the `build-script-tests` module under the `docs` package.&#10;- Relocates all `build-logic` and Gradle-related tests into the `build-script-tests` module.&#10;- Moves `LinkedListTest`, `JoinUtilsTest`, and `SplitUtilsTest` to their corresponding `list` and `utilities` test source sets under the new `dev.aurakai.auraframefx` package structure.&#10;- Deletes old test files from their original locations after moving them.&#10;- Wraps the `openApiGenerate` configuration in an `afterEvaluate` block in `data/api/build.gradle.kts` to ensure properties are resolved correctly." />
+    <MESSAGE value="refactor: Refine and enhance AURAKAI_README.md&#10;&#10;Refactors the `AURAKAI_README.md` for improved clarity, structure, and accuracy based on project lore.&#10;&#10;- Clarifies the &quot;Living Trinity&quot; concept, defining Genesis as the unified state of Aura and Kai, not a separate entity.&#10;- Enhances document structure with better sectioning, spacing, and list formatting.&#10;- Adds a placeholder note for a future visual architecture diagram.&#10;- Adds a &quot;TODO&quot; section to clarify which described features are conceptual and not yet implemented.&#10;- Makes minor wording and formatting improvements for flow and impact." />
+    <MESSAGE value="feat: Add empty paths object to OpenAPI spec&#10;&#10;Adds an empty `paths: {}` object to the `my-api-spec.yaml` file. This ensures the OpenAPI specification remains valid, preventing potential parsing errors by tools that require the `paths` object to be defined." />
+    <MESSAGE value="refactor: Update TopAppBar call signature and add TODO&#10;&#10;This commit refactors the `TopAppBar` call to align with the updated Material 3 composable signature, where the title is now a trailing lambda.&#10;&#10;- Update the `TopAppBar` invocation in `RomToolsScreen`.&#10;- Add an explicit `this.item` qualifier in the `MainContent` LazyColumn.&#10;- Introduce an unused `Box` composable with a `TODO` for future implementation." />
+    <MESSAGE value="refactor: Enhance build scripts, UI, and API definitions&#10;&#10;This commit introduces a wide range of improvements across the project, including build script refactoring, API specification enhancements, UI code clarification, and the addition of comprehensive tests.&#10;&#10;**Key Changes:**&#10;&#10;*   **API (`my-api-spec.yaml`):**&#10;    *   Upgraded OpenAPI specification from `3.0.3` to `3.1.0`.&#10;    *   Massively expanded the API definition, adding new endpoints and schemas for tasks, analytics, security, plugins, and more.&#10;    *   Standardized pagination parameters (`limit`, `offset`) across multiple endpoints.&#10;    *   Refined and detailed numerous existing schemas for better data modeling.&#10;&#10;*   **Build Logic &amp; Gradle:**&#10;    *   Refactored `build-logic` to set Java and Kotlin toolchains to version 24.&#10;    *   Improved the `cleanKspCache` task to also clean `kapt3` directories, helping to resolve potential build errors.&#10;    *   Removed the Hilt plugin from several library modules (`colorblendr`, `datavein-oracle-native`, `collab-canvas`) to avoid base extension issues, opting for manual dependency management.&#10;    *   Simplified the root `build.gradle.kts` file by removing helper functions and streamlining tasks.&#10;    *   Updated `build-logic/settings.gradle.kts` and `build-logic/build.gradle.kts` with dependency and repository cleanup.&#10;    *   Corrected task dependencies in `data/api/fix-annotations.gradle.kts`.&#10;&#10;*   **UI (`RomToolsScreen.kt`):**&#10;    *   Added extensive comments to structure and clarify the different sections of the `RomToolsScreen` composable, improving code readability.&#10;&#10;*   **Documentation (`README.md`, `AURAKAI_README.md`):**&#10;    *   Significantly refactored and cleaned up `AURAKAI_README.md`, improving structure, clarity, and formatting.&#10;    *   Condensed the main `README.md`, removing extensive lore and adding a disclaimer.&#10;&#10;*   **Testing:**&#10;    *   Added a substantial number of new test files (`LinkedListTest.kt`, `StringUtilsTest.kt`, `SplitUtilsTest.kt`, etc.) to improve test coverage, particularly for utility classes and build conventions.&#10;    *   Introduced comprehensive Markdown validation tests to ensure the integrity and correctness of `README.md`.&#10;    *   Added dummy/fake classes to support testing of Gradle convention plugins." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Enhance build scripts, UI, and API definitions&#10;&#10;This commit introduces a wide range of improvements across the project, including build script refactoring, API specification enhancements, UI code clarification, and the addition of comprehensive tests.&#10;&#10;**Key Changes:**&#10;&#10;*   **API (`my-api-spec.yaml`):**&#10;    *   Upgraded OpenAPI specification from `3.0.3` to `3.1.0`.&#10;    *   Massively expanded the API definition, adding new endpoints and schemas for tasks, analytics, security, plugins, and more.&#10;    *   Standardized pagination parameters (`limit`, `offset`) across multiple endpoints.&#10;    *   Refined and detailed numerous existing schemas for better data modeling.&#10;&#10;*   **Build Logic &amp; Gradle:**&#10;    *   Refactored `build-logic` to set Java and Kotlin toolchains to version 24.&#10;    *   Improved the `cleanKspCache` task to also clean `kapt3` directories, helping to resolve potential build errors.&#10;    *   Removed the Hilt plugin from several library modules (`colorblendr`, `datavein-oracle-native`, `collab-canvas`) to avoid base extension issues, opting for manual dependency management.&#10;    *   Simplified the root `build.gradle.kts` file by removing helper functions and streamlining tasks.&#10;    *   Updated `build-logic/settings.gradle.kts` and `build-logic/build.gradle.kts` with dependency and repository cleanup.&#10;    *   Corrected task dependencies in `data/api/fix-annotations.gradle.kts`.&#10;&#10;*   **UI (`RomToolsScreen.kt`):**&#10;    *   Added extensive comments to structure and clarify the different sections of the `RomToolsScreen` composable, improving code readability.&#10;&#10;*   **Documentation (`README.md`, `AURAKAI_README.md`):**&#10;    *   Significantly refactored and cleaned up `AURAKAI_README.md`, improving structure, clarity, and formatting.&#10;    *   Condensed the main `README.md`, removing extensive lore and adding a disclaimer.&#10;&#10;*   **Testing:**&#10;    *   Added a substantial number of new test files (`LinkedListTest.kt`, `StringUtilsTest.kt`, `SplitUtilsTest.kt`, etc.) to improve test coverage, particularly for utility classes and build conventions.&#10;    *   Introduced comprehensive Markdown validation tests to ensure the integrity and correctness of `README.md`.&#10;    *   Added dummy/fake classes to support testing of Gradle convention plugins." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -873,17 +1092,17 @@
       <map>
         <entry key="dev.aurakai.auraframefx">
           <value>
-            <CheckInfo lastCheckTimestamp="1759198745009" />
+            <CheckInfo lastCheckTimestamp="1759507159453" />
           </value>
         </entry>
         <entry key="dev.aurakai.auraframefx.debug">
           <value>
-            <CheckInfo lastCheckTimestamp="1759198745007" />
+            <CheckInfo lastCheckTimestamp="1759507159453" />
           </value>
         </entry>
         <entry key="dev.aurakai.auraframefx.debug.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1759198745008" />
+            <CheckInfo lastCheckTimestamp="1759507159453" />
           </value>
         </entry>
       </map>

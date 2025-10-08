@@ -1,14 +1,13 @@
 plugins {
-    id("genesis.android.compose")
-    alias(libs.plugins.compose.compiler)
+    id("com.android.library")
+    id("org.jetbrains.kotlin.plugin.compose") // Required for Compose with Kotlin 2.0+
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.dokka)
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.romtools"
     compileSdk = 36
-
     defaultConfig {
         minSdk = 34
     }
@@ -16,7 +15,17 @@ android {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.10" // Match this to your Compose BOM version
+    }
 }
+
+    kotlin {
+        jvmToolchain(24)
+    }
 
     val romToolsOutputDirectory: DirectoryProperty =
     project.objects.directoryProperty().convention(layout.buildDirectory.dir("rom-tools"))
@@ -49,8 +58,10 @@ android {
         testImplementation(libs.hilt.android.testing)
         androidTestImplementation(libs.hilt.android.testing)
         androidTestImplementation(platform(libs.androidx.compose.bom))
-        implementation(libs.androidx.compose.material.icons.extended)
-        implementation(libs.hilt.navigation.compose)
+        // androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
+        implementation(kotlin("stdlib-jdk8"))
+        implementation("androidx.compose.material:material-icons-extended")
+        implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
     }
 
 // Copy task
@@ -83,4 +94,4 @@ tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
         }
         }
     }
-
+}
