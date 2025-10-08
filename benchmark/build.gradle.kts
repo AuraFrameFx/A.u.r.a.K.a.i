@@ -1,6 +1,7 @@
 plugins {
-    id("genesis.android.library")
-    alias(libs.plugins.ksp)
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp") version "2.2.20-2.0.3"
 }
 
 java {
@@ -25,50 +26,46 @@ android {
 
     defaultConfig {
         testInstrumentationRunner = "androidx.benchmark.junit4.AndroidBenchmarkRunner"
-        testInstrumentationRunnerArguments["androidx.benchmark.suppressErrors"] =
-            "EMULATOR,LOW_BATTERY,DEBUGGABLE"
-        testInstrumentationRunnerArguments["android.experimental.self-instrumenting"] = "true"
+
         multiDexEnabled = true // Enable multidex for core library desugaring
         // MultiDex is configured at the app/test APK level only; not needed here.
     }
 
-    // Core library desugaring without manual source/target (toolchain supplies Java 24)
+    // Core library desugaring without manual source/target
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
+        // Toolchain will configure source/target compatibility automatically
     }
-
-
 
     buildFeatures {
         buildConfig = true
-        aidl = false
-        shaders = false
     }
-
 }
 
 dependencies {
-    // Core AndroidX
-    implementation("androidx.core:core-ktx:1.17.0")
-    implementation(platform("androidx.compose:compose-bom:2025.09.01"))
-    implementation("androidx.activity:activity-compose:1.11.0")
-    implementation("androidx.navigation:navigation-compose:2.9.5")
+    implementation("androidx.core:core-ktx:1.15.0")
+    implementation(platform("androidx.compose:compose-bom:2024.12.01"))
+    implementation("androidx.activity:activity-compose:1.9.3")
+    implementation("androidx.navigation:navigation-compose:2.8.5")
+    
     // Hilt
     implementation("com.google.dagger:hilt-android:2.57.2")
     ksp("com.google.dagger:hilt-compiler:2.57.2")
 
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
 
     // Room
-    implementation("androidx.room:room-runtime:2.8.1")
-    implementation("androidx.room:room-ktx:2.8.1")
-    ksp("androidx.room:room-compiler:2.8.1")
+    implementation("androidx.room:room-runtime:2.7.0-alpha12")
+    implementation("androidx.room:room-ktx:2.7.0-alpha12")
+    ksp("androidx.room:room-compiler:2.7.0-alpha12")
 
     // Utilities
     implementation("com.jakewharton.timber:timber:5.0.1")
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
+    implementation("androidx.multidex:multidex:2.0.1")
+    
     // Project dependencies
     implementation(project(":core-module"))
     implementation(project(":datavein-oracle-native"))
@@ -76,19 +73,18 @@ dependencies {
     implementation(project(":oracle-drive-integration"))
 
     // Benchmark testing
-    androidTestImplementation("androidx.benchmark:benchmark-junit4:1.4.1")
-    androidTestImplementation("androidx.test.ext:junit:1.3.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
-    androidTestImplementation(libs.androidx.test.uiautomator)
+    androidTestImplementation("androidx.benchmark:benchmark-junit4:1.4.0")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.3.0")
 
     // Unit testing
     testImplementation("junit:junit:4.13.2")
-    testImplementation("io.mockk:mockk:1.14.6")
-    androidTestImplementation("io.mockk:mockk-android:1.14.6")
+    testImplementation("io.mockk:mockk:1.13.14")
+    androidTestImplementation("io.mockk:mockk-android:1.13.14")
 
     // Hilt testing
     testImplementation("com.google.dagger:hilt-android-testing:2.57.2")
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.57.2")
     kspAndroidTest("com.google.dagger:hilt-compiler:2.57.2")
-    implementation(kotlin("stdlib-jdk8"))
 }
