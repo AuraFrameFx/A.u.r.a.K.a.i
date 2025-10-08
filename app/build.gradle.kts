@@ -5,7 +5,7 @@ plugins {
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 android {
-    namespace = "dev.aurakai"
+    namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
 
     defaultConfig {
