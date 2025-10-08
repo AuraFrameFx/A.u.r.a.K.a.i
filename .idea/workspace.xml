@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="Downgrade JVM toolchain from 25 to 24&#10;&#10;This commit downgrades the Java compatibility and Kotlin JVM toolchain from version 25 to 24 across the Android application and library convention plugins.&#10;&#10;Changes include:&#10;- Lowering `sourceCompatibility` and `targetCompatibility` to `JavaVersion.VERSION_24`.&#10;- Setting the Kotlin `jvmToolchain` to 24.&#10;- Updating `AndroidLibraryConventionPluginTest.kt` to reflect and verify the new toolchain version.">
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor(deps): Explicitly define stdlib-jdk8 version and streamline romtools dependencies&#10;&#10;- Sets an explicit version for `kotlin-stdlib-jdk8` in `module-c`.&#10;- Refactors the `romtools` build script to align with convention plugins.&#10;- Removes the `genesis.android.hilt` plugin and manually adds Hilt and KSP dependencies.&#10;- Eliminates a redundant Dokka configuration block.">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/armeabi-v7a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/x86_64/compile_commands.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/arm64-v8a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/armeabi-v7a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/x86_64/compile_commands.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,9 +131,9 @@
     "git-widget-placeholder": "zero",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
-    "project.structure.last.edited": "Suggestions",
+    "project.structure.last.edited": "Dependencies",
     "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
+    "project.structure.side.proportion": "0.1285347",
     "run.code.analysis.last.selected.profile": "aDefault",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   },
@@ -486,13 +476,13 @@
       <option name="project" value="LOCAL" />
       <updated>1759900082185</updated>
     </task>
-    <task id="LOCAL-00014" summary="build: Suppress deprecation warnings in Java compilation&#10;&#10;This commit configures the Java compiler for the `app` module to suppress deprecation warnings by adding the `-Xlint:-deprecation` compiler argument.">
+    <task id="LOCAL-00014" summary="feat: Update dependencies and minimum SDK version&#10;&#10;This commit introduces several key changes to the build configuration:&#10;&#10;- **Increases `minSdk` from 33 to 34** in both the `app` and `romtools` modules to align with updated requirements.&#10;- **Adds Material 3 dependencies** to the `app` module, including `material3`, `material-icons-extended`, and `material3-window-size-class`.&#10;- **Integrates Hilt navigation compose** dependency.&#10;- **Expands the `romtools` module** with a comprehensive set of dependencies for UI, coroutines, networking, Room, Firebase, and debugging tools like LeakCanary and Timber.&#10;- **Configures new plugins** in `romtools`, including `kotlin.serialization`, `dokka`, and `kotlin.compose`.&#10;- **Updates the Java toolchain** in `romtools` to use `JavaVersion.VERSION_24` and enables the Compose feature flag.">
       <option name="closed" value="true" />
-      <created>1759705277445</created>
+      <created>1759901704524</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1759705277445</updated>
+      <updated>1759901704524</updated>
     </task>
     <task id="LOCAL-00015" summary="refactor: Modernize code and clean up tests&#10;&#10;This commit introduces two key changes: modernizing a deprecated path retrieval method in `RomToolsManager` and removing commented-out code from `MarkdownFileValidationTest`.&#10;&#10;In `RomToolsManager.kt`, the deprecated `getPath()` method call on `Environment.getExternalStorageDirectory()` has been replaced with the modern `path` property accessor.&#10;&#10;In `MarkdownFileValidationTest.kt`, several lines of commented-out code related to checking for Docker mentions have been removed to improve test clarity and maintainability.">
       <option name="closed" value="true" />
@@ -830,7 +820,7 @@
       <option name="project" value="LOCAL" />
       <updated>1759899497515</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -875,6 +865,10 @@
     <MESSAGE value="refactor: Streamline Gradle build configuration and dependencies&#10;&#10;This commit introduces a major refactoring of the Gradle build scripts to simplify and modernize the project's configuration.&#10;&#10;Key changes include:&#10;&#10;*   **Downgrades `minSdk` to 33** across multiple modules (`app`, `feature-module`, `sandbox-ui`, `collab-canvas`, `datavein-oracle-native`, `oracle-drive-integration`, `colorblendr`, `romtools`).&#10;*   **Removes redundant `kotlin { jvmToolchain(...) }` blocks** from `core-module` and `utilities`, as this is now handled by a convention plugin or a higher-level configuration.&#10;*   **Upgrades Gradle Wrapper** from `9.1.0-bin` to `9.1.0-all` to improve IDE support and source code access.&#10;*   **Refactors `romtools` `build.gradle.kts`** by removing many explicit plugin applications and dependencies, likely inheriting them from a convention plugin now.&#10;*   **Simplifies the root `build.gradle.kts`** by removing unused plugin aliases (`kotlin.android`, `android.library`, etc.) and a reference to a `dependency-fix.gradle.kts` file.&#10;*   **Cleans up the `benchmark` module's `build.gradle.kts`** by removing extensive documentation generation, custom tasks, and packaging rules, and replacing hardcoded dependency versions with catalog aliases.&#10;*   **Updates `settings.gradle.kts`** by downgrading the `foojay-resolver-convention` plugin from `1.0.0` to `0.8.0`.&#10;*   **Removes the `turbine` library** from `gradle/libs.versions.toml`." />
     <MESSAGE value="refactor(build): Standardize JVM toolchain and lower minSdk&#10;&#10;This commit refactors the build configuration across multiple modules to standardize on Java 24 and streamline settings.&#10;&#10;Key changes include:&#10;*   Sets the `minSdk` to 33 across various modules, including `app`, `feature-module`, `colorblendr`, and `sandbox-ui`.&#10;*   Consolidates Java and Kotlin toolchain configurations within the `android` block for Android library modules, setting `sourceCompatibility`, `targetCompatibility`, and `jvmTarget` to Java 24.&#10;*   Removes redundant top-level `kotlin { jvmToolchain(...) }` blocks in favor of centralized configuration.&#10;*   Updates the Gradle Wrapper from `gradle-9.1.0-bin.zip` to `gradle-9.1.0-all.zip` for better IDE support.&#10;*   Sets the project-wide toolchain version to 24 in `gradle-daemon-jvm.properties`.&#10;*   Downgrades the `foojay-resolver-convention` plugin to version `0.8.0`.&#10;*   Cleans up unused plugins, dependencies (`turbine`), and build script logic in `romtools`, `benchmark`, and the root `build.gradle.kts`." />
     <MESSAGE value="Downgrade JVM toolchain from 25 to 24&#10;&#10;This commit downgrades the Java compatibility and Kotlin JVM toolchain from version 25 to 24 across the Android application and library convention plugins.&#10;&#10;Changes include:&#10;- Lowering `sourceCompatibility` and `targetCompatibility` to `JavaVersion.VERSION_24`.&#10;- Setting the Kotlin `jvmToolchain` to 24.&#10;- Updating `AndroidLibraryConventionPluginTest.kt` to reflect and verify the new toolchain version." />
-    <option name="LAST_COMMIT_MESSAGE" value="Downgrade JVM toolchain from 25 to 24&#10;&#10;This commit downgrades the Java compatibility and Kotlin JVM toolchain from version 25 to 24 across the Android application and library convention plugins.&#10;&#10;Changes include:&#10;- Lowering `sourceCompatibility` and `targetCompatibility` to `JavaVersion.VERSION_24`.&#10;- Setting the Kotlin `jvmToolchain` to 24.&#10;- Updating `AndroidLibraryConventionPluginTest.kt` to reflect and verify the new toolchain version." />
+    <MESSAGE value="refactor: Standardize and clean up Gradle build scripts&#10;&#10;This commit refactors the Gradle build scripts for the `app`, `sandbox-ui`, and `romtools` modules to improve consistency and correctness.&#10;&#10;Key changes include:&#10;*   **Standardize `minSdk`:** Updated `minSdk` from 33 to 34 across all affected modules (`app`, `sandbox-ui`, `romtools`).&#10;*   **`sandbox-ui` cleanup:**&#10;    *   Added the missing Compose Compiler plugin.&#10;    *   Enabled the `compose` build feature.&#10;    *   Simplified dependency declarations, replacing `bundles.androidx.core` with `androidx.core.ktx` and using a `lifecycle` bundle.&#10;    *   Replaced deprecated `compileOptions` with `kotlin.jvmToolchain(24)`.&#10;*   **`app` module:**&#10;    *   Added dependencies for Material 3, extended icons, and window size classes.&#10;    *   Added `hilt-navigation-compose` dependency.&#10;*   **`romtools` module:**&#10;    *   Switched to the `genesis.android.library` convention plugin.&#10;    *   Removed Hilt as it is not needed in this module.&#10;    *   Cleaned up dependencies, relying on the convention plugin for core setup." />
+    <MESSAGE value="feat: Update dependencies and bump minSdk&#10;&#10;Bumps the minimum SDK version from 33 to 34 in both the `app` and `romtools` modules.&#10;&#10;This commit also refactors the dependencies:&#10;- Adds Material 3, Compose Material Icons Extended, and Hilt Navigation Compose to the `app` module.&#10;- In `romtools`, it switches to the `genesis.android.library` convention plugin, removing boilerplate configuration.&#10;- Hilt is removed from `romtools` as it is not needed.&#10;- Adds Timber and Compose Material Icons Extended as explicit dependencies for the `romtools` module." />
+    <MESSAGE value="feat: Update dependencies and minimum SDK version&#10;&#10;This commit introduces several key changes to the build configuration:&#10;&#10;- **Increases `minSdk` from 33 to 34** in both the `app` and `romtools` modules to align with updated requirements.&#10;- **Adds Material 3 dependencies** to the `app` module, including `material3`, `material-icons-extended`, and `material3-window-size-class`.&#10;- **Integrates Hilt navigation compose** dependency.&#10;- **Expands the `romtools` module** with a comprehensive set of dependencies for UI, coroutines, networking, Room, Firebase, and debugging tools like LeakCanary and Timber.&#10;- **Configures new plugins** in `romtools`, including `kotlin.serialization`, `dokka`, and `kotlin.compose`.&#10;- **Updates the Java toolchain** in `romtools` to use `JavaVersion.VERSION_24` and enables the Compose feature flag." />
+    <MESSAGE value="refactor(deps): Explicitly define stdlib-jdk8 version and streamline romtools dependencies&#10;&#10;- Sets an explicit version for `kotlin-stdlib-jdk8` in `module-c`.&#10;- Refactors the `romtools` build script to align with convention plugins.&#10;- Removes the `genesis.android.hilt` plugin and manually adds Hilt and KSP dependencies.&#10;- Eliminates a redundant Dokka configuration block." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(deps): Explicitly define stdlib-jdk8 version and streamline romtools dependencies&#10;&#10;- Sets an explicit version for `kotlin-stdlib-jdk8` in `module-c`.&#10;- Refactors the `romtools` build script to align with convention plugins.&#10;- Removes the `genesis.android.hilt` plugin and manually adds Hilt and KSP dependencies.&#10;- Eliminates a redundant Dokka configuration block." />
   </component>
 </project>

@@ -49,6 +49,9 @@ dependencies {
     implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.hilt.navigation.compose)
 
+    // Material Icons (needed for RomToolsScreen UI)
+    implementation(libs.androidx.compose.material.icons.extended)
+
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
