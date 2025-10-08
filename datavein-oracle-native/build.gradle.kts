@@ -10,11 +10,6 @@ android {
 
     defaultConfig {
         minSdk = 34
-        externalNativeBuild {
-            cmake {
-                abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64")
-            }
-        }
     }
     lint {
         // Disable lint due to oversized test files causing StackOverflow

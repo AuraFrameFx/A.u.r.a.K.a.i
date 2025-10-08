@@ -5,10 +5,15 @@ plugins {
     alias(libs.plugins.ksp)
 }
 
+// --- Imports for build script logic ---
+@file:Suppress("unused", "UNUSED_VARIABLE")
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
 android {
     namespace = "dev.aurakai.auraframefx.sandboxui"
     compileSdk = 36
-    defaultConfig { minSdk = 34 }
+    defaultConfig { minSdk = 33 }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
@@ -61,3 +66,43 @@ tasks.register("generateApiDocs") {
 
 
         // Using properly formatted date with DateTimeFormatter
+        val currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
+
+        indexFile.writeText(
+            """
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Sandbox UI API Documentation</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 20px; }
+                    h1 { color: #4285f4; }
+                </style>
+            </head>
+            <body>
+                <h1>Sandbox UI API Documentation</h1>
+                <p>Generated on ${currentTime}</p>
+                <p>JDK Version: 24</p>
+                <h2>Module Overview</h2>
+                <p>UI sandbox and experimental components for the A.U.R.A.K.A.I. platform.</p>
+            </body>
+            </html>
+        """.trimIndent()
+        )
+
+        logger.lifecycle("✅ Documentation generated at: ${indexFile.absolutePath}")
+    }
+}
+tasks.register("sandboxStatus") {
+    group = "aegenesis"; doLast { println("🧪 SANDBOX UI - Ready (Java 24)") }
+}
+
+tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
+    dokkaSourceSets {
+        named("main") {
+            sourceRoots.from(file("src/main/java"))
+            sourceRoots.from(file("src/main/kotlin"))
+            sourceRoots.from(file("src/main/res"))
+        }
+    }
+}
