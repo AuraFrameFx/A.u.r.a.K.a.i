@@ -98,16 +98,16 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
             }
 
             pluginManager.withPlugin("org.jetbrains.kotlin.android") {
-                extensions.getByType<KotlinAndroidProjectExtension>()
-                    .apply<KotlinAndroidProjectExtension> {
-                        jvmToolchain(24)
-                        compilerOptions {
-                            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+                extensions.getByType<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension>().apply {
+                    jvmToolchain(24)
+                    compilerOptions {
+                        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
                         freeCompilerArgs.addAll(
                             "-opt-in=kotlin.RequiresOptIn",
                             "-Xjvm-default=all"
-                        )}
+                        )
                     }
+                }
             }
         }
     }

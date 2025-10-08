@@ -170,12 +170,15 @@ dependencies {
 
     // ===== NETWORKING =====
     implementation(libs.bundles.network)
-    implementation(libs.moshi)
-    implementation(libs.moshi.kotlin)
+    implementation("com.squareup.moshi:moshi:1.15.1")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
 
     // ===== KTOR FOR OPENAPI CLIENT =====
-    implementation(libs.ktor.client.cio)
-    implementation(libs.ktor.client.auth)
+    implementation("io.ktor:ktor-client-core:2.3.7")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.7")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
+    implementation("io.ktor:ktor-client-okhttp:2.3.7")
+    implementation("io.ktor:ktor-client-auth:2.3.7")
 
     // ===== FIREBASE =====
     implementation(platform(libs.firebase.bom))
@@ -186,8 +189,8 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler) // Use KSP for Hilt annotation processor
     implementation(libs.hilt.navigation.compose)
-    implementation(libs.androidx.work.runtime.ktx)
-    implementation(libs.hilt.work)
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+    implementation("androidx.hilt:hilt-work:1.2.0")
     ksp(libs.hilt.work)  // Annotation processor for Hilt WorkManager integration
 
     // ===== UTILITIES =====

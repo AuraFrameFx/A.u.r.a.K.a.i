@@ -30,6 +30,7 @@ dependencies {
     add("ksp", libs.hilt.compiler)
 
     // Add other module-specific dependencies here
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0")
 }
 
 tasks.register("moduleFStatus") {
