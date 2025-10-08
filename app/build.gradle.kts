@@ -8,7 +8,7 @@ plugins {
     id("dev.aurakai.aurakai-android-convention")
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
-    id("org.openapi.generator") version "7.16.0"
+    //id("org.openapi.generator") version "7.16.0"
 
 }
 
