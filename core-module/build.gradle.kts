@@ -1,8 +1,6 @@
 plugins {
     // JVM library setup
     id("java-library")
-
-    alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
 }
 group = "dev.aurakai.auraframefx.utilities"

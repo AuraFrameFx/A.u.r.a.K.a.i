@@ -12,6 +12,14 @@ java {
 
 android {
     namespace = "dev.aurakai.auraframefx.benchmark"
+    compileSdk = 36
+    
+    defaultConfig {
+        minSdk = 26
+        testInstrumentationRunner = "androidx.benchmark.junit4.AndroidBenchmarkRunner"
+        multiDexEnabled = true
+    }
+    
     buildTypes {
         maybeCreate("benchmark")
         getByName("benchmark") {
@@ -22,13 +30,6 @@ android {
                 "benchmark-rules.pro"
             )
         }
-    }
-
-    defaultConfig {
-        testInstrumentationRunner = "androidx.benchmark.junit4.AndroidBenchmarkRunner"
-
-        multiDexEnabled = true // Enable multidex for core library desugaring
-        // MultiDex is configured at the app/test APK level only; not needed here.
     }
 
     // Core library desugaring without manual source/target

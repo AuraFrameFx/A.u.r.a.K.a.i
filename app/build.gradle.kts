@@ -58,7 +58,9 @@ android {
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====
-    implementation(project(":core-module"))
+    implementation(project(":core-module")) {
+        exclude(group = "org.jetbrains.dokka")
+    }
     implementation(project(":feature-module"))
     implementation(project(":romtools"))
     implementation(project(":secure-comm"))
