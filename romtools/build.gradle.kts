@@ -29,6 +29,7 @@ dependencies {
 
     // Hilt (manually added)
     implementation(libs.hilt.android)
+    implementation(libs.androidx.material3)
     ksp(libs.hilt.compiler)
 
     // Lifecycle
