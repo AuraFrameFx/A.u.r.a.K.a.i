@@ -25,7 +25,3 @@ tasks.register("moduleCStatus") {
     group = "aegenesis"
     doLast { println("📦 MODULE C - Ready (Java 24)") }
 }
-
-kotlin {
-    jvmToolchain(24)
-}

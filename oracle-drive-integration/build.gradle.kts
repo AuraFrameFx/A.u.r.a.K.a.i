@@ -33,6 +33,3 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
 }
 
-kotlin {
-    jvmToolchain(24)
-}

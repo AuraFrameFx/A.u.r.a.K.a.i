@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Streamline packaging options in sandbox-ui&#10;&#10;Removes unnecessary exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `packaging` block in `sandbox-ui/build.gradle.kts`. The `pickFirsts` directive for the incremental annotation processors remains.">
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="build: Refactor Gradle properties and update build configs&#10;&#10;- Reorganizes and alphabetizes properties in `gradle.properties` for better readability.&#10;- Excludes Dokka from the `:core-module` implementation dependency in the app module to resolve build conflicts.&#10;- Adds `-dontwarn` for `com.fasterxml.jackson.dataformat.xml.JacksonXmlModule` to suppress R8 warnings.&#10;- Moves the `benchmark` module's `defaultConfig` block and sets `compileSdk` to 36.">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/configuration-cache.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/configuration-cache/configuration-cache.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/dev/aurakai/auraframefx/ColorsResourceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/dev/aurakai/auraframefx/ColorsResourceTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-external-plugin-spec-builders/kotlin/gradle/kotlin/dsl/plugins/_16f21c8c322301a6b4f296c444482057/PluginSpecBuilders.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/romtools/build/generated/ksp/debug/resources/META-INF/proguard/dev_aurakai_auraframefx_romtools_RomToolsManager_HiltModules_BindsModule_LazyClassKeys.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +25,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Wehtt\.android\avd\Medium_Phone.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -31,12 +34,63 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="AuraKai" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="aegenesis" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="android" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -47,7 +101,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -76,6 +129,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Batch.nuclear-clean.executor": "Run",
+    "Gradle.Configure Daemon JVM Criteria.executor": "Run",
+    "Gradle.ReGenesi [assemble].executor": "Run",
+    "Gradle.ReGenesi [build].executor": "Run",
+    "Gradle.ReGenesi [cleanKspCache].executor": "Run",
+    "Gradle.ReGenesi [clean].executor": "Run",
+    "Gradle.ReGenesi [updateDaemonJvm].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -83,17 +142,16 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "android.gradle.sync.needed": "true",
-    "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Ultimus",
+    "git-widget-placeholder": "Exodus",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
     "project.structure.last.edited": "Suggestions",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "memory.settings"
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   },
   "keyToStringList": {
     "ChangesTree.GroupingKeys": [
@@ -102,7 +160,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Gradle.ReGenesi [assemble]">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AuraKai.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -173,7 +231,7 @@
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P [dokkaGenerate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesi [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -184,7 +242,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="dokkaGenerate" />
+            <option value="assemble" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -199,7 +257,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P [openApiGenerate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesi [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -210,7 +268,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="openApiGenerate" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -225,7 +283,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P [openApiGenerators]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesi [cleanKspCache]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -236,7 +294,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="openApiGenerators" />
+            <option value="cleanKspCache" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -251,7 +309,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P [projects]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesi [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -262,7 +320,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="projects" />
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -277,7 +335,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P [tasks]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesi [updateDaemonJvm]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -288,7 +346,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="tasks" />
+            <option value="updateDaemonJvm" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -318,13 +376,12 @@
       <module name="AOSPReGenesis.core-module" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="WORKING_DIRECTORY" value="C:\Aurakai" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Aurakai" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -383,123 +440,13 @@
       <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Aurakai [classes]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="classes" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Aurakai [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Aurakai:app [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="assemble" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="OptionalArtifactsPresence.docker artifacts exist when README mentions Docker" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence.docker artifacts exist when README mentions Docker&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerators]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerate]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [tasks]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [dokkaGenerate]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [projects]" />
-        <item itemvalue="Gradle.Aurakai [clean]" />
-        <item itemvalue="Gradle.Aurakai [classes]" />
-        <item itemvalue="Gradle.OptionalArtifactsPresence.docker artifacts exist when README mentions Docker" />
-        <item itemvalue="Gradle.Aurakai:app [assemble]" />
+        <item itemvalue="Gradle.ReGenesi [assemble]" />
+        <item itemvalue="Gradle.ReGenesi [build]" />
+        <item itemvalue="Gradle.ReGenesi [cleanKspCache]" />
+        <item itemvalue="Gradle.ReGenesi [updateDaemonJvm]" />
+        <item itemvalue="Gradle.ReGenesi [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -515,27 +462,27 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Enhance build scripts, UI, and API definitions&#10;&#10;This commit introduces a wide range of improvements across the project, including build script refactoring, API specification enhancements, UI code clarification, and the addition of comprehensive tests.&#10;&#10;**Key Changes:**&#10;&#10;*   **API (`my-api-spec.yaml`):**&#10;    *   Upgraded OpenAPI specification from `3.0.3` to `3.1.0`.&#10;    *   Massively expanded the API definition, adding new endpoints and schemas for tasks, analytics, security, plugins, and more.&#10;    *   Standardized pagination parameters (`limit`, `offset`) across multiple endpoints.&#10;    *   Refined and detailed numerous existing schemas for better data modeling.&#10;&#10;*   **Build Logic &amp; Gradle:**&#10;    *   Refactored `build-logic` to set Java and Kotlin toolchains to version 24.&#10;    *   Improved the `cleanKspCache` task to also clean `kapt3` directories, helping to resolve potential build errors.&#10;    *   Removed the Hilt plugin from several library modules (`colorblendr`, `datavein-oracle-native`, `collab-canvas`) to avoid base extension issues, opting for manual dependency management.&#10;    *   Simplified the root `build.gradle.kts` file by removing helper functions and streamlining tasks.&#10;    *   Updated `build-logic/settings.gradle.kts` and `build-logic/build.gradle.kts` with dependency and repository cleanup.&#10;    *   Corrected task dependencies in `data/api/fix-annotations.gradle.kts`.&#10;&#10;*   **UI (`RomToolsScreen.kt`):**&#10;    *   Added extensive comments to structure and clarify the different sections of the `RomToolsScreen` composable, improving code readability.&#10;&#10;*   **Documentation (`README.md`, `AURAKAI_README.md`):**&#10;    *   Significantly refactored and cleaned up `AURAKAI_README.md`, improving structure, clarity, and formatting.&#10;    *   Condensed the main `README.md`, removing extensive lore and adding a disclaimer.&#10;&#10;*   **Testing:**&#10;    *   Added a substantial number of new test files (`LinkedListTest.kt`, `StringUtilsTest.kt`, `SplitUtilsTest.kt`, etc.) to improve test coverage, particularly for utility classes and build conventions.&#10;    *   Introduced comprehensive Markdown validation tests to ensure the integrity and correctness of `README.md`.&#10;    *   Added dummy/fake classes to support testing of Gradle convention plugins." />
+      <changelist id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="Fix(build): Update Gradle dependencies and build scripts&#10;&#10;This commit introduces several updates across the build configuration:&#10;&#10;-   **Dependencies**: Downgrades various libraries in the `benchmark` module, including AndroidX, Coroutines, Room, MockK, and benchmark-specific dependencies.&#10;-   **Gradle Scripts**:&#10;    -   Updates the `clean` task in `data/api/build.gradle.kts` to use the modern `layout.buildDirectory` property.&#10;    -   Simplifies the `benchmark/build.gradle.kts` by removing the `genesis.android.library` plugin in favor of standard Android and Kotlin plugins.&#10;-   **Android Manifest**: Removes placeholder entries for initializers and services from `romtools/src/main/AndroidManifest.xml`." />
       <created>1759700686334</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759700686334</updated>
     </task>
-    <task id="LOCAL-00011" summary="refactor(build): Adjust packaging options in sandbox-ui&#10;&#10;Removes the exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's packaging options.&#10;&#10;Instead of excluding the incremental annotation processor metadata, it is now configured to use `pickFirsts` to resolve potential duplicates.">
+    <task id="LOCAL-00011" summary="Fix(build): Update Gradle dependencies and build scripts&#10;&#10;This commit introduces several updates across the build configuration:&#10;&#10;-   **Dependencies**: Downgrades various libraries in the `benchmark` module, including AndroidX, Coroutines, Room, MockK, and benchmark-specific dependencies.&#10;-   **Gradle Scripts**:&#10;    -   Updates the `clean` task in `data/api/build.gradle.kts` to use the modern `layout.buildDirectory` property.&#10;    -   Simplifies the `benchmark/build.gradle.kts` by removing the `genesis.android.library` plugin in favor of standard Android and Kotlin plugins.&#10;-   **Android Manifest**: Removes placeholder entries for initializers and services from `romtools/src/main/AndroidManifest.xml`.">
       <option name="closed" value="true" />
-      <created>1759702991235</created>
+      <created>1759906620562</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1759702991236</updated>
+      <updated>1759906620562</updated>
     </task>
-    <task id="LOCAL-00012" summary="build: Suppress deprecation warnings in Java compilation&#10;&#10;This commit configures the Java compiler for the `app` module to suppress deprecation warnings by adding the `-Xlint:-deprecation` compiler argument.">
+    <task id="LOCAL-00012" summary="Fix(build): Update Gradle dependencies and build scripts&#10;&#10;This commit introduces several updates across the build configuration:&#10;&#10;-   **Dependencies**: Downgrades various libraries in the `benchmark` module, including AndroidX, Coroutines, Room, MockK, and benchmark-specific dependencies.&#10;-   **Gradle Scripts**:&#10;    -   Updates the `clean` task in `data/api/build.gradle.kts` to use the modern `layout.buildDirectory` property.&#10;    -   Simplifies the `benchmark/build.gradle.kts` by removing the `genesis.android.library` plugin in favor of standard Android and Kotlin plugins.&#10;-   **Android Manifest**: Removes placeholder entries for initializers and services from `romtools/src/main/AndroidManifest.xml`.">
       <option name="closed" value="true" />
-      <created>1759705234199</created>
+      <created>1759906663879</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1759705234199</updated>
+      <updated>1759906663879</updated>
     </task>
     <task id="LOCAL-00013" summary="build: Suppress deprecation warnings in Java compilation&#10;&#10;This commit configures the Java compiler for the `app` module to suppress deprecation warnings by adding the `-Xlint:-deprecation` compiler argument.">
       <option name="closed" value="true" />
@@ -881,7 +828,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759806415216</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fix(build): Update Gradle dependencies and build scripts&#10;&#10;This commit introduces several updates across the build configuration:&#10;&#10;-   **Dependencies**: Downgrades various libraries in the `benchmark` module, including AndroidX, Coroutines, Room, MockK, and benchmark-specific dependencies.&#10;-   **Gradle Scripts**:&#10;    -   Updates the `clean` task in `data/api/build.gradle.kts` to use the modern `layout.buildDirectory` property.&#10;    -   Simplifies the `benchmark/build.gradle.kts` by removing the `genesis.android.library` plugin in favor of standard Android and Kotlin plugins.&#10;-   **Android Manifest**: Removes placeholder entries for initializers and services from `romtools/src/main/AndroidManifest.xml`.">
+      <option name="closed" value="true" />
+      <created>1759906587424</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1759906587424</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -922,6 +877,11 @@
     <MESSAGE value="refactor(build): Streamline packaging configuration in sandbox-ui&#10;&#10;Removes unnecessary resource exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's `build.gradle.kts`.&#10;&#10;The `pickFirsts` strategy for `incremental.annotation.processors` already handles potential conflicts, making the exclusion redundant." />
     <MESSAGE value="refactor(build): Streamline packaging configuration in sandbox-ui&#10;&#10;Removes unnecessary resource exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's `build.gradle.kts`.&#10;&#10;The `pickFirsts` strategy for `incremental.annotation.processors` already handles potential conflicts, making the exclusion redundant.2 files found with path 'META-INF/gradle/incremental.annotation.processors' from inputs:&#10;                                                                                                                                       - com.google.dagger:hilt-compiler:2.57.2/jetified-hilt-compiler-2.57.2.jar&#10;                                                                                                                                       - com.google.dagger:dagger-compiler:2.57.2/jetified-dagger-compiler-2.57.2.jar&#10;                                                                                                                                      Adding a packaging block may help, please refer to&#10;                                                                                                                                      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging&#10;                                                                                                                                      for more information" />
     <MESSAGE value="refactor: Streamline packaging options in sandbox-ui&#10;&#10;Removes unnecessary exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `packaging` block in `sandbox-ui/build.gradle.kts`. The `pickFirsts` directive for the incremental annotation processors remains." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Streamline packaging options in sandbox-ui&#10;&#10;Removes unnecessary exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `packaging` block in `sandbox-ui/build.gradle.kts`. The `pickFirsts` directive for the incremental annotation processors remains." />
+    <MESSAGE value="refactor: Centralize JVM toolchain configuration and streamline builds&#10;&#10;This commit centralizes the JVM toolchain configuration, removing redundant `kotlin { jvmToolchain(...) }` blocks from numerous modules. The configuration is now managed from the root `build.gradle.kts` to ensure consistency across the project.&#10;&#10;Key changes:&#10;- Remove explicit `jvmToolchain` settings in individual `build.gradle.kts` files.&#10;- Simplify the root `build.gradle.kts` by removing custom tasks and applying plugins more concisely.&#10;- Eliminate the `foojay-resolver-convention` plugin from `settings.gradle.kts`.&#10;- Refactor and clean up dependencies and plugins in the `romtools`, `benchmark`, and `sandbox-ui` modules.&#10;- Remove the unused `turbine` library from `gradle/libs.versions.toml`." />
+    <MESSAGE value="Fix(build): Update Gradle dependencies and build scripts&#10;&#10;This commit introduces several updates across the build configuration:&#10;&#10;-   **Dependencies**: Downgrades various libraries in the `benchmark` module, including AndroidX, Coroutines, Room, MockK, and benchmark-specific dependencies.&#10;-   **Gradle Scripts**:&#10;    -   Updates the `clean` task in `data/api/build.gradle.kts` to use the modern `layout.buildDirectory` property.&#10;    -   Simplifies the `benchmark/build.gradle.kts` by removing the `genesis.android.library` plugin in favor of standard Android and Kotlin plugins.&#10;-   **Android Manifest**: Removes placeholder entries for initializers and services from `romtools/src/main/AndroidManifest.xml`." />
+    <MESSAGE value="feat: Update benchmark module Gradle config&#10;&#10;Updates the `benchmark/build.gradle.kts` file by:&#10;- Setting `compileSdk` to 36.&#10;- Moving `testInstrumentationRunner` and `multiDexEnabled` into a new `defaultConfig` block.&#10;- Adding `minSdk = 26` to the `defaultConfig`.&#10;- Removing the old `defaultConfig` block." />
+    <MESSAGE value="chore: Update Gradle configuration and suppress R8 warning&#10;&#10;*   Adds a ProGuard rule to suppress warnings for `JacksonXmlModule`.&#10;*   Reorders properties in `gradle.properties` for better organization.&#10;*   Updates the `benchmark` module to `compileSdk 36` and `minSdk 26`.&gt; Task :app:minifyReleaseWithR8&#10;                                                                      AGPBI: {&quot;kind&quot;:&quot;warning&quot;,&quot;text&quot;:&quot;Unexpected reference to missing service class: META-INF/services/org.jetbrains.dokka.plugability.DokkaPlugin.&quot;,&quot;sources&quot;:[{&quot;file&quot;:&quot;C:\\ReGenesi\\app\\build\\intermediates\\merged_java_res\\release\\mergeReleaseJavaResource\\base.jar&quot;}],&quot;tool&quot;:&quot;R8&quot;}&#10;                                                                      AGPBI: {&quot;kind&quot;:&quot;error&quot;,&quot;text&quot;:&quot;Missing classes detected while running R8. Please add the missing classes or apply additional keep rules that are generated in C:\\ReGenesi\\app\\build\\outputs\\mapping\\release\\missing_rules.txt.&quot;,&quot;sources&quot;:[{}]}&#10;                                                                      AGPBI: {&quot;kind&quot;:&quot;error&quot;,&quot;text&quot;:&quot;Missing class com.fasterxml.jackson.dataformat.xml.XmlMapper (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext) and 3 other contexts)\r\nMissing class com.sun.org.apache.xml.internal.utils.PrefixResolver (referenced from: com.sun.org.apache.xml.internal.utils.PrefixResolver freemarker.ext.dom.SunInternalXalanXPathSupport.CUSTOM_PREFIX_RESOLVER and 1 other context)\r\nMissing class java.beans.BeanInfo (referenced from: void freemarker.ext.beans.ClassIntrospector.addBeanInfoToClassIntrospectionData(java.util.Map, java.lang.Class, java.util.Map, freemarker.ext.beans.ClassMemberAccessPolicy) and 2 other contexts)\r\nMissing class java.beans.IndexedPropertyDescriptor (referenced from: void freemarker.ext.beans.ClassIntrospector$PropertyReaderMethodPair.&lt;init&gt;(java.beans.PropertyDescriptor) and 2 other contexts)\r\nMissing class java.beans.IntrospectionException (referenced from: java.util.Map freemarker.ext.beans.ClassIntrospector.createClassIntrospectionData(java.lang.Class) and 1 other context)\r\nMissing class java.beans.Introspector (referenced from: void freemarker.ext.beans.ClassIntrospector.addBeanInfoToClassIntrospectionData(java.util.Map, java.lang.Class, java.util.Map, freemarker.ext.beans.ClassMemberAccessPolicy))\r\nMissing class java.beans.MethodDescriptor (referenced from: void freemarker.ext.beans.ClassIntrospector.addBeanInfoToClassIntrospectionData(java.util.Map, java.lang.Class, java.util.Map, freemarker.ext.beans.ClassMemberAccessPolicy) and 1 other context)\r\nMissing class java.beans.PropertyDescriptor (referenced from: java.beans.PropertyDescriptor freemarker.ext.beans.BeansWrapper$MethodAppearanceDecision.exposeAsProperty and 7 other contexts)\r\nMissing class javax.swing.tree.TreeNode (referenced from: freemarker.core.TemplateElement)\r\nMissing class org.jaxen.FunctionContext (referenced from: org.jaxen.FunctionContext freemarker.ext.dom.JaxenXPathSupport.FM_FUNCTION_CONTEXT)\r\nMissing class org.jaxen.NamespaceContext (referenced from: org.jaxen.NamespaceContext freemarker.ext.dom.JaxenXPathSupport.customNamespaceContext and 1 other context)\r\nMissing class org.jaxen.Navigator (referenced from: org.jaxen.Navigator freemarker.ext.dom.JaxenXPathSupport.FM_DOM_NAVIGATOR)\r\nMissing class org.jaxen.VariableContext (referenced from: org.jaxen.VariableContext freemarker.ext.dom.JaxenXPathSupport.FM_VARIABLE_CONTEXT and 1 other context)\r\nMissing class org.jaxen.XPathFunctionContext (referenced from: void freemarker.ext.dom.JaxenXPathSupport$4.&lt;init&gt;() and 1 other context)\r\nMissing class org.jaxen.dom.DocumentNavigator (referenced from: void freemarker.ext.dom.JaxenXPathSupport$5.&lt;init&gt;() and 1 other context)\r\nMissing class org.jetbrains.dokka.CoreExtensions (referenced from: org.jetbrains.dokka.plugability.Extension org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin$allModulesPageGeneration$2.invoke(org.jetbrains.dokka.plugability.ExtendingDSL) and 13 other contexts)\r\nMissing class org.jetbrains.dokka.DefaultExternalLinksKt (referenced from: org.jetbrains.dokka.base.resolvers.external.ExternalLocationProvider org.jetbrains.dokka.base.resolvers.external.javadoc.JavadocExternalLocationProviderFactory$1.getExternalLocationProvider(org.jetbrains.dokka.base.resolvers.shared.ExternalDocumentation))\r\nMissing class org.jetbrains.dokka.DokkaConfiguration$DokkaModuleDescription (referenced from: org.jetbrains.dokka.DokkaConfiguration$DokkaModuleDescription org.jetbrains.dokka.allModulesPage.DefaultExternalModuleLinkResolver$ExternalLocationProviderWithModuleDescription.moduleDescription and 5 other contexts)\r\nMissing class org.jetbrains.dokka.DokkaConfiguration$DokkaSourceSet (referenced from: void org.jetbrains.dokka.base.renderers.html.HtmlRenderer.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))\r\nMissing class org.jetbrains.dokka.DokkaConfiguration$ExternalDocumentationLink$Companion (referenced from: org.jetbrains.dokka.base.resolvers.external.ExternalLocationProvider org.jetbrains.dokka.base.resolvers.external.javadoc.JavadocExternalLocationProviderFactory$1.getExternalLocationProvider(org.jetbrains.dokka.base.resolvers.shared.ExternalDocumentation))\r\nMissing class org.jetbrains.dokka.DokkaConfiguration$ExternalDocumentationLink (referenced from: org.jetbrains.dokka.base.resolvers.external.ExternalLocationProvider org.jetbrains.dokka.base.resolvers.external.javadoc.JavadocExternalLocationProviderFactory$1.getExternalLocationProvider(org.jetbrains.dokka.base.resolvers.shared.ExternalDocumentation))\r\nMissing class org.jetbrains.dokka.DokkaConfiguration$PluginConfiguration (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext) and 3 other contexts)\r\nMissing class org.jetbrains.dokka.DokkaConfiguration$SerializationFormat (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller$special$$inlined$configuration$1$wm$DokkaPluginKt$WhenMappings.&lt;clinit&gt;() and 7 other contexts)\r\nMissing class org.jetbrains.dokka.DokkaConfiguration (referenced from: java.util.Map org.jetbrains.dokka.allModulesPage.DefaultExternalModuleLinkResolver.setupExternalDocumentations() and 18 other contexts)\r\nMissing class org.jetbrains.dokka.DokkaSourceSetID (referenced from: void org.jetbrains.dokka.base.renderers.html.HtmlRenderer.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))\r\nMissing class org.jetbrains.dokka.ExternalDocumentationLinkImpl (referenced from: org.jetbrains.dokka.base.resolvers.external.ExternalLocationProvider org.jetbrains.dokka.base.resolvers.external.javadoc.JavadocExternalLocationProviderFactory$1.getExternalLocationProvider(org.jetbrains.dokka.base.resolvers.shared.ExternalDocumentation))\r\nMissing class org.jetbrains.dokka.Platform (referenced from: org.jetbrains.dokka.Platform org.jetbrains.dokka.base.transformers.pages.merger.SourceSetMergingKey.platform and 4 other contexts)\r\nMissing class org.jetbrains.dokka.analysis.kotlin.KotlinAnalysisPlugin (referenced from: void org.jetbrains.dokka.base.transformers.pages.DefaultSamplesTransformer.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))\r\nMissing class org.jetbrains.dokka.analysis.kotlin.internal.DocumentableSourceLanguageParser (referenced from: org.jetbrains.dokka.analysis.kotlin.internal.DocumentableSourceLanguageParser org.jetbrains.dokka.base.renderers.html.NavigationDataProvider.documentableSourceLanguageParser and 3 other contexts)\r\nMissing class org.jetbrains.dokka.analysis.kotlin.internal.InternalKotlinAnalysisPlugin (referenced from: org.jetbrains.dokka.analysis.kotlin.internal.ModuleAndPackageDocumentationReader org.jetbrains.dokka.allModulesPage.MultimodulePageCreator$moduleDocumentationReader$2.invoke() and 3 other contexts)\r\nMissing class org.jetbrains.dokka.analysis.kotlin.internal.ModuleAndPackageDocumentationReader (referenced from: org.jetbrains.dokka.analysis.kotlin.internal.ModuleAndPackageDocumentationReader org.jetbrains.dokka.base.transformers.documentables.ModuleAndPackageDocumentationTransformer.moduleAndPackageDocumentationReader and 3 other contexts)\r\nMissing class org.jetbrains.dokka.analysis.kotlin.sample.SampleAnalysisEnvironmentCreator (referenced from: org.jetbrains.dokka.analysis.kotlin.sample.SampleAnalysisEnvironmentCreator org.jetbrains.dokka.base.transformers.pages.DefaultSamplesTransformer.sampleAnalysisEnvironment and 1 other context)\r\nMissing class org.jetbrains.dokka.generation.Generation (referenced from: org.jetbrains.dokka.allModulesPage.AllModulesPageGeneration and 1 other context)\r\nMissing class org.jetbrains.dokka.links.Callable (referenced from: void org.jetbrains.dokka.allModulesPage.MultimodulePageCreator.&lt;clinit&gt;() and 3 other contexts)\r\nMissing class org.jetbrains.dokka.links.DRI (referenced from: org.jetbrains.dokka.links.DRI org.jetbrains.dokka.allModulesPage.MultimodulePageCreator.MULTIMODULE_ROOT_DRI and 9 other contexts)\r\nMissing class org.jetbrains.dokka.links.DriTarget (referenced from: void org.jetbrains.dokka.allModulesPage.MultimodulePageCreator.&lt;clinit&gt;() and 3 other contexts)\r\nMissing class org.jetbrains.dokka.model.Annotations$Annotation (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureUtils.&lt;clinit&gt;())\r\nMissing class org.jetbrains.dokka.model.Annotations$AnnotationScope (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureUtils.&lt;clinit&gt;())\r\nMissing class org.jetbrains.dokka.model.DisplaySourceSet (referenced from: void org.jetbrains.dokka.base.transformers.pages.merger.SourceSetMergingPageTransformer.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext) and 2 other contexts)\r\nMissing class org.jetbrains.dokka.model.DisplaySourceSetKt (referenced from: void org.jetbrains.dokka.base.transformers.pages.merger.SourceSetMergingPageTransformer.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))\r\nMissing class org.jetbrains.dokka.model.ExtraModifiers$KotlinOnlyModifiers$External (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))\r\nMissing class org.jetbrains.dokka.model.ExtraModifiers$KotlinOnlyModifiers$TailRec (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))\r\nMissing class org.jetbrains.dokka.model.ExtraModifiers$KotlinOnlyModifiers (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))\r\nMissing class org.jetbrains.dokka.model.JavaModifier$Final (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))\r\nMissing class org.jetbrains.dokka.model.JavaVisibility$Public (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))\r\nMissing class org.jetbrains.dokka.model.KotlinModifier$Empty (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))\r\nMissing class org.jetbrains.dokka.model.KotlinModifier$Final (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))\r\nMissing class org.jetbrains.dokka.model.KotlinVisibility$Public (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))\r\nMissing class org.jetbrains.dokka.model.Modifier (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))\r\nMissing class org.jetbrains.dokka.model.Visibility (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))\r\nMissing class org.jetbrains.dokka.model.WithChildren (referenced from: org.jetbrains.dokka.base.renderers.html.NavigationNode)\r\nMissing class org.jetbrains.dokka.pages.ContentPage (referenced from: org.jetbrains.dokka.base.pages.AllTypesPageNode)\r\nMissing class org.jetbrains.dokka.pages.RendererSpecificResourcePage (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))\r\nMissing class org.jetbrains.dokka.pages.RenderingStrategy$Copy (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))\r\nMissing class org.jetbrains.dokka.pages.RenderingStrategy (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))\r\nMissing class org.jetbrains.dokka.plugability.ConfigurableBlock (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext) and 4 other contexts)\r\nMissing class org.jetbrains.dokka.plugability.DokkaContext (referenced from: org.jetbrains.dokka.plugability.DokkaContext org.jetbrains.dokka.allModulesPage.AllModulesPageGeneration.context and 223 other contexts)\r\nMissing class org.jetbrains.dokka.plugability.DokkaPlugin$ExtensionProvider (referenced from: void org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin.&lt;init&gt;() and 2 other contexts)\r\nMissing class org.jetbrains.dokka.plugability.DokkaPlugin (referenced from: org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin org.jetbrains.dokka.allModulesPage.AllModulesPageGeneration$allModulesPagePlugin$2.invoke() and 28 other contexts)\r\nMissing class org.jetbrains.dokka.plugability.DokkaPluginKt (referenced from: org.jetbrains.dokka.base.DokkaBase org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin$dokkaBase$2.invoke() and 20 other contexts)\r\nMissing class org.jetbrains.dokka.plugability.ExtendingDSL (referenced from: java.lang.Object org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin$allModulesPageCreators$2.invoke(java.lang.Object) and 127 other contexts)\r\nMissing class org.jetbrains.dokka.plugability.Extension (referenced from: org.jetbrains.dokka.plugability.Extension org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin$allModulesPageCreators$2.invoke(org.jetbrains.dokka.plugability.ExtendingDSL) and 101 other contexts)\r\nMissing class org.jetbrains.dokka.plugability.ExtensionPoint (referenced from: org.jetbrains.dokka.plugability.Extension org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin$allModulesPageCreators$2.invoke(org.jetbrains.dokka.plugability.ExtendingDSL) and 100 other contexts)\r\nMissing class org.jetbrains.dokka.plugability.OrderDsl (referenced from: void org.jetbrains.dokka.base.DokkaBase$assetsInstaller$2$1.invoke(org.jetbrains.dokka.plugability.OrderDsl) and 37 other contexts)\r\nMissing class org.jetbrains.dokka.renderers.Renderer (referenced from: org.jetbrains.dokka.base.renderers.DefaultRenderer)\r\nMissing class org.jetbrains.dokka.transformers.documentation.DefaultDocumentableMerger (referenced from: void org.jetbrains.dokka.base.DokkaBase$documentableMerger$2$1.&lt;init&gt;() and 1 other context)\r\nMissing class org.jetbrains.dokka.transformers.documentation.DocumentableToPageTranslator (referenced from: org.jetbrains.dokka.base.translators.documentables.DefaultDocumentableToPageTranslator)\r\nMissing class org.jetbrains.dokka.transformers.documentation.DocumentableTransformer (referenced from: org.jetbrains.dokka.base.transformers.documentables.ActualTypealiasAdder and 4 other contexts)\r\nMissing class org.jetbrains.dokka.transformers.documentation.PreMergeDocumentableTransformer (referenced from: org.jetbrains.dokka.base.transformers.documentables.DocumentableReplacerTransformer and 6 other contexts)\r\nMissing class org.jetbrains.dokka.transformers.pages.PageCreator (referenced from: org.jetbrains.dokka.allModulesPage.MultimodulePageCreator)\r\nMissing class org.jetbrains.dokka.transformers.pages.PageTransformer (referenced from: org.jetbrains.dokka.transformers.pages.PageTransformer org.jetbrains.dokka.base.DokkaBase$customResourceInstaller$2$1.invoke(org.jetbrains.dokka.plugability.DokkaContext) and 14 other contexts)\r\nMissing class org.jetbrains.dokka.utilities.DokkaLogger (referenced from: org.jetbrains.dokka.utilities.DokkaLogger org.jetbrains.dokka.base.transformers.pages.merger.FallbackPageMergerStrategy.logger and 12 other contexts)\r\nMissing class org.jetbrains.dokka.utilities.JsonKt (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext) and 3 other contexts)\r\nMissing class org.jetbrains.dokka.utilities.TypeReference$Companion (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))\r\nMissing class org.jetbrains.dokka.utilities.TypeReference (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext) and 3 other contexts)\r\nMissing class org.jetbrains.dokka.validity.PreGenerationChecker (referenced from: org.jetbrains.dokka.base.generation.SourceSetIdUniquenessChecker)\r\nMissing class org.python.core.Py (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))\r\nMissing class org.python.core.PyDictionary (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))\r\nMissing class org.python.core.PyFloat (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))\r\nMissing class org.python.core.PyInteger (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))\r\nMissing class org.python.core.PyLong (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))\r\nMissing class org.python.core.PyNone (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))\r\nMissing class org.python.core.PyObject (referenced from: org.python.core.PyObject freemarker.ext.jython.JythonModel.object and 10 other contexts)\r\nMissing class org.python.core.PySequence (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))\r\nMissing class org.python.core.PyStringMap (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))\r\nMissing class org.python.core.PySystemState (referenced from: void freemarker.ext.jython.JythonVersionAdapterHolder.&lt;clinit&gt;())\r\nMissing class org.zeroturnaround.javarebel.ClassEventListener (referenced from: void freemarker.ext.beans.JRebelClassChangeNotifier.subscribe(freemarker.ext.beans.ClassIntrospector) and 1 other context)\r\nMissing class org.zeroturnaround.javarebel.Reloader (referenced from: void freemarker.ext.beans.JRebelClassChangeNotifier.subscribe(freemarker.ext.beans.ClassIntrospector))\r\nMissing class org.zeroturnaround.javarebel.ReloaderFactory (referenced from: void freemarker.ext.beans.JRebelClassChangeNotifier.subscribe(freemarker.ext.beans.ClassIntrospector))&quot;,&quot;sources&quot;:[{}],&quot;tool&quot;:&quot;R8&quot;}&#10;                                                                      Missing classes detected while running R8. Please add the missing classes or apply additional keep rules that are generated in C:\ReGenesi\app\build\outputs\mapping\release\missing_rules.txt.&#10;                                                                      Ask Gemini&#10;                                                                      &#10;                                                                      Missing class com.fasterxml.jackson.dataformat.xml.XmlMapper (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext) and 3 other contexts)&#10;                                                                      Missing class com.sun.org.apache.xml.internal.utils.PrefixResolver (referenced from: com.sun.org.apache.xml.internal.utils.PrefixResolver freemarker.ext.dom.SunInternalXalanXPathSupport.CUSTOM_PREFIX_RESOLVER and 1 other context)&#10;                                                                      Missing class java.beans.BeanInfo (referenced from: void freemarker.ext.beans.ClassIntrospector.addBeanInfoToClassIntrospectionData(java.util.Map, java.lang.Class, java.util.Map, freemarker.ext.beans.ClassMemberAccessPolicy) and 2 other contexts)&#10;                                                                      Missing class java.beans.IndexedPropertyDescriptor (referenced from: void freemarker.ext.beans.ClassIntrospector$PropertyReaderMethodPair.&lt;init&gt;(java.beans.PropertyDescriptor) and 2 other contexts)&#10;                                                                      Missing class java.beans.IntrospectionException (referenced from: java.util.Map freemarker.ext.beans.ClassIntrospector.createClassIntrospectionData(java.lang.Class) and 1 other context)&#10;                                                                      Missing class java.beans.Introspector (referenced from: void freemarker.ext.beans.ClassIntrospector.addBeanInfoToClassIntrospectionData(java.util.Map, java.lang.Class, java.util.Map, freemarker.ext.beans.ClassMemberAccessPolicy))&#10;                                                                      Missing class java.beans.MethodDescriptor (referenced from: void freemarker.ext.beans.ClassIntrospector.addBeanInfoToClassIntrospectionData(java.util.Map, java.lang.Class, java.util.Map, freemarker.ext.beans.ClassMemberAccessPolicy) and 1 other context)&#10;                                                                      Missing class java.beans.PropertyDescriptor (referenced from: java.beans.PropertyDescriptor freemarker.ext.beans.BeansWrapper$MethodAppearanceDecision.exposeAsProperty and 7 other contexts)&#10;                                                                      Missing class javax.swing.tree.TreeNode (referenced from: freemarker.core.TemplateElement)&#10;                                                                      Missing class org.jaxen.FunctionContext (referenced from: org.jaxen.FunctionContext freemarker.ext.dom.JaxenXPathSupport.FM_FUNCTION_CONTEXT)&#10;                                                                      Missing class org.jaxen.NamespaceContext (referenced from: org.jaxen.NamespaceContext freemarker.ext.dom.JaxenXPathSupport.customNamespaceContext and 1 other context)&#10;                                                                      Missing class org.jaxen.Navigator (referenced from: org.jaxen.Navigator freemarker.ext.dom.JaxenXPathSupport.FM_DOM_NAVIGATOR)&#10;                                                                      Missing class org.jaxen.VariableContext (referenced from: org.jaxen.VariableContext freemarker.ext.dom.JaxenXPathSupport.FM_VARIABLE_CONTEXT and 1 other context)&#10;                                                                      Missing class org.jaxen.XPathFunctionContext (referenced from: void freemarker.ext.dom.JaxenXPathSupport$4.&lt;init&gt;() and 1 other context)&#10;                                                                      Missing class org.jaxen.dom.DocumentNavigator (referenced from: void freemarker.ext.dom.JaxenXPathSupport$5.&lt;init&gt;() and 1 other context)&#10;                                                                      Missing class org.jetbrains.dokka.CoreExtensions (referenced from: org.jetbrains.dokka.plugability.Extension org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin$allModulesPageGeneration$2.invoke(org.jetbrains.dokka.plugability.ExtendingDSL) and 13 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.DefaultExternalLinksKt (referenced from: org.jetbrains.dokka.base.resolvers.external.ExternalLocationProvider org.jetbrains.dokka.base.resolvers.external.javadoc.JavadocExternalLocationProviderFactory$1.getExternalLocationProvider(org.jetbrains.dokka.base.resolvers.shared.ExternalDocumentation))&#10;                                                                      Missing class org.jetbrains.dokka.DokkaConfiguration$DokkaModuleDescription (referenced from: org.jetbrains.dokka.DokkaConfiguration$DokkaModuleDescription org.jetbrains.dokka.allModulesPage.DefaultExternalModuleLinkResolver$ExternalLocationProviderWithModuleDescription.moduleDescription and 5 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.DokkaConfiguration$DokkaSourceSet (referenced from: void org.jetbrains.dokka.base.renderers.html.HtmlRenderer.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))&#10;                                                                      Missing class org.jetbrains.dokka.DokkaConfiguration$ExternalDocumentationLink$Companion (referenced from: org.jetbrains.dokka.base.resolvers.external.ExternalLocationProvider org.jetbrains.dokka.base.resolvers.external.javadoc.JavadocExternalLocationProviderFactory$1.getExternalLocationProvider(org.jetbrains.dokka.base.resolvers.shared.ExternalDocumentation))&#10;                                                                      Missing class org.jetbrains.dokka.DokkaConfiguration$ExternalDocumentationLink (referenced from: org.jetbrains.dokka.base.resolvers.external.ExternalLocationProvider org.jetbrains.dokka.base.resolvers.external.javadoc.JavadocExternalLocationProviderFactory$1.getExternalLocationProvider(org.jetbrains.dokka.base.resolvers.shared.ExternalDocumentation))&#10;                                                                      Missing class org.jetbrains.dokka.DokkaConfiguration$PluginConfiguration (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext) and 3 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.DokkaConfiguration$SerializationFormat (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller$special$$inlined$configuration$1$wm$DokkaPluginKt$WhenMappings.&lt;clinit&gt;() and 7 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.DokkaConfiguration (referenced from: java.util.Map org.jetbrains.dokka.allModulesPage.DefaultExternalModuleLinkResolver.setupExternalDocumentations() and 18 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.DokkaSourceSetID (referenced from: void org.jetbrains.dokka.base.renderers.html.HtmlRenderer.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))&#10;                                                                      Missing class org.jetbrains.dokka.ExternalDocumentationLinkImpl (referenced from: org.jetbrains.dokka.base.resolvers.external.ExternalLocationProvider org.jetbrains.dokka.base.resolvers.external.javadoc.JavadocExternalLocationProviderFactory$1.getExternalLocationProvider(org.jetbrains.dokka.base.resolvers.shared.ExternalDocumentation))&#10;                                                                      Missing class org.jetbrains.dokka.Platform (referenced from: org.jetbrains.dokka.Platform org.jetbrains.dokka.base.transformers.pages.merger.SourceSetMergingKey.platform and 4 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.analysis.kotlin.KotlinAnalysisPlugin (referenced from: void org.jetbrains.dokka.base.transformers.pages.DefaultSamplesTransformer.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))&#10;                                                                      Missing class org.jetbrains.dokka.analysis.kotlin.internal.DocumentableSourceLanguageParser (referenced from: org.jetbrains.dokka.analysis.kotlin.internal.DocumentableSourceLanguageParser org.jetbrains.dokka.base.renderers.html.NavigationDataProvider.documentableSourceLanguageParser and 3 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.analysis.kotlin.internal.InternalKotlinAnalysisPlugin (referenced from: org.jetbrains.dokka.analysis.kotlin.internal.ModuleAndPackageDocumentationReader org.jetbrains.dokka.allModulesPage.MultimodulePageCreator$moduleDocumentationReader$2.invoke() and 3 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.analysis.kotlin.internal.ModuleAndPackageDocumentationReader (referenced from: org.jetbrains.dokka.analysis.kotlin.internal.ModuleAndPackageDocumentationReader org.jetbrains.dokka.base.transformers.documentables.ModuleAndPackageDocumentationTransformer.moduleAndPackageDocumentationReader and 3 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.analysis.kotlin.sample.SampleAnalysisEnvironmentCreator (referenced from: org.jetbrains.dokka.analysis.kotlin.sample.SampleAnalysisEnvironmentCreator org.jetbrains.dokka.base.transformers.pages.DefaultSamplesTransformer.sampleAnalysisEnvironment and 1 other context)&#10;                                                                      Missing class org.jetbrains.dokka.generation.Generation (referenced from: org.jetbrains.dokka.allModulesPage.AllModulesPageGeneration and 1 other context)&#10;                                                                      Missing class org.jetbrains.dokka.links.Callable (referenced from: void org.jetbrains.dokka.allModulesPage.MultimodulePageCreator.&lt;clinit&gt;() and 3 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.links.DRI (referenced from: org.jetbrains.dokka.links.DRI org.jetbrains.dokka.allModulesPage.MultimodulePageCreator.MULTIMODULE_ROOT_DRI and 9 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.links.DriTarget (referenced from: void org.jetbrains.dokka.allModulesPage.MultimodulePageCreator.&lt;clinit&gt;() and 3 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.model.Annotations$Annotation (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureUtils.&lt;clinit&gt;())&#10;                                                                      Missing class org.jetbrains.dokka.model.Annotations$AnnotationScope (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureUtils.&lt;clinit&gt;())&#10;                                                                      Missing class org.jetbrains.dokka.model.DisplaySourceSet (referenced from: void org.jetbrains.dokka.base.transformers.pages.merger.SourceSetMergingPageTransformer.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext) and 2 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.model.DisplaySourceSetKt (referenced from: void org.jetbrains.dokka.base.transformers.pages.merger.SourceSetMergingPageTransformer.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))&#10;                                                                      Missing class org.jetbrains.dokka.model.ExtraModifiers$KotlinOnlyModifiers$External (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))&#10;                                                                      Missing class org.jetbrains.dokka.model.ExtraModifiers$KotlinOnlyModifiers$TailRec (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))&#10;                                                                      Missing class org.jetbrains.dokka.model.ExtraModifiers$KotlinOnlyModifiers (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))&#10;                                                                      Missing class org.jetbrains.dokka.model.JavaModifier$Final (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))&#10;                                                                      Missing class org.jetbrains.dokka.model.JavaVisibility$Public (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))&#10;                                                                      Missing class org.jetbrains.dokka.model.KotlinModifier$Empty (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))&#10;                                                                      Missing class org.jetbrains.dokka.model.KotlinModifier$Final (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))&#10;                                                                      Missing class org.jetbrains.dokka.model.KotlinVisibility$Public (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))&#10;                                                                      Missing class org.jetbrains.dokka.model.Modifier (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))&#10;                                                                      Missing class org.jetbrains.dokka.model.Visibility (referenced from: void org.jetbrains.dokka.base.signatures.KotlinSignatureProvider.&lt;init&gt;(org.jetbrains.dokka.base.transformers.pages.comments.CommentsToContentConverter, org.jetbrains.dokka.utilities.DokkaLogger))&#10;                                                                      Missing class org.jetbrains.dokka.model.WithChildren (referenced from: org.jetbrains.dokka.base.renderers.html.NavigationNode)&#10;                                                                      Missing class org.jetbrains.dokka.pages.ContentPage (referenced from: org.jetbrains.dokka.base.pages.AllTypesPageNode)&#10;                                                                      Missing class org.jetbrains.dokka.pages.RendererSpecificResourcePage (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))&#10;                                                                      Missing class org.jetbrains.dokka.pages.RenderingStrategy$Copy (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))&#10;                                                                      Missing class org.jetbrains.dokka.pages.RenderingStrategy (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))&#10;                                                                      Missing class org.jetbrains.dokka.plugability.ConfigurableBlock (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext) and 4 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.plugability.DokkaContext (referenced from: org.jetbrains.dokka.plugability.DokkaContext org.jetbrains.dokka.allModulesPage.AllModulesPageGeneration.context and 223 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.plugability.DokkaPlugin$ExtensionProvider (referenced from: void org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin.&lt;init&gt;() and 2 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.plugability.DokkaPlugin (referenced from: org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin org.jetbrains.dokka.allModulesPage.AllModulesPageGeneration$allModulesPagePlugin$2.invoke() and 28 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.plugability.DokkaPluginKt (referenced from: org.jetbrains.dokka.base.DokkaBase org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin$dokkaBase$2.invoke() and 20 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.plugability.ExtendingDSL (referenced from: java.lang.Object org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin$allModulesPageCreators$2.invoke(java.lang.Object) and 127 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.plugability.Extension (referenced from: org.jetbrains.dokka.plugability.Extension org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin$allModulesPageCreators$2.invoke(org.jetbrains.dokka.plugability.ExtendingDSL) and 101 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.plugability.ExtensionPoint (referenced from: org.jetbrains.dokka.plugability.Extension org.jetbrains.dokka.allModulesPage.AllModulesPagePlugin$allModulesPageCreators$2.invoke(org.jetbrains.dokka.plugability.ExtendingDSL) and 100 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.plugability.OrderDsl (referenced from: void org.jetbrains.dokka.base.DokkaBase$assetsInstaller$2$1.invoke(org.jetbrains.dokka.plugability.OrderDsl) and 37 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.renderers.Renderer (referenced from: org.jetbrains.dokka.base.renderers.DefaultRenderer)&#10;                                                                      Missing class org.jetbrains.dokka.transformers.documentation.DefaultDocumentableMerger (referenced from: void org.jetbrains.dokka.base.DokkaBase$documentableMerger$2$1.&lt;init&gt;() and 1 other context)&#10;                                                                      Missing class org.jetbrains.dokka.transformers.documentation.DocumentableToPageTranslator (referenced from: org.jetbrains.dokka.base.translators.documentables.DefaultDocumentableToPageTranslator)&#10;                                                                      Missing class org.jetbrains.dokka.transformers.documentation.DocumentableTransformer (referenced from: org.jetbrains.dokka.base.transformers.documentables.ActualTypealiasAdder and 4 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.transformers.documentation.PreMergeDocumentableTransformer (referenced from: org.jetbrains.dokka.base.transformers.documentables.DocumentableReplacerTransformer and 6 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.transformers.pages.PageCreator (referenced from: org.jetbrains.dokka.allModulesPage.MultimodulePageCreator)&#10;                                                                      Missing class org.jetbrains.dokka.transformers.pages.PageTransformer (referenced from: org.jetbrains.dokka.transformers.pages.PageTransformer org.jetbrains.dokka.base.DokkaBase$customResourceInstaller$2$1.invoke(org.jetbrains.dokka.plugability.DokkaContext) and 14 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.utilities.DokkaLogger (referenced from: org.jetbrains.dokka.utilities.DokkaLogger org.jetbrains.dokka.base.transformers.pages.merger.FallbackPageMergerStrategy.logger and 12 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.utilities.JsonKt (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext) and 3 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.utilities.TypeReference$Companion (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext))&#10;                                                                      Missing class org.jetbrains.dokka.utilities.TypeReference (referenced from: void org.jetbrains.dokka.base.renderers.html.CustomResourceInstaller.&lt;init&gt;(org.jetbrains.dokka.plugability.DokkaContext) and 3 other contexts)&#10;                                                                      Missing class org.jetbrains.dokka.validity.PreGenerationChecker (referenced from: org.jetbrains.dokka.base.generation.SourceSetIdUniquenessChecker)&#10;                                                                      Missing class org.python.core.Py (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))&#10;                                                                      Missing class org.python.core.PyDictionary (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))&#10;                                                                      Missing class org.python.core.PyFloat (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))&#10;                                                                      Missing class org.python.core.PyInteger (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))&#10;                                                                      Missing class org.python.core.PyLong (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))&#10;                                                                      Missing class org.python.core.PyNone (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))&#10;                                                                      Missing class org.python.core.PyObject (referenced from: org.python.core.PyObject freemarker.ext.jython.JythonModel.object and 10 other contexts)&#10;                                                                      Missing class org.python.core.PySequence (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))&#10;                                                                      Missing class org.python.core.PyStringMap (referenced from: freemarker.template.TemplateModel freemarker.ext.jython.JythonModelCache.create(java.lang.Object))&#10;                                                                      Missing class org.python.core.PySystemState (referenced from: void freemarker.ext.jython.JythonVersionAdapterHolder.&lt;clinit&gt;())&#10;                                                                      Missing class org.zeroturnaround.javarebel.ClassEventListener (referenced from: void freemarker.ext.beans.JRebelClassChangeNotifier.subscribe(freemarker.ext.beans.ClassIntrospector) and 1 other context)&#10;                                                                      Missing class org.zeroturnaround.javarebel.Reloader (referenced from: void freemarker.ext.beans.JRebelClassChangeNotifier.subscribe(freemarker.ext.beans.ClassIntrospector))&#10;                                                                      Missing class org.zeroturnaround.javarebel.ReloaderFactory (referenced from: void freemarker.ext.beans.JRebelClassChangeNotifier.subscribe(freemarker.ext.beans.ClassIntrospector))&#10;                                                                      Ask Gemini&#10;                                                                      &#10;                                                                      &#10;                                                                      &gt; Task :app:minifyReleaseWithR8 FAILED" />
+    <MESSAGE value="build: Refactor Gradle properties and update build configs&#10;&#10;- Reorganizes and alphabetizes properties in `gradle.properties` for better readability.&#10;- Excludes Dokka from the `:core-module` implementation dependency in the app module to resolve build conflicts.&#10;- Adds `-dontwarn` for `com.fasterxml.jackson.dataformat.xml.JacksonXmlModule` to suppress R8 warnings.&#10;- Moves the `benchmark` module's `defaultConfig` block and sets `compileSdk` to 36." />
+    <option name="LAST_COMMIT_MESSAGE" value="build: Refactor Gradle properties and update build configs&#10;&#10;- Reorganizes and alphabetizes properties in `gradle.properties` for better readability.&#10;- Excludes Dokka from the `:core-module` implementation dependency in the app module to resolve build conflicts.&#10;- Adds `-dontwarn` for `com.fasterxml.jackson.dataformat.xml.JacksonXmlModule` to suppress R8 warnings.&#10;- Moves the `benchmark` module's `defaultConfig` block and sets `compileSdk` to 36." />
   </component>
 </project>

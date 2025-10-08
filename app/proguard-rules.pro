@@ -7,6 +7,7 @@
 # class:
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 # Added to suppress R8 missing class warnings (from missing_rules.txt)
+-dontwarn com.fasterxml.jackson.dataformat.xml.JacksonXmlModule
 -dontwarn com.google.auto.service.AutoService
 -dontwarn com.google.auto.value.extension.memoized.Memoized
 -dontwarn com.google.common.collect.Streams

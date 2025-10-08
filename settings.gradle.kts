@@ -77,10 +77,7 @@ pluginManagement {
     }
 }
 
-// Auto-provision JDKs via Foojay resolver (works with Gradle toolchains)
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-}
+
 
 // Note: foojay-resolver-convention plugin complements org.gradle.java.installations.auto-download=true in gradle.properties
 
