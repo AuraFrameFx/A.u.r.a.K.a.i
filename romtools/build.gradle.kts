@@ -1,12 +1,12 @@
 plugins {
     id("genesis.android.library")
-    id("genesis.android.hilt")
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.romtools"
     compileSdk = 36
-
     defaultConfig {
         minSdk = 34
     }
@@ -19,14 +19,18 @@ android {
     }
 }
 
-    val romToolsOutputDirectory: DirectoryProperty =
+val romToolsOutputDirectory: DirectoryProperty =
     project.objects.directoryProperty().convention(layout.buildDirectory.dir("rom-tools"))
 
 dependencies {
-    // Core dependencies (Hilt, Compose BOM, etc. provided by convention plugins)
+    // Core dependencies (Compose BOM provided by convention plugin)
     api(project(":core-module"))
     implementation(project(":secure-comm"))
-    
+
+    // Hilt (manually added)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
     // Lifecycle
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
@@ -34,7 +38,6 @@ dependencies {
     // Compose & Navigation
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.hilt.navigation.compose)
     
     // Room
@@ -58,6 +61,7 @@ dependencies {
     androidTestImplementation(libs.mockk.android)
     testImplementation(libs.hilt.android.testing)
     androidTestImplementation(libs.hilt.android.testing)
+    kspAndroidTest(libs.hilt.compiler)
 }
 
 // Copy task
@@ -80,14 +84,3 @@ dependencies {
     tasks.register("romStatus") {
         group = "aegenesis"; doLast { println("🛠️ ROM TOOLS - Ready (Java 24)") }
     }
-
-tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
-        dokkaSourceSets {
-        named("main") {
-            sourceRoots.from(file("src/main/java"))
-            sourceRoots.from(file("src/main/kotlin"))
-            sourceRoots.from(file("src/main/res"))
-        }
-        }
-    }
-

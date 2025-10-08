@@ -47,8 +47,9 @@ import androidx.compose.ui.unit.sp
 import dev.aurakai.auraframefx.romtools.BackupInfo
 import dev.aurakai.auraframefx.romtools.FakeRomToolsManager
 import dev.aurakai.auraframefx.romtools.RomCapabilities
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.compose.foundation.lazy.items
 import dev.aurakai.auraframefx.romtools.RomToolsManager
 
 /**
@@ -167,7 +168,7 @@ private fun MainContent(
         }
 
                 // ROM Tools Action Cards
-                items(items = getRomToolsActions()) { action ->
+                items(getRomToolsActions()) { action ->
                     RomToolActionCard(
                         action = action,
                         isEnabled = action.isEnabled(romToolsState.capabilities),
@@ -214,7 +215,7 @@ private fun MainContent(
                         )
                     }
 
-                    items(items = romToolsState.availableRoms) { rom ->
+                    items(romToolsState.availableRoms) { rom ->
                         AvailableRomCard(rom = rom)
                     }
                 }
@@ -231,7 +232,7 @@ private fun MainContent(
                         )
                     }
 
-                    items(items = romToolsState.backups) { backup ->
+                    items(romToolsState.backups) { backup ->
                         BackupCard(backup = backup)
                     }
                 }
@@ -644,6 +645,23 @@ enum class RomActionType {
     UNLOCK_BOOTLOADER,
     INSTALL_RECOVERY,
     GENESIS_OPTIMIZATIONS
+}
+
+// Extension function for RomOperation to get display name
+fun dev.aurakai.auraframefx.romtools.RomOperation.getDisplayName(): String {
+    return when (this) {
+        dev.aurakai.auraframefx.romtools.RomOperation.VERIFYING_ROM -> "Verifying ROM"
+        dev.aurakai.auraframefx.romtools.RomOperation.CREATING_BACKUP -> "Creating Backup"
+        dev.aurakai.auraframefx.romtools.RomOperation.UNLOCKING_BOOTLOADER -> "Unlocking Bootloader"
+        dev.aurakai.auraframefx.romtools.RomOperation.INSTALLING_RECOVERY -> "Installing Recovery"
+        dev.aurakai.auraframefx.romtools.RomOperation.FLASHING_ROM -> "Flashing ROM"
+        dev.aurakai.auraframefx.romtools.RomOperation.VERIFYING_INSTALLATION -> "Verifying Installation"
+        dev.aurakai.auraframefx.romtools.RomOperation.RESTORING_BACKUP -> "Restoring Backup"
+        dev.aurakai.auraframefx.romtools.RomOperation.APPLYING_OPTIMIZATIONS -> "Applying Optimizations"
+        dev.aurakai.auraframefx.romtools.RomOperation.DOWNLOADING_ROM -> "Downloading ROM"
+        dev.aurakai.auraframefx.romtools.RomOperation.COMPLETED -> "Completed"
+        dev.aurakai.auraframefx.romtools.RomOperation.FAILED -> "Failed"
+    }
 }
 
 @Composable
