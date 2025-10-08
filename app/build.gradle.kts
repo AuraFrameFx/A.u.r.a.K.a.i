@@ -14,7 +14,7 @@ android {
     compileSdk = 36
     defaultConfig {
         applicationId = "dev.aurakai.auraframefx"
-        minSdk = 33
+        minSdk = 34
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -151,6 +151,10 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose.ui)
     implementation(libs.androidx.core.ktx)
+    // Added Material 3 dependencies from original request
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation("androidx.compose.material3:material3-window-size-class:1.3.0") // Using explicit version
     debugImplementation(libs.bundles.compose.debug)
 
     // ===== LIFECYCLE =====
@@ -186,9 +190,9 @@ dependencies {
     implementation(libs.bundles.firebase)
 
     // ===== HILT DEPENDENCY INJECTION =====
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler) // Use KSP for Hilt annotation processor
-    implementation(libs.hilt.navigation.compose)
+    // Auto-added by genesis.android.application convention plugin
+
+    // ===== WORKMANAGER =====
     implementation("androidx.work:work-runtime-ktx:2.9.0")
     implementation("androidx.hilt:hilt-work:1.2.0")
     ksp(libs.hilt.work)  // Annotation processor for Hilt WorkManager integration
