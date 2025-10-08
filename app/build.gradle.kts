@@ -5,11 +5,11 @@ plugins {
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 android {
-    namespace = "dev.aurakai"
+    namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "dev.aurakai"
+        applicationId = "dev.aurakai.auraframefx"
         minSdk = 34
         targetSdk = 36
         versionCode = 1
@@ -26,6 +26,14 @@ android {
             isDebuggable = true
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-DEBUG"
+        }
+        release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
