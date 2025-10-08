@@ -39,6 +39,9 @@ dependencies {
     api(project(":core-module"))
     implementation(project(":secure-comm"))
 
+    // Hilt (manually added)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
     // Lifecycle
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
