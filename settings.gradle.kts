@@ -9,6 +9,10 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
+}
+
 pluginManagement {
     // Include build-logic for convention plugins
     includeBuild("build-logic")
@@ -76,7 +80,9 @@ pluginManagement {
         }
     }
 }
-
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
+}
 
 
 // Note: foojay-resolver-convention plugin complements org.gradle.java.installations.auto-download=true in gradle.properties

@@ -3,13 +3,11 @@ plugins {
     id("java-library")
 
     // Additional tooling
-    alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
 }
 
 group = "dev.aurakai.auraframefx.utilities"
 version = "1.0.0"
-
 // Centralized toolchain version
 val jdkVersion = 24
 
