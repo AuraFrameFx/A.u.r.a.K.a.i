@@ -1,10 +1,9 @@
 // ==== GENESIS PROTOCOL - SANDBOX UI ====
 plugins {
-    id("com.android.library")
-    id("dev.aurakai.aurakai-android-convention")
+    id("genesis.android.compose")
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
-    // Note: Compose Compiler plugin not needed with AGP 9.0+ built-in Kotlin support
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 
@@ -12,12 +11,12 @@ android {
     namespace = "dev.aurakai.auraframefx.sandboxui"
     compileSdk = 36
     defaultConfig { minSdk = 34 }
-    buildFeatures { compose = true }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
     }
 }
+
 
 dependencies {
     api(project(":core-module"))
@@ -42,7 +41,6 @@ dependencies {
     androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
-    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.register("sandboxStatus") {

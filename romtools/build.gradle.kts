@@ -1,8 +1,8 @@
 plugins {
-    id("com.android.library")
+    id("genesis.android.compose")
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
-    // Note: Compose Compiler plugin not needed with AGP 9.0+ built-in Kotlin support
 }
 
 android {
@@ -15,9 +15,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
-    }
-    buildFeatures {
-        compose = true
     }
 }
 
@@ -52,10 +49,8 @@ android {
         testImplementation(libs.hilt.android.testing)
         androidTestImplementation(libs.hilt.android.testing)
         androidTestImplementation(platform(libs.androidx.compose.bom))
-        // androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
-        implementation(kotlin("stdlib-jdk8"))
-        implementation("androidx.compose.material:material-icons-extended")
-        implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+        implementation(libs.androidx.compose.material.icons.extended)
+        implementation(libs.hilt.navigation.compose)
     }
 
 // Copy task

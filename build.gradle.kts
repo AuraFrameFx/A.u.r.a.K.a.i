@@ -3,7 +3,6 @@ apply(from = "scripts/apply-yukihook-conventions.gradle.kts")
 // Apply plugins to the root project to avoid multiple loading warnings
 plugins {
     alias(libs.plugins.kotlin.serialization) apply false
-    // Note: Compose Compiler plugin not needed with AGP 9.0+ built-in Kotlin support
     id("com.google.dagger.hilt.android") version "2.57.2" apply false
     id("com.android.application") version "9.0.0-alpha09" apply false
     id("com.android.library") version "9.0.0-alpha09" apply false
@@ -12,6 +11,8 @@ plugins {
     id("genesis.android.library") apply false
     id("genesis.android.native") apply false
     kotlin("jvm") version "2.2.20"
+    alias(libs.plugins.compose.compiler) apply false
+
 }
 
 // Find version catalog

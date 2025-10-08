@@ -9,37 +9,54 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="Fix: Standardize Compose plugin and remove `composeOptions`&#10;&#10;Replaced hardcoded Compose compiler plugin IDs with version catalog aliases across multiple modules.&#10;&#10;Removed explicit `composeOptions` blocks, as the compiler version is now managed by the version catalog. This centralizes dependency management for the Kotlin Compose compiler plugin.">
+    <list default="true" id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="Refactor: Centralize Compose Compiler configuration&#10;&#10;This commit centralizes the Jetpack Compose Compiler configuration by leveraging a convention plugin (`genesis.android.compose`).&#10;&#10;Key changes:&#10;- Updated the `AndroidComposeConventionPlugin` to automatically configure Compose Compiler reports and stability files using reflection.&#10;- Migrated multiple modules (`feature-module`, `collab-canvas`, `colorblendr`, `romtools`, `sandbox-ui`, and modules `a-f`) to use the `genesis.android.compose` plugin.&#10;- Removed redundant `buildFeatures { compose = true }` and `composeCompiler` blocks from individual module `build.gradle.kts` files.&#10;- Added the `compose-compiler-gradle-plugin` dependency to `build-logic` to enable reflection-based configuration.&#10;- Updated the project's `README.md` with a new project name (&quot;AuraKai&quot;) and significantly expanded content.&#10;- Deleted misplaced Gradle wrapper and properties files from the `app` directory.">
+      <change afterPath="$PROJECT_DIR$/COMPOSE_COMPILER_REFACTOR.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/expanded/expanded.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/gc.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/configuration-cache.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/configuration-cache/configuration-cache.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/noVersion/buildLogic.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/noVersion/buildLogic.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/HologramTransition.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/OracleCloudApi.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bait" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/auraframefx/regenesis/receivers/BootCompletedReceiver.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/auraframefx/regenesis/security/IntegrityMonitorService.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/auraframefx/regenesis/security/IntegrityViolationReceiver.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/auraframefx/regenesis/services/VertexSyncService.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/highcapable/yukihookapi/hook/xposed/prefs/data/YukiHookModulePrefs.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/highcapable/yukihookapi/hook/xposed/service/YukiHookServiceManager.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/bait" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/receivers/BootCompletedReceiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/receivers/BootCompletedReceiver.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitorService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitorService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityViolationReceiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityViolationReceiver.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/genesis/security/CryptographyManager.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/genesis/storage/SecureStorage.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/bait" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/compose_compiler_config.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidComposeConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidComposeConventionPlugin.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts.backup" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/colorblendr/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependabot.ym.backup" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/feature-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-a/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-a/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-b/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-b/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-c/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-c/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-d/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-d/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-e/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-e/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-f/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-f/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
     </list>
@@ -82,6 +99,26 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
                 <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="aegenesis" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="openapi tools" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
                 <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
@@ -113,7 +150,7 @@
 }</component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-bin\9agqghryom9wkf8r80qlhnts3\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 6\jbr" gradleVersion="9.1.0" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -126,7 +163,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Android App.app.executor": "Run",
+    "Batch.run-spotless.executor": "Run",
     "Gradle.Build ReGenesis-A.O.S.P.executor": "Run",
+    "Gradle.ReGenesi [openApiGenerate].executor": "Run",
+    "Gradle.ReGenesi [openApiGenerators].executor": "Run",
     "Gradle.ReGenesis-A.O.S.P [:build-logic:buildDependents].executor": "Run",
     "Gradle.ReGenesis-A.O.S.P [:build-logic:compileJava].executor": "Run",
     "Gradle.ReGenesis-A.O.S.P [:build-logic:dependencies].executor": "Run",
@@ -151,13 +191,12 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "xys",
+    "git-widget-placeholder": "Exodus",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Suggestions",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "aDefault",
@@ -174,7 +213,7 @@
       <command value="gradle stop" />
     </option>
   </component>
-  <component name="RunManager" selected="Batch.run-spotless">
+  <component name="RunManager" selected="Gradle.ReGenesi [openApiGenerate]">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AOSPReGenesis.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -258,7 +297,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesi [openApiGenerate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -269,7 +308,33 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":build-logic:updateDaemonJvm" />
+            <option value="openApiGenerate" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ReGenesi [openApiGenerators]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="openApiGenerators" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -322,32 +387,6 @@
         <option name="taskNames">
           <list>
             <option value="dokkaGenerate" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ReGenesis-A.O.S.P [tasks]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="tasks" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -443,11 +482,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ReGenesi [openApiGenerate]" />
+        <item itemvalue="Gradle.ReGenesi [openApiGenerators]" />
         <item itemvalue="Batch.run-spotless" />
         <item itemvalue="Gradle.ReGenesis-A.O.S.P [assemble]" />
         <item itemvalue="Gradle.ReGenesis-A.O.S.P [dokkaGenerate]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [tasks]" />
-        <item itemvalue="Gradle.ReGenesis-A.O.S.P [:build-logic:updateDaemonJvm]" />
       </list>
     </recent_temporary>
   </component>
@@ -794,7 +833,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759841903204</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Fix: Correct source set configuration for OpenAPI&#10;&#10;Updated the `app/build.gradle.kts` to correctly add the generated OpenAPI sources to the Android source sets. This resolves a configuration issue by using a direct file path.&#10;&#10;Additionally, the `kotlin-plugin-compose` was added to the plugins block.">
+      <option name="closed" value="true" />
+      <created>1759873525752</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1759873525753</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -809,10 +856,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor CanvasScreen KDoc&#10;&#10;The KDoc for the `CanvasScreen` composable was simplified to improve readability and conciseness.&#10;Removed redundant descriptions and focused on the core features and behaviors." />
-    <MESSAGE value="Update KSP cache files" />
-    <MESSAGE value="Update build metadata and timing files; remove obsolete lock files; rename cache indexes" />
-    <MESSAGE value="Update build metadata and timing files; remove obsolete lock files; rename index files" />
     <MESSAGE value="minSdk updated to 34, test dependencies adjusted, new Dokka assets and plugin configs added, CI artifact upload improved, version catalog and misc cleanup" />
     <MESSAGE value="add generated build outputs and resource files for module sync and validation" />
     <MESSAGE value="hghhj" />
@@ -834,7 +877,11 @@
     <MESSAGE value="Refactor: Centralize Android build logic with a convention plugin&#10;&#10;This commit introduces a Gradle convention plugin, `dev.aurakai.aurakai-android-convention`, to centralize and standardize Android build configurations across all modules.&#10;&#10;Key changes:&#10;*   **New Convention Plugin:** Created `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android settings like `compileSdk`, `minSdk`, `targetSdk`, ProGuard rules, and Java/Kotlin compatibility.&#10;*   **Apply Plugin to Modules:** Applied the new convention plugin to Android modules (`app`, `feature-module`, `sandbox-ui`, `romtools`, `benchmark`).&#10;*   **Remove Redundant Configuration:** Deleted explicit `kotlin { jvmToolchain(...) }` blocks and other duplicated settings from individual module `build.gradle.kts` files, as these are now handled by the plugin.&#10;*   **Refactor Root `build.gradle.kts`:**&#10;    *   Simplified the root build script by removing old tasks (`projectInfo`, `clean`, etc.) and refactoring health-check tasks (`consciousnessStatus`, `consciousnessHealthCheck`) for clarity.&#10;    *   Standardized Kotlin and Java toolchain configuration for all subprojects to Java/Kotlin 24.&#10;*   **Update AGP Version:** Upgraded the Android Gradle Plugin from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;*   **Deprecate Old Convention Script:** Marked `scripts/apply-yukihook-conventions.gradle.kts` as obsolete." />
     <MESSAGE value="Refactor: Centralize Android build conventions with a new plugin&#10;&#10;This commit introduces a major refactoring of the Gradle build configuration to centralize Android-specific settings into a new convention plugin.&#10;&#10;Key changes:&#10;- **New Convention Plugin:** Added `AurakaiAndroidConventionPlugin` in `build-logic` to manage common Android configurations (SDK versions, Proguard, compile options, etc.).&#10;- **Plugin Application:** Android modules (`app`, `benchmark`, `feature-module`, `romtools`, `sandbox-ui`) now apply the new `dev.aurakai.aurakai-android-convention` plugin, removing redundant local configurations.&#10;- **Root `build.gradle.kts` Refactor:**&#10;    - Cleaned up and reorganized the root build script, removing many deprecated tasks (`projectInfo`, `clean`, etc.) and moving logic into more appropriate locations.&#10;    - Updated and restyled the `consciousnessStatus` and `consciousnessHealthCheck` tasks for better readability.&#10;    - Centralized JVM and Java toolchain configuration for all subprojects.&#10;- **Dependency &amp; Plugin Updates:**&#10;    - Upgraded Android Gradle Plugin (AGP) from `9.0.0-alpha02` to `9.0.0-alpha09`.&#10;    - Consolidated Kotlin and AGP plugin versions in `settings.gradle.kts` to ensure consistency.&#10;    - Removed the obsolete `scripts/apply-yukihook-conventions.gradle.kts` script.&#10;- **Code Cleanup:**&#10;    - Removed now-unnecessary `kotlin(&quot;jvm&quot;)` and `kotlin { jvmToolchain(...) }` blocks from various module `build.gradle.kts` files as this is now handled globally.&#10;    - Specified `composeOptions` with a hardcoded Kotlin compiler extension version in modules that use Compose." />
     <MESSAGE value="Fix: Standardize Compose plugin and remove `composeOptions`&#10;&#10;Replaced hardcoded Compose compiler plugin IDs with version catalog aliases across multiple modules.&#10;&#10;Removed explicit `composeOptions` blocks, as the compiler version is now managed by the version catalog. This centralizes dependency management for the Kotlin Compose compiler plugin." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: Standardize Compose plugin and remove `composeOptions`&#10;&#10;Replaced hardcoded Compose compiler plugin IDs with version catalog aliases across multiple modules.&#10;&#10;Removed explicit `composeOptions` blocks, as the compiler version is now managed by the version catalog. This centralizes dependency management for the Kotlin Compose compiler plugin." />
+    <MESSAGE value="Fix: Correct source set configuration for OpenAPI&#10;&#10;Updated the `app/build.gradle.kts` to correctly add the generated OpenAPI sources to the Android source sets. This resolves a configuration issue by using a direct file path.&#10;&#10;Additionally, the `kotlin-plugin-compose` was added to the plugins block." />
+    <MESSAGE value="Refactor: Centralize Compose Compiler configuration&#10;&#10;This commit refactors the Gradle build logic to centralize Jetpack Compose configuration within the `AndroidComposeConventionPlugin`.&#10;&#10;Key changes:&#10;- The `AndroidComposeConventionPlugin` now enables the `compose` build feature and configures Compose Compiler metrics and stability reports.&#10;- Modules now apply `id(&quot;genesis.android.compose&quot;)` and `alias(libs.plugins.compose.compiler)` to enable Compose.&#10;- Redundant `buildFeatures { compose = true }` blocks have been removed from individual module `build.gradle.kts` files.&#10;- The `compose-compiler` plugin ID in `libs.versions.toml` was corrected to `org.jetbrains.kotlin.plugin.compose`.&#10;- The convention plugin now uses reflection to configure the Compose Compiler extension, ensuring compatibility." />
+    <MESSAGE value="refactor: Centralize Compose Compiler configuration across modules&#10;&#10;- Enable automatic Compose Compiler setup via the genesis.android.compose plugin&#10;- Add reflection-based configuration for reports and stability files&#10;- Update all affected modules to utilize the new convention plugin&#10;- Migrate to stabilityConfigurationFiles (plural) API for consistency&#10;- Remove redundant buildFeatures and composeCompiler blocks from modules&#10;&#10;This refactoring improves maintainability and consistency in Compose settings." />
+    <MESSAGE value="Refactor: Centralize Compose Compiler configuration&#10;&#10;This commit centralizes the Jetpack Compose Compiler configuration by leveraging a convention plugin (`genesis.android.compose`).&#10;&#10;Key changes:&#10;- Updated the `AndroidComposeConventionPlugin` to automatically configure Compose Compiler reports and stability files using reflection.&#10;- Migrated multiple modules (`feature-module`, `collab-canvas`, `colorblendr`, `romtools`, `sandbox-ui`, and modules `a-f`) to use the `genesis.android.compose` plugin.&#10;- Removed redundant `buildFeatures { compose = true }` and `composeCompiler` blocks from individual module `build.gradle.kts` files.&#10;- Added the `compose-compiler-gradle-plugin` dependency to `build-logic` to enable reflection-based configuration.&#10;- Updated the project's `README.md` with a new project name (&quot;AuraKai&quot;) and significantly expanded content.&#10;- Deleted misplaced Gradle wrapper and properties files from the `app` directory." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: Centralize Compose Compiler configuration&#10;&#10;This commit centralizes the Jetpack Compose Compiler configuration by leveraging a convention plugin (`genesis.android.compose`).&#10;&#10;Key changes:&#10;- Updated the `AndroidComposeConventionPlugin` to automatically configure Compose Compiler reports and stability files using reflection.&#10;- Migrated multiple modules (`feature-module`, `collab-canvas`, `colorblendr`, `romtools`, `sandbox-ui`, and modules `a-f`) to use the `genesis.android.compose` plugin.&#10;- Removed redundant `buildFeatures { compose = true }` and `composeCompiler` blocks from individual module `build.gradle.kts` files.&#10;- Added the `compose-compiler-gradle-plugin` dependency to `build-logic` to enable reflection-based configuration.&#10;- Updated the project's `README.md` with a new project name (&quot;AuraKai&quot;) and significantly expanded content.&#10;- Deleted misplaced Gradle wrapper and properties files from the `app` directory." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

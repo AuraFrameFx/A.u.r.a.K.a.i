@@ -2,9 +2,9 @@
 // Color utility and theming module
 
 plugins {
-    id("genesis.android.library")
+    id("genesis.android.compose")
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
-    // Note: Compose Compiler plugin not needed with AGP 9.0+ built-in Kotlin support
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 
@@ -17,10 +17,8 @@ android {
     
     buildFeatures {
         buildConfig = true
-        compose = true
     }
 }
-
 dependencies {
     // Core
     implementation(project(":core-module"))
@@ -46,5 +44,4 @@ dependencies {
     testImplementation(libs.junit4)
     testImplementation(libs.mockk)
     androidTestImplementation(libs.bundles.testing.android)
-    implementation(kotlin("stdlib-jdk8"))
 }

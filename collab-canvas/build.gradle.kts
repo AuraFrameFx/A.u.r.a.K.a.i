@@ -1,22 +1,20 @@
 // Apply plugins (versions via version catalog)
 plugins {
-    id("genesis.android.library")
+    id("genesis.android.compose")
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
-    // Note: Compose Compiler plugin not needed with AGP 9.0+ built-in Kotlin support
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
-
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.collabcanvas"
-    
+
     defaultConfig {
         minSdk = 34
     }
-    
+
     buildFeatures {
         buildConfig = true
-        compose = true
     }
 }
 
@@ -79,7 +77,7 @@ dependencies {
     // YukiHook API (temporarily disabled due to configuration issues)
     // implementation(libs.yukihook.api)
     // ksp(libs.yukihook.ksp)
-    
+
     // Xposed API (using the correct path)
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))

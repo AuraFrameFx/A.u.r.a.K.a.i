@@ -9,6 +9,7 @@ group = "dev.aurakai.auraframefx.buildlogic"
 dependencies {
     compileOnly("com.android.tools.build:gradle:9.0.0-alpha09")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20")
+    implementation("org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.2.20")
     implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
 
     // Test dependencies

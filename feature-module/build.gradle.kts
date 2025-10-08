@@ -2,11 +2,10 @@
 // Primary feature module using convention plugins
 
 plugins {
-    id("com.android.library")
-    id("dev.aurakai.aurakai-android-convention")
+    id("genesis.android.compose")
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.dokka)
     alias(libs.plugins.ksp)
-    // Note: Compose Compiler plugin not needed with AGP 9.0+ built-in Kotlin support
 }
 
 
@@ -22,11 +21,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
     }
-
-    buildFeatures {
-        compose = true
-    }
-}  
+}
 
 dependencies {
     api(project(":core-module"))
@@ -60,7 +55,6 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.androidx.compose.ui.tooling)
-    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.register("featureStatus") {

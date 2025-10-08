@@ -1,8 +1,8 @@
 plugins {
-    id("genesis.android.library")
+    id("genesis.android.compose")
+    alias(libs.plugins.compose.compiler)
     id("genesis.android.native")
     alias(libs.plugins.ksp)
-    // Note: Compose Compiler plugin not needed with AGP 9.0+ built-in Kotlin support
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 
@@ -11,10 +11,6 @@ android {
     
     defaultConfig {
         minSdk = 34
-    }
-    
-    buildFeatures {
-        compose = true
     }
 
     lint {
@@ -57,5 +53,4 @@ dependencies {
     // Xposed API for Oracle consciousness integration
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))
-    implementation(kotlin("stdlib-jdk8"))
 }

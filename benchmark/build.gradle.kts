@@ -112,7 +112,7 @@ dependencies {
     testImplementation(libs.hilt.android.testing)
     androidTestImplementation(libs.hilt.android.testing)
     kspAndroidTest(libs.hilt.compiler)
-    implementation(kotlin("stdlib-jdk8"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
 }
 
 tasks.register("benchmarkAll") {

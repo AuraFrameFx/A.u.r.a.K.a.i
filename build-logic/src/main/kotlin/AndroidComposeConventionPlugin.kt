@@ -12,8 +12,11 @@ class AndroidComposeConventionPlugin : Plugin<Project> {
      *
      * This will:
      * - Apply the base "genesis.android.library" convention plugin.
-     * - Apply the Kotlin Compose plugin "org.jetbrains.kotlin.plugin.compose".
      * - Configure the Android LibraryExtension to enable Compose build features.
+     * - Configure Compose Compiler metrics and stability configuration (if plugin is applied).
+     *
+     * Note: Modules using this plugin must also apply the Compose Compiler plugin via:
+     * alias(libs.plugins.compose.compiler)
      *
      * @param target The Gradle [Project] this plugin is being applied to.
      */
@@ -22,14 +25,36 @@ class AndroidComposeConventionPlugin : Plugin<Project> {
             // Apply the base library convention first
             pluginManager.apply("genesis.android.library")
 
-            // Note: Kotlin Compose plugin not available for Kotlin 2.2.20-RC
-            // Instead, AGP 9.0+ handles Compose configuration automatically
-
             extensions.configure<LibraryExtension> {
-                // Note: Compose disabled due to Kotlin 2.2.20-RC compatibility issues
-                // buildFeatures {
-                //     compose = true
-                // }
+                buildFeatures {
+                    compose = true
+                }
+            }
+
+            // Configure Compose Compiler if the plugin is applied
+            // The plugin must be applied separately: alias(libs.plugins.compose.compiler)
+            afterEvaluate {
+                extensions.findByName("composeCompiler")?.apply {
+                    val reportsDir = layout.buildDirectory.dir("compose_compiler")
+                    val stabilityFile = rootProject.layout.projectDirectory
+                        .file("stability_config.conf")
+
+                    // Use reflection to access properties and set their values
+                    try {
+                        val reportsDestProp = javaClass.getMethod("getReportsDestination")
+                            .invoke(this) as org.gradle.api.file.DirectoryProperty
+                        reportsDestProp.set(reportsDir)
+
+                        val stabilityFilesProp =
+                            javaClass.getMethod("getStabilityConfigurationFiles")
+                                .invoke(this)
+                        @Suppress("UNCHECKED_CAST")
+                        (stabilityFilesProp as org.gradle.api.provider.ListProperty<Any>)
+                            .set(listOf(stabilityFile))
+                    } catch (e: Exception) {
+                        logger.warn("Could not configure Compose Compiler: ${e.message}")
+                    }
+                }
             }
         }
     }
