@@ -263,7 +263,7 @@ private fun MainContentPreview() {
         backups = listOf(
             BackupInfo(
                 name = "MyBackup",
-                path = $$"/sdcard/backups",
+                path = "/sdcard/backups",
                 size = 1073741824L,
                 createdAt = System.currentTimeMillis(),
                 deviceModel = "Pixel 8 Pro",
