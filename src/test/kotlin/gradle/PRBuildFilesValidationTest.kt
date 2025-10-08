@@ -13,7 +13,6 @@ import kotlin.io.path.createTempDirectory
 class PRBuildFilesValidationExtendedTest {
 
     private fun tempDir(): Path = createTempDirectory("pr-build-validate-")
-    private fun tempDir(): Path = createTempDirectory("pr-build-validate-")
 
     // Helper to robustly locate and invoke gradle.PRBuildFilesValidation.validate(dir)
     private fun invokeValidate(dir: Path): Any? {
