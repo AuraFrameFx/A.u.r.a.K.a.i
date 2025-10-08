@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="feat: Centralize Foojay and remove Dokka plugin&#10;&#10;Moves the `foojay-resolver-convention` plugin to the root `settings.gradle.kts` to centralize JDK version management across all subprojects.&#10;&#10;Removes the Dokka plugin from the `list` and `utilities` modules as it is now managed centrally.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -497,13 +499,13 @@
       <option name="project" value="LOCAL" />
       <updated>1759907932869</updated>
     </task>
-    <task id="LOCAL-00015" summary="refactor: Modernize code and clean up tests&#10;&#10;This commit introduces two key changes: modernizing a deprecated path retrieval method in `RomToolsManager` and removing commented-out code from `MarkdownFileValidationTest`.&#10;&#10;In `RomToolsManager.kt`, the deprecated `getPath()` method call on `Environment.getExternalStorageDirectory()` has been replaced with the modern `path` property accessor.&#10;&#10;In `MarkdownFileValidationTest.kt`, several lines of commented-out code related to checking for Docker mentions have been removed to improve test clarity and maintainability.">
+    <task id="LOCAL-00015" summary="feat: Centralize Foojay and remove Dokka plugin&#10;&#10;Moves the `foojay-resolver-convention` plugin to the root `settings.gradle.kts` to centralize JDK version management across all subprojects.&#10;&#10;Removes the Dokka plugin from the `list` and `utilities` modules as it is now managed centrally.">
       <option name="closed" value="true" />
-      <created>1759705949267</created>
+      <created>1759927493561</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1759705949267</updated>
+      <updated>1759927493561</updated>
     </task>
     <task id="LOCAL-00016" summary="refactor: Simplify regex patterns and remove unused tests in MarkdownFileValidationTest">
       <option name="closed" value="true" />
@@ -833,7 +835,7 @@
       <option name="project" value="LOCAL" />
       <updated>1759906587424</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
