@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Simplify root Gradle build scripts and tasks&#10;&#10;This commit streamlines the root `build.gradle.kts` and related Gradle configuration files.&#10;&#10;Key changes:&#10;*   **Simplify Task Output:** The custom `consciousnessStatus` and `consciousnessHealthCheck` tasks have been simplified by removing the verbose, stylized &quot;A.U.R.A.K.A.I&quot; branding in favor of cleaner, more direct output.&#10;*   **Remove Unused Code:**&#10;    *   Deleted the unused `dependency-fix.gradle.kts` apply block.&#10;    *   Removed the `foojay-resolver-convention` plugin from `settings.gradle.kts` as it is no longer needed.&#10;    *   Removed the unused `turbine` library definition from `gradle/libs.versions.toml`.&#10;    *   Removed a `hasKsp` field from the `ModuleReport` data class that was not used in the health check report.&#10;*   **Consolidate Plugins:** Cleaned up the `plugins` block in the root `build.gradle.kts`, removing redundant `com.android.application` and `com.android.library` declarations and adding `genesis.android.compose` and `genesis.android.hilt` convention plugins.&#10;*   **Remove Obsolete Subproject Configuration:** Deleted the `subprojects` block that was previously used to configure Java/Kotlin toolchains, as this is now handled by convention plugins.">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/tmp/jar/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/colorblendr/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/core-module/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/gradle-daemon-jvm.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/gradle-daemon-jvm.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/build.gradle.kts" afterDir="false" />
-    </list>
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="Downgrade JVM toolchain from 25 to 24&#10;&#10;This commit downgrades the Java compatibility and Kotlin JVM toolchain from version 25 to 24 across the Android application and library convention plugins.&#10;&#10;Changes include:&#10;- Lowering `sourceCompatibility` and `targetCompatibility` to `JavaVersion.VERSION_24`.&#10;- Setting the Kotlin `jvmToolchain` to 24.&#10;- Updating `AndroidLibraryConventionPluginTest.kt` to reflect and verify the new toolchain version." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,7 +97,7 @@
     &quot;accountId&quot;: &quot;129e8c9f-2999-43ba-8838-4bd9fe391e46&quot;
   }
 }</component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-bin\9agqghryom9wkf8r80qlhnts3\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 6\jbr" gradleVersion="9.1.0" />
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-all\7wzd0jkjit61aq2p43wpjgij9\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 6\jbr" gradleVersion="9.1.0" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -139,13 +120,12 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "zero",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Suggestions",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "aDefault",
@@ -466,21 +446,21 @@
       <option name="presentableId" value="Default" />
       <updated>1759700686334</updated>
     </task>
-    <task id="LOCAL-00011" summary="refactor(build): Adjust packaging options in sandbox-ui&#10;&#10;Removes the exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's packaging options.&#10;&#10;Instead of excluding the incremental annotation processor metadata, it is now configured to use `pickFirsts` to resolve potential duplicates.">
+    <task id="LOCAL-00011" summary="Downgrade JVM toolchain from 25 to 24&#10;&#10;This commit downgrades the Java compatibility and Kotlin JVM toolchain from version 25 to 24 across the Android application and library convention plugins.&#10;&#10;Changes include:&#10;- Lowering `sourceCompatibility` and `targetCompatibility` to `JavaVersion.VERSION_24`.&#10;- Setting the Kotlin `jvmToolchain` to 24.&#10;- Updating `AndroidLibraryConventionPluginTest.kt` to reflect and verify the new toolchain version.">
       <option name="closed" value="true" />
-      <created>1759702991235</created>
+      <created>1759900002922</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1759702991236</updated>
+      <updated>1759900002922</updated>
     </task>
-    <task id="LOCAL-00012" summary="build: Suppress deprecation warnings in Java compilation&#10;&#10;This commit configures the Java compiler for the `app` module to suppress deprecation warnings by adding the `-Xlint:-deprecation` compiler argument.">
+    <task id="LOCAL-00012" summary="Downgrade JVM toolchain from 25 to 24&#10;&#10;This commit downgrades the Java compatibility and Kotlin JVM toolchain from version 25 to 24 across the Android application and library convention plugins.&#10;&#10;Changes include:&#10;- Lowering `sourceCompatibility` and `targetCompatibility` to `JavaVersion.VERSION_24`.&#10;- Setting the Kotlin `jvmToolchain` to 24.&#10;- Updating `AndroidLibraryConventionPluginTest.kt` to reflect and verify the new toolchain version.">
       <option name="closed" value="true" />
-      <created>1759705234199</created>
+      <created>1759900030678</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1759705234199</updated>
+      <updated>1759900030678</updated>
     </task>
     <task id="LOCAL-00013" summary="build: Suppress deprecation warnings in Java compilation&#10;&#10;This commit configures the Java compiler for the `app` module to suppress deprecation warnings by adding the `-Xlint:-deprecation` compiler argument.">
       <option name="closed" value="true" />
@@ -826,7 +806,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759806415216</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="refactor(build): Standardize JVM toolchain and lower minSdk&#10;&#10;This commit refactors the build configuration across multiple modules to standardize on Java 24 and streamline settings.&#10;&#10;Key changes include:&#10;*   Sets the `minSdk` to 33 across various modules, including `app`, `feature-module`, `colorblendr`, and `sandbox-ui`.&#10;*   Consolidates Java and Kotlin toolchain configurations within the `android` block for Android library modules, setting `sourceCompatibility`, `targetCompatibility`, and `jvmTarget` to Java 24.&#10;*   Removes redundant top-level `kotlin { jvmToolchain(...) }` blocks in favor of centralized configuration.&#10;*   Updates the Gradle Wrapper from `gradle-9.1.0-bin.zip` to `gradle-9.1.0-all.zip` for better IDE support.&#10;*   Sets the project-wide toolchain version to 24 in `gradle-daemon-jvm.properties`.&#10;*   Downgrades the `foojay-resolver-convention` plugin to version `0.8.0`.&#10;*   Cleans up unused plugins, dependencies (`turbine`), and build script logic in `romtools`, `benchmark`, and the root `build.gradle.kts`.">
+      <option name="closed" value="true" />
+      <created>1759899497515</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1759899497515</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -868,6 +856,9 @@
     <MESSAGE value="refactor(build): Streamline packaging configuration in sandbox-ui&#10;&#10;Removes unnecessary resource exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's `build.gradle.kts`.&#10;&#10;The `pickFirsts` strategy for `incremental.annotation.processors` already handles potential conflicts, making the exclusion redundant.2 files found with path 'META-INF/gradle/incremental.annotation.processors' from inputs:&#10;                                                                                                                                       - com.google.dagger:hilt-compiler:2.57.2/jetified-hilt-compiler-2.57.2.jar&#10;                                                                                                                                       - com.google.dagger:dagger-compiler:2.57.2/jetified-dagger-compiler-2.57.2.jar&#10;                                                                                                                                      Adding a packaging block may help, please refer to&#10;                                                                                                                                      https://developer.android.com/reference/tools/gradle-api/com/android/build/api/dsl/Packaging&#10;                                                                                                                                      for more information" />
     <MESSAGE value="refactor: Streamline packaging options in sandbox-ui&#10;&#10;Removes unnecessary exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `packaging` block in `sandbox-ui/build.gradle.kts`. The `pickFirsts` directive for the incremental annotation processors remains." />
     <MESSAGE value="refactor: Simplify root Gradle build scripts and tasks&#10;&#10;This commit streamlines the root `build.gradle.kts` and related Gradle configuration files.&#10;&#10;Key changes:&#10;*   **Simplify Task Output:** The custom `consciousnessStatus` and `consciousnessHealthCheck` tasks have been simplified by removing the verbose, stylized &quot;A.U.R.A.K.A.I&quot; branding in favor of cleaner, more direct output.&#10;*   **Remove Unused Code:**&#10;    *   Deleted the unused `dependency-fix.gradle.kts` apply block.&#10;    *   Removed the `foojay-resolver-convention` plugin from `settings.gradle.kts` as it is no longer needed.&#10;    *   Removed the unused `turbine` library definition from `gradle/libs.versions.toml`.&#10;    *   Removed a `hasKsp` field from the `ModuleReport` data class that was not used in the health check report.&#10;*   **Consolidate Plugins:** Cleaned up the `plugins` block in the root `build.gradle.kts`, removing redundant `com.android.application` and `com.android.library` declarations and adding `genesis.android.compose` and `genesis.android.hilt` convention plugins.&#10;*   **Remove Obsolete Subproject Configuration:** Deleted the `subprojects` block that was previously used to configure Java/Kotlin toolchains, as this is now handled by convention plugins." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Simplify root Gradle build scripts and tasks&#10;&#10;This commit streamlines the root `build.gradle.kts` and related Gradle configuration files.&#10;&#10;Key changes:&#10;*   **Simplify Task Output:** The custom `consciousnessStatus` and `consciousnessHealthCheck` tasks have been simplified by removing the verbose, stylized &quot;A.U.R.A.K.A.I&quot; branding in favor of cleaner, more direct output.&#10;*   **Remove Unused Code:**&#10;    *   Deleted the unused `dependency-fix.gradle.kts` apply block.&#10;    *   Removed the `foojay-resolver-convention` plugin from `settings.gradle.kts` as it is no longer needed.&#10;    *   Removed the unused `turbine` library definition from `gradle/libs.versions.toml`.&#10;    *   Removed a `hasKsp` field from the `ModuleReport` data class that was not used in the health check report.&#10;*   **Consolidate Plugins:** Cleaned up the `plugins` block in the root `build.gradle.kts`, removing redundant `com.android.application` and `com.android.library` declarations and adding `genesis.android.compose` and `genesis.android.hilt` convention plugins.&#10;*   **Remove Obsolete Subproject Configuration:** Deleted the `subprojects` block that was previously used to configure Java/Kotlin toolchains, as this is now handled by convention plugins." />
+    <MESSAGE value="refactor: Streamline Gradle build configuration and dependencies&#10;&#10;This commit introduces a major refactoring of the Gradle build scripts to simplify and modernize the project's configuration.&#10;&#10;Key changes include:&#10;&#10;*   **Downgrades `minSdk` to 33** across multiple modules (`app`, `feature-module`, `sandbox-ui`, `collab-canvas`, `datavein-oracle-native`, `oracle-drive-integration`, `colorblendr`, `romtools`).&#10;*   **Removes redundant `kotlin { jvmToolchain(...) }` blocks** from `core-module` and `utilities`, as this is now handled by a convention plugin or a higher-level configuration.&#10;*   **Upgrades Gradle Wrapper** from `9.1.0-bin` to `9.1.0-all` to improve IDE support and source code access.&#10;*   **Refactors `romtools` `build.gradle.kts`** by removing many explicit plugin applications and dependencies, likely inheriting them from a convention plugin now.&#10;*   **Simplifies the root `build.gradle.kts`** by removing unused plugin aliases (`kotlin.android`, `android.library`, etc.) and a reference to a `dependency-fix.gradle.kts` file.&#10;*   **Cleans up the `benchmark` module's `build.gradle.kts`** by removing extensive documentation generation, custom tasks, and packaging rules, and replacing hardcoded dependency versions with catalog aliases.&#10;*   **Updates `settings.gradle.kts`** by downgrading the `foojay-resolver-convention` plugin from `1.0.0` to `0.8.0`.&#10;*   **Removes the `turbine` library** from `gradle/libs.versions.toml`." />
+    <MESSAGE value="refactor(build): Standardize JVM toolchain and lower minSdk&#10;&#10;This commit refactors the build configuration across multiple modules to standardize on Java 24 and streamline settings.&#10;&#10;Key changes include:&#10;*   Sets the `minSdk` to 33 across various modules, including `app`, `feature-module`, `colorblendr`, and `sandbox-ui`.&#10;*   Consolidates Java and Kotlin toolchain configurations within the `android` block for Android library modules, setting `sourceCompatibility`, `targetCompatibility`, and `jvmTarget` to Java 24.&#10;*   Removes redundant top-level `kotlin { jvmToolchain(...) }` blocks in favor of centralized configuration.&#10;*   Updates the Gradle Wrapper from `gradle-9.1.0-bin.zip` to `gradle-9.1.0-all.zip` for better IDE support.&#10;*   Sets the project-wide toolchain version to 24 in `gradle-daemon-jvm.properties`.&#10;*   Downgrades the `foojay-resolver-convention` plugin to version `0.8.0`.&#10;*   Cleans up unused plugins, dependencies (`turbine`), and build script logic in `romtools`, `benchmark`, and the root `build.gradle.kts`." />
+    <MESSAGE value="Downgrade JVM toolchain from 25 to 24&#10;&#10;This commit downgrades the Java compatibility and Kotlin JVM toolchain from version 25 to 24 across the Android application and library convention plugins.&#10;&#10;Changes include:&#10;- Lowering `sourceCompatibility` and `targetCompatibility` to `JavaVersion.VERSION_24`.&#10;- Setting the Kotlin `jvmToolchain` to 24.&#10;- Updating `AndroidLibraryConventionPluginTest.kt` to reflect and verify the new toolchain version." />
+    <option name="LAST_COMMIT_MESSAGE" value="Downgrade JVM toolchain from 25 to 24&#10;&#10;This commit downgrades the Java compatibility and Kotlin JVM toolchain from version 25 to 24 across the Android application and library convention plugins.&#10;&#10;Changes include:&#10;- Lowering `sourceCompatibility` and `targetCompatibility` to `JavaVersion.VERSION_24`.&#10;- Setting the Kotlin `jvmToolchain` to 24.&#10;- Updating `AndroidLibraryConventionPluginTest.kt` to reflect and verify the new toolchain version." />
   </component>
 </project>
