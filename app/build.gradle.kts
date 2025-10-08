@@ -159,6 +159,4 @@ tasks {
 }
 
 
-
-
 // Note: Uses Genesis convention plugins (genesis.android.application and genesis.android.hilt)

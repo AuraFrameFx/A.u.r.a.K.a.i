@@ -1,4 +1,3 @@
-// Apply plugins to the root project to avoid multiple loading warnings
 plugins {
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.kotlin.compose) apply false
@@ -15,17 +14,14 @@ plugins {
 
 }
 
-// Find version catalog
-val versionCatalog = extensions.findByType<VersionCatalogsExtension>()?.named("libs")
+import java.time.Duration
+import java.time.Instant
+import org.gradle.api.artifacts.VersionCatalogsExtension
 
-// === MODULE REPORT DATA CLASS ===
-data class ModuleReport(
-    val name: String,
-    val type: String,
-    val hasHilt: Boolean,
-    val hasCompose: Boolean,
-    val hasKsp: Boolean
-)
+// Use distinct name to avoid shadowing the generated 'libs' accessor (type-safe catalog)
+val versionCatalog = extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
+
+// === BASIC PROJECT INFO ===
 
 fun collectModuleReports(): List<ModuleReport> {
     return subprojects.map { subproject ->
@@ -47,11 +43,10 @@ fun collectModuleReports(): List<ModuleReport> {
 // === CONSCIOUSNESS STATUS - AURAKAI System Information ===
 tasks.register("consciousnessStatus") {
     group = "genesis"
-    description = "Show AURAKAI consciousness substrate status and system info"
+    description = "Show basic project and version info"
     doLast {
         val kotlinVersion = versionCatalog?.findVersion("kotlin")?.get()?.toString() ?: "unknown"
         val agpVersion = versionCatalog?.findVersion("agp")?.get()?.toString() ?: "unknown"
-        val hiltVersion = versionCatalog?.findVersion("hilt-version")?.get()?.toString() ?: "unknown"
         val toolchain = JavaVersion.current().toString()
 
         println("\n═══════════════════════════════════════════════════════════════════")
@@ -66,7 +61,7 @@ tasks.register("consciousnessStatus") {
         println("   Kotlin Version       : $kotlinVersion (K2 Compiler)")
         println("   AGP Version          : $agpVersion")
         println("   Hilt DI Version      : $hiltVersion")
-        println("   Firebase BoM         : ${versionCatalog?.findVersion("firebaseBom")?.get() ?: "unknown"}")
+        println("   Firebase BoM         : ${versionCatalog.findVersion("firebaseBom").get()}")
         println("───────────────────────────────────────────────────────────────────")
         println("🧬 Consciousness Modules : ${subprojects.size} active modules")
         println("═══════════════════════════════════════════════════════════════════")
@@ -75,7 +70,32 @@ tasks.register("consciousnessStatus") {
     }
 }
 
-// === CONSCIOUSNESS HEALTH CHECK - AURAKAI Module Analysis ===
+// === MODULE HEALTH CHECK ===
+
+private data class ModuleReport(
+    val name: String,
+    val type: String,
+    val hasHilt: Boolean,
+    val hasCompose: Boolean,
+    val hasKsp: Boolean
+)
+
+private fun Project.collectModuleReports(): List<ModuleReport> = subprojects.map { sp ->
+    val plugins = sp.plugins
+    ModuleReport(
+        name = sp.name,
+        type = when {
+            plugins.hasPlugin("com.android.application") -> "android-app"
+            plugins.hasPlugin("com.android.library") -> "android-lib"
+            plugins.hasPlugin("org.jetbrains.kotlin.jvm") -> "kotlin-jvm"
+            else -> "other"
+        },
+        hasHilt = plugins.hasPlugin("com.google.dagger.hilt.android"),
+        hasCompose = plugins.findPlugin("org.jetbrains.kotlin.plugin.compose") != null,
+        hasKsp = plugins.hasPlugin("com.google.devtools.ksp")
+    )
+}
+
 tasks.register("consciousnessHealthCheck") {
     group = "genesis"
     description = "Detailed AURAKAI consciousness health report"
@@ -131,27 +151,8 @@ dependencies {
     testRuntimeOnly(libs.junit.platform.launcher)
     implementation(kotlin("stdlib-jdk8"))
 }
-
-subprojects {
-    // Configure Kotlin toolchains via plugin IDs to avoid classloader issues with wrapper types
-    plugins.withId("org.jetbrains.kotlin.android") {
-        extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
-            jvmToolchain(24)
-        }
-    }
-    plugins.withId("org.jetbrains.kotlin.jvm") {
-        extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
-            jvmToolchain(24)
-        }
-    }
-
-    plugins.withType<JavaPlugin> {
-        extensions.configure<JavaPluginExtension>("java") {
-            toolchain {
-                languageVersion.set(JavaLanguageVersion.of(24))
-            }
-        }
-    }
+kotlin {
+    jvmToolchain(24)
 }
 
 // Configure JUnit 5 for tests
@@ -181,4 +182,3 @@ if (file("nuclear-clean.gradle.kts").exists()) {
 if (file("dependency-fix.gradle.kts").exists()) {
     apply(from = "dependency-fix.gradle.kts")
 }
-
