@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="feat: Centralize Foojay and remove Dokka plugin&#10;&#10;Moves the `foojay-resolver-convention` plugin to the root `settings.gradle.kts` to centralize JDK version management across all subprojects.&#10;&#10;Removes the Dokka plugin from the `list` and `utilities` modules as it is now managed centrally.">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-    </list>
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="chore: update workspace.xml with recent Gradle and task changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -507,29 +501,29 @@
       <option name="project" value="LOCAL" />
       <updated>1759927493561</updated>
     </task>
-    <task id="LOCAL-00016" summary="refactor: Simplify regex patterns and remove unused tests in MarkdownFileValidationTest">
+    <task id="LOCAL-00016" summary="chore: update workspace.xml with recent Gradle and task changes">
       <option name="closed" value="true" />
-      <created>1759706444912</created>
+      <created>1759927819257</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1759706444912</updated>
+      <updated>1759927819257</updated>
     </task>
-    <task id="LOCAL-00017" summary="feat: Update dependencies and streamline packaging&#10;&#10;Updates the `kotlin-stdlib-jdk8` dependency from version `1.8.0` to `2.2.20` across the following modules:&#10;*   `module-b`&#10;*   `module-d`&#10;*   `module-e`&#10;*   `module-f`&#10;&#10;In the `app` module, the packaging options are refined by adding an exclusion for `META-INF/INDEX.LIST` and removing a `JavaCompile` configuration that set the `-Xlint:-deprecation` compiler argument.&#10;&#10;Additionally, the `logback-classic` runtime dependency is removed from the `data/api` module.">
+    <task id="LOCAL-00017" summary="chore: update workspace.xml with recent Gradle and task changes">
       <option name="closed" value="true" />
-      <created>1759706812281</created>
+      <created>1759927971843</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1759706812281</updated>
+      <updated>1759927971843</updated>
     </task>
-    <task id="LOCAL-00018" summary="refactor: Remove unused KotlinCompile import in app module&#10;&#10;Removes the unused `org.jetbrains.kotlin.gradle.tasks.KotlinCompile` import from the `app/build.gradle.kts` file, cleaning up the build script.">
+    <task id="LOCAL-00018" summary="chore: update workspace.xml with recent Gradle and task changes">
       <option name="closed" value="true" />
-      <created>1759706885915</created>
+      <created>1759928120044</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1759706885915</updated>
+      <updated>1759928120044</updated>
     </task>
     <task id="LOCAL-00019" summary="refactor: Remove unused KotlinCompile import in app module&#10;&#10;Removes the unused `org.jetbrains.kotlin.gradle.tasks.KotlinCompile` import from the `app/build.gradle.kts` file, cleaning up the build script.">
       <option name="closed" value="true" />
@@ -835,7 +829,7 @@
       <option name="project" value="LOCAL" />
       <updated>1759906587424</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -885,6 +879,7 @@
     <MESSAGE value="refactor: Remove Dokka plugin from subprojects&#10;&#10;Removes the Dokka plugin from the `utilities` and `list` modules as it is now managed centrally in the root build script." />
     <MESSAGE value="feat: Add Foojay Toolchains resolver plugin&#10;&#10;Adds the `org.gradle.toolchains.foojay-resolver-convention` plugin to `settings.gradle.kts` to complement the auto-download feature for Java installations.&#10;&#10;The Dokka plugin alias has been removed from the `utilities` and `list` subprojects. A blank line was also removed from the `utilities` build file." />
     <MESSAGE value="feat: Centralize Foojay and remove Dokka plugin&#10;&#10;Moves the `foojay-resolver-convention` plugin to the root `settings.gradle.kts` to centralize JDK version management across all subprojects.&#10;&#10;Removes the Dokka plugin from the `list` and `utilities` modules as it is now managed centrally." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Centralize Foojay and remove Dokka plugin&#10;&#10;Moves the `foojay-resolver-convention` plugin to the root `settings.gradle.kts` to centralize JDK version management across all subprojects.&#10;&#10;Removes the Dokka plugin from the `list` and `utilities` modules as it is now managed centrally." />
+    <MESSAGE value="chore: update workspace.xml with recent Gradle and task changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: update workspace.xml with recent Gradle and task changes" />
   </component>
 </project>
