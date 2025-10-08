@@ -6,13 +6,30 @@
   <component name="ChangeListManager">
     <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Streamline packaging options in sandbox-ui&#10;&#10;Removes unnecessary exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `packaging` block in `sandbox-ui/build.gradle.kts`. The `pickFirsts` directive for the incremental annotation processors remains.">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/dev/aurakai/auraframefx/ColorsResourceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/dev/aurakai/auraframefx/ColorsResourceTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-external-plugin-spec-builders/kotlin/gradle/kotlin/dsl/plugins/_16f21c8c322301a6b4f296c444482057/PluginSpecBuilders.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/romtools/build/generated/ksp/debug/resources/META-INF/proguard/dev_aurakai_auraframefx_romtools_RomToolsManager_HiltModules_BindsModule_LazyClassKeys.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/colorblendr/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/core-module/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-a/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-a/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-b/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-b/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-c/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-c/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-e/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-e/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-f/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-f/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/ui/RomToolsScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/ui/RomToolsScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +39,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Wehtt\.android\avd\Medium_Phone.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -31,12 +48,52 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="android" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AOSPReGenesis" type="f1a62948:ProjectNode" />
+                <item name="AOSPReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -83,10 +140,9 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "android.gradle.sync.needed": "true",
-    "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Ultimus",
+    "git-widget-placeholder": "Exodus",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
     "project.structure.last.edited": "Suggestions",
@@ -171,6 +227,112 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Aurakai [classes]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="classes" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Aurakai [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Aurakai:app [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="OptionalArtifactsPresence.docker artifacts exist when README mentions Docker" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence.docker artifacts exist when README mentions Docker&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="ReGenesis-A.O.S.P [dokkaGenerate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -318,13 +480,12 @@
       <module name="AOSPReGenesis.core-module" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="WORKING_DIRECTORY" value="C:\Aurakai" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Aurakai" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -381,112 +542,6 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Aurakai [classes]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="classes" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Aurakai [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Aurakai:app [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="assemble" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="OptionalArtifactsPresence.docker artifacts exist when README mentions Docker" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;MarkdownFileValidationTest$DocumentationLinks$OptionalArtifactsPresence.docker artifacts exist when README mentions Docker&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <recent_temporary>

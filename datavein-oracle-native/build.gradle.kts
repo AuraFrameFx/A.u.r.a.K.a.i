@@ -1,6 +1,5 @@
 plugins {
     id("genesis.android.compose")
-    alias(libs.plugins.compose.compiler)
     id("genesis.android.native")
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)

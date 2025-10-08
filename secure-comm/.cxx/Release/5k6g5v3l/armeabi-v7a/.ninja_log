@@ -1,4 +1,0 @@
-# ninja log v5
-171	9133	7815267082204887	CMakeFiles/secure_comm_native.dir/secure_comm_jni.cpp.o	bbbf316fc18ec5c8
-4	13356	7815267123233089	CMakeFiles/secure_comm_native.dir/crypto_engine.cpp.o	71f4e57ad2fb34ca
-13365	14095	7815267131302841	C:/ReGenesi/secure-comm/build/intermediates/cxx/Release/5k6g5v3l/obj/armeabi-v7a/libsecure_comm_native.so	bbda4387432de295

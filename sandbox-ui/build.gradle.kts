@@ -13,12 +13,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
     }
-    packaging {
-        resources {
-            pickFirsts += "META-INF/gradle/incremental.annotation.processors"
-        }
-    }
 }
+
 
 dependencies {
     api(project(":core-module"))
@@ -33,8 +29,7 @@ dependencies {
     implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.androidx.compose.ui.tooling.preview)
     debugImplementation(libs.androidx.compose.ui.tooling)
-    implementation(libs.hilt.android)
-    add("ksp", libs.hilt.compiler)
+    implementation(libs.hilt.android); ksp(libs.hilt.compiler)
     implementation(libs.bundles.coroutines)
     implementation(libs.timber); implementation(libs.coil.compose)
     testImplementation(libs.bundles.testing.unit); testImplementation(libs.mockk.android)
@@ -62,45 +57,8 @@ tasks.register("generateApiDocs") {
         docsDir.mkdirs()
 
         val indexFile = docsDir.resolve("index.html")
+    }
+}
+
 
         // Using properly formatted date with DateTimeFormatter
-        val currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
-
-        indexFile.writeText(
-            """
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <title>Sandbox UI API Documentation</title>
-                <style>
-                    body { font-family: Arial, sans-serif; margin: 20px; }
-                    h1 { color: #4285f4; }
-                </style>
-            </head>
-            <body>
-                <h1>Sandbox UI API Documentation</h1>
-                <p>Generated on ${currentTime}</p>
-                <p>JDK Version: 24</p>
-                <h2>Module Overview</h2>
-                <p>UI sandbox and experimental components for the A.U.R.A.K.A.I. platform.</p>
-            </body>
-            </html>
-        """.trimIndent()
-        )
-
-        logger.lifecycle("✅ Documentation generated at: ${indexFile.absolutePath}")
-    }
-}
-tasks.register("sandboxStatus") {
-    group = "aegenesis"; doLast { println("🧪 SANDBOX UI - Ready (Java 24)") }
-}
-
-tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
-    dokkaSourceSets {
-        named("main") {
-            sourceRoots.from(file("src/main/java"))
-            sourceRoots.from(file("src/main/kotlin"))
-            sourceRoots.from(file("src/main/res"))
-        }
-    }
-}

@@ -99,7 +99,7 @@ tasks.withType<KotlinCompile>().configureEach {
 }
 
 tasks.named<Delete>("clean") {
-    delete(layout.buildDirectory.dir("generated/openapi"))
+    delete(file("${layout.build.Directory}/generated/openapi"))
 }
 
 tasks.jar {

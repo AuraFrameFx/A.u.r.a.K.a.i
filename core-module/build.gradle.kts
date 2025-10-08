@@ -37,16 +37,14 @@ tasks.test {
 }
 
 // Centralized toolchain version to avoid duplication and drift
-val jdkVersion = 24
 
 java {
-    toolchain { languageVersion.set(JavaLanguageVersion.of(jdkVersion)) }
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
 }
 
 // ... existing code ...
 
-kotlin {
-    jvmToolchain(jdkVersion)
-}
 
 // ... existing code ...

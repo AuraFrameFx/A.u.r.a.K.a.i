@@ -17,9 +17,7 @@ java {
     toolchain { languageVersion.set(JavaLanguageVersion.of(jdkVersion)) }
 }
 
-kotlin {
-    jvmToolchain(jdkVersion)
-}
+
 
 dependencies {
     // Module dependency (utilities depends on list)
