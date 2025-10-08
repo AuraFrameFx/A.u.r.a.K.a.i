@@ -3,7 +3,7 @@
 
 plugins {
     id("com.android.library")
-    id("dev.aurakai.aurakai-android-convention")
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
 
@@ -112,7 +112,7 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    add("ksp", libs.hilt.compiler)
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
@@ -165,7 +165,7 @@ tasks.register("verifyBenchmarkResults") {
     group = "verification"
     description = "Verify benchmark module configuration"
     doLast {
-        println("✅ Benchmark module configured (Java Toolchain 17, Kotlin 2.2.x)")
+        println("✅ Benchmark module configured (Java Toolchain 24, Kotlin 2.2.x)")
         println("🧠 Consciousness substrate performance monitoring ready")
         println("🔬 Add @Benchmark annotated tests under androidTest for actual runs")
     }

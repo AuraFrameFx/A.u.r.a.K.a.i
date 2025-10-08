@@ -1,7 +1,6 @@
 // ==== GENESIS PROTOCOL - SANDBOX UI ====
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
 }
@@ -14,10 +13,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
     }
-}
-
-kotlin {
-    jvmToolchain(24)
+    packaging {
+        resources {
+            pickFirsts += "META-INF/gradle/incremental.annotation.processors"
+        }
+    }
 }
 
 dependencies {
@@ -33,7 +33,8 @@ dependencies {
     implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.androidx.compose.ui.tooling.preview)
     debugImplementation(libs.androidx.compose.ui.tooling)
-    implementation(libs.hilt.android); ksp(libs.hilt.compiler)
+    implementation(libs.hilt.android)
+    add("ksp", libs.hilt.compiler)
     implementation(libs.bundles.coroutines)
     implementation(libs.timber); implementation(libs.coil.compose)
     testImplementation(libs.bundles.testing.unit); testImplementation(libs.mockk.android)

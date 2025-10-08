@@ -1,14 +1,9 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
-// ==== GENESIS PROTOCOL - MAIN APPLICATION ====
-
 plugins {
-    id("com.android.application")
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp)
-    // id("openapi.generator.convention") // Commented out until plugin is recognized
+    id("genesis.android.application")
+
 }
 
+// ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 android {
     namespace = "dev.aurakai"
     compileSdk = 36
@@ -26,7 +21,6 @@ android {
         }
     }
 
-    // Additional build type configuration
     buildTypes {
         debug {
             isDebuggable = true
@@ -35,7 +29,7 @@ android {
         }
     }
 
-    // Enable AIDL and Compose for the app module
+    // Enable AIDL for the app module
     buildFeatures {
         aidl = true
         compose = true
@@ -52,11 +46,15 @@ android {
         targetCompatibility = JavaVersion.toVersion("24")
         isCoreLibraryDesugaringEnabled = true
     }
+    packaging {
+        resources {
+            excludes += "META-INF/INDEX.LIST"
+            excludes += "META-INF/LICENSE.md"
+        }
+    }
 }
 
-kotlin {
-    jvmToolchain(24)
-}
+
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====
@@ -84,7 +82,6 @@ dependencies {
     implementation(libs.bundles.compose.ui)
     implementation(libs.androidx.core.ktx)
     debugImplementation(libs.bundles.compose.debug)
-
 
     // ===== LIFECYCLE =====
     implementation(libs.bundles.lifecycle)
@@ -114,14 +111,12 @@ dependencies {
     implementation("io.ktor:ktor-client-auth:2.3.7")
 
     // ===== FIREBASE =====
-    // By implementing the BOM, we can specify Firebase SDKs without versions
     implementation(platform(libs.firebase.bom))
     // This bundle includes Analytics, Crashlytics, Performance, Auth, Firestore, Messaging, and Config
     implementation(libs.bundles.firebase)
 
     // ===== HILT DEPENDENCY INJECTION =====
-    implementation(libs.hilt.android)
-    implementation(libs.hilt.compiler)
+    // Auto-added by genesis.android.application convention plugin
 
     // ===== WORKMANAGER =====
     implementation("androidx.work:work-runtime-ktx:2.9.0")
@@ -149,14 +144,6 @@ dependencies {
 
     // --- DEBUGGING ---
     debugImplementation(libs.leakcanary.android)
+
+    implementation(libs.kotlin.reflect)
 }
-
-tasks {
-    // Clean up old generated files before regenerating
-    val cleanOpenApi by registering(Delete::class) {
-        delete(layout.buildDirectory.dir("generated/openapi"))
-    }
-}
-
-
-// Note: Uses Genesis convention plugins (genesis.android.application and genesis.android.hilt)

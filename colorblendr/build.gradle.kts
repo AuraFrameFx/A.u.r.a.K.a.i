@@ -64,8 +64,8 @@ dependencies {
     
     // Hilt
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    
+    add("ksp", libs.hilt.compiler)
+
     // Utilities
     implementation(libs.timber)
     

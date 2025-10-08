@@ -53,7 +53,7 @@ dependencies {
     implementation(project(":core-module"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    add("ksp", libs.hilt.compiler)
 
     // Compose dependencies
     implementation(libs.androidx.lifecycle.viewmodel.compose)

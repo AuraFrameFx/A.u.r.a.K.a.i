@@ -71,3 +71,8 @@
 # -keep class retrofit2.** { *; }
 # -keep class androidx.compose.runtime.** { *; }
 # -keep class androidx.compose.ui.** { *; }
+
+# Only keep classes annotated with @Keep (for reflection/serialization)
+-keep @androidx.annotation.Keep class * { *; }
+# Add specific API classes below if needed
+# -keep class dev.aurakai.collabcanvas.MyApiClass { public *; }

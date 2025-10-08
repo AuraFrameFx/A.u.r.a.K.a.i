@@ -19,16 +19,7 @@ jobs:
       - name: Validate OpenAPI specs
         run: |
           set -e
-          swagger-cli validate ./app/api/ai-api.yml
-          swagger-cli validate ./app/api/oracle-drive-api.yml
-          swagger-cli validate ./app/api/genesis-api.yml
-          swagger-cli validate ./app/api/sandbox-api.yml
-          swagger-cli validate ./app/api/customization-api.yml
-          swagger-cli validate ./app/api/romtools-api.yml
-          swagger-cli validate ./app/api/unified-aegenesis-api.yml
-          swagger-cli validate ./app/api/unified-aegenesis-api.legacy.yml
-          swagger-cli validate ./app/api/system-api.yml
-          swagger-cli validate ./app/api/aura-api.yaml
-          swagger-cli validate ./app/api/auraframefx_ai_api.yaml
-          swagger-cli validate ./data/api/api/unified-deliverance-api.yml
+          swagger-cli validate ./app/src/main/resources/api-spec.yaml
+          swagger-cli validate ./app/src/main/resources/auraframefx_ai_api.yaml
+          swagger-cli validate ./data/api/eco-core.yaml
 

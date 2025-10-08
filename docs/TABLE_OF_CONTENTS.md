@@ -113,6 +113,19 @@
 
 ---
 
+## 🤖 Agent Instructions & Automation
+
+### 🎯 For Automated Agents & CI/CD
+
+| 📄 Document                                                      | 📝 Description                       |
+|------------------------------------------------------------------|--------------------------------------|
+| [📋 **Agent Instructions**](../AGENT_INSTRUCTIONS.md)            | Core best practices for agents       |
+| [🔄 **Workflow Guide**](../.github/AGENT_WORKFLOW_GUIDE.md)      | GitHub Actions patterns              |
+| [✅ **Task Checklist**](../AGENT_TASK_CHECKLIST.md)              | Validation checklist for tasks       |
+| [📚 **Agent Docs Summary**](../AGENT_DOCS_SUMMARY.md)            | Overview of agent documentation      |
+
+---
+
 ## 🧪 Development Workflow
 
 ### 🔄 Development Process

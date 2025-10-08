@@ -51,15 +51,15 @@ class BuildScriptsValidationV2Test {
         assertTrue(hasAny("""id("com.google.devtools.ksp")""", "alias(libs.plugins.ksp)"))
 
         @Test
-        fun `compile options are set to Java 24`() {
+        fun `compile options are set to Java 25`() {
             val content = buildFile.readText()
             assertTrue(
-                "Source compatibility should be Java 24",
-                content.contains("sourceCompatibility = JavaVersion.VERSION_24")
+                "Source compatibility should be Java 25",
+                content.contains("sourceCompatibility = JavaVersion.VERSION_25")
             )
             assertTrue(
-                "Target compatibility should be Java 24",
-                content.contains("targetCompatibility = JavaVersion.VERSION_24")
+                "Target compatibility should be Java 25",
+                content.contains("targetCompatibility = JavaVersion.VERSION_25")
             )
         }
 

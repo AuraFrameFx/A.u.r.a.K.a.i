@@ -19,4 +19,3 @@ class AgentFusionPlugin : Plugin<Project> {
         }
     }
 }
-

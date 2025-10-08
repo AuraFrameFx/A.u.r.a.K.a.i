@@ -6,6 +6,52 @@
 # and specify the fully qualified class name to the JavaScript interface
 # class:
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+# Added to suppress R8 missing class warnings (from missing_rules.txt)
+-dontwarn com.google.auto.service.AutoService
+-dontwarn com.google.auto.value.extension.memoized.Memoized
+-dontwarn com.google.common.collect.Streams
+-dontwarn jakarta.servlet.ServletContainerInitializer
+-dontwarn java.lang.Module
+-dontwarn java.lang.module.ModuleDescriptor
+-dontwarn javax.lang.model.SourceVersion
+-dontwarn javax.lang.model.element.AnnotationMirror
+-dontwarn javax.lang.model.element.AnnotationValue
+-dontwarn javax.lang.model.element.AnnotationValueVisitor
+-dontwarn javax.lang.model.element.Element
+-dontwarn javax.lang.model.element.ElementKind
+-dontwarn javax.lang.model.element.ElementVisitor
+-dontwarn javax.lang.model.element.ExecutableElement
+-dontwarn javax.lang.model.element.Name
+-dontwarn javax.lang.model.element.PackageElement
+-dontwarn javax.lang.model.element.TypeElement
+-dontwarn javax.lang.model.element.TypeParameterElement
+-dontwarn javax.lang.model.element.VariableElement
+-dontwarn javax.lang.model.type.ArrayType
+-dontwarn javax.lang.model.type.DeclaredType
+-dontwarn javax.lang.model.type.ExecutableType
+-dontwarn javax.lang.model.type.IntersectionType
+-dontwarn javax.lang.model.type.NoType
+-dontwarn javax.lang.model.type.PrimitiveType
+-dontwarn javax.lang.model.type.TypeKind
+-dontwarn javax.lang.model.type.TypeMirror
+-dontwarn javax.lang.model.type.TypeVariable
+-dontwarn javax.lang.model.type.TypeVisitor
+-dontwarn javax.lang.model.type.WildcardType
+-dontwarn javax.lang.model.util.AbstractAnnotationValueVisitor8
+-dontwarn javax.lang.model.util.AbstractElementVisitor8
+-dontwarn javax.lang.model.util.AbstractTypeVisitor8
+-dontwarn javax.lang.model.util.ElementFilter
+-dontwarn javax.lang.model.util.Elements
+-dontwarn javax.lang.model.util.SimpleAnnotationValueVisitor8
+-dontwarn javax.lang.model.util.SimpleElementVisitor8
+-dontwarn javax.lang.model.util.SimpleTypeVisitor7
+-dontwarn javax.lang.model.util.SimpleTypeVisitor8
+-dontwarn javax.lang.model.util.Types
+-dontwarn javax.tools.Diagnostic$Kind
+-dontwarn javax.tools.FileObject
+-dontwarn javax.tools.JavaFileManager$Location
+-dontwarn javax.tools.JavaFileObject
+-dontwarn javax.tools.StandardLocation
 #   public *;
 #}
 
@@ -18,40 +64,52 @@
 #-renamesourcefileattribute SourceFile
 
 # Keep AI Agent classes
--keep class dev.aurakai.auraframefx.ai.** { *; }
+#-keep class dev.aurakai.auraframefx.ai.** { *; }  # DISABLED: Overly broad, use @Keep or specific classes instead
 
-# Keep AIDL interfaces
--keep class dev.aurakai.oracledrive.IAuraDriveService { *; }
--keep class dev.aurakai.oracledrive.IAuraDriveService$Stub { *; }
--keep class dev.aurakai.oracledrive.IAuraDriveServiceCallback { *; }
+# Keep AIDL interfaces (DISABLED: Unresolved class names)
+#-keep class dev.aurakai.oracledrive.IAuraDriveService { *; }
+#-keep class dev.aurakai.oracledrive.IAuraDriveService$Stub { *; }
+#-keep class dev.aurakai.oracledrive.IAuraDriveServiceCallback { *; }
 
-# Keep Xposed hooks and YukiHook API
+# Keep Xposed hooks and YukiHook API (DISABLED problematic rules)
 -keep class dev.aurakai.auraframefx.xposed.** { *; }
 -keep class com.highcapable.yukihookapi.** { *; }
--keep class com.highcapable.yukihookapi.hook.xposed.parasitic.ParasiticMember { *; }
--keepclassmembers class * {
-    @com.highcapable.yukihookapi.hook.param.Param *;
-    @com.highcapable.yukihookapi.hook.param.ParamContext *;
-    @com.highcapable.yukihookapi.hook.param.ParamResult *;
-}
+#-keep class com.highcapable.yukihookapi.hook.xposed.parasitic.ParasiticMember { *; }  # DISABLED: Unresolved
+#-keepclassmembers class * {
+#    @com.highcapable.yukihookapi.hook.param.Param *;
+#    @com.highcapable.yukihookapi.hook.param.ParamContext *;
+#    @com.highcapable.yukihookapi.hook.param.ParamResult *;
+#}
 
-# Keep YukiHook entry classes
--keep class * extends com.highcapable.yukihookapi.hook.xposed.proxy.YukiHookXposedInitProxy { *; }
--keep class * extends com.highcapable.yukihookapi.hook.xposed.proxy.YukiHookXposedModuleProxy { *; }
--keep class * extends com.highcapable.yukihookapi.hook.xposed.proxy.YukiHookXposedModule { *; }
+# Keep YukiHook entry classes (DISABLED: Unresolved class names)
+#-keep class * extends com.highcapable.yukihookapi.hook.xposed.proxy.YukiHookXposedInitProxy { *; }
+#-keep class * extends com.highcapable.yukihookapi.hook.xposed.proxy.YukiHookXposedModuleProxy { *; }
+#-keep class * extends com.highcapable.yukihookapi.hook.xposed.proxy.YukiHookXposedModule { *; }
 
-# Keep YukiHook's reflection and proxy classes
--keep class * extends com.highcapable.yukihookapi.hook.factory.ClassFactory { *; }
--keep class * extends com.highcapable.yukihookapi.hook.factory.ConstructorFactory { *; }
--keep class * extends com.highcapable.yukihookapi.hook.factory.MethodFactory { *; }
--keep class * extends com.highcapable.yukihookapi.hook.factory.FieldFactory { *; }
+# Keep YukiHook's reflection and proxy classes (DISABLED: Unresolved class names)
+#-keep class * extends com.highcapable.yukihookapi.hook.factory.ClassFactory { *; }
+#-keep class * extends com.highcapable.yukihookapi.hook.factory.ConstructorFactory { *; }
+#-keep class * extends com.highcapable.yukihookapi.hook.factory.MethodFactory { *; }
+#-keep class * extends com.highcapable.yukihookapi.hook.factory.FieldFactory { *; }
 
 # Keep data classes
 -keep class dev.aurakai.auraframefx.data.** { *; }
 
-# Keep Firebase
--keep class com.google.firebase.** { *; }
--keep class com.google.android.gms.** { *; }
+# Keep Firebase (narrowed: only keep classes used via reflection/serialization)
+#-keep class com.google.firebase.** { *; }
+# Keep Google Play Services (narrowed)
+#-keep class com.google.android.gms.** { *; }
+# Keep OkHttp (narrowed)
+#-keep class okhttp3.** { *; }
+#-keep interface okhttp3.** { *; }
+# Keep Gson (if used via reflection)
+#-keep class com.google.gson.** { *; }
+# Keep kotlinx.coroutines (narrowed)
+#-keep class kotlinx.coroutines.** { *; }
+# Keep Timber (narrowed)
+#-keep class timber.log.** { *; }
+
+# If you encounter runtime issues (e.g., with reflection, serialization, or DI), uncomment and narrow these rules to only the required classes or interfaces.
 
 # Keep Room entities
 -keep class dev.aurakai.auraframefx.data.database.entities.** { *; }
@@ -62,22 +120,6 @@
 
 # Keep Retrofit interfaces
 -keep interface dev.aurakai.auraframefx.** { *; }
-
-# Keep OkHttp
--keep class okhttp3.** { *; }
--keep interface okhttp3.** { *; }
-
-# Keep Gson (if used)
--keep class com.google.gson.** { *; }
-
-# Keep kotlinx.coroutines
--keep class kotlinx.coroutines.** { *; }
-
-# Keep Timber
--keep class timber.log.** { *; }
-
-# Keep custom exceptions
--keep class dev.aurakai.auraframefx.**Exception { *; }
 
 # Optimization settings
 -optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*
@@ -109,3 +151,10 @@
     public static void d(...);
     public static void e(...);
 }
+
+# Only keep classes annotated with @Keep (for reflection/serialization)
+-keep @androidx.annotation.Keep class * { *; }
+# Add specific API classes below if needed
+# -keep class dev.aurakai.auraframefx.MyApiClass { public *; }
+# Remove overly broad keep rules for all classes, interfaces, or packages (e.g., -keep class dev.aurakai.** { *; })
+# Only keep what is necessary for reflection, serialization, or API exposure.

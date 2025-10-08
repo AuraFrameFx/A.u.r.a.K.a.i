@@ -3,6 +3,7 @@
 
 plugins {
     id("genesis.android.library")
+    id("genesis.android.native")
     alias(libs.plugins.ksp)
 
 }
@@ -25,7 +26,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    add("ksp", libs.hilt.compiler)
     implementation(libs.hilt.work)
     implementation(libs.bundles.coroutines)
     // Add other module-specific dependencies here

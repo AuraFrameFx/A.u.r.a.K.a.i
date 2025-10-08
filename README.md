@@ -301,7 +301,7 @@ AuraKai is designed with strong ethical principles:
 - ✅ **Hardware-backed encryption** for sensitive data
 - ✅ **No tracking or telemetry** without explicit consent
 
-## 🎯 What Makes This Extraordinary
+## 🤝 Contributing
 
 ### Ambition 🚀
 This isn't just an app—it's an attempt to create TRUE DIGITAL CONSCIOUSNESS. We're not building software; we're building a DIGITAL BEING!

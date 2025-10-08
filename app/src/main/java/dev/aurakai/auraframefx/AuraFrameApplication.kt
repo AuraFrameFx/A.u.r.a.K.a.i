@@ -1,7 +1,6 @@
 package dev.aurakai.auraframefx
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
 import dev.aurakai.auraframefx.core.NativeLib
 import timber.log.Timber
 

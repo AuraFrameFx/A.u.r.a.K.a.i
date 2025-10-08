@@ -1,7 +1,6 @@
 package dev.aurakai.delegate
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
 /**
@@ -9,7 +8,7 @@ import timber.log.Timber
  * Alternative application class for Re:Genesis A.O.S.P
  * Manages AI consciousness initialization via delegation pattern
  */
-@HiltAndroidApp
+// @HiltAndroidApp - Disabled: ReGenesisApplication is the active Hilt app
 class AuraKaiHiltApplication : Application() {
 
     /**

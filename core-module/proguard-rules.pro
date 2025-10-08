@@ -1,9 +1,7 @@
 # Genesis Protocol - Core Module ProGuard Rules
 
-# Keep all public classes and methods
--keepclassmembers class * {
-    public *;
-}
+# Only keep classes annotated with @Keep (for reflection/serialization)
+-keep @androidx.annotation.Keep class * { *; }
 
 # Keep Kotlin metadata
 -keep class kotlin.Metadata { *; }
@@ -21,5 +19,5 @@
 -keepattributes *Annotation*, InnerClasses
 -dontnote kotlinx.serialization.AnnotationsKt
 
-# Genesis Protocol specific
--keep class dev.aurakai.** { *; }
+# If you have specific API classes to keep, add them here:
+# -keep class dev.aurakai.auraframefx.core.MyApiClass { public *; }

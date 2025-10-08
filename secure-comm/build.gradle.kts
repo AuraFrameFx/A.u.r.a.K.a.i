@@ -24,7 +24,7 @@ android {
 dependencies {
     implementation(project(":core-module"))
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    add("ksp", libs.hilt.compiler)
     implementation(libs.hilt.work)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.work.runtime.ktx)
@@ -58,10 +58,11 @@ java {
     }
 }
 
-// Avoid failing clean tasks when the native staging directory doesn't exist yet
-tasks.matching { it.name.startsWith("externalNativeBuildClean") }.configureEach {
-    onlyIf { file("$projectDir/.cxx").exists() }
-}
+// Remove onlyIf block for native clean tasks to avoid configuration cache and serialization issues
+// (This block caused errors: Could not evaluate onlyIf predicate for task ...)
+// tasks.matching { it.name.startsWith("externalNativeBuildClean") }.configureEach {
+//     onlyIf { file("$projectDir/.cxx").exists() }
+// }
 
 // Spotless and toolchain are applied globally via root build.gradle.kts and convention plugins
 // ProGuard rules for Hilt, Compose, Serialization, and reflection-based libraries should be in proguard-rules.pro
