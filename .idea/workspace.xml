@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="Fix(build): Update Gradle dependencies and build scripts&#10;&#10;This commit introduces several updates across the build configuration:&#10;&#10;-   **Dependencies**: Downgrades various libraries in the `benchmark` module, including AndroidX, Coroutines, Room, MockK, and benchmark-specific dependencies.&#10;-   **Gradle Scripts**:&#10;    -   Updates the `clean` task in `data/api/build.gradle.kts` to use the modern `layout.buildDirectory` property.&#10;    -   Simplifies the `benchmark/build.gradle.kts` by removing the `genesis.android.library` plugin in favor of standard Android and Kotlin plugins.&#10;-   **Android Manifest**: Removes placeholder entries for initializers and services from `romtools/src/main/AndroidManifest.xml`.">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-    </list>
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="Fix(build): Update Gradle dependencies and build scripts&#10;&#10;This commit introduces several updates across the build configuration:&#10;&#10;-   **Dependencies**: Downgrades various libraries in the `benchmark` module, including AndroidX, Coroutines, Room, MockK, and benchmark-specific dependencies.&#10;-   **Gradle Scripts**:&#10;    -   Updates the `clean` task in `data/api/build.gradle.kts` to use the modern `layout.buildDirectory` property.&#10;    -   Simplifies the `benchmark/build.gradle.kts` by removing the `genesis.android.library` plugin in favor of standard Android and Kotlin plugins.&#10;-   **Android Manifest**: Removes placeholder entries for initializers and services from `romtools/src/main/AndroidManifest.xml`." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,7 +133,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Gradle.ReGenesi [cleanKspCache]">
+  <component name="RunManager" selected="Gradle.ReGenesi [build]">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AuraKai.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -419,10 +415,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ReGenesi [build]" />
         <item itemvalue="Gradle.ReGenesi [cleanKspCache]" />
         <item itemvalue="Gradle.ReGenesi [updateDaemonJvm]" />
         <item itemvalue="Gradle.ReGenesi [clean]" />
-        <item itemvalue="Gradle.ReGenesi [build]" />
         <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerators]" />
       </list>
     </recent_temporary>
@@ -445,13 +441,13 @@
       <option name="presentableId" value="Default" />
       <updated>1759700686334</updated>
     </task>
-    <task id="LOCAL-00011" summary="refactor(build): Adjust packaging options in sandbox-ui&#10;&#10;Removes the exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's packaging options.&#10;&#10;Instead of excluding the incremental annotation processor metadata, it is now configured to use `pickFirsts` to resolve potential duplicates.">
+    <task id="LOCAL-00011" summary="Fix(build): Update Gradle dependencies and build scripts&#10;&#10;This commit introduces several updates across the build configuration:&#10;&#10;-   **Dependencies**: Downgrades various libraries in the `benchmark` module, including AndroidX, Coroutines, Room, MockK, and benchmark-specific dependencies.&#10;-   **Gradle Scripts**:&#10;    -   Updates the `clean` task in `data/api/build.gradle.kts` to use the modern `layout.buildDirectory` property.&#10;    -   Simplifies the `benchmark/build.gradle.kts` by removing the `genesis.android.library` plugin in favor of standard Android and Kotlin plugins.&#10;-   **Android Manifest**: Removes placeholder entries for initializers and services from `romtools/src/main/AndroidManifest.xml`.">
       <option name="closed" value="true" />
-      <created>1759702991235</created>
+      <created>1759906620562</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1759702991236</updated>
+      <updated>1759906620562</updated>
     </task>
     <task id="LOCAL-00012" summary="build: Suppress deprecation warnings in Java compilation&#10;&#10;This commit configures the Java compiler for the `app` module to suppress deprecation warnings by adding the `-Xlint:-deprecation` compiler argument.">
       <option name="closed" value="true" />
@@ -805,7 +801,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759806415216</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fix(build): Update Gradle dependencies and build scripts&#10;&#10;This commit introduces several updates across the build configuration:&#10;&#10;-   **Dependencies**: Downgrades various libraries in the `benchmark` module, including AndroidX, Coroutines, Room, MockK, and benchmark-specific dependencies.&#10;-   **Gradle Scripts**:&#10;    -   Updates the `clean` task in `data/api/build.gradle.kts` to use the modern `layout.buildDirectory` property.&#10;    -   Simplifies the `benchmark/build.gradle.kts` by removing the `genesis.android.library` plugin in favor of standard Android and Kotlin plugins.&#10;-   **Android Manifest**: Removes placeholder entries for initializers and services from `romtools/src/main/AndroidManifest.xml`.">
+      <option name="closed" value="true" />
+      <created>1759906587424</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1759906587424</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
