@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Streamline packaging options in sandbox-ui&#10;&#10;Removes unnecessary exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `packaging` block in `sandbox-ui/build.gradle.kts`. The `pickFirsts` directive for the incremental annotation processors remains.">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/dev/aurakai/auraframefx/ColorsResourceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/dev/aurakai/auraframefx/ColorsResourceTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build/generated-sources/kotlin-dsl-external-plugin-spec-builders/kotlin/gradle/kotlin/dsl/plugins/_16f21c8c322301a6b4f296c444482057/PluginSpecBuilders.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build/generated/ksp/debug/resources/META-INF/proguard/dev_aurakai_auraframefx_romtools_RomToolsManager_HiltModules_BindsModule_LazyClassKeys.pro" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +22,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Wehtt\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -28,12 +31,6 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$/app">
-          <activation />
-        </task>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -86,10 +83,23 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "android.gradle.sync.needed": "true",
+    "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "EXO",
-    "kotlin-language-version-configured": "true"
+    "git-widget-placeholder": "Ultimus",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
+    "project.structure.last.edited": "Suggestions",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "memory.settings"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "module",
+      "repository"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected="Android App.app">
@@ -505,123 +515,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="" />
+      <changelist id="b6ac7178-2e0f-4651-abbf-8d447c1c2ce2" name="Changes" comment="refactor: Enhance build scripts, UI, and API definitions&#10;&#10;This commit introduces a wide range of improvements across the project, including build script refactoring, API specification enhancements, UI code clarification, and the addition of comprehensive tests.&#10;&#10;**Key Changes:**&#10;&#10;*   **API (`my-api-spec.yaml`):**&#10;    *   Upgraded OpenAPI specification from `3.0.3` to `3.1.0`.&#10;    *   Massively expanded the API definition, adding new endpoints and schemas for tasks, analytics, security, plugins, and more.&#10;    *   Standardized pagination parameters (`limit`, `offset`) across multiple endpoints.&#10;    *   Refined and detailed numerous existing schemas for better data modeling.&#10;&#10;*   **Build Logic &amp; Gradle:**&#10;    *   Refactored `build-logic` to set Java and Kotlin toolchains to version 24.&#10;    *   Improved the `cleanKspCache` task to also clean `kapt3` directories, helping to resolve potential build errors.&#10;    *   Removed the Hilt plugin from several library modules (`colorblendr`, `datavein-oracle-native`, `collab-canvas`) to avoid base extension issues, opting for manual dependency management.&#10;    *   Simplified the root `build.gradle.kts` file by removing helper functions and streamlining tasks.&#10;    *   Updated `build-logic/settings.gradle.kts` and `build-logic/build.gradle.kts` with dependency and repository cleanup.&#10;    *   Corrected task dependencies in `data/api/fix-annotations.gradle.kts`.&#10;&#10;*   **UI (`RomToolsScreen.kt`):**&#10;    *   Added extensive comments to structure and clarify the different sections of the `RomToolsScreen` composable, improving code readability.&#10;&#10;*   **Documentation (`README.md`, `AURAKAI_README.md`):**&#10;    *   Significantly refactored and cleaned up `AURAKAI_README.md`, improving structure, clarity, and formatting.&#10;    *   Condensed the main `README.md`, removing extensive lore and adding a disclaimer.&#10;&#10;*   **Testing:**&#10;    *   Added a substantial number of new test files (`LinkedListTest.kt`, `StringUtilsTest.kt`, `SplitUtilsTest.kt`, etc.) to improve test coverage, particularly for utility classes and build conventions.&#10;    *   Introduced comprehensive Markdown validation tests to ensure the integrity and correctness of `README.md`.&#10;    *   Added dummy/fake classes to support testing of Gradle convention plugins." />
       <created>1759700686334</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759700686334</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Aurakai">
-      <option name="closed" value="true" />
-      <created>1757571498421</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1757571498421</updated>
-    </task>
-    <task id="LOCAL-00002" summary="add generated Hilt and Dagger files for RomToolsManager and related modules">
-      <option name="closed" value="true" />
-      <created>1757661814131</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1757661814131</updated>
-    </task>
-    <task id="LOCAL-00003" summary="add generated Hilt and Dagger files for RomToolsManager and related modules">
-      <option name="closed" value="true" />
-      <created>1757661914173</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1757661914173</updated>
-    </task>
-    <task id="LOCAL-00004" summary="remove modulePackageName parameter from InjectYukiHookWithXposed annotation in HookEntry">
-      <option name="closed" value="true" />
-      <created>1757661938658</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1757661938658</updated>
-    </task>
-    <task id="LOCAL-00005" summary="add generated Hilt and Dagger files for RomToolsManager and related modules">
-      <option name="closed" value="true" />
-      <created>1757661969989</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1757661969989</updated>
-    </task>
-    <task id="LOCAL-00006" summary="update annotation processor versions and disable YukiHook API due to config issues">
-      <option name="closed" value="true" />
-      <created>1757662322013</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1757662322013</updated>
-    </task>
-    <task id="LOCAL-00007" summary="update annotation processor versions and disable YukiHook API due to config issues">
-      <option name="closed" value="true" />
-      <created>1757662360097</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1757662360097</updated>
-    </task>
-    <task id="LOCAL-00008" summary="update annotation processor versions and disable YukiHook API due to config issues">
-      <option name="closed" value="true" />
-      <created>1757662476193</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1757662476193</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Refactor CanvasScreen KDoc&#10;&#10;The KDoc for the `CanvasScreen` composable was simplified to improve readability and conciseness.&#10;Removed redundant descriptions and focused on the core features and behaviors.">
-      <option name="closed" value="true" />
-      <created>1757662503102</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1757662503102</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Update KSP cache files">
-      <option name="closed" value="true" />
-      <created>1757662567764</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1757662567764</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Update KSP cache files">
-      <option name="closed" value="true" />
-      <created>1757662603647</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1757662603647</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Update KSP cache files">
-      <option name="closed" value="true" />
-      <created>1757662734612</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1757662734612</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Update KSP cache files">
-      <option name="closed" value="true" />
-      <created>1757662768905</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1757662768905</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Update build metadata and timing files; rename index files; regenerate configuration and metadata records">
-      <option name="closed" value="true" />
-      <created>1757663201705</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1757663201705</updated>
     </task>
     <task id="LOCAL-00011" summary="refactor(build): Adjust packaging options in sandbox-ui&#10;&#10;Removes the exclusion rules for `META-INF/LICENSE.md` and `META-INF/gradle/incremental.annotation.processors` from the `sandbox-ui` module's packaging options.&#10;&#10;Instead of excluding the incremental annotation processor metadata, it is now configured to use `pickFirsts` to resolve potential duplicates.">
       <option name="closed" value="true" />
