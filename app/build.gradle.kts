@@ -7,14 +7,19 @@ plugins {
 android {
     namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
-
+    
+    sourceSets {
+        getByName("main") {
+            java.srcDirs("src/main/java", "src/main/kotlin")
+        }
+    }
+    
     defaultConfig {
         applicationId = "dev.aurakai.auraframefx"
         minSdk = 34
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -41,6 +46,10 @@ android {
     buildFeatures {
         aidl = true
         compose = true
+    }
+    
+    lint {
+        disable += "HardcodedText"
     }
 
     testOptions {
@@ -110,15 +119,12 @@ dependencies {
 
     // ===== NETWORKING =====
     implementation(libs.bundles.network)
-    implementation("com.squareup.moshi:moshi:1.15.1")
-    implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
+    implementation(libs.moshi)
+    implementation(libs.moshi.kotlin)
 
     // ===== KTOR FOR OPENAPI CLIENT =====
-    implementation("io.ktor:ktor-client-core:2.3.7")
-    implementation("io.ktor:ktor-client-content-negotiation:2.3.7")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
-    implementation("io.ktor:ktor-client-okhttp:2.3.7")
-    implementation("io.ktor:ktor-client-auth:2.3.7")
+    implementation(libs.ktor.client.cio)
+    implementation(libs.ktor.client.auth)
 
     // ===== FIREBASE =====
     implementation(platform(libs.firebase.bom))
@@ -129,8 +135,8 @@ dependencies {
     // Auto-added by genesis.android.application convention plugin
 
     // ===== WORKMANAGER =====
-    implementation("androidx.work:work-runtime-ktx:2.9.0")
-    implementation("androidx.hilt:hilt-work:1.2.0")
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.hilt.work)
 
     // ===== UTILITIES =====
     implementation(libs.timber)

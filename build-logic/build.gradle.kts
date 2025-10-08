@@ -9,9 +9,9 @@ group = "dev.aurakai.auraframefx.buildlogic"
 
 // Dependencies required for the convention plugins themselves.
 dependencies {
-    implementation("com.android.tools.build:gradle:9.0.0-alpha02")
+    implementation("com.android.tools.build:gradle:9.0.0-alpha09")
     implementation(libs.kotlin.gradle.plugin)
-    implementation("org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.2.20")
+    implementation("org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.2.21-RC")
     implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
 
     // Test dependencies

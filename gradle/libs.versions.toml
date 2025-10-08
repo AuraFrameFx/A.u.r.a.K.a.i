@@ -2,10 +2,10 @@
 # ===== GRADLE & KOTLIN =====
 agp = "9.0.0-alpha09"
 junitJupiterParams = "6.0.0"
-kotlin = "2.2.20"
-kotlinGradlePlugin = "2.2.20"
+kotlin = "2.2.21-RC"
+kotlinGradlePlugin = "2.2.21-RC"
 kotlinLoggingJvm = "3.0.5"
-ksp = "2.2.20-2.0.3"
+ksp = "2.2.21-RC-2.0.4"
 desugar_jdk_libs = "2.1.5"
 java = "24"
 
@@ -160,7 +160,6 @@ testing-android = [
 
 [libraries]
 # ===== GENERATIVE AI =====
-androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
 androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
 google-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 

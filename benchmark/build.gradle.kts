@@ -1,7 +1,6 @@
 plugins {
     id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp") version "2.2.20-2.0.3"
+    id("com.google.devtools.ksp") version "2.2.21-RC-2.0.4"
 }
 
 java {
@@ -13,13 +12,13 @@ java {
 android {
     namespace = "dev.aurakai.auraframefx.benchmark"
     compileSdk = 36
-    
+
     defaultConfig {
-        minSdk = 26
+        minSdk = 34
         testInstrumentationRunner = "androidx.benchmark.junit4.AndroidBenchmarkRunner"
         multiDexEnabled = true
     }
-    
+
     buildTypes {
         maybeCreate("benchmark")
         getByName("benchmark") {
@@ -44,28 +43,26 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.15.0")
-    implementation(platform("androidx.compose:compose-bom:2024.12.01"))
-    implementation("androidx.activity:activity-compose:1.9.3")
-    implementation("androidx.navigation:navigation-compose:2.8.5")
+    implementation(libs.androidx.core.ktx)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.navigation.compose)
     
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.57.2")
-    ksp("com.google.dagger:hilt-compiler:2.57.2")
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
+    implementation(libs.bundles.coroutines)
 
     // Room
-    implementation("androidx.room:room-runtime:2.7.0-alpha12")
-    implementation("androidx.room:room-ktx:2.7.0-alpha12")
-    ksp("androidx.room:room-compiler:2.7.0-alpha12")
+    implementation(libs.bundles.room)
+    ksp(libs.androidx.room.compiler)
 
     // Utilities
-    implementation("com.jakewharton.timber:timber:5.0.1")
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
-    implementation("androidx.multidex:multidex:2.0.1")
+    implementation(libs.timber)
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
+    implementation(libs.androidx.multidex)
     
     // Project dependencies
     implementation(project(":core-module"))
@@ -74,18 +71,16 @@ dependencies {
     implementation(project(":oracle-drive-integration"))
 
     // Benchmark testing
-    androidTestImplementation("androidx.benchmark:benchmark-junit4:1.4.0")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.3.0")
+    androidTestImplementation(libs.androidx.benchmark.junit4)
+    androidTestImplementation(libs.bundles.testing.android)
 
     // Unit testing
-    testImplementation("junit:junit:4.13.2")
-    testImplementation("io.mockk:mockk:1.13.14")
-    androidTestImplementation("io.mockk:mockk-android:1.13.14")
+    testImplementation(libs.junit4)
+    testImplementation(libs.mockk)
+    androidTestImplementation(libs.mockk.android)
 
     // Hilt testing
-    testImplementation("com.google.dagger:hilt-android-testing:2.57.2")
-    androidTestImplementation("com.google.dagger:hilt-android-testing:2.57.2")
-    kspAndroidTest("com.google.dagger:hilt-compiler:2.57.2")
+    testImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.hilt.android.testing)
+    kspAndroidTest(libs.hilt.compiler)
 }

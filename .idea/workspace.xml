@@ -4,7 +4,88 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="chore: update workspace.xml with recent Gradle and task changes" />
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="chore: update workspace.xml with recent Gradle and task changes">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AGENT_DOCS_STRUCTURE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AGENT_DOCS_SUMMARY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AGENT_INSTRUCTIONS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AGENT_TASK_CHECKLIST.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AGP_9_ALPHA_FIXES_APPLIED.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AURAKAI_README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/COMPOSE_COMPILER_REFACTOR.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/COPILOT DEBUG SESSION.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEVELOPMENT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FIX_HILT_BASEEXTENSION.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FIX_SUMMARY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HILT_CONVENTION_PLUGIN_FIX.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HILT_FIXES_APPLIED.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IMPLEMENTATION_SUMMARY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA25_TOOLCHAIN_FIX.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OPENAPI-CLEANUP-COMPLETE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OPENAPI_NATIVE_FIXES.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OPENAPI_VALIDATION_FIX.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectRefactorPlan.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST_FIXES_SUMMARY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VERIFICATION_COMPLETE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/API.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Architecture.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DEVELOPMENT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/JAVA_VERSION_POLICY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ai_backend/README_tests.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ReGenesisApplication.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/src/test/kotlin/dev/aurakai/auraframefx/benchmark/BenchmarkBuildScriptTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/src/test/kotlin/dev/aurakai/auraframefx/benchmark/BenchmarkBuildScriptTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidLibraryConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidLibraryConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/test/docs/README-TESTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/test/kotlin/DokkaConventionPluginTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/test/kotlin/KoverConventionPluginTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/test/resources/TESTING_NOTES.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-script-tests/TESTING-NOTE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/colorblendr/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-module/Module.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/core-module/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/armeabi-v7a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/x86_64/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/TABLE_OF_CONTENTS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/TESTING_NOTES_FileUtils.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/YUKIHOOK_COMPLETE_GUIDE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/YUKIHOOK_SETUP_GUIDE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/gradle-daemon-jvm.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/gradle-daemon-jvm.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-a/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-a/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-b/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-b/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oracle-drive-integration/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/docs/testing-notes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/armeabi-v7a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/x86_64/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,47 +119,54 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="AuraKai" type="f1a62948:ProjectNode" />
-                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="build-logic" type="2d1252cf:ModuleNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="AuraKai" type="f1a62948:ProjectNode" />
-                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="build-logic" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="AuraKai" type="f1a62948:ProjectNode" />
-                <item name="AuraKai" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="aegenesis" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="AuraKai" type="f1a62948:ProjectNode" />
-                <item name="AuraKai" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="android" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="AuraKai" type="f1a62948:ProjectNode" />
-                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="build-logic" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="AuraKai" type="f1a62948:ProjectNode" />
-                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+                <item name="build-logic" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build setup" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="AuraKai" type="f1a62948:ProjectNode" />
-                <item name="AuraKai" type="2d1252cf:ModuleNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+                <item name="build-logic" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="help" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="build-logic" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="plugin development" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="build-logic" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="build-logic" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
             </expand>
             <select />
@@ -107,7 +195,7 @@
     &quot;accountId&quot;: &quot;129e8c9f-2999-43ba-8838-4bd9fe391e46&quot;
   }
 }</component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-bin\9agqghryom9wkf8r80qlhnts3\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 6\jbr" gradleVersion="9.1.0" />
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-bin\9agqghryom9wkf8r80qlhnts3\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 4\jbr" gradleVersion="9.1.0" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -121,13 +209,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Android App.app.executor": "Run",
     "Batch.nuclear-clean.executor": "Run",
     "Gradle.Configure Daemon JVM Criteria.executor": "Run",
+    "Gradle.ReGenesi [:build-logic:clean].executor": "Run",
+    "Gradle.ReGenesi [:build-logic:tasks].executor": "Run",
+    "Gradle.ReGenesi [:build-logic:updateDaemonJvm].executor": "Run",
+    "Gradle.ReGenesi [:build-logic:wrapper].executor": "Run",
     "Gradle.ReGenesi [assemble].executor": "Run",
     "Gradle.ReGenesi [build].executor": "Run",
     "Gradle.ReGenesi [cleanKspCache].executor": "Run",
     "Gradle.ReGenesi [clean].executor": "Run",
+    "Gradle.ReGenesi [deepClean].executor": "Run",
     "Gradle.ReGenesi [updateDaemonJvm].executor": "Run",
+    "Gradle.ReGenesi [wrapper].executor": "Run",
+    "Gradle.ReGenesi:app [tasks].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -154,6 +250,74 @@
   }
 }]]></component>
   <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="AOSPReGenesis.core-module" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Aurakai" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="AOSPReGenesis.core-module" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="AOSPReGenesis.core-module" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="AOSPReGenesis.core-module" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="AuraKai.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -224,7 +388,7 @@
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesi [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesi [:build-logic:clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -235,7 +399,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="assemble" />
+            <option value=":build-logic:clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -250,7 +414,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesi [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesi [:build-logic:tasks]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -261,7 +425,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":build-logic:tasks" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -276,7 +440,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesi [cleanKspCache]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesi [:build-logic:updateDaemonJvm]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -287,7 +451,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="cleanKspCache" />
+            <option value=":build-logic:updateDaemonJvm" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -302,7 +466,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesi [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesi [:build-logic:wrapper]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -313,7 +477,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value=":build-logic:wrapper" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -328,10 +492,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReGenesi [updateDaemonJvm]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReGenesi:app [tasks]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -339,7 +503,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="updateDaemonJvm" />
+            <option value="tasks" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -365,81 +529,13 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="AOSPReGenesis.core-module" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="C:\Aurakai" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="AOSPReGenesis.core-module" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Autodetect">
-      <module name="AOSPReGenesis.core-module" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="AOSPReGenesis.core-module" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ReGenesi [clean]" />
-        <item itemvalue="Gradle.ReGenesi [assemble]" />
-        <item itemvalue="Gradle.ReGenesi [build]" />
-        <item itemvalue="Gradle.ReGenesi [cleanKspCache]" />
-        <item itemvalue="Gradle.ReGenesi [updateDaemonJvm]" />
+        <item itemvalue="Gradle.ReGenesi [:build-logic:clean]" />
+        <item itemvalue="Gradle.ReGenesi [:build-logic:tasks]" />
+        <item itemvalue="Gradle.ReGenesi [:build-logic:updateDaemonJvm]" />
+        <item itemvalue="Gradle.ReGenesi [:build-logic:wrapper]" />
+        <item itemvalue="Gradle.ReGenesi:app [tasks]" />
       </list>
     </recent_temporary>
   </component>
@@ -525,13 +621,13 @@
       <option name="project" value="LOCAL" />
       <updated>1759928120044</updated>
     </task>
-    <task id="LOCAL-00019" summary="refactor: Remove unused KotlinCompile import in app module&#10;&#10;Removes the unused `org.jetbrains.kotlin.gradle.tasks.KotlinCompile` import from the `app/build.gradle.kts` file, cleaning up the build script.">
+    <task id="LOCAL-00019" summary="chore: update workspace.xml with recent Gradle and task changes">
       <option name="closed" value="true" />
-      <created>1759706989861</created>
+      <created>1759928244914</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1759706989861</updated>
+      <updated>1759928244914</updated>
     </task>
     <task id="LOCAL-00020" summary="refactor: Consolidate Android application plugins and fix Hilt configuration&#10;&#10;This commit refactors the build logic by moving common Android application plugins into the `AndroidApplicationConventionPlugin`.&#10;&#10;**Key Changes:**&#10;*   The `AndroidApplicationConventionPlugin` now automatically applies the following plugins:&#10;    *   `org.jetbrains.kotlin.android`&#10;    *   `org.jetbrains.kotlin.plugin.compose`&#10;    *   `com.google.devtools.ksp`&#10;    *   `com.google.dagger.hilt.android`&#10;*   In the `app` module's `build.gradle.kts`, the Hilt compiler dependency is correctly moved from the `implementation` configuration to `ksp` to align with modern best practices.">
       <option name="closed" value="true" />
@@ -829,7 +925,7 @@
       <option name="project" value="LOCAL" />
       <updated>1759906587424</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

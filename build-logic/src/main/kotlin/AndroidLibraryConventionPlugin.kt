@@ -37,14 +37,17 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 }
 
                 compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_25
-                    targetCompatibility = JavaVersion.VERSION_25
+                    sourceCompatibility = JavaVersion.VERSION_24
+                    targetCompatibility = JavaVersion.VERSION_24
                 }
             }
-            // Kotlin JVM toolchain (only configure after kotlin-android is applied)
+            // Kotlin JVM toolchain - use 24 for stable compatibility
             pluginManager.withPlugin("org.jetbrains.kotlin.android") {
                 extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
-                    jvmToolchain(25)
+                    jvmToolchain(24)
+                    compilerOptions {
+                        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+                    }
                 }
             }
         }

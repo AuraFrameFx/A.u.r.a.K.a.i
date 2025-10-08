@@ -1,5 +1,7 @@
 package dev.aurakai.auraframefx.benchmark
 
+import org.gradle.testkit.runner.GradleRunner
+import org.gradle.testkit.runner.BuildResult
 import org.junit.jupiter.api.*
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.io.TempDir
@@ -29,6 +31,16 @@ class BenchmarkBuildScriptTest {
                   }
                 }
                 dependencyResolutionManagement {
+                  repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+                  repositories {
+                    google()
+                    mavenCentral()
+                  }
+                }
+                include(":benchmark")
+                """.trimIndent()
+            )
+        }
         // Copy the real build.gradle.kts into temp project for resolvability checks.
         // Instead of applying Android plugin tasks, we focus on syntax/no-conflict markers and custom task execution.
         val benchmarkDir = File(testProjectDir, "benchmark").apply { mkdirs() }
@@ -60,8 +72,8 @@ class BenchmarkBuildScriptTest {
         // Provide a minimal gradle.properties to avoid daemon/user env noise
         File(testProjectDir, "gradle.properties").writeText(
             """
-                        org . gradle . jvmargs = - Xmx1024m - Dfile.encoding = UTF - 8
-                """.trimIndent()
+            org.gradle.jvmargs=-Xmx1024m -Dfile.encoding=UTF-8
+            """.trimIndent()
         )
     }
 

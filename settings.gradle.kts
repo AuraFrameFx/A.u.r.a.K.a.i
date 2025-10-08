@@ -68,7 +68,7 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             if (requested.id.namespace == "com.google.dagger") {
-                useModule("com.google.dagger:hilt-android-gradle-plugin:${requested.version}")
+                useModule("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
             }
             if (requested.id.id.startsWith("com.android.")) {
                 useModule("com.android.tools.build:gradle:9.0.0-alpha09")

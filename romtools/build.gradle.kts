@@ -27,6 +27,9 @@ dependencies {
     api(project(":core-module"))
     implementation(project(":secure-comm"))
 
+    // Compose BOM (must be declared to get Material Icons)
+    implementation(platform(libs.androidx.compose.bom))
+
     // Hilt (manually added)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
@@ -41,8 +44,7 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
 
     // Material Icons (needed for RomToolsScreen UI)
-    implementation("androidx.compose.material:material-icons-core:1.7.5")
-    implementation("androidx.compose.material:material-icons-extended:1.7.5")
+    implementation(libs.androidx.compose.material.icons.extended)
 
     // Room
     implementation(libs.androidx.room.runtime)

@@ -121,21 +121,19 @@ tasks.named("clean") {
 dependencies {
     // Core dependencies for Kotlin
     implementation(kotlin("stdlib"))
-    implementation(kotlin("reflect"))
+    implementation(libs.kotlin.reflect)
 
-    implementation("io.ktor:ktor-client-core:3.3.0")
-    implementation("io.ktor:ktor-client-cio:3.3.0")
-    implementation("io.ktor:ktor-client-content-negotiation:3.3.0")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.0")
+    implementation(libs.ktor.client.cio)
+    implementation(libs.ktor.client.auth)
 
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.7.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.datetime)
+    implementation(libs.kotlinx.coroutines.core)
 
     // Logging
-    implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
-    implementation("org.slf4j:slf4j-api:2.0.17")
-    runtimeOnly("ch.qos.logback:logback-classic:1.5.19")
+    implementation(libs.kotlin.logging.jvm)
+    implementation(libs.slf4j.api)
+    runtimeOnly(libs.logback.classic)
 
     // Testing dependencies
     testImplementation(kotlin("test"))

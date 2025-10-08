@@ -37,8 +37,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                     buildFeatures.viewBinding = false
                     buildFeatures.dataBinding = false
 
-                    compileOptions.sourceCompatibility = JavaVersion.VERSION_25
-                    compileOptions.targetCompatibility = JavaVersion.VERSION_25
+                    compileOptions.sourceCompatibility = JavaVersion.VERSION_24
+                    compileOptions.targetCompatibility = JavaVersion.VERSION_24
                     compileOptions.isCoreLibraryDesugaringEnabled = true
 
                     packaging.resources.excludes.addAll(setOf(
@@ -63,8 +63,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 }
 
                 extensions.configure<JavaPluginExtension>("java") {
-                    sourceCompatibility = JavaVersion.VERSION_25
-                    targetCompatibility = JavaVersion.VERSION_25
+                    sourceCompatibility = JavaVersion.VERSION_24
+                    targetCompatibility = JavaVersion.VERSION_24
                 }
 
                 tasks.register<Delete>("cleanKspCache") {
@@ -85,7 +85,12 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             }
 
             pluginManager.withPlugin("org.jetbrains.kotlin.android") {
-                extensions.getByType<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension>().jvmToolchain(25)
+                extensions.getByType<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension>().apply {
+                    jvmToolchain(24)
+                    compilerOptions {
+                        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+                    }
+                }
             }
         }
     }
