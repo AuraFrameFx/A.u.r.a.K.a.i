@@ -1,18 +1,15 @@
 plugins {
     id("genesis.android.application")
-    id("genesis.android.hilt")
-    alias(libs.plugins.compose.compiler)
-    id("com.google.gms.google-services") version "4.4.3"
-    id("com.google.firebase.crashlytics") version "3.0.6"
+
 }
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 android {
-    namespace = "dev.aurakai.auraframefx"
+    namespace = "dev.aurakai"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "dev.aurakai.auraframefx"
+        applicationId = "dev.aurakai"
         minSdk = 34
         targetSdk = 36
         versionCode = 1
@@ -32,6 +29,7 @@ android {
         }
     }
 
+    // Enable AIDL for the app module
     buildFeatures {
         aidl = true
         compose = true
@@ -50,12 +48,13 @@ android {
     }
     packaging {
         resources {
-            excludes += "META-INF/LICENSE.md"
-            excludes += "META-INF/gradle/incremental.annotation.processors"
             excludes += "META-INF/INDEX.LIST"
+            excludes += "META-INF/LICENSE.md"
         }
     }
 }
+
+
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====
@@ -101,15 +100,15 @@ dependencies {
 
     // ===== NETWORKING =====
     implementation(libs.bundles.network)
-    implementation(libs.moshi)
-    implementation(libs.moshi.kotlin)
+    implementation("com.squareup.moshi:moshi:1.15.1")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
 
     // ===== KTOR FOR OPENAPI CLIENT =====
-    implementation(libs.ktor.client.core)
-    implementation(libs.ktor.client.content.negotiation)
-    implementation(libs.ktor.serialization.kotlinx.json)
-    implementation(libs.ktor.client.okhttp)
-    implementation(libs.ktor.client.auth)
+    implementation("io.ktor:ktor-client-core:2.3.7")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.7")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
+    implementation("io.ktor:ktor-client-okhttp:2.3.7")
+    implementation("io.ktor:ktor-client-auth:2.3.7")
 
     // ===== FIREBASE =====
     implementation(platform(libs.firebase.bom))
@@ -120,8 +119,8 @@ dependencies {
     // Auto-added by genesis.android.application convention plugin
 
     // ===== WORKMANAGER =====
-    implementation(libs.androidx.work.runtime.ktx)
-    implementation(libs.hilt.work)
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+    implementation("androidx.hilt:hilt-work:1.2.0")
 
     // ===== UTILITIES =====
     implementation(libs.timber)
@@ -148,6 +147,3 @@ dependencies {
 
     implementation(libs.kotlin.reflect)
 }
-
-// Avoid failing clean tasks when the native staging directory doesn't exist yet
-// This block is not needed in app module, only in native modules like secure-comm

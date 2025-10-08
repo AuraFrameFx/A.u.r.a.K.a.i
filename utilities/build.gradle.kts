@@ -1,10 +1,8 @@
 plugins {
     // JVM library setup
     id("java-library")
-    kotlin("jvm")
 
     // Additional tooling
-    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
 }
@@ -20,17 +18,7 @@ java {
 }
 
 kotlin {
-    jvmToolchain(24)
-}
-
-// Explicit source sets configuration for IntelliJ IDEA compatibility
-sourceSets {
-    main {
-        java.srcDirs("src/main/java", "src/main/kotlin")
-    }
-    test {
-        java.srcDirs("src/test/java", "src/test/kotlin")
-    }
+    jvmToolchain(jdkVersion)
 }
 
 dependencies {

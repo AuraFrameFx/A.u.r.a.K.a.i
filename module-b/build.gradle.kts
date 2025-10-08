@@ -1,7 +1,7 @@
 // GENESIS PROTOCOL - MODULE B  
 plugins {
-    id("genesis.android.library")
     id("genesis.android.compose")
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
 }
 
@@ -12,13 +12,13 @@ android {
 dependencies {
     implementation(project(":core-module"))
     implementation(libs.androidx.core.ktx)
-    
+
     // Hilt
     implementation(libs.hilt.android)
     add("ksp", libs.hilt.compiler)
 
     // Add other module-specific dependencies here
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0")
 }
 
 tasks.register("moduleBStatus") {
@@ -26,10 +26,6 @@ tasks.register("moduleBStatus") {
     doLast { println("📦 MODULE B - Ready (Java 24)") }
 }
 
-
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(24))
-    }
+kotlin {
+    jvmToolchain(24)
 }

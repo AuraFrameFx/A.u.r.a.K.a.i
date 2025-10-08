@@ -1,30 +1,27 @@
 // Apply plugins (versions via version catalog)
 plugins {
     id("genesis.android.library")
-    id("genesis.android.native")
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
-
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.collabcanvas"
-    
+
     defaultConfig {
         minSdk = 34
     }
-    
+
     buildFeatures {
         buildConfig = true
-        compose = true
     }
 }
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(24))
-    }
+
+
+kotlin {
+    jvmToolchain(24)
 }
 
 dependencies {
@@ -86,7 +83,7 @@ dependencies {
     // YukiHook API (temporarily disabled due to configuration issues)
     // implementation(libs.yukihook.api)
     // ksp(libs.yukihook.ksp)
-    
+
     // Xposed API (using the correct path)
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))

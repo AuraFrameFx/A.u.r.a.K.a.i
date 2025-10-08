@@ -1,45 +1,29 @@
 package dev.aurakai.auraframefx.security
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.os.Build
-import androidx.core.app.NotificationCompat
-import dagger.hilt.android.AndroidEntryPoint
-import dev.aurakai.auraframefx.R
+import android.util.Log
+import android.widget.Toast
 
-@AndroidEntryPoint
 class IntegrityViolationReceiver : BroadcastReceiver() {
 
+    private val TAG = "IntegrityViolation"
+
     override fun onReceive(context: Context, intent: Intent) {
-        if (intent.action == IntegrityMonitorService.ACTION_INTEGRITY_VIOLATION) {
-            showNotification(context)
+        if (intent.action == "dev.aurakai.auraframefx.INTEGRITY_VIOLATION") {
+            val violationType = intent.getStringExtra("VIOLATION_TYPE") ?: "Unknown Violation"
+            Log.e(TAG, "CRITICAL: Integrity violation detected: $violationType")
+
+            // Kai's Response Protocol:
+            // Define actions to take here.
+            // - Notify the user.
+            // - Log out the user.
+            // - Terminate the application gracefully.
+            Toast.makeText(context, "Security Alert: $violationType", Toast.LENGTH_LONG).show()
+
+            // For a critical failure, you might want to stop the app.
+            // System.exit(0) // Use with caution.
         }
-    }
-
-    private fun showNotification(context: Context) {
-        val notificationManager =
-            context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        val channelId = "integrity_violation_channel"
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                channelId,
-                "Integrity Violation",
-                NotificationManager.IMPORTANCE_HIGH
-            )
-            notificationManager.createNotificationChannel(channel)
-        }
-
-        val notification = NotificationCompat.Builder(context, channelId)
-            .setContentTitle("Security Alert")
-            .setContentText("Application integrity has been compromised!")
-            .setSmallIcon(R.drawable.ic_security_alert)
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
-            .build()
-
-        notificationManager.notify(1, notification)
     }
 }

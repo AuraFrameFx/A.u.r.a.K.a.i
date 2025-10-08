@@ -3,6 +3,7 @@
 
 plugins {
     id("genesis.android.library")
+    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
@@ -17,15 +18,6 @@ android {
     
     buildFeatures {
         buildConfig = true
-        compose = true
-    }
-}
-
-
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(24))
     }
 }
 
@@ -81,5 +73,5 @@ dependencies {
     testImplementation(libs.junit4)
     testImplementation(libs.mockk)
     androidTestImplementation(libs.bundles.testing.android)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
+    implementation(kotlin("stdlib-jdk8"))
 }

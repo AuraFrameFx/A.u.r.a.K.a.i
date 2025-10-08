@@ -1,1 +1,1 @@
-C:\ReGenesis-A.O.S.P\secure-comm\src\main\cpp\CMakeLists.txt
+C:\ReGenesi\secure-comm\src\main\cpp\CMakeLists.txt

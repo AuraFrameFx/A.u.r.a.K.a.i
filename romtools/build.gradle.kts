@@ -1,13 +1,12 @@
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-
 plugins {
     id("com.android.library")
     id("com.android.base")  // AGP 9 alpha workaround
 
+    id("com.android.base") // AGP 9.0.0-alpha09 workaround: Hilt auto-applies when detecting this
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler) // Required for Compose in Kotlin 2.0+
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -23,16 +22,17 @@ android {
     buildFeatures {
         compose = true
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.10" // Match this to your Compose BOM version
+    }
+}
 
-
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(24))
-        }
+    kotlin {
+        jvmToolchain(24)
     }
 
     val romToolsOutputDirectory: DirectoryProperty =
-        project.objects.directoryProperty().convention(layout.buildDirectory.dir("rom-tools"))
+    project.objects.directoryProperty().convention(layout.buildDirectory.dir("rom-tools"))
 
     dependencies {
         api(project(":core-module"))
@@ -63,8 +63,8 @@ android {
         androidTestImplementation(platform(libs.androidx.compose.bom))
         // androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
         implementation(kotlin("stdlib-jdk8"))
-        implementation(libs.androidx.material.icons.extended)
-        implementation(libs.hilt.navigation.compose)
+        implementation("androidx.compose.material:material-icons-extended")
+        implementation("androidx.hilt:hilt-navigation-compose:1.3.0")
     }
 
 // Copy task
@@ -88,47 +88,13 @@ android {
         group = "aegenesis"; doLast { println("🛠️ ROM TOOLS - Ready (Java 24)") }
     }
 
-// Add modern documentation task that doesn't rely on deprecated plugins
-    tasks.register("generateApiDocs") {
-        group = "documentation"
-        description = "Generates API documentation without relying on deprecated plugins"
-
-        doLast {
-            logger.lifecycle("🔍 Generating API documentation for romtools module")
-            logger.lifecycle("📂 Source directories:")
-            logger.lifecycle("   - ${projectDir.resolve("src/main/kotlin")}")
-            logger.lifecycle("   - ${projectDir.resolve("src/main/java")}")
-
-            // Using layout.buildDirectory instead of deprecated buildDir property
-            val docsDir = layout.buildDirectory.dir("docs/api").get().asFile
-            docsDir.mkdirs()
-
-            val indexFile = docsDir.resolve("index.html")
-            indexFile.writeText(
-                """
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>ROM Tools API Documentation</title>
-            <style>
-                body { font-family: Arial, sans-serif; margin: 20px; }
-                h1 { color: #4285f4; }
-            </style>
-        </head>
-        <body>
-            <h1>ROM Tools API Documentation</h1>
-            <p>Generated on ${
-                    LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
-                }</p>
-            <p>JDK Version: 24</p>
-            <h2>Module Overview</h2>
-            <p>System modification and ROM tools for the A.U.R.A.K.A.I. platform.</p>
-        </body>
-        </html>
-    """.trimIndent()
-            )
-
-            logger.lifecycle("✅ Documentation generated at: ${indexFile.absolutePath}")
+tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
+        dokkaSourceSets {
+        named("main") {
+            sourceRoots.from(file("src/main/java"))
+            sourceRoots.from(file("src/main/kotlin"))
+            sourceRoots.from(file("src/main/res"))
+        }
         }
     }
 

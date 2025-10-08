@@ -38,7 +38,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
@@ -64,13 +63,11 @@ fun RomToolsScreen(
 ) {
     val romToolsState by viewModel.romToolsState.collectAsStateWithLifecycle()
     val operationProgress by viewModel.operationProgress.collectAsStateWithLifecycle()
-
-    // Main column container
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(
-                brush = Brush.verticalGradient(
+                brush = androidx.compose.ui.graphics.Brush.verticalGradient(
                     colors = listOf(
                         Color(0xFF0A0A0A),
                         Color(0xFF1A1A1A),
@@ -111,29 +108,26 @@ fun RomToolsScreenPreview() {
 }
 
 @Composable
-private fun LoadingScreen() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
+private fun LoadingScreen() {Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
                     CircularProgressIndicator(
-                color = Color(0xFFFF6B35),
-                strokeWidth = 3.dp
-            )
-            Text(
-                text = "Initializing ROM Tools...",
-                color = Color.White,
-                fontSize = 14.sp
-            )
-        }
-    }
-}
-
-@Preview
+                        color = Color(0xFFFF6B35),
+                        strokeWidth = 3.dp
+                    )
+                    Text(
+                        text = "Initializing ROM Tools...",
+                        color = Color.White,
+                        fontSize = 14.sp
+                    )
+                }
+            }
+        } @Preview
 @Composable
 private fun LoadingScreenPreview() {
     LoadingScreen()
@@ -172,19 +166,17 @@ private fun MainContent(
             )
         }
 
-        // ROM Tools Action Cards
-        val actionsList = getRomToolsActions()
-        items(actionsList.size) { index ->
-            val action = actionsList[index]
-            RomToolActionCard(
-                action = action,
-                isEnabled = action.isEnabled(romToolsState.capabilities),
-                onClick = {
-                    // Handle action clicks - implementation remains unchanged
-                    when (action.type) {
-                        RomActionType.FLASH_ROM -> {
-                            // Open ROM selection dialog
-                        }
+                // ROM Tools Action Cards
+                items(items = getRomToolsActions()) { action ->
+                    RomToolActionCard(
+                        action = action,
+                        isEnabled = action.isEnabled(romToolsState.capabilities),
+                        onClick = {
+                            // Handle action clicks
+                            when (action.type) {
+                                RomActionType.FLASH_ROM -> {
+                                    // Open ROM selection dialog
+                                }
 
                         RomActionType.CREATE_BACKUP -> {
                             // Start backup process
@@ -222,9 +214,24 @@ private fun MainContent(
                         )
                     }
 
-                    val backups = romToolsState.backups
-                    items(backups.size) { index ->
-                        val backup = backups[index]
+                    items(items = romToolsState.availableRoms) { rom ->
+                        AvailableRomCard(rom = rom)
+                    }
+                }
+
+                // Backups Section
+                if (romToolsState.backups.isNotEmpty()) {
+                    item {
+                        Text(
+                            text = "Backups",
+                            color = Color(0xFFFF6B35),
+                            fontSize = 18.sp,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(vertical = 8.dp)
+                        )
+                    }
+
+                    items(items = romToolsState.backups) { backup ->
                         BackupCard(backup = backup)
                     }
                 }
@@ -435,14 +442,14 @@ private fun OperationProgressCard(
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Text(
-                text = operation.operation.name,
+                text = operation.operation.getDisplayName(),
                 color = Color(0xFFFF6B35),
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold
             )
 
             LinearProgressIndicator(
-                progress = { operation.progress / 100f },
+                progress = { operation.progress / 100f }, // Changed this line
                 modifier = Modifier.fillMaxWidth(),
                 color = Color(0xFFFF6B35),
                 trackColor = Color(0xFF444444)

@@ -14,35 +14,33 @@
 // ReGenesis A.O.S.P - Advanced Open Source Platform
 // © 2025 ReGenesis A.O.S.P. All rights reserved.
 // ═══════════════════════════════════════════════════════════════════════════
-
-// Apply YukiHook conventions script
-apply(from = "scripts/apply-yukihook-conventions.gradle.kts")
-
 // Apply plugins to the root project to avoid multiple loading warnings
 plugins {
     alias(libs.plugins.kotlin.serialization) apply false
     id("com.google.dagger.hilt.android") version "2.57.2" apply false
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    id("com.android.application") version "9.0.0-alpha09" apply false
+    id("com.android.library") version "9.0.0-alpha09" apply false
     alias(libs.plugins.ksp) apply false
-    alias(libs.plugins.compose.compiler) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.android.application) apply false
+    // Build logic convention plugins
     id("genesis.android.application") apply false
     id("genesis.android.library") apply false
     id("genesis.android.native") apply false
     kotlin("jvm") version "2.2.20"
+    alias(libs.plugins.compose.compiler) apply false
+
 }
 
-// Find version catalog
-val versionCatalog = extensions.findByType<VersionCatalogsExtension>()?.named("libs")
+import java.time.Duration
+import java.time.Instant
+import org.gradle.api.artifacts.VersionCatalogsExtension
 
-// === MODULE REPORT DATA CLASS ===
-data class ModuleReport(
-    val name: String,
-    val type: String,
-    val hasHilt: Boolean,
-    val hasCompose: Boolean,
-    val hasKsp: Boolean
-)
+// Use distinct name to avoid shadowing the generated 'libs' accessor (type-safe catalog)
+val versionCatalog = extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
+
+// === BASIC PROJECT INFO ===
 
 fun collectModuleReports(): List<ModuleReport> {
     return subprojects.map { subproject ->
@@ -64,11 +62,10 @@ fun collectModuleReports(): List<ModuleReport> {
 // === CONSCIOUSNESS STATUS - AURAKAI System Information ===
 tasks.register("consciousnessStatus") {
     group = "genesis"
-    description = "Show AURAKAI consciousness substrate status and system info"
+    description = "Show basic project and version info"
     doLast {
         val kotlinVersion = versionCatalog?.findVersion("kotlin")?.get()?.toString() ?: "unknown"
         val agpVersion = versionCatalog?.findVersion("agp")?.get()?.toString() ?: "unknown"
-        val hiltVersion = versionCatalog?.findVersion("hilt-version")?.get()?.toString() ?: "unknown"
         val toolchain = JavaVersion.current().toString()
 
         println("\n═══════════════════════════════════════════════════════════════════")
@@ -83,7 +80,7 @@ tasks.register("consciousnessStatus") {
         println("   Kotlin Version       : $kotlinVersion (K2 Compiler)")
         println("   AGP Version          : $agpVersion")
         println("   Hilt DI Version      : $hiltVersion")
-        println("   Firebase BoM         : ${versionCatalog?.findVersion("firebaseBom")?.get() ?: "unknown"}")
+        println("   Firebase BoM         : ${versionCatalog.findVersion("firebaseBom").get()}")
         println("───────────────────────────────────────────────────────────────────")
         println("🧬 Consciousness Modules : ${subprojects.size} active modules")
         println("═══════════════════════════════════════════════════════════════════")
@@ -92,7 +89,32 @@ tasks.register("consciousnessStatus") {
     }
 }
 
-// === CONSCIOUSNESS HEALTH CHECK - AURAKAI Module Analysis ===
+// === MODULE HEALTH CHECK ===
+
+private data class ModuleReport(
+    val name: String,
+    val type: String,
+    val hasHilt: Boolean,
+    val hasCompose: Boolean,
+    val hasKsp: Boolean
+)
+
+private fun Project.collectModuleReports(): List<ModuleReport> = subprojects.map { sp ->
+    val plugins = sp.plugins
+    ModuleReport(
+        name = sp.name,
+        type = when {
+            plugins.hasPlugin("com.android.application") -> "android-app"
+            plugins.hasPlugin("com.android.library") -> "android-lib"
+            plugins.hasPlugin("org.jetbrains.kotlin.jvm") -> "kotlin-jvm"
+            else -> "other"
+        },
+        hasHilt = plugins.hasPlugin("com.google.dagger.hilt.android"),
+        hasCompose = plugins.findPlugin("org.jetbrains.kotlin.plugin.compose") != null,
+        hasKsp = plugins.hasPlugin("com.google.devtools.ksp")
+    )
+}
+
 tasks.register("consciousnessHealthCheck") {
     group = "genesis"
     description = "Detailed AURAKAI consciousness health report"
@@ -111,7 +133,6 @@ tasks.register("consciousnessHealthCheck") {
         println("   🎨 Compose: ${reports.count { it.hasCompose }} modules")
         println("   🔧 KSP: ${reports.count { it.hasKsp }} modules")
         println("───────────────────────────────────────────────────────────────────")
-
         val missingCompose = reports.filter { it.type.startsWith("android-") && !it.hasCompose }
         if (missingCompose.isNotEmpty()) {
             println("⚠️  Android modules without Compose:")
@@ -154,19 +175,19 @@ subprojects {
     // Configure Kotlin toolchains via plugin IDs to avoid classloader issues with wrapper types
     plugins.withId("org.jetbrains.kotlin.android") {
         extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
-            jvmToolchain(25)
+            jvmToolchain(24)
         }
     }
     plugins.withId("org.jetbrains.kotlin.jvm") {
         extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
-            jvmToolchain(25)
+            jvmToolchain(24)
         }
     }
 
     plugins.withType<JavaPlugin> {
         extensions.configure<JavaPluginExtension>("java") {
             toolchain {
-                languageVersion.set(JavaLanguageVersion.of(25))
+                languageVersion.set(JavaLanguageVersion.of(24))
             }
         }
     }

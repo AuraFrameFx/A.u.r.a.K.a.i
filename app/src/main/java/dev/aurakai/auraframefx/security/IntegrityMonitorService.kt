@@ -3,51 +3,45 @@ package dev.aurakai.auraframefx.security
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
-import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import javax.inject.Inject
+import android.util.Log
 
-@AndroidEntryPoint
 class IntegrityMonitorService : Service() {
 
-    @Inject
-    lateinit var securityContext: SecurityContext
-
-    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
-    private var lastSignatureHash: String? = null
+    private val TAG = "IntegrityMonitor"
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        scope.launch {
-            while (true) {
-                val integrity = securityContext.verifyApplicationIntegrity()
-                if (lastSignatureHash != null && lastSignatureHash != integrity.signatureHash) {
-                    securityContext.logSecurityEvent(
-                        SecurityEvent(
-                            type = SecurityEventType.INTEGRITY_CHECK,
-                            details = "Application signature has changed!",
-                            severity = EventSeverity.CRITICAL
-                        )
-                    )
-                    val intent = Intent(ACTION_INTEGRITY_VIOLATION)
-                    sendBroadcast(intent)
-                }
-                lastSignatureHash = integrity.signatureHash
-                delay(MONITORING_INTERVAL_MS)
-            }
-        }
-        return START_STICKY
+        Log.d(TAG, "Integrity Monitor Service Started.")
+        // Kai's core logic: Implement continuous checks here.
+        // For example:
+        // 1. Root detection.
+        // 2. App signature verification.
+        // 3. Debugger attachment checks.
+
+        // If a violation is detected:
+        // val violationIntent = Intent(this, IntegrityViolationReceiver::class.java)
+        // violationIntent.action = "com.auraframefx.regenesis.INTEGRITY_VIOLATION"
+        // violationIntent.putExtra("VIOLATION_TYPE", "ROOT_DETECTED")
+        // sendBroadcast(violationIntent)
+
+        // For now, it will just log. We can build out the full logic.
+        checkForViolations()
+
+        // Service will not be recreated if terminated.
+        return START_NOT_STICKY
     }
 
-    override fun onBind(intent: Intent?): IBinder? {
+    private fun checkForViolations() {
+        // Placeholder for integrity check logic.
+        Log.i(TAG, "Performing scheduled integrity checks...")
+    }
+
+    override fun onBind(intent: Intent): IBinder? {
+        // This is not a bound service.
         return null
     }
 
-    companion object {
-        private const val MONITORING_INTERVAL_MS = 60000L // 1 minute
-        const val ACTION_INTEGRITY_VIOLATION = "dev.aurakai.auraframefx.ACTION_INTEGRITY_VIOLATION"
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "Integrity Monitor Service Stopped.")
     }
 }

@@ -1,15 +1,12 @@
 plugins {
     // JVM library setup
     id("java-library")
-    kotlin("jvm")
 
-    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
 }
 group = "dev.aurakai.auraframefx.utilities"
 version = "1.0.0"
-// ... existing code ...
 
 dependencies {
     // Module dependency
@@ -49,7 +46,7 @@ java {
 // ... existing code ...
 
 kotlin {
-    jvmToolchain(24)
+    jvmToolchain(jdkVersion)
 }
 
 // ... existing code ...

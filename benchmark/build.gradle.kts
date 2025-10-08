@@ -1,32 +1,11 @@
 // ==== GENESIS PROTOCOL - BENCHMARK MODULE ====
 // Performance testing for AI consciousness operations
 
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-
 plugins {
     id("com.android.library")
-    id("com.android.base")  // AGP 9 alpha workaround
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
-}
-
-// Add modern documentation task that doesn't rely on deprecated plugins
-tasks.register("generateApiDocs") {
-    group = "documentation"
-    description = "Generates API documentation without relying on deprecated plugins"
-
-    doLast {
-        // Log the task execution
-        logger.lifecycle("🔍 Generating API documentation for benchmark module")
-        logger.lifecycle("📂 Source directories:")
-        logger.lifecycle("   - ${projectDir.resolve("src/main/kotlin")}")
-        logger.lifecycle("   - ${projectDir.resolve("src/main/java")}")
-
-        // Create documentation output directory
-        // Fix: Using layout.buildDirectory instead of deprecated project.buildDir
-        val docsDir = layout.buildDirectory.dir("docs/api").get().asFile
-        docsDir.mkdirs()
+    alias(libs.plugins.dokka)
 
         // Create a basic documentation index file
         val indexFile = docsDir.resolve("index.html")
@@ -60,7 +39,9 @@ tasks.register("generateApiDocs") {
     }
 }
 
-
+kotlin {
+    jvmToolchain(24)
+}
 
 // Java toolchain configuration at the project level
 java {
@@ -68,6 +49,9 @@ java {
         languageVersion.set(JavaLanguageVersion.of(24))
     }
 }
+
+// JVM toolchain configuration for Kotlin sources
+
 
 android {
     namespace = "dev.aurakai.auraframefx.benchmark"

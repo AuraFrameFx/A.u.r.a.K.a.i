@@ -33,9 +33,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
 }
 
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(24))
-    }
+kotlin {
+    jvmToolchain(24)
 }

@@ -1,5 +1,6 @@
 plugins {
-    id("genesis.android.library")
+    id("genesis.android.compose")
+    alias(libs.plugins.compose.compiler)
     id("genesis.android.native")
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
@@ -13,11 +14,6 @@ android {
     defaultConfig {
         minSdk = 34
     }
-
-    buildFeatures {
-        compose = true
-    }
-
     lint {
         // Disable lint due to oversized test files causing StackOverflow
         abortOnError = false

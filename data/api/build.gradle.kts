@@ -2,26 +2,24 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("org.openapi.generator") version "7.16.0"
-    kotlin("jvm")
+    kotlin("jvm") // Or your project's specific Kotlin version, e.g., version "1.9.23"
     kotlin("plugin.serialization")
     `java-library`
 }
 
-kotlin {
-    jvmToolchain(24)
-}
+val ecoCoreSpec = file("${rootDir}/data/api/eco-core.yaml")
+val ecoAiSpec = file("${rootDir}/data/api/eco-ai.yaml")
 
-val ecoSpec = file("${rootDir}/data/api/ECO.yaml")
-
-require(ecoSpec.exists()) { "OpenAPI spec not found at: ${ecoSpec.absolutePath}" }
+require(ecoCoreSpec.exists()) { "OpenAPI spec not found at: ${ecoCoreSpec.absolutePath}" }
+require(ecoAiSpec.exists()) { "OpenAPI spec not found at: ${ecoAiSpec.absolutePath}" }
 
 openApiGenerate {
     generatorName = "kotlin"
-    inputSpec = ecoSpec.toURI().toString()
+    inputSpec = ecoCoreSpec.toURI().toString()
     validateSpec = false
-    outputDir = layout.buildDirectory.dir("generated/openapi/eco").get().asFile.path
-    apiPackage = "dev.aurakai.auraframefx.api.eco"
-    modelPackage = "dev.aurakai.auraframefx.model.eco"
+    outputDir = layout.buildDirectory.dir("generated/openapi/ecocore").get().asFile.path
+    apiPackage = "dev.aurakai.auraframefx.api.ecocore"
+    modelPackage = "dev.aurakai.auraframefx.model.ecocore"
 
     additionalProperties = mapOf(
         "skipValidateSpec" to "true",
@@ -52,7 +50,7 @@ openApiGenerate {
 
 tasks.register("openApiGenerateEcoAi", org.openapitools.generator.gradle.plugin.tasks.GenerateTask::class) {
     generatorName = "kotlin"
-    inputSpec = ecoSpec.toURI().toString()
+    inputSpec = ecoAiSpec.toURI().toString()
     validateSpec = false
     outputDir = layout.buildDirectory.dir("generated/openapi/ecoai").get().asFile.path
     apiPackage = "dev.aurakai.auraframefx.api.ecoai"
@@ -108,29 +106,51 @@ tasks.jar {
     dependsOn(tasks.named("openApiGenerate"))
 }
 
+val openApiGeneratedDir = layout.buildDirectory.dir("generated/openapi")
+
+// Add a rule to the 'clean' task to delete the generated directory.
+// This prevents stale or old generated files from causing issues.
+tasks.named("clean") {
+    doLast {
+        delete(layout.buildDirectory.dir("generated/openapi"))
+    }
+}
+
+// Define the dependencies required by the generated Ktor client.
+// This block is now available because of the `java-library` plugin.
 dependencies {
+    // Core dependencies for Kotlin
     implementation(kotlin("stdlib"))
     implementation(kotlin("reflect"))
 
-    implementation(libs.ktor.client.core)
-    implementation(libs.ktor.client.cio)
-    implementation(libs.ktor.client.content.negotiation)
+    implementation("io.ktor:ktor-client-core:3.3.0")
+    implementation("io.ktor:ktor-client-cio:3.3.0")
+    implementation("io.ktor:ktor-client-content-negotiation:3.3.0")
     implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.0")
 
-    implementation(libs.kotlinx.serialization.json)
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.7.1")
-    implementation(libs.kotlinx.coroutines.core)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
 
+    // Logging
     implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
-    implementation(libs.slf4j.api)
+    implementation("org.slf4j:slf4j-api:2.0.17")
+    runtimeOnly("ch.qos.logback:logback-classic:1.5.19")
 
+    // Testing dependencies
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))
-    testImplementation(libs.junit.jupiter.api)
-    testRuntimeOnly(libs.junit.jupiter.engine)
-    testImplementation(libs.mockk)
+    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.0")
+    testImplementation("io.mockk:mockk:1.14.6")
 }
 
+// Configure test task to use JUnit 5
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+// Make sure the generated code is included in the JAR
+tasks.jar {
+    dependsOn("openApiGenerate")
 }

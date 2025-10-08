@@ -12,8 +12,11 @@ class AndroidComposeConventionPlugin : Plugin<Project> {
      *
      * This will:
      * - Apply the base "genesis.android.library" convention plugin.
-     * - Apply the Kotlin Compose plugin "org.jetbrains.kotlin.plugin.compose".
      * - Configure the Android LibraryExtension to enable Compose build features.
+     * - Configure Compose Compiler metrics and stability configuration (if plugin is applied).
+     *
+     * Note: Modules using this plugin must also apply the Compose Compiler plugin via:
+     * alias(libs.plugins.compose.compiler)
      *
      * @param target The Gradle [Project] this plugin is being applied to.
      */
@@ -21,14 +24,15 @@ class AndroidComposeConventionPlugin : Plugin<Project> {
         with(target) {
             // Apply the base library convention first
             pluginManager.apply("genesis.android.library")
-            // Defer extension configuration until plugin is ready
-            pluginManager.withPlugin("com.android.library") {
-                extensions.configure<LibraryExtension> {
-                    // Note: Compose disabled due to Kotlin 2.2.20-RC compatibility issues
-                    // buildFeatures {
-                    //     compose = true
-                    // }
-                }
+
+            // Note: Kotlin Compose plugin not available for Kotlin 2.2.20-RC
+            // Instead, AGP 9.0+ handles Compose configuration automatically
+
+            extensions.configure<LibraryExtension> {
+                // Note: Compose disabled due to Kotlin 2.2.20-RC compatibility issues
+                // buildFeatures {
+                //     compose = true
+                // }
             }
         }
     }

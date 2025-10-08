@@ -9,8 +9,9 @@ group = "dev.aurakai.auraframefx.buildlogic"
 
 // Dependencies required for the convention plugins themselves.
 dependencies {
-    implementation("com.android.tools.build:gradle:9.0.0-alpha05")
+    implementation("com.android.tools.build:gradle:9.0.0-alpha02")
     implementation(libs.kotlin.gradle.plugin)
+    implementation("org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.2.20")
     implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
 
     // Test dependencies
@@ -54,23 +55,15 @@ gradlePlugin {
             id = "genesis.android.native"
             implementationClass = "AndroidNativeConventionPlugin"
         }
-        register("androidBase") {
-            id = "android.base"
-            implementationClass = "plugins.AndroidBasePlugin"
-        }
-        register("agentFusion") {
-            id = "agent.fusion"
-            implementationClass = "plugins.AgentFusionPlugin"
-        }
     }
 }
 
 kotlin {
-    jvmToolchain(25)
+    jvmToolchain(24)
 }
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(25))
+        languageVersion.set(JavaLanguageVersion.of(24))
     }
 }

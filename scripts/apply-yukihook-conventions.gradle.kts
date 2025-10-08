@@ -2,30 +2,52 @@
 subprojects {
     if (name == "build-logic" || name == "buildSrc") return@subprojects
 
-    afterEvaluate {
-        val isAndroidModule = plugins.hasPlugin("com.android.library") || plugins.hasPlugin("com.android.application")
-        if (isAndroidModule) {
-            // Add dependencies safely
-            dependencies.apply {
-                add("implementation", "com.highcapable.yukihookapi:api:1.3.1")
-                add("implementation", files("${rootDir}/Libs/api-82.jar"))
-                add("implementation", files("${rootDir}/Libs/api-82-sources.jar"))
-                add("implementation", "androidx.core:core-ktx:1.17.0")
-                add("testImplementation", "junit:junit:4.13.2")
-                add("androidTestImplementation", "androidx.test.ext:junit:1.3.0")
-                add("androidTestImplementation", "androidx.test.espresso:espresso-core:3.7.0")
-            }
+    // Check if this is an Android module
+    val isAndroidModule = subproject.plugins.hasPlugin("com.android.library") ||
+            subproject.plugins.hasPlugin("com.android.application")
+
+    if (isAndroidModule) {
+        // Apply common Android and YukiHook configurations
+        with(subproject) {
+            // Apply common plugins if not already applied
+            pluginManager.apply("com.android.library")
+            // org.jetbrains.kotlin.android removed - AGP 9.0 has built-in Kotlin support
+            pluginManager.apply("com.google.devtools.ksp")
+            pluginManager.apply("org.lsposed.lsparanoid")
+
+            // Configure Android settings
+            extensions.configure<com.android.build.gradle.LibraryExtension> {
+                compileSdk = 36
+
+                defaultConfig {
+                    minSdk = 33
+                    targetSdk = 36
+
+                    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+                    consumerProguardFiles("consumer-rules.pro")
+                }
 
             // Only log a message for Android config (do not attempt to configure extensions directly)
             logger.lifecycle("[YukiHook] Convention dependencies applied to $name. Please set compileSdk, minSdk, targetSdk, and other Android configs in each module's build.gradle.kts.")
 
-            // Configure LSParanoid if present
-            extensions.findByName("lsparanoid")?.let { ext ->
-                ext.javaClass.getMethod("setSeed", Long::class.java).invoke(ext, 0x2A)
-                ext.javaClass.getMethod("setIncludeAsSharedUuid", Boolean::class.java).invoke(ext, true)
+                compileOptions {
+                    sourceCompatibility = JavaVersion.VERSION_24
+                    targetCompatibility = JavaVersion.VERSION_24
+                }
             }
 
-            // Configure KSP if present
+            // Configure Kotlin compiler options (AGP 9.0 built-in Kotlin)
+            extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
+                compilerOptions {
+                    jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+                    freeCompilerArgs.addAll(
+                        "-Xjvm-default=all",
+                        "-opt-in=kotlin.RequiresOptIn"
+                    )
+                }
+            }
+
+                        // Configure KSP if present
             extensions.findByName("ksp")?.let { ext ->
                 ext.javaClass.getMethod("arg", String::class.java, String::class.java)
                     .invoke(ext, "YUKIHOOK_PACKAGE_NAME", group.toString())
