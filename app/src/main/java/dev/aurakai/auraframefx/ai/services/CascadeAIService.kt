@@ -735,8 +735,8 @@ class CascadeAIService @Inject constructor(
      */
     private fun assessSecurityRisk(message: String): String {
         return when {
-            containsSecurityContent(message) -> "Medium"
             message.contains(Regex("hack|attack|breach|exploit", RegexOption.IGNORE_CASE)) -> "High"
+            containsSecurityContent(message) -> "Medium"
             else -> "Low"
         }
     }
