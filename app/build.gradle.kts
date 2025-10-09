@@ -1,5 +1,7 @@
 plugins {
     id("genesis.android.application")
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.firebase.crashlytics)
 }
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====

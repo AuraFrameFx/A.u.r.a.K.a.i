@@ -83,6 +83,13 @@ tasks.register("openApiGenerateEcoAi", org.openapitools.generator.gradle.plugin.
     )
 }
 
+tasks.named("openApiGenerate") {
+    outputs.dir(layout.buildDirectory.dir("generated/openapi/ecocore"))
+}
+tasks.named("openApiGenerateEcoAi") {
+    outputs.dir(layout.buildDirectory.dir("generated/openapi/ecoai"))
+}
+
 sourceSets {
     named("main") {
         java.srcDir(layout.buildDirectory.dir("generated/openapi/eco/src/main/kotlin"))

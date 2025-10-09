@@ -28,11 +28,11 @@ dependencies {
 // Configure test execution (temporarily disabled for bleeding-edge compatibility)
 tasks.test {
     useJUnitPlatform()
-    enabled = true // Re-enabled for full test support
+    enabled = true // Re-enabled after fixing AGP 9.0 compatibility
 }
 
 tasks.compileTestKotlin {
-    enabled = true // Re-enabled for full test support
+    enabled = true // Re-enabled after fixing AGP 9.0 compatibility
 }
 
 gradlePlugin {
