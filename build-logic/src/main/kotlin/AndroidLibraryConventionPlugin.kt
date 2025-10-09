@@ -44,10 +44,14 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             }
             // Kotlin JVM toolchain - use 24 for stable compatibility
             pluginManager.withPlugin("org.jetbrains.kotlin.android") {
-                extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
+                extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
                     jvmToolchain(24)
                     compilerOptions {
                         jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+                        freeCompilerArgs.addAll(
+                            "-opt-in=kotlin.RequiresOptIn",
+                            "-Xjvm-default=all"
+                        )
                     }
                 }
             }
