@@ -107,7 +107,10 @@ class KaiAgent @Inject constructor(
     /**
      * Required implementation of BaseAgent's abstract processRequest method
      */
-    override suspend fun processRequest(request: dev.aurakai.auraframefx.model.AiRequest, context: String): AgentResponse {
+    override suspend fun processRequest(
+        request: dev.aurakai.auraframefx.model.AiRequest,
+        context: String
+    ): AgentResponse {
         ensureInitialized()
 
         logger.info("KaiAgent", "Processing analytical request: ${request.prompt}")
@@ -137,8 +140,7 @@ class KaiAgent @Inject constructor(
 
             AgentResponse(
                 content = "Analysis completed with methodical precision: $response",
-                confidence = 0.85f,
-                error = null
+                confidence = 0.85f
             )
 
         } catch (e: SecurityException) {
@@ -246,11 +248,13 @@ class KaiAgent @Inject constructor(
                     interaction,
                     securityAssessment
                 )
+
                 ThreatLevel.LOW -> generateLowSecurityResponse(interaction, securityAssessment)
                 ThreatLevel.CRITICAL -> generateCriticalSecurityResponse(
                     interaction,
                     securityAssessment
                 )
+
                 else -> generateStandardSecurityResponse(interaction)
             }
 

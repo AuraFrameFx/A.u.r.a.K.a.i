@@ -136,7 +136,7 @@ class ThemeManagerTest {
     @Test
     fun `getLockScreenTheme reflects dark mode and accent correctly (light mode)`() {
         // Ensure light mode
-        themeManager.applyTheme(ThemeManager.ThemeConfig(isDarkMode = false))
+        themeManager.applyTheme(ThemeManager.ThemeConfig())
         val map = themeManager.getLockScreenTheme()
 
         assertEquals(false, map["isDarkMode"])
@@ -162,7 +162,6 @@ class ThemeManagerTest {
     fun `getColorScheme returns lightColorScheme with configured colors when light mode`() {
         themeManager.applyTheme(
             ThemeManager.ThemeConfig(
-                isDarkMode = false,
                 primaryColor = Color(0xFF101010),
                 secondaryColor = Color(0xFF202020),
                 accentColor = Color(0xFF303030)

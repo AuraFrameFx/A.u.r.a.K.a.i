@@ -1,6 +1,8 @@
 plugins {
     // JVM library setup
     id("java-library")
+    kotlin("jvm")
+    kotlin("plugin.serialization")
 
     // Additional tooling
     alias(libs.plugins.spotless)
@@ -13,6 +15,12 @@ val jdkVersion = 24
 
 java {
     toolchain { languageVersion.set(JavaLanguageVersion.of(jdkVersion)) }
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+    }
 }
 
 

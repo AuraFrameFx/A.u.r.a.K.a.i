@@ -21,7 +21,6 @@ data class AgentResponse(
             return AgentResponse(
                 content = content,
                 confidence = confidence,
-                error = null,
                 agentName = agentName,
                 metadata = metadata.mapValues { it.value.toString() }
             )
@@ -46,7 +45,6 @@ data class AgentResponse(
             return AgentResponse(
                 content = message,
                 confidence = 0.5f,
-                error = null,
                 agentName = agentName
             )
         }

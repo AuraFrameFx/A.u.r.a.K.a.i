@@ -40,15 +40,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dev.aurakai.auraframefx.romtools.BackupInfo
 import dev.aurakai.auraframefx.romtools.FakeRomToolsManager
 import dev.aurakai.auraframefx.romtools.RomCapabilities
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dev.aurakai.auraframefx.romtools.RomToolsManager
 
 /**
@@ -108,26 +108,29 @@ fun RomToolsScreenPreview() {
 }
 
 @Composable
-private fun LoadingScreen() {Box(
-                modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center
-            ) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(16.dp)
-                ) {
-                    CircularProgressIndicator(
-                        color = Color(0xFFFF6B35),
-                        strokeWidth = 3.dp
-                    )
-                    Text(
-                        text = "Initializing ROM Tools...",
-                        color = Color.White,
-                        fontSize = 14.sp
-                    )
-                }
-            }
-        } @Preview
+private fun LoadingScreen() {
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            CircularProgressIndicator(
+                color = Color(0xFFFF6B35),
+                strokeWidth = 3.dp
+            )
+            Text(
+                text = "Initializing ROM Tools...",
+                color = Color.White,
+                fontSize = 14.sp
+            )
+        }
+    }
+}
+
+@Preview
 @Composable
 private fun LoadingScreenPreview() {
     LoadingScreen()
@@ -166,17 +169,17 @@ private fun MainContent(
             )
         }
 
-                // ROM Tools Action Cards
-                items(items = getRomToolsActions()) { action ->
-                    RomToolActionCard(
-                        action = action,
-                        isEnabled = action.isEnabled(romToolsState.capabilities),
-                        onClick = {
-                            // Handle action clicks
-                            when (action.type) {
-                                RomActionType.FLASH_ROM -> {
-                                    // Open ROM selection dialog
-                                }
+        // ROM Tools Action Cards
+        items(items = getRomToolsActions()) { action ->
+            RomToolActionCard(
+                action = action,
+                isEnabled = action.isEnabled(romToolsState.capabilities),
+                onClick = {
+                    // Handle action clicks
+                    when (action.type) {
+                        RomActionType.FLASH_ROM -> {
+                            // Open ROM selection dialog
+                        }
 
                         RomActionType.CREATE_BACKUP -> {
                             // Start backup process
@@ -209,34 +212,34 @@ private fun MainContent(
                     text = "Available ROMs",
                     color = Color(0xFFFF6B35),
                     fontSize = 18.sp,
-                            fontWeight = FontWeight.Bold,
-                            modifier = Modifier.padding(vertical = 8.dp)
-                        )
-                    }
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(vertical = 8.dp)
+                )
+            }
 
-                    items(items = romToolsState.availableRoms) { rom ->
-                        AvailableRomCard(rom = rom)
-                    }
-                }
-
-                // Backups Section
-                if (romToolsState.backups.isNotEmpty()) {
-                    item {
-                        Text(
-                            text = "Backups",
-                            color = Color(0xFFFF6B35),
-                            fontSize = 18.sp,
-                            fontWeight = FontWeight.Bold,
-                            modifier = Modifier.padding(vertical = 8.dp)
-                        )
-                    }
-
-                    items(items = romToolsState.backups) { backup ->
-                        BackupCard(backup = backup)
-                    }
-                }
+            items(items = romToolsState.availableRoms) { rom ->
+                AvailableRomCard(rom = rom)
             }
         }
+
+        // Backups Section
+        if (romToolsState.backups.isNotEmpty()) {
+            item {
+                Text(
+                    text = "Backups",
+                    color = Color(0xFFFF6B35),
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(vertical = 8.dp)
+                )
+            }
+
+            items(items = romToolsState.backups) { backup ->
+                BackupCard(backup = backup)
+            }
+        }
+    }
+}
 
 @Preview
 @Composable
@@ -378,6 +381,7 @@ private fun DeviceCapabilitiesCardLoadingPreview() {
 private fun CapabilityRowPreview() {
     CapabilityRow(label = "Root Access", hasCapability = true)
 }
+
 @Composable
 private fun CapabilityRow(label: String, hasCapability: Boolean) {
     Row(
@@ -591,9 +595,7 @@ private fun getRomToolsActions(): List<RomToolAction> {
             title = "Unlock Bootloader",
             description = "Unlock device bootloader for modifications",
             icon = Icons.Default.LockOpen,
-            color = Color(0xFFFFC107),
-            requiresRoot = false,
-            requiresBootloader = false
+            color = Color(0xFFFFC107)
         ),
         RomToolAction(
             type = RomActionType.INSTALL_RECOVERY,
@@ -677,7 +679,15 @@ private fun BackupCard(backup: BackupInfo) {
 @Preview
 @Composable
 private fun BackupCardPreview() {
-    val backupInfo = BackupInfo("FullBackup-20231026", "/sdcard/TWRP/BACKUPS/device_id/FullBackup-20231026", 8589934592L, System.currentTimeMillis(), "Pixel 8 Pro", "14.0", listOf("boot", "system", "data", "vendor"))
+    val backupInfo = BackupInfo(
+        "FullBackup-20231026",
+        "/sdcard/TWRP/BACKUPS/device_id/FullBackup-20231026",
+        8589934592L,
+        System.currentTimeMillis(),
+        "Pixel 8 Pro",
+        "14.0",
+        listOf("boot", "system", "data", "vendor")
+    )
     BackupCard(backup = backupInfo)
 }
 

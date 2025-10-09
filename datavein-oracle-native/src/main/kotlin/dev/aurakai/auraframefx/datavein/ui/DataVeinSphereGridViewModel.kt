@@ -287,7 +287,7 @@ private fun generateSphereGridData(config: SphereGridConfig): GridData {
                             from = node.id,
                             to = otherNode.id,
                             active = node.isUnlocked && otherNode.isUnlocked && kotlin.random.Random.nextFloat() > 0.5f,
-                            dataFlow = false, // Will be set by flow simulation
+                            // Will be set by flow simulation
                             strength = strength
                         )
                     )

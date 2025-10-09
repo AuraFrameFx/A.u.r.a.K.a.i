@@ -1,5 +1,4 @@
 plugins {
-    alias(libs.plugins.kotlin.android)
     id("genesis.android.application")
     alias(libs.plugins.google.services)
     alias(libs.plugins.firebase.crashlytics)
@@ -67,6 +66,7 @@ android {
         targetCompatibility = JavaVersion.toVersion("24")
         isCoreLibraryDesugaringEnabled = true
     }
+
     packaging {
         resources {
             excludes += "META-INF/INDEX.LIST"
@@ -75,7 +75,10 @@ android {
     }
 }
 
-
+// Suppress AIDL deprecation warnings
+tasks.withType<JavaCompile>().configureEach {
+    options.compilerArgs.add("-Xlint:none")
+}
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====

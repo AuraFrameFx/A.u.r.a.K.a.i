@@ -530,7 +530,7 @@ class DataStoreManager @Inject constructor(
 
     private suspend fun migrateFromV1ToV2() {
         // Example migration: convert old theme names to new format
-        val oldTheme = getString("theme", "")
+        val oldTheme = getString("theme")
         if (oldTheme.isNotEmpty()) {
             val newTheme = when (oldTheme) {
                 "dark" -> "cyberpunk_dark"
@@ -597,21 +597,21 @@ class DataStoreManager @Inject constructor(
     // === SESSION MANAGEMENT ===
 
     suspend fun recordSession() {
-        val sessionCount = getInt(SESSION_COUNT.name, 0)
+        val sessionCount = getInt(SESSION_COUNT.name)
         storeInt(SESSION_COUNT.name, sessionCount + 1)
         storeLong(LAST_LOGIN_TIME.name, System.currentTimeMillis())
     }
 
     suspend fun addUsageTime(milliseconds: Long) {
-        val currentUsage = getLong(TOTAL_USAGE_TIME.name, 0L)
+        val currentUsage = getLong(TOTAL_USAGE_TIME.name)
         storeLong(TOTAL_USAGE_TIME.name, currentUsage + milliseconds)
     }
 
     suspend fun getUsageStats(): Map<String, Any> {
         return mapOf(
-            "sessions" to getInt(SESSION_COUNT.name, 0),
-            "total_usage_hours" to (getLong(TOTAL_USAGE_TIME.name, 0L) / 3600000.0),
-            "last_login" to getLong(LAST_LOGIN_TIME.name, 0L),
+            "sessions" to getInt(SESSION_COUNT.name),
+            "total_usage_hours" to (getLong(TOTAL_USAGE_TIME.name) / 3600000.0),
+            "last_login" to getLong(LAST_LOGIN_TIME.name),
             "data_size_kb" to (getDataSize() / 1024.0),
             "preference_count" to getKeyCount()
         )

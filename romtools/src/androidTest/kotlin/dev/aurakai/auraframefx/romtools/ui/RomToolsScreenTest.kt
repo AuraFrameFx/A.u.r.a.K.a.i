@@ -93,7 +93,7 @@ class RomToolsScreenTest {
 
     @Test
     fun showsCapabilitiesAndSections_whenInitialized() {
-        val caps = defaultCaps(root = true, bootloader = true, recovery = false, system = true)
+        val caps = defaultCaps(root = true, bootloader = true, system = true)
         val fake = FakeRomToolsManager(
             initialState = defaultState(isInitialized = true, capabilities = caps),
             initialProgress = null
@@ -155,7 +155,7 @@ class RomToolsScreenTest {
     @Test
     fun romToolCards_renderLockedAffordance_whenCapabilitiesInsufficient() {
         // Provide no capabilities; many actions require root/recovery/bootloader/system.
-        val caps = defaultCaps(root = false, bootloader = false, recovery = false, system = false)
+        val caps = defaultCaps()
         val fake = FakeRomToolsManager(
             initialState = defaultState(isInitialized = true, capabilities = caps),
             initialProgress = null

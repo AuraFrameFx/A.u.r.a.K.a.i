@@ -48,7 +48,10 @@ openApiGenerate {
     )
 }
 
-tasks.register("openApiGenerateEcoAi", org.openapitools.generator.gradle.plugin.tasks.GenerateTask::class) {
+tasks.register(
+    "openApiGenerateEcoAi",
+    org.openapitools.generator.gradle.plugin.tasks.GenerateTask::class
+) {
     generatorName = "kotlin"
     inputSpec = ecoAiSpec.toURI().toString()
     validateSpec = false
@@ -106,21 +109,11 @@ tasks.withType<KotlinCompile>().configureEach {
 }
 
 tasks.named<Delete>("clean") {
-    delete(file("${layout.buildDirectory.get().asFile}/generated/openapi"))
+    delete(layout.buildDirectory.dir("generated/openapi"))
 }
 
 tasks.jar {
     dependsOn(tasks.named("openApiGenerate"))
-}
-
-val openApiGeneratedDir = layout.buildDirectory.dir("generated/openapi")
-
-// Add a rule to the 'clean' task to delete the generated directory.
-// This prevents stale or old generated files from causing issues.
-tasks.named("clean") {
-    doLast {
-        delete(layout.buildDirectory.dir("generated/openapi"))
-    }
 }
 
 // Define the dependencies required by the generated Ktor client.

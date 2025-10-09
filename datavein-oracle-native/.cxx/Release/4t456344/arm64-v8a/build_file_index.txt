@@ -1,1 +1,0 @@
-C:\ReGenesi\datavein-oracle-native\src\main\cpp\CMakeLists.txt
