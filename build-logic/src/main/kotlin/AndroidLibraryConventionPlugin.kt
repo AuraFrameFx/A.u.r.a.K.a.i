@@ -12,15 +12,14 @@ import org.gradle.kotlin.dsl.configure
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
     /**
-     * Applies Android library and Kotlin Android plugins and configures project-level Android and Kotlin settings.
+     * Applies Android library and Kotlin Android plugins and configures project-level Android and Kotlin defaults.
      *
-     * Configures the Android LibraryExtension and KotlinJvmProjectExtension for the target project:
-     * - Applies the "com.android.library" plugin.
+     * Configures the target project's Android LibraryExtension and Kotlin JVM toolchain:
      * - Sets Android compileSdk to 36 and default minSdk to 34.
-     * - Forces Java source and target compatibility to Java 25.
-     * - Sets the Kotlin JVM toolchain to Java 25.
+     * - Sets Java sourceCompatibility and targetCompatibility to Java 24.
+     * - Configures the Kotlin JVM toolchain to use Java 24 (applied only after the Kotlin Android plugin is present).
      *
-     * @param target The Gradle project to which the plugin is applied; this method mutates the project's plugins and extensions.
+     * @param target The Gradle project to configure; this method mutates the project's plugins and extensions.
      */
     override fun apply(target: Project) {
         with(target) {

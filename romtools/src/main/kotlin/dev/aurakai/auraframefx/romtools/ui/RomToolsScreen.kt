@@ -134,7 +134,17 @@ private fun LoadingScreenPreview() {
     LoadingScreen()
 }
 
-@Composable
+/**
+         * Render the main ROM Tools content, displaying device capabilities, available operations, and lists of ROMs and backups.
+         *
+         * Shows a device capabilities card, an optional operation progress card when `operationProgress` is non-null, a list
+         * of ROM operation action cards (enabled according to the provided capabilities), and optional sections for available
+         * ROMs and backups when those lists are non-empty.
+         *
+         * @param romToolsState State object containing device capabilities, available ROMs, backups, and initialization status.
+         * @param operationProgress Optional current operation progress to display; when `null` no progress card is shown.
+         */
+        @Composable
 private fun MainContent(
     romToolsState: dev.aurakai.auraframefx.romtools.RomToolsState,
     operationProgress: dev.aurakai.auraframefx.romtools.OperationProgress?
@@ -647,7 +657,11 @@ enum class RomActionType {
     GENESIS_OPTIMIZATIONS
 }
 
-// Extension function for RomOperation to get display name
+/**
+ * Provide a human-readable display name for a RomOperation.
+ *
+ * @return The human-readable display name corresponding to this operation.
+ */
 fun dev.aurakai.auraframefx.romtools.RomOperation.getDisplayName(): String {
     return when (this) {
         dev.aurakai.auraframefx.romtools.RomOperation.VERIFYING_ROM -> "Verifying ROM"
@@ -664,6 +678,11 @@ fun dev.aurakai.auraframefx.romtools.RomOperation.getDisplayName(): String {
     }
 }
 
+/**
+ * Displays a card summarizing an available ROM, showing key metadata such as name, version,
+ * Android target, size, and maintainer.
+ *
+ * @param rom The AvailableRom whose information is rendered in the card. */
 @Composable
 private fun AvailableRomCard(rom: dev.aurakai.auraframefx.romtools.AvailableRom) {
     // Implementation for available ROM card
@@ -703,4 +722,3 @@ private fun BackupCardPreview() {
 // Example:
 // val backupDir = context.getExternalFilesDir("backups")
 // val backupPath = backupDir?.absolutePath ?: ""
-

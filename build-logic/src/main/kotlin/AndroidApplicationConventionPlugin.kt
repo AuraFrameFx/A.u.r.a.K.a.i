@@ -9,6 +9,18 @@ import org.gradle.kotlin.dsl.typeOf
 import org.gradle.api.JavaVersion
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
+    /**
+     * Applies a standard Android application convention to the given Gradle project.
+     *
+     * Sets up the Android application and Kotlin Compose plugins; configures the
+     * Android ApplicationExtension (SDK levels, default config, build types,
+     * build features, compile options, packaging, JNI handling, and lint rules);
+     * configures Java toolchain compatibility; registers a `cleanKspCache` task and
+     * makes `preBuild` depend on it; and sets the Kotlin JVM toolchain for Android
+     * projects when the Kotlin Android plugin is present.
+     *
+     * @param target The Gradle project to configure.
+     */
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
