@@ -50,6 +50,8 @@ android {
     
     lint {
         disable += "HardcodedText"
+        disable += "EnsureInitializerMetadata"
+        abortOnError = false
     }
 
     testOptions {

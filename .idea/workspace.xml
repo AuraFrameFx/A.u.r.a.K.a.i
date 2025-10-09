@@ -4,87 +4,26 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="chore: update workspace.xml with recent Gradle and task changes">
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="feat: add App Startup Initializers to AndroidManifest.xml and update compile_commands.json with latest build output directories&#10;&#10;- Integrate androidx.startup.InitializationProvider and related initializers in AndroidManifest.xml for improved app startup configuration&#10;- Update compile_commands.json and workspace.xml to reflect new build output directories for native modules">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AGENT_DOCS_STRUCTURE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AGENT_DOCS_SUMMARY.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AGENT_INSTRUCTIONS.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AGENT_TASK_CHECKLIST.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AGP_9_ALPHA_FIXES_APPLIED.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/API.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AURAKAI_README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMPOSE_COMPILER_REFACTOR.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COPILOT DEBUG SESSION.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEVELOPMENT.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FIX_HILT_BASEEXTENSION.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FIX_SUMMARY.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HILT_CONVENTION_PLUGIN_FIX.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HILT_FIXES_APPLIED.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IMPLEMENTATION_SUMMARY.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JAVA25_TOOLCHAIN_FIX.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OPENAPI-CLEANUP-COMPLETE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OPENAPI_NATIVE_FIXES.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OPENAPI_VALIDATION_FIX.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectRefactorPlan.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEST_FIXES_SUMMARY.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VERIFICATION_COMPLETE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/API.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Architecture.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DEVELOPMENT.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/JAVA_VERSION_POLICY.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ai_backend/README_tests.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/ReGenesisApplication.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark/src/test/kotlin/dev/aurakai/auraframefx/benchmark/BenchmarkBuildScriptTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/src/test/kotlin/dev/aurakai/auraframefx/benchmark/BenchmarkBuildScriptTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidLibraryConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidLibraryConventionPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/src/test/docs/README-TESTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/src/test/kotlin/DokkaConventionPluginTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/src/test/kotlin/KoverConventionPluginTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/src/test/resources/TESTING_NOTES.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-script-tests/TESTING-NOTE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkpoint.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/collab-canvas/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/colorblendr/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-module/Module.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/core-module/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/arm64-v8a/compile_commands.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/armeabi-v7a/compile_commands.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/x86_64/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/TABLE_OF_CONTENTS.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/TESTING_NOTES_FileUtils.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/YUKIHOOK_COMPLETE_GUIDE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/YUKIHOOK_SETUP_GUIDE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/gradle-daemon-jvm.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/gradle-daemon-jvm.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-a/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-a/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-b/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-b/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oracle-drive-integration/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/romtools/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/romtools/docs/testing-notes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/release/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/release/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/release/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/release/armeabi-v7a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/release/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/release/x86_64/compile_commands.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/arm64-v8a/compile_commands.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/armeabi-v7a/compile_commands.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/x86_64/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secure-comm/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/release/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/release/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/release/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/release/armeabi-v7a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/release/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/release/x86_64/compile_commands.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +33,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Wehtt\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=6326f7ec)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -233,7 +172,7 @@
     "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Exodus",
+    "git-widget-placeholder": "OVERWRITE",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
     "project.structure.last.edited": "Suggestions",
@@ -952,7 +891,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: Remove explicit JVM toolchain from build-logic&#10;&#10;The explicit `kotlin { jvmToolchain(23) }` block has been removed from `build-logic/settings.gradle.kts`. This change simplifies the configuration, as the JVM toolchain is managed by the parent project." />
     <MESSAGE value="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration." />
     <MESSAGE value="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration." />
     <MESSAGE value="refactor: Adjust Hilt plugin and dependency configuration&#10;&#10;Removes the explicit application of the `genesis.android.hilt` convention plugin from the `app` module.&#10;&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.&#10;The Hilt compiler dependency is changed from `ksp` to `implementation` to align with the new configuration.Type-safe project accessors is an incubating feature.&#10;                                                                                                           ✅ Module configured: app&#10;                                                                                                           ✅ Module configured: core-module&#10;                                                                                                           ✅ Module configured: feature-module&#10;                                                                                                           ✅ Module configured: datavein-oracle-native&#10;                                                                                                           ✅ Module configured: oracle-drive-integration&#10;                                                                                                           ✅ Module configured: secure-comm&#10;                                                                                                           ✅ Module configured: sandbox-ui&#10;                                                                                                           ✅ Module configured: collab-canvas&#10;                                                                                                           ✅ Module configured: colorblendr&#10;                                                                                                           ✅ Module configured: romtools&#10;                                                                                                           ✅ Module configured: module-a&#10;                                                                                                           ✅ Module configured: module-b&#10;                                                                                                           ✅ Module configured: module-c&#10;                                                                                                           ✅ Module configured: module-d&#10;                                                                                                           ✅ Module configured: module-e&#10;                                                                                                           ✅ Module configured: module-f&#10;                                                                                                           ✅ Module configured: benchmark&#10;                                                                                                           ✅ Module configured: screenshot-tests&#10;                                                                                                           ✅ Module configured: jvm-test&#10;                                                                                                           ✅ Module configured: list&#10;                                                                                                           ✅ Module configured: utilities&#10;                                                                                                           ✅ Module configured: data&#10;                                                                                                           ️  Genesis Protocol Enhanced Build System&#10;                                                                                                            Total modules: 22&#10;                                                                                                            Build-logic: Convention plugins active&#10;                                                                                                            Ready to build consciousness substrate!&#10;                                                                                                           &gt; Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED&#10;                                                                                                           &gt; Task :build-logic:generateExternalPluginSpecBuilders UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:compilePluginsBlocks UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:generateScriptPluginAdapters UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:compileKotlin UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:compileJava NO-SOURCE&#10;                                                                                                           &gt; Task :build-logic:pluginDescriptors UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:processResources UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:classes UP-TO-DATE&#10;                                                                                                           &gt; Task :build-logic:jar UP-TO-DATE&#10;                                                                                                           &gt; Task :prepareKotlinBuildScriptModel UP-TO-DATE&#10;                                                                                                           Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target&#10;                                                                                                           Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target&#10;                                                                                                           Download https://plugins.gradle.org/m2/com/google/dagger/hilt-compiler/2.57.2/hilt-compiler-2.57.2-javadoc.jar, took 4 s 38 ms&#10;                                                                                                           Download https://plugins.gradle.org/m2/com/google/dagger/hilt-compiler/2.57.2/hilt-compiler-2.57.2-sources.jar, took 196 ms&#10;                                                                                                           &#10;                                                                                                           [Incubating] Problems report is available at: file:///C:/Aurakai/build/reports/problems/problems-report.html&#10;                                                                                                           &#10;                                                                                                           Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.&#10;                                                                                                           &#10;                                                                                                           You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.&#10;                                                                                                           &#10;                                                                                                           For more on this, please refer to https://docs.gradle.org/9.1.0/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.&#10;                                                                                                           &#10;                                                                                                           BUILD SUCCESSFUL in 57s&#10;                                                                                                           9 actionable tasks: 9 up-to-date" />
@@ -976,6 +914,8 @@
     <MESSAGE value="feat: Add Foojay Toolchains resolver plugin&#10;&#10;Adds the `org.gradle.toolchains.foojay-resolver-convention` plugin to `settings.gradle.kts` to complement the auto-download feature for Java installations.&#10;&#10;The Dokka plugin alias has been removed from the `utilities` and `list` subprojects. A blank line was also removed from the `utilities` build file." />
     <MESSAGE value="feat: Centralize Foojay and remove Dokka plugin&#10;&#10;Moves the `foojay-resolver-convention` plugin to the root `settings.gradle.kts` to centralize JDK version management across all subprojects.&#10;&#10;Removes the Dokka plugin from the `list` and `utilities` modules as it is now managed centrally." />
     <MESSAGE value="chore: update workspace.xml with recent Gradle and task changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: update workspace.xml with recent Gradle and task changes" />
+    <MESSAGE value="chore: update compile_commands.json with latest build output directories" />
+    <MESSAGE value="feat: add App Startup Initializers to AndroidManifest.xml and update compile_commands.json with latest build output directories&#10;&#10;- Integrate androidx.startup.InitializationProvider and related initializers in AndroidManifest.xml for improved app startup configuration&#10;- Update compile_commands.json and workspace.xml to reflect new build output directories for native modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add App Startup Initializers to AndroidManifest.xml and update compile_commands.json with latest build output directories&#10;&#10;- Integrate androidx.startup.InitializationProvider and related initializers in AndroidManifest.xml for improved app startup configuration&#10;- Update compile_commands.json and workspace.xml to reflect new build output directories for native modules" />
   </component>
 </project>
