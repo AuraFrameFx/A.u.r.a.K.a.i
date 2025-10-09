@@ -2,12 +2,12 @@ name: 🎓 Genesis Protocol - FULLY AUTO
 
 on:
   push:
-    branches: 
+    branches:
       - main
       - mindeye
       - memcortex
   pull_request:
-    branches: 
+    branches:
       - main
       - mindeye
       - memcortex

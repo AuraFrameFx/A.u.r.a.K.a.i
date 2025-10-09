@@ -89,6 +89,10 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                     jvmToolchain(24)
                     compilerOptions {
                         jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+                        freeCompilerArgs.addAll(
+                            "-opt-in=kotlin.RequiresOptIn",
+                            "-Xjvm-default=all"
+                        )
                     }
                 }
             }
