@@ -45,6 +45,15 @@ data class ModuleReport(
     val hasKsp: Boolean
 )
 
+/**
+ * Collects metadata for every subproject and produces a report per module.
+ *
+ * Each report contains the module name, a classification of its type (one of
+ * "android-app", "android-lib", "kotlin-jvm", or "other"), and booleans indicating
+ * whether Hilt, Compose, and KSP plugins are applied.
+ *
+ * @return A list of ModuleReport objects describing each subproject's name, type, and plugin presence for Hilt, Compose, and KSP.
+ */
 fun collectModuleReports(): List<ModuleReport> {
     return subprojects.map { subproject ->
         ModuleReport(
