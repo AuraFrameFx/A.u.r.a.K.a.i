@@ -25,23 +25,6 @@ data class CascadeResponse(
     val timestamp: String,
     val metadata: Map<String, String> = emptyMap()
 ) {
-    /**
-     * Creates a new CascadeResponse with the provided field overrides, preserving current values for any parameters not supplied.
-     *
-     * @param agent The agent identifier to set on the new response; defaults to the current instance's agent.
-     * @param response The response text to set on the new response; defaults to the current instance's response.
-     * @param confidence The confidence score to set on the new response; defaults to the current instance's confidence.
-     * @param timestamp The timestamp to set on the new response; defaults to the current instance's timestamp.
-     * @param metadata The metadata map to set on the new response; defaults to the current instance's metadata.
-     * @return A new CascadeResponse instance containing the specified overrides.
-     */
-    fun copy(
-        agent: String = this.agent,
-        response: String = this.response,
-        confidence: Float? = this.confidence,
-        timestamp: String = this.timestamp,
-        metadata: Map<String, String> = this.metadata
-    ) = CascadeResponse(agent, response, confidence, timestamp, metadata)
 }
 
 /**
