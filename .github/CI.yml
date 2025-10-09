@@ -2,9 +2,9 @@ name: 🚀 Genesis Protocol - FULLY AUTO Build
 
 on:
   push:
-    branches: [ OVERWRITE ]
+    branches: [ OVERDRIVE ]
   pull_request:
-    branches: [ OVERWRITE ]
+    branches: [ OVERDRIVE ]
   workflow_dispatch:
 
 env:
