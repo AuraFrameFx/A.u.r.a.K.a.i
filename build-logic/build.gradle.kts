@@ -1,7 +1,6 @@
 // AOSP-ReGenesis/build-logic/build.gradle.kts
 plugins {
     `kotlin-dsl`
-
 }
 
 
@@ -14,6 +13,7 @@ dependencies {
     implementation(libs.dagger.hilt.android.gradle.plugin)
     implementation(libs.com.google.devtools.ksp.gradle.plugin)
     implementation(libs.kotlin.compose.compiler.gradle.plugin)
+    implementation(libs.openapi.generator.gradle.plugin)
 
 
     // Test dependencies
@@ -65,6 +65,10 @@ gradlePlugin {
         register("androidNative") {
             id = "genesis.android.native"
             implementationClass = "AndroidNativeConventionPlugin"
+        }
+        register("openapiConvention") {
+            id = "genesis.openapi.convention"
+            implementationClass = "OpenApiConventionPlugin"
         }
     }
 }

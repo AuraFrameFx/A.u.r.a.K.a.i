@@ -8,7 +8,7 @@ gradleToolingApi = "9.1.0"
 hiltAndroidGradlePlugin = "2.57.2"
 hiltAndroidGradlePluginVersion = "2.57.2"
 junitJupiterParams = "6.0.0"
-kotlin = "2.2.21-RC"
+kotlin = "2.3.0-Beta1"
 kotlinGradlePlugin = "2.2.21-RC"
 kotlinLoggingJvm = "3.0.5"
 ksp = "2.2.21-RC-2.0.4"
@@ -37,12 +37,12 @@ generativeai = "0.9.0"
 # ===== ANDROIDX =====
 coreKtx = "1.17.0"
 appcompat = "1.7.1"
-composeBom = "2025.09.01"
+composeBom = "2025.10.00"
 activityCompose = "1.11.0"
 navigationCompose = "2.9.5"
 hilt-navigation-compose-version = "1.3.0"
 lifecycle = "2.9.4"
-roomVersion = "2.8.1"
+roomVersion = "2.8.2"
 workManager = "2.10.5"
 hiltWork = "1.3.0"
 datastore = "1.1.7"
@@ -60,18 +60,18 @@ retrofitKotlinxSerializationConverter = "1.0.0"
 coilCompose = "2.7.0"
 timber = "5.0.1"
 slf4j = "2.0.17"
-guavaAndroid = "33.4.8-android"
+guavaAndroid = "33.5.0-android"
 kotlinxCoroutines = "1.10.2"
 kotlinxSerializationJson = "1.9.0"
 kotlinxDatetime = "0.7.1-0.6.x-compat"
 leakcanary = "2.14"
 
 # ===== BUILD PLUGINS =====
-openapiGeneratorGradlePlugin = "7.15.0"
+openapiGeneratorGradlePlugin = "7.5.0"
 firebaseCrashlyticsPlugin = "3.0.6"
 firebasePerfPlugin = "2.0.1"
 toolchainsFoojayResolver = "1.0.0"
-spotless = "7.2.1"
+spotless = "8.0.0"
 ktlint = "13.1.0"
 detektGradlePlugin = "1.23.8"
 dokkaGradlePlugin = "2.0.0"
@@ -170,6 +170,7 @@ androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "mult
 com-google-devtools-ksp-gradle-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "comGoogleDevtoolsKspGradlePlugin" }
 dagger-hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePluginVersion" }
 google-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
+openapi-generator-gradle-plugin = { group = "org.openapitools", name = "openapi-generator-gradle-plugin", version.ref = "openapiGeneratorGradlePlugin" }
 
 # ===== YUKIHOOK & XPOSED =====
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
@@ -299,5 +300,3 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt-version" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaGradlePlugin" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-google-services = { id = "com.google.gms.google-services", version = "4.4.1" }
-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version = "3.0.6" }
