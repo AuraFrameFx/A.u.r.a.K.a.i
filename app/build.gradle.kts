@@ -1,5 +1,5 @@
 plugins {
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.kotlin.android)
     id("genesis.android.application")
     alias(libs.plugins.google.services)
     alias(libs.plugins.firebase.crashlytics)
