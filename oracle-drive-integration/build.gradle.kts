@@ -3,13 +3,14 @@
 
 plugins {
     id("genesis.android.library")
+    id("genesis.android.native")
     alias(libs.plugins.ksp)
 
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.oracledriveintegration"
-    
+
     defaultConfig {
         minSdk = 34
     }
@@ -25,13 +26,9 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    add("ksp", libs.hilt.compiler)
     implementation(libs.hilt.work)
     implementation(libs.bundles.coroutines)
     // Add other module-specific dependencies here
-    implementation(kotlin("stdlib-jdk8"))
 }
 
-kotlin {
-    jvmToolchain(24)
-}

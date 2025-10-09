@@ -1,7 +1,7 @@
 // GENESIS PROTOCOL - MODULE A
 plugins {
-    id("genesis.android.library")
     id("genesis.android.compose")
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
 }
 
@@ -15,10 +15,9 @@ dependencies {
     
     // Hilt
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    
-    // Add other module-specific dependencies here
-    implementation(kotlin("stdlib-jdk8"))
+    add("ksp", libs.hilt.compiler)
+
+    // Add oth`er module-specific dependencies here
 }
 
 tasks.register("moduleAStatus") {
@@ -26,6 +25,3 @@ tasks.register("moduleAStatus") {
     doLast { println("📦 MODULE A - Ready (Java 24)") }
 }
 
-kotlin {
-    jvmToolchain(24)
-}

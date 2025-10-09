@@ -25,7 +25,7 @@ class DefaultSecurityContext @Inject constructor() : SecurityContext {
         return true // Default allow for development
     }
 
-    override fun getCurrentUser(): String? {
+    override fun getCurrentUser(): String {
         return "genesis_user"
     }
 

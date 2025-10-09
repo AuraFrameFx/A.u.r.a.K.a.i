@@ -1,5 +1,8 @@
 # Genesis Protocol - Secure Communication Module
--keep class dev.aurakai.auraframefx.securecomm.** { *; }
+# Only keep classes annotated with @Keep (for reflection/serialization)
+-keep @androidx.annotation.Keep class * { *; }
+# Add specific API classes below if needed
+# -keep class dev.aurakai.auraframefx.securecomm.MyApiClass { public *; }
 
 # Crypto and security classes
 -keep class javax.crypto.** { *; }

@@ -2,9 +2,6 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
-    kotlin("jvm")
-    alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
     `maven-publish`
     `java-library`
@@ -17,12 +14,14 @@ java {
     toolchain { languageVersion = JavaLanguageVersion.of(24) }
 }
 
-kotlin {
-    jvmToolchain(24)
-    compilerOptions {
-        jvmTarget = JvmTarget.JVM_24
-        languageVersion = KotlinVersion.KOTLIN_2_2
-        apiVersion = KotlinVersion.KOTLIN_2_2
+
+// Explicit source sets configuration for IntelliJ IDEA compatibility
+sourceSets {
+    main {
+        java.srcDirs("src/main/java", "src/main/kotlin")
+    }
+    test {
+        java.srcDirs("src/test/java", "src/test/kotlin")
     }
 }
 

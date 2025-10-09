@@ -1,9 +1,6 @@
 // Apply YukiHook conventions to all modules
-subprojects { subproject ->
-    // Skip build-logic and other non-Android modules
-    if (subproject.name == "build-logic" || subproject.name == "buildSrc") {
-        return@subprojects
-    }
+subprojects {
+    if (name == "build-logic" || name == "buildSrc") return@subprojects
 
     // Check if this is an Android module
     val isAndroidModule = subproject.plugins.hasPlugin("com.android.library") ||
@@ -14,7 +11,7 @@ subprojects { subproject ->
         with(subproject) {
             // Apply common plugins if not already applied
             pluginManager.apply("com.android.library")
-            pluginManager.apply("org.jetbrains.kotlin.android")
+            // org.jetbrains.kotlin.android removed - AGP 9.0 has built-in Kotlin support
             pluginManager.apply("com.google.devtools.ksp")
             pluginManager.apply("org.lsposed.lsparanoid")
 
@@ -30,57 +27,30 @@ subprojects { subproject ->
                     consumerProguardFiles("consumer-rules.pro")
                 }
 
-                buildTypes {
-                    release {
-                        isMinifyEnabled = true
-                        proguardFiles(
-                            getDefaultProguardFile("proguard-android-optimize.txt"),
-                            "proguard-rules.pro"
-                        )
-                    }
-                }
+            // Only log a message for Android config (do not attempt to configure extensions directly)
+            logger.lifecycle("[YukiHook] Convention dependencies applied to $name. Please set compileSdk, minSdk, targetSdk, and other Android configs in each module's build.gradle.kts.")
 
                 compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_21
-                    targetCompatibility = JavaVersion.VERSION_21
+                    sourceCompatibility = JavaVersion.VERSION_24
+                    targetCompatibility = JavaVersion.VERSION_24
                 }
+            }
 
-                kotlinOptions {
-                    jvmTarget = "24"
-                    freeCompilerArgs = freeCompilerArgs + listOf(
+            // Configure Kotlin compiler options (AGP 9.0 built-in Kotlin)
+            extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
+                compilerOptions {
+                    jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+                    freeCompilerArgs.addAll(
                         "-Xjvm-default=all",
                         "-opt-in=kotlin.RequiresOptIn"
                     )
                 }
             }
 
-            // Add YukiHook dependencies
-            dependencies {
-                // Xposed Framework - YukiHookAPI (Standardized)
-                implementation(libs.bundles.xposed)
-
-                // Legacy Xposed API (compatibility)
-                implementation(files("${project.rootDir}/Libs/api-82.jar"))
-                implementation(files("${project.rootDir}/Libs/api-82-sources.jar"))
-
-                // Core Android dependencies
-                implementation(libs.bundles.androidx.core)
-
-                // Testing
-                testImplementation(libs.junit)
-                androidTestImplementation(libs.androidx.test.ext.junit)
-                androidTestImplementation(libs.androidx.test.espresso.core)
-            }
-
-            // Configure LSParanoid
-            extensions.configure<org.lsposed.lsparanoid.gradle.ParanoidExtension> {
-                seed = 0x2A // Consistent seed across all modules
-                includeAsSharedUuid = true
-            }
-
-            // Configure KSP
-            extensions.configure<com.google.devtools.ksp.gradle.KspExtension> {
-                arg("YUKIHOOK_PACKAGE_NAME", project.group.toString())
+                        // Configure KSP if present
+            extensions.findByName("ksp")?.let { ext ->
+                ext.javaClass.getMethod("arg", String::class.java, String::class.java)
+                    .invoke(ext, "YUKIHOOK_PACKAGE_NAME", group.toString())
             }
         }
     }

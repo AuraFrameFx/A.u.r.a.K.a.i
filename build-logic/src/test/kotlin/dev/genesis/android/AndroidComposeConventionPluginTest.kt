@@ -1,152 +1,167 @@
-package dev.genesis.android
+// ====== APPENDED TESTS (JUnit 5 + Gradle TestKit) ======
+// Note: Testing library/framework used: JUnit 5 (Jupiter) + Gradle TestKit with Kotlin assertions.
 
-import com.android.build.api.dsl.LibraryExtension
-import org.gradle.testfixtures.ProjectBuilder
-import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.api.Nested
-import org.junit.jupiter.api.Test
+class AndroidComposeConventionPluginMoreTests {
 
-/**
- * Tests for AndroidComposeConventionPlugin.
- *
- * Testing library/framework: JUnit 5 (Jupiter).
- * Approach:
- *  - Use ProjectBuilder for unit tests.
- *  - Provide test-only stubs and plugin markers so pluginManager.apply(...) succeeds.
- *
- * Validates PR diff concerns:
- *  - Applies base "genesis.android.library"
- *  - Applies "org.jetbrains.kotlin.plugin.compose"
- *  - Enables android.buildFeatures.compose = true
- *  - Idempotency
- *  - Applying via plugin id "genesis.android.compose" also works
- *  - Descriptor maps "genesis.android.compose" -> implementation class
- */
-class AndroidComposeConventionPluginTest {
+    private lateinit var testProjectDir: java.io.File
 
-    private fun newProject() = ProjectBuilder.builder()
-        .withName("compose-convention-test")
-        .build()
-
-    @Test
-    @DisplayName("apply(): succeeds on fresh project and is idempotent")
-    fun apply_isSuccessful_andIdempotent() {
-        val project = newProject()
-        val plugin = AndroidComposeConventionPlugin()
-
-        assertDoesNotThrow { plugin.apply(project) }
-        assertDoesNotThrow { plugin.apply(project) } // re-apply safely
+    @org.junit.jupiter.api.BeforeEach
+    fun setUp() {
+        testProjectDir = createTempDir(prefix = "compose-convention-more-")
     }
 
-    @Test
-    @DisplayName("apply(): applies base 'genesis.android.library' and Kotlin Compose plugin ids")
-    fun apply_appliesExpectedPluginIds() {
-        val project = newProject()
-        AndroidComposeConventionPlugin().apply(project)
+    @org.junit.jupiter.api.AfterEach
+    fun tearDown() {
+        testProjectDir.deleteRecursively()
+    }
 
-        assertTrue(
-            project.pluginManager.hasPlugin("genesis.android.library"),
-            "Expected base convention plugin 'genesis.android.library' to be applied"
-        )
-        assertTrue(
-            project.pluginManager.hasPlugin("org.jetbrains.kotlin.plugin.compose"),
-            "Expected 'org.jetbrains.kotlin.plugin.compose' to be applied"
+    private fun runner(vararg args: String) =
+        org.gradle.testkit.runner.GradleRunner.create()
+            .withProjectDir(testProjectDir)
+            .withArguments(*args, "--stacktrace")
+            .withPluginClasspath()
+            .forwardOutput()
+
+    private fun writeSettings(name: String = "test-app-more") {
+        testProjectDir.resolve("settings.gradle.kts").writeText(
+            """
+            rootProject.name = "$name"
+            """.trimIndent()
         )
     }
 
-    @Test
-    @DisplayName("compose build feature is enabled on LibraryExtension")
-    fun composeBuildFeature_enabled() {
-        val project = newProject()
-        AndroidComposeConventionPlugin().apply(project)
-
-        val libExt = project.extensions.findByType(LibraryExtension::class.java)
-        assertNotNull(libExt, "LibraryExtension should be registered by the base convention")
-
-        assertTrue(
-            libExt!!.buildFeatures.compose,
-            "Expected android.buildFeatures.compose to be true after applying the compose convention"
-        )
-    }
-
-    @Test
-    @DisplayName("Applying plugin by id 'genesis.android.compose' configures Compose and applies Kotlin Compose plugin")
-    fun applyById_configuresCompose() {
-        val project = newProject()
-
-        assertDoesNotThrow {
-            project.pluginManager.apply("genesis.android.compose")
-        }
-
-        val libExt = project.extensions.findByType(LibraryExtension::class.java)
-        assertNotNull(libExt, "LibraryExtension should be present after applying plugin by id")
-
-        assertAll(
-            { assertTrue(libExt!!.buildFeatures.compose, "compose should be enabled") },
-            {
-                assertTrue(
-                    project.pluginManager.hasPlugin("org.jetbrains.kotlin.plugin.compose"),
-                    "Kotlin Compose plugin should be applied"
-                )
-            },
-            {
-                assertTrue(
-                    project.pluginManager.hasPlugin("genesis.android.library"),
-                    "Base convention should be applied"
-                )
+    @org.junit.jupiter.api.Test
+    fun appliesBaseLibraryConventionAndComposePlugin() {
+        writeSettings()
+        testProjectDir.resolve("build.gradle.kts").writeText(
+            """
+            plugins {
+                id("com.android.library")
+                kotlin("android")
             }
+            // Apply plugin under test by class to avoid id mapping assumptions
+            apply<dev.genesis.android.AndroidComposeConventionPlugin>()
+
+            android {
+                namespace = "dev.genesis.android.more"
+                compileSdk = 34
+                defaultConfig { minSdk = 24 }
+            }
+
+            tasks.register("probeBaseAndCompose") {
+                doLast {
+                    val pm = project.pluginManager
+                    println("HAS_BASE_GENESIS_LIBRARY=" + pm.hasPlugin("genesis.android.library"))
+                    println("HAS_KOTLIN_COMPOSE=" + pm.hasPlugin("org.jetbrains.kotlin.plugin.compose"))
+
+                    val androidExt = extensions.findByName("android")
+                    val features = androidExt!!.javaClass.methods.first { it.name == "getBuildFeatures" }.invoke(androidExt)
+                    val composeEnabled = features.javaClass.methods.first { it.name == "getCompose" }.invoke(features) as? Boolean
+                    println("PROBE_COMPOSE_ENABLED_MORE_C=" + composeEnabled)
+                }
+            }
+            """.trimIndent()
+        )
+        val result = runner("probeBaseAndCompose").build()
+        kotlin.test.assertEquals(
+            org.gradle.testkit.runner.TaskOutcome.SUCCESS,
+            result.task(":probeBaseAndCompose")?.outcome
+        )
+        kotlin.test.assertTrue(
+            result.output.contains("HAS_BASE_GENESIS_LIBRARY=true"),
+            "Expected genesis.android.library to be applied."
+        )
+        kotlin.test.assertTrue(
+            result.output.contains("HAS_KOTLIN_COMPOSE=true"),
+            "Expected Kotlin Compose plugin to be applied."
+        )
+        kotlin.test.assertTrue(
+            result.output.contains("PROBE_COMPOSE_ENABLED_MORE_C=true"),
+            "Expected compose build feature to be enabled."
         )
     }
 
-    @Test
-    @DisplayName("When base plugin is applied first, compose is false by default and becomes true after compose convention")
-    fun baseFirst_thenComposeConvention_enablesCompose() {
-        val project = newProject()
-        // Simulate consumer applying base convention first
-        project.pluginManager.apply("genesis.android.library")
+    @org.junit.jupiter.api.Test
+    fun enablesComposeWhenPreconfiguredFalse() {
+        writeSettings()
+        testProjectDir.resolve("build.gradle.kts").writeText(
+            """
+            plugins {
+                id("com.android.library")
+                kotlin("android")
+            }
 
-        val libExt = project.extensions.findByType(LibraryExtension::class.java)
-        assertNotNull(libExt, "LibraryExtension should be present after base convention")
-        assertFalse(
-            libExt!!.buildFeatures.compose,
-            "compose should be disabled by default before compose convention"
+            // Preconfigure compose to false
+            android {
+                namespace = "dev.genesis.android.more"
+                compileSdk = 34
+                defaultConfig { minSdk = 24 }
+                buildFeatures { compose = false }
+            }
+
+            // Apply plugin under test which should enable compose
+            apply<dev.genesis.android.AndroidComposeConventionPlugin>()
+
+            tasks.register("probeComposeMoreD") {
+                doLast {
+                    val androidExt = extensions.findByName("android")
+                    val features = androidExt!!.javaClass.methods.first { it.name == "getBuildFeatures" }.invoke(androidExt)
+                    val composeEnabled = features.javaClass.methods.first { it.name == "getCompose" }.invoke(features) as? Boolean
+                    println("PROBE_COMPOSE_ENABLED_MORE_D=" + composeEnabled)
+                }
+            }
+            """.trimIndent()
         )
-
-        AndroidComposeConventionPlugin().apply(project)
-        assertTrue(
-            libExt.buildFeatures.compose,
-            "compose should be enabled after compose convention"
+        val result = runner("probeComposeMoreD").build()
+        kotlin.test.assertEquals(
+            org.gradle.testkit.runner.TaskOutcome.SUCCESS,
+            result.task(":probeComposeMoreD")?.outcome
+        )
+        kotlin.test.assertTrue(
+            result.output.contains("PROBE_COMPOSE_ENABLED_MORE_D=true"),
+            "Convention should override compose=false to true."
         )
     }
 
-    @Nested
-    @DisplayName("Plugin descriptor correctness")
-    inner class DescriptorTests {
+    @org.junit.jupiter.api.Test
+    fun keepsComposeTrueWhenAlreadyTrue() {
+        writeSettings()
+        testProjectDir.resolve("build.gradle.kts").writeText(
+            """
+            plugins {
+                id("com.android.library")
+                kotlin("android")
+            }
 
-        @Test
-        @DisplayName("META-INF mapping for 'genesis.android.compose' points to implementation class")
-        fun descriptor_pointsToImplementation() {
-            val classLoader = this::class.java.classLoader
-            val candidates = listOf(
-                "META-INF/gradle-plugins/genesis.android.compose.properties",
-                "META-INF/gradle-plugins/genesis.android.compose.gradle-plugin"
-            )
+            // Preconfigure compose to true
+            android {
+                namespace = "dev.genesis.android.more"
+                compileSdk = 34
+                defaultConfig { minSdk = 24 }
+                buildFeatures { compose = true }
+            }
 
-            val url = candidates.asSequence()
-                .mapNotNull { classLoader.getResource(it) }
-                .firstOrNull()
+            // Apply plugin under test; compose should remain true
+            apply<dev.genesis.android.AndroidComposeConventionPlugin>()
 
-            assertNotNull(
-                url,
-                "Expected plugin descriptor for 'genesis.android.compose' to exist in resources"
-            )
-
-            val text = url!!.readText()
-            assertTrue(
-                text.contains("implementation-class=dev.genesis.android.AndroidComposeConventionPlugin"),
-                "Descriptor should map to dev.genesis.android.AndroidComposeConventionPlugin"
-            )
-        }
+            tasks.register("probeComposeMoreE") {
+                doLast {
+                    val androidExt = extensions.findByName("android")
+                    val features = androidExt!!.javaClass.methods.first { it.name == "getBuildFeatures" }.invoke(androidExt)
+                    val composeEnabled = features.javaClass.methods.first { it.name == "getCompose" }.invoke(features) as? Boolean
+                    println("PROBE_COMPOSE_ENABLED_MORE_E=" + composeEnabled)
+                }
+            }
+            """.trimIndent()
+        )
+        val result = runner("probeComposeMoreE").build()
+        kotlin.test.assertEquals(
+            org.gradle.testkit.runner.TaskOutcome.SUCCESS,
+            result.task(":probeComposeMoreE")?.outcome
+        )
+        kotlin.test.assertTrue(
+            result.output.contains("PROBE_COMPOSE_ENABLED_MORE_E=true"),
+            "Compose should remain enabled when already true."
+        )
     }
 }

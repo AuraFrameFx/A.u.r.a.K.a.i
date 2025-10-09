@@ -1,19 +1,17 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.openapitools.generator.gradle.plugin.tasks.OpenApiGenerateTask
-
-// ==== GENESIS PROTOCOL - MAIN APPLICATION ====
-// This build script now uses the custom convention plugins for a cleaner setup.
-
 plugins {
-    id("com.android.application")
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp)
-    id("org.openapi.generator") version "7.16.0"
+    id("genesis.android.application")
 }
 
+// ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 android {
     namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
+
+    sourceSets {
+        getByName("main") {
+            java.srcDirs("src/main/java", "src/main/kotlin")
+        }
+    }
 
     defaultConfig {
         applicationId = "dev.aurakai.auraframefx"
@@ -21,25 +19,38 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
     }
 
-    // Additional build type configuration
     buildTypes {
         debug {
             isDebuggable = true
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-DEBUG"
         }
+        release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
     }
 
     // Enable AIDL for the app module
     buildFeatures {
         aidl = true
+        compose = true
+    }
+
+    lint {
+        disable += "HardcodedText"
+        disable += "EnsureInitializerMetadata"
+        abortOnError = false
     }
 
     testOptions {
@@ -49,52 +60,31 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_24
-        targetCompatibility = JavaVersion.VERSION_24
+        sourceCompatibility = JavaVersion.toVersion("24")
+        targetCompatibility = JavaVersion.toVersion("24")
+        isCoreLibraryDesugaringEnabled = true
     }
-}
-
-kotlin {
-    jvmToolchain(24)
-}
-
-openApiGenerate {
-    generatorName.set("kotlin")
-    // Use a valid file URI for Windows (three slashes)
-    inputSpec.set("file:///C:/ReGenesis-A.O.S.P/app/api/system-api.yml")
-    outputDir.set(layout.buildDirectory.dir("generated/openapi").get().asFile.absolutePath)
-    apiPackage.set("dev.aurakai.auraframefx.openapi.api")
-    modelPackage.set("dev.aurakai.auraframefx.openapi.model")
-    invokerPackage.set("dev.aurakai.auraframefx.openapi.invoker")
-    configOptions.set(
-        mapOf(
-            "dateLibrary" to "java8", "library" to "jvm-ktor"
-        )
-    )
-}
-
-// Register generated OpenAPI sources using Variant API
-androidComponents {
-    onVariants(selector().all()) { variant ->
-        variant.sources.java?.addGeneratedSourceDirectory(
-            tasks.named<OpenApiGenerateTask>("openApiGenerate")
-        ) { openApiTask ->
-            openApiTask.outputDir.map { file ->
-                file.resolve("src/main/kotlin")
-            }
+    packaging {
+        resources {
+            excludes += "META-INF/INDEX.LIST"
+            excludes += "META-INF/LICENSE.md"
         }
     }
 }
 
+
+
 dependencies {
     // ===== MODULE DEPENDENCIES =====
-    implementation(project(":core-module"))
+    implementation(project(":core-module")) {
+        exclude(group = "org.jetbrains.dokka")
+    }
     implementation(project(":feature-module"))
-    implementation(project(":romtools"))  // Temporarily disabled - Module not found
+    implementation(project(":romtools"))
     implementation(project(":secure-comm"))
-    implementation(project(":collab-canvas"))  // Temporarily disabled - YukiHookAPI issues
+    implementation(project(":collab-canvas"))
     implementation(project(":colorblendr"))
-    implementation(project(":sandbox-ui"))  // Temporarily disabled - Compose compilation issues
+    implementation(project(":sandbox-ui"))
     implementation(project(":datavein-oracle-native"))
     implementation(project(":module-a"))
     implementation(project(":module-b"))
@@ -102,13 +92,9 @@ dependencies {
     implementation(project(":module-d"))
     implementation(project(":module-e"))
     implementation(project(":module-f"))
-    implementation(
-        project(
-            ":benchmark"
-        )
-    )
+    implementation(project(":benchmark"))
+    implementation(project(":data:api")) // Add dependency on new OpenAPI module
 
-    // implementation(project(":snapshots")) // Temporarily disabled - Module not found
     // ===== ANDROIDX & COMPOSE =====
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
@@ -116,7 +102,6 @@ dependencies {
     implementation(libs.bundles.compose.ui)
     implementation(libs.androidx.core.ktx)
     debugImplementation(libs.bundles.compose.debug)
-
 
     // ===== LIFECYCLE =====
     implementation(libs.bundles.lifecycle)
@@ -135,35 +120,24 @@ dependencies {
 
     // ===== NETWORKING =====
     implementation(libs.bundles.network)
-    implementation("com.squareup.moshi:moshi:1.15.1")
-    implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
+    implementation(libs.moshi)
+    implementation(libs.moshi.kotlin)
 
     // ===== KTOR FOR OPENAPI CLIENT =====
-    implementation("io.ktor:ktor-client-core:2.3.7")
-    implementation("io.ktor:ktor-client-content-negotiation:2.3.7")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
-    implementation("io.ktor:ktor-client-okhttp:2.3.7")
-    implementation("io.ktor:ktor-client-auth:2.3.7")
+    implementation(libs.ktor.client.cio)
+    implementation(libs.ktor.client.auth)
 
     // ===== FIREBASE =====
-    // By implementing the BOM, we can specify Firebase SDKs without versions
     implementation(platform(libs.firebase.bom))
     // This bundle includes Analytics, Crashlytics, Performance, Auth, Firestore, Messaging, and Config
     implementation(libs.bundles.firebase)
 
-    // Alternative: Use specific Firebase bundles for modular approach
-    // implementation(libs.bundles.firebase.core)     // Analytics, Crashlytics, Performance only
-    // implementation(libs.bundles.firebase.auth)     // Authentication
-    // implementation(libs.bundles.firebase.database) // Firestore, Realtime Database, Storage
-    // implementation(libs.bundles.firebase.messaging) // FCM, Remote Config
-
     // ===== HILT DEPENDENCY INJECTION =====
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    // Auto-added by genesis.android.application convention plugin
 
     // ===== WORKMANAGER =====
-    implementation("androidx.work:work-runtime-ktx:2.9.0")
-    implementation("androidx.hilt:hilt-work:1.2.0")
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.hilt.work)
 
     // ===== UTILITIES =====
     implementation(libs.timber)
@@ -188,22 +162,5 @@ dependencies {
     // --- DEBUGGING ---
     debugImplementation(libs.leakcanary.android)
 
-// Ensure code generation runs before any Kotlin compilation
-    tasks.withType<KotlinCompile>().configureEach {
-        dependsOn("openApiGenerate")
-    }
-
-// Ensure KSP also depends on OpenAPI generation
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-        dependsOn("openApiGenerate")
-    }
-
-// Fix KSP task dependency
-    tasks.matching { it.name.startsWith("ksp") }.configureEach {
-        dependsOn("openApiGenerate")
-    }
+    implementation(libs.kotlin.reflect)
 }
-
-
-
-// Note: Uses Genesis convention plugins (genesis.android.application and genesis.android.hilt)

@@ -18,5 +18,7 @@
 # -keepclassmembers class kotlin.coroutines.jvm.internal.DebugMetadataKt {
 #     <methods>;
 # }
--keep class dev.aurakai.auraframefx.dataveinoraclenative.** { *; }
--keep class dev.aurakai.auraframefx.dataveinoraclenative.** { *; }
+# Only keep classes annotated with @Keep (for reflection/serialization)
+-keep @androidx.annotation.Keep class * { *; }
+# Add specific API classes below if needed
+# -keep class dev.aurakai.dataveinoraclenative.MyApiClass { public *; }

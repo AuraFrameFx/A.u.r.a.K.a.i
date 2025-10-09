@@ -230,7 +230,7 @@ class QuickSettingsConfigActivity : ComponentActivity() {
 
         private var tiles: List<QuickSettingsTileConfig> = emptyList()
 
-        inner class TileViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        class TileViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val tileName: TextView = view.findViewById(R.id.tileName)
             val enabledSwitch: SwitchMaterial = view.findViewById(R.id.enabledSwitch)
             val cardView: MaterialCardView = view.findViewById(R.id.tileCard)

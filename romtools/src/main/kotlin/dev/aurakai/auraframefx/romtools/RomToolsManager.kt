@@ -2,6 +2,7 @@
 package dev.aurakai.auraframefx.romtools
 
 import android.content.Context
+import android.os.Environment
 import androidx.lifecycle.ViewModel // Added import
 import dagger.hilt.android.lifecycle.HiltViewModel // Added import
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -26,8 +27,8 @@ import javax.inject.Inject
  * - AI-assisted ROM optimization
  */
 @HiltViewModel // Changed from @Singleton
-class RomToolsManager @Inject constructor(
-    @param:ApplicationContext private val context: Context,
+open class RomToolsManager @Inject constructor(
+    @param:ApplicationContext private val context: Context?,
     private val bootloaderManager: BootloaderManager,
     private val recoveryManager: RecoveryManager,
     private val systemModificationManager: SystemModificationManager,
@@ -37,10 +38,10 @@ class RomToolsManager @Inject constructor(
 ) : ViewModel() { // Added : ViewModel()
 
     private val _romToolsState = MutableStateFlow(RomToolsState())
-    val romToolsState: StateFlow<RomToolsState> = _romToolsState.asStateFlow()
+    open val romToolsState: StateFlow<RomToolsState> = _romToolsState.asStateFlow()
 
     private val _operationProgress = MutableStateFlow<OperationProgress?>(null)
-    val operationProgress: StateFlow<OperationProgress?> = _operationProgress.asStateFlow()
+    open val operationProgress: StateFlow<OperationProgress?> = _operationProgress.asStateFlow()
 
     init {
         Timber.i("ROM Tools Manager initialized")
@@ -50,7 +51,7 @@ class RomToolsManager @Inject constructor(
     /**
      * Check available ROM tools capabilities and device compatibility.
      */
-    private fun checkRomToolsCapabilities() {
+    protected open fun checkRomToolsCapabilities() {
         val deviceInfo = DeviceInfo.getCurrentDevice()
         val capabilities = RomCapabilities(
             hasRootAccess = checkRootAccess(),
@@ -274,7 +275,7 @@ data class RomToolsSettings(
     val verifyRomSignatures: Boolean = true,
     val enableGenesisOptimizations: Boolean = true,
     val maxBackupCount: Int = 5,
-    val downloadDirectory: String = "/sdcard/Download/ROMs"
+    val downloadDirectory: String = Environment.getExternalStorageDirectory().path + "/Download/ROMs"
 )
 
 data class OperationProgress(

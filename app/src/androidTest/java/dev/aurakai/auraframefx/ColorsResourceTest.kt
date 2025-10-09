@@ -7,8 +7,8 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
-import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.Test
+import org.junit.Before
+import org.junit.Test
 import org.junit.runner.RunWith
 
 /**
@@ -32,7 +32,7 @@ class ColorsResourceTest {
     private lateinit var context: Context
     private lateinit var resources: Resources
 
-    @BeforeEach
+    @Before
     fun setUp() {
         context = ApplicationProvider.getApplicationContext()
         resources = context.resources

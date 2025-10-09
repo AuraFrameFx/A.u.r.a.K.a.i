@@ -1,3 +1,0 @@
-C:/ReGenesis-A.O.S.P/secure-comm/.cxx/Release/5k6g5v3l/armeabi-v7a/CMakeFiles/secure_comm_native.dir
-C:/ReGenesis-A.O.S.P/secure-comm/.cxx/Release/5k6g5v3l/armeabi-v7a/CMakeFiles/edit_cache.dir
-C:/ReGenesis-A.O.S.P/secure-comm/.cxx/Release/5k6g5v3l/armeabi-v7a/CMakeFiles/rebuild_cache.dir

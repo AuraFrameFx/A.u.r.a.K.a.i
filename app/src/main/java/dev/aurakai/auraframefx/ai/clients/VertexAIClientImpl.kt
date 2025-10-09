@@ -14,7 +14,7 @@ class VertexAIClientImpl : VertexAIClient {
      * @param prompt The input prompt.
      * @return A simulated AI-generated response.
      */
-    override suspend fun generateText(prompt: String): String? {
+    override suspend fun generateText(prompt: String): String {
         delay(100)
         return "AI generated response for: $prompt"
     }
@@ -27,7 +27,7 @@ class VertexAIClientImpl : VertexAIClient {
      * @param prompt The input prompt to embed in the simulated response.
      * @return A string containing a simulated AI-generated response tailored to the prompt content.
      */
-    override suspend fun generateText(prompt: String, temperature: Float, maxTokens: Int): String? {
+    override suspend fun generateText(prompt: String, temperature: Float, maxTokens: Int): String {
         delay(200) // Simulate realistic API latency
 
         // Enhanced response generation based on prompt content
@@ -117,7 +117,7 @@ class VertexAIClientImpl : VertexAIClient {
         specification: String,
         language: String,
         style: String,
-    ): String? {
+    ): String {
         delay(100)
         return "// Stub $language code for: $specification"
     }
@@ -137,7 +137,7 @@ class VertexAIClientImpl : VertexAIClient {
      * @param prompt The input prompt for which content is to be generated.
      * @return A placeholder string embedding the prompt.
      */
-    suspend fun generateContent(prompt: String): String? {
+    suspend fun generateContent(prompt: String): String {
         delay(100)
         return "Stub content for: $prompt"
     }

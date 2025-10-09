@@ -1,10 +1,13 @@
 // ==== GENESIS PROTOCOL - ANDROID LIBRARY CONVENTION ====
 // Standard Android library configuration for all modules
+// Follows best practices from AGENT_INSTRUCTIONS.md
 
 import com.android.build.api.dsl.LibraryExtension
+import org.gradle.api.GradleException
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.tasks.Delete
 import org.gradle.kotlin.dsl.configure
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
@@ -14,15 +17,17 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
      * Configures the Android LibraryExtension and KotlinJvmProjectExtension for the target project:
      * - Applies the "com.android.library" plugin.
      * - Sets Android compileSdk to 36 and default minSdk to 34.
-     * - Forces Java source and target compatibility to Java 24.
-     * - Sets the Kotlin JVM toolchain to Java 24.
+     * - Forces Java source and target compatibility to Java 25.
+     * - Sets the Kotlin JVM toolchain to Java 25.
      *
      * @param target The Gradle project to which the plugin is applied; this method mutates the project's plugins and extensions.
      */
     override fun apply(target: Project) {
         with(target) {
+            // Apply plugins in correct order (per AGENT_INSTRUCTIONS.md section 2)
             with(pluginManager) {
                 apply("com.android.library")
+                apply("genesis.android.base") // Apply Hilt + KSP
             }
 
             extensions.configure<LibraryExtension> {
@@ -35,6 +40,19 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 compileOptions {
                     sourceCompatibility = JavaVersion.VERSION_24
                     targetCompatibility = JavaVersion.VERSION_24
+                }
+            }
+            // Kotlin JVM toolchain - use 24 for stable compatibility
+            pluginManager.withPlugin("org.jetbrains.kotlin.android") {
+                extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
+                    jvmToolchain(24)
+                    compilerOptions {
+                        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+                        freeCompilerArgs.addAll(
+                            "-opt-in=kotlin.RequiresOptIn",
+                            "-Xjvm-default=all"
+                        )
+                    }
                 }
             }
         }

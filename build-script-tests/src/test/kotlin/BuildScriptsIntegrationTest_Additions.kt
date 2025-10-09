@@ -1,10 +1,45 @@
+package buildscripts
+
+import org.gradle.testkit.runner.GradleRunner
+import org.gradle.testkit.runner.TaskOutcome
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.io.TempDir
+import java.nio.file.Path
+import kotlin.io.path.writeText
+
 /**
- * Placeholder for additional integration/unit tests targeting build-script behaviors.
- *
- * NOTE:
- * - This file will be populated after detecting the project's testing framework (JUnit/Jupiter/Kotest/etc.)
- * - We will append comprehensive tests focusing on the PR diff areas, including happy paths, edge cases, and failure scenarios.
- * - External processes (e.g., Gradle builds) will be isolated/mocked where applicable using existing utilities in the repo.
+ * Provides additional integration tests for the build scripts.
+ * This test uses Gradle TestKit to run a minimal build and verify its success,
+ * ensuring the basic project setup is sound.
  */
-@Suppress("unused")
-private class BuildScriptsIntegrationTest_Additions_Placeholder
+class BuildScriptsIntegrationTest_Additions {
+
+    @TempDir
+    lateinit var projectDir: Path
+
+    @Test
+    @DisplayName("Basic Gradle build succeeds with a simple task")
+    fun `basic build succeeds`() {
+        // Arrange
+        projectDir.resolve("settings.gradle.kts").writeText("""
+            rootProject.name = "integration-test"
+        """.trimIndent())
+
+        projectDir.resolve("build.gradle.kts").writeText("""
+            plugins {
+                `java-library`
+            }
+        """.trimIndent())
+
+        // Act
+        val result = GradleRunner.create()
+            .withProjectDir(projectDir.toFile())
+            .withArguments("help")
+            .build()
+
+        // Assert
+        assertEquals(TaskOutcome.SUCCESS, result.task(":help")?.outcome)
+    }
+}

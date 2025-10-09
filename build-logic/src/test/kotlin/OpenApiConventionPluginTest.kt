@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
-import org.openapitools.generator.gradle.plugin.extensions.OpenApiGeneratorGenerateExtension
+import org.openapi.generator.gradle.plugin.extensions.OpenApiGeneratorGenerateExtension
 import java.io.File
 
 @DisplayName("OpenApiConventionPlugin")
@@ -59,7 +59,7 @@ class OpenApiConventionPluginTest {
 
         ext!!
 
-        // Core generator options
+       // Core generator options
         assertEquals("kotlin", ext.generatorName.get(), "generatorName should be 'kotlin'")
 
         val expectedInputSpecSuffix = "/app/api/unified-aegenesis-api.yml"

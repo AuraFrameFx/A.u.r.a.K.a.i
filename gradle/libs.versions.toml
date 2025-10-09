@@ -1,11 +1,27 @@
 [versions]
 # ===== GRADLE & KOTLIN =====
-agp = "9.0.0-alpha08"
-kotlin = "2.2.20"
-ksp = "2.2.20-2.0.3"
+agp = "9.0.0-alpha09"
+comGoogleDevtoolsKspGradlePlugin = "2.2.21-RC-2.0.4"
+composeCompilerGradlePlugin = "2.2.21-RC"
+gradle = "9.0.0-alpha09"
+gradleToolingApi = "9.1.0"
+hiltAndroidGradlePlugin = "2.57.2"
+hiltAndroidGradlePluginVersion = "2.57.2"
+junitJupiterParams = "6.0.0"
+kotlin = "2.3.0-Beta1"
+kotlinGradlePlugin = "2.2.21-RC"
+kotlinLoggingJvm = "3.0.5"
+ksp = "2.2.21-RC-2.0.4"
 desugar_jdk_libs = "2.1.5"
+java = "24"
+
 
 # ===== HOOKING FRAMEWORKS =====
+ktorClientAuth = "3.3.1"
+ktorClientCio = "3.3.1"
+logbackClassic = "1.5.19"
+moshi = "1.15.2"
+moshiKotlin = "1.15.2"
 multidex = "2.0.1"
 xposed = "82"
 api = "82"
@@ -13,21 +29,21 @@ lsposed = "6.4"
 yukihookapi = "1.3.0"
 
 # ===== GOOGLE, FIREBASE & AI =====
-hilt-version = "2.57.1"
+hilt-version = "2.57.2"
 gson-version = "2.13.2"
-firebaseBom = "34.2.0"
+firebaseBom = "34.3.0"
 generativeai = "0.9.0"
 
 # ===== ANDROIDX =====
 coreKtx = "1.17.0"
 appcompat = "1.7.1"
-composeBom = "2025.09.00"
+composeBom = "2025.10.00"
 activityCompose = "1.11.0"
-navigationCompose = "2.9.4"
+navigationCompose = "2.9.5"
 hilt-navigation-compose-version = "1.3.0"
-lifecycle = "2.9.3"
-roomVersion = "2.8.0"
-workManager = "2.10.4"
+lifecycle = "2.9.4"
+roomVersion = "2.8.2"
+workManager = "2.10.5"
 hiltWork = "1.3.0"
 datastore = "1.1.7"
 securityCrypto = "1.1.0"
@@ -36,7 +52,7 @@ uiAutomator = "2.3.0"
 
 # ===== NETWORKING =====
 retrofit = "3.0.0"
-okhttp = "5.1.0"
+okhttp = "5.2.0"
 converterScalars = "2.11.0"
 retrofitKotlinxSerializationConverter = "1.0.0"
 
@@ -44,32 +60,32 @@ retrofitKotlinxSerializationConverter = "1.0.0"
 coilCompose = "2.7.0"
 timber = "5.0.1"
 slf4j = "2.0.17"
-guavaAndroid = "33.4.8-android"
+guavaAndroid = "33.5.0-android"
 kotlinxCoroutines = "1.10.2"
 kotlinxSerializationJson = "1.9.0"
 kotlinxDatetime = "0.7.1-0.6.x-compat"
 leakcanary = "2.14"
 
 # ===== BUILD PLUGINS =====
-openapiGeneratorGradlePlugin = "7.15.0"
+openapiGeneratorGradlePlugin = "7.5.0"
 firebaseCrashlyticsPlugin = "3.0.6"
 firebasePerfPlugin = "2.0.1"
 toolchainsFoojayResolver = "1.0.0"
-spotless = "7.2.1"
+spotless = "8.0.0"
 ktlint = "13.1.0"
 detektGradlePlugin = "1.23.8"
 dokkaGradlePlugin = "2.0.0"
 
 # ===== TESTING =====
 junit = "4.13.2"
-junitJupiter = "5.13.4"
+junitJupiter = "6.0.0"
 androidxTestJunit = "1.3.0"
 espressoCore = "3.7.0"
-mockk = "1.14.5"
+mockk = "1.14.6"
 turbine = "1.2.1"
 
 # ===== SECURITY =====
-bcprov = "1.81"
+bcprov = "1.82"
 junitVersion = "4.13.2"
 junitJupiterVersion = "5.13.4"
 
@@ -151,10 +167,25 @@ testing-android = [
 [libraries]
 # ===== GENERATIVE AI =====
 androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
+com-google-devtools-ksp-gradle-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "comGoogleDevtoolsKspGradlePlugin" }
+dagger-hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePluginVersion" }
 google-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
+openapi-generator-gradle-plugin = { group = "org.openapitools", name = "openapi-generator-gradle-plugin", version.ref = "openapiGeneratorGradlePlugin" }
 
 # ===== YUKIHOOK & XPOSED =====
-kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect" }
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+gradle-tooling-api = { module = "org.gradle:gradle-tooling-api", version.ref = "gradleToolingApi" }
+hilt-android-gradle-plugin = { module = "org.google.dagger.hilt.android:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
+junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junitJupiterParams" }
+kotlin-compose-compiler-gradle-plugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "composeCompilerGradlePlugin" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
+kotlin-logging-jvm = { module = "io.github.microutils:kotlin-logging-jvm", version.ref = "kotlinLoggingJvm" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktorClientAuth" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorClientCio" }
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logbackClassic" }
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }
 yukihook-api = { group = "com.highcapable.yukihookapi", name = "api", version.ref = "yukihookapi" }
 yukihook-ksp = { group = "com.highcapable.yukihookapi", name = "ksp-xposed", version.ref = "yukihookapi" }
 yukihook-prefs = { group = "com.highcapable.yukihookapi", name = "prefs", version.ref = "yukihookapi" }
@@ -252,7 +283,8 @@ mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
 mockk-agent = { module = "io.mockk:mockk-agent-jvm", version.ref = "mockk" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiterVersion" }
-junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version = "1.13.4" }
+junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version = "6.0.0" }
+
 
 [plugins]
 # Android
@@ -267,3 +299,5 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt-version" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaGradlePlugin" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+openapi-generator = { id = "org.openapi.generator", version.ref = "openapiGeneratorGradlePlugin" }

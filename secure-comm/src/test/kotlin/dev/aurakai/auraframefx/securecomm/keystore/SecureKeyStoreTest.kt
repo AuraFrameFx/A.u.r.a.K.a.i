@@ -7,10 +7,10 @@ import android.security.keystore.KeyProperties
 import android.util.Base64
 import io.mockk.*
 import io.mockk.impl.annotations.MockK
-import org.junit.After
+import org.junit.jupiter.api.AfterEach
 import org.junit.Assert.*
-import org.junit.Before
-import org.junit.Test
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 import java.security.KeyStore
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
@@ -38,7 +38,7 @@ class SecureKeyStoreTest {
 
     private lateinit var secureKeyStore: SecureKeyStore
 
-    @Before
+    @BeforeEach
     fun setUp() {
         MockKAnnotations.init(this, relaxUnitFun = true)
 
@@ -87,7 +87,7 @@ class SecureKeyStoreTest {
         secureKeyStore = SecureKeyStore(context)
     }
 
-    @After
+    @AfterEach
     fun tearDown() {
         unmockkAll()
     }

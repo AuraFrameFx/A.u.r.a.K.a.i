@@ -14,14 +14,17 @@ android {
         cmake {
             path = file("src/main/cpp/CMakeLists.txt")
             version = "3.22.1"
+            // Ensure staging is always under this module to prevent stale path issues
+            buildStagingDirectory = file("$projectDir/.cxx")
         }
     }
+    ndkVersion = "28.2.13676358"
 }
 
 dependencies {
     implementation(project(":core-module"))
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    add("ksp", libs.hilt.compiler)
     implementation(libs.hilt.work)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.work.runtime.ktx)
@@ -43,6 +46,23 @@ dependencies {
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.hilt.android.testing)
 }
+tasks.register<Delete>("clearGeneratedSources") {
+    delete("src/generated", "build/generated") // adjust paths as needed
+}
+
+
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
+
+// Remove onlyIf block for native clean tasks to avoid configuration cache and serialization issues
+// (This block caused errors: Could not evaluate onlyIf predicate for task ...)
+// tasks.matching { it.name.startsWith("externalNativeBuildClean") }.configureEach {
+//     onlyIf { file("$projectDir/.cxx").exists() }
+// }
 
 // Spotless and toolchain are applied globally via root build.gradle.kts and convention plugins
 // ProGuard rules for Hilt, Compose, Serialization, and reflection-based libraries should be in proguard-rules.pro

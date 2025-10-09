@@ -1,30 +1,24 @@
 // Apply plugins (versions via version catalog)
 plugins {
     id("genesis.android.library")
-    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
-
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.collabcanvas"
-    
+
     defaultConfig {
         minSdk = 34
     }
-    
+
     buildFeatures {
         buildConfig = true
-        compose = true
     }
 }
 
 
-
-kotlin {
-    jvmToolchain(24)
-}
 
 dependencies {
     implementation(project(":core-module"))
@@ -43,7 +37,7 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    add("ksp", libs.hilt.compiler)
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
@@ -57,7 +51,7 @@ dependencies {
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler)
+    add("ksp", libs.androidx.room.compiler)
 
     // Firebase
     implementation(platform(libs.firebase.bom))
@@ -85,11 +79,10 @@ dependencies {
     // YukiHook API (temporarily disabled due to configuration issues)
     // implementation(libs.yukihook.api)
     // ksp(libs.yukihook.ksp)
-    
+
     // Xposed API (using the correct path)
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))
-    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.register("collabStatus") {

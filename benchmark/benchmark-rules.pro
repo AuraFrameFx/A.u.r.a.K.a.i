@@ -22,9 +22,9 @@
 # Keep the @Rule fields that are used in tests
 -keepclassmembers class * {
     @org.junit.Rule *;
-    @org.junit.Before *;
-    @org.junit.After *;
-    @org.junit.Test *;
+    @org.junit.jupiter.api.BeforeEach *;
+    @org.junit.jupiter.api.AfterEach *;
+    @org.junit.jupiter.api.Test *;
 }
 
 # Keep Kotlin metadata for reflection

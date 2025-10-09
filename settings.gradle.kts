@@ -1,3 +1,4 @@
+
 @file:Suppress("UnstableApiUsage", "JCenterRepositoryObsolete")
 
 // ===== AOSP-Re:Genesis - SETTINGS =====
@@ -63,22 +64,24 @@ pluginManagement {
             }
         }
     }
-    
-    plugins {
-        id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-    }
-    
+
     resolutionStrategy {
         eachPlugin {
             if (requested.id.namespace == "com.google.dagger") {
-                useModule("com.google.dagger:hilt-android-gradle-plugin:${requested.version}")
+                useModule("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
+            }
+            if (requested.id.id.startsWith("com.android.")) {
+                useModule("com.android.tools.build:gradle:9.0.0-alpha09")
             }
         }
     }
 }
+
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
+
+// Note: foojay-resolver-convention plugin complements org.gradle.java.installations.auto-download=true in gradle.properties
 
 dependencyResolutionManagement {
     // Enforce consistent dependency resolution
@@ -86,7 +89,7 @@ dependencyResolutionManagement {
 
     // Repository configuration with all necessary sources
     repositories {
-        // Primary repositories
+        gradlePluginPortal()
         google()
         mavenCentral()
 
@@ -128,7 +131,7 @@ dependencyResolutionManagement {
 }
 
 // ===== PROJECT IDENTIFICATION =====
-rootProject.name = "AOSPReGenesis"
+rootProject.name = "AuraKai"
 
 // ===== MODULE INCLUSION =====
 // Core modules
@@ -154,11 +157,13 @@ include(":module-e")
 include(":module-f")
 
 // Testing & Quality modules
+include(":build-script-tests")
 include(":benchmark")
 include(":screenshot-tests")  // Placeholder module to satisfy CI/task references
 include(":jvm-test")  // JVM-only module
 include(":list")  // JVM-only module
 include(":utilities")  // AI entities' chosen utilities
+include(":data:api")
 
 // ===== MODULE CONFIGURATION =====
 rootProject.children.forEach { project ->

@@ -40,10 +40,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
+import dev.aurakai.auraframefx.romtools.BackupInfo
+import dev.aurakai.auraframefx.romtools.FakeRomToolsManager
+import dev.aurakai.auraframefx.romtools.RomCapabilities
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dev.aurakai.auraframefx.romtools.RomToolsManager
 
@@ -55,11 +59,10 @@ import dev.aurakai.auraframefx.romtools.RomToolsManager
 @Composable
 fun RomToolsScreen(
     modifier: Modifier = Modifier,
-    romToolsManager: RomToolsManager = hiltViewModel<RomToolsManager>()
+    viewModel: RomToolsManager = hiltViewModel()
 ) {
-    val romToolsState by romToolsManager.romToolsState.collectAsStateWithLifecycle()
-    val operationProgress by romToolsManager.operationProgress.collectAsStateWithLifecycle()
-
+    val romToolsState by viewModel.romToolsState.collectAsStateWithLifecycle()
+    val operationProgress by viewModel.operationProgress.collectAsStateWithLifecycle()
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -75,22 +78,37 @@ fun RomToolsScreen(
     ) {
         // Top App Bar
         TopAppBar(
-            title = {
+            {
                 Text(
                     text = "ROM Tools",
                     color = Color(0xFFFF6B35),
                     fontWeight = FontWeight.Bold,
                     fontSize = 20.sp
                 )
-            },
-            colors = TopAppBarDefaults.topAppBarColors(
+            }, colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = Color.Black.copy(alpha = 0.8f)
             )
         )
 
+        // Content area
         if (!romToolsState.isInitialized) {
             // Loading state
-            Box(
+            LoadingScreen()
+        } else {
+            // Main content
+            MainContent(romToolsState, operationProgress)
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun RomToolsScreenPreview() {
+    RomToolsScreen(viewModel = FakeRomToolsManager())
+}
+
+@Composable
+private fun LoadingScreen() {Box(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
@@ -109,39 +127,47 @@ fun RomToolsScreen(
                     )
                 }
             }
-        } else {
-            LazyColumn(
-                modifier = Modifier.fillMaxSize(),
-                contentPadding = PaddingValues(16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp)
-            ) {
-                // Device Capabilities Card
-                item {
-                    DeviceCapabilitiesCard(
-                        capabilities = romToolsState.capabilities
-                    )
-                }
+        } @Preview
+@Composable
+private fun LoadingScreenPreview() {
+    LoadingScreen()
+}
 
-                // Active Operation Progress
-                operationProgress?.let { operation ->
-                    item {
-                        OperationProgressCard(operation = operation)
-                    }
-                }
+@Composable
+private fun MainContent(
+    romToolsState: dev.aurakai.auraframefx.romtools.RomToolsState,
+    operationProgress: dev.aurakai.auraframefx.romtools.OperationProgress?
+) {
+    LazyColumn(
+        modifier = Modifier.fillMaxSize(),
+        contentPadding = PaddingValues(16.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        // Device Capabilities Card
+        this.item {
+            DeviceCapabilitiesCard(capabilities = romToolsState.capabilities)
+        }
 
-                // ROM Tools Actions
-                item {
-                    Text(
-                        text = "ROM Operations",
-                        color = Color(0xFFFF6B35),
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(vertical = 8.dp)
-                    )
-                }
+        // Active Operation Progress
+        if (operationProgress != null) {
+            item {
+                OperationProgressCard(operation = operationProgress)
+            }
+        }
+
+        // ROM Tools Actions
+        item {
+            Text(
+                text = "ROM Operations",
+                color = Color(0xFFFF6B35),
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(vertical = 8.dp)
+            )
+        }
 
                 // ROM Tools Action Cards
-                items(getRomToolsActions()) { action ->
+                items(items = getRomToolsActions()) { action ->
                     RomToolActionCard(
                         action = action,
                         isEnabled = action.isEnabled(romToolsState.capabilities),
@@ -152,43 +178,43 @@ fun RomToolsScreen(
                                     // Open ROM selection dialog
                                 }
 
-                                RomActionType.CREATE_BACKUP -> {
-                                    // Start backup process
-                                }
-
-                                RomActionType.RESTORE_BACKUP -> {
-                                    // Open backup selection
-                                }
-
-                                RomActionType.UNLOCK_BOOTLOADER -> {
-                                    // Unlock bootloader
-                                }
-
-                                RomActionType.INSTALL_RECOVERY -> {
-                                    // Install custom recovery
-                                }
-
-                                RomActionType.GENESIS_OPTIMIZATIONS -> {
-                                    // Apply Genesis AI optimizations
-                                }
-                            }
+                        RomActionType.CREATE_BACKUP -> {
+                            // Start backup process
                         }
-                    )
-                }
 
-                // Available ROMs Section
-                if (romToolsState.availableRoms.isNotEmpty()) {
-                    item {
-                        Text(
-                            text = "Available ROMs",
-                            color = Color(0xFFFF6B35),
-                            fontSize = 18.sp,
+                        RomActionType.RESTORE_BACKUP -> {
+                            // Open backup selection
+                        }
+
+                        RomActionType.UNLOCK_BOOTLOADER -> {
+                            // Unlock bootloader
+                        }
+
+                        RomActionType.INSTALL_RECOVERY -> {
+                            // Install custom recovery
+                        }
+
+                        RomActionType.GENESIS_OPTIMIZATIONS -> {
+                            // Apply Genesis AI optimizations
+                        }
+                    }
+                }
+            )
+        }
+
+        // Available ROMs Section
+        if (romToolsState.availableRoms.isNotEmpty()) {
+            item {
+                Text(
+                    text = "Available ROMs",
+                    color = Color(0xFFFF6B35),
+                    fontSize = 18.sp,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(vertical = 8.dp)
                         )
                     }
 
-                    items(romToolsState.availableRoms) { rom ->
+                    items(items = romToolsState.availableRoms) { rom ->
                         AvailableRomCard(rom = rom)
                     }
                 }
@@ -205,18 +231,84 @@ fun RomToolsScreen(
                         )
                     }
 
-                    items(romToolsState.backups) { backup ->
+                    items(items = romToolsState.backups) { backup ->
                         BackupCard(backup = backup)
                     }
                 }
             }
         }
-    }
+
+@Preview
+@Composable
+private fun MainContentPreview() {
+    val capabilities = RomCapabilities(
+        hasRootAccess = true,
+        hasBootloaderAccess = true,
+        hasRecoveryAccess = false,
+        hasSystemWriteAccess = true,
+        supportedArchitectures = listOf("arm64-v8a"),
+        deviceModel = "Pixel 8 Pro",
+        androidVersion = "14",
+        securityPatchLevel = "2023-10-01"
+    )
+    val romToolsState = dev.aurakai.auraframefx.romtools.RomToolsState(
+        capabilities = capabilities,
+        isInitialized = true,
+        availableRoms = listOf(
+            dev.aurakai.auraframefx.romtools.AvailableRom(
+                name = "AuraOS",
+                version = "1.0",
+                androidVersion = "14",
+                downloadUrl = "",
+                size = 2147483648L,
+                checksum = "abc",
+                description = "The best ROM",
+                maintainer = "AuraKai",
+                releaseDate = System.currentTimeMillis()
+            )
+        ),
+        backups = listOf(
+            BackupInfo(
+                name = "MyBackup",
+                path = "/sdcard/backups",
+                size = 1073741824L,
+                createdAt = System.currentTimeMillis(),
+                deviceModel = "Pixel 8 Pro",
+                androidVersion = "14",
+                partitions = listOf("system", "boot", "data")
+            )
+        )
+    )
+    val operationProgress = dev.aurakai.auraframefx.romtools.OperationProgress(
+        operation = dev.aurakai.auraframefx.romtools.RomOperation.FLASHING_ROM,
+        progress = 75f
+    )
+    MainContent(romToolsState = romToolsState, operationProgress = operationProgress)
+}
+
+@Preview
+@Composable
+private fun MainContentNoProgressPreview() {
+    val capabilities = RomCapabilities(
+        hasRootAccess = false,
+        hasBootloaderAccess = false,
+        hasRecoveryAccess = false,
+        hasSystemWriteAccess = false,
+        supportedArchitectures = listOf(),
+        deviceModel = "Pixel 8 Pro",
+        androidVersion = "14",
+        securityPatchLevel = "2023-10-01"
+    )
+    val romToolsState = dev.aurakai.auraframefx.romtools.RomToolsState(
+        capabilities = capabilities,
+        isInitialized = true
+    )
+    MainContent(romToolsState = romToolsState, operationProgress = null)
 }
 
 @Composable
 private fun DeviceCapabilitiesCard(
-    capabilities: dev.aurakai.auraframefx.romtools.RomCapabilities?,
+    capabilities: RomCapabilities?,
     modifier: Modifier = Modifier
 ) {
     Card(
@@ -259,6 +351,33 @@ private fun DeviceCapabilitiesCard(
     }
 }
 
+@Preview
+@Composable
+private fun DeviceCapabilitiesCardPreview() {
+    val capabilities = RomCapabilities(
+        hasRootAccess = true,
+        hasBootloaderAccess = true,
+        hasRecoveryAccess = false,
+        hasSystemWriteAccess = true,
+        supportedArchitectures = listOf("arm64-v8a"),
+        deviceModel = "Pixel 8 Pro",
+        androidVersion = "14",
+        securityPatchLevel = "2023-10-01"
+    )
+    DeviceCapabilitiesCard(capabilities = capabilities)
+}
+
+@Preview
+@Composable
+private fun DeviceCapabilitiesCardLoadingPreview() {
+    DeviceCapabilitiesCard(capabilities = null)
+}
+
+@Preview
+@Composable
+private fun CapabilityRowPreview() {
+    CapabilityRow(label = "Root Access", hasCapability = true)
+}
 @Composable
 private fun CapabilityRow(label: String, hasCapability: Boolean) {
     Row(
@@ -278,6 +397,12 @@ private fun CapabilityRow(label: String, hasCapability: Boolean) {
             modifier = Modifier.size(20.dp)
         )
     }
+}
+
+@Preview
+@Composable
+private fun InfoRowPreview() {
+    InfoRow(label = "Device", value = "Pixel 8 Pro")
 }
 
 @Composable
@@ -340,6 +465,16 @@ private fun OperationProgressCard(
     }
 }
 
+@Preview
+@Composable
+private fun OperationProgressCardPreview() {
+    val operationProgress = dev.aurakai.auraframefx.romtools.OperationProgress(
+        operation = dev.aurakai.auraframefx.romtools.RomOperation.FLASHING_ROM,
+        progress = 75f
+    )
+    OperationProgressCard(operation = operationProgress)
+}
+
 @Composable
 private fun RomToolActionCard(
     action: RomToolAction,
@@ -397,6 +532,28 @@ private fun RomToolActionCard(
             }
         }
     }
+}
+
+@Preview
+@Composable
+private fun RomToolActionCardEnabledPreview() {
+    val action = getRomToolsActions().first()
+    RomToolActionCard(
+        action = action,
+        isEnabled = true,
+        onClick = {}
+    )
+}
+
+@Preview
+@Composable
+private fun RomToolActionCardDisabledPreview() {
+    val action = getRomToolsActions().first { it.type == RomActionType.CREATE_BACKUP }
+    RomToolActionCard(
+        action = action,
+        isEnabled = false,
+        onClick = {}
+    )
 }
 
 // Helper functions and data classes
@@ -470,7 +627,7 @@ data class RomToolAction(
     val requiresRecovery: Boolean = false,
     val requiresSystem: Boolean = false
 ) {
-    fun isEnabled(capabilities: dev.aurakai.auraframefx.romtools.RomCapabilities?): Boolean {
+    fun isEnabled(capabilities: RomCapabilities?): Boolean {
         if (capabilities == null) return false
 
         return (!requiresRoot || capabilities.hasRootAccess) &&
@@ -494,7 +651,38 @@ private fun AvailableRomCard(rom: dev.aurakai.auraframefx.romtools.AvailableRom)
     // Implementation for available ROM card
 }
 
+@Preview
 @Composable
-private fun BackupCard(backup: dev.aurakai.auraframefx.romtools.BackupInfo) {
+private fun AvailableRomCardPreview() {
+    AvailableRomCard(
+        rom = dev.aurakai.auraframefx.romtools.AvailableRom(
+            name = "AuraOS",
+            version = "2.1",
+            androidVersion = "14",
+            downloadUrl = "",
+            size = 2147483648L,
+            checksum = "abcdef123456",
+            description = "Latest stable build with AI enhancements.",
+            maintainer = "AuraKai Team",
+            releaseDate = System.currentTimeMillis()
+        )
+    )
+}
+
+@Composable
+private fun BackupCard(backup: BackupInfo) {
     // Implementation for backup card
 }
+
+@Preview
+@Composable
+private fun BackupCardPreview() {
+    val backupInfo = BackupInfo("FullBackup-20231026", "/sdcard/TWRP/BACKUPS/device_id/FullBackup-20231026", 8589934592L, System.currentTimeMillis(), "Pixel 8 Pro", "14.0", listOf("boot", "system", "data", "vendor"))
+    BackupCard(backup = backupInfo)
+}
+
+// NOTE: For real file operations, use context.getExternalFilesDir() or similar instead of hardcoded /sdcard paths.
+// Example:
+// val backupDir = context.getExternalFilesDir("backups")
+// val backupPath = backupDir?.absolutePath ?: ""
+

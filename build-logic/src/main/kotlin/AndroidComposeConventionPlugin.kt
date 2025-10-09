@@ -12,8 +12,11 @@ class AndroidComposeConventionPlugin : Plugin<Project> {
      *
      * This will:
      * - Apply the base "genesis.android.library" convention plugin.
-     * - Apply the Kotlin Compose plugin "org.jetbrains.kotlin.plugin.compose".
      * - Configure the Android LibraryExtension to enable Compose build features.
+     * - Configure Compose Compiler metrics and stability configuration (if plugin is applied).
+     *
+     * Note: Modules using this plugin must also apply the Compose Compiler plugin via:
+     * alias(libs.plugins.compose.compiler)
      *
      * @param target The Gradle [Project] this plugin is being applied to.
      */

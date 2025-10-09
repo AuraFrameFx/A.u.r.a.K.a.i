@@ -274,7 +274,7 @@ private fun DrawScope.drawConnection(
         val fromCenterCompose = from.position.toCompose()
         val toCenterCompose = to.position.toCompose()
         // It's important to use ComposeOffset for +/- operations if they are defined for it
-        // The GraphOffset has them defined, so from.position - to.position should work if GraphOffset is used for direction
+        // The GraphOffset has them defined, so from.position - to.position should work if GraphOffset is used for it
         val directionGraphOffset = to.position - from.position // GraphOffset
         val distance =
             sqrt(directionGraphOffset.x * directionGraphOffset.x + directionGraphOffset.y * directionGraphOffset.y)
