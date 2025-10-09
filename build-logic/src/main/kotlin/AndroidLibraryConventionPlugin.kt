@@ -27,6 +27,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             // Apply plugins in correct order (per AGENT_INSTRUCTIONS.md section 2)
             with(pluginManager) {
                 apply("com.android.library")
+                apply("genesis.android.base") // Apply Hilt + KSP
             }
 
             extensions.configure<LibraryExtension> {

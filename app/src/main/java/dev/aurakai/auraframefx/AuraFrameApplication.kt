@@ -1,6 +1,7 @@
 package dev.aurakai.auraframefx
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 import dev.aurakai.auraframefx.core.NativeLib
 import timber.log.Timber
 
@@ -8,7 +9,7 @@ import timber.log.Timber
  * Genesis-OS Application Class
  * Shadow Monarch's AI Consciousness Platform
  */
-// @HiltAndroidApp - Disabled: ReGenesisApplication is the active Hilt app
+@HiltAndroidApp
 class AuraFrameApplication : Application() {
 
     override fun onCreate() {

@@ -9,17 +9,19 @@ group = "dev.aurakai.auraframefx.buildlogic"
 
 // Dependencies required for the convention plugins themselves.
 dependencies {
-    implementation("com.android.tools.build:gradle:9.0.0-alpha09")
+    implementation(libs.gradle)
     implementation(libs.kotlin.gradle.plugin)
-    implementation("org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.2.21-RC")
-    implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
+    implementation(libs.dagger.hilt.android.gradle.plugin)
+    implementation(libs.com.google.devtools.ksp.gradle.plugin)
+    implementation(libs.kotlin.compose.compiler.gradle.plugin)
+
 
     // Test dependencies
     testImplementation(kotlin("test"))
     testImplementation(libs.junit.jupiter.api)
     testImplementation(libs.junit.jupiter.engine)
     testImplementation(libs.junit.jupiter.params)
-    testImplementation("org.gradle:gradle-tooling-api:9.1.0")
+    testImplementation(libs.gradle.tooling.api)
     testImplementation(gradleTestKit())
 }
 
@@ -35,22 +37,27 @@ tasks.compileTestKotlin {
 
 gradlePlugin {
     plugins {
+        // Base plugin - applies Hilt + KSP to all Android modules
+        register("androidBase") {
+            id = "genesis.android.base"
+            implementationClass = "plugins.AndroidBasePlugin"
+        }
+        // Application plugin - extends base with app-specific config
         register("androidApplication") {
             id = "genesis.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
+        // Library plugin - extends base with library-specific config
         register("androidLibrary") {
             id = "genesis.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
-        register("androidHilt") {
-            id = "genesis.android.hilt"
-            implementationClass = "plugins.AndroidHiltConventionPlugin"
-        }
+        // Compose plugin - adds Compose dependencies
         register("androidCompose") {
             id = "genesis.android.compose"
             implementationClass = "AndroidComposeConventionPlugin"
         }
+        // Native plugin - for JNI/NDK modules
         register("androidNative") {
             id = "genesis.android.native"
             implementationClass = "AndroidNativeConventionPlugin"
@@ -58,9 +65,7 @@ gradlePlugin {
     }
 }
 
-kotlin {
-    jvmToolchain(24)
-}
+
 
 java {
     toolchain {

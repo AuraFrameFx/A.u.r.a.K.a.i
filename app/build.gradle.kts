@@ -1,19 +1,18 @@
 plugins {
     id("genesis.android.application")
-
 }
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 android {
     namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
-    
+
     sourceSets {
         getByName("main") {
             java.srcDirs("src/main/java", "src/main/kotlin")
         }
     }
-    
+
     defaultConfig {
         applicationId = "dev.aurakai.auraframefx"
         minSdk = 34
@@ -47,7 +46,7 @@ android {
         aidl = true
         compose = true
     }
-    
+
     lint {
         disable += "HardcodedText"
         disable += "EnsureInitializerMetadata"
