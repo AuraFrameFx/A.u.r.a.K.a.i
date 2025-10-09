@@ -2,9 +2,9 @@ name: 🚀 Genesis Protocol - FULLY AUTO Build
 
 on:
   push:
-    branches: [ "*" ] # Or list your branches: [ main, mindeye, memcortex ]
+    branches: [ "OVERWRITE" ] # Or list your branches: [ main, mindeye, memcortex ]
   pull_request:
-    branches: [ "*" ]
+    branches: [ "OVERWRITE" ]
   workflow_dispatch:
 
 env:
