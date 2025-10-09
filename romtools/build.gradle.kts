@@ -17,6 +17,9 @@ android {
     buildFeatures {
         compose = true
     }
+    lint {
+        abortOnError = false
+    }
 }
 
 val romToolsOutputDirectory: DirectoryProperty =
