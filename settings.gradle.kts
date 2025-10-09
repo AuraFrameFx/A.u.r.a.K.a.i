@@ -157,6 +157,7 @@ include(":module-e")
 include(":module-f")
 
 // Testing & Quality modules
+include(":build-script-tests")
 include(":benchmark")
 include(":screenshot-tests")  // Placeholder module to satisfy CI/task references
 include(":jvm-test")  // JVM-only module
