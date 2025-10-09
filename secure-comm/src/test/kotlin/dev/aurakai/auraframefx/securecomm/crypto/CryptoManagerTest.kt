@@ -78,7 +78,10 @@ class CryptoManagerTest {
         override fun fileList() = throw UnsupportedOperationException()
         override fun getDir(name: String?, mode: Int) = throw UnsupportedOperationException()
         override fun openOrCreateDatabase(
-        ) = throw UnsupportedOperationException()
+            name: String,
+            mode: Int,
+            factory: android.database.sqlite.SQLiteDatabase.CursorFactory?
+        ): android.database.sqlite.SQLiteDatabase = throw UnsupportedOperationException()
 
         override fun openOrCreateDatabase(
             name: String?,
