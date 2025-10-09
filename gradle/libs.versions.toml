@@ -2,7 +2,7 @@
 # ===== GRADLE & KOTLIN =====
 agp = "9.0.0-alpha09"
 comGoogleDevtoolsKspGradlePlugin = "2.2.21-RC-2.0.4"
-composeCompilerGradlePlugin = "2.2.21-RC"
+composeCompilerGradlePlugin = "2.3.0-Beta1"
 gradle = "9.0.0-alpha09"
 gradleToolingApi = "9.1.0"
 hiltAndroidGradlePlugin = "2.57.2"
