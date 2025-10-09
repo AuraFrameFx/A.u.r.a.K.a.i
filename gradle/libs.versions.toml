@@ -67,7 +67,7 @@ kotlinxDatetime = "0.7.1-0.6.x-compat"
 leakcanary = "2.14"
 
 # ===== BUILD PLUGINS =====
-openapiGeneratorGradlePlugin = "7.15.0"
+openapiGeneratorGradlePlugin = "7.5.0"
 firebaseCrashlyticsPlugin = "3.0.6"
 firebasePerfPlugin = "2.0.1"
 toolchainsFoojayResolver = "1.0.0"
@@ -170,6 +170,7 @@ androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "mult
 com-google-devtools-ksp-gradle-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "comGoogleDevtoolsKspGradlePlugin" }
 dagger-hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePluginVersion" }
 google-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
+openapi-generator-gradle-plugin = { group = "org.openapitools", name = "openapi-generator-gradle-plugin", version.ref = "openapiGeneratorGradlePlugin" }
 
 # ===== YUKIHOOK & XPOSED =====
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
@@ -299,3 +300,4 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt-version" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaGradlePlugin" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+openapi-generator = { id = "org.openapi.generator", version.ref = "openapiGeneratorGradlePlugin" }
