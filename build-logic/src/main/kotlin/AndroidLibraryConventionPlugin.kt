@@ -13,11 +13,15 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
     /**
-     * Applies Android library plugin and configures Kotlin settings.
+     * Applies Android library plugin and configures Kotlin defaults.
      *
-     * AGP 9.0+ includes built-in Kotlin support - no need to apply kotlin-android plugin separately.
+     * Configures the Android LibraryExtension and KotlinJvmProjectExtension for the target project:
+     * - Applies the "com.android.library" plugin.
+     * - Sets Android compileSdk to 36 and default minSdk to 34.
+     * - Forces Java source and target compatibility to Java 25.
+     * - Sets the Kotlin JVM toolchain to Java 25.
      *
-     * @param target The Gradle project to apply the plugin to
+     * @param target The Gradle project to which the plugin is applied; this method mutates the project's plugins and extensions.
      */
     override fun apply(target: Project) {
         with(target) {

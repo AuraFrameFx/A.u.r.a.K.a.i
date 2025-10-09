@@ -23,6 +23,14 @@ val versionCatalog = extensions.getByType(VersionCatalogsExtension::class.java).
 
 // === BASIC PROJECT INFO ===
 
+data class ModuleReport(
+    val name: String,
+    val type: String,
+    val hasHilt: Boolean,
+    val hasCompose: Boolean,
+    val hasKsp: Boolean
+)
+
 fun collectModuleReports(): List<ModuleReport> {
     return subprojects.map { subproject ->
         ModuleReport(
