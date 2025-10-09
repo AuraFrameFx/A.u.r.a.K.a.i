@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.openapi.generator") version "7.16.0"
-    kotlin("jvm") // Or your project's specific Kotlin version, e.g., version "1.9.23"
+    id("org.openapi.generator")
+    kotlin("jvm")
     kotlin("plugin.serialization")
     `java-library`
 }
@@ -10,12 +10,16 @@ plugins {
 val ecoCoreSpec = file("${rootDir}/data/api/eco-core.yaml")
 val ecoAiSpec = file("${rootDir}/data/api/eco-ai.yaml")
 
+// Convert to forward slashes for OpenAPI generator on Windows
+val ecoCoreSpecPath = ecoCoreSpec.absolutePath.replace("\\", "/")
+val ecoAiSpecPath = ecoAiSpec.absolutePath.replace("\\", "/")
+
 require(ecoCoreSpec.exists()) { "OpenAPI spec not found at: ${ecoCoreSpec.absolutePath}" }
 require(ecoAiSpec.exists()) { "OpenAPI spec not found at: ${ecoAiSpec.absolutePath}" }
 
 openApiGenerate {
     generatorName = "kotlin"
-    inputSpec = ecoCoreSpec.toURI().toString()
+    inputSpec = ecoCoreSpecPath
     validateSpec = false
     outputDir = layout.buildDirectory.dir("generated/openapi/ecocore").get().asFile.path
     apiPackage = "dev.aurakai.auraframefx.api.ecocore"
@@ -53,7 +57,7 @@ tasks.register(
     org.openapitools.generator.gradle.plugin.tasks.GenerateTask::class
 ) {
     generatorName = "kotlin"
-    inputSpec = ecoAiSpec.toURI().toString()
+    inputSpec = ecoAiSpecPath
     validateSpec = false
     outputDir = layout.buildDirectory.dir("generated/openapi/ecoai").get().asFile.path
     apiPackage = "dev.aurakai.auraframefx.api.ecoai"
