@@ -2,6 +2,7 @@ import com.android.build.api.dsl.ApplicationExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.tasks.Delete
 import org.gradle.kotlin.dsl.getByType
@@ -19,10 +20,13 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
                 apply("org.jetbrains.kotlin.plugin.compose")
             }
 
+            val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
             pluginManager.withPlugin("com.android.application") {
                 extensions.configure(typeOf<ApplicationExtension>()) {
-                    compileSdk = 36
-                    defaultConfig.targetSdk = 36
+                    val compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
+                    this.compileSdk = compileSdk
+                    defaultConfig.targetSdk = compileSdk
                     defaultConfig.minSdk = 34
                     defaultConfig.testInstrumentationRunner =
                         "androidx.test.runner.AndroidJUnitRunner"

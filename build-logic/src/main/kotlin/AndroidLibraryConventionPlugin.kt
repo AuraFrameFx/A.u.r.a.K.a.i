@@ -6,7 +6,9 @@ import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.getByType
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
@@ -27,8 +29,10 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 // apply("org.jetbrains.kotlin.android")  // NO LONGER NEEDED
             }
 
+            val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
             extensions.configure<LibraryExtension> {
-                compileSdk = 36
+                compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
 
                 defaultConfig {
                     minSdk = 34
