@@ -171,11 +171,11 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
-    ksp(libs.hilt.work)
 
     // ===== WORKMANAGER =====
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.hilt.work)
+    ksp(libs.hilt.work)  // Annotation processor for Hilt WorkManager integration
 
     // ===== UTILITIES =====
     implementation(libs.timber)
