@@ -99,14 +99,14 @@ tasks.named("openApiGenerateEcoAi") {
 
 sourceSets {
     named("main") {
-        java.srcDir(layout.buildDirectory.dir("generated/openapi/eco/src/main/kotlin"))
+        java.srcDir(layout.buildDirectory.dir("generated/openapi/ecocore/src/main/kotlin"))
         java.srcDir(layout.buildDirectory.dir("generated/openapi/ecoai/src/main/kotlin"))
     }
 }
 
 // ✅ CHANGED: finalizedBy → dependsOn (this is the ONLY change)
 tasks.withType<KotlinCompile>().configureEach {
-    dependsOn(tasks.named("openApiGenerate"))  // ✅ FIXED - was finalizedBy
+    dependsOn(tasks.named("openApiGenerate"), tasks.named("openApiGenerateEcoAi"))
     compilerOptions {
         freeCompilerArgs.add("-opt-in=kotlin.time.ExperimentalTime")
     }
