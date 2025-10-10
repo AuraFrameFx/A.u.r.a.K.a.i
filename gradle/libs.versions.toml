@@ -1,5 +1,6 @@
 [versions]
 agp = "9.0.0-alpha10"
+compileSdk = "36"
 comGoogleDevtoolsKspGradlePlugin = "2.2.21-RC-2.0.4"
 composeCompilerGradlePlugin = "2.2.21-RC"
 gradle = "9.0.0-alpha10"
