@@ -1,4 +1,3 @@
-// Apply plugins (versions via version catalog)
 plugins {
     id("com.android.library")  // Convention plugin: applies Android, Kotlin, Hilt
     alias(libs.plugins.ksp)
@@ -8,7 +7,7 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.collabcanvas"
-    compilesdk = 36
+    compileSdk = 36
     defaultConfig {
         minSdk = 34
     }
@@ -17,8 +16,6 @@ android {
         buildConfig = true
     }
 }
-
-
 
 dependencies {
     implementation(project(":core-module"))
