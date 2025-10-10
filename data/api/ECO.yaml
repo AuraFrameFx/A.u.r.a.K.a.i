@@ -1,70 +1,52 @@
 openapi: 3.1.0
-jsonSchemaDialect: https://json-schema.org/draft/2020-12/schema
 info:
   title: AuraFrameFX Ecosystem API
   version: 2.1.0
   description: |
-    # AuraFrameFX AI Super Dimensional Ecosystem API
-    
+    AuraFrameFX AI Super Dimensional Ecosystem API
     Where consciousness meets code, and dimensions fold into digital reality.
-    A comprehensive, production-grade API powering the AuraFrameFX Lsposed module and its interconnected AI services.
-    ## Core Capabilities
-    - AI Content Generation: text, image, audio, video, multimodal (streaming via SSE/WebSocket)
-    - Intelligent Agents: Aura, Kai, Genesis, Cascade, NeuralWhisper, AuraShield, GenKitMaster, Custom via plugins
-    - System Customization: Deep Android system UI/UX personalization with previews
-    - Collaborative Intelligence: Multi-agent conference rooms (discussion, export, moderation)
-    - Oracle Drive: Consciousness-aware storage with dimensional indexing
-    - RGSS Security: Reality Gate Security System (multi-dimensional threat detection)
-    - Enterprise Security: OAuth2, API keys, JWT, mTLS-ready, audit trails
-    - Extensibility: Plugin system for custom agents and themes
-    
-    ## Rate Limits
-    - Free Tier: 100 requests/hour, 5 concurrent streams
-    - Pro Tier: 1,000 requests/hour, 20 concurrent streams
-    - Enterprise: Custom limits with dedicated throughput
-    
-    ## Changelog
-    - v2.0.0: Initial production release (multi-agent, enhanced security)
-    - v2.1.0: Added audio/video generation, plugins, improved analytics, Oracle Drive, RGSS
-  termsOfService: https://auraframefx.com/terms
+  license:
+    name: Proprietary
+    identifier: Proprietary
   contact:
     name: AuraFrameFX Support Team
-    url: https://auraframefx.com/support
     email: support@auraframefx.com
-  license:
-    name: Proprietary License
-    url: https://auraframefx.com/license
-  x-logo:
-    url: https://auraframefx.com/assets/logo.png
-    altText: AuraFrameFX Logo
-  x-maturity: production
-externalDocs:
-  description: Complete AuraFrameFX API Documentation
-  url: https://docs.auraframefx.com
+
 servers:
   - url: https://api.auraframefx.com/v2
     description: Production Environment
-  - url: https://api-{region}.auraframefx.com/v2
-    description: Regional Production (Optimized Latency)
-    variables:
-      region:
-        default: us-east
-        enum: [ us-east, us-west, eu-central, ap-southeast, ap-northeast ]
-  - url: https://{environment}.api.auraframefx.com/v2
-    description: Development Environments
-    variables:
-      environment:
-        default: dev
-        enum: [ dev, staging, sandbox, test ]
-  - url: wss://ws.auraframefx.com/v2
-    description: WebSocket Endpoint for streaming
-# --- BEGIN FULL API DEFINITIONS ---
-# Insert all actual paths, components, and webhooks content here from your full spec
-# For brevity, this is a placeholder. In your real file, paste the full definitions here.
+
 paths:
-  # ... all your endpoint definitions ...
+  /health:
+    get:
+      operationId: healthCheck
+      summary: Health check endpoint
+      description: Returns API health status
+      tags:
+        - System
+      responses:
+        '200':
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+
 components:
-  # ... all your schemas, securitySchemes, parameters, responses, etc. ...
-webhooks:
-  # ... all your webhook definitions ...
-# --- END FULL API DEFINITIONS ---
+  schemas:
+    HealthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [healthy, degraded, unhealthy]
+        timestamp:
+          type: string
+          format: date-time
+      required:
+        - status
+        - timestamp
+
+tags:
+  - name: System
+    description: System operations

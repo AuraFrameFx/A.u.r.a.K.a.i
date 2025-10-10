@@ -7,7 +7,7 @@ plugins {
     `java-library`
 }
 
-val ecoSpec = file("${rootDir}/app/api/auraframefx_ai_api.yaml")
+val ecoSpec = file("${rootDir}/data/api/ECO.yaml")
 require(ecoSpec.exists()) { "OpenAPI spec not found at: ${ecoSpec.absolutePath}" }
 
 openApiGenerate {
@@ -81,7 +81,6 @@ tasks.jar {
 }
 
 // Define the dependencies required by the generated Ktor client.
-// This block is now available because of the `java-library` plugin.
 dependencies {
     // Core dependencies for Kotlin
     implementation(kotlin("stdlib"))
@@ -89,6 +88,7 @@ dependencies {
 
     implementation(libs.ktor.client.cio)
     implementation(libs.ktor.client.auth)
+    implementation(libs.ktor.client.contentnegotiation)
 
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.datetime)
@@ -101,18 +101,13 @@ dependencies {
 
     // Testing dependencies
     testImplementation(kotlin("test"))
-    testImplementation(kotlin("test-junit5"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.0")
-    testImplementation("io.mockk:mockk:1.14.6")
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
 }
 
 // Configure test task to use JUnit 5
 tasks.withType<Test> {
     useJUnitPlatform()
-}
-
-// Make sure the generated code is included in the JAR
-tasks.jar {
-    dependsOn("openApiGenerate")
 }

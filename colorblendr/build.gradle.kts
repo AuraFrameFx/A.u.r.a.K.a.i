@@ -2,7 +2,7 @@
 // Color utility and theming module
 
 plugins {
-    id("genesis.android.library")
+    id("com.android.library")
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead

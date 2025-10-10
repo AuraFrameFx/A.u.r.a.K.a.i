@@ -1,5 +1,5 @@
 plugins {
-    id("genesis.android.library")
+    id("com.android.library")
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.compose)
 }

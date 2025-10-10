@@ -2,11 +2,7 @@
 // Primary feature module using convention plugins
 
 plugins {
-    id("com.android.library")
-    id("com.android.base")
-    // Hilt MUST be applied explicitly for annotation processing
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.compose.compiler)
+    id("genesis.android.library")  // Convention plugin: applies Android, Kotlin, Hilt
 }
 
 

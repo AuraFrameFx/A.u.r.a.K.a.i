@@ -1,31 +1,15 @@
 plugins {
-    id("com.android.application")  // Applies kotlin.android internally
+    id("com.android.application")  // Convention plugin: applies Android, Kotlin, Hilt, Compose
     alias(libs.plugins.ksp)
-    alias(libs.plugins.google.services)
     alias(libs.plugins.firebase.crashlytics)
 }
 
-// Apply Hilt after Android plugin to avoid BaseExtension issue with AGP 9
+// Note: google-services plugin is applied by genesis.android.application convention
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 android {
     namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
-
-    // Native C++ build configuration
-    externalNativeBuild {
-        cmake {
-            path = file("src/main/cpp/CMakeLists.txt")
-            version = "3.22.1"
-        }
-    }
-
-    sourceSets {
-        getByName("main") {
-            java.srcDirs("src/main/java", "src/main/kotlin")
-        }
-    }
-
     defaultConfig {
         applicationId = "dev.aurakai.auraframefx"
         minSdk = 34
@@ -33,25 +17,58 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        
-        // Native library ABI filters
-        ndk {
-            abiFilters += listOf("arm64-v8a", "x86_64")
-        }
-        
-        // CMake build arguments
-        externalNativeBuild {
-            cmake {
-                cppFlags += listOf("-std=c++20", "-O3", "-fPIC")
-                arguments += listOf(
-                    "-DANDROID_STL=c++_shared",
-                    "-DANDROID_PLATFORM=android-34"
-                )
-            }
-        }
-        
+
         vectorDrawables {
             useSupportLibrary = true
+        }
+
+        externalNativeBuild {
+            cmake {
+                // No arguments here!
+            }
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt")
+            version = "3.22.1"
+        }
+    }
+
+    splits {
+        abi {
+            isEnable = true // Correct property name in Kotlin DSL
+            reset()
+            include("arm64-v8a", "x86_64")
+            isUniversalApk = false // Correct property name in Kotlin DSL
+        }
+    }
+
+    sourceSets {
+        getByName("main") {
+            java.srcDirs("src/main/java", "src/main/kotlin")
+        }
+        getByName("test") {
+            java.srcDirs("src/test/java", "src/test/kotlin")
+        }
+        getByName("androidTest") {
+            java.srcDirs("src/androidTest/java", "src/androidTest/kotlin")
+            manifest.srcFile("src/androidTest/AndroidManifest.xml")
+            assets.srcDirs("src/androidTest/assets")
+            res.srcDirs("src/androidTest/res")
+        }
+        getByName("debug") {
+            java.srcDirs("src/debug/java", "src/debug/kotlin")
+            manifest.srcFile("src/debug/AndroidManifest.xml")
+            assets.srcDirs("src/debug/assets")
+            res.srcDirs("src/debug/res")
+        }
+        getByName("release") {
+            java.srcDirs("src/release/java", "src/release/kotlin")
+            manifest.srcFile("src/release/AndroidManifest.xml")
+            assets.srcDirs("src/release/assets")
+            res.srcDirs("src/release/res")
         }
     }
 
@@ -71,7 +88,6 @@ android {
         }
     }
 
-    // Enable AIDL for the app module
     buildFeatures {
         aidl = true
         compose = true
@@ -168,10 +184,8 @@ dependencies {
 
     // ===== HILT DEPENDENCY INJECTION =====
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    ksp(libs.hilt.compiler) // Use KSP for Hilt annotation processor
     implementation(libs.hilt.navigation.compose)
-
-    // ===== WORKMANAGER =====
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.hilt.work)
     ksp(libs.hilt.work)  // Annotation processor for Hilt WorkManager integration

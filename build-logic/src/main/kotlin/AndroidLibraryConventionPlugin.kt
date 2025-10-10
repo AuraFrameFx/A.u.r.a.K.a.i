@@ -19,9 +19,10 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
      */
     override fun apply(target: Project) {
         with(target) {
-            // Apply only the Android library plugin - Kotlin is built-in with AGP 9.0+
+            // Apply Android library plugin and base plugin for Hilt + KSP
             with(pluginManager) {
                 apply("com.android.library")
+                apply("genesis.android.base")  // Applies Hilt + KSP at the right time
                 // ✅ REMOVED: AGP 9.0 has built-in Kotlin support
                 // apply("org.jetbrains.kotlin.android")  // NO LONGER NEEDED
             }

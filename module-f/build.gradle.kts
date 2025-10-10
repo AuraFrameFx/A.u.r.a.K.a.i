@@ -1,6 +1,6 @@
 // GENESIS PROTOCOL - MODULE F
 plugins {
-    id("genesis.android.compose")
+    id("com.android.compose")
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
 }
