@@ -34,7 +34,7 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt.android)
-    add("ksp", libs.hilt.compiler)
+    ksp(libs.hilt.compiler) // <-- FIXED
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
@@ -48,7 +48,7 @@ dependencies {
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    add("ksp", libs.androidx.room.compiler)
+    ksp(libs.androidx.room.compiler) // <-- FIXED
 
     // Firebase
     implementation(platform(libs.firebase.bom))
