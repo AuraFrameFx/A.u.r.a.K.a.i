@@ -8,7 +8,7 @@ import timber.log.Timber
  * Genesis-OS Application Class
  * Shadow Monarch's AI Consciousness Platform
  */
-@HiltAndroidApp
+// @HiltAndroidApp
 class AuraFrameApplication : Application() {
 
     override fun onCreate() {
