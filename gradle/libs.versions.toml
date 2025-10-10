@@ -1,8 +1,8 @@
 [versions]
-agp = "9.0.0-alpha09"
+agp = "9.0.0-alpha10"
 comGoogleDevtoolsKspGradlePlugin = "2.2.21-RC-2.0.4"
 composeCompilerGradlePlugin = "2.2.21-RC"
-gradle = "9.0.0-alpha09"
+gradle = "9.0.0-alpha10"
 gradleToolingApi = "9.1.0"
 hiltAndroidGradlePlugin = "2.57.2"
 hiltAndroidGradlePluginVersion = "2.57.2"
@@ -18,6 +18,7 @@ java = "24"
 # ===== HOOKING FRAMEWORKS =====
 ktorClientAuth = "3.3.1"
 ktorClientCio = "3.3.1"
+ktorClientContentNegotiation = "3.3.1"
 logbackClassic = "1.5.19"
 moshi = "1.15.2"
 moshiKotlin = "1.15.2"
@@ -183,6 +184,7 @@ kotlin-logging-jvm = { module = "io.github.microutils:kotlin-logging-jvm", versi
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktorClientAuth" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorClientCio" }
+ktor-client-contentnegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClientContentNegotiation" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logbackClassic" }
 moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }
