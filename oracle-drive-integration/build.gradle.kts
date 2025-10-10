@@ -2,8 +2,8 @@
 // AI storage module using convention plugins
 
 plugins {
-    id("genesis.android.library")
-    id("genesis.android.native")
+    id("com.android.library")
+    id("com.android.native")
     alias(libs.plugins.ksp)
 
 }
@@ -31,4 +31,3 @@ dependencies {
     implementation(libs.bundles.coroutines)
     // Add other module-specific dependencies here
 }
-

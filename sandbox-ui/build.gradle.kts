@@ -1,6 +1,6 @@
 // ==== GENESIS PROTOCOL - SANDBOX UI ====
 plugins {
-    id("com.android.library")
+    id("com.android.library")  // Convention plugin: applies Android, Kotlin, Hilt
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
 }

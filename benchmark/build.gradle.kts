@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.library")
-    id("com.google.devtools.ksp") version "2.2.21-RC-2.0.4"
+    id("com.android.library")  // Convention plugin: applies Android, Kotlin, Hilt
+    alias(libs.plugins.ksp)
 }
 
 java {

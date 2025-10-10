@@ -10,11 +10,9 @@ group = "dev.aurakai.auraframefx.buildlogic"
 dependencies {
     implementation(libs.gradle)
     implementation(libs.kotlin.gradle.plugin)
-    implementation(libs.dagger.hilt.android.gradle.plugin)
     implementation(libs.com.google.devtools.ksp.gradle.plugin)
     implementation(libs.kotlin.compose.compiler.gradle.plugin)
     implementation(libs.openapi.generator.gradle.plugin)  // ✅ For OpenAPI convention
-
 
     // Test dependencies
     testImplementation(kotlin("test"))

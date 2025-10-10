@@ -1,7 +1,7 @@
 // GENESIS PROTOCOL - MODULES A-F
 // Module E
 plugins {
-    id("genesis.android.compose")
+    id("com.android.compose")
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
 }
@@ -25,4 +25,3 @@ tasks.register("moduleEStatus") {
     group = "aegenesis"
     doLast { println("📦 MODULE E - Ready (Java 24)") }
 }
-

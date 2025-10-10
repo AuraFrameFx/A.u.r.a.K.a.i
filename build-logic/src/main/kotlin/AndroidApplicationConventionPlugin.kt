@@ -14,8 +14,8 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("com.android.application")
+                apply("genesis.android.base")  // Applies Hilt + KSP at the right time
                 apply("com.google.gms.google-services")
-                apply("com.google.dagger.hilt.android")
                 apply("org.jetbrains.kotlin.plugin.compose")
             }
 

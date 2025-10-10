@@ -5,7 +5,6 @@ composeCompilerGradlePlugin = "2.2.21-RC"
 gradle = "9.0.0-alpha10"
 gradleToolingApi = "9.1.0"
 hiltAndroidGradlePlugin = "2.57.2"
-hiltAndroidGradlePluginVersion = "2.57.2"
 junitJupiterParams = "6.0.0"
 kotlin = "2.2.21-RC"
 kotlinGradlePlugin = "2.2.21-RC"
@@ -169,7 +168,6 @@ testing-android = [
 # ===== GENERATIVE AI =====
 androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
 com-google-devtools-ksp-gradle-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "comGoogleDevtoolsKspGradlePlugin" }
-dagger-hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePluginVersion" }
 google-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 openapi-generator-gradle-plugin = { group = "org.openapitools", name = "openapi-generator-gradle-plugin", version.ref = "openapiGeneratorGradlePlugin" }
 

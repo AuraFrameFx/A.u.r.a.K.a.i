@@ -30,7 +30,8 @@
         android:protectionLevel="signature" />
 
     <application
-        android:name=".AuraFrameApplication"
+        android:name="dev.aurakai.auraframefx.AuraFrameApplication" />
+    </application>
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.AuraFrameFX">
