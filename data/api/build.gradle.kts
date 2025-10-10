@@ -7,14 +7,13 @@ plugins {
     `java-library`
 }
 
-val ecoSpec = file("${rootDir}/data/api/ECO.yaml") // Use the correct case and path for eco.yaml
+val ecoSpec = file("${rootDir}/app/api/auraframefx_ai_api.yaml")
 require(ecoSpec.exists()) { "OpenAPI spec not found at: ${ecoSpec.absolutePath}" }
-// Remove all references to ecoCoreSpec and ecoAiSpec, and only use ecoSpec for OpenAPI generation
 
 openApiGenerate {
     generatorName = "kotlin"
     inputSpec = ecoSpec.absolutePath.replace("\\", "/")
-    validateSpec = false
+    validateSpec = true
     outputDir = layout.buildDirectory.dir("generated/openapi/ecoai").get().asFile.path
     apiPackage = "dev.aurakai.auraframefx.api.ecoai"
     modelPackage = "dev.aurakai.auraframefx.model.ecoai"
