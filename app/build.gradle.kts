@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.firebase.crashlytics)
 }
-
+libs.plugins.hilt.get().pluginId)
 // Note: google-services plugin is applied by genesis.android.application convention
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
