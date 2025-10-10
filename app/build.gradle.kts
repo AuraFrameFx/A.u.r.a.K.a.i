@@ -2,8 +2,10 @@ plugins {
     id("com.android.application")  // Convention plugin: applies Android, Kotlin, Hilt, Compose
     alias(libs.plugins.ksp)
     alias(libs.plugins.firebase.crashlytics)
+    // If using version catalog for Hilt, uncomment the next line,
+    // and make sure libs.versions.toml has it in [plugins]
+    // alias(libs.plugins.hilt)
 }
-libs.plugins.hilt.get().pluginId)
 // Note: google-services plugin is applied by genesis.android.application convention
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
@@ -17,11 +19,9 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
         vectorDrawables {
             useSupportLibrary = true
         }
-
         externalNativeBuild {
             cmake {
                 // No arguments here!
