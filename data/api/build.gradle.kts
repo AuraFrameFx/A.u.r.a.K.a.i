@@ -7,69 +7,22 @@ plugins {
     `java-library`
 }
 
-val ecoCoreSpec = file("${rootDir}/data/api/eco-core.yaml")
-val ecoAiSpec = file("${rootDir}/data/api/eco-ai.yaml")
-
-// Convert to forward slashes for OpenAPI generator on Windows
-val ecoCoreSpecPath = ecoCoreSpec.absolutePath.replace("\\", "/")
-val ecoAiSpecPath = ecoAiSpec.absolutePath.replace("\\", "/")
-
-require(ecoCoreSpec.exists()) { "OpenAPI spec not found at: ${ecoCoreSpec.absolutePath}" }
-require(ecoAiSpec.exists()) { "OpenAPI spec not found at: ${ecoAiSpec.absolutePath}" }
+val ecoSpec = file("${rootDir}/data/api/ECO.yaml") // Use the correct case and path for eco.yaml
+require(ecoSpec.exists()) { "OpenAPI spec not found at: ${ecoSpec.absolutePath}" }
+// Remove all references to ecoCoreSpec and ecoAiSpec, and only use ecoSpec for OpenAPI generation
 
 openApiGenerate {
     generatorName = "kotlin"
-    inputSpec = ecoCoreSpecPath
-    validateSpec = false
-    outputDir = layout.buildDirectory.dir("generated/openapi/ecocore").get().asFile.path
-    apiPackage = "dev.aurakai.auraframefx.api.ecocore"
-    modelPackage = "dev.aurakai.auraframefx.model.ecocore"
-    invokerPackage = "dev.aurakai.auraframefx.client.ecocore"  // ✅ Separate infrastructure package!
-
-    additionalProperties = mapOf(
-        "skipValidateSpec" to "true",
-        "legacyDiscriminatorBehavior" to "false"
-    )
-
-    configOptions = mapOf(
-        "library" to "jvm-ktor",
-        "serializationLibrary" to "kotlinx_serialization",
-        "enumPropertyNaming" to "UPPERCASE",
-        "collectionType" to "list",
-        "dateLibrary" to "kotlinx-datetime",
-        "useCoroutines" to "true",
-        "omitGradlePluginVersions" to "false",
-        "exceptionOnFailedStatusCodes" to "true",
-        "generateModelDocumentation" to "false",
-        "nonPublicApi" to "false",
-        "hideGenerationTimestamp" to "true",
-        "sortParamsByRequiredFlag" to "true",
-        "sortModelPropertiesByRequiredFlag" to "true"
-    )
-
-    openapiNormalizer = mapOf(
-        "REFACTOR_ALLOF_WITH_PROPERTIES_ONLY" to "true",
-        "SIMPLIFY_ONEOF_ANYOF" to "true"
-    )
-}
-
-tasks.register(
-    "openApiGenerateEcoAi",
-    org.openapitools.generator.gradle.plugin.tasks.GenerateTask::class
-) {
-    generatorName = "kotlin"
-    inputSpec = ecoAiSpecPath
+    inputSpec = ecoSpec.absolutePath.replace("\\", "/")
     validateSpec = false
     outputDir = layout.buildDirectory.dir("generated/openapi/ecoai").get().asFile.path
     apiPackage = "dev.aurakai.auraframefx.api.ecoai"
     modelPackage = "dev.aurakai.auraframefx.model.ecoai"
-    invokerPackage = "dev.aurakai.auraframefx.client.ecoai"  // ✅ Separate infrastructure package!
-
+    invokerPackage = "dev.aurakai.auraframefx.client.ecoai"
     additionalProperties = mapOf(
         "skipValidateSpec" to "true",
         "legacyDiscriminatorBehavior" to "false"
     )
-
     configOptions = mapOf(
         "library" to "jvm-ktor",
         "serializationLibrary" to "kotlinx_serialization",
@@ -85,7 +38,6 @@ tasks.register(
         "sortParamsByRequiredFlag" to "true",
         "sortModelPropertiesByRequiredFlag" to "true"
     )
-
     openapiNormalizer = mapOf(
         "REFACTOR_ALLOF_WITH_PROPERTIES_ONLY" to "true",
         "SIMPLIFY_ONEOF_ANYOF" to "true"
@@ -93,15 +45,11 @@ tasks.register(
 }
 
 tasks.named("openApiGenerate") {
-    outputs.dir(layout.buildDirectory.dir("generated/openapi/ecocore"))
-}
-tasks.named("openApiGenerateEcoAi") {
     outputs.dir(layout.buildDirectory.dir("generated/openapi/ecoai"))
 }
 
 sourceSets {
     named("main") {
-        java.srcDir(layout.buildDirectory.dir("generated/openapi/ecocore/src/main/kotlin"))
         java.srcDir(layout.buildDirectory.dir("generated/openapi/ecoai/src/main/kotlin"))
     }
 }
@@ -115,7 +63,7 @@ java {
 
 // ✅ CHANGED: finalizedBy → dependsOn (this is the ONLY change)
 tasks.withType<KotlinCompile>().configureEach {
-    dependsOn(tasks.named("openApiGenerate"), tasks.named("openApiGenerateEcoAi"))
+    dependsOn(tasks.named("openApiGenerate"))
     compilerOptions {
         jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
         freeCompilerArgs.addAll(
