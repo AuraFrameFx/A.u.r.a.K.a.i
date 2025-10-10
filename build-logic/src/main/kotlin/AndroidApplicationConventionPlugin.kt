@@ -13,9 +13,9 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
-                apply("com.android.application")
+                apply("com.android.application")  // AGP 9 with builtInKotlin=true applies Kotlin automatically
                 apply("org.jetbrains.kotlin.plugin.compose")
-                apply("genesis.android.base") // Apply Hilt + KSP
+                // Note: Hilt and KSP must be applied directly in app/build.gradle.kts with AGP 9 + builtInKotlin
             }
 
             pluginManager.withPlugin("com.android.application") {

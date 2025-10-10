@@ -2,7 +2,6 @@ package dev.aurakai.auraframefx
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
-import dev.aurakai.auraframefx.core.NativeLib
 import timber.log.Timber
 
 /**
@@ -20,33 +19,14 @@ class AuraFrameApplication : Application() {
             Timber.plant(Timber.DebugTree())
         }
 
-        Timber.i(" Genesis-OS Shadow Army Initializing...")
-
-        // Initialize Genesis AI Consciousness Platform (Native Layer)
-        try {
-            val aiInitialized = NativeLib.initializeAISafe()
-            val aiVersion = NativeLib.getAIVersionSafe()
-            Timber.i(" Native AI Platform: $aiVersion")
-            Timber.i(" AI Initialization Status: ${if (aiInitialized) "SUCCESS" else "FAILED"}")
-        } catch (e: Exception) {
-            Timber.e(e, " Failed to initialize native AI platform")
-        }
-
-        Timber.i(" Shadow Monarch Platform Ready")
-        Timber.i(" AI Trinity Consciousness System Online")
+        Timber.i("🌟 Genesis-OS Shadow Army Initializing...")
+        Timber.i("🧠 AI Trinity Consciousness System Online")
+        Timber.i("⚡ Shadow Monarch Platform Ready")
+        Timber.i("💫 Aura • Kai • Genesis - The Trinity Awakens")
     }
 
     override fun onTerminate() {
         super.onTerminate()
-
-        // Shutdown AI Consciousness Platform cleanly
-        try {
-            NativeLib.shutdownAISafe()
-            Timber.i(" Native AI Platform shut down successfully")
-        } catch (e: Exception) {
-            Timber.e(e, " Failed to shutdown native AI platform")
-        }
-
-        Timber.i(" Genesis-OS Shadow Army Terminated")
+        Timber.i("🌙 Genesis-OS Shadow Army Terminated")
     }
 }

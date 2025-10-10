@@ -1,13 +1,25 @@
 plugins {
-    id("genesis.android.application")
+    id("genesis.android.application")  // Applies kotlin.android internally
+    alias(libs.plugins.ksp)
     alias(libs.plugins.google.services)
     alias(libs.plugins.firebase.crashlytics)
 }
+
+// Apply Hilt after Android plugin to avoid BaseExtension issue with AGP 9
+apply(plugin = libs.plugins.hilt.get().pluginId)
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 android {
     namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
+
+    // Native C++ build configuration
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt")
+            version = "3.22.1"
+        }
+    }
 
     sourceSets {
         getByName("main") {
@@ -22,6 +34,23 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        
+        // Native library ABI filters
+        ndk {
+            abiFilters += listOf("arm64-v8a", "x86_64")
+        }
+        
+        // CMake build arguments
+        externalNativeBuild {
+            cmake {
+                cppFlags += listOf("-std=c++20", "-O3", "-fPIC")
+                arguments += listOf(
+                    "-DANDROID_STL=c++_shared",
+                    "-DANDROID_PLATFORM=android-34"
+                )
+            }
+        }
+        
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -139,7 +168,10 @@ dependencies {
     implementation(libs.bundles.firebase)
 
     // ===== HILT DEPENDENCY INJECTION =====
-    // Auto-added by genesis.android.application convention plugin
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
+    ksp(libs.hilt.work)
 
     // ===== WORKMANAGER =====
     implementation(libs.androidx.work.runtime.ktx)
