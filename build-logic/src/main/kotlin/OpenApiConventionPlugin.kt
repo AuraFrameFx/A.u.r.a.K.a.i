@@ -13,7 +13,7 @@ class OpenApiConventionPlugin : Plugin<Project> {
             extensions.configure<OpenApiGeneratorGenerateExtension>("openApiGenerate") {
                 generatorName.set("kotlin")
                 inputSpec.set("$rootDir/app/api/unified-aegenesis-api.yml")
-                outputDir.set("$buildDir/generated/source/openapi/")
+                outputDir.set(layout.buildDirectory.dir("generated/source/openapi").get().asFile.path)
                 packageName.set("dev.aurakai.aegenesis.api")
                 apiPackage.set("dev.aurakai.aegenesis.api")
                 modelPackage.set("dev.aurakai.aegenesis.model")
@@ -41,7 +41,7 @@ class OpenApiConventionPlugin : Plugin<Project> {
             val cleanApiGeneration = tasks.register<Delete>("cleanApiGeneration") {
                 group = "build"
                 description = "Clean generated API files"
-                delete(buildDir.resolve("generated/source/openapi"))
+                delete(layout.buildDirectory.dir("generated/source/openapi"))
             }
 
             tasks.named("clean") {

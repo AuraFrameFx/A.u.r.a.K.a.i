@@ -24,6 +24,7 @@ openApiGenerate {
     outputDir = layout.buildDirectory.dir("generated/openapi/ecocore").get().asFile.path
     apiPackage = "dev.aurakai.auraframefx.api.ecocore"
     modelPackage = "dev.aurakai.auraframefx.model.ecocore"
+    invokerPackage = "dev.aurakai.auraframefx.client.ecocore"  // ✅ Separate infrastructure package!
 
     additionalProperties = mapOf(
         "skipValidateSpec" to "true",
@@ -62,6 +63,7 @@ tasks.register(
     outputDir = layout.buildDirectory.dir("generated/openapi/ecoai").get().asFile.path
     apiPackage = "dev.aurakai.auraframefx.api.ecoai"
     modelPackage = "dev.aurakai.auraframefx.model.ecoai"
+    invokerPackage = "dev.aurakai.auraframefx.client.ecoai"  // ✅ Separate infrastructure package!
 
     additionalProperties = mapOf(
         "skipValidateSpec" to "true",
@@ -104,11 +106,22 @@ sourceSets {
     }
 }
 
+// ✅ Java 24 toolchain configuration
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
+
 // ✅ CHANGED: finalizedBy → dependsOn (this is the ONLY change)
 tasks.withType<KotlinCompile>().configureEach {
     dependsOn(tasks.named("openApiGenerate"), tasks.named("openApiGenerateEcoAi"))
     compilerOptions {
-        freeCompilerArgs.add("-opt-in=kotlin.time.ExperimentalTime")
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+        freeCompilerArgs.addAll(
+            "-opt-in=kotlin.time.ExperimentalTime",
+            "-Xjvm-default=all"
+        )
     }
 }
 

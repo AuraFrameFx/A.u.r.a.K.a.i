@@ -1,12 +1,11 @@
 plugins {
-    id("genesis.android.application")  // Applies kotlin.android internally
+    id("com.android.application")  // Applies kotlin.android internally
     alias(libs.plugins.ksp)
     alias(libs.plugins.google.services)
     alias(libs.plugins.firebase.crashlytics)
 }
 
 // Apply Hilt after Android plugin to avoid BaseExtension issue with AGP 9
-apply(plugin = libs.plugins.hilt.get().pluginId)
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 android {

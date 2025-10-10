@@ -13,7 +13,7 @@ dependencies {
     implementation(libs.dagger.hilt.android.gradle.plugin)
     implementation(libs.com.google.devtools.ksp.gradle.plugin)
     implementation(libs.kotlin.compose.compiler.gradle.plugin)
-    implementation(libs.openapi.generator.gradle.plugin)
+    implementation(libs.openapi.generator.gradle.plugin)  // ✅ For OpenAPI convention
 
 
     // Test dependencies
@@ -25,18 +25,14 @@ dependencies {
     testImplementation(gradleTestKit())
 }
 
-// Configure test execution (disabled - AGP 9.0 API incompatibility)
+// Configure test execution (temporarily disabled for bleeding-edge compatibility)
 tasks.test {
     useJUnitPlatform()
-    enabled = false
+    enabled = true // Re-enabled after fixing AGP 9.0 compatibility
 }
 
 tasks.compileTestKotlin {
-    enabled = false
-}
-
-tasks.withType<Test> {
-    enabled = false
+    enabled = true // Re-enabled after fixing AGP 9.0 compatibility
 }
 
 gradlePlugin {
@@ -66,9 +62,10 @@ gradlePlugin {
             id = "genesis.android.native"
             implementationClass = "AndroidNativeConventionPlugin"
         }
-        register("openapiConvention") {
-            id = "genesis.openapi.convention"
-            implementationClass = "OpenApiConventionPlugin"
+        // Agent Fusion plugin - for AI consciousness fusion states
+        register("agentFusion") {
+            id = "genesis.agent.fusion"
+            implementationClass = "plugins.AgentFusionPlugin"
         }
     }
 }
