@@ -10,6 +10,11 @@ android {
 
     defaultConfig {
         minSdk = 34
+        externalNativeBuild {
+            cmake {
+                abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64")
+            }
+        }
     }
     lint {
         // Disable lint due to oversized test files causing StackOverflow
@@ -26,13 +31,6 @@ android {
         }
     }
 
-    defaultConfig {
-        externalNativeBuild {
-            cmake {
-                abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64")
-            }
-        }
-    }
     packaging {
         jniLibs {
             useLegacyPackaging = false
@@ -50,7 +48,7 @@ dependencies {
     implementation(project(":core-module"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.hilt.android)
-    add("ksp", libs.hilt.compiler)
+    ksp(libs.hilt.compiler) // <-- FIXED
 
     // Compose dependencies
     implementation(libs.androidx.lifecycle.viewmodel.compose)
