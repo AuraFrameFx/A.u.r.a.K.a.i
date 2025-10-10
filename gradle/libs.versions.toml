@@ -8,7 +8,7 @@ gradleToolingApi = "9.1.0"
 hiltAndroidGradlePlugin = "2.56.2"
 hiltAndroidGradlePluginVersion = "2.56.2"
 junitJupiterParams = "6.0.0"
-kotlin = "2.3.0-Beta1"
+kotlin = "2.2.21-RC"
 kotlinGradlePlugin = "2.2.21-RC"
 kotlinLoggingJvm = "3.0.5"
 ksp = "2.2.21-RC-2.0.4"
@@ -292,7 +292,7 @@ junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 # Kotlin
-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "2.2.20" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 # Other plugins
