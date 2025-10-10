@@ -71,7 +71,7 @@ pluginManagement {
                 useModule("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
             }
             if (requested.id.id.startsWith("com.android.")) {
-                useModule("com.android.tools.build:gradle:9.0.0-alpha09")
+                useModule("com.android.tools.build:gradle:9.0.0-alpha10")
             }
         }
     }
