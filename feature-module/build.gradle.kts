@@ -1,8 +1,7 @@
 // ==== GENESIS PROTOCOL - FEATURE MODULE ====
 // Primary feature module using convention plugins
-
 plugins {
-    id("genesis.android.library")  // Convention plugin: applies Android, Kotlin, Hilt
+    id("genesis.android.library")
 }
 
 
