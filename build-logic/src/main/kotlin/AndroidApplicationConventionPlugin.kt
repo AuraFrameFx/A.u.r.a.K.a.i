@@ -9,13 +9,14 @@ import org.gradle.kotlin.dsl.register
 import org.gradle.kotlin.dsl.typeOf
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
-class AndroidApplicationConventionPlugin : Plugin<Project> {
+internal class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
-                apply("com.android.application")  // AGP 9 with builtInKotlin=true applies Kotlin automatically
+                apply("com.android.application")
+                apply("com.google.gms.google-services")
+                apply("com.google.dagger.hilt.android")
                 apply("org.jetbrains.kotlin.plugin.compose")
-                // Note: Hilt and KSP must be applied directly in app/build.gradle.kts with AGP 9 + builtInKotlin
             }
 
             pluginManager.withPlugin("com.android.application") {

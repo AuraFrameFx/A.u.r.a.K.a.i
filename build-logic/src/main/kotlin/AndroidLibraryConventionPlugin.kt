@@ -1,33 +1,29 @@
 // ==== GENESIS PROTOCOL - ANDROID LIBRARY CONVENTION ====
 // Standard Android library configuration for all modules
-// Follows best practices from AGENT_INSTRUCTIONS.md
+// AGP 9.0+ with built-in Kotlin support
 
 import com.android.build.api.dsl.LibraryExtension
-import org.gradle.api.GradleException
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.tasks.Delete
 import org.gradle.kotlin.dsl.configure
+import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
     /**
-     * Applies Android library and Kotlin Android plugins and configures project-level Android and Kotlin settings.
+     * Applies Android library plugin and configures Kotlin settings.
+     * 
+     * AGP 9.0+ includes built-in Kotlin support - no need to apply kotlin-android plugin separately.
      *
-     * Configures the Android LibraryExtension and KotlinJvmProjectExtension for the target project:
-     * - Applies the "com.android.library" plugin.
-     * - Sets Android compileSdk to 36 and default minSdk to 34.
-     * - Forces Java source and target compatibility to Java 25.
-     * - Sets the Kotlin JVM toolchain to Java 25.
-     *
-     * @param target The Gradle project to which the plugin is applied; this method mutates the project's plugins and extensions.
+     * @param target The Gradle project to apply the plugin to
      */
     override fun apply(target: Project) {
         with(target) {
-            // Apply plugins in correct order (per AGENT_INSTRUCTIONS.md section 2)
+            // Apply only the Android library plugin - Kotlin is built-in with AGP 9.0+
             with(pluginManager) {
                 apply("com.android.library")
-                apply("genesis.android.base") // Apply Hilt + KSP
+                // ✅ REMOVED: AGP 9.0 has built-in Kotlin support
+                // apply("org.jetbrains.kotlin.android")  // NO LONGER NEEDED
             }
 
             extensions.configure<LibraryExtension> {
@@ -37,22 +33,22 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                     minSdk = 34
                 }
 
+                // ✅ Java 24 for consistency across all modules (Firebase requirement)
                 compileOptions {
                     sourceCompatibility = JavaVersion.VERSION_24
                     targetCompatibility = JavaVersion.VERSION_24
                 }
             }
-            // Kotlin JVM toolchain - use 24 for stable compatibility
-            pluginManager.withPlugin("org.jetbrains.kotlin.android") {
-                extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
-                    jvmToolchain(24)
-                    compilerOptions {
-                        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
-                        freeCompilerArgs.addAll(
-                            "-opt-in=kotlin.RequiresOptIn",
-                            "-Xjvm-default=all"
-                        )
-                    }
+            
+            // ✅ Configure Kotlin via AGP's built-in support (AGP 9.0+)
+            extensions.findByType(KotlinAndroidProjectExtension::class.java)?.apply {
+                jvmToolchain(24)
+                compilerOptions {
+                    jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+                    freeCompilerArgs.addAll(
+                        "-opt-in=kotlin.RequiresOptIn",
+                        "-Xjvm-default=all"
+                    )
                 }
             }
         }

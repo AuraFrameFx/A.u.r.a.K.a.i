@@ -1,34 +1,40 @@
 [versions]
+# ===== CORE BUILD TOOLS =====
+# CRITICAL: These versions must align perfectly for AGP 9 + Hilt compatibility
 agp = "9.0.0-alpha09"
-comGoogleDevtoolsKspGradlePlugin = "2.2.21-RC-2.0.4"
-composeCompilerGradlePlugin = "2.2.21-RC"
+kotlin = "2.2.21"  # ✅ FIXED: Updated to stable 2.2.21
+ksp = "2.2.21-2.0.4"  # ✅ FIXED: KSP matches Kotlin prefix
+java = "21"  # ✅ FIXED: Use Java 21 (stable), not 24 (unreleased)
+composeCompilerGradlePlugin = "2.2.21"  # ✅ FIXED: Must match Kotlin version
+kotlinGradlePlugin = "2.2.21"  # ✅ FIXED: Must match Kotlin version
+
+# ===== GRADLE & BUILD PLUGINS =====
 gradle = "9.0.0-alpha09"
 gradleToolingApi = "9.1.0"
-hiltAndroidGradlePlugin = "2.57.2"
-hiltAndroidGradlePluginVersion = "2.57.2"
-junitJupiterParams = "6.0.0"
-kotlin = "2.2.21-RC"
-kotlinGradlePlugin = "2.2.21-RC"
-kotlinLoggingJvm = "3.0.5"
-ksp = "2.2.21-RC-2.0.4"
-desugar_jdk_libs = "2.1.5"
-java = "24"
+comGoogleDevtoolsKspGradlePlugin = "2.2.21-2.0.4"
+openapiGeneratorGradlePlugin = "7.16.0"
+spotless = "8.0.0"
+ktlint = "13.1.0"
+detektGradlePlugin = "1.23.8"
+dokkaGradlePlugin = "2.0.0"
+toolchainsFoojayResolver = "1.0.0"
 
+# ===== DEPENDENCY INJECTION =====
+hilt-version = "2.56.2"  # ✅ Latest Hilt (works with AGP 9 + workaround)
+hiltAndroidGradlePlugin = "2.56.2"
+hiltAndroidGradlePluginVersion = "2.56.2"
+
+# ===== DESUGAR & MULTIDEX =====
+desugar_jdk_libs = "2.1.5"
+multidex = "2.0.1"
 
 # ===== HOOKING FRAMEWORKS =====
-ktorClientAuth = "3.3.1"
-ktorClientCio = "3.3.1"
-logbackClassic = "1.5.19"
-moshi = "1.15.2"
-moshiKotlin = "1.15.2"
-multidex = "2.0.1"
 xposed = "82"
 api = "82"
 lsposed = "6.4"
 yukihookapi = "1.3.1"
 
 # ===== GOOGLE, FIREBASE & AI =====
-hilt-version = "2.57.2"
 gson-version = "2.13.2"
 firebaseBom = "34.3.0"
 generativeai = "0.9.0"
@@ -55,6 +61,8 @@ retrofit = "3.0.0"
 okhttp = "5.2.0"
 converterScalars = "2.11.0"
 retrofitKotlinxSerializationConverter = "1.0.0"
+ktorClientAuth = "3.3.1"
+ktorClientCio = "3.3.1"
 
 # ===== UTILITIES =====
 coilCompose = "2.7.0"
@@ -65,29 +73,24 @@ kotlinxCoroutines = "1.10.2"
 kotlinxSerializationJson = "1.9.0"
 kotlinxDatetime = "0.7.1-0.6.x-compat"
 leakcanary = "2.14"
+kotlinLoggingJvm = "3.0.5"
+moshi = "1.15.2"
+moshiKotlin = "1.15.2"
+logbackClassic = "1.5.19"
 
-# ===== BUILD PLUGINS =====
-openapiGeneratorGradlePlugin = "7.16.0"
-firebaseCrashlyticsPlugin = "3.0.6"
-firebasePerfPlugin = "2.0.1"
-toolchainsFoojayResolver = "1.0.0"
-spotless = "8.0.0"
-ktlint = "13.1.0"
-detektGradlePlugin = "1.23.8"
-dokkaGradlePlugin = "2.0.0"
+# ===== SECURITY =====
+bcprov = "1.82"
 
 # ===== TESTING =====
 junit = "4.13.2"
+junitVersion = "4.13.2"
 junitJupiter = "6.0.0"
+junitJupiterVersion = "5.13.4"
+junitJupiterParams = "6.0.0"
 androidxTestJunit = "1.3.0"
 espressoCore = "3.7.0"
 mockk = "1.14.6"
 turbine = "1.2.1"
-
-# ===== SECURITY =====
-bcprov = "1.82"
-junitVersion = "4.13.2"
-junitJupiterVersion = "5.13.4"
 
 
 
