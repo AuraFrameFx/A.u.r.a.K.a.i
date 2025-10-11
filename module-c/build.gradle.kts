@@ -1,12 +1,25 @@
 // GENESIS PROTOCOL - MODULE C
 plugins {
-    id("com.android.compose")
-    alias(libs.plugins.compose.compiler)
+    id("com.android.library")
     alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.module.c"
+    compileSdk = 36
+    
+    defaultConfig {
+        minSdk = 33
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
+    }
+    
+    buildFeatures {
+        compose = true
+    }
 }
 
 dependencies {
@@ -18,6 +31,7 @@ dependencies {
     add("ksp", libs.hilt.compiler)
 
     // Add other module-specific dependencies here
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
 }
 
 tasks.register("moduleCStatus") {

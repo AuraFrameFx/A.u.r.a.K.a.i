@@ -1,16 +1,15 @@
 plugins {
     id("com.android.library")
     alias(libs.plugins.ksp)
-    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
+    // Note: Hilt and compose plugins managed manually to avoid AGP 9.0 conflicts
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.dataveinoraclenative"
-    compileSdk = libs.versions.compileSdk.get().toInt()
-    ndkVersion = libs.versions.ndk.get()
+    ndkVersion = "28.2.13676358"
 
     defaultConfig {
-        minSdk = libs.versions.minSdk.get().toInt()
+        minSdk = 34
         externalNativeBuild {
             cmake {
                 abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64")

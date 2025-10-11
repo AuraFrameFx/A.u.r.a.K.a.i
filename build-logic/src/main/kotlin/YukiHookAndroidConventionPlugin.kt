@@ -1,54 +1,86 @@
-import com.android.build.gradle.BaseExtension
+import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.JavaVersion
+import org.gradle.kotlin.dsl.configure
 
-class AurakaiAndroidConventionPlugin : Plugin<Project> {
+class YukiHookAndroidConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
-        target.plugins.withId("com.android.application") {
-            val androidExt = target.extensions.findByName("android")
-            if (androidExt != null) {
-                configureAndroid(androidExt)
+        with(target) {
+            // Configure Android applications for Yuki Hook
+            pluginManager.withPlugin("com.android.application") {
+                extensions.configure<ApplicationExtension> {
+                    configureAndroidApplication(this)
+                }
             }
-        }
-        target.plugins.withId("com.android.library") {
-            val androidExt = target.extensions.findByName("android")
-            if (androidExt != null) {
-                configureAndroid(androidExt)
+            
+            // Configure Android libraries for Yuki Hook
+            pluginManager.withPlugin("com.android.library") {
+                extensions.configure<LibraryExtension> {
+                    configureAndroidLibrary(this)
+                }
             }
         }
     }
 
-    private fun configureAndroid(androidExt: Any) {
-        if (androidExt is BaseExtension) {
-            androidExt.compileSdkVersion(36)
-            val defaultConfig = androidExt.defaultConfig
-            defaultConfig.minSdkVersion(33)
-            defaultConfig.targetSdkVersion(36)
-            defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-            try {
-                defaultConfig.consumerProguardFiles("consumer-rules.pro")
-            } catch (_: Exception) {}
-            val release = androidExt.buildTypes.getByName("release")
-            release.isMinifyEnabled = true
-            release.proguardFiles(
-                androidExt.getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-
-            val compileOptions = androidExt.javaClass.getMethod("getCompileOptions").invoke(androidExt)
-            compileOptions.javaClass.getMethod("setSourceCompatibility", JavaVersion::class.java)
-                .invoke(compileOptions, JavaVersion.VERSION_1_8)
-            compileOptions.javaClass.getMethod("setTargetCompatibility", JavaVersion::class.java)
-                .invoke(compileOptions, JavaVersion.VERSION_1_8)
-
-            // Set Kotlin compiler options for Android (reflection, AGP-compatible)
-            try {
-                val kotlinOptions = androidExt.javaClass.getMethod("getKotlinOptions").invoke(androidExt)
-                kotlinOptions.javaClass.getMethod("setJvmTarget", String::class.java).invoke(kotlinOptions, "1.8")
-                kotlinOptions.javaClass.getMethod("setFreeCompilerArgs", List::class.java)
-                    .invoke(kotlinOptions, listOf("-Xjvm-default=all", "-opt-in=kotlin.RequiresOptIn"))
-            } catch (_: Exception) {}
+    /**
+     * Configure Android Application for Yuki Hook API integration
+     */
+    private fun configureAndroidApplication(extension: ApplicationExtension) {
+        extension.apply {
+            compileSdk = 36
+            
+            defaultConfig {
+                minSdk = 34
+                targetSdk = 36
+                testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+            }
+            
+            buildTypes {
+                getByName("release") {
+                    isMinifyEnabled = true
+                    proguardFiles(
+                        getDefaultProguardFile("proguard-android-optimize.txt"),
+                        "proguard-rules.pro"
+                    )
+                }
+            }
+            
+            compileOptions {
+                sourceCompatibility = JavaVersion.VERSION_24
+                targetCompatibility = JavaVersion.VERSION_24
+            }
+        }
+    }
+    
+    /**
+     * Configure Android Library for Yuki Hook API integration
+     */
+    private fun configureAndroidLibrary(extension: LibraryExtension) {
+        extension.apply {
+            compileSdk = 36
+            
+            defaultConfig {
+                minSdk = 34
+                testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+                consumerProguardFiles("consumer-rules.pro")
+            }
+            
+            buildTypes {
+                getByName("release") {
+                    isMinifyEnabled = false
+                    proguardFiles(
+                        getDefaultProguardFile("proguard-android-optimize.txt"),
+                        "proguard-rules.pro"
+                    )
+                }
+            }
+            
+            compileOptions {
+                sourceCompatibility = JavaVersion.VERSION_24
+                targetCompatibility = JavaVersion.VERSION_24
+            }
         }
     }
 }

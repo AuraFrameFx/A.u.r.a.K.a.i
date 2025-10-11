@@ -45,3 +45,18 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+// Centralized toolchain version to avoid duplication and drift
+val jdkVersion = 24
+
+java {
+    toolchain { languageVersion.set(JavaLanguageVersion.of(jdkVersion)) }
+}
+
+// ... existing code ...
+
+kotlin {
+    jvmToolchain(jdkVersion)
+}
+
+// ... existing code ...

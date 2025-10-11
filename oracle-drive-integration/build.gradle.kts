@@ -3,16 +3,14 @@
 
 plugins {
     id("com.android.library")
-    id("com.android.native")
     alias(libs.plugins.ksp)
-
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.oracledriveintegration"
 
     defaultConfig {
-        minSdk = 34
+        minSdk = 33
     }
 }
 

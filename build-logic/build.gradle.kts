@@ -55,7 +55,15 @@ gradlePlugin {
             id = "genesis.agent.fusion"
             implementationClass = "plugins.AgentFusionPlugin"
         }
+        register("yukiHookAndroid") {
+            id = "genesis.yuki.android"
+            implementationClass = "YukiHookAndroidConventionPlugin"
+        }
     }
+}
+
+kotlin {
+    jvmToolchain(24)
 }
 
 java {
