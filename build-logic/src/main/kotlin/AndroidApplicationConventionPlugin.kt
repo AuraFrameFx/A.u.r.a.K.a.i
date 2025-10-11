@@ -27,6 +27,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.google.dagger.hilt.android")  // Apply Hilt first for AGP 9.0
                 apply("com.android.application")
+                apply("org.jetbrains.kotlin.android")
+                apply("org.jetbrains.kotlin.plugin.compose")
                 apply("com.google.devtools.ksp")
                 apply("com.google.gms.google-services")
             }
@@ -38,6 +40,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                     val compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
                     this.compileSdk = compileSdk
                     defaultConfig.targetSdk = libs.findVersion("targetSdk").get().toString().toInt()
+                    defaultConfig.minSdk = libs.findVersion("minSdk").get().toString().toInt()
                     defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                     defaultConfig.vectorDrawables.useSupportLibrary = true
 

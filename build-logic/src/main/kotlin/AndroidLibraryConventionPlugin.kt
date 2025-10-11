@@ -24,10 +24,12 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
      */
     override fun apply(target: Project) {
         with(target) {
-            // Apply plugins in correct order for AGP 9.0 compatibility
+            // Apply Android library plugin and base plugin for Hilt + KSP
             with(pluginManager) {
-                apply("org.jetbrains.kotlin.android")  // Apply Kotlin FIRST
-                // Removed: apply("com.google.devtools.ksp")  // KSP must be applied in the module, not here
+                apply("com.android.library")
+                apply("genesis.android.base")  // Applies Hilt + KSP at the right time
+                // ✅ REMOVED: AGP 9.0 has built-in Kotlin support
+                // apply("org.jetbrains.kotlin.android")  // NO LONGER NEEDED
             }
 
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
