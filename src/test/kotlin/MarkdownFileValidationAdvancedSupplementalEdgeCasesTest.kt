@@ -102,7 +102,6 @@ class MarkdownFileValidationAdvancedSupplementalEdgeCasesTest {
         fun `footnote references and definitions are consistent`() {
             val refRegex = Regex("\\[\\^([^\\]]+)](?!:)") // don't treat definitions as references
             val defRegex = Regex("^\\[\\^(.+?)]:\\s+.+$")
-            -
             val refs = refRegex.findAll(readme).map { it.groupValues[1] }.toSet()
             val defs = lines
                 .map { it.trim() }
