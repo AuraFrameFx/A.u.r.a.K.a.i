@@ -27,8 +27,6 @@ class JoinUtils {
             return result.toString()
         }
     }
-package dev.aurakai.auraframefx.utilities
-
 import java.util.LinkedList
 
 object JoinUtils {
