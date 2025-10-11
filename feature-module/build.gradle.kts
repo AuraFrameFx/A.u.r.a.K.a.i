@@ -1,21 +1,16 @@
 // ==== GENESIS PROTOCOL - FEATURE MODULE ====
-// Primary feature module using convention plugins
-
+// Primary feature module using basic plugins (avoiding AGP 9.0 Hilt issues)
 plugins {
     id("com.android.library")
-    id("com.android.base")
-    // Hilt MUST be applied explicitly for annotation processing
     alias(libs.plugins.ksp)
-    alias(libs.plugins.compose.compiler)
 }
-
 
 android {
     namespace = "dev.aurakai.auraframefx.featuremodule"
     compileSdk = 36
 
     defaultConfig {
-        minSdk = 34
+        minSdk = 33
     }
 
     compileOptions {

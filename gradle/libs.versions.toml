@@ -1,14 +1,16 @@
 [versions]
-# ===== GRADLE & KOTLIN =====
-agp = "9.0.0-alpha09"
+agp = "9.0.0-alpha10"
+compileSdk = "36"
+minSdk = "34"
+targetSdk = "36"
+ndk = "28.2.13676358"
 comGoogleDevtoolsKspGradlePlugin = "2.2.21-RC-2.0.4"
 composeCompilerGradlePlugin = "2.2.21-RC"
-gradle = "9.0.0-alpha09"
+gradle = "9.0.0-alpha10"
 gradleToolingApi = "9.1.0"
 hiltAndroidGradlePlugin = "2.57.2"
-hiltAndroidGradlePluginVersion = "2.57.2"
 junitJupiterParams = "6.0.0"
-kotlin = "2.3.0-Beta1"
+kotlin = "2.2.21-RC"
 kotlinGradlePlugin = "2.2.21-RC"
 kotlinLoggingJvm = "3.0.5"
 ksp = "2.2.21-RC-2.0.4"
@@ -19,6 +21,7 @@ java = "24"
 # ===== HOOKING FRAMEWORKS =====
 ktorClientAuth = "3.3.1"
 ktorClientCio = "3.3.1"
+ktorClientContentNegotiation = "3.3.1"
 logbackClassic = "1.5.19"
 moshi = "1.15.2"
 moshiKotlin = "1.15.2"
@@ -26,13 +29,14 @@ multidex = "2.0.1"
 xposed = "82"
 api = "82"
 lsposed = "6.4"
-yukihookapi = "1.3.0"
+yukihookapi = "1.3.1"
 
 # ===== GOOGLE, FIREBASE & AI =====
 hilt-version = "2.57.2"
 gson-version = "2.13.2"
 firebaseBom = "34.3.0"
 generativeai = "0.9.0"
+googleServices = "4.4.2"
 
 # ===== ANDROIDX =====
 coreKtx = "1.17.0"
@@ -67,7 +71,7 @@ kotlinxDatetime = "0.7.1-0.6.x-compat"
 leakcanary = "2.14"
 
 # ===== BUILD PLUGINS =====
-openapiGeneratorGradlePlugin = "7.5.0"
+openapiGeneratorGradlePlugin = "7.16.0"
 firebaseCrashlyticsPlugin = "3.0.6"
 firebasePerfPlugin = "2.0.1"
 toolchainsFoojayResolver = "1.0.0"
@@ -88,6 +92,7 @@ turbine = "1.2.1"
 bcprov = "1.82"
 junitVersion = "4.13.2"
 junitJupiterVersion = "5.13.4"
+material3 = "1.4.0"
 
 
 
@@ -168,7 +173,6 @@ testing-android = [
 # ===== GENERATIVE AI =====
 androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
 com-google-devtools-ksp-gradle-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "comGoogleDevtoolsKspGradlePlugin" }
-dagger-hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePluginVersion" }
 google-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 openapi-generator-gradle-plugin = { group = "org.openapitools", name = "openapi-generator-gradle-plugin", version.ref = "openapiGeneratorGradlePlugin" }
 
@@ -183,6 +187,7 @@ kotlin-logging-jvm = { module = "io.github.microutils:kotlin-logging-jvm", versi
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktorClientAuth" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorClientCio" }
+ktor-client-contentnegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClientContentNegotiation" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logbackClassic" }
 moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }
@@ -284,6 +289,8 @@ mockk-agent = { module = "io.mockk:mockk-agent-jvm", version.ref = "mockk" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiterVersion" }
 junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version = "6.0.0" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+
 
 
 [plugins]
@@ -291,7 +298,7 @@ junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 # Kotlin
-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "2.2.20" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 # Other plugins
@@ -300,4 +307,5 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt-version" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaGradlePlugin" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-openapi-generator = { id = "org.openapi.generator", version.ref = "openapiGeneratorGradlePlugin" }
+google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsPlugin" }

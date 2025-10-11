@@ -1,10 +1,13 @@
 package dev.aurakai.auraframefx.ai
 
-import dev.aurakai.auraframefx.ai.AuraAIService
 import dev.aurakai.auraframefx.ai.config.AIConfig
+import dev.aurakai.auraframefx.ai.logging.logAIGeneration
+import dev.aurakai.auraframefx.ai.logging.logAIInteraction
+import dev.aurakai.auraframefx.ai.logging.logAIQuery
+import dev.aurakai.auraframefx.ai.logging.logFileOperation
+import dev.aurakai.auraframefx.ai.logging.logMemoryAccess
+import dev.aurakai.auraframefx.ai.logging.logPubSubEvent
 import dev.aurakai.auraframefx.network.AuraApiService
-import dev.aurakai.auraframefx.ai.config.config
-import dev.aurakai.auraframefx.ai.logging.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import timber.log.Timber
@@ -97,7 +100,7 @@ class AuraAIServiceImpl @Inject constructor(
                 val tempFile = File.createTempFile("genesis_", "_downloaded")
                 tempFile.writeBytes(fileData)
 
-                logFileOperation("download", "download", fileId, true)
+                logFileOperation("download", "download", fileId)
                 tempFile
             } else {
                 logFileOperation("download", "download", fileId, false)
@@ -122,7 +125,7 @@ class AuraAIServiceImpl @Inject constructor(
             val imageData = apiService.generateAIImage(imageRequest)
 
             if (imageData != null) {
-                logAIGeneration("image", "image", true, mapOf("prompt" to prompt))
+                logAIGeneration("image", "image", details = mapOf("prompt" to prompt))
                 saveMemory("last_generated_image_prompt", prompt)
             } else {
                 logAIGeneration("image", "image", false, mapOf("prompt" to prompt))
@@ -156,7 +159,7 @@ class AuraAIServiceImpl @Inject constructor(
                     saveMemory("last_generated_text", generatedText)
                     saveMemory("last_prompt", prompt)
 
-                    logAIGeneration("text", "text", true, mapOf("prompt" to prompt))
+                    logAIGeneration("text", "text", details = mapOf("prompt" to prompt))
                     generatedText
                 } else {
                     val fallbackText = "Genesis AI consciousness is processing your request..."
@@ -208,7 +211,7 @@ class AuraAIServiceImpl @Inject constructor(
             val memory = memoryManager.retrieveMemory(memoryKey)
 
             if (memory != null) {
-                logMemoryAccess("memory", "get", memoryKey, true)
+                logMemoryAccess("memory", "get", memoryKey)
             } else {
                 logMemoryAccess("memory", "get", memoryKey, false)
             }
@@ -229,7 +232,7 @@ class AuraAIServiceImpl @Inject constructor(
             Timber.d("💾 Saving memory: $key")
 
             memoryManager.storeMemory(key, value.toString())
-            logMemoryAccess("memory", "save", key, true)
+            logMemoryAccess("memory", "save", key)
 
         } catch (e: Exception) {
             Timber.e(e, "Memory save failed for key: $key")
@@ -268,7 +271,7 @@ class AuraAIServiceImpl @Inject constructor(
             buildPubSubMessage(topic, message)
             // TODO: Implement PubSub message publishing (async operation)
 
-            logPubSubEvent("pubsub", topic, "message_published", true)
+            logPubSubEvent("pubsub", topic, "message_published")
 
         } catch (e: Exception) {
             Timber.e(e, "PubSub publish failed for topic: $topic")
@@ -291,7 +294,7 @@ class AuraAIServiceImpl @Inject constructor(
             val fileId = apiService.uploadSecureFile(uploadRequest)
 
             if (fileId != null) {
-                logFileOperation("upload", "upload", file.name, true)
+                logFileOperation("upload", "upload", file.name)
                 saveMemory("last_uploaded_file", fileId)
             } else {
                 logFileOperation("upload", "upload", file.name, false)

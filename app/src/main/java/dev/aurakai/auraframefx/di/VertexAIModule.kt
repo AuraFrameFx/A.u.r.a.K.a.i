@@ -35,16 +35,10 @@ object VertexAIModule {
             projectId = "auraframefx",
             location = "us-central1",
             endpoint = "us-central1-aiplatform.googleapis.com",
-            modelName = "gemini-1.5-pro-002",
-            apiVersion = "v1",
+            modelName = "gemini-1.5-pro-002"
             // Security settings
-            enableSafetyFilters = true,
-            maxRetries = 3,
-            timeoutMs = 30000,
             // Performance settings
-            maxConcurrentRequests = 10,
-            enableCaching = true,
-            cacheExpiryMs = 3600000 // 1 hour
+            // 1 hour
         )
     }
 

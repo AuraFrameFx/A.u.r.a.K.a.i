@@ -1,24 +1,21 @@
-// Apply plugins (versions via version catalog)
 plugins {
-    id("genesis.android.library")
+    id("com.android.library")  // Convention plugin: applies Android, Kotlin, Hilt
     alias(libs.plugins.ksp)
-    alias(libs.plugins.compose.compiler)
+    // Note: compose.compiler plugin applied by convention plugins
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.collabcanvas"
-
+    compileSdk = 36
     defaultConfig {
-        minSdk = 34
+        minSdk = 33
     }
 
     buildFeatures {
         buildConfig = true
     }
 }
-
-
 
 dependencies {
     implementation(project(":core-module"))
@@ -37,7 +34,7 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt.android)
-    add("ksp", libs.hilt.compiler)
+    ksp(libs.hilt.compiler) // <-- FIXED
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
@@ -51,7 +48,7 @@ dependencies {
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    add("ksp", libs.androidx.room.compiler)
+    ksp(libs.androidx.room.compiler) // <-- FIXED
 
     // Firebase
     implementation(platform(libs.firebase.bom))

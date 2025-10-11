@@ -1,3 +1,0 @@
-C:/ReGenesi/datavein-oracle-native/.cxx/Release/4t456344/armeabi-v7a/CMakeFiles/datavein_oracle_native.dir
-C:/ReGenesi/datavein-oracle-native/.cxx/Release/4t456344/armeabi-v7a/CMakeFiles/edit_cache.dir
-C:/ReGenesi/datavein-oracle-native/.cxx/Release/4t456344/armeabi-v7a/CMakeFiles/rebuild_cache.dir

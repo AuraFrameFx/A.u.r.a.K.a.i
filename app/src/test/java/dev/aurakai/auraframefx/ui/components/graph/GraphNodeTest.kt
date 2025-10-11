@@ -104,8 +104,7 @@ class GraphNodeTest {
             val node = GraphNode(
                 id = "null-state-node",
                 name = "Null State Node",
-                type = NodeType.PROCESSING,
-                state = null
+                type = NodeType.PROCESSING
             )
 
             assertNull(node.state)
@@ -901,7 +900,7 @@ class ConnectionTest {
     @Test
     @DisplayName("should handle empty label")
     fun shouldHandleEmptyLabel() {
-        val connection = Connection("target", label = "")
+        val connection = Connection("target")
 
         assertEquals("", connection.label)
     }

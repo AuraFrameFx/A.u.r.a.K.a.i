@@ -283,7 +283,6 @@ class LockScreenCustomizer @Inject constructor(
 
     private fun getDefaultConfig(): LockScreenConfig {
         return LockScreenConfig(
-            showGenesisElements = true,
             clockConfig = dev.aurakai.auraframefx.system.lockscreen.model.ClockConfig(),
             hapticFeedback = dev.aurakai.auraframefx.system.lockscreen.model.HapticFeedbackConfig(),
             animation = dev.aurakai.auraframefx.system.lockscreen.model.LockScreenAnimationConfig()

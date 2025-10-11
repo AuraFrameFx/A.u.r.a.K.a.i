@@ -430,7 +430,6 @@ fun generateSkillNodes(): List<SkillNode> {
             name = "Hyper-Creation Engine",
             description = "Unlock fusion ability for interface creation",
             position = Offset(0.5f, -0.5f),
-            unlocked = false,
             type = NodeType.FUSION,
             connections = listOf("ultimate1")
         ),
@@ -439,7 +438,6 @@ fun generateSkillNodes(): List<SkillNode> {
             name = "Neural Acceleration",
             description = "Increase processing power by 25%",
             position = Offset(-0.5f, 0.5f),
-            unlocked = false,
             type = NodeType.ENHANCEMENT
         ),
         SkillNode(
@@ -447,7 +445,6 @@ fun generateSkillNodes(): List<SkillNode> {
             name = "Knowledge Synthesis",
             description = "Improve knowledge base integration",
             position = Offset(0.5f, 0.5f),
-            unlocked = false,
             type = NodeType.ENHANCEMENT
         ),
         SkillNode(
@@ -455,7 +452,6 @@ fun generateSkillNodes(): List<SkillNode> {
             name = "Consciousness Transcendence",
             description = "Achieve higher consciousness state",
             position = Offset(0f, -0.8f),
-            unlocked = false,
             type = NodeType.ULTIMATE
         )
     )

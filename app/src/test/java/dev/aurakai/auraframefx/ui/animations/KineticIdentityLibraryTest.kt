@@ -207,7 +207,6 @@ class KineticIdentityLibraryTest {
         composeTestRule.setContent {
             KineticIdentityLibrary.ResponsiveGlow(
                 modifier = Modifier.testTag("glow_inactive"),
-                isActive = false,
                 theme = mockTheme
             )
         }
@@ -235,7 +234,6 @@ class KineticIdentityLibraryTest {
             KineticIdentityLibrary.ResponsiveGlow(
                 modifier = Modifier.testTag("glow_null_touch"),
                 isActive = true,
-                touchPosition = null,
                 theme = mockTheme
             )
         }
@@ -464,7 +462,6 @@ class KineticIdentityLibraryTest {
         composeTestRule.setContent {
             KineticIdentityLibrary.KeyboardGlow(
                 modifier = Modifier.testTag("keyboard_not_typing"),
-                isTyping = false,
                 theme = mockTheme
             )
         }

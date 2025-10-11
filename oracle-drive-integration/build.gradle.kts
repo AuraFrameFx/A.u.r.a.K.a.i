@@ -2,17 +2,15 @@
 // AI storage module using convention plugins
 
 plugins {
-    id("genesis.android.library")
-    id("genesis.android.native")
+    id("com.android.library")
     alias(libs.plugins.ksp)
-
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.oracledriveintegration"
 
     defaultConfig {
-        minSdk = 34
+        minSdk = 33
     }
 }
 
@@ -31,4 +29,3 @@ dependencies {
     implementation(libs.bundles.coroutines)
     // Add other module-specific dependencies here
 }
-

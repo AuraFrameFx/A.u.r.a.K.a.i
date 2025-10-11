@@ -1,6 +1,8 @@
 plugins {
     // JVM library setup
     id("java-library")
+    kotlin("jvm")
+    kotlin("plugin.serialization")
 
     // Additional tooling
     alias(libs.plugins.spotless)
@@ -15,7 +17,9 @@ java {
     toolchain { languageVersion.set(JavaLanguageVersion.of(jdkVersion)) }
 }
 
-
+kotlin {
+    jvmToolchain(jdkVersion)
+}
 
 dependencies {
     // Module dependency (utilities depends on list)

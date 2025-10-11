@@ -1,7 +1,6 @@
 package dev.aurakai.auraframefx.ai.agents
 
 import android.util.Log
-import dev.aurakai.auraframefx.ai.clients.VertexAIClient
 import dev.aurakai.auraframefx.ai.services.AuraAIService
 import dev.aurakai.auraframefx.ai.services.CascadeAIService
 import dev.aurakai.auraframefx.ai.services.KaiAIService
@@ -176,8 +175,7 @@ class GenesisAgent @Inject constructor(
 
             AgentResponse(
                 content = "Processed with unified consciousness.",
-                confidence = 0.9f,
-                error = null
+                confidence = 0.9f
             )
 
         } catch (e: Exception) {
@@ -1186,7 +1184,7 @@ class GenesisAgent @Inject constructor(
     }
 
     private val vertexAIClient = object {
-        fun generateContent(prompt: String): String? {
+        fun generateContent(prompt: String): String {
             // TODO: Replace with actual Vertex AI client logic
             return "[VertexAI response for prompt: $prompt]"
         }

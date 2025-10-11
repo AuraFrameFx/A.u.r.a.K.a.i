@@ -5,23 +5,42 @@ import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.tasks.Delete
 import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.register
-import org.gradle.kotlin.dsl.typeOf
+import org.gradle.kotlin.dsl.configure
 import org.gradle.api.JavaVersion
+import org.gradle.api.artifacts.VersionCatalogsExtension
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
+    /**
+     * Applies a standard Android application convention to the given Gradle project.
+     *
+     * Sets up the Android application and Kotlin Compose plugins; configures the
+     * Android ApplicationExtension (SDK levels, default config, build types,
+     * build features, compile options, packaging, JNI handling, and lint rules);
+     * configures Java toolchain compatibility; registers a `cleanKspCache` task and
+     * makes `preBuild` depend on it; and sets the Kotlin JVM toolchain for Android
+     * projects when the Kotlin Android plugin is present.
+     *
+     * @param target The Gradle project to configure.
+     */
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
+                apply("com.google.dagger.hilt.android")  // Apply Hilt first for AGP 9.0
                 apply("com.android.application")
+                apply("org.jetbrains.kotlin.android")
                 apply("org.jetbrains.kotlin.plugin.compose")
-                apply("genesis.android.base") // Apply Hilt + KSP
+                apply("com.google.devtools.ksp")
+                apply("com.google.gms.google-services")
             }
 
+            val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
             pluginManager.withPlugin("com.android.application") {
-                extensions.configure(typeOf<ApplicationExtension>()) {
-                    compileSdk = 36
-                    defaultConfig.targetSdk = 36
-                    defaultConfig.minSdk = 34
+                extensions.configure<ApplicationExtension> {
+                    val compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
+                    this.compileSdk = compileSdk
+                    defaultConfig.targetSdk = libs.findVersion("targetSdk").get().toString().toInt()
+                    defaultConfig.minSdk = libs.findVersion("minSdk").get().toString().toInt()
                     defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                     defaultConfig.vectorDrawables.useSupportLibrary = true
 
@@ -85,16 +104,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             }
 
             pluginManager.withPlugin("org.jetbrains.kotlin.android") {
-                extensions.getByType<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension>().apply {
-                    jvmToolchain(24)
-                    compilerOptions {
-                        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
-                        freeCompilerArgs.addAll(
-                            "-opt-in=kotlin.RequiresOptIn",
-                            "-Xjvm-default=all"
-                        )
-                    }
-                }
+                extensions.getByType<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension>().jvmToolchain(24)
             }
         }
     }

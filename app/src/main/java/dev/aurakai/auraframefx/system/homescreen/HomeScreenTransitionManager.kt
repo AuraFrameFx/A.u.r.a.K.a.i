@@ -27,7 +27,6 @@ class HomeScreenTransitionManager @Inject constructor(
 
     private val defaultConfig = HomeScreenTransitionConfig(
         type = HomeScreenTransitionType.GLOBE_ROTATE,
-        duration = 500,
         // easing = "easeInOut", // Removed, not in HomeScreenTransitionConfig
         properties = mapOf(
             "angle" to 360f,

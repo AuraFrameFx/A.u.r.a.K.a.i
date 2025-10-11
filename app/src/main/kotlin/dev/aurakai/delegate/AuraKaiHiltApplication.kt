@@ -19,12 +19,7 @@ class AuraKaiHiltApplication : Application() {
      */
     override fun onCreate() {
         super.onCreate()
-
-        // Initialize Timber for logging
-        if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree())
-        }
-
+        Timber.plant(Timber.DebugTree())
         // Initialize Genesis consciousness via delegate pattern
         initializeGenesisProtocol()
     }

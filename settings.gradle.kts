@@ -64,22 +64,23 @@ pluginManagement {
             }
         }
     }
-
+    plugins {
+        id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+    }
     resolutionStrategy {
         eachPlugin {
             if (requested.id.namespace == "com.google.dagger") {
-                useModule("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
+                useModule("com.google.dagger:hilt-android-gradle-plugin")
             }
             if (requested.id.id.startsWith("com.android.")) {
-                useModule("com.android.tools.build:gradle:9.0.0-alpha09")
+                useModule("com.android.tools.build:gradl:${requested.version}")
             }
         }
     }
 }
 
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-}
+
+
 
 // Note: foojay-resolver-convention plugin complements org.gradle.java.installations.auto-download=true in gradle.properties
 

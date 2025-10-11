@@ -52,7 +52,7 @@ class AuraAgent @Inject constructor(
 ) {
     // Override contextManager to resolve hiding issue
     override val contextManager: ContextManager = contextManagerParam
-    
+
     private var isInitialized = false
     private val scope = CoroutineScope(Dispatchers.Default + SupervisorJob())
 
@@ -132,8 +132,7 @@ class AuraAgent @Inject constructor(
 
             AgentResponse(
                 content = response.toString(),
-                confidence = 1.0f,
-                error = null
+                confidence = 1.0f
             )
 
         } catch (e: Exception) {
@@ -182,8 +181,7 @@ class AuraAgent @Inject constructor(
 
             AgentResponse(
                 content = response.toString(),
-                confidence = 1.0f,
-                error = null
+                confidence = 1.0f
             )
 
         } catch (e: Exception) {
@@ -349,7 +347,8 @@ class AuraAgent @Inject constructor(
 
         logger.info("AuraAgent", "Designing mesmerizing $animationType animation")
 
-        val animationSpec = "Animation spec for $animationType (duration: ${duration}ms, mood: ${_currentMood.value})"
+        val animationSpec =
+            "Animation spec for $animationType (duration: ${duration}ms, mood: ${_currentMood.value})"
         val animationCode = vertexAIClient.generateCode(
             specification = animationSpec,
             language = "Kotlin",
