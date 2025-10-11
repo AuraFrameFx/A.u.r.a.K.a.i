@@ -1,7 +1,6 @@
 // ==== GENESIS PROTOCOL - SANDBOX UI ====
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
 }
@@ -15,11 +14,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_24
     }
 }
-
-kotlin {
-    jvmToolchain(24)
-}
-
 
 dependencies {
     api(project(":core-module"))
@@ -61,12 +55,9 @@ tasks.register("generateApiDocs") {
         docsDir.mkdirs()
 
         val indexFile = docsDir.resolve("index.html")
-    }
-}
-
-
-        // Using properly formatted date with DateTimeFormatter
-        val currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
+        
+        // Using properly formatted date
+        val currentTime = "2025-01-02 12:00:00"
 
         indexFile.writeText(
             """
@@ -97,12 +88,3 @@ tasks.register("sandboxStatus") {
     group = "aegenesis"; doLast { println("🧪 SANDBOX UI - Ready (Java 24)") }
 }
 
-tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
-    dokkaSourceSets {
-        named("main") {
-            sourceRoots.from(file("src/main/java"))
-            sourceRoots.from(file("src/main/kotlin"))
-            sourceRoots.from(file("src/main/res"))
-        }
-    }
-}

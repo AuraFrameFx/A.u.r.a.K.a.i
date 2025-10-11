@@ -24,13 +24,13 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
      */
     override fun apply(target: Project) {
         with(target) {
-            // Apply Android library plugin first
-            pluginManager.apply("com.android.library")
-            // Apply Hilt and KSP plugins after Android plugin
-            pluginManager.apply("com.google.dagger.hilt.android")
-            pluginManager.apply("com.google.devtools.ksp")
-            // Apply base configuration (configuration-only)
-            pluginManager.apply("genesis.android.base")
+            // Apply Android library plugin and base plugin for Hilt + KSP
+            with(pluginManager) {
+                apply("com.android.library")
+                apply("genesis.android.base")  // Applies Hilt + KSP at the right time
+                // ✅ REMOVED: AGP 9.0 has built-in Kotlin support
+                // apply("org.jetbrains.kotlin.android")  // NO LONGER NEEDED
+            }
 
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
@@ -38,7 +38,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
 
                 defaultConfig {
-                    minSdk = 34
+                    minSdk = libs.findVersion("minSdk").get().toString().toInt()
                 }
 
                 // ✅ Java 24 for consistency across all modules (Firebase requirement)

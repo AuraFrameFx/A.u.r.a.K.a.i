@@ -3,9 +3,7 @@
 
 plugins {
     id("com.android.library")
-    id("com.android.native")
     alias(libs.plugins.ksp)
-
 }
 
 android {
@@ -30,8 +28,4 @@ dependencies {
     implementation(libs.hilt.work)
     implementation(libs.bundles.coroutines)
     // Add other module-specific dependencies here
-}
-
-kotlin {
-    jvmToolchain(24)
 }

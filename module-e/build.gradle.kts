@@ -1,24 +1,25 @@
 // GENESIS PROTOCOL - MODULES A-F
 // Module E
 plugins {
-    id("com.android.compose")
-    alias(libs.plugins.compose.compiler)
+    id("com.android.library")
     alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.module.e"
+    compileSdk = 36
+    
+    defaultConfig {
+        minSdk = 33
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
     }
-
-    kotlin {
-        jvmToolchain(24)
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
-        }
+    
+    buildFeatures {
+        compose = true
     }
 }
 
@@ -37,8 +38,4 @@ dependencies {
 tasks.register("moduleEStatus") {
     group = "aegenesis"
     doLast { println("📦 MODULE E - Ready (Java 24)") }
-}
-
-kotlin {
-    jvmToolchain(24)
 }

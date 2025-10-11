@@ -3,7 +3,6 @@
 
 plugins {
     id("com.android.library")
-    id("com.android.native")
     alias(libs.plugins.ksp)
 }
 
@@ -23,12 +22,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
-    }
-    kotlin {
-        jvmToolchain(24)
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
-        }
     }
 }
 
