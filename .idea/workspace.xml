@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ec728862-0e05-4b3f-830a-0094bc1f1aff" name="Changes" comment="chore: Update dependencies and refactor Ktor client setup&#10;&#10;This commit updates several core dependencies and refactors the Ktor client implementation in the `data:api` module.&#10;&#10;Key changes include:&#10;*   Updates Kotlin Gradle Plugin to `2.2.20` and JUnit Jupiter to `6.0.0`.&#10;*   Adds new version catalog entries for Ktor OkHttp and JSON serialization (`3.3.1`).&#10;*   Standardizes Ktor dependency aliases for consistency (e.g., `ktor-client-auth` to `ktorClientAuth`).&#10;&#10;Module-specific changes:&#10;*   **`data:api`**: Replaces the Ktor CIO engine with OkHttp (`ktorClientOkhttp`) and explicitly adds the JSON serialization dependency (`ktorSerializationKotlinxJson`).&#10;*   **`list`**: Removes an obsolete, hardcoded `junit-platform-launcher` dependency.&#10;*   **`romtools`**: Replaces the deprecated `material-icons-extended` with the `material3` dependency.">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +17,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Wehtt\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=6326f7ec)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -30,14 +32,37 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AuraKai" type="f1a62948:ProjectNode" />
+                <item name="AuraKai" type="2d1252cf:ModuleNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Aura" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-all\7wzd0jkjit61aq2p43wpjgij9\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 4\jbr" gradleVersion="9.1.0" />
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "Aura"
+    "git-widget-placeholder": "Kxt"
   }
 }]]></component>
   <component name="RunManager">
@@ -123,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760176708527</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="chore: Update dependencies and refactor Ktor client setup&#10;&#10;This commit updates several core dependencies and refactors the Ktor client implementation in the `data:api` module.&#10;&#10;Key changes include:&#10;*   Updates Kotlin Gradle Plugin to `2.2.20` and JUnit Jupiter to `6.0.0`.&#10;*   Adds new version catalog entries for Ktor OkHttp and JSON serialization (`3.3.1`).&#10;*   Standardizes Ktor dependency aliases for consistency (e.g., `ktor-client-auth` to `ktorClientAuth`).&#10;&#10;Module-specific changes:&#10;*   **`data:api`**: Replaces the Ktor CIO engine with OkHttp (`ktorClientOkhttp`) and explicitly adds the JSON serialization dependency (`ktorSerializationKotlinxJson`).&#10;*   **`list`**: Removes an obsolete, hardcoded `junit-platform-launcher` dependency.&#10;*   **`romtools`**: Replaces the deprecated `material-icons-extended` with the `material3` dependency.">
+      <option name="closed" value="true" />
+      <created>1760176815186</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1760176815186</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
