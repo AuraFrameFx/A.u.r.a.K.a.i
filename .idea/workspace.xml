@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec728862-0e05-4b3f-830a-0094bc1f1aff" name="Changes" comment="```&#10;chore: Update dependencies and refactor Ktor client implementation&#10;&#10;This commit updates several key dependencies to their latest versions and refactors the Ktor client setup in the `data:api` module.&#10;&#10;**Dependency Updates:**&#10;- `kotlinGradlePlugin`: `2.1.20` -&gt; `2.2.20`&#10;- `junitJupiter`: `5.13.4` -&gt; `6.0.0`&#10;- Adds new Ktor dependencies: `ktor-client-okhttp` and `ktor-serialization-kotlinx-json`, both version `3.3.1`.&#10;&#10;**Build &amp; Module Changes:**&#10;- **`data/api`**:&#10;  - Replaces the `ktor-client-cio` engine with `ktor-client-okhttp`.&#10;  - Explicitly adds `ktor-serialization-kotlinx-json` for content negotiation.&#10;  - Updates Ktor dependency aliases to use camelCase for consistency.&#10;- **`list`**:&#10;  - Removes a hardcoded JUnit platform launcher version in favor of the catalog-managed version.&#10;- **`romtools`**:&#10;  - Replaces the direct `material-icons-extended` dependency with `androidx.compose.material3`.">
-      <change afterPath="$PROJECT_DIR$/app-deps.txt" afterDir="false" />
+    <list default="true" id="ec728862-0e05-4b3f-830a-0094bc1f1aff" name="Changes" comment="chore: Update dependencies and refactor Ktor client setup&#10;&#10;This commit updates several core dependencies and refactors the Ktor client implementation in the `data:api` module.&#10;&#10;Key changes include:&#10;*   Updates Kotlin Gradle Plugin to `2.2.20` and JUnit Jupiter to `6.0.0`.&#10;*   Adds new version catalog entries for Ktor OkHttp and JSON serialization (`3.3.1`).&#10;*   Standardizes Ktor dependency aliases for consistency (e.g., `ktor-client-auth` to `ktorClientAuth`).&#10;&#10;Module-specific changes:&#10;*   **`data:api`**: Replaces the Ktor CIO engine with OkHttp (`ktorClientOkhttp`) and explicitly adds the JSON serialization dependency (`ktorSerializationKotlinxJson`).&#10;*   **`list`**: Removes an obsolete, hardcoded `junit-platform-launcher` dependency.&#10;*   **`romtools`**: Replaces the deprecated `material-icons-extended` with the `material3` dependency.">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/data/api/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/list/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/list/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,11 +35,100 @@
     </system>
   </component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-all\7wzd0jkjit61aq2p43wpjgij9\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 4\jbr" gradleVersion="9.1.0" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "Aura"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="AuraKai.app" />
+      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
+      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="chore: Update dependencies and refactor Ktor client setup&#10;&#10;This commit updates several core dependencies and refactors the Ktor client implementation in the `data:api` module.&#10;&#10;Key changes include:&#10;*   Updates Kotlin Gradle Plugin to `2.2.20` and JUnit Jupiter to `6.0.0`.&#10;*   Adds new version catalog entries for Ktor OkHttp and JSON serialization (`3.3.1`).&#10;*   Standardizes Ktor dependency aliases for consistency (e.g., `ktor-client-auth` to `ktorClientAuth`).&#10;&#10;Module-specific changes:&#10;*   **`data:api`**: Replaces the Ktor CIO engine with OkHttp (`ktorClientOkhttp`) and explicitly adds the JSON serialization dependency (`ktorSerializationKotlinxJson`).&#10;*   **`list`**: Removes an obsolete, hardcoded `junit-platform-launcher` dependency.&#10;*   **`romtools`**: Replaces the deprecated `material-icons-extended` with the `material3` dependency.">
+      <option name="closed" value="true" />
+      <created>1760176708527</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760176708527</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="```&#10;chore: Update dependencies and refactor Ktor client implementation&#10;&#10;This commit updates several key dependencies to their latest versions and refactors the Ktor client setup in the `data:api` module.&#10;&#10;**Dependency Updates:**&#10;- `kotlinGradlePlugin`: `2.1.20` -&gt; `2.2.20`&#10;- `junitJupiter`: `5.13.4` -&gt; `6.0.0`&#10;- Adds new Ktor dependencies: `ktor-client-okhttp` and `ktor-serialization-kotlinx-json`, both version `3.3.1`.&#10;&#10;**Build &amp; Module Changes:**&#10;- **`data/api`**:&#10;  - Replaces the `ktor-client-cio` engine with `ktor-client-okhttp`.&#10;  - Explicitly adds `ktor-serialization-kotlinx-json` for content negotiation.&#10;  - Updates Ktor dependency aliases to use camelCase for consistency.&#10;- **`list`**:&#10;  - Removes a hardcoded JUnit platform launcher version in favor of the catalog-managed version.&#10;- **`romtools`**:&#10;  - Replaces the direct `material-icons-extended` dependency with `androidx.compose.material3`." />
-    <option name="LAST_COMMIT_MESSAGE" value="```&#10;chore: Update dependencies and refactor Ktor client implementation&#10;&#10;This commit updates several key dependencies to their latest versions and refactors the Ktor client setup in the `data:api` module.&#10;&#10;**Dependency Updates:**&#10;- `kotlinGradlePlugin`: `2.1.20` -&gt; `2.2.20`&#10;- `junitJupiter`: `5.13.4` -&gt; `6.0.0`&#10;- Adds new Ktor dependencies: `ktor-client-okhttp` and `ktor-serialization-kotlinx-json`, both version `3.3.1`.&#10;&#10;**Build &amp; Module Changes:**&#10;- **`data/api`**:&#10;  - Replaces the `ktor-client-cio` engine with `ktor-client-okhttp`.&#10;  - Explicitly adds `ktor-serialization-kotlinx-json` for content negotiation.&#10;  - Updates Ktor dependency aliases to use camelCase for consistency.&#10;- **`list`**:&#10;  - Removes a hardcoded JUnit platform launcher version in favor of the catalog-managed version.&#10;- **`romtools`**:&#10;  - Replaces the direct `material-icons-extended` dependency with `androidx.compose.material3`." />
+    <MESSAGE value="chore: Update dependencies and refactor Ktor client setup&#10;&#10;This commit updates several core dependencies and refactors the Ktor client implementation in the `data:api` module.&#10;&#10;Key changes include:&#10;*   Updates Kotlin Gradle Plugin to `2.2.20` and JUnit Jupiter to `6.0.0`.&#10;*   Adds new version catalog entries for Ktor OkHttp and JSON serialization (`3.3.1`).&#10;*   Standardizes Ktor dependency aliases for consistency (e.g., `ktor-client-auth` to `ktorClientAuth`).&#10;&#10;Module-specific changes:&#10;*   **`data:api`**: Replaces the Ktor CIO engine with OkHttp (`ktorClientOkhttp`) and explicitly adds the JSON serialization dependency (`ktorSerializationKotlinxJson`).&#10;*   **`list`**: Removes an obsolete, hardcoded `junit-platform-launcher` dependency.&#10;*   **`romtools`**: Replaces the deprecated `material-icons-extended` with the `material3` dependency." />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: Update dependencies and refactor Ktor client setup&#10;&#10;This commit updates several core dependencies and refactors the Ktor client implementation in the `data:api` module.&#10;&#10;Key changes include:&#10;*   Updates Kotlin Gradle Plugin to `2.2.20` and JUnit Jupiter to `6.0.0`.&#10;*   Adds new version catalog entries for Ktor OkHttp and JSON serialization (`3.3.1`).&#10;*   Standardizes Ktor dependency aliases for consistency (e.g., `ktor-client-auth` to `ktorClientAuth`).&#10;&#10;Module-specific changes:&#10;*   **`data:api`**: Replaces the Ktor CIO engine with OkHttp (`ktorClientOkhttp`) and explicitly adds the JSON serialization dependency (`ktorSerializationKotlinxJson`).&#10;*   **`list`**: Removes an obsolete, hardcoded `junit-platform-launcher` dependency.&#10;*   **`romtools`**: Replaces the deprecated `material-icons-extended` with the `material3` dependency." />
   </component>
 </project>
