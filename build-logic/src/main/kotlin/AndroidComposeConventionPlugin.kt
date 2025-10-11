@@ -8,17 +8,15 @@ import org.gradle.kotlin.dsl.*
 
 class AndroidComposeConventionPlugin : Plugin<Project> {
     /**
-     * Applies the Android Compose convention to the given Gradle project.
+     * Configure the target Gradle project with Android Compose conventions.
      *
-     * This will:
-     * - Apply the base "genesis.android.library" convention plugin.
-     * - Configure the Android LibraryExtension to enable Compose build features.
-     * - Configure Compose Compiler metrics and stability configuration (if plugin is applied).
+     * Enables Jetpack Compose for Android library modules and applies the
+     * "com.android.library" and "genesis.android.library" plugins.
      *
-     * Note: Modules using this plugin must also apply the Compose Compiler plugin via:
-     * alias(libs.plugins.compose.compiler)
+     * Note: modules must also apply the Compose Compiler plugin (for example,
+     * via `alias(libs.plugins.compose.compiler)`).
      *
-     * @param target The Gradle [Project] this plugin is being applied to.
+     * @param target The Gradle project to configure.
      */
     override fun apply(target: Project) {
         with(target) {

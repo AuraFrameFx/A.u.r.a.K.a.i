@@ -70,14 +70,10 @@ class YukiHookAndroidConventionPlugin : Plugin<Project> {
     }
 
     /**
-     * Configure the Android library extension with Yuki Hook required build defaults.
+     * Configure the Android LibraryExtension with Yuki Hook's required build defaults.
      *
-     * Applies:
-     * - compileSdk = 36
-     * - defaultConfig: minSdk = 34, testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner", and consumer ProGuard rules file
-     * - release build type: minification disabled and ProGuard files including the Android optimize file and "proguard-rules.pro"
-     *
-     * @param extension The LibraryExtension to configure.
+     * Configures compileSdk, defaultConfig (minSdk, test instrumentation runner, consumer ProGuard rules),
+     * and the release build type's minification and ProGuard files.
      */
     private fun configureAndroidLibrary(extension: LibraryExtension) {
         extension.apply {
