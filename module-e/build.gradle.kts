@@ -8,6 +8,18 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.module.e"
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
+    }
+
+    kotlin {
+        jvmToolchain(24)
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+        }
+    }
 }
 
 dependencies {
@@ -19,9 +31,14 @@ dependencies {
     add("ksp", libs.hilt.compiler)
 
     // Add other module-specific dependencies here
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
 }
 
 tasks.register("moduleEStatus") {
     group = "aegenesis"
     doLast { println("📦 MODULE E - Ready (Java 24)") }
+}
+
+kotlin {
+    jvmToolchain(24)
 }

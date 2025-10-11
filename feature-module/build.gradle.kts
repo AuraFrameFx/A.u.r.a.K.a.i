@@ -3,14 +3,14 @@
 plugins {
     id("genesis.android.library")
 }
-
+A
 
 android {
     namespace = "dev.aurakai.auraframefx.featuremodule"
     compileSdk = 36
 
     defaultConfig {
-        minSdk = 34
+        minSdk = 33
     }
 
     compileOptions {

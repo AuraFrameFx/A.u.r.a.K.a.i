@@ -151,6 +151,10 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose.ui)
     implementation(libs.androidx.core.ktx)
+    // Added Material 3 dependencies from original request
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation("androidx.compose.material3:material3-window-size-class:1.3.0") // Using explicit version
     debugImplementation(libs.bundles.compose.debug)
 
     // ===== LIFECYCLE =====
@@ -170,12 +174,15 @@ dependencies {
 
     // ===== NETWORKING =====
     implementation(libs.bundles.network)
-    implementation(libs.moshi)
-    implementation(libs.moshi.kotlin)
+    implementation("com.squareup.moshi:moshi:1.15.2")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
 
     // ===== KTOR FOR OPENAPI CLIENT =====
-    implementation(libs.ktor.client.cio)
-    implementation(libs.ktor.client.auth)
+    implementation("io.ktor:ktor-client-core:3.3.0")
+    implementation("io.ktor:ktor-client-content-negotiation:3.3.0")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.0")
+    implementation("io.ktor:ktor-client-okhttp:3.3.0")
+    implementation("io.ktor:ktor-client-auth:3.3.0")
 
     // ===== FIREBASE =====
     implementation(platform(libs.firebase.bom))
@@ -183,11 +190,11 @@ dependencies {
     implementation(libs.bundles.firebase)
 
     // ===== HILT DEPENDENCY INJECTION =====
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler) // Use KSP for Hilt annotation processor
     implementation(libs.hilt.navigation.compose)
-    implementation(libs.androidx.work.runtime.ktx)
-    implementation(libs.hilt.work)
+
+    // ===== WORKMANAGER =====
+    implementation("androidx.work:work-runtime-ktx:2.10.5")
+    implementation("androidx.hilt:hilt-work:1.3.0")
     ksp(libs.hilt.work)  // Annotation processor for Hilt WorkManager integration
 
     // ===== UTILITIES =====

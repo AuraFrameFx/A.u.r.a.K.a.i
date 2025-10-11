@@ -9,7 +9,7 @@ android {
     namespace = "dev.aurakai.auraframefx.collabcanvas"
     compileSdk = 36
     defaultConfig {
-        minSdk = 34
+        minSdk = 33
     }
 
     buildFeatures {

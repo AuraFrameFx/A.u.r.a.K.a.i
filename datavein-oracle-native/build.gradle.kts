@@ -1,5 +1,7 @@
 plugins {
-    id("com.android.library")
+    id("genesis.android.compose")
+    alias(libs.plugins.compose.compiler)
+    id("genesis.android.native")
     alias(libs.plugins.ksp)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
@@ -9,12 +11,7 @@ android {
     ndkVersion = "28.2.13676358"
 
     defaultConfig {
-        minSdk = 34
-        externalNativeBuild {
-            cmake {
-                abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64")
-            }
-        }
+        minSdk = 33
     }
     lint {
         // Disable lint due to oversized test files causing StackOverflow

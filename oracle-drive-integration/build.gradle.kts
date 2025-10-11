@@ -12,7 +12,7 @@ android {
     namespace = "dev.aurakai.auraframefx.oracledriveintegration"
 
     defaultConfig {
-        minSdk = 34
+        minSdk = 33
     }
 }
 
@@ -30,4 +30,8 @@ dependencies {
     implementation(libs.hilt.work)
     implementation(libs.bundles.coroutines)
     // Add other module-specific dependencies here
+}
+
+kotlin {
+    jvmToolchain(24)
 }
