@@ -9,6 +9,8 @@ import org.gradle.api.Project
  */
 class AndroidBasePlugin : Plugin<Project> {
     override fun apply(target: Project) {
-        // No plugin applications here. Only shared configuration if needed.
+        with(target) {
+
+        }
     }
 }

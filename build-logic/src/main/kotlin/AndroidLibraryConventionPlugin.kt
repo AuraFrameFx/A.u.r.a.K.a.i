@@ -13,20 +13,26 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
     /**
-     * Applies Android library plugin and configures Kotlin defaults.
+     * Applies Android library conventions to the given Gradle project.
      *
-     * Configures the target project's Android LibraryExtension and Kotlin JVM toolchain:
-     * - Sets Android compileSdk to 36 and default minSdk to 34.
+     * Configures the project by applying the Android library and base plugins, setting Android SDK levels
+     * from the version catalog, enforcing Java 24 for compilation, and configuring Kotlin Android compiler options.
+     *
+     * - Applies "com.android.library" and "genesis.android.base".
+     * - Sets Android compileSdk and defaultConfig.minSdk from the `libs` version catalog.
      * - Sets Java sourceCompatibility and targetCompatibility to Java 24.
-     * - Configures the Kotlin JVM toolchain to use Java 24 (applied only after the Kotlin Android plugin is present).
+     * - If the Kotlin Android extension is present, sets Kotlin `jvmTarget` to JVM_24 and adds the compiler args
+     *   `-opt-in=kotlin.RequiresOptIn` and `-Xjvm-default=all`.
      *
      * @param target The Gradle project to configure; this method mutates the project's plugins and extensions.
      */
     override fun apply(target: Project) {
         with(target) {
+            // Do NOT apply the Hilt Gradle plugin in library modules (AGP 8+/9+)
+            pluginManager.apply("com.android.library")
+
             // Apply Android library plugin and base plugin for Hilt + KSP
             with(pluginManager) {
-                apply("com.android.library")
                 apply("genesis.android.base")  // Applies Hilt + KSP at the right time
                 // ✅ REMOVED: AGP 9.0 has built-in Kotlin support
                 // apply("org.jetbrains.kotlin.android")  // NO LONGER NEEDED

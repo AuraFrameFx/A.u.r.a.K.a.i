@@ -22,7 +22,8 @@ class AndroidComposeConventionPlugin : Plugin<Project> {
      */
     override fun apply(target: Project) {
         with(target) {
-            // Apply the base library convention first
+            // Do NOT apply the Hilt Gradle plugin in library modules (AGP 8+/9+)
+            pluginManager.apply("com.android.library")
             pluginManager.apply("genesis.android.library")
 
             extensions.configure<LibraryExtension> {
