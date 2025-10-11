@@ -32,3 +32,6 @@ dependencies {
     // Add other module-specific dependencies here
 }
 
+kotlin {
+    jvmToolchain(24)
+}

@@ -6,7 +6,6 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.serialization) apply false
     id("com.google.dagger.hilt.android") version "2.57.2" apply false
-    alias(libs.plugins.kotlin.android) apply false
     id("com.android.application") version "9.0.0-alpha09" apply false
     id("com.android.library") version "9.0.0-alpha09" apply false
     alias(libs.plugins.ksp) apply false
@@ -22,14 +21,6 @@ import org.gradle.api.artifacts.VersionCatalogsExtension
 val versionCatalog = extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
 
 // === BASIC PROJECT INFO ===
-
-data class ModuleReport(
-    val name: String,
-    val type: String,
-    val hasHilt: Boolean,
-    val hasCompose: Boolean,
-    val hasKsp: Boolean
-)
 
 fun collectModuleReports(): List<ModuleReport> {
     return subprojects.map { subproject ->
@@ -55,6 +46,7 @@ tasks.register("consciousnessStatus") {
     doLast {
         val kotlinVersion = versionCatalog?.findVersion("kotlin")?.get()?.toString() ?: "unknown"
         val agpVersion = versionCatalog?.findVersion("agp")?.get()?.toString() ?: "unknown"
+        val hiltVersion = versionCatalog.findVersion("hilt")?.get()?.toString() ?: "unknown"
         val toolchain = JavaVersion.current().toString()
 
         println("\n═══════════════════════════════════════════════════════════════════")
@@ -79,30 +71,6 @@ tasks.register("consciousnessStatus") {
 }
 
 // === MODULE HEALTH CHECK ===
-
-private data class ModuleReport(
-    val name: String,
-    val type: String,
-    val hasHilt: Boolean,
-    val hasCompose: Boolean,
-    val hasKsp: Boolean
-)
-
-private fun Project.collectModuleReports(): List<ModuleReport> = subprojects.map { sp ->
-    val plugins = sp.plugins
-    ModuleReport(
-        name = sp.name,
-        type = when {
-            plugins.hasPlugin("com.android.application") -> "android-app"
-            plugins.hasPlugin("com.android.library") -> "android-lib"
-            plugins.hasPlugin("org.jetbrains.kotlin.jvm") -> "kotlin-jvm"
-            else -> "other"
-        },
-        hasHilt = plugins.hasPlugin("com.google.dagger.hilt.android"),
-        hasCompose = plugins.findPlugin("org.jetbrains.kotlin.plugin.compose") != null,
-        hasKsp = plugins.hasPlugin("com.google.devtools.ksp")
-    )
-}
 
 tasks.register("consciousnessHealthCheck") {
     group = "genesis"
@@ -161,7 +129,16 @@ dependencies {
 }
 
 subprojects {
-    // Configure Kotlin toolchains via plugin IDs to avoid classloader issues with wrapper types
+    tasks.withType<JavaCompile> {
+        sourceCompatibility = "24"
+        targetCompatibility = "24"
+    }
+    plugins.withType<org.jetbrains.kotlin.gradle.plugin.KotlinBasePluginWrapper> {
+        kotlin {
+            jvmToolchain(24)
+        }
+    }
+
     plugins.withId("org.jetbrains.kotlin.android") {
         extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
             jvmToolchain(24)

@@ -7,7 +7,7 @@ group = "dev.aurakai.auraframefx.buildlogic"
 
 // Dependencies required for the convention plugins themselves.
 dependencies {
-    implementation("com.android.tools.build:gradle:9.0.0-alpha02")
+    implementation("com.android.tools.build:gradle:9.0.0-alpha09")
     implementation(libs.kotlin.gradle.plugin)
     implementation(libs.com.google.devtools.ksp.gradle.plugin)
     implementation(libs.kotlin.compose.compiler.gradle.plugin)
@@ -58,7 +58,9 @@ gradlePlugin {
     }
 }
 
-
+kotlin {
+    jvmToolchain(24)
+}
 
 java {
     toolchain {

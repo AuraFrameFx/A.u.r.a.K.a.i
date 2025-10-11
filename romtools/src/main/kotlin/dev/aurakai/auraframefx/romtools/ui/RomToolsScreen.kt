@@ -49,8 +49,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dev.aurakai.auraframefx.romtools.BackupInfo
 import dev.aurakai.auraframefx.romtools.FakeRomToolsManager
 import dev.aurakai.auraframefx.romtools.RomCapabilities
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.compose.foundation.lazy.items
 import dev.aurakai.auraframefx.romtools.RomToolsManager
 
 /**
