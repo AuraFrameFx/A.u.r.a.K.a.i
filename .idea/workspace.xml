@@ -9,7 +9,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="feat: introduce Aurakai Android convention plugin and update build logic for AGP 9.0 compatibility&#10;&#10;- Add AurakaiAndroidConventionPlugin for modular convention support&#10;- Refactor build scripts to improve AGP 9.0 and Hilt compatibility&#10;- Update plugin application order and remove redundant plugins&#10;- Adjust Java/Kotlin toolchain configuration for JVM-only modules&#10;- Bump minSdk to 34 and update dependencies usage&#10;- Register new convention plugin in build logic&#10;- Clean up gradle.properties and settings" />
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="feat: introduce Aurakai Android convention plugin and update build logic for AGP 9.0 compatibility&#10;&#10;- Add AurakaiAndroidConventionPlugin for modular convention support&#10;- Refactor build scripts to improve AGP 9.0 and Hilt compatibility&#10;- Update plugin application order and remove redundant plugins&#10;- Adjust Java/Kotlin toolchain configuration for JVM-only modules&#10;- Bump minSdk to 34 and update dependencies usage&#10;- Register new convention plugin in build logic&#10;- Clean up gradle.properties and settings">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidComposeConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidComposeConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidLibraryConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidLibraryConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build.gradle.kts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -478,13 +484,13 @@
       <option name="project" value="LOCAL" />
       <updated>1760167846518</updated>
     </task>
-    <task id="LOCAL-00016" summary="refactor: Simplify regex patterns and remove unused tests in MarkdownFileValidationTest">
+    <task id="LOCAL-00016" summary="feat: introduce Aurakai Android convention plugin and update build logic for AGP 9.0 compatibility&#10;&#10;- Add AurakaiAndroidConventionPlugin for modular convention support&#10;- Refactor build scripts to improve AGP 9.0 and Hilt compatibility&#10;- Update plugin application order and remove redundant plugins&#10;- Adjust Java/Kotlin toolchain configuration for JVM-only modules&#10;- Bump minSdk to 34 and update dependencies usage&#10;- Register new convention plugin in build logic&#10;- Clean up gradle.properties and settings">
       <option name="closed" value="true" />
-      <created>1759706444912</created>
+      <created>1760172634506</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1759706444912</updated>
+      <updated>1760172634506</updated>
     </task>
     <task id="LOCAL-00017" summary="feat: Update dependencies and streamline packaging&#10;&#10;Updates the `kotlin-stdlib-jdk8` dependency from version `1.8.0` to `2.2.20` across the following modules:&#10;*   `module-b`&#10;*   `module-d`&#10;*   `module-e`&#10;*   `module-f`&#10;&#10;In the `app` module, the packaging options are refined by adding an exclusion for `META-INF/INDEX.LIST` and removing a `JavaCompile` configuration that set the `-Xlint:-deprecation` compiler argument.&#10;&#10;Additionally, the `logback-classic` runtime dependency is removed from the `data/api` module.">
       <option name="closed" value="true" />
@@ -806,7 +812,7 @@
       <option name="project" value="LOCAL" />
       <updated>1759899497515</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

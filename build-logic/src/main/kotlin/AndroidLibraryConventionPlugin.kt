@@ -28,6 +28,9 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
      */
     override fun apply(target: Project) {
         with(target) {
+            // Ensure the Android plugin is applied first
+            pluginManager.apply("com.android.library")
+
             // Apply Android library plugin and base plugin for Hilt + KSP
             with(pluginManager) {
                 apply("com.android.library")

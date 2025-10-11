@@ -22,6 +22,8 @@ class AndroidComposeConventionPlugin : Plugin<Project> {
      */
     override fun apply(target: Project) {
         with(target) {
+            // Ensure the Android plugin is applied first
+            pluginManager.apply("com.android.library")
             // Apply the base library convention first
             pluginManager.apply("genesis.android.library")
 

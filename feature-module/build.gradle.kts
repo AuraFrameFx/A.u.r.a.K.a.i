@@ -1,10 +1,7 @@
 // ==== GENESIS PROTOCOL - FEATURE MODULE ====
 // Primary feature module using basic plugins (avoiding AGP 9.0 Hilt issues)
 plugins {
-    id("genesis.android.base")
-    id("genesis.android.library")
     id("genesis.android.compose")
-
 }
 
 android {
@@ -37,13 +34,13 @@ dependencies {
     implementation(libs.bundles.compose.ui)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.hilt.android)
-    implementation(libs.hilt.compiler)
+    // implementation(libs.hilt.android) // TEMPORARILY REMOVED
+    // implementation(libs.hilt.compiler) // TEMPORARILY REMOVED
     implementation(libs.bundles.coroutines)
     implementation(libs.bundles.network)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    add("ksp", libs.androidx.room.compiler)
+    implementation(libs.androidx.room.compiler) // Use implementation for KSP processors in modern Gradle
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
     implementation(libs.timber)
@@ -52,11 +49,11 @@ dependencies {
     testImplementation(libs.bundles.testing.unit)
     testImplementation(libs.mockk.android)
     androidTestImplementation(libs.mockk.android)
-    testImplementation(libs.hilt.android.testing)
+    // testImplementation(libs.hilt.android.testing) // TEMPORARILY REMOVED
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.hilt.android.testing)
+    // androidTestImplementation(libs.hilt.android.testing) // TEMPORARILY REMOVED
     debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.androidx.compose.ui.tooling)
 }

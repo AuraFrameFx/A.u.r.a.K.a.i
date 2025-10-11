@@ -63,6 +63,10 @@ gradlePlugin {
             id = "genesis.yuki.android"
             implementationClass = "YukiHookAndroidConventionPlugin"
         }
+        register("openApiConvention") {
+            id = "genesis.openapi.convention"
+            implementationClass = "plugins.OpenApiConventionPlugin"
+        }
     }
 }
 
