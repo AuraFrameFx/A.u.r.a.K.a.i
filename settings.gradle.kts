@@ -1,5 +1,4 @@
 
-@file:Suppress("UnstableApiUsage", "JCenterRepositoryObsolete")
 
 // ===== AOSP-Re:Genesis - SETTINGS =====
 // Re:Genesis - Advanced Android OS Project

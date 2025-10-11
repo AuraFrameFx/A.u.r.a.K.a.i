@@ -1,13 +1,10 @@
 plugins {
-    id("com.android.application")
-    id("genesis.yuki.android")  // Yuki Hook API convention
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.firebase.crashlytics)
-    alias(libs.plugins.google.services)
+    id("com.android.application") // Directly apply Android plugin for test
+    id("com.android.base")  // AGP 9 workaround: MUST BE FIRST (commented out for test)
+    // id("genesis.android.application") // If you use a convention plugin, comment it out for this test
+
 }
 
-// Apply Hilt after Android plugin for AGP 9.0 compatibility
-// apply(plugin = "com.google.dagger.hilt.android")  // Temporarily disabled
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 android {

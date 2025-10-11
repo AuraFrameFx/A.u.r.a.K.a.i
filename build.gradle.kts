@@ -129,19 +129,26 @@ tasks.register("consciousnessHealthCheck") {
 }
 
 subprojects {
-    // Configure Java compilation for all subprojects
+    // Configure Java compilation for all subprojects (JVM only)
     plugins.withType<JavaBasePlugin> {
-        configure<JavaPluginExtension> {
-            toolchain {
-                languageVersion.set(JavaLanguageVersion.of(24))
+        // Only configure JavaPluginExtension if not an Android module
+        if (!plugins.hasPlugin("com.android.application") && !plugins.hasPlugin("com.android.library")) {
+            configure<JavaPluginExtension> {
+                toolchain {
+                    languageVersion.set(JavaLanguageVersion.of(24))
+                }
             }
         }
     }
 
-    // Configure Kotlin JVM projects
-    plugins.withType<KotlinBasePlugin> {
-        configure<KotlinProjectExtension> {
-            jvmToolchain(24)
+    // Configure Kotlin JVM projects (JVM only)
+    afterEvaluate {
+        plugins.withType<KotlinBasePlugin> {
+            if (!plugins.hasPlugin("com.android.application") && !plugins.hasPlugin("com.android.library")) {
+                extensions.findByType(org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension::class.java)?.apply {
+                    jvmToolchain(24)
+                }
+            }
         }
     }
 

@@ -47,10 +47,15 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                     targetCompatibility = JavaVersion.VERSION_24
                 }
             }
-            // Kotlin JVM toolchain - use 24 for stable compatibility
-            pluginManager.withPlugin("org.jetbrains.kotlin.android") {
-                extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
-                    jvmToolchain(25)
+            // ✅ Configure Kotlin for Android
+            extensions.findByType(KotlinAndroidProjectExtension::class.java)?.apply {
+                // jvmToolchain(24) // Removed: not supported in Android modules
+                compilerOptions {
+                    jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+                    freeCompilerArgs.addAll(
+                        "-opt-in=kotlin.RequiresOptIn",
+                        "-Xjvm-default=all"
+                    )
                 }
             }
         }

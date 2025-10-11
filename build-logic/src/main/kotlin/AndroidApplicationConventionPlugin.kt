@@ -103,9 +103,9 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 }
             }
 
-            pluginManager.withPlugin("org.jetbrains.kotlin.android") {
-                extensions.getByType<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension>().jvmToolchain(24)
-            }
+//            pluginManager.withPlugin("org.jetbrains.kotlin.android") {
+//                extensions.getByType<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension>().jvmToolchain(24)
+//            }
         }
     }
 }
