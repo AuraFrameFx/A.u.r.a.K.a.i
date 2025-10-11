@@ -1,39 +1,11 @@
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
 plugins {
     id("com.android.library")
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.dokka)
-
-        // Create a basic documentation index file
-        val indexFile = docsDir.resolve("index.html")
-
-        // Fix: Using properly imported LocalDateTime and DateTimeFormatter
-        val currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
-
-        indexFile.writeText(
-            """
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <title>Benchmark Module API Documentation</title>
-                <style>
-                    body { font-family: Arial, sans-serif; margin: 20px; }
-                    h1 { color: #4285f4; }
-                </style>
-            </head>
-            <body>
-                <h1>Benchmark Module API Documentation</h1>
-                <p>Generated on ${currentTime}</p>
-                <p>JDK Version: 24</p>
-                <h2>Module Overview</h2>
-                <p>Performance testing for AI consciousness operations.</p>
-            </body>
-            </html>
-        """.trimIndent()
-        )
-
-        logger.lifecycle("✅ Documentation generated at: ${indexFile.absolutePath}")
-    }
 }
 
 java {
@@ -44,6 +16,11 @@ java {
 
 android {
     namespace = "dev.aurakai.auraframefx.benchmark"
+    
+    defaultConfig {
+        multiDexEnabled = true
+    }
+    
     buildTypes {
         maybeCreate("benchmark")
         getByName("benchmark") {
@@ -61,16 +38,7 @@ android {
         isCoreLibraryDesugaringEnabled = true
     }
 
-    // Modern Kotlin compilerOptions DSL (replaces deprecated kotlinOptions)
-    kotlin {
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
-            freeCompilerArgs.addAll(
-                "-opt-in=kotlin.RequiresOptIn",
-                "-Xjvm-default=all"
-            )
-        }
-    }
+    // Kotlin options configured by convention plugins
 
     buildFeatures {
         buildConfig = true

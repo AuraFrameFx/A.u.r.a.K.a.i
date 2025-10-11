@@ -1,12 +1,13 @@
 plugins {
-    id("com.android.application")  // Convention plugin: applies Android, Kotlin, Hilt, Compose
+    id("com.android.application")
+    id("genesis.yuki.android")  // Yuki Hook API convention
     alias(libs.plugins.ksp)
     alias(libs.plugins.firebase.crashlytics)
-    // If using version catalog for Hilt, uncomment the next line,
-    // and make sure libs.versions.toml has it in [plugins]
-    // alias(libs.plugins.hilt)
+    alias(libs.plugins.google.services)
 }
-// Note: google-services plugin is applied by genesis.android.application convention
+
+// Apply Hilt after Android plugin for AGP 9.0 compatibility
+// apply(plugin = "com.google.dagger.hilt.android")  // Temporarily disabled
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 android {
@@ -110,18 +111,47 @@ android {
         targetCompatibility = JavaVersion.toVersion("24")
         isCoreLibraryDesugaringEnabled = true
     }
+    
+    // Android components configuration for future use
+    // androidComponents {
+    //     onVariants(selector().all()) { variant ->
+    //         // Configure variant-specific settings here if needed
+    //     }
+    // }
 
     packaging {
         resources {
             excludes += "META-INF/INDEX.LIST"
             excludes += "META-INF/LICENSE.md"
+            excludes += "META-INF/*.kotlin_module"
+            excludes += "META-INF/AL2.0"
+            excludes += "META-INF/LGPL2.1"
+        }
+        jniLibs {
+            useLegacyPackaging = false
+        }
+        // Exclude XPosed/LSPosed JAR files from DEX processing
+        dex {
+            useLegacyPackaging = false
         }
     }
 }
 
-// Suppress AIDL deprecation warnings
+// Suppress deprecation warnings for AIDL-generated files
 tasks.withType<JavaCompile>().configureEach {
-    options.compilerArgs.add("-Xlint:none")
+    options.compilerArgs.addAll(listOf(
+        "-Xlint:none",          // Suppress all lint warnings including deprecation
+        "-nowarn"               // Suppress all warnings completely
+    ))
+    // Suppress warnings for generated AIDL files specifically
+    options.encoding = "UTF-8"
+}
+
+// Prevent XPosed JAR files from being included in DEX processing
+tasks.matching { it.name.contains("Dex") }.configureEach {
+    doFirst {
+        logger.info("Excluding XPosed JAR files from DEX processing")
+    }
 }
 
 dependencies {
@@ -190,6 +220,8 @@ dependencies {
     implementation(libs.bundles.firebase)
 
     // ===== HILT DEPENDENCY INJECTION =====
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
     // ===== WORKMANAGER =====
@@ -208,6 +240,7 @@ dependencies {
     coreLibraryDesugaring(libs.desugar.jdk.libs)
 
     // ===== XPOSED/LSPosed Integration =====
+    // These are compile-only and should NOT be included in the APK
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))
 

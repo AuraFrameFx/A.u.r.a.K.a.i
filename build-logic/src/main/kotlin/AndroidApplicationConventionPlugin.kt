@@ -24,9 +24,12 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
+                apply("com.google.dagger.hilt.android")
                 apply("com.android.application")
                 apply("org.jetbrains.kotlin.plugin.compose")
-                apply("genesis.android.base") // Apply Hilt + KSP
+               // Apply Hilt directly for app
+                apply("com.google.devtools.ksp")
+                apply("genesis.android.base") // Base configuration
             }
 
             pluginManager.withPlugin("com.android.application") {

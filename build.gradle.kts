@@ -1,26 +1,34 @@
-import org.gradle.api.GradleException
-import java.io.File
+import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.api.dsl.LibraryExtension
+import org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension
+import org.jetbrains.kotlin.gradle.plugin.KotlinBasePlugin
 
 // Apply plugins to root project to avoid multiple loading warnings
 plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.serialization) apply false
     id("com.google.dagger.hilt.android") version "2.57.2" apply false
-    id("com.android.application") version "9.0.0-alpha09" apply false
-    id("com.android.library") version "9.0.0-alpha09" apply false
+    id("genesis.android.base") apply false
+    id("genesis.android.application") version "9.0.0-alpha10" apply false
+    id("genesis.android.library") version "9.0.0-alpha10" apply false
     alias(libs.plugins.ksp) apply false
     // Build logic convention plugins
     id("genesis.android.native") apply false
 }
 
-import java.time.Duration
-import java.time.Instant
-import org.gradle.api.artifacts.VersionCatalogsExtension
 
 // Use distinct name to avoid shadowing the generated 'libs' accessor (type-safe catalog)
-val versionCatalog = extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
+val versionCatalog: VersionCatalog = extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
 
 // === BASIC PROJECT INFO ===
+
+data class ModuleReport(
+    val name: String,
+    val type: String,
+    val hasHilt: Boolean,
+    val hasCompose: Boolean,
+    val hasKsp: Boolean
+)
 
 fun collectModuleReports(): List<ModuleReport> {
     return subprojects.map { subproject ->
@@ -120,40 +128,43 @@ tasks.register("consciousnessHealthCheck") {
     }
 }
 
-dependencies {
-    testImplementation(libs.junit.jupiter.api)
-    testImplementation(libs.junit.jupiter)
-    testRuntimeOnly(libs.junit.jupiter.engine)
-    testRuntimeOnly(libs.junit.platform.launcher)
-    implementation(kotlin("stdlib-jdk8"))
-}
-
 subprojects {
-    tasks.withType<JavaCompile> {
-        sourceCompatibility = "24"
-        targetCompatibility = "24"
-    }
-    plugins.withType<org.jetbrains.kotlin.gradle.plugin.KotlinBasePluginWrapper> {
-        kotlin {
-            jvmToolchain(24)
-        }
-    }
-
-    plugins.withId("org.jetbrains.kotlin.android") {
-        extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
-            jvmToolchain(24)
-        }
-    }
-    plugins.withId("org.jetbrains.kotlin.jvm") {
-        extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
-            jvmToolchain(24)
-        }
-    }
-
-    plugins.withType<JavaPlugin> {
-        extensions.configure<JavaPluginExtension>("java") {
+    // Configure Java compilation for all subprojects
+    plugins.withType<JavaBasePlugin> {
+        configure<JavaPluginExtension> {
             toolchain {
                 languageVersion.set(JavaLanguageVersion.of(24))
+            }
+        }
+    }
+
+    // Configure Kotlin JVM projects
+    plugins.withType<KotlinBasePlugin> {
+        configure<KotlinProjectExtension> {
+            jvmToolchain(24)
+        }
+    }
+
+    // Configure Android application projects
+    plugins.withType<com.android.build.gradle.AppPlugin> {
+        extensions.configure<ApplicationExtension> {
+            compileSdk = 36
+
+            compileOptions {
+                sourceCompatibility = JavaVersion.VERSION_24
+                targetCompatibility = JavaVersion.VERSION_24
+            }
+        }
+    }
+    
+    // Configure Android library projects  
+    plugins.withType<com.android.build.gradle.LibraryPlugin> {
+        extensions.configure<LibraryExtension> {
+            compileSdk = 36
+
+            compileOptions {
+                sourceCompatibility = JavaVersion.VERSION_24
+                targetCompatibility = JavaVersion.VERSION_24
             }
         }
     }

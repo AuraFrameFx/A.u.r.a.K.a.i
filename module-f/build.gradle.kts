@@ -1,7 +1,6 @@
 // GENESIS PROTOCOL - MODULE F
 plugins {
-    id("com.android.compose")
-    alias(libs.plugins.compose.compiler)
+    id("com.android.library")
     alias(libs.plugins.ksp)
 }
 
@@ -11,13 +10,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
-    }
-
-    kotlin {
-        jvmToolchain(24)
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
-        }
     }
 }
 

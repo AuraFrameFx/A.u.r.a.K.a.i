@@ -1,17 +1,20 @@
 plugins {
-    id("genesis.android.compose")
-    alias(libs.plugins.compose.compiler)
-    id("genesis.android.native")
+    id("com.android.library")
     alias(libs.plugins.ksp)
-    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
+    // Note: Hilt and compose plugins managed manually to avoid AGP 9.0 conflicts
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.dataveinoraclenative"
+    compileSdk = 36
     ndkVersion = "28.2.13676358"
 
     defaultConfig {
         minSdk = 33
+    }
+    
+    buildFeatures {
+        compose = true
     }
     lint {
         // Disable lint due to oversized test files causing StackOverflow

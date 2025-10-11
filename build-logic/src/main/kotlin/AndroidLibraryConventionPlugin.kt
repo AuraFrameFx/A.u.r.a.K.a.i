@@ -26,10 +26,9 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
         with(target) {
             // Apply Android library plugin first
             pluginManager.apply("com.android.library")
-            // Apply Hilt and KSP plugins after Android plugin
-            pluginManager.apply("com.google.dagger.hilt.android")
+            // Apply KSP only (Hilt disabled for now in libraries)
             pluginManager.apply("com.google.devtools.ksp")
-            // Apply base configuration (configuration-only)
+            // Apply base configuration
             pluginManager.apply("genesis.android.base")
 
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")

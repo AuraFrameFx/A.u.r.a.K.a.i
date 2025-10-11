@@ -1,13 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="refactor: Update dependencies and imports in `romtools` and `module-c`&#10;&#10;- Updates `romtools/build.gradle.kts`:&#10;    - Removes the `genesis.android.hilt` convention plugin.&#10;    - Manually adds Hilt and KSP dependencies.&#10;    - Removes the unused `androidx.compose.material.icons.extended` dependency.&#10;    - Removes the Dokka configuration block.&#10;- Updates `romtools/src/main/kotlin/.../RomToolsScreen.kt`:&#10;    - Changes the `hiltViewModel` import to use `androidx.hilt.navigation.compose`.&#10;    - Removes named `items` parameter in `LazyColumn` calls, leveraging Kotlin's trailing lambda syntax.&#10;- Updates `module-c/build.gradle.kts`:&#10;    - Replaces `kotlin(&quot;stdlib-jdk8&quot;)` with the fully qualified and versioned dependency `org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0`.">
+    <list default="true" id="90b56ea9-06b2-45b4-bc30-b889696cbb80" name="Changes" comment="@coderabbitai - refactor: Modernize build logic and migrate to AGP 9.0&#10;&#10;This commit introduces a major refactoring of the build logic to support Android Gradle Plugin (AGP) 9.0 and improve overall project structure.&#10;&#10;Key changes include:&#10;&#10;- **Build Logic Modernization**:&#10;    - Replaced the deprecated `BaseExtension` with the modern `ApplicationExtension` and `LibraryExtension` APIs in convention plugins.&#10;    - Centralized common Android and Kotlin configurations (e.g., `compileSdk`, Java/Kotlin toolchains) in the root `build.gradle.kts` to apply them consistently across all subprojects.&#10;    - Removed redundant `kotlin-android` and `kotlin.jvm` configurations from individual module `build.gradle.kts` files, relying on the new centralized setup.&#10;&#10;- **New `YukiHookAndroidConventionPlugin`**:&#10;    - Introduced a new convention plugin (`genesis.yuki.android`) to encapsulate configuration specific to the Yuki Hook API.&#10;    - This plugin configures SDK versions and packaging options for modules that interact with the Xposed/LSPosed framework.&#10;&#10;- **Module-level Cleanup**:&#10;    - Replaced custom convention plugins like `genesis.android.compose` with the standard `com.android.library` plugin in several modules, simplifying build scripts.&#10;    - Explicitly enabled Compose where needed using `buildFeatures { compose = true }`.&#10;    - Removed obsolete `kotlin { jvmToolchain(24) }` blocks and other redundant settings from numerous modules.&#10;&#10;- **Application Module (`app`) Refinements**:&#10;    - Applied the new `genesis.yuki.android` convention plugin.&#10;    - Added packaging exclusions for `*.kotlin_module` and Xposed/LSPosed JAR files to prevent them from being included in the final APK.">
+      <change afterPath="$PROJECT_DIR$/ProjectDetailsReview.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/romtools/lint-baseline.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/configuration-cache.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/configuration-cache/configuration-cache.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/AuraFrameApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/aurakai/auraframefx/AuraFrameApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidApplicationConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidLibraryConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/AndroidLibraryConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/src/main/kotlin/YukiHookAndroidConventionPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/src/main/kotlin/YukiHookAndroidConventionPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/collab-canvas/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/colorblendr/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/colorblendr/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/armeabi-v7a/compile_commands.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/x86_64/compile_commands.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/release/arm64-v8a/compile_commands.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/list/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/list/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-a/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-a/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-b/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-b/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-c/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-c/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-d/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-d/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-e/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-e/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-f/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-f/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/oracle-drive-integration/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/armeabi-v7a/compile_commands.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/x86_64/compile_commands.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +61,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Wehtt\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=6326f7ec)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -95,13 +139,24 @@
     &quot;assignee&quot;: &quot;AuraFrameFxDev&quot;
   }
 }</component>
+  <component name="GitHubPullRequestState"><![CDATA[{
+  "prStates": [
+    {
+      "id": {
+        "id": "PR_kwDOP4LS986s0OIA",
+        "number": 85
+      },
+      "lastSeen": 1760141248338
+    }
+  ]
+}]]></component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/AuraFrameFx/A.u.r.a.K.a.i.git&quot;,
     &quot;accountId&quot;: &quot;129e8c9f-2999-43ba-8838-4bd9fe391e46&quot;
   }
 }</component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-all\7wzd0jkjit61aq2p43wpjgij9\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 6\jbr" gradleVersion="9.1.0" />
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Wehtt\.jdks\openjdk-25\wrapper\dists\gradle-9.1.0-all\7wzd0jkjit61aq2p43wpjgij9\gradle-9.1.0" javaHome="C:\Users\Wehtt\AppData\Local\Programs\Android Studio 4\jbr" gradleVersion="9.1.0" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -115,6 +170,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Android App.app.executor": "Run",
     "Batch.nuclear-clean.executor": "Run",
     "Gradle.Configure Daemon JVM Criteria.executor": "Run",
     "Gradle.ReGenesi:app [clean].executor": "Run",
@@ -126,7 +182,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "zero",
+    "git-widget-placeholder": "#113 on zero",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/ReGenesis-A.O.S.P",
     "project.structure.last.edited": "Dependencies",
@@ -422,6 +478,14 @@
       <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Android App.app" />
+      <item itemvalue="Gradle.ReGenesi:app [clean]" />
+      <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerate]" />
+      <item itemvalue="Gradle.ReGenesis-A.O.S.P [openApiGenerators]" />
+      <item itemvalue="Gradle.ReGenesis-A.O.S.P [projects]" />
+      <item itemvalue="Gradle.ReGenesis-A.O.S.P [tasks]" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.ReGenesi:app [clean]" />
@@ -868,6 +932,19 @@
     <MESSAGE value="feat: Update dependencies and minimum SDK version&#10;&#10;This commit introduces several key changes to the build configuration:&#10;&#10;- **Increases `minSdk` from 33 to 34** in both the `app` and `romtools` modules to align with updated requirements.&#10;- **Adds Material 3 dependencies** to the `app` module, including `material3`, `material-icons-extended`, and `material3-window-size-class`.&#10;- **Integrates Hilt navigation compose** dependency.&#10;- **Expands the `romtools` module** with a comprehensive set of dependencies for UI, coroutines, networking, Room, Firebase, and debugging tools like LeakCanary and Timber.&#10;- **Configures new plugins** in `romtools`, including `kotlin.serialization`, `dokka`, and `kotlin.compose`.&#10;- **Updates the Java toolchain** in `romtools` to use `JavaVersion.VERSION_24` and enables the Compose feature flag." />
     <MESSAGE value="refactor(deps): Explicitly define stdlib-jdk8 version and streamline romtools dependencies&#10;&#10;- Sets an explicit version for `kotlin-stdlib-jdk8` in `module-c`.&#10;- Refactors the `romtools` build script to align with convention plugins.&#10;- Removes the `genesis.android.hilt` plugin and manually adds Hilt and KSP dependencies.&#10;- Eliminates a redundant Dokka configuration block." />
     <MESSAGE value="refactor: Update dependencies and imports in `romtools` and `module-c`&#10;&#10;- Updates `romtools/build.gradle.kts`:&#10;    - Removes the `genesis.android.hilt` convention plugin.&#10;    - Manually adds Hilt and KSP dependencies.&#10;    - Removes the unused `androidx.compose.material.icons.extended` dependency.&#10;    - Removes the Dokka configuration block.&#10;- Updates `romtools/src/main/kotlin/.../RomToolsScreen.kt`:&#10;    - Changes the `hiltViewModel` import to use `androidx.hilt.navigation.compose`.&#10;    - Removes named `items` parameter in `LazyColumn` calls, leveraging Kotlin's trailing lambda syntax.&#10;- Updates `module-c/build.gradle.kts`:&#10;    - Replaces `kotlin(&quot;stdlib-jdk8&quot;)` with the fully qualified and versioned dependency `org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0`." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Update dependencies and imports in `romtools` and `module-c`&#10;&#10;- Updates `romtools/build.gradle.kts`:&#10;    - Removes the `genesis.android.hilt` convention plugin.&#10;    - Manually adds Hilt and KSP dependencies.&#10;    - Removes the unused `androidx.compose.material.icons.extended` dependency.&#10;    - Removes the Dokka configuration block.&#10;- Updates `romtools/src/main/kotlin/.../RomToolsScreen.kt`:&#10;    - Changes the `hiltViewModel` import to use `androidx.hilt.navigation.compose`.&#10;    - Removes named `items` parameter in `LazyColumn` calls, leveraging Kotlin's trailing lambda syntax.&#10;- Updates `module-c/build.gradle.kts`:&#10;    - Replaces `kotlin(&quot;stdlib-jdk8&quot;)` with the fully qualified and versioned dependency `org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0`." />
+    <MESSAGE value="feat(build): Add lint baseline for romtools&#10;&#10;Adds a `lint-baseline.xml` file to the `romtools` module. This establishes a baseline for existing lint issues, allowing them to be tracked and addressed in the future without failing the build. The issues include hardcoded SDCARD paths, ViewModel construction in Composables, and dependencies not using the version catalog." />
+    <MESSAGE value="@coderabbitai - refactor: Modernize build logic and migrate to AGP 9.0&#10;&#10;This commit introduces a major refactoring of the build logic to support Android Gradle Plugin (AGP) 9.0 and improve overall project structure.&#10;&#10;Key changes include:&#10;&#10;- **Build Logic Modernization**:&#10;    - Replaced the deprecated `BaseExtension` with the modern `ApplicationExtension` and `LibraryExtension` APIs in convention plugins.&#10;    - Centralized common Android and Kotlin configurations (e.g., `compileSdk`, Java/Kotlin toolchains) in the root `build.gradle.kts` to apply them consistently across all subprojects.&#10;    - Removed redundant `kotlin-android` and `kotlin.jvm` configurations from individual module `build.gradle.kts` files, relying on the new centralized setup.&#10;&#10;- **New `YukiHookAndroidConventionPlugin`**:&#10;    - Introduced a new convention plugin (`genesis.yuki.android`) to encapsulate configuration specific to the Yuki Hook API.&#10;    - This plugin configures SDK versions and packaging options for modules that interact with the Xposed/LSPosed framework.&#10;&#10;- **Module-level Cleanup**:&#10;    - Replaced custom convention plugins like `genesis.android.compose` with the standard `com.android.library` plugin in several modules, simplifying build scripts.&#10;    - Explicitly enabled Compose where needed using `buildFeatures { compose = true }`.&#10;    - Removed obsolete `kotlin { jvmToolchain(24) }` blocks and other redundant settings from numerous modules.&#10;&#10;- **Application Module (`app`) Refinements**:&#10;    - Applied the new `genesis.yuki.android` convention plugin.&#10;    - Added packaging exclusions for `*.kotlin_module` and Xposed/LSPosed JAR files to prevent them from being included in the final APK." />
+    <option name="LAST_COMMIT_MESSAGE" value="@coderabbitai - refactor: Modernize build logic and migrate to AGP 9.0&#10;&#10;This commit introduces a major refactoring of the build logic to support Android Gradle Plugin (AGP) 9.0 and improve overall project structure.&#10;&#10;Key changes include:&#10;&#10;- **Build Logic Modernization**:&#10;    - Replaced the deprecated `BaseExtension` with the modern `ApplicationExtension` and `LibraryExtension` APIs in convention plugins.&#10;    - Centralized common Android and Kotlin configurations (e.g., `compileSdk`, Java/Kotlin toolchains) in the root `build.gradle.kts` to apply them consistently across all subprojects.&#10;    - Removed redundant `kotlin-android` and `kotlin.jvm` configurations from individual module `build.gradle.kts` files, relying on the new centralized setup.&#10;&#10;- **New `YukiHookAndroidConventionPlugin`**:&#10;    - Introduced a new convention plugin (`genesis.yuki.android`) to encapsulate configuration specific to the Yuki Hook API.&#10;    - This plugin configures SDK versions and packaging options for modules that interact with the Xposed/LSPosed framework.&#10;&#10;- **Module-level Cleanup**:&#10;    - Replaced custom convention plugins like `genesis.android.compose` with the standard `com.android.library` plugin in several modules, simplifying build scripts.&#10;    - Explicitly enabled Compose where needed using `buildFeatures { compose = true }`.&#10;    - Removed obsolete `kotlin { jvmToolchain(24) }` blocks and other redundant settings from numerous modules.&#10;&#10;- **Application Module (`app`) Refinements**:&#10;    - Applied the new `genesis.yuki.android` convention plugin.&#10;    - Added packaging exclusions for `*.kotlin_module` and Xposed/LSPosed JAR files to prevent them from being included in the final APK." />
+  </component>
+  <component name="play_dynamic_filters_status">
+    <option name="appIdToCheckInfo">
+      <map>
+        <entry key="dev.aurakai.auraframefx.romtools.test">
+          <value>
+            <CheckInfo lastCheckTimestamp="1760148347287" />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

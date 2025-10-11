@@ -4,7 +4,7 @@
 plugins {
     id("com.android.library")
     alias(libs.plugins.ksp)
-    alias(libs.plugins.compose.compiler)
+    // Note: compose.compiler plugin applied by convention plugins
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 

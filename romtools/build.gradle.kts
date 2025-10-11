@@ -16,16 +16,15 @@ android {
     buildFeatures {
         compose = true
     }
-}
-
-    kotlin {
-        jvmToolchain(24)
+    lint {
+        baseline = file("lint-baseline.xml")
     }
+}
 
 val romToolsOutputDirectory: DirectoryProperty =
     project.objects.directoryProperty().convention(layout.buildDirectory.dir("rom-tools"))
 
-    dependencies {
+dependencies {
         api(project(":core-module"))
         implementation(project(":secure-comm"))
         implementation(libs.androidx.core.ktx)
@@ -59,22 +58,23 @@ val romToolsOutputDirectory: DirectoryProperty =
     }
 
 // Copy task
-    tasks.register<Copy>("copyRomTools") {
-        from("src/main/resources")
-        into(romToolsOutputDirectory)
-        include("**/*.so", "**/*.bin", "**/*.img", "**/*.jar")
-        includeEmptyDirs = false
-        doFirst { romToolsOutputDirectory.get().asFile.mkdirs(); logger.lifecycle("📁 ROM tools directory: ${romToolsOutputDirectory.get().asFile}") }
-        doLast { logger.lifecycle("✅ ROM tools copied to: ${romToolsOutputDirectory.get().asFile}") }
-    }
+tasks.register<Copy>("copyRomTools") {
+    from("src/main/resources")
+    into(romToolsOutputDirectory)
+    include("**/*.so", "**/*.bin", "**/*.img", "**/*.jar")
+    includeEmptyDirs = false
+    doFirst { romToolsOutputDirectory.get().asFile.mkdirs(); logger.lifecycle("📁 ROM tools directory: ${romToolsOutputDirectory.get().asFile}") }
+    doLast { logger.lifecycle("✅ ROM tools copied to: ${romToolsOutputDirectory.get().asFile}") }
+}
 
 // Verification task
-    tasks.register("verifyRomTools") {
-        dependsOn("copyRomTools")
-    }
+tasks.register("verifyRomTools") {
+    dependsOn("copyRomTools")
+}
 
-    tasks.named("build") { dependsOn("verifyRomTools") }
+tasks.named("build") { dependsOn("verifyRomTools") }
 
-    tasks.register("romStatus") {
-        group = "aegenesis"; doLast { println("🛠️ ROM TOOLS - Ready (Java 24)") }
-    }
+tasks.register("romStatus") {
+    group = "aegenesis"
+    doLast { println("🛠️ ROM TOOLS - Ready (Java 24)") }
+}

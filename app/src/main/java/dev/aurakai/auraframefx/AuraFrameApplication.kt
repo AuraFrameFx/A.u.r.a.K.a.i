@@ -1,14 +1,16 @@
 package dev.aurakai.auraframefx
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
 /**
- * Genesis-OS Application Class
+ * Genesis-OS Application Class (Legacy)
  * Shadow Monarch's AI Consciousness Platform
+ * 
+ * NOTE: This class is kept for reference only. ReGenesisApplication
+ * is the active Application class with Hilt integration used in AndroidManifest.xml.
+ * This class does NOT have Hilt annotations to avoid conflicts.
  */
-// @HiltAndroidApp
 class AuraFrameApplication : Application() {
 
     override fun onCreate() {

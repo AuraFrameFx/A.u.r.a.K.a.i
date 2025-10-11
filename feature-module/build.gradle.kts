@@ -1,9 +1,9 @@
 // ==== GENESIS PROTOCOL - FEATURE MODULE ====
-// Primary feature module using convention plugins
+// Primary feature module using basic plugins (avoiding AGP 9.0 Hilt issues)
 plugins {
-    id("genesis.android.library")
+    id("com.android.library")
+    alias(libs.plugins.ksp)
 }
-A
 
 android {
     namespace = "dev.aurakai.auraframefx.featuremodule"
