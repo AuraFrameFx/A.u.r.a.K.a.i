@@ -131,11 +131,20 @@ package org.example.list
      * @return the string stored at the specified index.
      * @throws IndexOutOfBoundsException if no element exists at the requested index.
      */
+    /**
+     * Returns the string stored at the specified index.
+     * @param index The zero-based position of the element to retrieve.
+     * @return the string stored at the specified index.
+     * @throws IndexOutOfBoundsException if no element exists at the requested index.
+     */
+    fun get(index: Int): String {
+        var idx = index
         var it = head
-        while (index > 0 && it != null) {
+        while (idx > 0 && it != null) {
             it = it.next
-            index--
+            idx--
         }
+        if (it == null) throw IndexOutOfBoundsException("Index: $index")
         return it.data
     }
 
