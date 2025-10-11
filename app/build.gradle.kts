@@ -184,11 +184,10 @@ dependencies {
 
     // ===== HILT DEPENDENCY INJECTION =====
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler) // Use KSP for Hilt annotation processor
+    implementation(libs.hilt.compiler) // Use KSP for Hilt annotation processor
     implementation(libs.hilt.navigation.compose)
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.hilt.work)
-    ksp(libs.hilt.work)  // Annotation processor for Hilt WorkManager integration
 
     // ===== UTILITIES =====
     implementation(libs.timber)

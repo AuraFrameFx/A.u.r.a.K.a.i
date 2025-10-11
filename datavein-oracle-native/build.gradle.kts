@@ -6,10 +6,11 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.dataveinoraclenative"
-    ndkVersion = "28.2.13676358"
+    compileSdk = libs.versions.compileSdk.get().toInt()
+    ndkVersion = libs.versions.ndk.get()
 
     defaultConfig {
-        minSdk = 34
+        minSdk = libs.versions.minSdk.get().toInt()
         externalNativeBuild {
             cmake {
                 abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64")

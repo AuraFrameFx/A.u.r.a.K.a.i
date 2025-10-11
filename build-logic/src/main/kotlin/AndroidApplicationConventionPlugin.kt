@@ -14,10 +14,12 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
+                apply("com.google.dagger.hilt.android")  // Apply Hilt first for AGP 9.0
                 apply("com.android.application")
-                apply("genesis.android.base")  // Applies Hilt + KSP at the right time
-                apply("com.google.gms.google-services")
+                apply("org.jetbrains.kotlin.android")
                 apply("org.jetbrains.kotlin.plugin.compose")
+                apply("com.google.devtools.ksp")
+                apply("com.google.gms.google-services")
             }
 
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
@@ -27,7 +29,7 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
                     val compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
                     this.compileSdk = compileSdk
                     defaultConfig.targetSdk = compileSdk
-                    defaultConfig.minSdk = 34
+                    defaultConfig.minSdk = libs.findVersion("minSdk").get().toString().toInt()
                     defaultConfig.testInstrumentationRunner =
                         "androidx.test.runner.AndroidJUnitRunner"
                     defaultConfig.vectorDrawables.useSupportLibrary = true
