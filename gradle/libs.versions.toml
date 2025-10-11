@@ -1,6 +1,8 @@
 [versions]
 agp = "9.0.0-alpha10"
 compileSdk = "36"
+ktorSerializationKotlinxJson = "3.3.1"
+ktorClientOkhttp = "3.3.1"
 minSdk = "34"
 targetSdk = "36"
 ndk = "28.2.13676358"
@@ -11,7 +13,7 @@ gradleToolingApi = "9.1.0"
 hiltAndroidGradlePlugin = "2.57.2"
 junitJupiterParams = "6.0.0"
 kotlin = "2.3.0-Beta1"
-kotlinGradlePlugin = "2.1.20"
+kotlinGradlePlugin = "2.2.20"
 kotlinLoggingJvm = "3.0.5"
 ksp = "2.2.21-RC-2.0.4"
 desugar_jdk_libs = "2.1.5"
@@ -91,7 +93,7 @@ turbine = "1.2.1"
 # ===== SECURITY =====
 bcprov = "1.82"
 junitVersion = "4.13.2"
-junitJupiterVersion = "5.13.4"
+junitJupiterVersion = "6.0.0"
 material3 = "1.4.0"
 
 
@@ -174,6 +176,8 @@ testing-android = [
 androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
 com-google-devtools-ksp-gradle-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "comGoogleDevtoolsKspGradlePlugin" }
 google-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
+ktorClientOkhttp = { module = "io.ktor:ktor-client-okhttp", version = "3.3.1" }
+ktorSerializationKotlinxJson = { module = "io.ktor:ktor-serialization-kotlinx-json", version = "3.3.1" }
 openapi-generator-gradle-plugin = { group = "org.openapitools", name = "openapi-generator-gradle-plugin", version.ref = "openapiGeneratorGradlePlugin" }
 
 # ===== YUKIHOOK & XPOSED =====
@@ -185,9 +189,9 @@ kotlin-compose-compiler-gradle-plugin = { module = "org.jetbrains.kotlin:compose
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
 kotlin-logging-jvm = { module = "io.github.microutils:kotlin-logging-jvm", version.ref = "kotlinLoggingJvm" }
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
-ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktorClientAuth" }
-ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorClientCio" }
-ktor-client-contentnegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClientContentNegotiation" }
+ktorClientAuth = { module = "io.ktor:ktor-client-auth", version.ref = "ktorClientAuth" }
+ktorClientCio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorClientCio" }
+ktorClientContentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClientContentNegotiation" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logbackClassic" }
 moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }

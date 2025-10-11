@@ -85,11 +85,10 @@ dependencies {
     // Core dependencies for Kotlin
     implementation(kotlin("stdlib"))
     implementation(libs.kotlin.reflect)
-
-    implementation(libs.ktor.client.cio)
-    implementation(libs.ktor.client.auth)
-    implementation(libs.ktor.client.contentnegotiation)
-
+    implementation(libs.ktorClientContentNegotiation)
+    implementation(libs.ktorSerializationKotlinxJson)
+    implementation(libs.ktorClientOkhttp)
+    implementation(libs.ktorClientAuth)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.datetime)
     implementation(libs.kotlinx.coroutines.core)
