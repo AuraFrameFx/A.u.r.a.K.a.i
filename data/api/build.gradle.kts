@@ -67,7 +67,7 @@ tasks.withType<KotlinCompile>().configureEach {
         jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
         freeCompilerArgs.addAll(
             "-opt-in=kotlin.time.ExperimentalTime",
-            "-jvm-default=all" // Updated flag as -Xjvm-default is deprecated
+            "-jvm-default=all-compatibility" // Use supported mode for -jvm-default
         )
     }
 }

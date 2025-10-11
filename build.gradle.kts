@@ -199,3 +199,10 @@ if (file("nuclear-clean.gradle.kts").exists()) {
         }
     }
 }
+
+configurations.all {
+    exclude(group = "com.intellij", module = "annotations")
+    resolutionStrategy {
+        force("org.jetbrains:annotations:23.0.0")
+    }
+}
