@@ -16,7 +16,11 @@ import org.example.list.LinkedList
 
 class StringUtilsTest {
 
-        val list = LinkedList()
+    // Helper to create a LinkedList<String> from vararg strings
+    private fun listOfStrings(vararg items: String): LinkedList<String> {
+        val list = LinkedList<String>()
+        for (item in items) {
+            list.add(item)
         }
         return list
     }
