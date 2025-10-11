@@ -1,23 +1,32 @@
-import com.android.build.api.dsl.ApplicationExtension
-import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalogsExtension
+import com.android.build.api.dsl.ApplicationExtension
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.tasks.Delete
 import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.register
-import org.gradle.kotlin.dsl.typeOf
-import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
+import org.gradle.kotlin.dsl.configure
+import org.gradle.api.JavaVersion
+import org.gradle.api.artifacts.VersionCatalogsExtension
 
-internal class AndroidApplicationConventionPlugin : Plugin<Project> {
+class AndroidApplicationConventionPlugin : Plugin<Project> {
+    /**
+     * Applies a standard Android application convention to the given Gradle project.
+     *
+     * Sets up the Android application and Kotlin Compose plugins; configures the
+     * Android ApplicationExtension (SDK levels, default config, build types,
+     * build features, compile options, packaging, JNI handling, and lint rules);
+     * configures Java toolchain compatibility; registers a `cleanKspCache` task and
+     * makes `preBuild` depend on it; and sets the Kotlin JVM toolchain for Android
+     * projects when the Kotlin Android plugin is present.
+     *
+     * @param target The Gradle project to configure.
+     */
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
                 apply("com.google.dagger.hilt.android")  // Apply Hilt first for AGP 9.0
                 apply("com.android.application")
-                apply("org.jetbrains.kotlin.android")
-                apply("org.jetbrains.kotlin.plugin.compose")
                 apply("com.google.devtools.ksp")
                 apply("com.google.gms.google-services")
             }
@@ -25,13 +34,11 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
             pluginManager.withPlugin("com.android.application") {
-                extensions.configure(typeOf<ApplicationExtension>()) {
+                extensions.configure<ApplicationExtension> {
                     val compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
                     this.compileSdk = compileSdk
-                    defaultConfig.targetSdk = compileSdk
-                    defaultConfig.minSdk = libs.findVersion("minSdk").get().toString().toInt()
-                    defaultConfig.testInstrumentationRunner =
-                        "androidx.test.runner.AndroidJUnitRunner"
+                    defaultConfig.targetSdk = libs.findVersion("targetSdk").get().toString().toInt()
+                    defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                     defaultConfig.vectorDrawables.useSupportLibrary = true
 
                     buildTypes.getByName("release").apply {
@@ -50,28 +57,21 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
                     compileOptions.targetCompatibility = JavaVersion.VERSION_24
                     compileOptions.isCoreLibraryDesugaringEnabled = true
 
-                    packaging.resources.excludes.addAll(
-                        setOf(
-                            "/META-INF/{AL2.0,LGPL2.1}",
-                            "/META-INF/AL2.0",
-                            "/META-INF/LGPL2.1",
-                            "/META-INF/DEPENDENCIES",
-                            "/META-INF/LICENSE",
-                            "/META-INF/LICENSE.txt",
-                            "/META-INF/NOTICE",
-                            "/META-INF/NOTICE.txt",
-                            "META-INF/*.kotlin_module",
-                            "**/kotlin/**",
-                            "**/*.txt"
-                        )
-                    )
+                    packaging.resources.excludes.addAll(setOf(
+                        "/META-INF/{AL2.0,LGPL2.1}",
+                        "/META-INF/AL2.0",
+                        "/META-INF/LGPL2.1",
+                        "/META-INF/DEPENDENCIES",
+                        "/META-INF/LICENSE",
+                        "/META-INF/LICENSE.txt",
+                        "/META-INF/NOTICE",
+                        "/META-INF/NOTICE.txt",
+                        "META-INF/*.kotlin_module",
+                        "**/kotlin/**",
+                        "**/*.txt"
+                    ))
                     packaging.jniLibs.useLegacyPackaging = false
-                    packaging.jniLibs.pickFirsts.addAll(
-                        listOf(
-                            "**/libc++_shared.so",
-                            "**/libjsc.so"
-                        )
-                    )
+                    packaging.jniLibs.pickFirsts.addAll(listOf("**/libc++_shared.so", "**/libjsc.so"))
 
                     lint.abortOnError = false
                     lint.warningsAsErrors = false
@@ -88,6 +88,7 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
                     description = "Clean KSP caches (fixes NullPointerException)"
                     delete(
                         project.layout.buildDirectory.dir("generated/ksp"),
+                        project.layout.buildDirectory.dir("tmp/kapt3"),
                         project.layout.buildDirectory.dir("tmp/kotlin-classes"),
                         project.layout.buildDirectory.dir("kotlin"),
                         project.layout.buildDirectory.dir("generated/source/ksp")
@@ -99,18 +100,9 @@ internal class AndroidApplicationConventionPlugin : Plugin<Project> {
                 }
             }
 
-            pluginManager.withPlugin("org.jetbrains.kotlin.android") {
-                extensions.getByType<KotlinAndroidProjectExtension>()
-                    .apply<KotlinAndroidProjectExtension> {
-                        jvmToolchain(24)
-                        compilerOptions {
-                            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
-                        freeCompilerArgs.addAll(
-                            "-opt-in=kotlin.RequiresOptIn",
-                            "-Xjvm-default=all"
-                        )}
-                    }
-            }
+//            pluginManager.withPlugin("org.jetbrains.kotlin.android") {
+//                extensions.getByType<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension>().jvmToolchain(24)
+//            }
         }
     }
 }

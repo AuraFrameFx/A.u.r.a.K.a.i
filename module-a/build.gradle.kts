@@ -1,12 +1,25 @@
 // GENESIS PROTOCOL - MODULE A
 plugins {
-    id("com.android.compose")
-    alias(libs.plugins.compose.compiler)
+    id("com.android.library")
     alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.module.a"
+    compileSdk = 36
+    
+    defaultConfig {
+        minSdk = 33
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
+    }
+    
+    buildFeatures {
+        compose = true
+    }
 }
 
 dependencies {

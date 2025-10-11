@@ -11,7 +11,7 @@ gradleToolingApi = "9.1.0"
 hiltAndroidGradlePlugin = "2.57.2"
 junitJupiterParams = "6.0.0"
 kotlin = "2.2.21-RC"
-kotlinGradlePlugin = "2.2.21-RC"
+kotlinGradlePlugin = "2.1.20"
 kotlinLoggingJvm = "3.0.5"
 ksp = "2.2.21-RC-2.0.4"
 desugar_jdk_libs = "2.1.5"
@@ -92,6 +92,7 @@ turbine = "1.2.1"
 bcprov = "1.82"
 junitVersion = "4.13.2"
 junitJupiterVersion = "5.13.4"
+material3 = "1.4.0"
 
 
 
@@ -288,6 +289,8 @@ mockk-agent = { module = "io.mockk:mockk-agent-jvm", version.ref = "mockk" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiterVersion" }
 junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version = "6.0.0" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+
 
 
 [plugins]

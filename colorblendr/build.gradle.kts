@@ -4,7 +4,7 @@
 plugins {
     id("com.android.library")
     alias(libs.plugins.ksp)
-    alias(libs.plugins.compose.compiler)
+    // Note: compose.compiler plugin applied by convention plugins
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 
@@ -13,12 +13,14 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        minSdk = 34
+        minSdk = 33
     }
 
     buildFeatures {
         buildConfig = true
+        compose = true
     }
+
 }
 
 dependencies {

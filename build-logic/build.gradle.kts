@@ -47,6 +47,10 @@ gradlePlugin {
             id = "genesis.android.compose"
             implementationClass = "AndroidComposeConventionPlugin"
         }
+        register("aurakaiAndroidConvention") {
+            id = "dev.aurakai.aurakai-android-convention"
+            implementationClass = "dev.aurakai.AurakaiAndroidConventionPlugin"
+        }
         register("androidNative") {
             id = "genesis.android.native"
             implementationClass = "AndroidNativeConventionPlugin"
@@ -55,11 +59,23 @@ gradlePlugin {
             id = "genesis.agent.fusion"
             implementationClass = "plugins.AgentFusionPlugin"
         }
+        register("yukiHookAndroid") {
+            id = "genesis.yuki.android"
+            implementationClass = "YukiHookAndroidConventionPlugin"
+        }
     }
+}
+
+kotlin {
+    jvmToolchain(24)
 }
 
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(24))
     }
+}
+
+tasks.named<ProcessResources>("processResources") {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

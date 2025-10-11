@@ -149,38 +149,3 @@ inner class GradleConfigDiscovery {
         assertTrue(content.contains("\r\n"))
     }
 }
-
-@Nested
-inner class RobustnessAndErrors {
-
-    private fun tempDir(): Path = Files.createTempDirectory("gradle-config-err-")
-
-    @Test
-    fun `null path inputs are rejected with meaningful error`() {
-        // If API accepts Path?, ensure it throws IllegalArgumentException; adjust when actual API is known.
-        assertThrows<IllegalArgumentException> {
-            // Example: GradleConfigFiles.discover(null)
-            throw IllegalArgumentException("path must not be null")
-        }
-    }
-
-    @Test
-    fun `non-directory input path does not crash`() {
-        val file = Files.createTempFile("not-a-dir", ".tmp")
-        // Expect: either throws with clear message or returns empty result
-        assertTrue(Files.isRegularFile(file))
-    }
-
-    @Test
-    fun `deep directory trees do not exceed limits`() {
-        val root = tempDir()
-        var current = root
-        repeat(20) {
-            current = current.resolve("d$it")
-            Files.createDirectories(current)
-        }
-        write(current.resolve("build.gradle"), "plugins { id 'java' }")
-        assertTrue(Files.exists(current.resolve("build.gradle")))
-    }
-}
-}

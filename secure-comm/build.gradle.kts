@@ -3,13 +3,13 @@
 
 plugins {
     id("com.android.library")
-    id("com.android.native")
     alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.securecomm"
-    
+    compileSdk = 36
+    defaultConfig { minSdk = 33 }
     externalNativeBuild {
         cmake {
             path = file("src/main/cpp/CMakeLists.txt")
@@ -19,6 +19,10 @@ android {
         }
     }
     ndkVersion = "28.2.13676358"
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
+    }
 }
 
 dependencies {

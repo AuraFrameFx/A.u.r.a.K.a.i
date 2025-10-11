@@ -13,19 +13,21 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
     /**
-     * Applies Android library plugin and configures Kotlin settings.
-     * 
-     * AGP 9.0+ includes built-in Kotlin support - no need to apply kotlin-android plugin separately.
+     * Applies Android library plugin and configures Kotlin defaults.
      *
-     * @param target The Gradle project to apply the plugin to
+     * Configures the target project's Android LibraryExtension and Kotlin JVM toolchain:
+     * - Sets Android compileSdk to 36 and default minSdk to 34.
+     * - Sets Java sourceCompatibility and targetCompatibility to Java 24.
+     * - Configures the Kotlin JVM toolchain to use Java 24 (applied only after the Kotlin Android plugin is present).
+     *
+     * @param target The Gradle project to configure; this method mutates the project's plugins and extensions.
      */
     override fun apply(target: Project) {
         with(target) {
             // Apply plugins in correct order for AGP 9.0 compatibility
             with(pluginManager) {
                 apply("org.jetbrains.kotlin.android")  // Apply Kotlin FIRST
-                apply("com.android.library")  // Then Android
-                apply("com.google.devtools.ksp")  // Then KSP for annotation processing
+                // Removed: apply("com.google.devtools.ksp")  // KSP must be applied in the module, not here
             }
 
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
@@ -43,10 +45,9 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                     targetCompatibility = JavaVersion.VERSION_24
                 }
             }
-            
-            // ✅ Configure Kotlin via AGP's built-in support (AGP 9.0+)
+            // ✅ Configure Kotlin for Android
             extensions.findByType(KotlinAndroidProjectExtension::class.java)?.apply {
-                jvmToolchain(24)
+                // jvmToolchain(24) // Removed: not supported in Android modules
                 compilerOptions {
                     jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
                     freeCompilerArgs.addAll(

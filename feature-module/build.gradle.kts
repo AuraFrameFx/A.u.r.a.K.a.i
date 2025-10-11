@@ -1,10 +1,11 @@
 // ==== GENESIS PROTOCOL - FEATURE MODULE ====
-// Primary feature module using convention plugins
-
+// Primary feature module using basic plugins (avoiding AGP 9.0 Hilt issues)
 plugins {
-    id("genesis.android.library")  // Convention plugin: applies Android, Kotlin, Hilt
-}
+    id("genesis.android.base")
+    id("genesis.android.library")
+    id("genesis.android.compose")
 
+}
 
 android {
     namespace = "dev.aurakai.auraframefx.featuremodule"
@@ -37,7 +38,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.hilt.android)
-    add("ksp", libs.hilt.compiler)
+    implementation(libs.hilt.compiler)
     implementation(libs.bundles.coroutines)
     implementation(libs.bundles.network)
     implementation(libs.androidx.room.runtime)

@@ -1,5 +1,4 @@
 
-@file:Suppress("UnstableApiUsage", "JCenterRepositoryObsolete")
 
 // ===== AOSP-Re:Genesis - SETTINGS =====
 // Re:Genesis - Advanced Android OS Project
@@ -70,14 +69,15 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             if (requested.id.namespace == "com.google.dagger") {
-                useModule("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
+                useModule("com.google.dagger:hilt-android-gradle-plugin")
             }
             if (requested.id.id.startsWith("com.android.")) {
-                useModule("com.android.tools.build:gradle:9.0.0-alpha09")
+                useModule("com.android.tools.build:gradl:${requested.version}")
             }
         }
     }
 }
+
 
 
 

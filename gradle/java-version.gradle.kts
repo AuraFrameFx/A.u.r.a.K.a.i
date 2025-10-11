@@ -8,24 +8,26 @@
 
 // Configure Java toolchain for all projects
 allprojects {
-    // Configure Java toolchain with strict version requirements
+    // Configure Java toolchain with strict version requirements (JVM only)
     plugins.withType<JavaBasePlugin> {
-        extensions.configure<JavaPluginExtension> {
-            toolchain {
-                // Primary target: Java 24
-                val targetVersion = 23
-                val fallbackVersion = 25
+        if (!plugins.hasPlugin("com.android.application") && !plugins.hasPlugin("com.android.library")) {
+            extensions.configure<JavaPluginExtension> {
+                toolchain {
+                    // Primary target: Java 24
+                    val targetVersion = 23
+                    val fallbackVersion = 25
 
-                try {
-                    // Enforce Java 24
-                    languageVersion.set(JavaLanguageVersion.of(targetVersion))
+                    try {
+                        // Enforce Java 24
+                        languageVersion.set(JavaLanguageVersion.of(targetVersion))
 
 
-                    logger.lifecycle("🧠 GENESIS PROTOCOL: Using Java $targetVersion for ${project.name}")
-                } catch (e: Exception) {
-                    // Fallback to Java 25 if 24 is not available
-                    languageVersion.set(JavaLanguageVersion.of(fallbackVersion))
-                    logger.lifecycle("⚠️  GENESIS WARNING: Java $targetVersion not found, falling back to Java $fallbackVersion for ${project.name}")
+                        logger.lifecycle("🧠 GENESIS PROTOCOL: Using Java $targetVersion for ${project.name}")
+                    } catch (e: Exception) {
+                        // Fallback to Java 25 if 24 is not available
+                        languageVersion.set(JavaLanguageVersion.of(fallbackVersion))
+                        logger.lifecycle("⚠️  GENESIS WARNING: Java $targetVersion not found, falling back to Java $fallbackVersion for ${project.name}")
+                    }
                 }
             }
         }
