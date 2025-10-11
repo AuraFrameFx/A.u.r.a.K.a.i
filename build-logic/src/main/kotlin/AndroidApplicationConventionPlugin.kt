@@ -22,7 +22,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.google.dagger.hilt.android")  // Apply Hilt first for AGP 9.0
                 apply("com.android.application")
-                apply("org.jetbrains.kotlin.android")
+
                 apply("org.jetbrains.kotlin.plugin.compose")
                 apply("com.google.devtools.ksp")
                 apply("com.google.gms.google-services")

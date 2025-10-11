@@ -1,10 +1,11 @@
 plugins {
-    id("com.android.application") // Directly apply Android plugin for test
-    id("com.android.base")  // AGP 9 workaround: MUST BE FIRST (commented out for test)
-    // id("genesis.android.application") // If you use a convention plugin, comment it out for this test
-
+    id("com.android.application")  // Applies Hilt + Android + Compose + KSP
+    alias(libs.plugins.firebase.crashlytics)
+    alias(libs.plugins.google.services)
 }
 
+// Apply Hilt after Android plugin for AGP 9.0 compatibility
+// apply(plugin = "com.google.dagger.hilt.android")  // Applied via convention plugin
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 android {
@@ -136,10 +137,12 @@ android {
 
 // Suppress deprecation warnings for AIDL-generated files
 tasks.withType<JavaCompile>().configureEach {
-    options.compilerArgs.addAll(listOf(
-        "-Xlint:none",          // Suppress all lint warnings including deprecation
-        "-nowarn"               // Suppress all warnings completely
-    ))
+    options.compilerArgs.addAll(
+        listOf(
+            "-Xlint:none",          // Suppress all lint warnings including deprecation
+            "-nowarn"               // Suppress all warnings completely
+        )
+    )
     // Suppress warnings for generated AIDL files specifically
     options.encoding = "UTF-8"
 }
@@ -224,6 +227,7 @@ dependencies {
     // ===== WORKMANAGER =====
     implementation("androidx.work:work-runtime-ktx:2.10.5")
     implementation("androidx.hilt:hilt-work:1.3.0")
+    implementation(libs.hilt.work)  // Annotation processor for Hilt WorkManager integration
 
     // ===== UTILITIES =====
     implementation(libs.timber)
