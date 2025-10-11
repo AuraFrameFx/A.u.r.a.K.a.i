@@ -818,4 +818,3 @@ class GradleVersionCatalogTest {
     }
 }
 }
-}
