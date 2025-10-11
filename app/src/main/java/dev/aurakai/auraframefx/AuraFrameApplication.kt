@@ -11,6 +11,12 @@ import timber.log.Timber
 // @HiltAndroidApp
 class AuraFrameApplication : Application() {
 
+    /**
+     * Initializes application-level logging and emits startup informational messages.
+     *
+     * Configures a debug logging tree when the build is a debug build, then logs a sequence
+     * of info-level startup messages indicating subsystem readiness.
+     */
     override fun onCreate() {
         super.onCreate()
 
