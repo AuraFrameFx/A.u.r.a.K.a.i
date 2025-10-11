@@ -74,6 +74,7 @@ package org.example.list
      * @param previousIt The node immediately before `currentIt`, or null when `currentIt` is the head.
      * @param currentIt The node to unlink from the list.
      */
+    private fun unlink(previousIt: Node?, currentIt: Node) {
         if (currentIt == head) {
             head = currentIt.next
         } else {
