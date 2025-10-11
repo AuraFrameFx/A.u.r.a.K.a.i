@@ -374,11 +374,13 @@ class GradleVersionCatalogTest {
                 // Extract all defined versions
                 val versionSection = content.substringAfter("[versions]")
                     .substringBefore("[")
-                val definedVersions = """(\w+)\s*=\s*"[^"]+"""".toRegex()
-                    .findAll(versionSection)
+
+                val definedVersions = Regex(
+                    """^\s*([A-Za-z][A-Za-z0-9_-]*)\s*=\s*"[^"]+"""",
+                    RegexOption.MULTILINE
+                ).findAll(versionSection)
                     .map { it.groupValues[1] }
                     .toSet()
-                
                 referencedVersions.forEach { ref ->
                     assertTrue(
                         definedVersions.contains(ref),
